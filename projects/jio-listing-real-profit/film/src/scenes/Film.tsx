@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import {useThree} from '@react-three/fiber';
 import {ThreeCanvas} from '../kit/three-canvas';
 import {Finish} from '../kit/finish';
-import {Env, Floor, Coin} from './Studio';
+import {Env, Floor, Coin, GOLD} from './Studio';
 import {fontCss} from '../fonts.css';
 import CUES from '../cues.json';
 
@@ -40,6 +40,8 @@ const STEEL = new THREE.MeshPhysicalMaterial({color: '#7d8796', metalness: 1, ro
 const STEEL_DARK = new THREE.MeshPhysicalMaterial({color: '#262b34', metalness: 1, roughness: 0.42});
 const MARBLE = new THREE.MeshPhysicalMaterial({color: '#151922', metalness: 0.2, roughness: 0.3, clearcoat: 1});
 
+const CHEAP_GEO = new THREE.CylinderGeometry(0.5, 0.5, 0.075, 28, 1);
+const CheapCoin: React.FC<{p: [number, number, number]; r: [number, number, number]}> = ({p, r}) => <mesh geometry={CHEAP_GEO} material={GOLD} position={p} rotation={r} />;
 const coinWobble = (i: number) => ({dx: (random(`x${i}`) - 0.5) * 0.06, dz: (random(`z${i}`) - 0.5) * 0.06, ry: random(`r${i}`) * 6.28, tl: (random(`t${i}`) - 0.5) * 0.03});
 
 // The hero tower: base coins + profit coins that drop in, then the top SLICE fly to the vault and one fee coin flicks away.
@@ -128,7 +130,7 @@ const PlinthLight: React.FC<{i: number}> = ({i}) => {
   const tgt = useMemo(() => new THREE.Object3D(), []);
   return (<>
     <primitive object={tgt} position={[-4.2, 1.1, 0.4]} />
-    <spotLight position={[-3.2, 5, 4]} target={tgt} angle={0.35} penumbra={0.7} intensity={i} color="#fff1d6" castShadow />
+    <spotLight position={[-3.2, 5, 4]} target={tgt} angle={0.35} penumbra={0.7} intensity={i} color="#fff1d6" />
   </>);
 };
 
@@ -184,7 +186,7 @@ const Scene: React.FC<{t: number}> = ({t}) => {
       <Floor />
       <Tower t={t} vaultX={vaultX - 0.15} />
       {[[-2.4, -2.8, 16], [2.8, -3.6, 24], [-3.6, -6, 30]].map(([x, z, n], j) => (
-        <group key={j} position={[x, 0, z]}>{Array.from({length: n}, (_, i) => { const w = coinWobble(i + 100 * j + 300); return <Coin key={i} p={[w.dx, 0.0375 + i * CH, w.dz]} r={[w.tl, w.ry, w.tl]} />; })}</group>
+        <group key={j} position={[x, 0, z]}>{Array.from({length: n}, (_, i) => { const w = coinWobble(i + 100 * j + 300); return <CheapCoin key={i} p={[w.dx, 0.0375 + i * CH, w.dz]} r={[w.tl, w.ry, w.tl]} />; })}</group>
       ))}
       <Laser y={(BASE + EXTRA - SLICE) * CH + 0.02} x={0.6} k={pr(t, T.laser, 0.35) * (1 - pr(t, T.slice + 0.6, 0.3))} />
       <Vault x={vaultX} open={pr(t, T.open, 0.9, inout)} />
@@ -294,8 +296,8 @@ export const Film: React.FC<{captions?: boolean; audio?: boolean}> = ({captions 
   return (
     <AbsoluteFill style={{background: '#05070c'}}>
       <style>{fontCss}</style>
-      <Finish fr={fr} bloom={0.55}>
-        <ThreeCanvas width={1080} height={1920} shadows camera={{fov: 34, position: [0, 3, 12], near: 0.1, far: 60}}>
+      <Finish fr={fr} bloom={0}>
+        <ThreeCanvas width={1080} height={1920} dpr={0.8} shadows camera={{fov: 34, position: [0, 3, 12], near: 0.1, far: 60}}>
           <Env />
           <Scene t={t} />
         </ThreeCanvas>
