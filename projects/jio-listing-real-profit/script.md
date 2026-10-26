@@ -17,13 +17,13 @@ Held > 12 months (same price): LTCG 12.5% only above ₹1.25 lakh a year → on 
 | 14.5–18.0 | Momo | "Upar se STT aur charges, lagbhag ₹170 aur." | A few coins flick off into the dark. **−₹170**. |
 | 18.0–23.0 | Momo | "Toh asli profit ₹39,430. 50% nahi… sirf 39%." | Counter drops 50,000 → 39,430; "50%" shatters like glass, **39%** slams down in gold. |
 | 23.0–31.5 | Momo | "Aur ek saal ke baad becha? Toh tax 20% nahi, sirf 12.5%. Upar se har saal pehla ₹1.25 lakh ka profit tax-free… toh is ₹50,000 pe tax — zero!" | Giant calendar flips 12 months; "20%" label cracks and drops to **12.5%** (STCG vs LTCG cards side by side); then a gold shield "₹1.25 lakh tax-free" covers the profit stack; vault door swings open, empty: **₹0 tax**. Small text: "price same rahe toh — example". |
-| 31.5–35.5 | Bunty | "Wah! Waise… mera toh allotment hi nahi aaya. Profit zero!" | Spotlight on an empty plinth with a tiny note "Not Allotted"; one coin rolls and tips over. |
+| 31.5–35.5 | Bunty | "Wah! Waise mera tax toh zero hai… kyunki Jio ka share mila hi nahi!" | Spotlight on an empty plinth with a tiny note "Not Allotted"; a "TAX ₹0" tag flips over it; one coin rolls and tips over. |
 
 ## Voice (Devanagari, ElevenLabs)
 **Momo 1 (Amrut):** जियो के शेयर्स बेचने से पहले ये देख लो… नहीं तो बड़ा लॉस हो जाएगा!
 **Bunty 1:** कैसा लॉस? पचास परसेंट ऊपर लिस्ट हुआ तो एक लाख के डेढ़ लाख… पचास हज़ार का प्रॉफिट!
 **Momo 2 (Amrut):** रुको। एक साल से पहले बेचा, तो प्रॉफिट पे बीस परसेंट टैक्स, ऊपर से चार परसेंट सेस। दस हज़ार चार सौ सीधा सरकार को। ... ... ऊपर से एसटीटी और चार्जेस, लगभग एक सौ सत्तर और। ... ... तो असली प्रॉफिट उनतालीस हज़ार चार सौ तीस। पचास परसेंट नहीं… सिर्फ़ उनतालीस परसेंट। ... ... और एक साल के बाद बेचा? तो टैक्स बीस परसेंट नहीं, सिर्फ़ साढ़े बारह परसेंट। ऊपर से हर साल पहला सवा लाख का प्रॉफिट टैक्स-फ़्री… तो इस पचास हज़ार पे टैक्स — ज़ीरो!
-**Bunty 2:** वाह! वैसे… मेरा तो अलॉटमेंट ही नहीं आया। प्रॉफिट ज़ीरो!
+**Bunty 2:** वाह! वैसे मेरा टैक्स तो ज़ीरो है… क्योंकि जियो का शेयर मिला ही नहीं!
 
 ## Draft IG/FB caption
 Jio ke shares bechne se pehle ye dekh lo 🧾👇
