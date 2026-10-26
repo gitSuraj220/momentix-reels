@@ -1,0 +1,8 @@
+*.mp4
+*.wav
+*.mov
+*.log
+node_modules/
+__pycache__/
+out/
+frames/

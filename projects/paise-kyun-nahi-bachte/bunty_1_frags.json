@@ -1,0 +1,38 @@
+[
+ {
+  "line": 1,
+  "text": "Salary aayi…",
+  "s": 0.0,
+  "e": 1.381
+ },
+ {
+  "line": 1,
+  "text": "aur 10 din mein gayab.",
+  "s": 1.892,
+  "e": 3.25
+ },
+ {
+  "line": 1,
+  "text": "Paise tikte kyun nahi?",
+  "s": 3.98,
+  "e": 5.163
+ },
+ {
+  "line": 3,
+  "text": "Mithai?",
+  "s": 5.852,
+  "e": 6.366
+ },
+ {
+  "line": 3,
+  "text": "Matlab…",
+  "s": 6.978,
+  "e": 7.388
+ },
+ {
+  "line": 3,
+  "text": "samjha nahi.",
+  "s": 7.767,
+  "e": 8.471
+ }
+]

@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;font-weight:500;src:url(__FONTS__/poppins-latin-500-normal.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(__FONTS__/poppins-latin-700-normal.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(__FONTS__/poppins-latin-800-normal.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(__FONTS__/poppins-devanagari-700-normal.woff2);unicode-range:U+0900-097F,U+20B9}
+@font-face{font-family:P;font-weight:800;src:url(__FONTS__/poppins-devanagari-800-normal.woff2);unicode-range:U+0900-097F,U+20B9}
+html,body{margin:0;padding:0;background:#060915;overflow:hidden}
+svg{display:block}
+text{font-family:P,sans-serif}
+</style></head>
+<body>
+<svg id="s" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg"></svg>
+<script>
+const TL = __TIMELINE__;
+const L = k => TL.lines[k];            // [start, end] of script line k
+const C = {bg:'#F3F0E8', ink:'#1B1F24', mute:'#8A8F98', line:'#D9D4C7', green:'#16A34A', green2:'#4ADE80',
+           blue:'#2563EB', blue2:'#60A5FA', red:'#E11D48', yellow:'#FFD43B', card:'#FFFFFF', hub:'#0F172A'};
+// ------------------------------------------------------------------ helpers
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const out=x=>{x=clamp(x);return 1-Math.pow(1-x,3)};
+const back=x=>{x=clamp(x);const c=1.70158;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const prog=(t,a,d)=>clamp((t-a)/d);
+const lerp=(a,b,x)=>a+(b-a)*x;
+const win=(t,a,b,fi=.3,fo=.3)=>Math.min(clamp((t-a)/fi),clamp((b-t)/fo));
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function hash(i){let x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)}
+function txt(x,y,s,o={}){return `<text x="${x}" y="${y}" font-size="${o.size||40}" font-weight="${o.w||700}" fill="${o.fill||C.ink}" text-anchor="${o.anchor||'middle'}" opacity="${o.op??1}" ${o.ls?`letter-spacing="${o.ls}"`:''}>${esc(s)}</text>`}
+function along(pts,p){ // point along polyline at fraction p
+  let segs=[],tot=0;for(let i=1;i<pts.length;i++){const d=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);segs.push(d);tot+=d}
+  let r=clamp(p)*tot;for(let i=0;i<segs.length;i++){if(r<=segs[i]||i==segs.length-1){const f=segs[i]?r/segs[i]:0;return[lerp(pts[i][0],pts[i+1][0],f),lerp(pts[i][1],pts[i+1][1],f)]}r-=segs[i]}}
