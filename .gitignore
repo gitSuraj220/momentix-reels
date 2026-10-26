@@ -6,3 +6,5 @@ node_modules/
 __pycache__/
 out/
 frames/
+projects/*/film/node_modules/
+projects/*/film/out/
