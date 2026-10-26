@@ -8,3 +8,5 @@ out/
 frames/
 projects/*/film/node_modules/
 projects/*/film/out/
+projects/*/audio/*.npy
+projects/*/vo/vo.raw

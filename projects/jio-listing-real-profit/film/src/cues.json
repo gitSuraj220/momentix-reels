@@ -1,0 +1,163 @@
+[
+ {
+  "id": "hook1",
+  "who": "momo",
+  "w": "Jio ke shares bechne se pehle ye dekh lo",
+  "s": 0.25,
+  "e": 2.639
+ },
+ {
+  "id": "hook2",
+  "who": "momo",
+  "w": "nahi toh bada loss ho jayega",
+  "s": 2.729,
+  "e": 4.119
+ },
+ {
+  "id": "b1",
+  "who": "bunty",
+  "w": "Kaisa loss?",
+  "s": 4.391,
+  "e": 5.128
+ },
+ {
+  "id": "b2",
+  "who": "bunty",
+  "w": "50% upar list hua toh ₹1 lakh ke ₹1.5 lakh",
+  "s": 5.237,
+  "e": 9.47
+ },
+ {
+  "id": "b3",
+  "who": "bunty",
+  "w": "₹50,000 ka profit!",
+  "s": 9.56,
+  "e": 11.198
+ },
+ {
+  "id": "ruko",
+  "who": "momo",
+  "w": "Ruko.",
+  "s": 11.471,
+  "e": 11.819
+ },
+ {
+  "id": "m1",
+  "who": "momo",
+  "w": "Ek saal se pehle becha",
+  "s": 11.982,
+  "e": 13.341
+ },
+ {
+  "id": "m2",
+  "who": "momo",
+  "w": "toh profit pe 20% tax, upar se 4% cess",
+  "s": 13.414,
+  "e": 16.604
+ },
+ {
+  "id": "m3",
+  "who": "momo",
+  "w": "₹10,400 seedha sarkaar ko",
+  "s": 16.731,
+  "e": 18.696
+ },
+ {
+  "id": "m4",
+  "who": "momo",
+  "w": "Upar se STT aur charges",
+  "s": 18.896,
+  "e": 20.567
+ },
+ {
+  "id": "m5",
+  "who": "momo",
+  "w": "lagbhag ₹170 aur",
+  "s": 20.622,
+  "e": 22.108
+ },
+ {
+  "id": "m6",
+  "who": "momo",
+  "w": "Toh asli profit ₹39,430",
+  "s": 22.308,
+  "e": 24.909
+ },
+ {
+  "id": "m7",
+  "who": "momo",
+  "w": "50% nahi",
+  "s": 25.036,
+  "e": 25.928
+ },
+ {
+  "id": "m8",
+  "who": "momo",
+  "w": "sirf 39%",
+  "s": 26.001,
+  "e": 27.217
+ },
+ {
+  "id": "m9",
+  "who": "momo",
+  "w": "Aur ek saal ke baad becha?",
+  "s": 27.454,
+  "e": 28.768
+ },
+ {
+  "id": "m10",
+  "who": "momo",
+  "w": "Toh tax 20% nahi, sirf 12.5%",
+  "s": 28.877,
+  "e": 31.645
+ },
+ {
+  "id": "m11",
+  "who": "momo",
+  "w": "Upar se har saal pehla ₹1.25 lakh ka profit",
+  "s": 31.791,
+  "e": 34.172
+ },
+ {
+  "id": "m12",
+  "who": "momo",
+  "w": "tax-free",
+  "s": 34.19,
+  "e": 34.638
+ },
+ {
+  "id": "m13",
+  "who": "momo",
+  "w": "toh is ₹50,000 pe tax",
+  "s": 34.802,
+  "e": 36.265
+ },
+ {
+  "id": "m14",
+  "who": "momo",
+  "w": "zero!",
+  "s": 36.356,
+  "e": 36.894
+ },
+ {
+  "id": "b4",
+  "who": "bunty",
+  "w": "Wah!",
+  "s": 37.258,
+  "e": 37.786
+ },
+ {
+  "id": "b5",
+  "who": "bunty",
+  "w": "Waise mera tax toh zero hai",
+  "s": 37.913,
+  "e": 39.815
+ },
+ {
+  "id": "b6",
+  "who": "bunty",
+  "w": "kyunki Jio ka share mila hi nahi!",
+  "s": 39.887,
+  "e": 41.584
+ }
+]

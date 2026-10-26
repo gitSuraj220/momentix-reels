@@ -17,6 +17,7 @@ export const Env: React.FC = () => {
     scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
     scene.background = new THREE.Color('#05070c');
     (scene as any).environmentIntensity = 0.55;
+    (scene as any).environmentIntensity = 0.55;
     gl.toneMapping = THREE.ACESFilmicToneMapping;
     gl.toneMappingExposure = 1.05;
   }, [gl, scene]);
@@ -42,7 +43,7 @@ export const Tower: React.FC<{n: number; x?: number; z?: number; seed: string; f
 export const Floor: React.FC = () => (
   <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
     <circleGeometry args={[14, 96]} />
-    <meshPhysicalMaterial color="#080a10" metalness={0.1} roughness={0.32} clearcoat={0.8} clearcoatRoughness={0.2} specularIntensity={0.4} />
+    <meshPhysicalMaterial color="#030408" metalness={0.1} roughness={0.4} clearcoat={0.8} clearcoatRoughness={0.2} specularIntensity={0.4} />
   </mesh>
 );
 
