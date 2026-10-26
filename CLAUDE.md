@@ -4,6 +4,7 @@ This repo holds everything for the Momentix by Suraj Hinglish Shorts/Reels chann
 Suraj gives all orders in one chat. At the start of a session, read these two skills:
 
 - `.claude/skills/momentix-reels/SKILL.md` — channel rules, SEO-first titles/descriptions, upload + scheduling flow.
+- `.claude/skills/video-script/SKILL.md` — ideas + scripts from analytics; its profile is `video-script/profile.md` (use instead of ~/.video-script/profile.md).
 - `.claude/skills/animated-video/SKILL.md` — Remotion animation pipeline (from cstack by Charles Zheng, MIT).
 
 ## Layout
