@@ -126,7 +126,7 @@ window.renderAt=function(t){
   if(t>=W.s6[0]-0.3&&t<W.s6[1]+0.3) tug(t);
   if(t>=W.s7[0]-0.3){const lt=t-(W.s7[0]-0.3); setImg('v7',frameSrc('c3',lt,END-W.s7[0]+0.3,150));}
   // captions
-  const c=CU.find(x=>t>=x.s-0.05&&t<x.e+0.15); const cap=$('cap');
+  const c=t<W.s1[1]?null:CU.find(x=>t>=x.s-0.05&&t<x.e+0.15); const cap=$('cap');
   if(!c){cap.style.opacity=0}else{const k=pr(t,c.s-0.05,0.14);cap.style.opacity=k;cap.style.transform=`scale(${0.86+0.14*back(k)})`;
     if(cap.dataset.id!==c.id){cap.dataset.id=c.id;cap.innerHTML=`<span>${c.w.replace(HI,m=>`<b class="y">${m}</b>`)}<i class="who" style="color:${c.who==='bunty'?'#7dffb4':'#9fb4ff'}">${c.who==='bunty'?'BUNTY':'MOMO'}</i></span>`;}}
   // flashes on hard beats
