@@ -1,0 +1,128 @@
+[
+ {
+  "id": "h1",
+  "who": "momo",
+  "w": "Ye samosa mere gaon mein ₹10 ka milta tha",
+  "s": 0.15,
+  "e": 2.595
+ },
+ {
+  "id": "h2",
+  "who": "momo",
+  "w": "aaj ₹20 ka.",
+  "s": 2.695,
+  "e": 3.575
+ },
+ {
+  "id": "h3",
+  "who": "momo",
+  "w": "Samosa wahi,",
+  "s": 3.755,
+  "e": 4.599
+ },
+ {
+  "id": "h4",
+  "who": "momo",
+  "w": "phir daam double kaise?",
+  "s": 4.659,
+  "e": 5.694
+ },
+ {
+  "id": "p1",
+  "who": "momo",
+  "w": "Pehle, ₹100 mein 10 samose.",
+  "s": 5.974,
+  "e": 7.938
+ },
+ {
+  "id": "p2",
+  "who": "momo",
+  "w": "10 saal baad, wahi samosa ₹20 ka.",
+  "s": 8.178,
+  "e": 10.533
+ },
+ {
+  "id": "p3",
+  "who": "momo",
+  "w": "Ab ₹100 mein 10 nahi…",
+  "s": 10.693,
+  "e": 11.945
+ },
+ {
+  "id": "p4",
+  "who": "momo",
+  "w": "sirf 5 samose.",
+  "s": 12.005,
+  "e": 13.026
+ },
+ {
+  "id": "t1",
+  "who": "momo",
+  "w": "Wahi size, wahi swaad…",
+  "s": 13.286,
+  "e": 14.899
+ },
+ {
+  "id": "t2",
+  "who": "momo",
+  "w": "bas tumhare ₹100 ki taakat aadhi ho gayi.",
+  "s": 14.959,
+  "e": 17.244
+ },
+ {
+  "id": "t3",
+  "who": "momo",
+  "w": "Isi ko kehte hain inflation.",
+  "s": 17.404,
+  "e": 18.9
+ },
+ {
+  "id": "w1",
+  "who": "momo",
+  "w": "Kyunki aloo, tel, gas aur halwai ki mehnat",
+  "s": 19.18,
+  "e": 22.086
+ },
+ {
+  "id": "w2",
+  "who": "momo",
+  "w": "sab har saal thode mehnge hote hain.",
+  "s": 22.146,
+  "e": 23.89
+ },
+ {
+  "id": "s1",
+  "who": "momo",
+  "w": "Aur agar tumhare paise 3% wale savings mein pade hain,",
+  "s": 24.17,
+  "e": 26.909
+ },
+ {
+  "id": "s2",
+  "who": "momo",
+  "w": "aur mehngai 7% se badh rahi hai…",
+  "s": 26.989,
+  "e": 28.928
+ },
+ {
+  "id": "s3",
+  "who": "momo",
+  "w": "toh paisa badh nahi raha,",
+  "s": 29.088,
+  "e": 30.202
+ },
+ {
+  "id": "s4",
+  "who": "momo",
+  "w": "ghat raha hai.",
+  "s": 30.242,
+  "e": 30.891
+ },
+ {
+  "id": "b1",
+  "who": "bunty",
+  "w": "Matlab mere paise se samosa bhi chhota ho gaya!",
+  "s": 31.291,
+  "e": 33.993
+ }
+]
