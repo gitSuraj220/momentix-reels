@@ -1,0 +1,136 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:P;font-weight:800;src:url('../../../engine/fonts/poppins-latin-800-normal.woff2')}
+@font-face{font-family:P;font-weight:700;src:url('../../../engine/fonts/poppins-latin-700-normal.woff2')}
+@font-face{font-family:P;font-weight:800;unicode-range:U+0900-097F,U+20B9;src:url('../../../engine/fonts/poppins-devanagari-800-normal.woff2')}
+html,body{margin:0;background:#000}
+#st{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:P;background:#0b0603}
+.sc{position:absolute;inset:0;opacity:0;overflow:hidden}
+.plate{position:absolute;left:-67px;top:-115px;width:1215px;height:2150px;transform-origin:50% 50%}
+.plate img.bg{position:absolute;inset:0;width:100%;height:100%}
+.vid{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.tag{position:absolute;font-weight:800;color:#fff;border-radius:22px;padding:10px 26px;font-size:54px;box-shadow:0 10px 30px rgba(0,0,0,.5);white-space:nowrap}
+.cap{position:absolute;left:50px;right:50px;top:1335px;text-align:center}
+.cap span{display:inline-block;background:rgba(12,8,4,.82);border-radius:26px;padding:14px 28px;font-weight:800;font-size:56px;line-height:1.22;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.cap .who{display:block;font-size:24px;letter-spacing:3px;margin-top:8px;font-weight:700}
+.y{color:#FFD43B}
+#grade{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.5) 100%)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#brand{position:absolute;right:46px;top:70px;font-size:28px;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:2px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.x{position:absolute;width:96px;height:96px;margin:-48px 0 0 -48px}
+.x:before,.x:after{content:'';position:absolute;left:44px;top:-6px;width:10px;height:108px;background:#ff3b45;border-radius:6px;box-shadow:0 0 18px rgba(255,40,50,.8)}
+.x:before{transform:rotate(45deg)}.x:after{transform:rotate(-45deg)}
+.puff{position:absolute;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;background:radial-gradient(circle,rgba(255,240,210,.85),rgba(255,220,170,0) 70%)}
+</style></head><body><div id="st">
+<!-- S1 samosa clip -->
+<div class="sc" id="s1"><img class="vid" id="v1"><div class="tag" id="price" style="left:330px;top:300px;font-size:120px;padding:18px 44px;background:#fff6e0;color:#2a1606;border:6px solid #d79a2b"></div></div>
+<!-- S2 shop clip -->
+<div class="sc" id="s2"><img class="vid" id="v2"><div class="tag" id="eq" style="left:150px;top:250px;background:rgba(20,12,4,.85);font-size:70px">₹100 = <span class="y">10</span> 🥟</div></div>
+<!-- S3 counter -->
+<div class="sc" id="s3"><div class="plate" id="p3"><img class="bg" src="infl_3_counter.jpg"><div id="xs"></div></div>
+  <div class="tag" id="cal" style="left:300px;top:250px;background:#fff;color:#c0262f;font-size:66px;border:6px solid #c0262f"></div>
+  <div class="tag" id="eq2" style="left:170px;top:400px;background:rgba(20,12,4,.85);font-size:66px"></div></div>
+<!-- S4 power bar -->
+<div class="sc" id="s4"><div class="plate" id="p4"><img class="bg" src="infl_1_samosa.jpg" style="filter:blur(14px) brightness(.45)"></div>
+  <div id="note" style="position:absolute;left:190px;top:520px;width:700px;height:330px;border-radius:26px;background:linear-gradient(135deg,#c9b8e6,#a58fd1 45%,#bfa9e0);box-shadow:0 30px 70px rgba(0,0,0,.6);overflow:hidden">
+    <div style="position:absolute;left:36px;top:26px;font-size:130px;font-weight:800;color:#3b2470;opacity:.9">₹100</div>
+    <div style="position:absolute;right:40px;bottom:30px;width:150px;height:150px;border-radius:50%;border:8px solid rgba(59,36,112,.35)"></div>
+    <div style="position:absolute;left:40px;bottom:36px;font-size:30px;font-weight:700;color:#3b2470;letter-spacing:6px;opacity:.7">SAU RUPAYE</div></div>
+  <div style="position:absolute;left:190px;top:900px;font-size:40px;font-weight:700;color:#ffe6b0;letter-spacing:4px">TAAKAT</div>
+  <div style="position:absolute;left:190px;top:960px;width:700px;height:56px;border-radius:30px;background:rgba(255,255,255,.12);overflow:hidden"><div id="bar" style="height:100%;width:100%;background:linear-gradient(90deg,#ff4a3d,#ffb02e 50%,#3ddc84)"></div></div>
+  <div id="pct" style="position:absolute;left:190px;right:190px;top:1040px;text-align:right;font-size:64px;font-weight:800;color:#fff"></div>
+  <div id="infl" style="position:absolute;left:0;right:0;top:250px;text-align:center;font-size:140px;font-weight:800;color:#FFD43B;letter-spacing:4px;text-shadow:0 10px 40px rgba(0,0,0,.7)">INFLATION</div></div>
+<!-- S5 ingredients -->
+<div class="sc" id="s5"><div class="plate" id="p5"><img class="bg" src="infl_4_ingredients.jpg"><div id="tags5"></div></div></div>
+<!-- S6 tug of war -->
+<div class="sc" id="s6" style="background:radial-gradient(ellipse at 50% 40%,#3a2210,#0b0603 75%)">
+  <svg id="tug" width="1080" height="1920" viewBox="0 0 1080 1920" style="position:absolute;inset:0"><g id="tugg" transform="translate(0 -330)"></g></svg><div id="ghat" style="position:absolute;left:0;right:0;top:960px;text-align:center;font-size:84px;font-weight:800;color:#ff5a5f;text-shadow:0 6px 30px rgba(0,0,0,.6)">PAISA GHAT<br>RAHA HAI 📉</div></div>
+<!-- S7 ending clip -->
+<div class="sc" id="s7"><img class="vid" id="v7"></div>
+<div id="grade"></div>
+<div class="cap" id="cap"></div>
+<div id="flash"></div>
+<div id="brand">MOMENTIX</div>
+</div>
+<script>
+const CU=__CUES__;
+const S=id=>CU.find(c=>c.id===id).s, E=id=>CU.find(c=>c.id===id).e;
+const END=E('b1')+1.1;
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ss=(a,b,x)=>{const k=cl((x-a)/(b-a));return k*k*(3-2*k)};
+const ease=k=>1-Math.pow(1-cl(k),3);
+const back=k=>{k=cl(k);const c=1.9;return 1+(c+1)*Math.pow(k-1,3)+c*Math.pow(k-1,2)};
+const pr=(t,a,d)=>cl((t-a)/d);
+// scene windows [start,end]
+const W={s1:[0,S('p1')-0.05],s2:[S('p1')-0.05,S('p2')-0.1],s3:[S('p2')-0.1,S('t1')-0.1],s4:[S('t1')-0.1,S('w1')-0.15],s5:[S('w1')-0.15,S('s1')-0.15],s6:[S('s1')-0.15,S('b1')-0.2],s7:[S('b1')-0.2,END]};
+const XF=0.18;
+// samosa x/y in image px (row of 9 + clone)
+const SAM=[[145,946],[251,968],[360,1000],[459,1032],[563,1075],[676,1127],[810,1183],[936,1241],[1080,1307]];
+const GONE=[5,6,7,8]; // indices crossed (5 of 10 incl. clone)
+$('xs').innerHTML=GONE.map((i,k)=>`<div id="dim${k}" style="position:absolute;left:${SAM[i][0]-70}px;top:${SAM[i][1]-90}px;width:140px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(20,8,0,.75),rgba(20,8,0,0) 70%);opacity:0"></div><div class="puff" id="pf${k}" style="left:${SAM[i][0]}px;top:${SAM[i][1]-20}px;opacity:0"></div><div class="x" id="x${k}" style="left:${SAM[i][0]}px;top:${SAM[i][1]-20}px;opacity:0"></div>`).join('');
+const T5=[['ALOO ↑',260,1080,'w1',0.25],['TEL ↑',900,1120,'w1',0.75],['GAS ↑',850,560,'w1',1.25],['MEHNAT ↑',430,780,'w1',1.9]];
+$('tags5').innerHTML=T5.map((x,k)=>`<div class="tag" id="t5_${k}" style="left:${x[1]}px;top:${x[2]}px;background:#e0262f;transform:translate(-50%,-50%)">${x[0]}</div>`).join('');
+const fmt=n=>'₹'+Math.round(n);
+function frameSrc(clip,t,dur,n){const f=Math.min(n,Math.max(1,1+Math.floor(t*30*(150/ (dur*30)))));return `${clip}/${String(f).padStart(4,'0')}.jpg`}
+let last={};
+function setImg(el,src){if(last[el]!==src){$(el).src=src;last[el]=src}}
+function tug(t){
+  const a=W.s6[0], k=pr(t,a+0.3,W.s6[1]-a-0.6);
+  const shift=-30+ 200*ease(k);           // rope slides toward mehngai (right)
+  const g=1+0.1*Math.sin(t*9)*(k<1?1:0);
+  const noteW=360*(1-0.35*ease(k)), noteH=170*(1-0.35*ease(k));
+  const bankH=250+40*ease(k), redH=280+260*ease(k);
+  let s='';
+  // ground
+  s+=`<rect x="0" y="1230" width="1080" height="8" fill="#5a3a1c" opacity=".6"/>`;
+  // bank (left)
+  s+=`<g transform="translate(170 ${1230-bankH})"><path d="M-130 70 L0 0 L130 70 Z" fill="#e8dcc0"/><rect x="-120" y="70" width="240" height="${bankH-70}" fill="#d9ccae"/>`+[0,1,2,3].map(i=>`<rect x="${-100+i*58}" y="90" width="24" height="${bankH-110}" fill="#b8a986"/>`).join('')+`<rect x="-136" y="${bankH-16}" width="272" height="16" fill="#e8dcc0"/></g>`;
+  s+=`<g transform="translate(170 ${1230-bankH-70})"><rect x="-150" y="-62" width="300" height="80" rx="40" fill="#1fa463"/><text x="0" y="-8" font-family="P" font-weight="800" font-size="40" fill="#fff" text-anchor="middle">SAVINGS 3%</text></g>`;
+  // red mehngai tower (right) of stacked price tags
+  const n=Math.round(redH/56);
+  for(let i=0;i<n;i++){const y=1230-56*(i+1);s+=`<g transform="translate(${905+Math.sin(i*1.7)*10} ${y}) rotate(${Math.sin(i*2.3)*6})"><rect x="-90" y="0" width="180" height="50" rx="10" fill="${i%2?'#c51d29':'#e23340'}"/><text x="0" y="36" font-family="P" font-weight="800" font-size="30" fill="#fff" text-anchor="middle">₹ ↑</text></g>`}
+  s+=`<g transform="translate(905 ${1230-56*n-70})"><rect x="-160" y="-62" width="320" height="80" rx="40" fill="#e0262f"/><text x="0" y="-8" font-family="P" font-weight="800" font-size="40" fill="#fff" text-anchor="middle">MEHNGAI 7%</text></g>`;
+  // rope
+  const ry=1000+6*Math.sin(t*7);
+  s+=`<path d="M270 ${ry} Q540 ${ry+40} 800 ${ry}" stroke="#c9a46a" stroke-width="16" fill="none" stroke-linecap="round"/>`;
+  // note in middle, sliding right and shrinking
+  const nx=540+shift;
+  s+=`<g transform="translate(${nx} ${ry+30}) scale(${g})"><rect x="${-noteW/2}" y="${-noteH/2}" width="${noteW}" height="${noteH}" rx="18" fill="#b9a5df" stroke="#3b2470" stroke-width="4"/><text x="0" y="${noteH*0.18}" font-family="P" font-weight="800" font-size="${noteH*0.5}" fill="#3b2470" text-anchor="middle">₹100</text></g>`;
+  // arrows
+  $('tugg').innerHTML=s; const gk=pr(t,S('s3')-0.1,0.25); $('ghat').style.opacity=gk; $('ghat').style.transform=`scale(${back(gk)})`;
+}
+const HI=/(₹\d[\d,]*|\d+%|\d+|inflation|ghat|double|aadhi|mehnge)/gi;
+window.renderAt=function(t){
+  for(const [id,[a,b]] of Object.entries(W)){
+    const o=Math.min(ss(a-XF,a+XF*0.2,t), 1-ss(b-XF*0.2,b+XF,t)); $(id).style.opacity=o; $(id).style.display=o>0?'block':'none';
+  }
+  // S1 samosa clip (5s clip stretched across scene)
+  if(t<W.s1[1]+0.3){const d=W.s1[1]+0.3; setImg('v1',frameSrc('c1',t,d,150));
+    const flip=pr(t,S('h2')-0.05,0.25); $('price').textContent=flip<0.5?'₹10':'₹20';
+    $('price').style.transform=`scaleY(${Math.abs(Math.cos(flip*Math.PI))}) scale(${back(pr(t,0.15,0.4))})`; $('price').style.color=flip<0.5?'#2a1606':'#c0262f';
+    $('v1').style.transform=`scale(${1.04+0.03*Math.sin(t*0.5)})`;}
+  // S2 shop clip
+  if(t>=W.s2[0]-0.3&&t<W.s2[1]+0.3){const lt=t-(W.s2[0]-0.3); setImg('v2',frameSrc('c2',lt,W.s2[1]-W.s2[0]+0.6,150)); $('eq').style.transform=`scale(${back(pr(t,S('p1')+0.1,0.35))})`;}
+  // S3 counter
+  if(t>=W.s3[0]-0.3&&t<W.s3[1]+0.3){const a=W.s3[0];const z=1.0+0.08*pr(t,a,W.s3[1]-a);$('p3').style.transform=`scale(${z})`;
+    const yrs=Math.round(10*ease(pr(t,a+0.1,1.4))); $('cal').innerHTML=`📅 +${yrs} SAAL`; $('cal').style.opacity=1;
+    $('eq2').innerHTML=t<S('p3')?'🥟 ₹10 → <span style="color:#ff5a5f">₹20</span>':`₹100 = <span style="color:#ff5a5f">5</span> 🥟`; $('eq2').style.transform=`scale(${back(pr(t,t<S('p3')?S('p2')+0.9:S('p3'),0.3))})`;
+    GONE.forEach((i,k)=>{const tk=S('p3')+0.15+k*0.32;const q=pr(t,tk,0.25);$('x'+k).style.opacity=q;$('dim'+k).style.opacity=q;$('x'+k).style.transform=`scale(${back(q)})`;$('pf'+k).style.opacity=(q>0&&q<1)?0.9:Math.max(0,0.9-3*(t-tk-0.25));$('pf'+k).style.transform=`scale(${0.6+pr(t,tk,0.5)})`;});}
+  // S4 power bar
+  if(t>=W.s4[0]-0.3&&t<W.s4[1]+0.3){const k=ease(pr(t,S('t2')+0.2,1.6));$('bar').style.width=(100-50*k)+'%';$('pct').textContent=Math.round(100-50*k)+'%';
+    $('note').style.transform=`rotate(${-3+2*Math.sin(t*1.3)}deg) scale(${1-0.04*k})`;
+    const s=pr(t,S('t3')+0.9,0.18);$('infl').style.opacity=s;$('infl').style.transform=`scale(${2.2-1.2*s})`;$('p4').style.transform=`scale(${1.05+0.03*t/20})`;}
+  // S5 ingredients
+  if(t>=W.s5[0]-0.3&&t<W.s5[1]+0.3){const a=W.s5[0];$('p5').style.transform=`scale(${1.12-0.08*pr(t,a,W.s5[1]-a)})`;
+    T5.forEach((x,k)=>{const q=pr(t,S(x[3])+x[4],0.3);const el=$('t5_'+k);el.style.opacity=q;el.style.transform=`translate(-50%,-50%) scale(${back(q)}) translateY(${-6*Math.sin(t*6+k)}px)`;});}
+  if(t>=W.s6[0]-0.3&&t<W.s6[1]+0.3) tug(t);
+  if(t>=W.s7[0]-0.3){const lt=t-(W.s7[0]-0.3); setImg('v7',frameSrc('c3',lt,END-W.s7[0]+0.3,150));}
+  // captions
+  const c=CU.find(x=>t>=x.s-0.05&&t<x.e+0.15); const cap=$('cap');
+  if(!c){cap.style.opacity=0}else{const k=pr(t,c.s-0.05,0.14);cap.style.opacity=k;cap.style.transform=`scale(${0.86+0.14*back(k)})`;
+    if(cap.dataset.id!==c.id){cap.dataset.id=c.id;cap.innerHTML=`<span>${c.w.replace(HI,m=>`<b class="y">${m}</b>`)}<i class="who" style="color:${c.who==='bunty'?'#7dffb4':'#9fb4ff'}">${c.who==='bunty'?'BUNTY':'MOMO'}</i></span>`;}}
+  // flashes on hard beats
+  const fl=[S('h2'),S('t3')+0.9,W.s6[0]+0.2].reduce((a,s)=>a+Math.exp(-Math.pow((t-s)/0.05,2)),0);$('flash').style.opacity=0.28*fl;
+  return true};
+window.renderAt(0);
+</script></body></html>

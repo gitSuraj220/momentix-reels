@@ -10,3 +10,6 @@ projects/*/film/node_modules/
 projects/*/film/out/
 projects/*/audio/*.npy
 projects/*/vo/vo.raw
+projects/*/build/c*/
+projects/*/build/snap_*.jpg
+projects/*/ai/*.png
