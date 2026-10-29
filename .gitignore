@@ -13,3 +13,12 @@ projects/*/vo/vo.raw
 projects/*/build/c*/
 projects/*/build/snap_*.jpg
 projects/*/ai/*.png
+projects/*/build/k*/
+projects/*/build/pk/
+projects/*/build/*.tgz
+projects/*/build/sheet*.jpg
+projects/*/build/final_sheet.jpg
+projects/*/build/cov_s.jpg
+projects/*/build/built.html
+projects/*/ai/*.jpg
+projects/*/vo_js.txt
