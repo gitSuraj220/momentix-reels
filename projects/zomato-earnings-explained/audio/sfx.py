@@ -15,12 +15,12 @@ def bp(x, lo, hi):  # crude band-pass via FFT
 
 def pencil(d=0.7, g=1.0):
     """graphite scratch: band-passed noise, stroke rhythm ~7 Hz"""
-    N = int(d * SR); t = np.arange(N) / SR
-    x = bp(rng.standard_normal(N), 1800, 7500)
+    d = min(d, 0.55); N = int(d * SR); t = np.arange(N) / SR
+    x = bp(rng.standard_normal(N), 2200, 6000)
     strokes = 0.35 + 0.65 * np.abs(np.sin(2 * np.pi * rng.uniform(5.5, 8) * t + rng.uniform(0, 3))) ** 1.5
     e = np.minimum(1, t / .04) * np.minimum(1, (d - t) / .08)
     x = x * strokes * e
-    return x / (np.abs(x).max() + 1e-9) * .22 * g
+    return x / (np.abs(x).max() + 1e-9) * .11 * g
 
 def flip(g=1.0):
     """page turn: soft swoosh + paper crinkle"""
@@ -53,7 +53,7 @@ def bed(d):
     room = bp(rng.standard_normal(N), 100, 1200) * .15
     return (pad * .035 + room * .06) * np.minimum(1, t / 1.5) * np.minimum(1, (d - t) / 1.5)
 
-add(0, bed(END), 1.0)
+# bed removed (Suraj: continuous buzz was irritating)
 # scene starts (page flips)
 W = {'s2': S('c1') - .12, 's3': S('c4') - .18, 's4': S('c7') - .18, 's5': S('c9') - .18, 's6': S('c11') - .18, 's7': S('c15') - .18,
      's8': S('c19') - .18, 's9': S('c21') - .12, 's10': S('c22') - .18, 's11': S('c29') - .18}
