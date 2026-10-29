@@ -1,0 +1,206 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:P;font-weight:800;src:url('../../../engine/fonts/poppins-latin-800-normal.woff2')}
+@font-face{font-family:P;font-weight:700;src:url('../../../engine/fonts/poppins-latin-700-normal.woff2')}
+@font-face{font-family:P;font-weight:800;unicode-range:U+0900-097F,U+20B9;src:url('../../../engine/fonts/poppins-devanagari-800-normal.woff2')}
+html,body{margin:0;background:#000}
+#st{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:P;background:#04060c}
+.sc{position:absolute;inset:0;opacity:0;overflow:hidden}
+.vid{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.plate{position:absolute;left:-67px;top:-115px;width:1215px;height:2150px;transform-origin:50% 50%}
+.cap{position:absolute;left:50px;right:50px;top:1335px;text-align:center}
+.cap span{display:inline-block;background:rgba(6,10,20,.84);border-radius:26px;padding:14px 28px;font-weight:800;font-size:56px;line-height:1.22;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.cap .who{display:block;font-size:24px;letter-spacing:3px;margin-top:8px;font-weight:700;font-style:normal}
+.y{color:#FFD43B}
+.chip{position:absolute;font-weight:800;color:#fff;border-radius:22px;padding:12px 30px;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#vhs{position:absolute;inset:0;pointer-events:none;opacity:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 2px,rgba(0,0,0,0) 2px 6px)}
+#tint{position:absolute;inset:0;pointer-events:none;opacity:0;background:rgba(120,90,40,.35);mix-blend-mode:multiply}
+#grade{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.5) 100%)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#brand{position:absolute;right:46px;top:70px;font-size:28px;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:2px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+</style></head><body><div id="st">
+<div class="sc" id="s1"><img class="vid" id="v1"></div>
+<div class="sc" id="s2"><img class="vid" id="v2"><div class="chip" id="stamp" style="left:190px;top:330px;font-size:86px;background:#fff;color:#c0262f;border:8px solid #c0262f;border-radius:16px">⏪ 14 SAAL PEHLE</div></div>
+<div class="sc" id="s3"><img class="vid" id="v3">
+  <div class="chip" id="note" style="left:70px;top:860px;font-size:40px;background:#ffe873;color:#2a2200;border-radius:8px;transform:rotate(-6deg)">2012 · LAPTOP + TABLET</div>
+  <div class="chip" id="eq" style="left:0;right:0;margin:auto;width:max-content;top:300px;font-size:66px;background:rgba(10,14,30,.88)">🍞 TOASTER + FRIDGE ❄️</div></div>
+<div class="sc" id="s4"><img class="vid" id="v4"><div id="pulse" style="position:absolute;left:640px;top:330px;width:260px;height:260px;margin:-130px 0 0 -130px;border-radius:50%;background:radial-gradient(circle,rgba(255,40,50,.75),rgba(255,40,50,0) 70%)"></div>
+  <div class="chip" id="thak" style="left:0;right:0;margin:auto;width:max-content;top:330px;font-size:72px;background:#e0262f">HAATH THAK GAYA 😩</div></div>
+<div class="sc" id="s5"><div class="plate" id="p5a"><img src="appl_2_fridge.jpg" style="width:100%;height:100%"></div><div class="plate" id="p5b" style="opacity:0"><img src="appl_4_laptop.jpg" style="width:100%;height:100%"></div>
+  <div class="chip" id="tag" style="left:0;right:0;margin:auto;width:max-content;top:300px;font-size:52px;background:rgba(10,14,30,.88);letter-spacing:2px">TOUCHSCREEN MACBOOK PRO</div>
+  <div id="price" style="position:absolute;left:0;right:0;top:400px;text-align:center;font-weight:800;font-size:150px;background:linear-gradient(180deg,#fff6d8,#f2c14e 55%,#b07a1c);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 8px 24px rgba(0,0,0,.8))">₹3,49,900</div></div>
+<div class="sc" id="s6"><img class="vid" id="v6"><div class="chip" id="lakh" style="left:0;right:0;margin:auto;width:max-content;top:1150px;font-size:80px;background:rgba(10,14,30,.88)">₹3.5 LAKH <span class="y">😂</span></div></div>
+<div id="tint"></div><div id="vhs"></div><div id="grade"></div>
+<div class="cap" id="cap"></div><div id="flash"></div><div id="brand">MOMENTIX</div>
+</div>
+<script>
+const CU=[
+ {
+  "id": "b1",
+  "who": "bunty",
+  "w": "Apple ne aaj touchscreen MacBook launch kiya!",
+  "s": 0.12,
+  "e": 2.695
+ },
+ {
+  "id": "m1",
+  "who": "momo",
+  "w": "Wahi Apple…",
+  "s": 2.995,
+  "e": 3.836
+ },
+ {
+  "id": "m2",
+  "who": "momo",
+  "w": "jisne 14 saal pehle Microsoft ka mazaak udaya tha 😂",
+  "s": 3.916,
+  "e": 6.871
+ },
+ {
+  "id": "m3",
+  "who": "momo",
+  "w": "Microsoft ne laptop aur tablet ko ek bana diya,",
+  "s": 7.131,
+  "e": 9.741
+ },
+ {
+  "id": "m4",
+  "who": "momo",
+  "w": "toh Apple ke CEO bole —",
+  "s": 9.801,
+  "e": 11.07
+ },
+ {
+  "id": "m5",
+  "who": "momo",
+  "w": "ye toh aisa hai jaise toaster aur fridge ko jod do.",
+  "s": 11.17,
+  "e": 13.615
+ },
+ {
+  "id": "m6",
+  "who": "momo",
+  "w": "Ban toh jayega…",
+  "s": 13.775,
+  "e": 14.551
+ },
+ {
+  "id": "m7",
+  "who": "momo",
+  "w": "par kisi ko pasand nahi aayega.",
+  "s": 14.651,
+  "e": 15.916
+ },
+ {
+  "id": "m8",
+  "who": "momo",
+  "w": "Usse pehle Steve Jobs bole the —",
+  "s": 16.216,
+  "e": 18.045
+ },
+ {
+  "id": "m9",
+  "who": "momo",
+  "w": "screen ko touch karte karte haath hi thak jaayega.",
+  "s": 18.105,
+  "e": 20.537
+ },
+ {
+  "id": "m10",
+  "who": "momo",
+  "w": "Aur aaj?",
+  "s": 20.837,
+  "e": 21.312
+ },
+ {
+  "id": "m11",
+  "who": "momo",
+  "w": "Apple ne khud wahi toaster-fridge bana diya —",
+  "s": 21.412,
+  "e": 23.566
+ },
+ {
+  "id": "m12",
+  "who": "momo",
+  "w": "touchscreen MacBook Pro…",
+  "s": 23.646,
+  "e": 24.874
+ },
+ {
+  "id": "m13",
+  "who": "momo",
+  "w": "₹3,49,900 se shuru!",
+  "s": 24.994,
+  "e": 27.12
+ },
+ {
+  "id": "b2",
+  "who": "bunty",
+  "w": "Matlab ab toast bhi banega aur thanda bhi rahega?",
+  "s": 27.47,
+  "e": 31.084
+ },
+ {
+  "id": "m14",
+  "who": "momo",
+  "w": "Haan…",
+  "s": 31.384,
+  "e": 31.723
+ },
+ {
+  "id": "m15",
+  "who": "momo",
+  "w": "bas ₹3.5 lakh mein. 😂",
+  "s": 31.803,
+  "e": 33.2
+ }
+];
+const S=id=>CU.find(c=>c.id===id).s, E=id=>CU.find(c=>c.id===id).e;
+const END=E('m15')+0.9;
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ss=(a,b,x)=>{const k=cl((x-a)/(b-a));return k*k*(3-2*k)};
+const back=k=>{k=cl(k);const c=1.9;return 1+(c+1)*Math.pow(k-1,3)+c*Math.pow(k-1,2)};
+const pr=(t,a,d)=>cl((t-a)/d);
+const W={s1:[0,S('m1')-0.1],s2:[S('m1')-0.1,S('m3')-0.1],s3:[S('m3')-0.1,S('m8')-0.15],s4:[S('m8')-0.15,S('m10')-0.1],s5:[S('m10')-0.1,S('b2')-0.15],s6:[S('b2')-0.15,END]};
+const XF=0.16;
+const fr=(clip,f)=>`${clip}/${String(Math.max(1,Math.min(151,f))).padStart(4,'0')}.jpg`;
+let last={};function setImg(el,src){if(last[el]!==src){$(el).src=src;last[el]=src}}
+// play a 5s clip (151 frames) over a window, optionally slower; hold last frame
+function play(el,clip,t,a,speed=1){setImg(el,fr(clip,1+Math.floor((t-a)*30*speed)))}
+const HI=/(₹[\d,.]+(?: lakh)?|\d+ saal|Microsoft|toaster|fridge|thak|khud|MacBook Pro)/gi;
+const HI1=/^(₹[\d,.]+(?: lakh)?|\d+ saal|Microsoft|toaster|fridge|thak|khud|MacBook Pro)$/i;
+window.renderAt=function(t){
+  for(const [id,[a,b]] of Object.entries(W)){const o=Math.min(ss(a-XF,a+XF*0.2,t),1-ss(b-XF*0.2,b+XF,t));$(id).style.opacity=o;$(id).style.display=o>0?'block':'none';}
+  if(t<W.s1[1]+0.3) play('v1','c1',t,0,1.15);
+  // S2: rewind the tap clip fast, VHS look
+  const r2=t>=W.s2[0]-0.2&&t<W.s2[1]+0.2;
+  if(r2){const k=pr(t,W.s2[0],1.0);const f=Math.round(151-150*k);setImg('v2',fr('c1',f));
+    const sk=pr(t,W.s2[0]+0.25,0.3);$('stamp').style.opacity=sk;$('stamp').style.transform=`rotate(-6deg) scale(${2.2-1.2*sk})`;
+    $('v2').style.filter=`sepia(${0.7*pr(t,W.s2[0],0.4)}) contrast(1.1) saturate(.8)`;}
+  const vhsK=(t>=W.s2[0]-0.1&&t<W.s2[1])?(0.9*(1-pr(t,W.s2[0]+1.0,0.6))+0.25):0;
+  $('vhs').style.opacity=r2?vhsK:0; $('vhs').style.transform=`translateY(${(t*900)%6}px)`; $('tint').style.opacity=r2?0.6*vhsK:0;
+  // S3 fridge
+  if(t>=W.s3[0]-0.3&&t<W.s3[1]+0.3){play('v3','c2',t,W.s3[0],0.7);
+    const n=pr(t,S('m3')+0.4,0.3);$('note').style.opacity=n;$('note').style.transform=`rotate(-6deg) scale(${back(n)})`;
+    const q=pr(t,S('m5')+0.9,0.3);$('eq').style.opacity=q*(1-pr(t,S('m6'),0.2));$('eq').style.transform=`scale(${back(q)})`;
+    $('v3').style.filter=`sepia(${0.25*(1-pr(t,W.s3[0],0.8))})`;}
+  // S4 arm
+  if(t>=W.s4[0]-0.3&&t<W.s4[1]+0.3){play('v4','c3',t,W.s4[0],1.1);
+    const p=pr(t,S('m9')+0.6,0.2);$('pulse').style.opacity=p*(0.55+0.45*Math.sin(t*12));$('pulse').style.transform=`scale(${0.8+0.3*Math.sin(t*12)})`;
+    const k=pr(t,S('m9')+1.2,0.3);$('thak').style.opacity=k;$('thak').style.transform=`scale(${back(k)}) rotate(${-2*Math.sin(t*9)*k}deg)`;}
+  // S5 morph fridge -> laptop, price
+  if(t>=W.s5[0]-0.3&&t<W.s5[1]+0.3){const a=W.s5[0];const mk=pr(t,S('m11')+1.4,0.35);
+    $('p5a').style.opacity=1-mk;$('p5b').style.opacity=mk;
+    $('p5a').style.transform=`scale(${1.0+0.12*pr(t,a,S('m11')+1.75-a)}) rotate(${4*mk}deg)`;$('p5b').style.transform=`scale(${1.12-0.08*pr(t,S('m11')+1.4,2.5)})`;
+    const tg=pr(t,S('m12'),0.3);$('tag').style.opacity=tg;$('tag').style.transform=`scale(${back(tg)})`;
+    const pk=pr(t,S('m13'),0.16);$('price').style.opacity=pk;$('price').style.transform=`scale(${2.3-1.3*pk})`;}
+  // S6 ending
+  if(t>=W.s6[0]-0.3){play('v6','c4',t,W.s6[0]-0.3,0.95);const l=pr(t,S('m15')+0.15,0.3);$('lakh').style.opacity=l;$('lakh').style.transform=`scale(${back(l)})`;}
+  // captions (hide during rewind stamp moment is fine)
+  const c=CU.find(x=>t>=x.s-0.05&&t<x.e+0.15);const cap=$('cap');
+  if(!c){cap.style.opacity=0}else{const k=pr(t,c.s-0.05,0.14);cap.style.opacity=k;cap.style.transform=`scale(${0.86+0.14*back(k)})`;
+    if(cap.dataset.id!==c.id){cap.dataset.id=c.id;const parts=c.w.split(HI).filter(p=>p);cap.innerHTML=`<span>${parts.map(p=>HI1.test(p)?`<b class="y">${p}</b>`:p).join('')}<i class="who" style="color:${c.who==='bunty'?'#7dffb4':'#9fb4ff'}">${c.who==='bunty'?'BUNTY':'MOMO'}</i></span>`;}}
+  const fl=[W.s2[0]+0.25,S('m11')+1.55,S('m13')].reduce((a,s)=>a+Math.exp(-Math.pow((t-s)/0.05,2)),0);$('flash').style.opacity=0.35*fl;
+  return true};
+window.renderAt(0);
+</script></body></html>
