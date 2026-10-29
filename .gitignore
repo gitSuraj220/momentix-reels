@@ -22,3 +22,5 @@ projects/*/build/cov_s.jpg
 projects/*/build/built.html
 projects/*/ai/*.jpg
 projects/*/vo_js.txt
+projects/*/ai/*.mp4
+projects/*/vo/s_*.mp3
