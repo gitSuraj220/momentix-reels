@@ -1,0 +1,292 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Se;font-weight:700;src:url('fonts/noto-serif-latin-700-normal.woff2')}
+@font-face{font-family:Se;font-weight:700;unicode-range:U+0100-024F,U+20A0-20CF;src:url('fonts/noto-serif-latin-ext-700-normal.woff2')}
+@font-face{font-family:Se;font-weight:700;font-style:italic;src:url('fonts/noto-serif-latin-700-italic.woff2')}
+@font-face{font-family:Se;font-weight:700;font-style:italic;unicode-range:U+0100-024F,U+20A0-20CF;src:url('fonts/noto-serif-latin-ext-700-italic.woff2')}
+@font-face{font-family:Se;font-weight:400;src:url('fonts/noto-serif-latin-400-normal.woff2')}
+@font-face{font-family:Se;font-weight:400;unicode-range:U+0100-024F,U+20A0-20CF;src:url('fonts/noto-serif-latin-ext-400-normal.woff2')}
+@font-face{font-family:Ka;font-weight:700;src:url('fonts/kalam-latin-700-normal.woff2')}
+@font-face{font-family:Ka;font-weight:700;unicode-range:U+0100-024F,U+20A0-20CF;src:url('fonts/kalam-latin-ext-700-normal.woff2')}
+@font-face{font-family:Ka;font-weight:400;src:url('fonts/kalam-latin-400-normal.woff2')}
+@font-face{font-family:Ka;font-weight:400;unicode-range:U+0100-024F,U+20A0-20CF;src:url('fonts/kalam-latin-ext-400-normal.woff2')}
+@font-face{font-family:Po;font-weight:700;src:url('fonts/poppins-latin-700-normal.woff2')}
+@font-face{font-family:Po;font-weight:700;unicode-range:U+20B9;src:url('fonts/poppins-devanagari-700-normal.woff2')}
+@font-face{font-family:Po;font-weight:500;src:url('fonts/poppins-latin-500-normal.woff2')}
+:root{--paper:#F2EEE5;--ink:#23211D;--mute:#7F796E;--teal:#1F8A92;--red:#A3222B;--mus:#D6A11E}
+html,body{margin:0;background:#000}
+#st{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--paper);font-family:Se;color:var(--ink)}
+#rules{position:absolute;inset:0;background:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 63px,rgba(90,110,130,.10) 63px 64px)}
+#grain{position:absolute;inset:0;opacity:.35;mix-blend-mode:multiply}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(0,0,0,0) 60%,rgba(60,45,20,.16) 100%);pointer-events:none}
+.sc{position:absolute;inset:0;opacity:0;display:none}
+.plate{position:absolute;left:-67px;width:1215px;height:2160px;mix-blend-mode:multiply;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 260px);transform-origin:50% 60%}
+.plate img{width:100%;height:100%;display:block;filter:contrast(1.04)}
+.h1{position:absolute;left:70px;right:70px;font-weight:700;font-size:96px;line-height:1.08;letter-spacing:-1px}
+.lab{position:absolute;font-family:Po;font-weight:700;font-size:34px;color:var(--mute);letter-spacing:.5px}
+.hand{position:absolute;font-family:Ka;font-weight:700;white-space:nowrap}
+.src{position:absolute;left:70px;right:70px;font-family:Po;font-weight:500;font-size:25px;color:var(--mute)}
+.num{position:absolute;font-weight:700;white-space:nowrap}
+.red{color:var(--red)}.teal{color:var(--teal)}
+i.red{font-style:italic}
+#tag{position:absolute;left:66px;top:108px;background:var(--mus);color:#2b2107;font-family:Se;font-style:italic;font-weight:700;font-size:34px;padding:4px 22px 6px;transform:skewX(-8deg)}
+#brand{position:absolute;right:62px;top:112px;font-family:Po;font-weight:700;font-size:26px;letter-spacing:4px;color:rgba(35,33,29,.45)}
+#cap{position:absolute;left:60px;right:60px;top:1440px;text-align:center}
+#cap span{display:inline-block;background:rgba(242,238,229,.94);border:3px solid rgba(35,33,29,.85);border-radius:18px;padding:12px 30px 14px;font-family:Po;font-weight:700;font-size:46px;line-height:1.25;color:var(--ink);box-shadow:6px 7px 0 rgba(35,33,29,.85)}
+#cap b{color:var(--teal)}#cap em{color:var(--red);font-style:normal}
+svg.ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+</style></head><body><div id="st">
+<div id="rules"></div>
+<svg id="grain" width="1080" height="1920"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .55 0"/></filter><rect width="1080" height="1920" filter="url(#gn)"/></svg>
+
+<!-- S1 hook: rider -->
+<div class="sc" id="s1">
+  <div class="plate" id="p1" style="top:330px"><img id="v1"></div>
+  <div class="h1" id="t1" style="top:200px;font-size:104px">Zomato ki kamai,<br><i class="red">samjho.</i></div>
+  <div class="lab" id="t1b" style="left:72px;top:450px">JUL–SEP 2026 · SIRF 3 MAHINE</div>
+  <div class="hand teal" id="t1c" style="left:70px;top:505px;font-size:66px">₹24,138 crore kamaaye</div>
+  <svg class="ov" id="o1"></svg>
+</div>
+
+<!-- S2 per 100 -->
+<div class="sc" id="s2">
+  <div class="h1" id="t2a" style="top:230px;text-align:center;font-size:130px"><i class="red">Profit?</i></div>
+  <div class="h1" id="t2b" style="top:230px;text-align:center">Har ₹100 ki kamai mein…</div>
+  <svg class="ov" id="o2"></svg>
+  <div class="num" id="note" style="left:0;right:0;top:760px;text-align:center;font-size:170px">₹100</div>
+  <div class="hand" id="sirf" style="left:0;right:0;top:640px;text-align:center;font-size:60px;color:var(--mute)">profit sirf</div>
+  <div class="num red" id="paise" style="left:0;right:0;top:960px;text-align:center;font-size:190px;font-style:italic">52 paise</div>
+  <div class="src" id="s2src" style="top:1300px;text-align:center">Net profit ₹125 cr ÷ revenue ₹24,138 cr</div>
+</div>
+
+<!-- S3 revenue bars -->
+<div class="sc" id="s3">
+  <div class="lab" style="left:72px;top:215px">KAMAI, TEEN MAHINE</div>
+  <div class="num" id="big3" style="left:68px;top:255px;font-size:124px">₹13,590 crore</div>
+  <svg class="ov" id="o3"></svg>
+  <div class="num" id="v3a" style="left:170px;width:300px;text-align:center;font-size:52px">₹13,590 cr</div>
+  <div class="num teal" id="v3b" style="left:610px;width:300px;text-align:center;font-size:52px">₹24,138 cr</div>
+  <div class="hand teal" id="pct3" style="left:600px;width:320px;text-align:center;font-size:84px">+78%</div>
+  <div class="hand" style="left:170px;width:300px;text-align:center;top:1268px;font-size:42px;color:var(--mute)">saal bhar pehle</div>
+  <div class="hand teal" style="left:610px;width:300px;text-align:center;top:1268px;font-size:42px">Jul–Sep 2026</div>
+  <div class="src" style="top:1352px">Revenue from operations, Q2 FY26 vs Q2 FY27 · Eternal results, 21 Oct 2026</div>
+</div>
+
+<!-- S4a kitchen -> store -->
+<div class="sc" id="s4">
+  <div class="plate" id="p4a" style="top:-110px"><img src="zom_3_kitchen.jpg"></div>
+  <div class="plate" id="p4b" style="top:-110px;opacity:0"><img id="v4"></div>
+  <div class="h1" id="t4a" style="top:200px">Sabse bada<br><i class="red">surprise…</i></div>
+  <div class="h1" id="t4b" style="top:200px;opacity:0"><span class="teal">Blinkit</span> ab<br>khaane se <i class="red">bada</i></div>
+</div>
+
+<!-- S4b order bars -->
+<div class="sc" id="s5">
+  <div class="lab" style="left:72px;top:215px">3 MAHINE KE ORDER</div>
+  <div class="h1" style="top:255px;font-size:90px"><span class="teal">Saamaan</span> &gt; khaana</div>
+  <svg class="ov" id="o5"></svg>
+  <div class="num teal" id="v5a" style="left:170px;width:300px;text-align:center;font-size:52px">₹20,940 cr</div>
+  <div class="num" id="v5b" style="left:610px;width:300px;text-align:center;font-size:52px">₹11,445 cr</div>
+  <div class="hand teal" style="left:170px;width:300px;text-align:center;top:1268px;font-size:42px">Blinkit</div>
+  <div class="hand" style="left:610px;width:300px;text-align:center;top:1268px;font-size:42px;color:var(--mute)">Khaana delivery</div>
+  <div class="hand teal" id="st5" style="left:560px;top:560px;font-size:46px;transform:rotate(-4deg)">+308 naye store!</div>
+  <div class="src" style="top:1352px">Order value (NOV), Q2 FY27 · Blinkit 2,751 stores · Eternal shareholder letter</div>
+</div>
+
+<!-- S5 per 100 cost box -->
+<div class="sc" id="s6">
+  <div class="h1" style="top:200px;font-size:92px"><span id="t6a" style="display:inline-block">₹100 aaye…</span><br><span id="t6b" class="red" style="display:inline-block"><i>₹100.12</i> gaye</span></div>
+  <svg class="ov" id="o6"></svg>
+  <div class="hand teal" id="l6a" style="left:70px;top:820px;font-size:46px;text-align:right;width:290px;line-height:1.1">₹100<br><span style="font-size:34px">kamai</span></div>
+  <div class="hand red" id="l6b" style="left:720px;top:900px;font-size:46px;line-height:1.1">₹100.12<br><span style="font-size:34px">kharcha</span></div>
+  <div class="hand red" id="l6c" style="left:700px;top:520px;font-size:40px">+12 paise zyada ↑</div>
+  <div class="hand red" id="l6d" style="left:0;right:0;text-align:center;top:1275px;font-size:56px">₹28 crore zyada uda diye</div>
+  <div class="src" style="top:1365px;text-align:center">Revenue ₹24,138 cr · Total expenses ₹24,166 cr</div>
+</div>
+
+<!-- S6 vault -->
+<div class="sc" id="s7">
+  <div class="plate" id="p7" style="top:-60px"><img src="zom_4_vault.jpg"></div>
+  <div class="h1" id="t7" style="top:200px;font-size:88px">Toh profit aaya<br><i class="red">kahaan se?</i></div>
+  <div class="hand" id="x7" style="left:72px;top:415px;font-size:44px;color:var(--mute)">khaana bech ke? <span class="red">✗</span> &nbsp; saamaan bech ke? <span class="red">✗</span></div>
+  <div class="hand teal" id="c7" style="left:72px;top:490px;font-size:50px">₹16,475 cr cash → byaaj jaisi kamai</div>
+  <div class="hand" id="d7" style="left:72px;top:560px;font-size:58px;background:var(--teal);color:#fff;padding:2px 26px 6px;border-radius:10px;transform:rotate(-2deg)">= ₹125 cr profit</div>
+</div>
+
+<!-- S7a expectation -->
+<div class="sc" id="s8">
+  <div class="lab" style="left:72px;top:215px">PROFIT, JUL–SEP 2026</div>
+  <div class="h1" style="top:255px;font-size:90px">Umeed vs <i class="red">asli</i></div>
+  <svg class="ov" id="o8"></svg>
+  <div class="num" id="v8a" style="left:170px;width:300px;text-align:center;font-size:52px;color:var(--mute)">≈ ₹250 cr</div>
+  <div class="num teal" id="v8b" style="left:610px;width:300px;text-align:center;font-size:52px">₹125 cr</div>
+  <div class="hand red" id="h8" style="left:700px;top:880px;font-size:64px;transform:rotate(-5deg)">sirf aadha!</div>
+  <div class="hand" style="left:170px;width:300px;text-align:center;top:1268px;font-size:42px;color:var(--mute)">market ki umeed</div>
+  <div class="hand teal" style="left:610px;width:300px;text-align:center;top:1268px;font-size:42px">asli profit</div>
+  <div class="src" style="top:1352px">Estimates: CNBC-TV18 ₹250 cr, Reuters avg ₹271 cr</div>
+</div>
+
+<!-- S7b stock -->
+<div class="sc" id="s9">
+  <div class="plate" id="p9" style="top:-150px"><img src="zom_5_stock.jpg"></div>
+  <div class="h1" style="top:200px">Share <i class="red">↓ 3.5%</i></div>
+  <div class="lab" style="left:72px;top:330px">RESULTS KE DIN · 21 OCT 2026</div>
+</div>
+
+<!-- S8 not fail -->
+<div class="sc" id="s10">
+  <div class="h1" id="t10" style="top:200px;font-size:92px">Toh kya Zomato<br><i class="red">fail?</i></div>
+  <svg class="ov" id="o10"></svg>
+  <div class="hand red" id="nahi" style="left:0;right:0;text-align:center;top:660px;font-size:230px">Nahi.</div>
+  <div class="h1" id="t10b" style="top:200px;font-size:88px;opacity:0">Jaan-boojh ke<br><i class="teal">kharcha</i></div>
+  <div class="hand teal" id="st10" style="left:72px;top:940px;font-size:46px">2,751 store · is quarter +308</div>
+  <div class="hand red" id="ad10" style="left:470px;top:1110px;font-size:60px">Ads: ₹1,138 cr</div>
+  <div class="hand" id="aa" style="left:0;right:0;text-align:center;top:560px;font-size:120px">Pehle aadat</div>
+  <div class="hand teal" id="kk" style="left:0;right:0;text-align:center;top:930px;font-size:130px">phir kamai</div>
+</div>
+
+<!-- S9 door ending -->
+<div class="sc" id="s11">
+  <div class="plate" id="p11" style="top:-90px"><img src="zom_6_door.jpg"></div>
+  <div class="h1" id="t11" style="top:200px;font-size:86px">Agli baar<br><i class="teal">10 min</i> delivery…</div>
+  <div class="hand red" id="t11b" style="left:72px;top:440px;font-size:56px">kharcha abhi company ka 😉</div>
+  <div class="src" id="end11" style="top:530px;left:72px;text-align:left">Sirf jaankari ke liye · Source: Eternal Q2 FY27 results, 21 Oct 2026</div>
+</div>
+
+<div id="vig"></div>
+<div id="tag">1 minute mein</div><div id="brand">MOMENTIX</div>
+<div id="cap"></div>
+</div>
+<script src="rough.js"></script>
+<script>
+const CU=__CUES__;
+const S=id=>CU.find(c=>c.id===id).s, E=id=>CU.find(c=>c.id===id).e;
+const END=E('c31')+1.6;
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ss=(a,b,x)=>{const k=cl((x-a)/(b-a));return k*k*(3-2*k)};
+const back=k=>{k=cl(k);const c=1.7;return 1+(c+1)*Math.pow(k-1,3)+c*Math.pow(k-1,2)};
+const eo=k=>1-Math.pow(1-cl(k),3);
+const pr=(t,a,d)=>cl((t-a)/d);
+const inr=n=>Math.round(n).toLocaleString('en-IN');
+const NS='http://www.w3.org/2000/svg';
+const INK='#23211D',TEAL='#1F8A92',RED='#A3222B',MUTE='#8B857A';
+// ---------- scene windows ----------
+const W={s1:[0,S('c1')-0.12],s2:[S('c1')-0.12,S('c4')-0.18],s3:[S('c4')-0.18,S('c7')-0.18],s4:[S('c7')-0.18,S('c9')-0.18],
+ s5:[S('c9')-0.18,S('c11')-0.18],s6:[S('c11')-0.18,S('c15')-0.18],s7:[S('c15')-0.18,S('c19')-0.18],s8:[S('c19')-0.18,S('c21')-0.12],
+ s9:[S('c21')-0.12,S('c22')-0.18],s10:[S('c22')-0.18,S('c29')-0.18],s11:[S('c29')-0.18,END+1]};
+const XF=0.2;
+// ---------- rough drawings (seeded, built once) ----------
+let seed=11;
+function rs(svg){return rough.svg(svg)}
+function add(svg,node,id){if(id)node.id=id;svg.appendChild(node);return node}
+function clipRect(svg,id){const d=document.createElementNS(NS,'defs');const cp=document.createElementNS(NS,'clipPath');cp.id=id;const r=document.createElementNS(NS,'rect');cp.appendChild(r);d.appendChild(cp);svg.appendChild(d);return r}
+function bar(svg,x,base,w,h,col,id,opt={}){
+  const rc=rs(svg);const g=document.createElementNS(NS,'g');
+  const n=rc.rectangle(x,base-h,w,h,Object.assign({seed:seed++,roughness:1.3,bowing:1.2,stroke:opt.stroke||INK,strokeWidth:2.6,fill:col,fillStyle:opt.fillStyle||'hachure',hachureGap:opt.gap||11,fillWeight:2.2,hachureAngle:-41},opt.ro||{}));
+  g.appendChild(n);const r=clipRect(svg,id+'c');g.setAttribute('clip-path',`url(#${id}c)`);
+  r.setAttribute('x',x-20);r.setAttribute('width',w+40);r.dataset.base=base+10;r.dataset.h=h+20;
+  add(svg,g,id);return r}
+function grow(r,k){const h=+r.dataset.h*eo(k);r.setAttribute('y',+r.dataset.base-h);r.setAttribute('height',Math.max(0,h))}
+function line(svg,x1,y1,x2,y2,col,id,o={}){const rc=rs(svg);const n=rc.line(x1,y1,x2,y2,Object.assign({seed:seed++,roughness:1.2,stroke:col,strokeWidth:o.w||3},o));if(o.dash)n.querySelectorAll('path').forEach(p=>p.setAttribute('stroke-dasharray',o.dash));return add(svg,n,id)}
+function drawOn(node,k){node.querySelectorAll('path').forEach(p=>{if(!p.dataset.L){p.dataset.L=p.getTotalLength();}const L=+p.dataset.L;if(!p.dataset.dash){p.style.strokeDasharray=L;}p.style.strokeDashoffset=L*(1-cl(k))})}
+// S1 underline
+const o1=$('o1');const u1=line(o1,72,595,700,588,TEAL,'u1',{w:5});
+// S2 ₹100 note
+const o2=$('o2');{const rc=rs(o2);const g=document.createElementNS(NS,'g');g.id='noteg';
+ g.appendChild(rc.rectangle(190,700,700,330,{seed:seed++,roughness:1.4,stroke:INK,strokeWidth:3,fill:'#9DBFA8',fillStyle:'hachure',hachureGap:14,fillWeight:1.6}));
+ g.appendChild(rc.circle(300,865,110,{seed:seed++,roughness:1.2,stroke:INK,strokeWidth:2}));g.appendChild(rc.circle(780,865,110,{seed:seed++,roughness:1.2,stroke:INK,strokeWidth:2}));
+ o2.appendChild(g);
+ const c=document.createElementNS(NS,'g');c.id='coin';c.appendChild(rc.circle(540,860,150,{seed:seed++,roughness:1.1,stroke:RED,strokeWidth:4,fill:'#E9B4A8',fillStyle:'cross-hatch',hachureGap:10}));o2.appendChild(c);}
+// S3 bars
+const o3=$('o3');line(o3,110,1250,970,1252,INK,null,{w:3});
+const B3a=bar(o3,190,1250,260,338,'#8E8A82','b3a',{gap:12}),B3b=bar(o3,630,1250,260,600,TEAL,'b3b');
+// S5 bars
+const o5=$('o5');line(o5,110,1250,970,1252,INK,null,{w:3});
+const B5a=bar(o5,190,1250,260,600,TEAL,'b5a'),B5b=bar(o5,630,1250,260,328,'#8E8A82','b5b',{gap:12});
+// S6 box
+const o6=$('o6');{const rc=rs(o6);add(o6,rc.rectangle(390,600,300,640,{seed:seed++,roughness:1.3,stroke:INK,strokeWidth:3}),'box6');}
+const B6=bar(o6,390,1240,300,640,RED,'b6',{gap:10,stroke:'none'});const B6o=bar(o6,390,600,300,34,RED,'b6o',{gap:6,fillStyle:'solid',stroke:RED});
+// S8 expectation
+const o8=$('o8');line(o8,110,1250,970,1252,INK,null,{w:3});
+const B8a=bar(o8,190,1250,260,600,'none','b8a',{ro:{strokeLineDash:[14,10]}}),B8b=bar(o8,630,1250,260,300,TEAL,'b8b');
+const L8=line(o8,140,650,950,650,RED,'l8',{w:3,dash:'18 12'});
+// S10 circle around Nahi + store icons + megaphone + arrow
+const o10=$('o10');{const rc=rs(o10);add(o10,rc.ellipse(540,800,620,330,{seed:seed++,roughness:1.6,stroke:RED,strokeWidth:5}),'ring');
+ const sg=document.createElementNS(NS,'g');sg.id='stores';o10.appendChild(sg);
+ for(let r=0;r<4;r++)for(let c=0;c<8;c++){const x=110+c*112,y=520+r*100;const g=document.createElementNS(NS,'g');g.classList.add('sti');
+  g.appendChild(rc.polygon([[x,y+30],[x+40,y],[x+80,y+30],[x+80,y+80],[x,y+80]],{seed:seed++,roughness:1.1,stroke:INK,strokeWidth:2,fill:(r*8+c)%4==1?TEAL:'#B9B3A6',fillStyle:'hachure',hachureGap:7,fillWeight:1.4}));sg.appendChild(g);}
+ const mg=document.createElementNS(NS,'g');mg.id='mega';mg.appendChild(rc.polygon([[300,1120],[400,1080],[400,1220],[300,1180]],{seed:seed++,stroke:INK,strokeWidth:3,fill:RED,fillStyle:'hachure',hachureGap:8}));mg.appendChild(rc.rectangle(260,1120,40,60,{seed:seed++,stroke:INK,strokeWidth:3}));
+ mg.appendChild(rc.line(420,1110,455,1090,{seed:seed++,stroke:RED,strokeWidth:4}));mg.appendChild(rc.line(425,1150,465,1150,{seed:seed++,stroke:RED,strokeWidth:4}));mg.appendChild(rc.line(420,1190,455,1210,{seed:seed++,stroke:RED,strokeWidth:4}));o10.appendChild(mg);
+ add(o10,rc.line(540,740,540,900,{seed:seed++,stroke:INK,strokeWidth:5}),'arr1');add(o10,rc.linearPath([[505,860],[540,905],[575,860]],{seed:seed++,stroke:INK,strokeWidth:5}),'arr2');}
+// S11 underline
+// ---------- frames ----------
+const fr=(d,f)=>`${d}/${String(Math.max(1,Math.min(151,f))).padStart(4,'0')}.jpg`;
+let last={};function setImg(el,src){if(last[el]!==src){$(el).src=src;last[el]=src}}
+function vis(id,k,dy=26){const e=$(id);e.style.opacity=cl(k);e.style.transform=`translateY(${(1-eo(k))*dy}px)`}
+function popE(id,k,rot=0){const e=$(id);e.style.opacity=cl(k*1.4);e.style.transform=`scale(${back(k)}) rotate(${rot}deg)`}
+function wipe(id,k){const e=$(id);e.style.clipPath=`inset(-20px ${100-100*eo(k)}% -20px -20px)`;e.style.opacity=k>0?1:0}
+const HI=/(₹[\d,.]+(?: crore| cr)?|\d+(?:\.\d+)?%|52 paise|\d+ minute)/g;
+const RD=/(zyada|gir gaya|Nahi\.|fail\?|uda diya)/g;
+window.renderAt=function(t){
+  for(const [id,[a,b]] of Object.entries(W)){const o=Math.min(ss(a,a+XF,t),1-ss(b-XF,b,t));const e=$(id);e.style.opacity=o;e.style.display=o>0.001?'block':'none';}
+  // S1
+  if(t<W.s1[1]+.4){setImg('v1',fr('k1',1+Math.floor(t*30*0.95)));$('p1').style.transform=`scale(${1+0.025*t/4})`;
+    wipe('t1',pr(t,0.1,0.7));vis('t1b',pr(t,0.6,0.4));wipe('t1c',pr(t,S('c0')+1.6,0.7));drawOn($('u1'),pr(t,S('c0')+2.2,0.5));}
+  // S2
+  if(t>W.s2[0]-.4&&t<W.s2[1]+.4){const a=S('c1'),b=S('c2'),c=S('c3');
+    popE('t2a',pr(t,a-0.05,0.3));$('t2a').style.opacity=cl(pr(t,a-0.05,0.2))*(1-pr(t,b-0.15,0.15));
+    wipe('t2b',pr(t,b-0.1,0.6));
+    const nk=pr(t,b,0.35), sh=eo(pr(t,c-0.1,0.45));
+    $('noteg').style.opacity=cl(nk)*(1-sh);$('noteg').style.transformOrigin='540px 865px';$('noteg').style.transform=`scale(${(0.85+0.15*back(nk))*(1-0.85*sh)})`;
+    $('note').style.opacity=cl(nk)*(1-sh);$('note').style.transform=`scale(${1-0.85*sh})`;
+    const ck=pr(t,c+0.15,0.4);$('coin').style.opacity=cl(ck*1.5);$('coin').style.transformOrigin='540px 860px';$('coin').style.transform=`scale(${back(ck)})`;
+    vis('sirf',pr(t,c,0.3));popE('paise',pr(t,c+0.25,0.4));$('paise').style.top='1010px';vis('s2src',pr(t,c+0.6,0.4));
+    $('coin').querySelector('path')&&0;}
+  // S3
+  if(t>W.s3[0]-.4&&t<W.s3[1]+.4){const a=S('c4'),b=S('c5'),c=S('c6');
+    const ga=pr(t,a+0.3,1.0),gb=pr(t,b-0.1,1.3);grow(B3a,ga);grow(B3b,gb);
+    $('v3a').style.top=(1250-338*eo(ga)-75)+'px';$('v3a').style.opacity=cl(ga*2);
+    $('v3b').style.top=(1250-600*eo(gb)-75)+'px';$('v3b').style.opacity=cl(gb*2);
+    $('big3').textContent='₹'+inr(13590+(24138-13590)*eo(gb))+' crore';$('big3').style.color=gb>0.98?'#1F8A92':'#23211D';
+    popE('pct3',pr(t,c,0.35),-4);$('pct3').style.top='450px';}
+  // S4 kitchen -> store
+  if(t>W.s4[0]-.4&&t<W.s4[1]+.4){const a=W.s4[0],b=S('c8');
+    $('p4a').style.transform=`scale(${1+0.03*pr(t,a,4)})`;wipe('t4a',pr(t,a+0.15,0.6));
+    const x=ss(b-0.25,b+0.15,t);$('p4b').style.opacity=x;$('p4a').style.opacity=1-x;$('t4a').style.opacity=1-x;
+    setImg('v4',fr('k2',1+Math.max(0,Math.floor((t-b+0.25)*30))));wipe('t4b',pr(t,b,0.6));}
+  // S5 bars
+  if(t>W.s5[0]-.4&&t<W.s5[1]+.4){const a=S('c9'),b=S('c10');const ga=pr(t,a+0.4,1.2),gb=pr(t,b+0.3,1.1);grow(B5a,ga);grow(B5b,gb);
+    $('v5a').style.top=(1250-600*eo(ga)-75)+'px';$('v5a').style.opacity=cl(ga*2);$('v5b').style.top=(1250-328*eo(gb)-75)+'px';$('v5b').style.opacity=cl(gb*2);
+    popE('st5',pr(t,a+1.8,0.35),-4);$('st5').style.left='120px';$('st5').style.top='450px';}
+  // S6 cost box
+  if(t>W.s6[0]-.4&&t<W.s6[1]+.4){const a=S('c11'),b=S('c12'),c=S('c13'),d=S('c14');
+    wipe('t6a',pr(t,a-0.05,0.5));wipe('t6b',pr(t,b,0.6));vis('l6a',pr(t,a+0.2,0.4));
+    const g=pr(t,b+0.1,1.6);grow(B6,g);const go=pr(t,c,0.5);grow(B6o,go);vis('l6b',pr(t,b+0.6,0.4));popE('l6c',pr(t,c+0.3,0.35),-3);popE('l6d',pr(t,d+0.1,0.35),-2);}
+  // S7 vault
+  if(t>W.s7[0]-.4&&t<W.s7[1]+.4){const a=S('c15'),b=S('c16'),c=S('c17'),d=S('c18');
+    $('p7').style.transform=`scale(${1+0.05*pr(t,a,8)})`;wipe('t7',pr(t,a-0.05,0.6));wipe('x7',pr(t,b,1.2));wipe('c7',pr(t,c+0.3,1.2));popE('d7',pr(t,d,0.35),-2);}
+  // S8 expectation
+  if(t>W.s8[0]-.4&&t<W.s8[1]+.4){const a=S('c19'),b=S('c20');const ga=pr(t,a+0.1,0.8);grow(B8a,ga);$('v8a').style.top=(1250-600*eo(ga)-75)+'px';$('v8a').style.opacity=cl(ga*2);
+    $('l8').style.opacity=pr(t,a+0.8,0.4);const gb=pr(t,b-0.15,0.6);grow(B8b,gb);$('v8b').style.top=(1250-300*eo(gb)-75)+'px';$('v8b').style.opacity=cl(gb*2);popE('h8',pr(t,b+0.2,0.35),-5);$('h8').style.left='560px';$('h8').style.top='760px';}
+  // S9 stock
+  if(t>W.s9[0]-.4&&t<W.s9[1]+.4){$('p9').style.transform=`scale(${1.0+0.05*pr(t,W.s9[0],3)}) translateY(${-10*pr(t,W.s9[0],3)}px)`;}
+  // S10
+  if(t>W.s10[0]-.4&&t<W.s10[1]+.4){const a=S('c22'),b=S('c23'),c=S('c24'),d=S('c26'),e=S('c27'),f=S('c28');
+    const out1=1-pr(t,c-0.2,0.25);wipe('t10',pr(t,a-0.05,0.6));$('t10').style.opacity=out1;
+    popE('nahi',pr(t,b-0.05,0.3),-6);$('nahi').style.opacity=cl(pr(t,b-0.05,0.2))*out1;drawOn($('ring'),pr(t,b+0.1,0.45));$('ring').style.opacity=out1;
+    const out2=1-pr(t,e-0.2,0.25);
+    wipe('t10b',pr(t,c,0.6));$('t10b').style.opacity=(t>=c?1:0)*out2;
+    const sti=[...document.querySelectorAll('.sti')];sti.forEach((g,i)=>{const k=pr(t,c+0.3+i*0.04,0.25);g.style.opacity=cl(k*1.5)*out2;g.style.transformBox='fill-box';g.style.transformOrigin='50% 100%';g.style.transform=`scale(${back(k)})`});
+    vis('st10',pr(t,c+1.2,0.4));$('st10').style.opacity=cl(pr(t,c+1.2,0.4))*out2;
+    popE('mega',pr(t,d-0.1,0.35));$('mega').style.transformBox='fill-box';$('mega').style.transformOrigin='50% 50%';$('mega').style.opacity=cl(pr(t,d-0.1,0.25))*out2;
+    popE('ad10',pr(t,d+0.2,0.35),-3);$('ad10').style.opacity=cl(pr(t,d+0.2,0.25))*out2;
+    wipe('aa',pr(t,e-0.05,0.55));drawOn($('arr1'),pr(t,e+0.45,0.3));drawOn($('arr2'),pr(t,e+0.7,0.2));wipe('kk',pr(t,f-0.05,0.55));}
+  // S11
+  if(t>W.s11[0]-.4){const a=S('c29'),b=S('c30');$('p11').style.transform=`scale(${1+0.04*pr(t,a,7)})`;wipe('t11',pr(t,a-0.05,0.7));wipe('t11b',pr(t,b,0.9));vis('end11',pr(t,E('c31')+0.2,0.5));}
+  // captions
+  const c=CU.find(x=>t>=x.s-0.05&&t<x.e+0.12);const cap=$('cap');
+  if(!c){cap.style.opacity=0}else{const k=pr(t,c.s-0.05,0.14);cap.style.opacity=k;cap.style.transform=`translateY(${(1-eo(k))*14}px)`;
+    if(cap.dataset.id!==c.id){cap.dataset.id=c.id;cap.innerHTML=`<span>${c.w.replace(/ —$/,'…').replace(HI,'<b>$1</b>').replace(RD,'<em>$1</em>')}</span>`;}}
+  return true};
+window.renderAt(0);
+</script></body></html>

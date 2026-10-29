@@ -1,0 +1,226 @@
+[
+ {
+  "id": "c0",
+  "i": 0,
+  "w": "Zomato ne sirf 3 mahine mein ₹24,000 crore kamaaye…",
+  "s": 0.0,
+  "e": 3.844
+ },
+ {
+  "id": "c1",
+  "i": 1,
+  "w": "Aur profit?",
+  "s": 4.031,
+  "e": 4.636
+ },
+ {
+  "id": "c2",
+  "i": 2,
+  "w": "Har ₹100 mein se…",
+  "s": 4.823,
+  "e": 6.036
+ },
+ {
+  "id": "c3",
+  "i": 3,
+  "w": "sirf 52 paise.",
+  "s": 6.223,
+  "e": 7.276
+ },
+ {
+  "id": "c4",
+  "i": 4,
+  "w": "Saal bhar pehle 3 mahine ki kamai thi ₹13,590 crore…",
+  "s": 7.79,
+  "e": 11.888
+ },
+ {
+  "id": "c5",
+  "i": 6,
+  "w": "ab ₹24,138 crore.",
+  "s": 12.37,
+  "e": 14.441
+ },
+ {
+  "id": "c6",
+  "i": 7,
+  "w": "Seedha 78% upar.",
+  "s": 14.628,
+  "e": 16.352
+ },
+ {
+  "id": "c7",
+  "i": 8,
+  "w": "Aur sabse bada surprise —",
+  "s": 16.866,
+  "e": 18.278
+ },
+ {
+  "id": "c8",
+  "i": 9,
+  "w": "Blinkit ab khaane se bada ho gaya.",
+  "s": 18.465,
+  "e": 20.521
+ },
+ {
+  "id": "c9",
+  "i": 10,
+  "w": "Blinkit pe ₹20,940 crore ke order,",
+  "s": 20.707,
+  "e": 23.598
+ },
+ {
+  "id": "c10",
+  "i": 11,
+  "w": "khaane pe ₹11,445 crore.",
+  "s": 23.785,
+  "e": 26.67
+ },
+ {
+  "id": "c11",
+  "i": 12,
+  "w": "Par kharcha?",
+  "s": 27.184,
+  "e": 27.752
+ },
+ {
+  "id": "c12",
+  "i": 13,
+  "w": "₹24,166 crore.",
+  "s": 27.939,
+  "e": 30.06
+ },
+ {
+  "id": "c13",
+  "i": 14,
+  "w": "Matlab jitna kamaya,",
+  "s": 30.247,
+  "e": 31.401
+ },
+ {
+  "id": "c14",
+  "i": 15,
+  "w": "usse ₹28 crore zyada uda diya.",
+  "s": 31.587,
+  "e": 33.638
+ },
+ {
+  "id": "c15",
+  "i": 16,
+  "w": "Toh profit aaya kahaan se?",
+  "s": 34.152,
+  "e": 35.503
+ },
+ {
+  "id": "c16",
+  "i": 17,
+  "w": "Khaana ya saamaan bech ke nahi…",
+  "s": 35.69,
+  "e": 37.367
+ },
+ {
+  "id": "c17",
+  "i": 18,
+  "w": "company ke paas pade ₹16,475 crore pe milne wali doosri kamai se —",
+  "s": 37.554,
+  "e": 41.245
+ },
+ {
+  "id": "c18",
+  "i": 19,
+  "w": "jaise byaaj.",
+  "s": 41.432,
+  "e": 42.139
+ },
+ {
+  "id": "c19",
+  "i": 20,
+  "w": "Market ko umeed thi ₹250 crore ki.",
+  "s": 42.653,
+  "e": 44.601
+ },
+ {
+  "id": "c20",
+  "i": 21,
+  "w": "Mila aadha.",
+  "s": 44.787,
+  "e": 45.664
+ },
+ {
+  "id": "c21",
+  "i": 22,
+  "w": "Share 3.5% gir gaya.",
+  "s": 45.85,
+  "e": 47.698
+ },
+ {
+  "id": "c22",
+  "i": 23,
+  "w": "Toh kya Zomato fail?",
+  "s": 48.212,
+  "e": 49.504
+ },
+ {
+  "id": "c23",
+  "i": 24,
+  "w": "Nahi.",
+  "s": 49.691,
+  "e": 50.129
+ },
+ {
+  "id": "c24",
+  "i": 25,
+  "w": "Ye jaan-boojh ke kharch kar raha hai —",
+  "s": 50.316,
+  "e": 52.086
+ },
+ {
+  "id": "c25",
+  "i": 26,
+  "w": "naye store,",
+  "s": 52.273,
+  "e": 53.052
+ },
+ {
+  "id": "c26",
+  "i": 27,
+  "w": "aur ads pe ₹1,138 crore.",
+  "s": 53.239,
+  "e": 55.388
+ },
+ {
+  "id": "c27",
+  "i": 28,
+  "w": "Pehle aadat…",
+  "s": 55.575,
+  "e": 56.339
+ },
+ {
+  "id": "c28",
+  "i": 29,
+  "w": "phir kamai.",
+  "s": 56.526,
+  "e": 57.084
+ },
+ {
+  "id": "c29",
+  "i": 30,
+  "w": "Toh agli baar jab 10 minute mein delivery aaye…",
+  "s": 57.598,
+  "e": 59.824
+ },
+ {
+  "id": "c30",
+  "i": 31,
+  "w": "yaad rakhna,",
+  "s": 60.011,
+  "e": 60.728
+ },
+ {
+  "id": "c31",
+  "i": 32,
+  "w": "uska kharcha abhi company utha rahi hai.",
+  "s": 60.915,
+  "e": 63.026
+ }
+]
