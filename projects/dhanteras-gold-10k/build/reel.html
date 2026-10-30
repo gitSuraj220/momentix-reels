@@ -1,0 +1,212 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Se;font-weight:700;src:url('fonts/noto-serif-latin-700-normal.woff2')}
+@font-face{font-family:Se;font-weight:700;unicode-range:U+0100-024F,U+20A0-20CF;src:url('fonts/noto-serif-latin-ext-700-normal.woff2')}
+@font-face{font-family:Se;font-weight:700;font-style:italic;src:url('fonts/noto-serif-latin-700-italic.woff2')}
+@font-face{font-family:Se;font-weight:700;font-style:italic;unicode-range:U+0100-024F,U+20A0-20CF;src:url('fonts/noto-serif-latin-ext-700-italic.woff2')}
+@font-face{font-family:Ka;font-weight:700;src:url('fonts/kalam-latin-700-normal.woff2')}
+@font-face{font-family:Ka;font-weight:700;unicode-range:U+0100-024F,U+20A0-20CF;src:url('fonts/kalam-latin-ext-700-normal.woff2')}
+@font-face{font-family:Po;font-weight:800;src:url('fonts/poppins-latin-800-normal.woff2')}
+@font-face{font-family:Po;font-weight:800;unicode-range:U+0900-097F,U+20B9;src:url('fonts/poppins-devanagari-800-normal.woff2')}
+@font-face{font-family:Po;font-weight:700;src:url('fonts/poppins-latin-700-normal.woff2')}
+:root{--ink:#23211D;--mute:#7F796E;--teal:#1F8A92;--red:#B0232D;--gold:#A8740E;--paper:#FBF7EE}
+html,body{margin:0;background:#000}
+#st{position:relative;width:1080px;height:1920px;overflow:hidden;background:#1a1208;color:var(--ink)}
+.sc{position:absolute;inset:0;opacity:0;display:none;overflow:hidden}
+.plate{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 55%}
+.plate img{width:100%;height:100%;object-fit:cover;display:block}
+.card{position:absolute;background:var(--paper);border-radius:20px;box-shadow:0 18px 40px rgba(40,20,0,.45),0 2px 0 rgba(0,0,0,.08);overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 47px,rgba(90,110,130,.12) 47px 48px);pointer-events:none}
+.card svg{position:absolute;left:0;top:0;overflow:visible}
+.t{position:absolute;white-space:nowrap}
+.se{font-family:Se;font-weight:700}.ka{font-family:Ka;font-weight:700}.po{font-family:Po;font-weight:700}
+.red{color:var(--red)}.teal{color:var(--teal)}.gold{color:var(--gold)}.mute{color:var(--mute)}
+.tag{position:absolute;left:28px;top:-2px;background:#D6A11E;color:#2b2107;font-family:Se;font-style:italic;font-weight:700;font-size:26px;padding:2px 16px 4px;transform:skewX(-8deg)}
+.stamp{position:absolute;font-family:Ka;font-weight:700;color:var(--red);border:7px solid var(--red);border-radius:14px;padding:0 22px;background:rgba(251,247,238,.92)}
+#hero{position:absolute;inset:0;background:#F2EEE5}
+#hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 63px,rgba(90,110,130,.10) 63px 64px)}
+#cap{position:absolute;left:50px;right:50px;top:1440px;text-align:center}
+#cap span{display:inline-block;background:rgba(18,12,4,.86);border-radius:24px;padding:12px 28px 14px;font-family:Po;font-weight:800;font-size:54px;line-height:1.22;color:#fff;box-shadow:0 10px 28px rgba(0,0,0,.45)}
+#cap b{color:#FFD43B;font-weight:800}
+#flash{position:absolute;inset:0;background:#fff3d0;opacity:0;pointer-events:none}
+#brand{position:absolute;right:46px;top:64px;font-family:Po;font-weight:700;font-size:26px;letter-spacing:4px;color:rgba(255,255,255,.75);text-shadow:0 2px 8px rgba(0,0,0,.6)}
+#vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,0) 62%,rgba(20,10,0,.35) 100%)}
+</style></head><body><div id="st">
+
+<!-- S1 hook -->
+<div class="sc" id="s1"><div class="plate" id="p1"><img id="v1"></div>
+  <div class="card" id="cA" style="left:90px;top:150px;width:900px;height:330px">
+    <div class="tag">Dhanteras special</div>
+    <div class="t se" style="left:40px;top:52px;font-size:40px">Aapne diye</div>
+    <div class="t se" id="A_amt" style="left:40px;top:96px;font-size:92px">₹10,000</div>
+    <svg id="oA" width="900" height="330"></svg>
+    <div class="t ka gold" id="A_got" style="left:420px;top:66px;font-size:46px">Gold mila</div>
+    <div class="t se gold" id="A_val" style="left:420px;top:104px;font-size:88px">₹8,100</div>
+    <div class="t ka red" id="A_cut" style="left:690px;top:282px;font-size:34px">−₹1,900</div>
+  </div>
+</div>
+
+<!-- S2 melt / making -->
+<div class="sc" id="s2"><div class="plate" id="p2"><img id="v2"></div>
+  <div class="card" id="cB" style="left:70px;top:130px;width:940px;height:380px">
+    <div class="tag">Jewellery ka hisaab</div>
+    <div class="t se" style="left:40px;top:54px;font-size:52px">₹10,000 kahaan gaye?</div>
+    <svg id="oB" width="940" height="380"></svg>
+    <div class="t ka gold" id="B_l1" style="left:44px;top:262px;font-size:38px">gold ₹8,100</div>
+    <div class="t ka" id="B_l2" style="left:560px;top:262px;font-size:38px;color:#C8551B">making ₹1,620</div>
+    <div class="t ka red" id="B_l3" style="left:770px;top:312px;font-size:30px">GST ₹290</div>
+    <div class="t ka" id="B_chip" style="left:620px;top:52px;font-size:44px;color:#C8551B;transform:rotate(-4deg)">8–25%!</div>
+  </div>
+  <div class="stamp" id="B_st" style="left:300px;top:540px;font-size:80px">₹1,900 GAYE</div>
+</div>
+
+<!-- S3 scale / resale -->
+<div class="sc" id="s3"><div class="plate" id="p3"><img src="gold_3_scale.jpg"></div>
+  <div class="card" id="cC" style="left:120px;top:160px;width:840px;height:250px">
+    <div class="tag">Wapas bechne gaye?</div>
+    <div class="t se" style="left:40px;top:56px;font-size:50px">Making ka paisa?</div>
+    <div class="t se red" id="C_no" style="left:40px;top:128px;font-size:76px;font-style:italic">Wapas nahi.</div>
+  </div>
+  <div class="stamp" id="C_st" style="left:330px;top:460px;font-size:110px">−10–15%</div>
+</div>
+
+<!-- S4 phone / digital -->
+<div class="sc" id="s4"><div class="plate" id="p4"><img id="v4"></div>
+  <div class="card" id="cD" style="left:90px;top:140px;width:900px;height:440px">
+    <div class="tag">Digital gold</div>
+    <div class="t se" style="left:40px;top:54px;font-size:50px">App pe ₹10,000 daale…</div>
+    <svg id="oD" width="900" height="400"></svg>
+    <div class="t ka red" id="D_c1" style="left:44px;top:214px;font-size:42px">−3% GST</div>
+    <div class="t ka red" id="D_c2" style="left:330px;top:214px;font-size:42px">−2–3% rate ka fark</div>
+    <div class="t se" id="D_res" style="left:40px;top:276px;font-size:70px">Bechte hi <span class="gold">≈ ₹9,400</span></div>
+    <div class="t po mute" id="D_note" style="left:42px;top:392px;font-size:26px">SEBI: regulated nahi</div>
+  </div>
+</div>
+
+<!-- S5 ETF -->
+<div class="sc" id="s5"><div class="plate" id="p5"><img id="v5"></div>
+  <div class="card" id="cE" style="left:90px;top:1040px;width:900px;height:330px">
+    <div class="tag">Gold ETF</div>
+    <div class="t se" id="E_l1" style="left:40px;top:56px;font-size:52px">Making <span class="teal">₹0</span> · GST <span class="teal">₹0</span></div>
+    <div class="t se" id="E_res" style="left:40px;top:134px;font-size:84px">≈ <span class="teal">₹9,900+</span></div>
+    <div class="t po mute" id="E_note" style="left:40px;top:262px;font-size:26px">Bas 0.2–1% saal ka kharcha + brokerage · SEBI regulated</div>
+  </div>
+</div>
+
+<!-- S6 hero chart -->
+<div class="sc" id="s6"><div id="hero"></div>
+  <div class="t po mute" style="left:72px;top:150px;font-size:34px;letter-spacing:1px">₹10,000 KA ASLI GOLD</div>
+  <div class="t se" id="H_t" style="left:68px;top:196px;font-size:96px">Toh hisaab <i class="red">ye hai</i></div>
+  <svg id="oH" width="1080" height="1920" style="position:absolute;left:0;top:0;overflow:visible"></svg>
+  <div class="t ka mute" id="H_dl" style="left:72px;top:432px;font-size:36px">aapne diye ₹10,000</div>
+  <div class="t se red" id="H_v1" style="left:100px;width:260px;text-align:center;font-size:54px">₹8,100</div>
+  <div class="t se gold" id="H_v2" style="left:410px;width:260px;text-align:center;font-size:54px">₹9,400</div>
+  <div class="t se teal" id="H_v3" style="left:720px;width:260px;text-align:center;font-size:54px">₹9,900</div>
+  <div class="t ka" style="left:100px;width:260px;text-align:center;top:1268px;font-size:42px">Jewellery</div>
+  <div class="t ka" style="left:410px;width:260px;text-align:center;top:1268px;font-size:42px">Digital</div>
+  <div class="t ka" style="left:720px;width:260px;text-align:center;top:1268px;font-size:42px">ETF</div>
+  <div class="t po mute" style="left:72px;top:1340px;font-size:24px">20% making example · estimates · Business Standard, Business Today</div>
+</div>
+
+<!-- S7 ending -->
+<div class="sc" id="s7"><div class="plate" id="p7"><img src="gold_6_diya.jpg"></div>
+  <div class="card" id="cF" style="left:80px;top:170px;width:920px;height:300px">
+    <div class="tag">Yaad rakhna</div>
+    <div class="t ka" id="F_1" style="left:40px;top:56px;font-size:56px">Pehenna hai → <span class="gold">shauk se</span></div>
+    <div class="t ka" id="F_2" style="left:40px;top:146px;font-size:56px">Invest karna hai → <span class="teal">dimaag se</span></div>
+    <div class="t po mute" id="F_3" style="left:40px;top:250px;font-size:24px">Sirf jaankari ke liye · Investment advice nahi</div>
+  </div>
+</div>
+
+<div id="vig"></div><div id="brand">MOMENTIX</div>
+<div id="cap"></div><div id="flash"></div>
+</div>
+<script src="rough.js"></script>
+<script>
+const CU=__CUES__;
+const S=i=>CU[i].s, E=i=>CU[i].e;
+const END=E(27)+1.6;
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ss=(a,b,x)=>{const k=cl((x-a)/(b-a));return k*k*(3-2*k)};
+const back=k=>{k=cl(k);const c=1.7;return 1+(c+1)*Math.pow(k-1,3)+c*Math.pow(k-1,2)};
+const eo=k=>1-Math.pow(1-cl(k),3);
+const pr=(t,a,d)=>cl((t-a)/d);
+const inr=n=>Math.round(n).toLocaleString('en-IN');
+const NS='http://www.w3.org/2000/svg';
+const INK='#23211D',TEAL='#1F8A92',RED='#B0232D',GOLD='#D9A21E',ORG='#C8551B';
+let seed=7;
+function clipRect(svg,id){const d=document.createElementNS(NS,'defs');const cp=document.createElementNS(NS,'clipPath');cp.id=id;const r=document.createElementNS(NS,'rect');cp.appendChild(r);d.appendChild(cp);svg.appendChild(d);return r}
+// horizontal hatched segment, revealed left->right by clip
+function hseg(svg,x,y,w,h,col,id,o={}){const rc=rough.svg(svg);const g=document.createElementNS(NS,'g');
+  g.appendChild(rc.rectangle(x,y,w,h,{seed:seed++,roughness:1.2,stroke:o.stroke||INK,strokeWidth:2.6,fill:col,fillStyle:o.fs||'hachure',hachureGap:o.gap||10,fillWeight:2.2,hachureAngle:-41}));
+  const r=clipRect(svg,id+'c');r.setAttribute('y',y-20);r.setAttribute('height',h+40);r.dataset.x=x-10;r.dataset.w=w+20;g.setAttribute('clip-path',`url(#${id}c)`);g.id=id;svg.appendChild(g);return r}
+function hgrow(r,k){r.setAttribute('x',+r.dataset.x);r.setAttribute('width',Math.max(0,+r.dataset.w*eo(k)))}
+function vbar(svg,x,base,w,h,col,id,o={}){const rc=rough.svg(svg);const g=document.createElementNS(NS,'g');
+  g.appendChild(rc.rectangle(x,base-h,w,h,{seed:seed++,roughness:1.3,bowing:1.1,stroke:INK,strokeWidth:2.8,fill:col,fillStyle:'hachure',hachureGap:11,fillWeight:2.4,hachureAngle:-41}));
+  const r=clipRect(svg,id+'c');r.setAttribute('x',x-20);r.setAttribute('width',w+40);r.dataset.base=base+10;r.dataset.h=h+20;g.setAttribute('clip-path',`url(#${id}c)`);svg.appendChild(g);return r}
+function vgrow(r,k){const h=+r.dataset.h*eo(k);r.setAttribute('y',+r.dataset.base-h);r.setAttribute('height',Math.max(0,h))}
+// card A: one bar 10,000, red chunk on the right
+const oA=$('oA');const A_full=hseg(oA,40,232,820,46,GOLD,'agold');const A_cutR=hseg(oA,40+820*0.81,232,820*0.19,46,RED,'acut',{gap:7});
+// card B: stacked bar
+const oB=$('oB');const B1=hseg(oB,40,170,860*0.81,70,GOLD,'b1');const B2=hseg(oB,40+860*0.81,170,860*0.162,70,ORG,'b2',{gap:8});const B3=hseg(oB,40+860*0.972,170,860*0.028,70,RED,'b3',{fs:'solid'});
+// card D: 10,000 bar then shrink to 94%
+const oD=$('oD');const D1=hseg(oD,40,150,820*0.94,52,GOLD,'d1');const D2=hseg(oD,40+820*0.94,150,820*0.06,52,RED,'d2',{gap:6});
+// hero chart: 0-based, 10,000 -> 760 px
+const oH=$('oH');const BASE=1250,SC=760/10000;
+{const rc=rough.svg(oH);oH.appendChild(rc.line(70,BASE,1010,BASE+2,{seed:seed++,stroke:INK,strokeWidth:3}));const dl=rc.line(70,BASE-10000*SC,1010,BASE-10000*SC,{seed:seed++,stroke:'#8B857A',strokeWidth:3});dl.querySelectorAll('path').forEach(p=>p.setAttribute('stroke-dasharray','16 12'));dl.id='hdash';oH.appendChild(dl);}
+const H1=vbar(oH,130,BASE,200,8100*SC,'#C0453F','h1'),H2=vbar(oH,440,BASE,200,9400*SC,GOLD,'h2'),H3=vbar(oH,750,BASE,200,9900*SC,TEAL,'h3');
+const fr=(d,f)=>`${d}/${String(Math.max(1,Math.min(151,f))).padStart(4,'0')}.jpg`;
+let last={};function setImg(el,src){if(last[el]!==src){$(el).src=src;last[el]=src}}
+function vis(id,k,dy=24){const e=$(id);e.style.opacity=cl(k);e.style.transform=`translateY(${(1-eo(k))*dy}px)`}
+function popE(id,k,rot=0){const e=$(id);e.style.opacity=cl(k*1.5);e.style.transform=`scale(${back(k)}) rotate(${rot}deg)`}
+function card(id,k,rot){const e=$(id);e.style.opacity=cl(k*1.6);e.style.transform=`translateY(${(1-eo(k))*-60}px) rotate(${rot*(1-0.3*eo(k))}deg) scale(${0.92+0.08*back(k)})`}
+function stamp(id,k,rot){const e=$(id);e.style.opacity=cl(k*2);e.style.transform=`scale(${2.2-1.2*eo(k)}) rotate(${rot}deg)`}
+const W={s1:[0,S(3)-0.15],s2:[S(3)-0.15,S(9)-0.15],s3:[S(9)-0.15,S(12)-0.15],s4:[S(12)-0.15,S(16)-0.15],s5:[S(16)-0.15,S(19)-0.15],s6:[S(19)-0.15,S(25)-0.15],s7:[S(25)-0.15,END+1]};
+const XF=0.18;
+const HI=/(₹[\d,.]+(?:–[\d,.]+)?\+?|\d+(?:–\d+)?%|GST|ETF)/g;
+let shake=0;
+window.renderAt=function(t){
+  for(const [id,[a,b]] of Object.entries(W)){const o=Math.min(ss(a-XF,a+XF*.4,t),1-ss(b-XF*.4,b+XF,t));const e=$(id);e.style.opacity=o;e.style.display=o>0.001?'block':'none';}
+  shake=0;
+  // S1
+  if(t<W.s1[1]+.4){setImg('v1',fr('k1',1+Math.floor(t*30*0.72)));$('p1').style.transform=`scale(${1.02+0.03*t/7})`;
+    card('cA',pr(t,S(1)+0.2,0.45),-2);
+    const c=pr(t,S(2)+0.25,0.7);$('A_amt').style.textDecoration=c>0.5?'line-through':'none';$('A_amt').style.color=c>0.5?'#9a948a':'#23211D';
+    hgrow(A_full,pr(t,S(1)+0.5,0.8));hgrow(A_cutR,c>0?1:0);$('acut').style.transform=`translate(${eo(c)*30}px,${eo(c)*40}px) rotate(${eo(c)*8}deg)`;$('acut').style.opacity=1-0.6*eo(c);
+    $('A_got').style.opacity=cl(pr(t,S(2),0.3));popE('A_val',pr(t,S(2)+0.3,0.4),-2);$('A_cut').style.opacity=cl(pr(t,S(2)+0.6,0.3));
+    if(t>S(2)+0.25&&t<S(2)+0.6)shake=6*(1-pr(t,S(2)+0.25,0.35));}
+  // S2
+  if(t>W.s2[0]-.4&&t<W.s2[1]+.4){const a=W.s2[0];setImg('v2',fr('k2',1+Math.floor((t-a)*30*0.52)));$('p2').style.transform=`scale(${1.02+0.04*pr(t,a,10)})`;
+    card('cB',pr(t,S(4)-0.2,0.45),1.5);hgrow(B1,pr(t,S(4),0.7));popE('B_chip',pr(t,S(5),0.35),-4);
+    hgrow(B2,pr(t,S(6)+0.2,0.6));$('B_l1').style.opacity=cl(pr(t,S(4)+0.6,0.3));$('B_l2').style.opacity=cl(pr(t,S(6)+0.6,0.3));
+    hgrow(B3,pr(t,S(7)+0.2,0.4));$('B_l3').style.opacity=cl(pr(t,S(7)+0.5,0.3));stamp('B_st',pr(t,S(8)+0.05,0.22),-6);
+    if(t>S(8)+0.05&&t<S(8)+0.45)shake=8*(1-pr(t,S(8)+0.05,0.4));}
+  // S3
+  if(t>W.s3[0]-.4&&t<W.s3[1]+.4){const a=W.s3[0];$('p3').style.transform=`scale(${1.04+0.06*pr(t,a,5.5)}) translateY(${-14*pr(t,a,5.5)}px)`;
+    card('cC',pr(t,S(9)-0.1,0.45),-1.5);vis('C_no',pr(t,S(10)+0.3,0.35));stamp('C_st',pr(t,S(11)+0.1,0.22),-8);
+    if(t>S(11)+0.1&&t<S(11)+0.5)shake=9*(1-pr(t,S(11)+0.1,0.4));}
+  // S4
+  if(t>W.s4[0]-.4&&t<W.s4[1]+.4){const a=W.s4[0];setImg('v4',fr('k3',1+Math.floor((t-a)*30*0.62)));$('p4').style.transform=`scale(${1.02+0.03*pr(t,a,8)})`;
+    card('cD',pr(t,S(12)+0.1,0.45),-1.5);hgrow(D1,pr(t,S(12)+0.5,0.8));hgrow(D2,pr(t,S(12)+0.5,0.8));
+    const g=pr(t,S(14)+0.4,0.4);$('d2').style.opacity=1-0.85*g;$('d2').style.transform=`translate(${g*20}px,${g*30}px)`;
+    popE('D_c1',pr(t,S(13),0.3),-3);popE('D_c2',pr(t,S(14),0.3),-3);vis('D_res',pr(t,S(15),0.4));$('D_note').style.opacity=cl(pr(t,S(15)+0.7,0.4));}
+  // S5
+  if(t>W.s5[0]-.4&&t<W.s5[1]+.4){const a=W.s5[0];setImg('v5',fr('k4',1+Math.floor((t-a)*30*0.92)));$('p5').style.transform=`scale(${1.02+0.03*pr(t,a,5)})`;
+    card('cE',pr(t,S(16)+0.1,0.45),1.2);vis('E_l1',pr(t,S(17),0.35));popE('E_res',pr(t,S(18),0.4),-2);$('E_note').style.opacity=cl(pr(t,S(18)+0.6,0.4));}
+  // S6 hero
+  if(t>W.s6[0]-.4&&t<W.s6[1]+.4){const a=W.s6[0];vis('H_t',pr(t,a+0.1,0.45));$('hdash').style.opacity=cl(pr(t,a+0.4,0.4));$('H_dl').style.opacity=cl(pr(t,a+0.6,0.4));
+    const g1=pr(t,S(20)-0.05,0.8),g2=pr(t,S(22)-0.3,0.8),g3=pr(t,S(24)-0.3,0.8);vgrow(H1,g1);vgrow(H2,g2);vgrow(H3,g3);
+    [['H_v1',8100,g1],['H_v2',9400,g2],['H_v3',9900,g3]].forEach(([id,v,g])=>{const e=$(id);e.style.top=(BASE-v*SC*eo(g)+22)+'px';e.style.background='rgba(251,247,238,.92)';e.style.borderRadius='12px';e.style.opacity=cl(g*2.5);e.textContent='₹'+inr(v*eo(g))});}
+  // S7
+  if(t>W.s7[0]-.4){const a=W.s7[0];$('p7').style.transform=`scale(${1.03+0.05*pr(t,a,5)})`;card('cF',pr(t,S(25)-0.05,0.45),-1.2);
+    vis('F_1',pr(t,S(25)+0.1,0.4));vis('F_2',pr(t,S(26)+0.1,0.4));$('F_3').style.opacity=cl(pr(t,E(27)+0.1,0.5));}
+  $('st').style.transform=shake?`translate(${Math.sin(t*90)*shake}px,${Math.cos(t*77)*shake}px)`:'none';
+  // flashes on scene cuts
+  const cuts=[W.s2[0],W.s4[0],W.s6[0]];$('flash').style.opacity=0.45*cuts.reduce((m,c)=>Math.max(m,Math.exp(-Math.pow((t-c)/0.06,2))),0);
+  // captions
+  const c=CU.find(x=>t>=x.s-0.05&&t<x.e+0.12);const cap=$('cap');
+  if(!c){cap.style.opacity=0}else{const k=pr(t,c.s-0.05,0.12);cap.style.opacity=k;cap.style.transform=`scale(${0.88+0.12*back(k)})`;
+    if(cap.dataset.id!==c.id){cap.dataset.id=c.id;cap.innerHTML=`<span>${c.w.replace(/ —$/,'…').replace(HI,'<b>$1</b>')}</span>`;}}
+  return true};
+window.renderAt(0);
+</script></body></html>
