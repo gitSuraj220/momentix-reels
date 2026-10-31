@@ -1,0 +1,556 @@
+{
+ "off": 0.0,
+ "frags": [
+  {
+   "line": 1,
+   "text": "2007 mein teen doston ne ek-ek lakh lagaye.",
+   "s": 0.0,
+   "e": 2.831
+  },
+  {
+   "line": 1,
+   "text": "Aaj ek ke paas ₹4 lakh hain…",
+   "s": 3.129,
+   "e": 4.871
+  },
+  {
+   "line": 1,
+   "text": "aur ek ke paas ₹15 lakh.",
+   "s": 5.156,
+   "e": 6.778
+  },
+  {
+   "line": 2,
+   "text": "Bunty ne FD li.",
+   "s": 7.078,
+   "e": 8.004
+  },
+  {
+   "line": 2,
+   "text": "Ravi ne Nifty index fund.",
+   "s": 8.297,
+   "e": 9.68
+  },
+  {
+   "line": 2,
+   "text": "Aur Momo ne…",
+   "s": 10.02,
+   "e": 10.61
+  },
+  {
+   "line": 2,
+   "text": "sona.",
+   "s": 10.61,
+   "e": 10.871
+  },
+  {
+   "line": 3,
+   "text": "Kaun jeeta?",
+   "s": 10.871,
+   "e": 11.46
+  },
+  {
+   "line": 3,
+   "text": "Aaiye samajhte hain.",
+   "s": 11.792,
+   "e": 13.192
+  },
+  {
+   "line": 4,
+   "text": "2008 ka crash.",
+   "s": 13.474,
+   "e": 14.876
+  },
+  {
+   "line": 4,
+   "text": "Ravi ka ₹1.5 lakh,",
+   "s": 15.145,
+   "e": 16.064
+  },
+  {
+   "line": 4,
+   "text": "ek saal mein ₹74 hazaar.",
+   "s": 16.351,
+   "e": 17.711
+  },
+  {
+   "line": 4,
+   "text": "Momo ka sona?",
+   "s": 17.981,
+   "e": 18.653
+  },
+  {
+   "line": 4,
+   "text": "Upar.",
+   "s": 18.934,
+   "e": 19.287
+  },
+  {
+   "line": 5,
+   "text": "Phir 2012 se 2018 tak,",
+   "s": 19.585,
+   "e": 21.888
+  },
+  {
+   "line": 5,
+   "text": "sona chhe saal lagbhag wahin ka wahin.",
+   "s": 21.888,
+   "e": 23.818
+  },
+  {
+   "line": 5,
+   "text": "Aur Nifty…",
+   "s": 24.105,
+   "e": 24.596
+  },
+  {
+   "line": 5,
+   "text": "lagbhag double.",
+   "s": 24.875,
+   "e": 25.619
+  },
+  {
+   "line": 6,
+   "text": "2020 mein COVID.",
+   "s": 25.894,
+   "e": 27.155
+  },
+  {
+   "line": 6,
+   "text": "Nifty do mahine mein 38% gira…",
+   "s": 27.432,
+   "e": 29.497
+  },
+  {
+   "line": 6,
+   "text": "par November tak wapas.",
+   "s": 29.778,
+   "e": 30.849
+  },
+  {
+   "line": 6,
+   "text": "Aur sona?",
+   "s": 31.12,
+   "e": 31.521
+  },
+  {
+   "line": 6,
+   "text": "Phir upar.",
+   "s": 31.825,
+   "e": 32.367
+  },
+  {
+   "line": 7,
+   "text": "2025 mein sona ek hi saal mein 56% bhaaga…",
+   "s": 32.635,
+   "e": 35.818
+  },
+  {
+   "line": 7,
+   "text": "aur Momo sabse aage nikal gaya.",
+   "s": 36.1,
+   "e": 37.654
+  },
+  {
+   "line": 8,
+   "text": "Par 2026 mein?",
+   "s": 37.926,
+   "e": 38.903
+  },
+  {
+   "line": 8,
+   "text": "Nifty is saal 11% neeche.",
+   "s": 39.187,
+   "e": 41.021
+  },
+  {
+   "line": 8,
+   "text": "Aur sona,",
+   "s": 41.299,
+   "e": 41.78
+  },
+  {
+   "line": 8,
+   "text": "August se ab tak 16% gira.",
+   "s": 42.064,
+   "e": 43.705
+  },
+  {
+   "line": 9,
+   "text": "Aaj:",
+   "s": 44.007,
+   "e": 44.374
+  },
+  {
+   "line": 9,
+   "text": "Momo ₹14.9 lakh,",
+   "s": 44.664,
+   "e": 46.263
+  },
+  {
+   "line": 9,
+   "text": "Ravi ₹6.3 lakh,",
+   "s": 46.569,
+   "e": 47.935
+  },
+  {
+   "line": 9,
+   "text": "Bunty ₹4 lakh.",
+   "s": 48.208,
+   "e": 49.416
+  }
+ ],
+ "chunks": [
+  {
+   "t": 0.0,
+   "e": 0.967,
+   "text": "2007 mein teen",
+   "line": 1
+  },
+  {
+   "t": 0.967,
+   "e": 2.002,
+   "text": "doston ne ek-ek",
+   "line": 1
+  },
+  {
+   "t": 2.002,
+   "e": 3.129,
+   "text": "lakh lagaye.",
+   "line": 1
+  },
+  {
+   "t": 3.129,
+   "e": 3.732,
+   "text": "Aaj ek ke",
+   "line": 1
+  },
+  {
+   "t": 3.732,
+   "e": 4.536,
+   "text": "paas ₹4 lakh",
+   "line": 1
+  },
+  {
+   "t": 4.536,
+   "e": 5.156,
+   "text": "hain…",
+   "line": 1
+  },
+  {
+   "t": 5.156,
+   "e": 5.791,
+   "text": "aur ek ke",
+   "line": 1
+  },
+  {
+   "t": 5.791,
+   "e": 7.078,
+   "text": "paas ₹15 lakh.",
+   "line": 1
+  },
+  {
+   "t": 7.078,
+   "e": 7.806,
+   "text": "Bunty ne FD",
+   "line": 2
+  },
+  {
+   "t": 7.806,
+   "e": 8.297,
+   "text": "li.",
+   "line": 2
+  },
+  {
+   "t": 8.297,
+   "e": 9.046,
+   "text": "Ravi ne Nifty",
+   "line": 2
+  },
+  {
+   "t": 9.046,
+   "e": 10.02,
+   "text": "index fund.",
+   "line": 2
+  },
+  {
+   "t": 10.02,
+   "e": 10.61,
+   "text": "Aur Momo ne…",
+   "line": 2
+  },
+  {
+   "t": 10.61,
+   "e": 10.871,
+   "text": "sona.",
+   "line": 2
+  },
+  {
+   "t": 10.871,
+   "e": 11.792,
+   "text": "Kaun jeeta?",
+   "line": 3
+  },
+  {
+   "t": 11.792,
+   "e": 13.474,
+   "text": "Aaiye samajhte hain.",
+   "line": 3
+  },
+  {
+   "t": 13.474,
+   "e": 15.145,
+   "text": "2008 ka crash.",
+   "line": 4
+  },
+  {
+   "t": 15.145,
+   "e": 15.794,
+   "text": "Ravi ka ₹1.5",
+   "line": 4
+  },
+  {
+   "t": 15.794,
+   "e": 16.351,
+   "text": "lakh,",
+   "line": 4
+  },
+  {
+   "t": 16.351,
+   "e": 17.061,
+   "text": "ek saal mein",
+   "line": 4
+  },
+  {
+   "t": 17.061,
+   "e": 17.981,
+   "text": "₹74 hazaar.",
+   "line": 4
+  },
+  {
+   "t": 17.981,
+   "e": 18.934,
+   "text": "Momo ka sona?",
+   "line": 4
+  },
+  {
+   "t": 18.934,
+   "e": 19.585,
+   "text": "Upar.",
+   "line": 4
+  },
+  {
+   "t": 19.585,
+   "e": 20.901,
+   "text": "Phir 2012 se",
+   "line": 5
+  },
+  {
+   "t": 20.901,
+   "e": 21.888,
+   "text": "2018 tak,",
+   "line": 5
+  },
+  {
+   "t": 21.888,
+   "e": 22.639,
+   "text": "sona chhe saal",
+   "line": 5
+  },
+  {
+   "t": 22.639,
+   "e": 23.496,
+   "text": "lagbhag wahin ka",
+   "line": 5
+  },
+  {
+   "t": 23.496,
+   "e": 24.105,
+   "text": "wahin.",
+   "line": 5
+  },
+  {
+   "t": 24.105,
+   "e": 24.875,
+   "text": "Aur Nifty…",
+   "line": 5
+  },
+  {
+   "t": 24.875,
+   "e": 25.894,
+   "text": "lagbhag double.",
+   "line": 5
+  },
+  {
+   "t": 25.894,
+   "e": 27.432,
+   "text": "2020 mein COVID.",
+   "line": 6
+  },
+  {
+   "t": 27.432,
+   "e": 28.5,
+   "text": "Nifty do mahine",
+   "line": 6
+  },
+  {
+   "t": 28.5,
+   "e": 29.778,
+   "text": "mein 38% gira…",
+   "line": 6
+  },
+  {
+   "t": 29.778,
+   "e": 30.557,
+   "text": "par November tak",
+   "line": 6
+  },
+  {
+   "t": 30.557,
+   "e": 31.12,
+   "text": "wapas.",
+   "line": 6
+  },
+  {
+   "t": 31.12,
+   "e": 31.825,
+   "text": "Aur sona?",
+   "line": 6
+  },
+  {
+   "t": 31.825,
+   "e": 32.635,
+   "text": "Phir upar.",
+   "line": 6
+  },
+  {
+   "t": 32.635,
+   "e": 33.749,
+   "text": "2025 mein sona",
+   "line": 7
+  },
+  {
+   "t": 33.749,
+   "e": 34.545,
+   "text": "ek hi saal",
+   "line": 7
+  },
+  {
+   "t": 34.545,
+   "e": 36.1,
+   "text": "mein 56% bhaaga…",
+   "line": 7
+  },
+  {
+   "t": 36.1,
+   "e": 36.825,
+   "text": "aur Momo sabse",
+   "line": 7
+  },
+  {
+   "t": 36.825,
+   "e": 37.926,
+   "text": "aage nikal gaya.",
+   "line": 7
+  },
+  {
+   "t": 37.926,
+   "e": 39.187,
+   "text": "Par 2026 mein?",
+   "line": 8
+  },
+  {
+   "t": 39.187,
+   "e": 40.18,
+   "text": "Nifty is saal",
+   "line": 8
+  },
+  {
+   "t": 40.18,
+   "e": 41.299,
+   "text": "11% neeche.",
+   "line": 8
+  },
+  {
+   "t": 41.299,
+   "e": 42.064,
+   "text": "Aur sona,",
+   "line": 8
+  },
+  {
+   "t": 42.064,
+   "e": 42.852,
+   "text": "August se ab",
+   "line": 8
+  },
+  {
+   "t": 42.852,
+   "e": 44.007,
+   "text": "tak 16% gira.",
+   "line": 8
+  },
+  {
+   "t": 44.007,
+   "e": 44.664,
+   "text": "Aaj:",
+   "line": 9
+  },
+  {
+   "t": 44.664,
+   "e": 46.569,
+   "text": "Momo ₹14.9 lakh,",
+   "line": 9
+  },
+  {
+   "t": 46.569,
+   "e": 48.208,
+   "text": "Ravi ₹6.3 lakh,",
+   "line": 9
+  },
+  {
+   "t": 48.208,
+   "e": 49.416,
+   "text": "Bunty ₹4 lakh.",
+   "line": 9
+  }
+ ],
+ "lines": {
+  "1": [
+   0.0,
+   6.778
+  ],
+  "2": [
+   7.078,
+   10.871
+  ],
+  "3": [
+   10.871,
+   13.192
+  ],
+  "4": [
+   13.474,
+   19.287
+  ],
+  "5": [
+   19.585,
+   25.619
+  ],
+  "6": [
+   25.894,
+   32.367
+  ],
+  "7": [
+   32.635,
+   37.654
+  ],
+  "8": [
+   37.926,
+   43.705
+  ],
+  "9": [
+   44.007,
+   49.416
+  ]
+ },
+ "end": 51.02
+}

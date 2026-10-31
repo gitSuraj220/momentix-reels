@@ -1,0 +1,125 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:P;src:url('file:///usr/share/fonts/truetype/google-fonts/Poppins-Bold.ttf');font-weight:700}
+@font-face{font-family:P;src:url('file:///usr/share/fonts/truetype/google-fonts/Poppins-Medium.ttf');font-weight:500}
+@font-face{font-family:L;src:url('file:///usr/share/fonts/truetype/google-fonts/Lora-Variable.ttf');font-style:normal;font-weight:400 700}
+@font-face{font-family:L;src:url('file:///usr/share/fonts/truetype/google-fonts/Lora-Italic-Variable.ttf');font-style:italic;font-weight:400 700}
+html,body{margin:0;background:#F3EEE4;width:1080px;height:1920px;overflow:hidden}
+svg text{font-family:P,sans-serif}
+</style></head><body>
+<svg id="s" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+<script>
+const TL=/*TL*/null;
+const ART=/*ART*/{};
+const W=1080,H=1920;
+const INK='#1F1D1B',RED='#A8261E',ORG='#F29A2E',BLUE='#2B4C7E',GREY='#8C9099',PAPER='#F3EEE4';
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ss=(a,b,x)=>{const k=clamp((x-a)/(b-a));return k*k*(3-2*k)};
+const lerp=(a,b,k)=>a+(b-a)*k;
+const back=k=>{k=clamp(k);const c=1.7;return 1+(c+1)*Math.pow(k-1,3)+c*Math.pow(k-1,2)};
+function R(i){let x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)}
+// ---- beats (line start times from timeline) ----
+const LS={};for(const k in TL.lines)LS[k]=TL.lines[k][0];
+const B=[0,LS[1],LS[2],LS[3],LS[4],LS[5],LS[6],LS[7],LS[8],LS[9],TL.end];
+const END=TL.end;
+// ---- data (₹ lakh), x = fractional year; year-end values placed at Jan 1 of next year ----
+const NIFTY=[[2007,1],[2008,1.536],[2009,.737],[2010,1.281],[2011,1.508],[2012,1.134],[2013,1.455],[2014,1.556],[2015,2.050],[2016,1.983],[2017,2.062],[2018,2.674],[2019,2.789],[2020,3.157],[2020.22,1.958],[2020.9,3.30],[2021,3.647],[2022,4.566],[2023,4.808],[2024,5.813],[2025,6.371],[2026,7.110],[2026.83,6.320]];
+const GOLD=[[2007,1],[2008,1.144],[2009,1.471],[2010,1.801],[2011,2.237],[2012,2.950],[2013,3.331],[2014,3.068],[2015,2.882],[2016,2.691],[2017,2.962],[2018,3.147],[2019,3.388],[2020,4.221],[2021,5.413],[2022,5.191],[2023,5.938],[2024,6.822],[2025,8.186],[2026,12.782],[2026.65,17.763],[2026.83,14.940]];
+const FD=[[2007,1],[2008,1.083],[2009,1.176],[2010,1.267],[2011,1.353],[2012,1.469],[2013,1.600],[2014,1.732],[2015,1.881],[2016,2.038],[2017,2.186],[2018,2.334],[2019,2.485],[2020,2.656],[2021,2.814],[2022,2.961],[2023,3.118],[2024,3.324],[2025,3.550],[2026,3.781],[2026.83,3.978]];
+function valAt(S,x){if(x<=S[0][0])return S[0][1];for(let i=1;i<S.length;i++){if(x<=S[i][0]){const a=S[i-1],b=S[i];const k=(x-a[0])/(b[0]-a[0]);return a[1]*Math.pow(b[1]/a[1],k)}}return S[S.length-1][1]}
+// ---- chart geometry ----
+const CH={x0:150,x1:960,y0:560,y1:1010};
+const XMIN=2007,XMAX=2026.9,VMIN=.6,VMAX=20;
+const X=x=>CH.x0+(x-XMIN)/(XMAX-XMIN)*(CH.x1-CH.x0);
+const Y=v=>CH.y1-(Math.log(v/VMIN)/Math.log(VMAX/VMIN))*(CH.y1-CH.y0);
+// cursor year over time (piecewise, eased within each beat)
+const CUR=[[B[4]+0.1,2007],[B[4]+1.7,2008],[B[4]+3.1,2009],[B[5]+0.1,2009],[B[5]+1.5,2012],[B[5]+4.2,2019],[B[6]+0.1,2019],[B[6]+0.9,2020],[B[6]+2.9,2020.22],[B[6]+4.9,2020.9],[B[6]+6.2,2021],[B[7]+0.1,2021],[B[7]+1.4,2025],[B[7]+3.2,2026],[B[8]+0.2,2026],[B[8]+2.3,2026.65],[B[8]+5.3,2026.83]];
+function cursor(t){if(t<CUR[0][0])return 2007;for(let i=1;i<CUR.length;i++){if(t<=CUR[i][0]){const a=CUR[i-1],b=CUR[i];return lerp(a[1],b[1],ss(a[0],b[0],t))}}return 2026.83}
+function pathFor(S,c,jit){let pts=[];for(const p of S){if(p[0]<c)pts.push([p[0],p[1]]);else break}pts.push([c,valAt(S,c)]);
+  // densify for sketchy wobble
+  let d='';let first=true;for(let i=0;i<pts.length;i++){const p=pts[i];const n=i===0?1:Math.max(1,Math.round((p[0]-pts[i-1][0])*6));
+    for(let k=n===1&&i===0?0:1;k<=n;k++){const xx=i===0?p[0]:lerp(pts[i-1][0],p[0],k/n);const vv=i===0?p[1]:valAt(S,xx);const w=jit*(R(Math.round(xx*40)+jit*99)-.5);
+      d+=(first?'M':'L')+X(xx).toFixed(1)+','+(Y(vv)+w).toFixed(1);first=false}}
+  return d}
+function txt(x,y,s,o={}){return `<text x="${x}" y="${y}" font-size="${o.size||40}" font-weight="${o.w||700}" fill="${o.fill||INK}" text-anchor="${o.anchor||'start'}" letter-spacing="${o.ls||0}" opacity="${o.op??1}" ${o.fam?`font-family="${o.fam}"`:''} ${o.style?`font-style="${o.style}"`:''} ${o.tr?`transform="${o.tr}"`:''}>${s}</text>`}
+const fmtL=v=>v>=1?'₹'+(v>=10?v.toFixed(1):v.toFixed(1)).replace(/\.0$/,'')+'L':'₹'+Math.round(v*100)+'k';
+// ---- headlines: [beat index, parts] parts: [text, italicRed?]
+const HEAD={1:[['₹1 lakh. Teen dost. ',0],['2007.',1]],2:[['FD, Nifty… ya ',0],['sona?',1]],3:[['Kaun ',0],['jeeta?',1]],4:[['2008',1],[' ka crash.',0]],5:[['Sona: chhe saal ',0],['flat.',1]],6:[['2020 mein ',0],['COVID.',1]],7:[['Sona ka ',0],['rocket.',1]],8:[['2026:',1],[' dono gire.',0]],9:[['Aaj ka ',0],['score.',1]]};
+function beatAt(t){let b=1;for(let i=1;i<=9;i++)if(t>=B[i])b=i;return b}
+function headline(t){const b=beatAt(t),t0=B[b];const k=ss(t0,t0+.35,t);const parts=HEAD[b];
+  let s='';let tsp='';for(const [tx,it] of parts){tsp+=`<tspan font-family="L" font-weight="${it?600:600}" ${it?`font-style="italic" fill="${RED}"`:`fill="${INK}"`}>${tx}</tspan>`}
+  s+=`<g transform="translate(0,${(1-k)*26})" opacity="${k}"><text x="80" y="440" font-size="86" letter-spacing="-1.5">${tsp}</text></g>`;
+  // underline scribble under red word, grows
+  const u=ss(t0+.25,t0+.8,t);s+=`<path d="M80,468 q${300*u},${-6*u} ${560*u},${3*u}" stroke="${ORG}" stroke-width="7" fill="none" stroke-linecap="round" opacity=".85"/>`;
+  return s}
+function tag(t){return `<g><rect x="80" y="270" width="250" height="46" rx="6" fill="${ORG}" transform="rotate(-1.5 80 270)"/>${txt(97,302,'₹1 LAKH · 2007 → 2026',{size:22,w:700,fill:'#1d140a',ls:.5})}</g>`}
+// ---- images ----
+function img(key,x,y,w,h,zoom,t,o={}){const a=ART[key];if(!a)return `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#e7e0d3"/>${txt(x+w/2,y+h/2,key,{anchor:'middle',size:30,fill:'#999'})}`;
+  const sc=Math.max(w/a.w,h/a.h)*zoom;const iw=a.w*sc,ih=a.h*sc;const fx=o.fx??.5,fy=o.fy??.5;const ix=x+(w-iw)*fx,iy=y+(h-ih)*fy;
+  const id='c'+key+Math.round(x)+Math.round(y);
+  return `<defs><clipPath id="${id}"><rect x="${x}" y="${y}" width="${w}" height="${h}"/></clipPath></defs><g clip-path="url(#${id})" ${o.feather?'mask="url(#feather)"':''}><image href="${a.src}" x="${ix}" y="${iy}" width="${iw}" height="${ih}" preserveAspectRatio="none" style="mix-blend-mode:multiply"/></g>`}
+// ---- captions (chunks) ----
+function caption(t){if(t>=B[9])return '';let c=null;for(const ch of TL.chunks){if(t>=ch.t&&t<ch.e){c=ch;break}}if(!c)return '';const k=ss(c.t,c.t+.12,t);
+  return `<g opacity="${k}" transform="translate(540,1488) scale(${.92+.08*back((t-c.t)/.2)})">${txt(0,0,c.text,{anchor:'middle',size:58,w:700,fill:INK})}</g>`}
+// ---- chart ----
+function chart(t){const ap=ss(B[3],B[3]+.9,t);if(ap<=0)return '';let s=`<g opacity="${ap}">`;
+  // grid ticks (log)
+  for(const v of [1,2,5,10,15]){const y=Y(v);s+=`<line x1="${CH.x0}" y1="${y}" x2="${CH.x0+(CH.x1-CH.x0)*ap}" y2="${y}" stroke="#cfc6b6" stroke-width="2" stroke-dasharray="${v===1?'10 8':'2 10'}"/>`+txt(CH.x0-18,y+9,'₹'+v+'L',{anchor:'end',size:24,w:500,fill:'#6b665e'})}
+  s+=`<line x1="${CH.x0}" y1="${CH.y1+20}" x2="${CH.x0+(CH.x1-CH.x0)*ap}" y2="${CH.y1+20}" stroke="${INK}" stroke-width="3"/>`;
+  for(const yr of [2007,2010,2015,2020,2026]){const x=X(yr);s+=txt(x,CH.y1+60,yr,{anchor:'middle',size:24,w:500,fill:'#6b665e'})}
+  const c=cursor(t);
+  // flat band 2012–2019 for gold (beat 5)
+  const fb=ss(B[5]+2.1,B[5]+2.8,t)*(1-ss(B[6],B[6]+.4,t));if(fb>0){s+=`<rect x="${X(2012)}" y="${Y(4.6)}" width="${X(2019)-X(2012)}" height="${Y(2.3)-Y(4.6)}" fill="${ORG}" opacity="${.16*fb}" rx="10"/>`+txt((X(2012)+X(2019))/2,Y(4.6)-14,'6 saal flat',{anchor:'middle',size:28,w:700,fill:'#b06b10',op:fb})}
+  // lines: FD, Nifty, Gold (gold on top)
+  for(const [S,col,w] of [[FD,GREY,7],[NIFTY,BLUE,8],[GOLD,ORG,10]]){s+=`<path d="${pathFor(S,c,2.2)}" stroke="${col}" stroke-width="${w}" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/><path d="${pathFor(S,c,4)}" stroke="${col}" stroke-width="2" fill="none" opacity=".35"/>`}
+  // heads + names
+  const nm=[[GOLD,ORG,'Momo'],[NIFTY,BLUE,'Ravi'],[FD,GREY,'Bunty']];
+  let ys=nm.map(([S])=>Y(valAt(S,c)));
+  // avoid label overlap
+  let ord=[0,1,2].sort((a,b)=>ys[a]-ys[b]);let ly=ys.slice();for(let i=1;i<3;i++){const a=ord[i-1],b=ord[i];if(ly[b]-ly[a]<36)ly[b]=ly[a]+36}
+  nm.forEach(([S,col,name],i)=>{const x=X(c),y=ys[i];const pulse=1+.12*Math.sin(t*9+i);s+=`<circle cx="${x}" cy="${y}" r="${11*pulse}" fill="${col}" stroke="${PAPER}" stroke-width="3"/>`;
+    const fin=t>=B[7]+2.4;const right=x>760;const lx=right?x-22:x+20;if(!fin)s+=`<text x="${lx}" y="${ly[i]+9}" font-size="26" font-weight="700" text-anchor="${right?'end':'start'}" fill="${col==GREY?'#5f636b':col}" stroke="${PAPER}" stroke-width="8" paint-order="stroke" stroke-linejoin="round">${name} ${fmtL(valAt(S,c))}</text>`});
+  s+='</g>';return s}
+// callouts on chart per beat: [beat, start offset, x, series, text, color]
+function callouts(t){let s='';const C=[[4,3.1,2009,NIFTY,'₹74k','−52%',BLUE,300,20],[4,5.4,2009,GOLD,'Upar ↑','',ORG,40,-85],[6,2.7,2020.22,NIFTY,'−38%','2 mahine',BLUE,-40,100],[7,2.7,2026,GOLD,'+56%','1 saal',ORG,-190,-40],[8,2.6,2026.65,NIFTY,'−11%','is saal',BLUE,-200,100],[8,4.7,2026.65,GOLD,'−16%','Aug se',ORG,-250,10]];
+  for(const [b,off,x,S,big,small,col,dx,dy] of C){const t0=B[b]+off;const k=ss(t0,t0+.25,t)*(1-ss(B[b+1]-.25,B[b+1],t));if(k<=0)continue;const px=X(x),py=Y(valAt(S,x));
+    const bx=Math.min(Math.max(px+dx,140),930),by=py+dy;
+    s+=`<line x1="${px}" y1="${py}" x2="${bx}" y2="${by}" stroke="${col}" stroke-width="3" stroke-dasharray="6 6" opacity="${k}"/>`;
+    s+=`<g opacity="${k}" transform="translate(${bx},${by}) scale(${.6+.4*back((t-t0)/.3)})"><rect x="-82" y="-40" width="164" height="${small?78:56}" rx="12" fill="${PAPER}" stroke="${col}" stroke-width="4"/>${txt(0,small?-6:6,big,{anchor:'middle',size:36,w:700,fill:col===ORG?'#b06b10':col})}${small?txt(0,26,small,{anchor:'middle',size:20,w:500,fill:'#6b665e'}):''}</g>`}
+  return s}
+// ---- final score ----
+function finalScore(t){const k=ss(B[9],B[9]+.4,t);if(k<=0)return '';let s='';
+  const items=[['Bunty','FD',3.978,GREY,'#5f636b',.17],['Ravi','Nifty fund',6.320,BLUE,BLUE,.5],['Momo','Sona',14.940,ORG,'#b06b10',.83]];
+  items.forEach(([n,w,v,col,tc,fx],i)=>{const t0=B[9]+.5+[3.1,1.8,0.6][i];const kk=ss(t0,t0+.3,t);if(kk<=0)return;const cv=lerp(1,v,ss(t0,t0+.9,t));const x=80+fx*920;
+    s+=`<g opacity="${kk}" transform="translate(${x},1185) scale(${.7+.3*back((t-t0)/.35)})"><rect x="-150" y="-62" width="300" height="104" rx="16" fill="${PAPER}" stroke="${col}" stroke-width="5"/>${txt(0,8,'₹'+cv.toFixed(1)+'L',{anchor:'middle',size:54,w:700,fill:tc})}${txt(0,-72,n+' · '+w,{anchor:'middle',size:24,w:700,fill:'#4a463f'})}</g>`});
+  return s}
+function smallPrint(t){const k=ss(B[8]+.5,B[8]+1,t);if(k<=0)return '';
+  return `<g opacity="${.9*k}">${txt(540,1572,'Approx. ₹1 lakh, 1 Jan 2007 → 31 Oct 2026. Nifty = index fund NAV (dividends, after fees).',{anchor:'middle',size:19,w:500,fill:'#6b665e'})}${txt(540,1598,'Gold = 24K price, no making charges/GST. FD = big-bank rate, renewed yearly, before tax.',{anchor:'middle',size:19,w:500,fill:'#6b665e'})}${txt(540,1624,'Past returns, not a promise. Sirf jaankari ke liye.',{anchor:'middle',size:19,w:700,fill:'#6b665e'})}</g>`}
+// ---- paper bg ----
+const BG=(()=>{let s=`<defs><linearGradient id="fv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".08" stop-color="#fff"/><stop offset=".92" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="feather" maskUnits="userSpaceOnUse"><rect x="60" y="540" width="960" height="900" fill="url(#fv)"/></mask></defs><rect width="1080" height="1920" fill="${PAPER}"/>`;for(let y=160;y<1900;y+=56)s+=`<line x1="0" y1="${y}" x2="1080" y2="${y}" stroke="#e6dfd2" stroke-width="2"/>`;s+=`<line x1="64" y1="0" x2="64" y2="1920" stroke="#ecc9c2" stroke-width="2"/>`;return s})();
+// ---- scene composer ----
+function scenes(t){const b=beatAt(t);let s='';
+  if(b<=2){ // full illustrations
+    const key=b===1?'hook':'picks';const t0=B[b];const z=1.04+.06*ss(t0,B[b+1],t);const pop=ss(t0,t0+.18,t);
+    s+=`<g opacity="${pop}">${img(key,60,540,960,900,z,t,{fy:.55,feather:1})}</g>`;
+    if(b===1){ // counters
+      const k1=ss(B[1]+3.0,B[1]+3.3,t),k2=ss(B[1]+5.1,B[1]+5.4,t);
+      const c1=lerp(1,4,ss(B[1]+3.1,B[1]+4.4,t)),c2=lerp(1,15,ss(B[1]+5.2,B[1]+6.6,t));
+      if(k1>0)s+=`<g opacity="${k1}" transform="translate(300,1360) rotate(-3)"><rect x="-130" y="-58" width="260" height="96" rx="14" fill="${PAPER}" stroke="${GREY}" stroke-width="5"/>${txt(0,10,'₹'+Math.round(c1)+' lakh',{anchor:'middle',size:50,w:700,fill:'#5f636b'})}</g>`;
+      if(k2>0)s+=`<g opacity="${k2}" transform="translate(780,1360) rotate(2) scale(${.8+.2*back((t-B[1]-5.1)/.35)})"><rect x="-150" y="-62" width="300" height="104" rx="14" fill="${ORG}" stroke="${INK}" stroke-width="4"/>${txt(0,14,'₹'+Math.round(c2)+' lakh',{anchor:'middle',size:58,w:700,fill:'#1d140a'})}</g>`;
+    }
+    if(b===2){ // highlight who picks what: three labels pop in sequence with the voice
+      const L=[['FD',GREY,.18,B[2]+.2],['Nifty',BLUE,.5,B[2]+1.3],['Sona',ORG,.82,B[2]+3.0]];
+      for(const [w,col,fx,t0] of L){const k=ss(t0,t0+.25,t);if(k<=0)continue;s+=`<g opacity="${k}" transform="translate(${60+fx*960},650) scale(${.6+.4*back((t-t0)/.3)})"><rect x="-90" y="-44" width="180" height="70" rx="35" fill="${col}"/>${txt(0,6,w,{anchor:'middle',size:38,w:700,fill:col===ORG?'#1d140a':'#fff'})}</g>`}
+    }
+  }else{
+    s+=chart(t)+callouts(t);
+    // vignette strip under chart
+    const vk={3:'sheet',4:'v2008',5:'vflat',6:'vcovid',7:'v2025',8:'v2026'}[b];
+    if(b<9){const t0=B[b];const slide=1-ss(t0,t0+.22,t);const z=1.03+.05*ss(t0,B[b+1],t);
+      s+=`<g transform="translate(${slide*1080},0)">${img(vk,60,1110,960,330,z,t,{fy:b===3?.45:.5})}<rect x="60" y="1110" width="960" height="330" fill="none" stroke="${INK}" stroke-width="3"/></g>`}
+    else{s+=`<g opacity="${ss(B[9],B[9]+.3,t)}">${img('sheet',60,1270,960,200,1.0,t,{fy:.15})}</g>`+finalScore(t)}
+  }
+  return s}
+function renderAt(t){document.getElementById('s').innerHTML=BG+tag(t)+headline(t)+scenes(t)+caption(t)+smallPrint(t)}
+window.renderAt=renderAt;renderAt(0);
+</script></body></html>
