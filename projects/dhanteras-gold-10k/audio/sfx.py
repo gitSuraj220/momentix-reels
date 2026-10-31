@@ -10,6 +10,8 @@ src = src.split("def env(", 1)[1]; src = "def env(" + src.split("def finish")[0]
 src = "\n".join(l for l in src.split("\n") if not l.startswith("gl=lambda"))
 n = int(END * SR) + SR; mix = np.zeros((n, 2)); rng = np.random.default_rng(31)
 exec(src)
+sys.path.insert(0, '/home/claude/momentix-reels/engine')
+from earshot_bank import bank
 
 def bp(x, lo, hi):
     X = np.fft.rfft(x); f = np.fft.rfftfreq(len(x), 1 / SR); X[(f < lo) | (f > hi)] = 0; return np.fft.irfft(X, len(x))
@@ -21,6 +23,8 @@ def coin(g=1.0, f0=3100):
     return x * np.minimum(1, t / .001) * .28 * g
 
 def card_in(g=1.0):
+    return bank('swish/soft' if False else 'pro_pop_in/airy') * .35 * g
+def _card_in_old(g=1.0):
     """paper slide: short soft swoosh + tap"""
     N = int(.32 * SR); t = np.arange(N) / SR
     sw = bp(rng.standard_normal(N), 600, 5000) * np.sin(np.pi * np.clip(t / .28, 0, 1)) ** 2
@@ -45,30 +49,32 @@ def splash():
         x[i:i + L] += np.sin(2 * np.pi * rng.uniform(600, 1400) * tt * (1 + 3 * tt)) * np.exp(-tt / .02) * .3
     return x * .4
 
+def _pop(f=900):
+    return bank('pro_pop/tink' if f>=900 else 'pro_pop_in/knock') * .45
 def ding(g=1.0):
-    return ting() * .5 * g
+    return bank('pro_notify/ding_2045') * .35 * g
 
 # W starts (scene cuts)
 W = [S(3) - .15, S(9) - .15, S(12) - .15, S(16) - .15, S(19) - .15, S(25) - .15]
 add(0.0, coin(.8), 1, -.2); add(0.12, coin(.6, 3600), 1, .2)
-for w in W: add(w - .2, whoosh(.45, True, .2), 1)
+for w in W: add(w - .25, bank('whoosh_fast/crisp') * .22, 1)
 # S1
-add(S(1) + .2, card_in(), 1); add(S(1) + .5, scratch(.6), 1); add(S(2) + .25, thud(), .7); add(S(2) + .3, coin(.7, 2400), 1); add(S(2) + .6, pop(700), .5)
+add(S(1) + .2, card_in(), 1); add(S(1) + .5, scratch(.6), 1); add(S(2) + .25, bank('pro_impact/air') * .4, 1); add(S(2) + .3, coin(.7, 2400), 1); add(S(2) + .6, _pop(700), .5)
 # S2 melt
-add(S(3) + .2, sizzle(2.0), 1); add(S(4) - .2, card_in(), 1); add(S(4), scratch(.6), 1); add(S(5), pop(1100), .5)
-add(S(6) + .2, scratch(.5), 1); add(S(7) + .2, scratch(.35), 1); add(S(8) + .05, stampfx(), .8); add(S(8) + .1, coin(.5, 2000), 1)
+add(S(3) + .2, sizzle(2.0), 1); add(S(4) - .2, card_in(), 1); add(S(4), scratch(.6), 1); add(S(5), _pop(1100), .5)
+add(S(6) + .2, scratch(.5), 1); add(S(7) + .2, scratch(.35), 1); add(S(8) + .05, bank('pro_impact/short') * .45, 1); add(S(8) + .1, coin(.5, 2000), 1)
 # S3 scale
-add(S(9) - .1, card_in(), 1); add(S(10) + .3, pop(600), .5); add(S(11) + .1, stampfx(), .9); add(S(11) + .15, failtone(), .35)
+add(S(9) - .1, card_in(), 1); add(S(10) + .3, _pop(600), .5); add(S(11) + .1, bank('pro_impact/short') * .45, 1); add(S(11) + .15, failtone(), .3)
 # S4 phone
-add(S(12) - .1, splash(), 1); add(S(12) + .1, card_in(), 1); add(S(12) + .5, scratch(.6), 1); add(S(13), pop(900), .5); add(S(14), pop(800), .5)
+add(S(12) - .1, splash(), 1); add(S(12) + .1, card_in(), 1); add(S(12) + .5, scratch(.6), 1); add(S(13), _pop(900), .5); add(S(14), _pop(800), .5)
 add(S(15), coin(.6, 2600), 1)
 # S5 ETF
-add(S(16) + .1, card_in(), 1); add(S(17), pop(1000), .5); add(S(18), ding(1.0), 1); add(S(18) + .05, coin(.6, 3400), 1)
+add(S(16) + .1, card_in(), 1); add(S(17), _pop(1000), .5); add(S(18), ding(1.0), 1); add(S(18) + .05, coin(.6, 3400), 1)
 # S6 hero
-add(S(19) - .05, scratch(.5), 1); add(S(20) - .05, rise(.8) * .5, 1); add(S(22) - .3, rise(.8) * .5, 1); add(S(24) - .3, rise(.8) * .5, 1)
-add(S(20) + .75, pop(700), .5); add(S(22) + .5, pop(850), .5); add(S(24) + .5, ding(.9), 1)
+add(S(19) - .05, scratch(.5), 1); add(S(20) - .05, bank('pro_riser/roll', dur=0.8) * .25, 1); add(S(22) - .3, bank('pro_riser/roll', dur=0.8) * .25, 1); add(S(24) - .3, bank('pro_riser/roll', dur=0.8) * .25, 1)
+add(S(20) + .75, _pop(700), .5); add(S(22) + .5, _pop(850), .5); add(S(24) + .5, ding(.9), 1)
 # S7 ending
-add(S(25) - .05, card_in(), 1); add(S(25) + .1, scratch(.5), 1); add(S(26) + .1, scratch(.5), 1); add(E(27) + .1, coin(.7), 1); add(E(27) + .25, coin(.5, 3700), 1)
+add(S(25) - .05, card_in(), 1); add(S(25) + .1, scratch(.5), 1); add(S(26) + .1, scratch(.5), 1); add(E(27) + .05, bank('pro_shimmer/m3') * .25, 1); add(E(27) + .1, coin(.7), 1); add(E(27) + .25, coin(.5, 3700), 1)
 sfx = mix[:int(END * SR)]
 raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', '../vo/vo.wav', '-ac', '1', '-ar', str(SR), '-f', 'f32le', '-'], capture_output=True).stdout
 v = np.frombuffer(raw, dtype=np.float32)[:len(sfx)]

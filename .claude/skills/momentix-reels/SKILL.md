@@ -55,7 +55,9 @@ Suraj wants **quality over quantity**: clean, premium, unique animation. Options
 * Characters: **Momo** (glass bulb head, two black oval eyes, no mouth, gold screw neck, navy hoodie/joggers/gloves, white-navy sneakers; 3D kit + 2D sheet in `~/Downloads/Momo`, `~/Downloads/MoneyDopamine`) and **Bunty** (curly hair, black tee, joggers, grey sneakers). No copyrighted look-alikes, no trademark logos.
 
 ## 6. Render, sound, mix
-SFX via `audio_lib.py` (`boom`, `whoosh`, `thud`, `tick`, `ting`, `pop`, `riser`, `glitch`, `blip`, `failtone` …) cued to every visual event; Motion Array (Suraj signed in) for music/SFX — avoid Content-ID-registered tracks if possible. Mix to -14 LUFS (or -16 SFX-only when Suraj adds music himself). Deliver to `~/Downloads/<Project>/`.
+SFX via earshot bank (below) + `audio_lib.py` (`boom`, `whoosh`, `thud`, `tick`, `ting`, `pop`, `riser`, `glitch`, `blip`, `failtone` …) cued to every visual event; Motion Array (Suraj signed in) for music/SFX — avoid Content-ID-registered tracks if possible. Mix to -14 LUFS (or -16 SFX-only when Suraj adds music himself). Deliver to `~/Downloads/<Project>/`.
+
+**SFX = earshot sound bank first** (Suraj, 31 Oct 2026; repo github.com/Leonxlnx/earshot, MIT). 252 designed sounds render offline by id — no models, no network. Setup once per session: `git clone --depth 1 https://github.com/Leonxlnx/earshot ~/earshot && pip install --break-system-packages -e ~/earshot --no-deps && pip install --break-system-packages soxr librosa pyloudnorm scikit-learn`. In SFX scripts: `sys.path.insert(0,'engine'); from earshot_bank import bank; add(t, bank('pro_impact/short')*.45)`. Good picks: transitions `whoosh_fast/crisp`, `pro_whoosh_big/*`; card/label pop-ins `pro_pop_in/airy|knock`; number pops `pro_pop/tink`; stamps/hits `pro_impact/short|air`; reveal `pro_notify/ding_2045`; build-ups `pro_riser/roll` (dur param); end shimmer `pro_shimmer/m3`; endings `pro_logo_sting/swell_sting`. List all: `python3 -m earshot sfx list`. **QA every SFX stem:** `python3 -m earshot sfx check sfx_only.wav` (flags clicks, clipping, DC, ring, cheap rising whips; "digital silence inside" is normal for a stem). Keep hand-synth only for sounds the bank lacks (coin clinks, sizzle, pencil scratch). **Never add a continuous bed/hum** (Suraj: buzz irritates). earshot's listening tools (describe/match/critique) and its `real-sound` skill need Hugging Face models / Freesound / Mixkit, which this environment blocks — skills are copied in `.claude/skills/earshot` and `.claude/skills/real-sound` for when access exists.
 
 ## 7. Cover (1080×1920)
 Hero frame + 2-line giant headline (white + yellow/red, thick stroke). **Never cover faces** — put text in empty sky or at the bottom.
@@ -81,4 +83,4 @@ Metricool `getAnalyticsDataByMetrics` brand 7365256 (IG Reels IGRE*, YouTube YTV
 * Voice on frame 1; 74 s videos held ~9 s — aim 35–45 s, or 13–16 s pure animation loops.
 * Mechanism + trend + utility beats political controversy.
 * SEO: search phrase first in title and first line of description (Oct 2026).
-* Never type passwords; Suraj signs in himself.
+* Never type passwords; Suraj signs in himself.* Sound: earshot bank SFX + `sfx check` QA; no continuous bed (Oct 2026).
