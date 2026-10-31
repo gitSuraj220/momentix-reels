@@ -1,0 +1,183 @@
+🎨
+Animation styles you can build with Claude
+I made every one of these styles myself. I wanted styles you'd actually use in your videos, not the bullsh*t ones you see all over the internet that you'd never touch.
+By Shaan Johari. New styles drop on my Instagram first: @viashaan
+Every style from my reels as a one-page recipe: the look (colours with hex codes, free fonts, layout, texture), how it moves, what breaks it, and a ready prompt you paste into Claude with your own words or product. This page keeps growing: each new set of styles lands at the top.
+How to use a card
+Pick the style that fits your video, not the one you like most. Each card says what it suits.
+Copy the card's "Paste this into Claude" prompt. Swap [YOUR WORDS] for your own line, product or brand name.
+Paste it into Claude Code. If you have Remotion set up, it renders straight to video. If not, ask Claude to set it up first ("set up Remotion in this folder and ask me before installing anything").
+Give notes on the first version using the card's "How it moves" and "Never" sections. They're the words that get you the fix.
+Using a style a lot? Save it as a slash command. Make a file at .claude/commands/map-route.md in your project, paste the prompt in and put $ARGUMENTS where your words go. Then type /map-route plus your words in Claude Code.
+Part 2: styles you'd actually use (new)
+Tap a style to open its card.
+1. Maps: 3D Map Route
+2. Product: Exploded Teardown
+3. Title cards: Ink Wash
+4. Explainers: Paper Desk
+A top-down "evidence on the desk" look, like the documentary explainers Johnny Harris made famous. Printed sheets land on a green cutting mat, then get circled in red marker and highlighted by hand. It suits any video that makes a case: a stat, a quote, a finding. Use it for explainers and commentary: lay out the evidence on a desk and mark it up.
+The look
+Palette:
+cutting mat green #2D684C (a little lighter in the middle, #327354, falling to #245A40 at the edges)
+mat grid lines in pale cream #ECE8B4 at low strength
+paper #F4F2EC, print black #151515, label grey #55524B
+one marker red #D4231B, one highlighter yellow #FFE024
+masking tape #E6D9B4, slightly see-through
+Type:
+The headline on the sheet is Libre Caslon Text Bold, sentence case. Body copy is Libre Caslon Text Regular.
+Small figure labels ("FIG. 2 · ...") are IBM Plex Mono caps, tracked wide.
+The cut-out label is Inter Tight ExtraBold, tight letter spacing, black on white card.
+The handwriting is Permanent Marker.
+Layout:
+Top-down, straight over the desk. Two printed sheets at slight angles (about -3 and +3 degrees) overlap a little. A cut-out label sits across the edge of one, taped down at two corners.
+The evidence fills the middle of the frame. The mat fills everything else, and the bottom fifth is empty mat.
+Texture:
+Paper has grain, fibres and a few toner specks.
+Every sheet casts two shadows: a tight dark contact line and a soft drop shadow down and to the right.
+The mat has a fine grid, ruler numbers on its edges, scuffs and a few knife grooves.
+Light film grain and a gentle vignette over the whole frame, so it reads as filmed rather than drawn.
+How it moves
+Paper has height and weight. Each sheet slides in from off-frame lifted: a bit bigger, with its shadow far away and soft. It falls faster as it drops and lands with a thud. The shadow snaps tight, it makes a tiny hop, skids a few pixels and stops. Its rotation overshoots by about 10% and settles.
+Tape slaps on from above the lens, shrinking from about 135% to full size in a fifth of a second, with a tiny squash on impact.
+The marker is applied by hand. The circle grows along its path, the note writes on letter by letter, and the arrow is a shaft and then one V stroke. Ink sits a little darker where the pen starts and stops.
+The highlighter sweeps line by line with a slanted chisel edge, quick in the middle and easing at each end.
+The camera is a slow handheld push: about 7% in, with a one-degree roll, a little low-frequency drift, and a small jolt each time something lands. Everything is still for the last second.
+Never
+Clean flat vector paper with no grain or shadow.
+Fading anything on. Paper lands, tape slaps and ink draws.
+A floaty camera: slow sine-wave wobble, orbiting, or big moves.
+More colour than one red and one yellow. Everything else is print black and grey.
+Paste this into Claude
+Build me a 5-second, 9:16 animation (1080x1920, 30 fps) in Remotion in a Johnny Harris style "evidence on the desk" look, shot top-down over a green cutting mat (#2D684C) with a fine cream grid. On it:
+- a printed chart sheet showing [MY STAT OR CHART]
+- a printed quote sheet with [MY QUOTE], in Libre Caslon Text on off-white paper (#F4F2EC) with grain and real two-layer shadows
+- a white cut-out label reading "[MY LABEL]" in Inter Tight ExtraBold
+
+Give every piece of paper a height. It slides in from off-frame lifted, then falls and lands with weight: the shadow snaps tight, it makes a tiny hop, and its rotation overshoots and settles. Slap masking tape over the corners. Then draw a red marker circle around the key point, write "[MY NOTE]" letter by letter in Permanent Marker, draw an arrow, and sweep a yellow highlighter across the key sentence line by line. Add a slow handheld push-in with a tiny jolt on each landing, light film grain, and a one-second hold at the end.
+​
+5. News and commentary: Headline Highlight
+The cut-to-the-article shot that commentary and documentary channels live on. A news story flies in on a 3D tilt over a wall of blurred articles, the camera pushes in on the paragraph, a lime highlighter sweeps the line that matters, and a quoted post pops in as the receipt. It suits any video that backs a claim with a source. Use it for news commentary, documentaries, "receipts" in business reels.
+The look
+Palette:
+backdrop near-black #15181C, with defocused article cards in pale grey #E9EAEC and muted photo blocks
+article paper #FCFCFA, headline ink #16181B, body text #26292D, small grey #6A6F76, thin rules #D9DBDE
+one news red #C1272D for the section label only
+highlighter lime #C9F52A, with a deeper #B8E81A where the second pass laid more ink
+the post card is white with one blue verified tick #2F7BF5
+Type:
+The masthead is Newsreader ExtraBold at its display optical size, tightly spaced. The headline is Newsreader Bold, sentence case, three short lines.
+The body is Newsreader Regular with a big bold drop cap.
+Everything that is interface (date line, section nav, byline, the post) is Inter.
+Layout:
+One article card fills the middle of the frame, tilted back and turned slightly, like a page held up to the camera. Behind it, a grid of other articles, heavily out of focus and slightly rotated.
+The post card overlaps the bottom right corner of the article, tilted a different way so it reads as a separate layer in front.
+Text stays in the middle; the bottom fifth is only blurred background.
+Texture:
+The highlighter looks like real ink: rough edges, faint streaks along the stroke, a slanted chisel end, and a darker blob where the pen first touched. It is multiplied over the text, so the letters stay black.
+Deep, soft drop shadows under the article and the post, and a dark vignette around the edges.
+How it moves
+The background is never still. The blurred cards drift slowly from the first frame and move less than the article when the camera moves, so there is depth.
+The article flies in with weight. It comes up from the bottom corner, tilted far back, slightly soft and motion-blurred, as if it passed close to the lens. It arrives on a heavy spring, then its tilt swings a few degrees past rest and settles back over about a second.
+The camera pushes in like a dolly, not a zoom. It starts framed on the whole article and travels toward the key paragraph: slow to start, a long smooth glide, a gentle landing. Never a straight linear zoom.
+The highlighter sweeps line by line, left to right, quick to start and easing off the end of each line, with a short pause as the hand moves to the next line. What is already inked never moves.
+The post pops in with an overshoot about 0.4 s after the last line is highlighted, its tilt landing a beat after its scale. Then everything holds for over a second.
+Never
+A flat, front-on screenshot with a yellow box drawn over it.
+A perfect rectangle highlight with clean edges and no blend.
+Fading the article or the post on, or a linear zoom.
+Real news brands, real people, or real logos.
+Paste this into Claude
+Build me a 5-second, 9:16 animation (1080x1920, 30 fps) in Remotion of a news article being highlighted, like the "receipts" shots in commentary videos. Invent a newspaper called [MY MASTHEAD] with the headline "[MY HEADLINE]" and the paragraph "[MY PARAGRAPH]". Set it in Newsreader on off-white paper (#FCFCFA), Inter for the date, nav and byline, over a near-black wall of blurred, drifting article cards.
+
+Fly the article in from the bottom corner on a 3D tilt with light motion blur, landing on a heavy spring so its tilt sways past rest and settles. Push the camera toward the paragraph like a dolly: slow start, long glide, soft landing. Sweep a lime highlighter (#C9F52A) across "[MY KEY SENTENCE]" line by line, with rough edges, faint streaks, a chisel end and multiply blending. About 0.4 s later, pop in a quoted post saying "[MY POST]" with an overshoot. Hold the last second.
+​
+6. Finance and data: Stat Chart
+The terminal-dark money graphic from finance documentaries and business news: one huge number, one line chart, one moment that changed everything. The number counts up as the line draws, and the line turns orange at the event that made the difference. It suits any video that turns a result into a story. Use it for finance and business explainers, growth recaps, client results.
+The look
+Palette:
+near-black background #0A0B0D, faint white grid lines at about 7% opacity
+white #F4F5F6 for the number and headlines, grey #8B9098 for labels, dark grey #4A4F57 for the source line
+the line is soft white #E9EBEE before the event and one hot orange #FF5B1F after it. Orange is the only colour in the frame.
+Type:
+The hero number is Inter Tight ExtraBold, huge and tightly spaced, with tabular figures so every digit is the same width. The dollar sign is small and raised, the unit letter is two thirds size.
+Labels and the callout are Inter Tight Medium and SemiBold, sentence case.
+Everything that is data (dates, axis values, the header line, the price tag, the source) is IBM Plex Mono in caps with a little letter spacing.
+Layout:
+A thin header row on top: an invented company's small logo and name on the left, the metric's fine print on the right, a hairline under it.
+Below it, a one-line label, then the number filling the top half of the frame.
+Under the number, an orange delta chip with a triangle and a short grey line of text, and a live date on the right.
+The chart fills the bottom half: year ticks along the base, values on the right, a hatched strip for the months not reported yet, and one callout with a thin leader line pointing at the event.
+Texture: none. Flat black, crisp lines, a faint white fill under the line that fades toward the bottom.
+How it moves
+The number is the line. It always shows the value under the line's tip, so it creeps while the line is flat, takes off at the event, and slows right down as it lands on the final figure. Tabular figures, no rolling or bouncing digits.
+The line draws left to right with its head leading: a small dot rides the tip, the fill follows just behind it, and a faint dashed cursor and the date in the corner scrub along with it. It is already moving on the first frame, slows a touch into the event, speeds up the rise, then eases gently into the last month.
+The colour switch happens exactly at the event. The dot swells for a moment and turns orange, the line after that point is orange and thicker, a ring marker pops onto the event, the leader line draws up, and the callout's three lines snap up into place one after another.
+The landing: when the count reaches its final value the delta chip pops with a small overshoot. When the line reaches the last month, a ring pings around the end dot and the value tag slides out of the axis. Then everything holds for well over a second.
+Never
+A counter that rolls, jiggles in width, or overshoots past the real number.
+A rainbow of series, gradients on the line, or a glow behind it.
+The orange appearing anywhere before the event it stands for.
+Real companies, real logos, or numbers that look like real filings.
+Paste this into Claude
+Build me a 5-second, 9:16 animation (1080x1920, 30 fps) in Remotion of a business-documentary stat graphic. Use my company [MY COMPANY], my metric "[MY METRIC LABEL]", and my data: [MY MONTHLY VALUES], ending on [MY FINAL NUMBER]. The key event is "[MY EVENT]" in [MONTH YEAR], with the line "[ONE-LINE IMPACT]" and a delta chip of "[MY % CHANGE]".
+
+Near-black background (#0A0B0D), white Inter Tight, data labels in IBM Plex Mono caps, one accent: orange #FF5B1F. A huge tabular-figure counter shows the value under the line's tip as the line draws left to right, a small dot leading and the fill following. At the event the line turns orange, a ring marker pops on, a leader line draws up and the callout snaps in. When the count lands, pop the chip with a small overshoot, then ping the end point and hold the last second.
+​
+7. Product launches: App Mockup
+8. Tutorials: Screen-Recording Zoom
+9. Stories: Timeline
+A story told as a walk along the years: a timeline painted on a floor in perspective, with each milestone standing up on its own little card as the line fills toward today. It suits any video that has to cover years in seconds and land on "where we are now". Use it for company stories, "my journey" reels, history explainers.
+The look
+Palette:
+cool off-white floor #F5F6F8 shading down to #E3E6EB, with a faint grey grid that fades into haze toward the top
+ink #0E1116 for the headline, card titles and the years already lived; grey #6A717C for the small lines; light grey #B7BEC8 for the stretch of line still to come
+one electric blue #2442F5 for the filled line, the ticks behind the playhead, the playhead itself and the NOW card. Blue is the only colour.
+Type:
+Schibsted Grotesk: ExtraBold and tightly spaced for the headline and the big years painted on the floor, Bold for card titles, Medium for the one-line details.
+JetBrains Mono SemiBold with a little letter spacing for the kicker line and the year on each card.
+Layout:
+A headline block up top: a tiny logo, a mono kicker ("COMPANY · 2016 TO NOW"), then one line of headline with the payoff phrase in blue.
+Below it the floor. The line runs from the far top left down to the near bottom middle, with ticks across it and the years painted flat on the floor to its left. Key years are big and black, the in-between years smaller and grey, future years pale.
+Each milestone is a white card standing on a thin stem from its point on the line: a square thumbnail, the year, a short title, one line. The cards cascade down and to the right, nearer ones slightly bigger.
+The latest milestone is the NOW card: solid blue, the nearest and biggest, with a small black "NOW" pill on its corner. The playhead dot with a soft ring sits on the line just past it.
+Texture: none. Flat floor, crisp lines, soft layered card shadows.
+How it moves
+The camera walks the years. It opens low and close on the first years, turned a little down the line, then travels toward now in one long eased move: it cranes up, pulls back and swings square, and lands on the final framing about a second after the playhead stops. It never crawls at a steady speed.
+The blue fill and its playhead lead. They are already moving on the first frame, speed up through the middle years and brake into now. Each tick turns blue and its year darkens the moment the playhead crosses it.
+Each milestone is one crisp beat. As the playhead passes its year, the base dot pops, the stem shoots up, and the card hinges up off the stem like a pop-up book, overshooting about 10% before it settles. Leave a clear gap between milestones so a click can sit on each.
+The NOW card lands last with a bit more weight, its pill snaps on a beat later, one ring pings out from the playhead, and then everything holds for the last second.
+Never
+Cards that fade in flat, or a line that fills at one constant speed.
+A second accent colour, gradients on the cards, or a glow on the line.
+A camera still drifting at the end, or a NOW card that lands before the line reaches it.
+Real company names, logos or product photos.
+Paste this into Claude
+Build me a 5-second, 9:16 animation (1080x1920, 30 fps) in Remotion: a 3D-floor timeline telling [MY STORY]. Headline: "[MY HEADLINE]". Kicker: "[MY NAME] · [START YEAR] TO NOW". Milestones (3 or 4): [YEAR, SHORT TITLE, ONE LINE]. The last one is the NOW card.
+
+Look: an off-white perspective floor with a faint grid, ink #0E1116, one blue accent #2442F5, Schibsted Grotesk with JetBrains Mono labels. The line runs diagonally toward the viewer, years painted flat on the floor beside it. Milestones are white thumbnail cards on thin stems; the last is solid blue with a black "NOW" pill.
+
+Motion: the camera starts low near the first year and travels toward now on one eased move. The blue fill and its playhead lead, and each card hinges up with a small overshoot as the playhead passes its year. The NOW card lands last, then hold the final second.
+​
+Part 1 styles
+Tap a style to open its card.
+1. Glowing 2D motion: Glow Orb
+2. Glassmorphism: Frosted Glass UI
+3. Apple style: Apple One-Take
+4. CRT effect / retro-futurism: Retro CRT Glow
+5. Oscilloscope art: Oscilloscope
+6. Editorial layout: Magazine Layout and Note
+7. Editorial kinetic typography: Blue Editorial
+8. Risograph: Risograph
+9. Swiss style: Swiss Grid
+10. Blueprint / technical drawing: Pencil to Blueprint
+Bonus: the lines that stop it looking AI-made
+The most-liked AI motion prompts tell the AI what NOT to do. Add any of these to the end of a prompt:
+No neon glow unless the style is built on glow.
+No particle bursts or sparkles.
+No crossfades. Things change shape or cut, they don't dissolve.
+No bouncy easing on everything. Pick one moment for a bounce.
+No camera shake, no lens flares.
+No glowing grid floors.
+No text in the corners of the frame.
+Nothing that looks like a template.
+Made by Shaan Johari (@viashaan).

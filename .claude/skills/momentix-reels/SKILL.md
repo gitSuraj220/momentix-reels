@@ -54,6 +54,9 @@ Suraj wants **quality over quantity**: clean, premium, unique animation. Options
 * Higgsfield (Kling 3.0 Pro ≈7.5 credits / 5 s clip; gpt_image_2_5 ≈2.75) only for a few key motion moments; save credits.
 * Characters: **Momo** (glass bulb head, two black oval eyes, no mouth, gold screw neck, navy hoodie/joggers/gloves, white-navy sneakers; 3D kit + 2D sheet in `~/Downloads/Momo`, `~/Downloads/MoneyDopamine`) and **Bunty** (curly hair, black tee, joggers, grey sneakers). No copyrighted look-alikes, no trademark logos.
 
+* **Style recipes:** `styles/` has proven looks (Stat Chart, Paper Desk, Headline Highlight, Timeline — palettes, fonts, motion, "Never" lists). Pick one per reel; obey the anti-AI-look rules in `styles/README.md`.
+* **finance_90seconds notebook style** (lined paper, serif headlines, rough.js hatched charts, sources under every chart) worked for the Zomato earnings reel; talking 3D object + paper cards worked for Dhanteras gold.
+
 ## 6. Render, sound, mix
 SFX via earshot bank (below) + `audio_lib.py` (`boom`, `whoosh`, `thud`, `tick`, `ting`, `pop`, `riser`, `glitch`, `blip`, `failtone` …) cued to every visual event; Motion Array (Suraj signed in) for music/SFX — avoid Content-ID-registered tracks if possible. Mix to -14 LUFS (or -16 SFX-only when Suraj adds music himself). Deliver to `~/Downloads/<Project>/`.
 
