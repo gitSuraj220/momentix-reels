@@ -1,0 +1,347 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Cas;font-weight:400;src:url('fonts/libre-caslon-text-latin-400-normal.woff2')}
+@font-face{font-family:Cas;font-weight:400;font-style:italic;src:url('fonts/libre-caslon-text-latin-400-italic.woff2')}
+@font-face{font-family:Cas;font-weight:700;src:url('fonts/libre-caslon-text-latin-700-normal.woff2')}
+@font-face{font-family:Cas;font-weight:700;unicode-range:U+20A0-20CF,U+00D7,U+2013;src:url('fonts/noto-serif-latin-ext-700-normal.woff2')}
+@font-face{font-family:Cas;font-weight:400;unicode-range:U+20A0-20CF;src:url('fonts/noto-serif-latin-ext-400-normal.woff2')}
+@font-face{font-family:Mo;font-weight:500;src:url('fonts/ibm-plex-mono-latin-500-normal.woff2')}
+@font-face{font-family:Mo;font-weight:700;src:url('fonts/ibm-plex-mono-latin-700-normal.woff2')}
+@font-face{font-family:Mo;font-weight:500;unicode-range:U+20B9;src:url('fonts/poppins-devanagari-700-normal.woff2')}
+@font-face{font-family:Mo;font-weight:700;unicode-range:U+20B9;src:url('fonts/poppins-devanagari-700-normal.woff2')}
+@font-face{font-family:IT;font-weight:800;src:url('fonts/inter-tight-latin-800-normal.woff2')}
+@font-face{font-family:IT;font-weight:700;src:url('fonts/inter-tight-latin-700-normal.woff2')}
+@font-face{font-family:IT;font-weight:800;unicode-range:U+20B9;src:url('fonts/poppins-devanagari-800-normal.woff2')}
+@font-face{font-family:IT;font-weight:700;unicode-range:U+20B9;src:url('fonts/poppins-devanagari-700-normal.woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#2D684C}
+#st{position:absolute;inset:0;overflow:hidden}
+.desk{position:absolute;inset:0;background:radial-gradient(ellipse 80% 65% at 50% 45%,#327354 0%,#2D684C 55%,#245A40 100%)}
+.desk::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(236,232,180,.13) 2px,transparent 2px),linear-gradient(90deg,rgba(236,232,180,.13) 2px,transparent 2px),linear-gradient(rgba(236,232,180,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(236,232,180,.07) 1px,transparent 1px);background-size:300px 300px,300px 300px,60px 60px,60px 60px;background-position:-30px -30px}
+.dark{position:absolute;inset:0;background:#0A0B0D}
+.dark::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:90px 90px;background-position:0 20px}
+.sc{position:absolute;inset:0;display:none}
+.ab{position:absolute}
+.paper{position:absolute;background:#F4F2EC;box-shadow:0 3px 0 rgba(0,0,0,.08),0 20px 34px rgba(0,0,0,.32)}
+.print{position:absolute;background:#F4F2EC;padding:20px;box-shadow:0 3px 0 rgba(0,0,0,.08),0 22px 36px rgba(0,0,0,.36)}
+.print .ph{width:100%;height:100%;overflow:hidden;position:relative}
+.print img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.06)}
+.tape{position:absolute;width:150px;height:46px;background:rgba(230,217,180,.88);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.mono{font-family:Mo;font-weight:500;text-transform:uppercase;letter-spacing:.09em}
+.cas{font-family:Cas;font-weight:700;color:#151515}
+.it{font-family:IT;font-weight:800;font-variant-numeric:tabular-nums}
+.hl{background:linear-gradient(#FFE024,#FFE024) no-repeat 0 78%;background-size:0% 58%;padding:0 6px}
+.stamp{position:absolute;border:6px solid #D4231B;color:#D4231B;font-family:IT;font-weight:800;text-transform:uppercase;padding:6px 20px;border-radius:8px;opacity:0;letter-spacing:.04em}
+svg{position:absolute;overflow:visible}
+/* tracker */
+#trk{position:absolute;left:90px;top:214px;width:900px;height:118px;background:#F4F2EC;box-shadow:0 14px 26px rgba(0,0,0,.3);opacity:0}
+.tn{position:absolute;top:16px;width:52px;height:52px;margin-left:-26px;border-radius:50%;border:3px solid #151515;font-family:IT;font-weight:800;font-size:28px;line-height:46px;text-align:center;color:#151515;background:#F4F2EC}
+.tl{position:absolute;top:76px;width:200px;margin-left:-100px;text-align:center;font-size:19px;color:#55524B}
+/* caption */
+#cap{position:absolute;left:0;right:0;top:1388px;text-align:center;opacity:0}
+#cap span{display:inline-block;max-width:960px;background:#F4F2EC;color:#151515;font-family:IT;font-weight:800;font-size:54px;line-height:1.12;padding:16px 34px 18px;border-radius:20px;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+#cap b{font-weight:800;background:linear-gradient(#FFE024,#FFE024) no-repeat 0 82%;background-size:100% 55%;padding:0 4px}
+/* chart */
+.lab{color:#8B9098;font-size:26px}
+.hero{color:#F4F5F6;font-size:178px;letter-spacing:-.02em;line-height:1}
+.chip{position:absolute;background:#FF5B1F;color:#0A0B0D;font-family:IT;font-weight:800;font-size:50px;padding:6px 22px;border-radius:14px;opacity:0}
+.card{position:absolute;top:1212px;width:440px;height:128px;border:3px solid #4A4F57;border-radius:16px;padding:14px 22px;opacity:0;background:#0A0B0D}
+.card .k{font-size:22px;color:#8B9098}
+.card .v{font-size:58px;color:#F4F5F6;margin-top:4px}
+.card.or{border-color:#FF5B1F}.card.or .v{color:#FF5B1F}
+#disc{position:absolute;left:0;right:0;top:1420px;text-align:center;font-size:24px;color:#8B9098;opacity:0}
+</style></head><body><div id="st">
+
+<!-- A: hook + tapri -->
+<div class="sc" id="sA"><div class="desk"></div>
+ <div class="paper" id="A_t" style="left:110px;top:372px;width:860px;height:150px;padding:28px 0 0;text-align:center">
+  <div class="cas" style="font-size:60px;white-space:nowrap"><span class="hl" id="A_hl">IPO</span> kaam kaise karta hai?</div></div>
+ <div class="print" id="A_p" style="left:240px;top:572px;width:600px;height:748px"><div class="ph"><img id="A_v"></div>
+  <div class="tape" style="left:-40px;top:-14px;transform:rotate(-32deg)"></div><div class="tape" style="right:-40px;top:-14px;transform:rotate(30deg)"></div></div>
+ <div class="mono ab" id="A_lab" style="left:240px;top:1328px;width:600px;text-align:center;font-size:22px;color:#ECE8B4;opacity:0">RAJU KI TAPRI · DUKAAN NO. 1</div>
+ <div class="paper" id="A_n" style="left:742px;top:1010px;width:280px;height:250px;padding:18px 0 0;text-align:center;opacity:0">
+  <div class="mono" style="font-size:20px;color:#55524B">DUKAANEIN</div>
+  <div class="it" style="font-size:84px;color:#151515;line-height:1.05" id="A_n1">50</div>
+  <div class="it" style="font-size:34px;color:#D4231B;opacity:0;line-height:1.1" id="A_n2">LAKSHYA<br>500</div>
+  <div class="tape" style="left:58px;top:-22px;transform:rotate(-4deg)"></div></div>
+</div>
+
+<!-- B: money -->
+<div class="sc" id="sB"><div class="desk"></div>
+ <div class="print" id="B_p" style="left:70px;top:380px;width:500px;height:625px"><div class="ph"><img src="../ai/ipo_p2_chain.jpg"></div>
+  <div class="tape" style="left:170px;top:-22px;transform:rotate(-3deg)"></div></div>
+ <div class="mono ab" id="B_lab" style="left:70px;top:1016px;width:500px;text-align:center;font-size:21px;color:#ECE8B4;opacity:0">50 → 500 DUKAAN</div>
+ <div class="paper" id="B_n" style="left:620px;top:410px;width:390px;height:230px;padding:24px 0 0;text-align:center;opacity:0">
+  <div class="mono" style="font-size:22px;color:#55524B">PAISA CHAHIYE</div>
+  <div class="it" style="font-size:86px;color:#151515">₹100 cr</div>
+  <div class="tape" style="left:118px;top:-22px;transform:rotate(3deg)"></div></div>
+ <div class="paper" id="B_l" style="left:620px;top:690px;width:390px;height:250px;padding:26px 30px 0;opacity:0">
+  <div class="mono" style="font-size:22px;color:#55524B">OPTION 1</div>
+  <div class="cas" style="font-size:58px;margin-top:6px">Bank loan?</div>
+  <div class="mono" style="font-size:22px;color:#55524B;margin-top:14px">BYAAJ · EMI · GIRVI</div>
+  <div class="stamp" id="B_st" style="left:110px;top:150px;font-size:52px;transform:rotate(-9deg)">Mehenga</div></div>
+ <div class="ab" id="B_ipo" style="left:0;right:0;top:1060px;text-align:center;opacity:0"><span class="it" style="font-size:210px;color:#F4F2EC;letter-spacing:.02em">IPO</span></div>
+ <svg id="B_c" width="1080" height="1920" style="left:0;top:0"></svg>
+</div>
+
+<!-- C: DRHP -->
+<div class="sc" id="sC"><div class="desk"></div>
+ <div class="paper" id="C_d" style="left:150px;top:380px;width:780px;height:930px;padding:44px 56px 0">
+  <div class="mono" style="font-size:21px;color:#55524B">DRAFT RED HERRING PROSPECTUS</div>
+  <div class="cas" style="font-size:118px;line-height:1.05;margin-top:8px"><span class="hl" id="C_hl">DRHP</span></div>
+  <div style="font-family:Cas;font-style:italic;font-size:36px;color:#55524B;margin-top:2px">Raju Chai Ltd. (example)</div>
+  <div id="C_bars" style="margin-top:26px"></div>
+  <div class="cas" style="font-size:62px;margin-top:22px;line-height:1.32">
+   <div><span class="hl" id="C_k1">Kamai</span> <span class="mono" style="font-size:22px;color:#55524B;vertical-align:middle">· REVENUE, PROFIT</span></div>
+   <div><span class="hl" id="C_k2">Karza</span> <span class="mono" style="font-size:22px;color:#55524B;vertical-align:middle">· DEBT</span></div>
+   <div><span class="hl" id="C_k3">Khatre</span> <span class="mono" style="font-size:22px;color:#55524B;vertical-align:middle">· RISKS</span></div></div>
+  <div class="tape" style="left:-36px;top:-12px;transform:rotate(-30deg)"></div><div class="tape" style="right:-36px;top:-12px;transform:rotate(28deg)"></div>
+  <div class="stamp" id="C_st" style="left:380px;top:300px;background:#F4F2EC;font-size:40px;transform:rotate(-8deg)">SEBI ko submit</div></div>
+</div>
+
+<!-- D: price band -->
+<div class="sc" id="sD"><div class="desk"></div>
+ <div class="ab" id="D_tag" style="left:200px;top:420px;width:680px;height:480px;transform-origin:340px -60px">
+  <svg width="680" height="480" style="left:0;top:0"><path d="M340 -80 L340 40" stroke="#ECE8B4" stroke-width="4" fill="none"/>
+   <path d="M150 40 L530 40 L640 140 L640 460 L40 460 L40 140 Z" fill="#E6D9B4" stroke="#B8AA82" stroke-width="3"/>
+   <circle cx="340" cy="92" r="20" fill="#2D684C" stroke="#B8AA82" stroke-width="3"/></svg>
+  <div class="mono ab" style="left:0;right:0;top:150px;text-align:center;font-size:30px;color:#55524B">PRICE BAND</div>
+  <div class="it ab" style="left:0;right:0;top:206px;text-align:center;font-size:132px;color:#151515">₹95–100</div>
+  <div class="mono ab" style="left:0;right:0;top:372px;text-align:center;font-size:24px;color:#55524B">PER SHARE</div></div>
+ <div class="paper" id="D_r" style="left:110px;top:1000px;width:860px;height:250px;opacity:0"><svg id="D_rs" width="860" height="250" style="left:0;top:0"></svg></div>
+</div>
+
+<!-- E: bidding -->
+<div class="sc" id="sE"><div class="desk"></div>
+ <div class="print" id="E_p" style="left:250px;top:390px;width:580px;height:725px"><div class="ph"><img src="../ai/ipo_p3_bid.jpg"></div>
+  <div class="tape" style="left:215px;top:-22px;transform:rotate(2deg)"></div></div>
+ <div id="E_bids"></div>
+ <div class="paper" id="E_dm" style="left:70px;top:1150px;width:330px;height:150px;padding:20px 0 0;text-align:center;opacity:0">
+  <div class="mono" style="font-size:22px;color:#55524B">DEMAND</div>
+  <svg width="330" height="90" style="left:0;top:60px"><path id="E_arr" d="M60 70 L130 52 L180 58 L250 18 M228 14 L252 17 L246 40" stroke="#151515" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+ <div class="paper" id="E_fx" style="left:640px;top:1130px;width:340px;height:180px;padding:22px 0 0;text-align:center;opacity:0">
+  <div class="mono" style="font-size:22px;color:#55524B">FINAL PRICE</div><div class="it" style="font-size:96px;color:#151515">₹100</div></div>
+ <svg id="E_c" width="1080" height="1920" style="left:0;top:0"></svg>
+ <div class="stamp" id="E_st" style="left:880px;top:1262px;font-size:46px;transform:rotate(10deg);background:#F4F2EC">Fix</div>
+</div>
+
+<!-- F: math -->
+<div class="sc" id="sF"><div class="desk"></div>
+ <div class="paper" id="F_s" style="left:90px;top:380px;width:900px;height:540px;padding:44px 64px 0">
+  <div class="mono" style="font-size:22px;color:#55524B">IPO KA HISAAB · RAJU CHAI LTD.</div>
+  <div class="cas" style="font-size:70px;margin-top:20px;line-height:1.25">
+   <div id="F_1" style="opacity:0">1 crore shares</div>
+   <div id="F_2" style="opacity:0">× ₹100 each</div>
+   <div id="F_rule" style="height:5px;background:#151515;margin:14px 0 10px;width:0"></div>
+   <div id="F_3" style="opacity:0">= <span class="hl" id="F_hl">₹100 crore</span></div></div>
+  <svg id="F_ck" width="200" height="200" style="left:700px;top:330px"></svg></div>
+ <div class="print" id="F_p" style="left:110px;top:960px;width:400px;height:330px"><div class="ph"><img src="../ai/ipo_p4_cash.jpg" style="object-position:50% 40%"></div>
+  <div class="tape" style="left:125px;top:-22px;transform:rotate(-2deg)"></div></div>
+ <svg id="F_ar" width="1080" height="1920" style="left:0;top:0"></svg>
+ <div class="paper" id="F_tag" style="left:620px;top:1010px;width:370px;height:150px;padding:20px 0 0;text-align:center;opacity:0">
+  <div class="mono" style="font-size:22px;color:#55524B">PAISA GAYA</div><div class="it" style="font-size:58px;color:#151515">RAJU & CO.</div></div>
+ <div class="stamp" id="F_st" style="left:600px;top:1190px;font-size:46px;transform:rotate(-7deg);background:#F4F2EC">Kaam khatam</div>
+</div>
+
+<!-- G: Raju listing chart -->
+<div class="sc" id="sG"><div class="dark"></div>
+ <div class="mono ab lab" id="G_l0" style="left:110px;top:250px">STEP 4 · LISTING DAY</div>
+ <div class="mono ab lab" id="G_l1" style="left:110px;top:300px;color:#F4F5F6">RAJU CHAI LTD · SHARE PRICE <span style="color:#8B9098">(EXAMPLE)</span></div>
+ <div class="it ab hero" id="G_n" style="left:100px;top:370px">₹100</div>
+ <div class="mono ab lab" id="G_s" style="left:110px;top:568px">ISSUE PRICE</div>
+ <svg id="G_svg" width="1080" height="1920" style="left:0;top:0"></svg>
+ <div class="chip" id="G_chip">+21%</div>
+ <div class="mono ab" id="G_br" style="left:130px;top:0;width:440px;font-size:30px;color:#FF5B1F;opacity:0;line-height:1.4">₹21 × 1 CR<br>= ₹21 CR EXTRA</div>
+ <div class="card" id="G_c1" style="left:90px"><div class="mono k">RAJU &amp; CO. KO</div><div class="it v">₹0 <span style="font-size:30px;color:#8B9098">EXTRA</span></div></div>
+ <div class="card or" id="G_c2" style="left:550px"><div class="mono k">JINHE SHARE MILA</div><div class="it v">+₹21 cr</div></div>
+</div>
+
+<!-- H: Jio newspaper -->
+<div class="sc" id="sH"><div class="desk"></div>
+ <div class="paper" id="H_np" style="left:100px;top:380px;width:880px;height:470px;padding:30px 44px 0;transform:rotate(-1.2deg)">
+  <div style="display:flex;justify-content:space-between;border-bottom:3px solid #151515;padding-bottom:10px"><span class="cas" style="font-size:40px">Market Samachar</span><span class="mono" style="font-size:20px;color:#55524B;margin-top:16px">WED · 28 OCT 2026</span></div>
+  <div class="cas" style="font-size:74px;line-height:1.12;margin-top:22px"><span class="hl" id="H_hl">Jio Platforms</span> lists on NSE, BSE</div>
+  <div id="H_bars" style="margin-top:22px;display:flex;gap:26px"></div></div>
+ <div class="print" id="H_p" style="left:300px;top:880px;width:460px;height:440px;transform:rotate(2deg)"><div class="ph"><img id="H_v"></div>
+  <div class="tape" style="left:155px;top:-22px;transform:rotate(-3deg)"></div></div>
+</div>
+
+<!-- I: Jio chart -->
+<div class="sc" id="sI"><div class="dark"></div>
+ <div class="mono ab lab" style="left:110px;top:250px">LISTING DAY · 28 OCT 2026</div>
+ <div class="mono ab lab" style="left:110px;top:300px;color:#F4F5F6">JIO PLATFORMS · SHARE PRICE</div>
+ <div class="it ab hero" id="I_n" style="left:100px;top:370px">₹1,119</div>
+ <div class="mono ab lab" id="I_s" style="left:110px;top:568px">ISSUE PRICE</div>
+ <svg id="I_svg" width="1080" height="1920" style="left:0;top:0"></svg>
+ <div class="chip" id="I_chip">+21.36%</div>
+ <div class="card" id="I_c1" style="left:90px"><div class="mono k">JIO KO MILE</div><div class="it v">₹30,213 cr</div></div>
+ <div class="card or" id="I_c2" style="left:550px"><div class="mono k" id="I_k2">LISTING KA UCHAAL</div><div class="it v">~₹6,450 cr</div></div>
+ <div class="mono" id="disc">Sirf jaankari ke liye · Sources: Groww, Chittorgarh</div>
+</div>
+
+<div id="trk"></div>
+<div id="cap"></div>
+</div>
+<script src="rough.js"></script>
+<script>
+const CU=__CUES__;
+const S=i=>CU[i].s, E=i=>CU[i].e;
+const END=E(37)+1.6;
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ss=(a,b,x)=>{const k=cl((x-a)/(b-a));return k*k*(3-2*k)};
+const back=k=>{k=cl(k);const c=1.5;return 1+(c+1)*Math.pow(k-1,3)+c*Math.pow(k-1,2)};
+const eo=k=>1-Math.pow(1-cl(k),3);
+const pr=(t,a,d)=>cl((t-a)/d);
+const NS='http://www.w3.org/2000/svg';
+const RED='#D4231B',ORG='#FF5B1F';
+let seed=11;
+// ---------- helpers
+const fr=(d,f)=>`${d}/${String(Math.max(1,Math.min(151,f))).padStart(4,'0')}.jpg`;
+let last={};function setImg(el,src){if(last[el]!==src){$(el).src=src;last[el]=src}}
+function land(id,k,rot,dy=-70){const e=$(id);e.style.opacity=cl(k*2.2);e.style.transform=`translateY(${(1-eo(k))*dy}px) rotate(${rot+(1-eo(k))*rot*1.5}deg) scale(${1.04-0.04*eo(k)})`}
+function rise(id,k,dy=20){const e=$(id);e.style.opacity=cl(k);e.style.transform=`translateY(${(1-eo(k))*dy}px)`}
+function pop(id,k,rot=0){const e=$(id);e.style.opacity=cl(k*2);e.style.transform=`scale(${0.6+0.4*back(k)}) rotate(${rot}deg)`}
+function stamp(id,k,rot){const e=$(id);e.style.opacity=cl(k*2.5);e.style.transform=`scale(${1.8-0.8*eo(k)}) rotate(${rot}deg)`}
+function hl(id,k){$(id).style.backgroundSize=`${eo(k)*100}% 58%`}
+function prep(g){g.querySelectorAll('path').forEach(p=>{const L=p.getTotalLength();p.dataset.L=L;p.style.strokeDasharray=L;p.style.strokeDashoffset=L});return g}
+function draw(g,k){g.querySelectorAll('path').forEach(p=>{p.style.strokeDashoffset=+p.dataset.L*(1-eo(k))})}
+function bars(id,n,w){let h='';for(let i=0;i<n;i++)h+=`<div style="height:12px;margin:12px 0;background:#D8D4C8;border-radius:3px;width:${w[i%w.length]}%"></div>`;$(id).innerHTML=h}
+// ---------- build static
+// tracker
+const TX=[120,330,560,780],TL=['DRHP','PRICE BAND','BIDDING','LISTING'];
+$('trk').innerHTML='<svg width="900" height="118" style="left:0;top:0"><path d="M120 42 L780 42" stroke="#B8B3A6" stroke-width="3" stroke-dasharray="8 8"/></svg>'+TX.map((x,i)=>`<div class="tn" id="tn${i}" style="left:${x}px">${i+1}</div><div class="tl mono" id="tl${i}" style="left:${x}px">${TL[i]}</div>`).join('')+'<div class="tape" style="left:-40px;top:-10px;transform:rotate(-24deg)"></div><div class="tape" style="right:-40px;top:-10px;transform:rotate(22deg)"></div>';
+// B: marker ellipse around IPO
+const rcB=rough.svg($('B_c'));const B_ell=prep(rcB.ellipse(540,1172,520,250,{seed:seed++,roughness:1.6,stroke:RED,strokeWidth:7}));$('B_c').appendChild(B_ell);
+// C: bars
+bars('C_bars',5,[96,88,92,70,84]);
+// D: ruler 90..105
+{const s=$('D_rs');const rc=rough.svg(s);const x=v=>70+(v-90)/15*720;
+ const band=document.createElementNS(NS,'rect');band.setAttribute('x',x(95));band.setAttribute('y',70);band.setAttribute('height',60);band.setAttribute('width',0);band.setAttribute('fill','#FFE024');band.id='D_band';s.appendChild(band);
+ s.appendChild(rc.line(70,130,790,130,{seed:seed++,stroke:'#151515',strokeWidth:3}));
+ for(let v=90;v<=105;v++){const big=v%5==0;s.appendChild(rc.line(x(v),130,x(v),big?92:110,{seed:seed++,stroke:'#151515',strokeWidth:big?3:2,roughness:.6}));
+  if(big){const tx=document.createElementNS(NS,'text');tx.setAttribute('x',x(v));tx.setAttribute('y',180);tx.setAttribute('text-anchor','middle');tx.setAttribute('font-family','IT');tx.setAttribute('font-weight','800');tx.setAttribute('font-size','40');tx.setAttribute('fill','#151515');tx.textContent='₹'+v;s.appendChild(tx)}}
+ const lab=document.createElementNS(NS,'text');lab.setAttribute('x',430);lab.setAttribute('y',50);lab.setAttribute('text-anchor','middle');lab.setAttribute('font-family','Mo');lab.setAttribute('font-size','22');lab.setAttribute('fill','#55524B');lab.setAttribute('letter-spacing','2');lab.textContent='IS RANGE MEIN BID KARO';s.appendChild(lab);
+ const br=prep(rc.path(`M${x(95)} 214 Q${x(95)} 232 ${x(97.5)} 232 Q${x(100)} 232 ${x(100)} 214`,{seed:seed++,stroke:RED,strokeWidth:5}));br.id='D_br';s.appendChild(br);}
+// E: bid chips
+const BIDS=[['₹96',130,470,-6],['₹98',870,520,5],['₹100',120,760,4],['₹99',880,800,-5],['₹100',150,1010,-3],['₹100',890,1020,6]];
+$('E_bids').innerHTML=BIDS.map((b,i)=>`<div class="paper it" id="eb${i}" style="left:${b[1]-80}px;top:${b[2]}px;width:160px;height:84px;font-size:46px;text-align:center;line-height:84px;color:#151515;opacity:0">${b[0]}</div>`).join('');
+const rcE=rough.svg($('E_c'));const E_ell=prep(rcE.ellipse(810,1262,320,112,{seed:seed++,roughness:1.5,stroke:RED,strokeWidth:7}));$('E_c').appendChild(E_ell);
+// F: check + arrow
+const rcF=rough.svg($('F_ck'));const F_ck=prep(rcF.path('M20 100 L80 160 L190 20',{seed:seed++,roughness:1.2,stroke:RED,strokeWidth:12}));$('F_ck').appendChild(F_ck);
+const rcFa=rough.svg($('F_ar'));const F_ar=prep(rcFa.path('M520 1120 Q570 1080 610 1088 M584 1066 L612 1088 L582 1108',{seed:seed++,roughness:1,stroke:'#F4F2EC',strokeWidth:6}));$('F_ar').appendChild(F_ar);
+// H: bars
+$('H_bars').innerHTML=[0,1,2].map(()=>'<div style="flex:1">'+[92,86,96,74,88].map(w=>`<div style="height:10px;margin:10px 0;background:#D8D4C8;width:${w}%"></div>`).join('')+'</div>').join('');
+// ---------- Stat chart component (same geometry for Raju and Jio)
+const CX0=110,CXJ=600,CX1=760,CY0=1170,CY1=740;
+function mkChart(svgId,v0,v1,issueLab){
+  const s=$(svgId);const vmin=v0*0.9,vmax=v0*1.3;const Y=v=>CY0-(v-vmin)/(vmax-vmin)*(CY0-CY1);
+  let h='';for(let i=0;i<=4;i++){const y=CY0-i*(CY0-CY1)/4;h+=`<line x1="${CX0}" x2="980" y1="${y}" y2="${y}" stroke="rgba(255,255,255,.07)" stroke-width="2"/>`}
+  h+=`<line id="${svgId}_iss" x1="${CX0}" x2="980" y1="${Y(v0)}" y2="${Y(v0)}" stroke="#4A4F57" stroke-width="3" stroke-dasharray="12 10" opacity="0"/>`;
+  h+=`<text id="${svgId}_isl" x="980" y="${Y(v0)+44}" text-anchor="end" font-family="Mo" font-weight="500" font-size="24" fill="#8B9098" letter-spacing="2" opacity="0">${issueLab}</text>`;
+  h+=`<text class="ax" x="${(CX0+CXJ)/2}" y="${CY0+52}" text-anchor="middle" font-family="Mo" font-weight="500" font-size="22" fill="#4A4F57" letter-spacing="2">BIDDING · ALLOTMENT</text>`;
+  h+=`<line x1="${CXJ}" x2="${CXJ}" y1="${CY1-20}" y2="${CY0+20}" stroke="#4A4F57" stroke-width="2" stroke-dasharray="4 8" id="${svgId}_vl" opacity="0"/>`;
+  h+=`<text class="ax" id="${svgId}_ll" x="${CXJ+16}" y="${CY0+52}" font-family="Mo" font-weight="700" font-size="22" fill="${ORG}" letter-spacing="2" opacity="0">LISTING</text>`;
+  h+=`<path id="${svgId}_w" fill="none" stroke="#E9EBEE" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`;
+  h+=`<path id="${svgId}_o" fill="none" stroke="${ORG}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`;
+  h+=`<circle id="${svgId}_ring" r="26" fill="none" stroke="${ORG}" stroke-width="4" opacity="0"/>`;
+  h+=`<line id="${svgId}_lead" stroke="${ORG}" stroke-width="3" opacity="0"/>`;
+  h+=`<circle id="${svgId}_dot" r="13" fill="#F4F5F6"/>`;
+  h+=`<path id="${svgId}_br" fill="none" stroke="${ORG}" stroke-width="4" opacity="0"/>`;
+  h+=`<path id="${svgId}_arr" fill="none" stroke="${ORG}" stroke-width="4" stroke-linecap="round" opacity="0"/>`;
+  s.innerHTML=h;return {Y,v0,v1,id:svgId};
+}
+const chG=mkChart('G_svg',100,121,'ISSUE ₹100'),chI=mkChart('I_svg',1119,1358,'ISSUE ₹1,119');
+const fmt=v=>'₹'+Math.round(v).toLocaleString('en-IN');
+// p1: flat line progress, p2: jump progress
+function chart(ch,p1,p2,nId,sId,chipId,kChip){
+  const id=ch.id,y0=ch.Y(ch.v0),y1=ch.Y(ch.v1);
+  const xf=CX0+(CXJ-CX0)*eo(p1);$(id+'_w').setAttribute('d',`M${CX0} ${y0} L${xf} ${y0}`);
+  let tx=xf,ty=y0,v=ch.v0;
+  if(p2>0){const a=eo(p2);
+    // jump (to CXJ+40,y1), then hold to CX1
+    const jx=CXJ+40;let d=`M${CXJ} ${y0}`;
+    if(a<0.6){const q=a/0.6;tx=CXJ+40*q;ty=y0+(y1-y0)*q;d+=` L${tx} ${ty}`}
+    else{const q=(a-0.6)/0.4;tx=jx+(CX1-jx)*q;ty=y1;d+=` L${jx} ${y1} L${tx} ${y1}`}
+    $(id+'_o').setAttribute('d',d);v=ch.v0+(ch.v1-ch.v0)*cl((y0-ty)/(y0-y1));
+  } else $(id+'_o').setAttribute('d','');
+  const dot=$(id+'_dot');dot.setAttribute('cx',tx);dot.setAttribute('cy',ty);dot.setAttribute('fill',p2>0?ORG:'#F4F5F6');dot.style.opacity=p1>0?1:0;
+  $(nId).textContent=fmt(v);$(nId).style.color=p2>0.05?ORG:'#F4F5F6';
+  $(sId).textContent=p2>0.6?'LISTING PRICE · PEHLA DIN':'ISSUE PRICE';$(sId).style.color=p2>0.6?ORG:'#8B9098';
+  // ring + leader + chip snap in after jump
+  const r=pr(p2,0.62,0.25);const ring=$(id+'_ring');ring.setAttribute('cx',CXJ+40);ring.setAttribute('cy',y1);ring.style.opacity=r>0?1:0;ring.setAttribute('r',26+18*(1-eo(r)));
+  const lead=$(id+'_lead');lead.setAttribute('x1',CXJ+40);lead.setAttribute('y1',y1-26);lead.setAttribute('x2',CXJ+40);lead.setAttribute('y2',y1-26-60*eo(r));lead.style.opacity=r>0?1:0;
+  const c=$(chipId);c.style.left=(CXJ-10)+'px';c.style.top=(y1-170)+'px';c.style.opacity=cl(kChip*3);c.style.transform=`scale(${0.7+0.3*back(kChip)})`;
+}
+// ---------- scenes
+const W={sA:[0,S(4)-.15],sB:[S(4)-.15,S(9)-.15],sC:[S(9)-.15,S(13)-.15],sD:[S(13)-.15,S(16)-.15],sE:[S(16)-.15,S(20)-.15],sF:[S(20)-.15,S(24)-.15],sG:[S(24)-.15,S(31)-.15],sH:[S(31)-.15,S(33)-.15],sI:[S(33)-.15,END+1]};
+const XF=0.12;
+const HI=/(~?₹[\d,.]+(?:–[\d,.]+)?(?: crore)?|\d+(?:\.\d+)?%|\bIPO\b|DRHP|SEBI|Jio|\b50\b|\b500\b|Step \d:?)/g;
+window.renderAt=function(t){
+  for(const [id,[a,b]] of Object.entries(W)){const o=Math.min(ss(a-XF,a,t),1-ss(b,b+XF,t));const e=$(id);e.style.opacity=o;e.style.display=o>0.001?'block':'none';}
+  // tracker: A(after S1)..F
+  const trkO=Math.min(pr(t,S(1)+0.25,0.35),1-pr(t,W.sG[0]-XF,XF));const tk=$('trk');tk.style.opacity=trkO;tk.style.transform=`translateY(${(1-eo(pr(t,S(1)+0.25,0.4)))*-40}px)`;
+  const stepAt=[S(9),S(13),S(16),S(24)];
+  stepAt.forEach((s0,i)=>{const n=$('tn'+i),l=$('tl'+i);const act=t>=s0-0.1&&(i==3||t<stepAt[i+1]-0.1),done=i<3&&t>=stepAt[i+1]-0.1;
+    const k=pr(t,s0-0.1,0.3);n.style.transform=act?`scale(${1+0.25*Math.sin(Math.PI*k)})`:'none';
+    n.style.background=act?RED:done?'#151515':'#F4F2EC';n.style.borderColor=act?RED:'#151515';n.style.color=act||done?'#F4F2EC':'#151515';l.style.color=act?RED:'#55524B';l.style.fontWeight=act?700:500;});
+  // A
+  if(t<W.sA[1]+.3){land('A_t',pr(t,0.05,0.4),-1);hl('A_hl',pr(t,0.55,0.4));
+    land('A_p',pr(t,S(1)-0.15,0.5),1.5,-120);setImg('A_v',fr('k1',1+Math.floor(Math.max(0,t-S(1)+0.15)*30*0.85)));
+    rise('A_lab',pr(t,S(1)+0.5,0.4));
+    land('A_n',pr(t,S(2)+0.4,0.4),-5);const n1=pr(t,S(2)+0.4,0.6);$('A_n1').textContent=Math.round(50*eo(n1));
+    pop('A_n2',pr(t,S(3)+0.5,0.35),-3);}
+  // B
+  if(t>W.sB[0]-.3&&t<W.sB[1]+.3){const a=W.sB[0];land('B_p',pr(t,a+0.02,0.45),-3);$('B_p').querySelector('img').style.transform=`scale(${1.02+0.05*pr(t,a,4.5)})`;rise('B_lab',pr(t,a+0.4,0.4));
+    land('B_n',pr(t,S(4)+0.35,0.4),3);land('B_l',pr(t,S(5)-0.05,0.4),-2);stamp('B_st',pr(t,S(6)+0.05,0.2),-9);
+    pop('B_ipo',pr(t,S(7)+0.55,0.35));draw(B_ell,pr(t,S(8)+0.02,0.45));}
+  // C
+  if(t>W.sC[0]-.3&&t<W.sC[1]+.3){const a=W.sC[0];land('C_d',pr(t,a+0.05,0.45),-1.2,-90);
+    stamp('C_st',pr(t,S(10)+0.9,0.2),-8);hl('C_hl',pr(t,S(11)+0.05,0.4));
+    hl('C_k1',pr(t,S(12)+0.0,0.35));hl('C_k2',pr(t,S(12)+0.5,0.35));hl('C_k3',pr(t,S(12)+1.0,0.35));}
+  // D
+  if(t>W.sD[0]-.3&&t<W.sD[1]+.3){const a=W.sD[0];const k=pr(t,a+0.05,0.5);const tg=$('D_tag');tg.style.opacity=cl(k*2);
+    tg.style.transform=`translateY(${(1-eo(k))*-160}px) rotate(${-4+5*Math.exp(-(t-a)*1.3)*Math.sin((t-a)*4.2)}deg)`;
+    rise('D_r',pr(t,S(15)-0.25,0.4),30);const b=pr(t,S(15)+0.3,0.6);const xr=v=>70+(v-90)/15*720;$('D_band').setAttribute('width',(xr(100)-xr(95))*eo(b));draw($('D_br'),pr(t,S(15)+0.8,0.4));}
+  // E
+  if(t>W.sE[0]-.3&&t<W.sE[1]+.3){const a=W.sE[0];land('E_p',pr(t,a+0.02,0.45),1.2);$('E_p').querySelector('img').style.transform=`scale(${1.02+0.05*pr(t,a,4.5)})`;
+    BIDS.forEach((b,i)=>land('eb'+i,pr(t,S(17)+0.05+i*0.17,0.3),b[3],-40));
+    land('E_dm',pr(t,S(18)-0.05,0.35),-2);draw($('E_arr'),pr(t,S(18)+0.15,0.45));
+    land('E_fx',pr(t,S(19)+0.25,0.35),2);draw(E_ell,pr(t,S(19)+0.75,0.4));stamp('E_st',pr(t,S(19)+1.05,0.2),10);}
+  // F
+  if(t>W.sF[0]-.3&&t<W.sF[1]+.3){const a=W.sF[0];land('F_s',pr(t,a+0.02,0.4),-0.8,-80);
+    rise('F_1',pr(t,S(20)+0.1,0.35));rise('F_2',pr(t,S(20)+0.95,0.35));$('F_rule').style.width=(eo(pr(t,S(20)+1.45,0.3))*560)+'px';
+    rise('F_3',pr(t,S(21)+0.0,0.35));hl('F_hl',pr(t,S(21)+0.3,0.4));
+    land('F_p',pr(t,S(21)+0.4,0.4),-2.5);draw(F_ar,pr(t,S(21)+0.8,0.35));land('F_tag',pr(t,S(21)+1.0,0.35),2);
+    draw(F_ck,pr(t,S(22)-0.02,0.3));stamp('F_st',pr(t,S(23)+0.55,0.2),-7);}
+  // G
+  if(t>W.sG[0]-.3&&t<W.sG[1]+.3){const a=W.sG[0];rise('G_l0',pr(t,a+0.05,0.3));rise('G_l1',pr(t,a+0.15,0.3));rise('G_n',pr(t,a+0.2,0.35));rise('G_s',pr(t,a+0.3,0.3));
+    $('G_svg_iss').style.opacity=cl(pr(t,a+0.3,0.4));$('G_svg_isl').style.opacity=cl(pr(t,a+0.5,0.4));
+    const p1=pr(t,a+0.3,1.4);$('G_svg_vl').style.opacity=cl(pr(t,S(25),0.3));$('G_svg_ll').style.opacity=cl(pr(t,S(25),0.3));
+    const p2=pr(t,S(26)+0.55,1.0);chart(chG,p1,p2,'G_n','G_s','G_chip',pr(t,S(26)+1.55,0.35));
+    // bracket ₹21 between levels at x 820
+    const y0=chG.Y(100),y1=chG.Y(121),bk=pr(t,S(27)+0.05,0.4);const br=$('G_svg_br');br.style.opacity=bk>0?1:0;
+    br.setAttribute('d',`M760 ${y1} L790 ${y1} L790 ${y1+(y0-y1)*eo(bk)} L760 ${y1+(y0-y1)*eo(bk)}`);
+    const bl=$('G_br');bl.style.top=(y0-118)+'px';bl.style.opacity=cl(pr(t,S(27)+0.4,0.3));
+    rise('G_c1',pr(t,S(28),0.35),24);const c1=$('G_c1');c1.style.borderColor=t>S(29)+0.1?RED:'#4A4F57';c1.querySelector('.v').style.color=t>S(29)+0.1?RED:'#F4F5F6';
+    rise('G_c2',pr(t,S(30)+0.1,0.35),24);
+    const ak=pr(t,S(30)+0.4,0.4);const ar=$('G_svg_arr');ar.style.opacity=ak>0?1:0;ar.setAttribute('d',`M860 ${y0+60} Q${860-20*eo(ak)} ${y0+60+60*eo(ak)} 800 ${y0+60+(1212-y0-70)*eo(ak)}`);}
+  // H
+  if(t>W.sH[0]-.3&&t<W.sH[1]+.3){const a=W.sH[0];land('H_np',pr(t,a+0.02,0.45),-1.2,-90);hl('H_hl',pr(t,S(32)+0.6,0.45));
+    land('H_p',pr(t,S(31)+0.55,0.45),2,-120);setImg('H_v',fr('k2',1+Math.floor(Math.max(0,t-S(31)-0.55)*30*0.95)));}
+  // I
+  if(t>W.sI[0]-.3){const a=W.sI[0];rise('I_n',pr(t,a+0.1,0.35));rise('I_s',pr(t,a+0.2,0.3));
+    $('I_svg_iss').style.opacity=cl(pr(t,a+0.2,0.4));$('I_svg_isl').style.opacity=cl(pr(t,a+0.4,0.4));
+    const p1=pr(t,a+0.15,1.0);$('I_svg_vl').style.opacity=cl(pr(t,a+0.9,0.3));$('I_svg_ll').style.opacity=cl(pr(t,a+0.9,0.3));
+    const p2=pr(t,S(33)+1.15,1.0);chart(chI,p1,p2,'I_n','I_s','I_chip',pr(t,S(34)+0.05,0.35));
+    rise('I_c1',pr(t,S(35)+0.2,0.35),24);rise('I_c2',pr(t,S(36)+0.3,0.35),24);
+    $('I_k2').textContent=t>S(37)+0.05?'→ INVESTORS KI JEB':'LISTING KA UCHAAL';
+    $('disc').style.opacity=cl(pr(t,E(37)+0.15,0.4));}
+  // fade axis labels when bottom cards come in
+  document.querySelectorAll('#G_svg .ax').forEach(e=>e.style.opacity=Math.min(+(e.style.opacity||1),1-pr(t,S(28)-0.2,0.25)));document.querySelectorAll('#I_svg .ax').forEach(e=>e.style.opacity=Math.min(+(e.style.opacity||1),1-pr(t,S(35)-0.05,0.25)));
+  // captions
+  const c=CU.find(x=>t>=x.s-0.05&&t<x.e+0.12);const cap=$('cap');
+  if(!c){cap.style.opacity=0}else{const k=pr(t,c.s-0.05,0.12);cap.style.opacity=k;cap.style.transform=`translateY(${(1-eo(k))*14}px)`;
+    if(cap.dataset.id!==c.id){cap.dataset.id=c.id;cap.innerHTML=`<span>${c.w.replace(/ —$/,'…').replace(HI,'<b>$1</b>')}</span>`;}}
+  return true};
+window.renderAt(0);
+</script></body></html>

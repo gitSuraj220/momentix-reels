@@ -1,0 +1,268 @@
+[
+ {
+  "id": "c0",
+  "w": "IPO kaam kaise karta hai?",
+  "line": 0,
+  "s": 0.231,
+  "e": 1.716
+ },
+ {
+  "id": "c1",
+  "w": "Ek chai wale se samajhte hain.",
+  "line": 0,
+  "s": 1.827,
+  "e": 3.117
+ },
+ {
+  "id": "c2",
+  "w": "Raju ki chai ki 50 dukaan hain…",
+  "line": 1,
+  "s": 3.469,
+  "e": 5.423
+ },
+ {
+  "id": "c3",
+  "w": "aur use 500 kholni hain.",
+  "line": 1,
+  "s": 5.534,
+  "e": 7.124
+ },
+ {
+  "id": "c4",
+  "w": "Paisa chahiye ₹100 crore.",
+  "line": 2,
+  "s": 7.476,
+  "e": 8.819
+ },
+ {
+  "id": "c5",
+  "w": "Bank se loan?",
+  "line": 2,
+  "s": 8.93,
+  "e": 9.623
+ },
+ {
+  "id": "c6",
+  "w": "Mehenga.",
+  "line": 2,
+  "s": 9.734,
+  "e": 10.202
+ },
+ {
+  "id": "c7",
+  "w": "Toh Raju laata hai…",
+  "line": 2,
+  "s": 10.314,
+  "e": 11.293
+ },
+ {
+  "id": "c8",
+  "w": "IPO.",
+  "line": 2,
+  "s": 11.404,
+  "e": 11.938
+ },
+ {
+  "id": "c9",
+  "w": "Step 1:",
+  "line": 3,
+  "s": 12.29,
+  "e": 12.981
+ },
+ {
+  "id": "c10",
+  "w": "SEBI ko poori kundli do —",
+  "line": 3,
+  "s": 13.093,
+  "e": 14.478
+ },
+ {
+  "id": "c11",
+  "w": "DRHP.",
+  "line": 3,
+  "s": 14.589,
+  "e": 15.579
+ },
+ {
+  "id": "c12",
+  "w": "Kamai, karza, khatre, sab.",
+  "line": 3,
+  "s": 15.69,
+  "e": 17.687
+ },
+ {
+  "id": "c13",
+  "w": "Step 2:",
+  "line": 4,
+  "s": 18.039,
+  "e": 18.684
+ },
+ {
+  "id": "c14",
+  "w": "Price band.",
+  "line": 4,
+  "s": 18.795,
+  "e": 19.408
+ },
+ {
+  "id": "c15",
+  "w": "₹95 se ₹100 ke beech.",
+  "line": 4,
+  "s": 19.519,
+  "e": 21.125
+ },
+ {
+  "id": "c16",
+  "w": "Step 3:",
+  "line": 5,
+  "s": 21.476,
+  "e": 22.139
+ },
+ {
+  "id": "c17",
+  "w": "Log bid karte hain.",
+  "line": 5,
+  "s": 22.25,
+  "e": 23.293
+ },
+ {
+  "id": "c18",
+  "w": "Demand zyada,",
+  "line": 5,
+  "s": 23.404,
+  "e": 24.208
+ },
+ {
+  "id": "c19",
+  "w": "toh price ₹100 fix.",
+  "line": 5,
+  "s": 24.32,
+  "e": 25.923
+ },
+ {
+  "id": "c20",
+  "w": "1 crore shares × ₹100 —",
+  "line": 6,
+  "s": 26.274,
+  "e": 28.018
+ },
+ {
+  "id": "c21",
+  "w": "₹100 crore Raju ki company ko.",
+  "line": 6,
+  "s": 28.129,
+  "e": 29.728
+ },
+ {
+  "id": "c22",
+  "w": "Bas.",
+  "line": 6,
+  "s": 29.839,
+  "e": 30.215
+ },
+ {
+  "id": "c23",
+  "w": "Company ka kaam khatam.",
+  "line": 6,
+  "s": 30.326,
+  "e": 31.413
+ },
+ {
+  "id": "c24",
+  "w": "Step 4:",
+  "line": 7,
+  "s": 31.765,
+  "e": 32.423
+ },
+ {
+  "id": "c25",
+  "w": "Listing.",
+  "line": 7,
+  "s": 32.534,
+  "e": 33.076
+ },
+ {
+  "id": "c26",
+  "w": "Pehle hi din share ₹121 pe khula.",
+  "line": 7,
+  "s": 33.187,
+  "e": 35.289
+ },
+ {
+  "id": "c27",
+  "w": "Wo ₹21 crore extra…",
+  "line": 8,
+  "s": 35.641,
+  "e": 37.187
+ },
+ {
+  "id": "c28",
+  "w": "Raju ko?",
+  "line": 8,
+  "s": 37.298,
+  "e": 37.893
+ },
+ {
+  "id": "c29",
+  "w": "Ek rupaya bhi nahi.",
+  "line": 8,
+  "s": 38.004,
+  "e": 38.964
+ },
+ {
+  "id": "c30",
+  "w": "Wo gaya jinhe share allot hua.",
+  "line": 8,
+  "s": 39.075,
+  "e": 40.672
+ },
+ {
+  "id": "c31",
+  "w": "Aur ye sirf kahani nahi.",
+  "line": 9,
+  "s": 41.024,
+  "e": 42.393
+ },
+ {
+  "id": "c32",
+  "w": "28 October ko Jio ke saath bilkul yahi hua.",
+  "line": 9,
+  "s": 42.505,
+  "e": 45.169
+ },
+ {
+  "id": "c33",
+  "w": "₹1,119 ka share ₹1,358 pe khula —",
+  "line": 10,
+  "s": 45.52,
+  "e": 48.181
+ },
+ {
+  "id": "c34",
+  "w": "21% upar.",
+  "line": 10,
+  "s": 48.292,
+  "e": 49.43
+ },
+ {
+  "id": "c35",
+  "w": "Jio ko mile ₹30,213 crore.",
+  "line": 10,
+  "s": 49.541,
+  "e": 52.309
+ },
+ {
+  "id": "c36",
+  "w": "Listing ka ~₹6,450 crore ka uchaal?",
+  "line": 10,
+  "s": 52.42,
+  "e": 55.113
+ },
+ {
+  "id": "c37",
+  "w": "Investors ki jeb mein.",
+  "line": 10,
+  "s": 55.224,
+  "e": 56.452
+ }
+]

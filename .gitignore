@@ -26,3 +26,4 @@ projects/*/ai/*.mp4
 projects/*/vo/s_*.mp3
 projects/*/vo/take*.mp3
 projects/*/vo/*.wav
+projects/*/build/*.png

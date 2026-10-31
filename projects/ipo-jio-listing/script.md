@@ -1,7 +1,7 @@
 # "IPO kaam kaise karta hai?" — IPO explainer — script v2 (hook changed by Suraj) (31 Oct 2026)
 
 **Reference:** finance_90seconds "IPO in 90 seconds" (Rosa's bakery → SpaceX). Our version: Raju ki tea-stall chain (illustrative) → Jio Platforms IPO (real).
-**Decisions (Suraj, 31 Oct):** style = **Stat Chart** (dark, one big number, line turns orange at listing) + **Paper Desk** (green cutting mat, printed sheets, red marker, highlighter); voice = **Amrut** (calm narrator); story = desi first (Raju's tea stall), then Jio; Higgsfield = ~5 printed-photo images + 2 motion shots; ~55 s; post **Thu 5 Nov, 6 PM**. SFX from earshot bank; QA with earshot. Anti-AI-look rules from `styles/README.md`.
+**Decisions (Suraj, 31 Oct; final: no character, pencil-sketch prints of a small-town tapri, bottom pill captions, Jio chart = issue→listing only):** style = **Stat Chart** (dark, one big number, line turns orange at listing) + **Paper Desk** (green cutting mat, printed sheets, red marker, highlighter); voice = **Amrut** (calm narrator); story = desi first (Raju's tea stall), then Jio; Higgsfield = ~5 printed-photo images + 2 motion shots; ~55 s; post **Thu 5 Nov, 6 PM**. SFX from earshot bank; QA with earshot. Anti-AI-look rules from `styles/README.md`.
 
 ## Facts (Jio Platforms IPO)
 - Price band ₹1,065–1,119; issue price ₹1,119; bidding 21–23 Oct 2026; subscribed 22.19x (QIB 70.55x, retail 2.72x).
