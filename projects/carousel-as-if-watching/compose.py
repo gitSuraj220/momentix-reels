@@ -25,7 +25,7 @@ def crop_to_slide(raw: Path) -> Image.Image:
     return im.crop((0, top, W, top + H))
 
 
-def render(raw, out, top_text, bottom_text, top_y=560, bottom_y=1170):
+def render(raw, out, top_text, bottom_text, top_y=560, bottom_y=1170, style="scrim"):
     art = crop_to_slide(Path(raw))
     buf = io.BytesIO(); art.save(buf, "PNG")
     bg = base64.b64encode(buf.getvalue()).decode()
@@ -34,12 +34,19 @@ def render(raw, out, top_text, bottom_text, top_y=560, bottom_y=1170):
 @font-face {{ font-family: P; src: url(data:font/woff2;base64,{font}); font-weight: 800; }}
 html,body {{ margin:0; width:{W}px; height:{H}px; overflow:hidden; }}
 body {{ background:url(data:image/png;base64,{bg}) 0 0/{W}px {H}px no-repeat; position:relative; }}
-.t {{ position:absolute; left:70px; right:70px; transform:translateY(-50%); text-align:center;
-      font-family:P; font-weight:800; color:#fff; font-size:64px; line-height:1.18; letter-spacing:-0.5px;
-      text-shadow: 0 3px 0 rgba(0,0,0,.35), 0 0 22px rgba(0,0,0,.55), 0 0 6px rgba(0,0,0,.6); }}
-</style></head><body>
-<div class="t" style="top:{top_y}px">{top_text}</div>
-<div class="t" style="top:{bottom_y}px">{bottom_text}</div>
+.t {{ position:absolute; left:60px; right:60px; transform:translateY(-50%); text-align:center;
+      font-family:P; font-weight:800; font-size:64px; line-height:1.18; letter-spacing:-0.5px; }}
+.scrim .t {{ color:#fff; -webkit-text-stroke:3px rgba(20,10,0,.85); paint-order:stroke fill;
+      text-shadow:0 4px 14px rgba(0,0,0,.6); }}
+.scrim .band {{ position:absolute; left:0; right:0; height:300px; transform:translateY(-50%);
+      background:linear-gradient(to bottom, rgba(15,8,2,0) 0%, rgba(15,8,2,.62) 30%, rgba(15,8,2,.62) 70%, rgba(15,8,2,0) 100%); }}
+.pill .t {{ color:#1a1530; }}
+.pill .t span {{ background:#FFF4DC; padding:4px 22px; border-radius:14px; box-decoration-break:clone; -webkit-box-decoration-break:clone;
+      box-shadow:0 6px 18px rgba(0,0,0,.35); line-height:1.5; }}
+</style></head><body class="{style}">
+<div class="band" style="top:{top_y}px"></div><div class="band" style="top:{bottom_y}px"></div>
+<div class="t" style="top:{top_y}px"><span>{top_text}</span></div>
+<div class="t" style="top:{bottom_y}px"><span>{bottom_text}</span></div>
 </body></html>"""
     with sync_playwright() as p:
         b = p.chromium.launch()
@@ -51,4 +58,5 @@ body {{ background:url(data:image/png;base64,{bg}) 0 0/{W}px {H}px no-repeat; po
 
 if __name__ == "__main__":
     a = sys.argv[1:]
-    render(a[0], a[1], a[2], a[3], *(int(x) for x in a[4:6]))
+    nums=[int(x) for x in a[4:6]]; style=a[6] if len(a)>6 else "scrim"
+    render(a[0], a[1], a[2], a[3], *nums, style=style)
