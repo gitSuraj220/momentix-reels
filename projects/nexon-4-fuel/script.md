@@ -19,7 +19,7 @@ Original input: our own 5-year total-cost maths and break-evens from sourced dat
 | 2 | 3–7 s | Car lene se pehle sabse bada confusion: petrol le, diesel le… ya EV? | Three identical generic compact SUVs light up one by one, each with a fuel tag |
 | 3 | 7–10 s | Aur long term mein kaunsi sahi rahegi? | Calendar pages flip 5 years; question mark over the cars |
 | 4 | 10–13 s | Calculation ye hai. Same gaadi, har mahine 1,500 km. | Notebook opens; "1,500 km/month" written in |
-| 5 | 13–19 s | Ek km ka kharcha: Petrol ₹9.46. Diesel ₹5.30. Aur EV, ghar pe charge karo toh sirf ₹1! | Three-lane race; per-km tags pop; EV bar tiny |
+| 5 | 13–18 s | Ek km ka kharcha: Petrol ₹9. Diesel ₹5. Aur EV… sirf ₹1! | Three-lane race; big round tags ₹9 / ₹5 / ₹1 pop; small exact values under each (₹9.46 / ₹5.30 / ₹1.03, EV = home charging); EV bar tiny |
 | 6 | 19–23 s | Par khareedte waqt: diesel lagbhag ₹1 lakh mehenga… aur EV ₹2.65 lakh. | Price tags drop on roofs; EV tag lands heaviest (thud) |
 | 7 | 23–29 s | Ab 5 saal ka total — extra daam plus fuel: Petrol ₹8.5 lakh. Diesel ₹5.8 lakh. EV sirf ₹3.6 lakh! | Three stacked bars (extra price + fuel) rise; EV shortest; petrol tallest |
 | 8 | 29–34 s | Twist: ye tab, jab EV ghar pe charge ho. Sirf public fast charger pe? EV ₹5.7 lakh — lagbhag diesel jitna! | EV bar jumps up level with diesel; charger icon with red flash |
@@ -30,9 +30,10 @@ Original input: our own 5-year total-cost maths and break-evens from sourced dat
 Small print (beats 5–10): "Real-world per-km: Autocar India (Sep 2026). Fuel @ Delhi 1 Nov 2026; EV home ₹8/unit. Extra price vs petrol: diesel ~₹1L, EV ₹2.65L (top EV vs top petrol auto). Excludes insurance, service, resale. Sirf jaankari ke liye."
 
 ## Devanagari voice text (Amrut; one paragraph, " ... ... " between lines)
-धनतेरस पे कार मत लेना… इसे बिना देखे! ... ... कार लेने से पहले सबसे बड़ा कन्फ़्यूज़न: पेट्रोल लें, डीज़ल लें… या ईवी? ... ... और लॉन्ग टर्म में कौन सी सही रहेगी? ... ... कैलकुलेशन ये है। सेम गाड़ी, हर महीने पंद्रह सौ किलोमीटर। ... ... एक किलोमीटर का खर्चा: पेट्रोल साढ़े नौ रुपये। डीज़ल सवा पाँच। और ईवी, घर पे चार्ज करो तो सिर्फ़ एक रुपया! ... ... पर ख़रीदते वक़्त: डीज़ल लगभग एक लाख महँगा… और ईवी पौने तीन लाख। ... ... अब पाँच साल का टोटल, एक्स्ट्रा दाम प्लस फ़्यूल: पेट्रोल साढ़े आठ लाख। डीज़ल पौने छह लाख। ईवी सिर्फ़ साढ़े तीन लाख! ... ... ट्विस्ट: ये तब, जब ईवी घर पे चार्ज हो। सिर्फ़ पब्लिक फ़ास्ट चार्जर पे? ईवी साढ़े पाँच लाख से ऊपर, लगभग डीज़ल जितना! ... ... और महीने में पाँच सौ किलोमीटर से कम चलाते हो, तो ईवी का एक्स्ट्रा दाम पाँच साल में वसूल ही नहीं होगा। ... ... सिंपल रूल: घर पे चार्जिंग और ज़्यादा चलाना, ईवी। चार्जिंग नहीं, हाईवे पे लंबा सफ़र, डीज़ल। कम चलाना, पेट्रोल। ... ... आप महीने में कितना चलाते हो? कमेंट करो!
+धनतेरस पे कार मत लेना… इसे बिना देखे! ... ... कार लेने से पहले सबसे बड़ा कन्फ़्यूज़न: पेट्रोल लें, डीज़ल लें… या ईवी? ... ... और लॉन्ग टर्म में कौन सी सही रहेगी? ... ... कैलकुलेशन ये है। सेम गाड़ी, हर महीने पंद्रह सौ किलोमीटर। ... ... एक किलोमीटर का खर्चा: पेट्रोल नौ रुपये। डीज़ल पाँच रुपये। और ईवी… सिर्फ़ एक रुपया! ... ... पर ख़रीदते वक़्त: डीज़ल लगभग एक लाख महँगा… और ईवी पौने तीन लाख। ... ... अब पाँच साल का टोटल, एक्स्ट्रा दाम प्लस फ़्यूल: पेट्रोल साढ़े आठ लाख। डीज़ल पौने छह लाख। ईवी सिर्फ़ साढ़े तीन लाख! ... ... ट्विस्ट: ये तब, जब ईवी घर पे चार्ज हो। सिर्फ़ पब्लिक फ़ास्ट चार्जर पे? ईवी साढ़े पाँच लाख से ऊपर, लगभग डीज़ल जितना! ... ... और महीने में पाँच सौ किलोमीटर से कम चलाते हो, तो ईवी का एक्स्ट्रा दाम पाँच साल में वसूल ही नहीं होगा। ... ... सिंपल रूल: घर पे चार्जिंग और ज़्यादा चलाना, ईवी। चार्जिंग नहीं, हाईवे पे लंबा सफ़र, डीज़ल। कम चलाना, पेट्रोल। ... ... आप महीने में कितना चलाते हो? कमेंट करो!
 
 ## Claims check
+- Beat 5 rounded per Suraj (1 Nov): ₹9 / ₹5 / ₹1 spoken; exact ₹9.46 / ₹5.30 / ₹1.03 shown small on screen. 5-year totals still use exact values.
 - Per-km ₹9.46 / 5.30 / 1.03 / 3.34 ✓ Autocar
 - 5-yr totals at 90,000 km: 8.51 / 5.77 / 3.58 / 5.66 L ✓
 - "EV public-only ≈ diesel": 5.66 vs 5.77 ✓
