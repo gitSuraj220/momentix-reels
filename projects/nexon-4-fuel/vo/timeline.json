@@ -1,0 +1,608 @@
+{
+ "off": 0.0,
+ "frags": [
+  {
+   "line": 1,
+   "text": "Dhanteras pe car mat le lena…",
+   "s": 0.0,
+   "e": 1.723
+  },
+  {
+   "line": 1,
+   "text": "ise bina dekhe!",
+   "s": 1.982,
+   "e": 2.755
+  },
+  {
+   "line": 2,
+   "text": "Par Papa, sabse bada confusion yahi hai…",
+   "s": 3.114,
+   "e": 5.716
+  },
+  {
+   "line": 2,
+   "text": "petrol loon, diesel loon…",
+   "s": 6.013,
+   "e": 7.765
+  },
+  {
+   "line": 2,
+   "text": "ya EV?",
+   "s": 8.018,
+   "e": 8.542
+  },
+  {
+   "line": 3,
+   "text": "Aur long term mein kaunsi sahi rahegi?",
+   "s": 8.853,
+   "e": 10.989
+  },
+  {
+   "line": 4,
+   "text": "Calculation ye hai.",
+   "s": 11.281,
+   "e": 12.226
+  },
+  {
+   "line": 4,
+   "text": "Gaadi har mahine 1,500 km chalti hai.",
+   "s": 12.484,
+   "e": 14.639
+  },
+  {
+   "line": 5,
+   "text": "Ek km ka kharcha:",
+   "s": 14.907,
+   "e": 16.207
+  },
+  {
+   "line": 5,
+   "text": "Petrol ₹9.",
+   "s": 16.207,
+   "e": 17.182
+  },
+  {
+   "line": 5,
+   "text": "Diesel ₹5.",
+   "s": 17.182,
+   "e": 18.353
+  },
+  {
+   "line": 5,
+   "text": "Aur EV…",
+   "s": 18.623,
+   "e": 19.267
+  },
+  {
+   "line": 5,
+   "text": "sirf ₹1!",
+   "s": 19.267,
+   "e": 20.232
+  },
+  {
+   "line": 6,
+   "text": "Par khareedte waqt:",
+   "s": 20.494,
+   "e": 21.559
+  },
+  {
+   "line": 6,
+   "text": "diesel lagbhag ₹1 lakh mehenga…",
+   "s": 21.559,
+   "e": 23.291
+  },
+  {
+   "line": 6,
+   "text": "aur EV ₹2.65 lakh.",
+   "s": 23.552,
+   "e": 25.136
+  },
+  {
+   "line": 7,
+   "text": "Ab 5 saal ka total,",
+   "s": 25.424,
+   "e": 26.8
+  },
+  {
+   "line": 7,
+   "text": "extra daam plus fuel:",
+   "s": 26.8,
+   "e": 28.031
+  },
+  {
+   "line": 7,
+   "text": "Petrol ₹8.5 lakh.",
+   "s": 28.297,
+   "e": 29.571
+  },
+  {
+   "line": 7,
+   "text": "Diesel ₹5.8 lakh.",
+   "s": 29.571,
+   "e": 30.973
+  },
+  {
+   "line": 7,
+   "text": "EV sirf ₹3.6 lakh!",
+   "s": 31.229,
+   "e": 33.039
+  },
+  {
+   "line": 8,
+   "text": "Twist:",
+   "s": 33.039,
+   "e": 33.432
+  },
+  {
+   "line": 8,
+   "text": "ye tab, jab EV ghar pe charge ho.",
+   "s": 33.699,
+   "e": 35.671
+  },
+  {
+   "line": 8,
+   "text": "Agar sirf public fast charger pe charge ho?",
+   "s": 35.942,
+   "e": 37.793
+  },
+  {
+   "line": 8,
+   "text": "EV ₹5.7 lakh,",
+   "s": 38.054,
+   "e": 39.6
+  },
+  {
+   "line": 8,
+   "text": "lagbhag diesel jitna!",
+   "s": 39.6,
+   "e": 40.925
+  },
+  {
+   "line": 9,
+   "text": "Aur mahine mein 500 km se kam chalate ho,",
+   "s": 41.191,
+   "e": 43.673
+  },
+  {
+   "line": 9,
+   "text": "toh EV ka extra daam 5 saal mein wasool hi nahi hoga.",
+   "s": 43.673,
+   "e": 46.376
+  },
+  {
+   "line": 10,
+   "text": "Simple rule:",
+   "s": 46.656,
+   "e": 47.209
+  },
+  {
+   "line": 10,
+   "text": "ghar pe charging hai aur zyada chalana ho, toh EV.",
+   "s": 47.485,
+   "e": 50.032
+  },
+  {
+   "line": 10,
+   "text": "Highway pe lamba safar ho, toh diesel.",
+   "s": 50.307,
+   "e": 52.117
+  },
+  {
+   "line": 10,
+   "text": "Kam chalana ho, toh petrol.",
+   "s": 52.37,
+   "e": 53.976
+  }
+ ],
+ "chunks": [
+  {
+   "t": 0.0,
+   "e": 0.985,
+   "text": "Dhanteras pe car",
+   "line": 1
+  },
+  {
+   "t": 0.985,
+   "e": 1.982,
+   "text": "mat le lena…",
+   "line": 1
+  },
+  {
+   "t": 1.982,
+   "e": 3.114,
+   "text": "ise bina dekhe!",
+   "line": 1
+  },
+  {
+   "t": 3.114,
+   "e": 3.73,
+   "text": "Par Papa,",
+   "line": 2
+  },
+  {
+   "t": 3.73,
+   "e": 5.1,
+   "text": "sabse bada confusion",
+   "line": 2
+  },
+  {
+   "t": 5.1,
+   "e": 6.013,
+   "text": "yahi hai…",
+   "line": 2
+  },
+  {
+   "t": 6.013,
+   "e": 6.889,
+   "text": "petrol loon,",
+   "line": 2
+  },
+  {
+   "t": 6.889,
+   "e": 8.018,
+   "text": "diesel loon…",
+   "line": 2
+  },
+  {
+   "t": 8.018,
+   "e": 8.853,
+   "text": "ya EV?",
+   "line": 2
+  },
+  {
+   "t": 8.853,
+   "e": 9.624,
+   "text": "Aur long term",
+   "line": 3
+  },
+  {
+   "t": 9.624,
+   "e": 10.574,
+   "text": "mein kaunsi sahi",
+   "line": 3
+  },
+  {
+   "t": 10.574,
+   "e": 11.281,
+   "text": "rahegi?",
+   "line": 3
+  },
+  {
+   "t": 11.281,
+   "e": 12.484,
+   "text": "Calculation ye hai.",
+   "line": 4
+  },
+  {
+   "t": 12.484,
+   "e": 13.469,
+   "text": "Gaadi har mahine",
+   "line": 4
+  },
+  {
+   "t": 13.469,
+   "e": 14.393,
+   "text": "1,500 km chalti",
+   "line": 4
+  },
+  {
+   "t": 14.393,
+   "e": 14.907,
+   "text": "hai.",
+   "line": 4
+  },
+  {
+   "t": 14.907,
+   "e": 15.557,
+   "text": "Ek km ka",
+   "line": 5
+  },
+  {
+   "t": 15.557,
+   "e": 16.207,
+   "text": "kharcha:",
+   "line": 5
+  },
+  {
+   "t": 16.207,
+   "e": 17.182,
+   "text": "Petrol ₹9.",
+   "line": 5
+  },
+  {
+   "t": 17.182,
+   "e": 18.623,
+   "text": "Diesel ₹5.",
+   "line": 5
+  },
+  {
+   "t": 18.623,
+   "e": 19.267,
+   "text": "Aur EV…",
+   "line": 5
+  },
+  {
+   "t": 19.267,
+   "e": 20.494,
+   "text": "sirf ₹1!",
+   "line": 5
+  },
+  {
+   "t": 20.494,
+   "e": 21.559,
+   "text": "Par khareedte waqt:",
+   "line": 6
+  },
+  {
+   "t": 21.559,
+   "e": 22.54,
+   "text": "diesel lagbhag ₹1",
+   "line": 6
+  },
+  {
+   "t": 22.54,
+   "e": 23.552,
+   "text": "lakh mehenga…",
+   "line": 6
+  },
+  {
+   "t": 23.552,
+   "e": 24.67,
+   "text": "aur EV ₹2.65",
+   "line": 6
+  },
+  {
+   "t": 24.67,
+   "e": 25.424,
+   "text": "lakh.",
+   "line": 6
+  },
+  {
+   "t": 25.424,
+   "e": 26.112,
+   "text": "Ab 5 saal",
+   "line": 7
+  },
+  {
+   "t": 26.112,
+   "e": 26.8,
+   "text": "ka total,",
+   "line": 7
+  },
+  {
+   "t": 26.8,
+   "e": 27.723,
+   "text": "extra daam plus",
+   "line": 7
+  },
+  {
+   "t": 27.723,
+   "e": 28.297,
+   "text": "fuel:",
+   "line": 7
+  },
+  {
+   "t": 28.297,
+   "e": 29.571,
+   "text": "Petrol ₹8.5 lakh.",
+   "line": 7
+  },
+  {
+   "t": 29.571,
+   "e": 31.229,
+   "text": "Diesel ₹5.8 lakh.",
+   "line": 7
+  },
+  {
+   "t": 31.229,
+   "e": 32.507,
+   "text": "EV sirf ₹3.6",
+   "line": 7
+  },
+  {
+   "t": 32.507,
+   "e": 33.039,
+   "text": "lakh!",
+   "line": 7
+  },
+  {
+   "t": 33.039,
+   "e": 33.699,
+   "text": "Twist:",
+   "line": 8
+  },
+  {
+   "t": 33.699,
+   "e": 34.144,
+   "text": "ye tab,",
+   "line": 8
+  },
+  {
+   "t": 34.144,
+   "e": 34.844,
+   "text": "jab EV ghar",
+   "line": 8
+  },
+  {
+   "t": 34.844,
+   "e": 35.942,
+   "text": "pe charge ho.",
+   "line": 8
+  },
+  {
+   "t": 35.942,
+   "e": 36.664,
+   "text": "Agar sirf public",
+   "line": 8
+  },
+  {
+   "t": 36.664,
+   "e": 37.342,
+   "text": "fast charger pe",
+   "line": 8
+  },
+  {
+   "t": 37.342,
+   "e": 38.054,
+   "text": "charge ho?",
+   "line": 8
+  },
+  {
+   "t": 38.054,
+   "e": 39.6,
+   "text": "EV ₹5.7 lakh,",
+   "line": 8
+  },
+  {
+   "t": 39.6,
+   "e": 41.191,
+   "text": "lagbhag diesel jitna!",
+   "line": 8
+  },
+  {
+   "t": 41.191,
+   "e": 42.146,
+   "text": "Aur mahine mein",
+   "line": 9
+  },
+  {
+   "t": 42.146,
+   "e": 42.718,
+   "text": "500 km se",
+   "line": 9
+  },
+  {
+   "t": 42.718,
+   "e": 43.673,
+   "text": "kam chalate ho,",
+   "line": 9
+  },
+  {
+   "t": 43.673,
+   "e": 44.16,
+   "text": "toh EV ka",
+   "line": 9
+  },
+  {
+   "t": 44.16,
+   "e": 44.808,
+   "text": "extra daam 5",
+   "line": 9
+  },
+  {
+   "t": 44.808,
+   "e": 45.673,
+   "text": "saal mein wasool",
+   "line": 9
+  },
+  {
+   "t": 45.673,
+   "e": 46.656,
+   "text": "hi nahi hoga.",
+   "line": 9
+  },
+  {
+   "t": 46.656,
+   "e": 47.485,
+   "text": "Simple rule:",
+   "line": 10
+  },
+  {
+   "t": 47.485,
+   "e": 48.352,
+   "text": "ghar pe charging",
+   "line": 10
+  },
+  {
+   "t": 48.352,
+   "e": 49.057,
+   "text": "hai aur zyada",
+   "line": 10
+  },
+  {
+   "t": 49.057,
+   "e": 49.653,
+   "text": "chalana ho,",
+   "line": 10
+  },
+  {
+   "t": 49.653,
+   "e": 50.307,
+   "text": "toh EV.",
+   "line": 10
+  },
+  {
+   "t": 50.307,
+   "e": 51.111,
+   "text": "Highway pe lamba",
+   "line": 10
+  },
+  {
+   "t": 51.111,
+   "e": 51.564,
+   "text": "safar ho,",
+   "line": 10
+  },
+  {
+   "t": 51.564,
+   "e": 52.37,
+   "text": "toh diesel.",
+   "line": 10
+  },
+  {
+   "t": 52.37,
+   "e": 53.297,
+   "text": "Kam chalana ho,",
+   "line": 10
+  },
+  {
+   "t": 53.297,
+   "e": 53.976,
+   "text": "toh petrol.",
+   "line": 10
+  }
+ ],
+ "lines": {
+  "1": [
+   0.0,
+   2.755
+  ],
+  "2": [
+   3.114,
+   8.542
+  ],
+  "3": [
+   8.853,
+   10.989
+  ],
+  "4": [
+   11.281,
+   14.639
+  ],
+  "5": [
+   14.907,
+   20.232
+  ],
+  "6": [
+   20.494,
+   25.136
+  ],
+  "7": [
+   25.424,
+   33.039
+  ],
+  "8": [
+   33.039,
+   40.925
+  ],
+  "9": [
+   41.191,
+   46.376
+  ],
+  "10": [
+   46.656,
+   53.976
+  ]
+ },
+ "end": 55.58
+}

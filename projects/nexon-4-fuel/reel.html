@@ -1,0 +1,192 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:P;src:url('file:///usr/share/fonts/truetype/google-fonts/Poppins-Bold.ttf');font-weight:700}
+@font-face{font-family:P;src:url('file:///usr/share/fonts/truetype/google-fonts/Poppins-Medium.ttf');font-weight:500}
+@font-face{font-family:L;src:url('file:///usr/share/fonts/truetype/google-fonts/Lora-Variable.ttf');font-weight:400 700}
+@font-face{font-family:L;src:url('file:///usr/share/fonts/truetype/google-fonts/Lora-Italic-Variable.ttf');font-style:italic;font-weight:400 700}
+html,body{margin:0;background:#120c06;width:1080px;height:1920px;overflow:hidden}
+#stage{position:absolute;inset:0;overflow:hidden;z-index:0}
+.layer{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.layer img{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;transform-origin:50% 50%;will-change:transform}
+#fx{position:absolute;inset:0;pointer-events:none;z-index:1}
+#ov{position:absolute;inset:0;z-index:2}
+.cap{position:absolute;left:60px;right:60px;top:1500px;text-align:center;font:700 58px/1.22 P,sans-serif;color:#FFF4DE;
+  text-shadow:0 3px 0 rgba(0,0,0,.55),0 0 22px rgba(0,0,0,.65),0 0 4px rgba(0,0,0,.8);letter-spacing:.2px}
+.cap b{color:#FFC44D;font-weight:700}
+.small{position:absolute;left:50px;right:50px;top:1846px;text-align:center;font:500 19px/1.35 P,sans-serif;color:rgba(255,240,215,.62);text-shadow:0 1px 3px #000}
+/* painted objects */
+.tag{position:absolute;transform-origin:50% 0;}
+.tag .str{position:absolute;left:50%;top:-140px;width:3px;height:150px;background:linear-gradient(#d9c39a,#8a6a3a);transform:translateX(-50%)}
+.tag .card{position:relative;padding:22px 34px 26px;border-radius:14px 14px 18px 18px;font:700 64px/1 L,serif;color:#3a1e0c;white-space:nowrap;
+  background:radial-gradient(120% 90% at 30% 20%,#fff3d6 0%,#f2d9a6 55%,#d9b679 100%);box-shadow:0 18px 30px rgba(0,0,0,.45),inset 0 0 0 4px rgba(120,70,20,.25),inset 0 -8px 18px rgba(120,70,20,.25)}
+.tag .card:before{content:'';position:absolute;left:50%;top:10px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#5a3a1a;box-shadow:inset 0 2px 3px #000}
+.tag .card small{display:block;font:500 24px/1.2 P,sans-serif;color:#7a4a1e;margin-top:8px;text-align:center}
+.tag .card span{display:block;text-align:center;padding-top:14px}
+.meter{position:absolute;width:250px;height:250px;margin:-125px 0 0 -125px;border-radius:50%;
+  background:radial-gradient(circle at 50% 40%,#fff6df 0 55%,#e9cf98 56% 62%,#b98a3e 63% 70%,#6e4a1e 71% 100%);box-shadow:0 20px 34px rgba(0,0,0,.5);text-align:center}
+.meter .v{position:absolute;left:0;right:0;top:66px;font:700 84px/1 L,serif;color:#2b1708}
+.meter .x{position:absolute;left:0;right:0;top:156px;font:500 24px/1 P,sans-serif;color:#6b4a24}
+.meter .n{position:absolute;left:50%;top:-62px;transform:translateX(-50%);padding:8px 18px;border-radius:30px;background:rgba(20,10,4,.75);font:700 34px/1 P,sans-serif;letter-spacing:3px;white-space:nowrap}
+.chip{position:absolute;padding:14px 30px;border-radius:40px;font:700 44px/1 P,sans-serif;letter-spacing:2px;color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.45);white-space:nowrap}
+.note{position:absolute;font:600 italic 74px/1.15 L,serif;color:#2a2fbf;white-space:nowrap}
+.big{position:absolute;left:0;right:0;text-align:center;font:700 96px/1.05 L,serif;color:#FFF4DE;text-shadow:0 6px 24px rgba(0,0,0,.7)}
+.big i{color:#FFC44D}
+.lbl{position:absolute;text-align:center;white-space:nowrap;transform:translate(-50%,-100%)}
+.lbl>div{background:rgba(18,9,3,.62);padding:14px 26px 16px;border-radius:22px;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+.lbl .v{font:700 76px/1 L,serif;color:#FFE3A0;text-shadow:0 4px 0 #5a3305,0 0 26px rgba(0,0,0,.8)}
+.lbl .k{font:700 30px/1 P,sans-serif;letter-spacing:3px;margin-bottom:10px;text-shadow:0 2px 10px rgba(0,0,0,.9)}
+</style></head><body>
+<div id="stage"></div>
+<canvas id="fx" width="540" height="960" style="width:1080px;height:1920px"></canvas>
+<div id="ov"></div>
+<script>
+const TL=/*TL*/null;
+const ART=/*ART*/{};      // key -> {src} stills
+const CLIPS=/*CLIPS*/{};  // key -> {dir, n}
+const W=1080,H=1920,FPS=30;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ss=(a,b,x)=>{const k=clamp((x-a)/(b-a));return k*k*(3-2*k)};
+const lerp=(a,b,k)=>a+(b-a)*k;
+const back=k=>{k=clamp(k);const c=1.7;return 1+(c+1)*Math.pow(k-1,3)+c*Math.pow(k-1,2)};
+const bounce=k=>{k=clamp(k);if(k<1/2.75)return 7.5625*k*k;if(k<2/2.75){k-=1.5/2.75;return 7.5625*k*k+.75}if(k<2.5/2.75){k-=2.25/2.75;return 7.5625*k*k+.9375}k-=2.625/2.75;return 7.5625*k*k+.984375};
+const L={};for(const k in TL.lines)L[k]=TL.lines[k][0];
+const CH=TL.chunks; const ct=s=>{const c=CH.find(c=>c.text.toLowerCase().includes(s.toLowerCase()));if(!c)console.log('MISSING '+s);return c?c.t:0};
+const END=TL.end, VOEND=TL.frags[TL.frags.length-1].e;
+const PET='#D8412F',DIE='#7C8794',EVC='#1FB5A6',GOLD='#FFC44D';
+// ---------------- scenes ----------------
+// {key, a, b, src:'still'|'clip', cam:[s0,s1,x0,y0,x1,y1] (scale, offset px), clipT0, rate}
+const SC=[
+ {key:'s01',   a:0,     b:L[2], cam:[1.0,1.07,0,0,0,-30], intro:true},
+ {key:'s02',   a:L[2],  b:L[4], cam:[1.12,1.0,0,-40,0,0]},
+ {key:'s05',   a:L[4],  b:L[5], cam:[1.0,1.08,0,0,0,-30]},
+ {key:'race',  a:L[5],  b:L[6], clip:'c_race', img:'s03', rate:.9, cam:[1.0,1.0,0,0,0,0]},
+ {key:'s04',   a:L[6],  b:L[7], cam:[1.0,1.06,0,0,0,10]},
+ {key:'s06',   a:L[7],  b:ct('Petrol ₹8.5'), cam:[1.15,1.05,0,60,0,0]},
+ {key:'coins', a:ct('Petrol ₹8.5'), b:L[8], clip:'c_coins', img:'s06', rate:1.0, cam:[1.0,1.0,0,0,0,0]},
+ {key:'s07',   a:L[8],  b:ct('Agar sirf public'), cam:[1.0,1.07,0,0,0,-20]},
+ {key:'charge',a:ct('Agar sirf public'), b:L[9], clip:'c_charge', img:'s08', rate:1.0, cam:[1.0,1.0,0,0,0,0]},
+ {key:'s09',   a:L[9],  b:L[10], cam:[1.0,1.1,0,0,0,40]},
+ {key:'s07b', img:'s07', a:ct('ghar pe charging'), b:ct('Highway pe'), cam:[1.08,1.0,0,0,0,0]},
+ {key:'hwy',   a:ct('Highway pe'), b:ct('Kam chalana'), clip:'c_hwy', img:'s10', rate:1.0, cam:[1.0,1.0,0,0,0,0]},
+ {key:'s11',   a:ct('Kam chalana'), b:VOEND, cam:[1.0,1.08,0,0,0,0]},
+ {key:'s12',   a:VOEND, b:END+.1, cam:[1.0,1.06,0,0,0,-20]},
+];
+// rule intro (L10 → first rule card) stays on odometer scene
+SC.find(s=>s.key==='s09').b=ct('ghar pe charging');
+const XF=.28; // crossfade
+const stage=document.getElementById('stage');
+for(const s of SC){const d=document.createElement('div');d.className='layer';const im=document.createElement('img');d.appendChild(im);stage.appendChild(d);s.el=d;s.im=im;
+  const k=s.img||s.key; if(!s.clip&&ART[k])im.src=ART[k].src;}
+function clipFrame(s,t){const c=CLIPS[s.clip];if(!c)return null;let f=Math.floor((t-s.a)*s.rate*FPS)+1;f=Math.max(1,Math.min(c.n,f));return c.dir+'/'+String(f).padStart(4,'0')+'.jpg'}
+async function scenes(t){const waits=[];
+  for(let i=0;i<SC.length;i++){const s=SC[i];let op=0;
+    if(t>=s.a-XF&&t<s.b+XF){op=ss(s.a-XF,s.a,t)*(1-ss(s.b,s.b+XF,t)); if(i===0&&t<s.a+.01)op=1;}
+    // the next scene sits on top during crossfade, so keep outgoing at 1
+    if(t>=s.b&&i<SC.length-1&&t<s.b+XF)op=1;
+    s.el.style.opacity=op;s.el.style.zIndex=i;
+    if(op<=0)continue;
+    if(s.clip){let src=clipFrame(s,t);
+      if(!src){const k=s.img||s.key;src=ART[k]?ART[k].src:(ART[s.fallback]||{}).src}
+      if(src&&s.im.getAttribute('src')!==src){s.im.src=src;waits.push(s.im.decode().catch(()=>{}))}}
+    const k=ss(s.a,s.b,t),[s0,s1,x0,y0,x1,y1]=s.cam;let sc=lerp(s0,s1,k);let ix=0,iy=0;if(s.intro){const q=1-ss(0,.85,t);sc*=1+.45*q;ix=110*q;iy=-90*q}
+    // impact punch-in shakes
+    let sh=0;for(const p of PUNCH){if(t>=p&&t<p+.3)sh=(1-(t-p)/.3)}
+    s.im.style.transform=`translate(${lerp(x0,x1,k)+ix+sh*6*Math.sin(t*90)}px,${lerp(y0,y1,k)+iy+sh*4*Math.cos(t*80)}px) scale(${sc*(1+.025*sh)})`;
+  }
+  await Promise.all(waits)}
+let PUNCH=[];
+// ---------------- overlays ----------------
+const ov=document.getElementById('ov');
+function E(html){ov.insertAdjacentHTML('beforeend',html)}
+const pop=(t,t0,d=.35)=>back((t-t0)/d);
+const fin=(t,t0,d=.25)=>ss(t0,t0+d,t);
+function vis(t,a,b){return fin(t,a)*(1-fin(t,b))}
+function hl(s){return s.replace(/(₹[\d.,]+( lakh)?|[\d,]+ km|EV|1,500 km|500 km|5 saal)/g,'<b>$1</b>')}
+function caption(t){let f=null;for(const x of TL.frags){if(t>=x.s-.05&&t<x.e+.25){f=x}}if(!f)return '';
+  const k=fin(t,f.s-.05,.14);return `<div class="cap" style="opacity:${k};transform:translateY(${(1-k)*14}px)">${hl(f.text)}</div>`}
+const POS=/*POS*/{};   // per-scene anchor points measured on the stills (fractions of 1080x1920)
+const P=(key,i,dx=0,dy=0)=>{const p=(POS[key]||[])[i]||[[.2,.5],[.5,.5],[.8,.5]][i];return [p[0]*W+dx,p[1]*H+dy]};
+function overlays(t){let h='';
+  // B1 hook — stamp "RUKO!" when the hand lands
+  {const t0=HOOK_STOP;const v=vis(t,t0,L[2]-.15);if(v>0){const s=1.6-.6*clamp((t-t0)/.14);h+=`<div class="chip" style="left:640px;top:250px;background:#B3261E;opacity:${v};transform:rotate(-8deg) scale(${s});font-size:62px;border:5px solid #FFE3A0">RUKO!</div>`}}
+  // B2 fuel chips over each car
+  {const names=[['PETROL',PET,'Petrol loon'],['DIESEL',DIE,'diesel loon'],['EV',EVC,'ya EV']];
+   names.forEach(([n,c,key],i)=>{const t0=ct(key);const v=vis(t,t0,L[3]+.3);if(v<=0)return;const [x,y]=P('s02',i);const s=pop(t,t0);
+     h+=`<div class="chip" style="left:${x}px;top:${y}px;background:${c};opacity:${v};transform:translate(-50%,-50%) scale(${s})">${n}</div>`})}
+  // B3 calendar flip 2026 → 2031 and question mark
+  {const v=vis(t,L[3],L[4]-.1);if(v>0){const yr=Math.min(2031,2026+Math.floor(clamp((t-L[3]-.2)/1.6)*5.99));
+    h+=`<div style="position:absolute;left:370px;top:120px;width:340px;height:340px;opacity:${v};transform:rotate(-3deg) scale(${pop(t,L[3])})">
+      <div style="position:absolute;inset:0;border-radius:24px;background:#FFF6E2;box-shadow:0 24px 40px rgba(0,0,0,.5)"></div>
+      <div style="position:absolute;left:0;right:0;top:0;height:96px;border-radius:24px 24px 0 0;background:#B3261E"></div>
+      <div style="position:absolute;left:0;right:0;top:20px;text-align:center;font:700 52px P;color:#FFE3A0;letter-spacing:4px">SAAL</div>
+      <div style="position:absolute;left:0;right:0;top:125px;text-align:center;font:700 140px/1 L,serif;color:#2b1708">${yr}</div>
+      <div style="position:absolute;left:0;right:0;top:280px;text-align:center;font:500 32px P;color:#7a4a1e">${yr-2026} / 5 saal</div></div>`;
+    const q=fin(t,ct('rahegi'),.3);if(q>0)h+=`<div class="big" style="top:470px;left:560px;font-size:180px;opacity:${q};transform:scale(${pop(t,ct('rahegi'))})"><i>?</i></div>`}}
+  // B4 handwriting in Papa ji's notebook (left page, then right page)
+  {const v=vis(t,L[4],L[5]-.1);if(v>0){const [x,y]=P('s05',0),[x2,y2]=P('s05',1);
+    const W1=fin(t,ct('Gaadi har'),.7),W2=fin(t,ct('1,500'),.5),W3=fin(t,ct('1,500')+.55,.5),W4=fin(t,ct('1,500')+1.0,.45);
+    const ink=(tx,X,Y,w,fs,col)=>w>0?`<div class="note" style="left:${X}px;top:${Y}px;font-size:${fs}px;color:${col||'#23308f'};opacity:${v};clip-path:inset(-20px ${100-w*100}% -20px -20px);transform:rotate(-3deg)">${tx}</div>`:'';
+    h+=ink('1,500 km',x,y,W1,70)+ink('har mahina',x+20,y+95,W2,46)+ink('× 60 mahine',x2,y2,W3,52)+ink('= 90,000 km',x2-10,y2+90,W4,56,'#A11E14');
+    // pen tip follows the newest line
+    }}
+  // B5 per-km meters
+  {const M=[['PETROL',PET,'₹9','₹9.46/km','Petrol ₹9'],['DIESEL',DIE,'₹5','₹5.30/km','Diesel ₹5'],['EV',EVC,'₹1','₹1.03 · ghar','sirf ₹1']];
+   const v0=1-fin(t,L[6]-.05);M.forEach(([n,c,big,sm,key],i)=>{const t0=ct(key);if(t<t0||v0<=0)return;const [x,y]=P('race',i);const s=.8*pop(t,t0,.4);
+    h+=`<div class="meter" style="left:${x}px;top:${y}px;opacity:${v0};transform:scale(${s})${i==2?` rotate(${-4*Math.sin((t-t0)*6)*Math.exp(-(t-t0)*2)}deg)`:''}"><div class="n" style="color:${c}">${n}</div><div class="v">${big}</div><div class="x">${sm}</div></div>`;
+   })}
+  // B6 prices written onto the painted showroom tags (stamp-in)
+  {const v0=1-fin(t,L[7]-.05);
+   const T=[['Base','petrol',0,L[6]+.35,40],['+₹1L','diesel extra',1,ct('diesel lagbhag')+.15,50],['+₹2.65L','EV extra',2,ct('aur EV ₹2.65')+.1,46]];
+   T.forEach(([big,sm,i,t0,fs])=>{if(t<t0||v0<=0)return;const [x,y]=P('tags',i);const k=clamp((t-t0)/.16);const sc=1+.8*(1-k)*(1-k);
+    h+=`<div style="position:absolute;left:${x}px;top:${y}px;transform:translate(-50%,-50%) rotate(${i==2?-4:-3}deg) scale(${sc});opacity:${v0*k};text-align:center;white-space:nowrap">
+      <div style="font:700 ${fs}px/1 L,serif;color:${i==2?'#A11E14':'#3a1e0c'}">${big}</div><div style="font:700 ${Math.round(fs*.44)}px/1.2 P;color:#7a4a1e;margin-top:6px">${sm}</div></div>`;
+    if(i==2){const r=ss(t0+.25,t0+.55,t);if(r>0)h+=`<div style="position:absolute;left:${x-120}px;top:${y-95}px;width:240px;height:190px;border:7px solid rgba(179,38,30,${.85*v0});border-radius:50%;transform:rotate(-8deg);clip-path:inset(0 ${100-r*100}% 0 0)"></div>`}
+   })}
+  // B7 five-year totals above coin stacks
+  {const v0=1-fin(t,L[8]-.05);const k0=vis(t,L[7],L[8]-.05);if(k0>0)h+=`<div class="big" style="top:190px;font-size:64px;opacity:${k0}">5 saal ka <i>total</i><div style="font:500 30px P;color:#FFE3A0;margin-top:14px">extra daam + fuel · 90,000 km</div></div>`;
+   [['PETROL',PET,'₹8.5L','Petrol ₹8.5'],['DIESEL',DIE,'₹5.8L','Diesel ₹5.8'],['EV',EVC,'₹3.6L','EV sirf ₹3.6']].forEach(([n,c,v,key],i)=>{const t0=ct(key);if(t<t0||v0<=0)return;const [x,y]=P('coins',i);
+    h+=`<div class="lbl" style="left:${x}px;top:${y}px;opacity:${v0*fin(t,t0,.15)}"><div style="transform:scale(${pop(t,t0)})"><div class="k" style="color:${c}">${n}</div><div class="v"${i==2?` style="color:#9FF5E8"`:''}>${v}</div></div></div>`})}
+  // B8 twist: home vs public charging
+  {const v=vis(t,L[8],L[9]-.05);if(v>0){
+    const kt=pop(t,L[8]);h+=`<div class="chip" style="left:540px;top:250px;background:#B3261E;opacity:${fin(t,L[8],.2)*v};transform:translate(-50%,-50%) rotate(-4deg) scale(${kt});font-size:60px">TWIST</div>`;
+    const pub=t>=ct('Agar sirf public');
+    if(!pub){const k=fin(t,ct('jab EV ghar'),.25);h+=`<div class="lbl" style="left:540px;top:1400px;opacity:${k*v}"><div><div class="k" style="color:#9FF5E8">GHAR PE CHARGING</div><div class="v" style="color:#9FF5E8">₹3.6L</div></div></div>`}
+    else{const t0=ct('EV ₹5.7');const n=lerp(3.6,5.7,ss(t0,t0+.7,t));const red=t>=t0?.5+.5*Math.sin((t-t0)*14):0;
+      h+=`<div class="lbl" style="left:540px;top:1330px;opacity:${v}"><div><div class="k" style="color:#FF8A7A">PUBLIC FAST CHARGER</div><div class="v" style="color:${t>=t0?'#FFB4A8':'#9FF5E8'};text-shadow:0 4px 0 #5a0d05,0 0 ${30+40*red}px rgba(255,60,40,${.3+.5*red})">₹${n.toFixed(1)}L</div></div></div>`;
+      const k2=fin(t,ct('lagbhag diesel'),.25);if(k2>0)h+=`<div class="chip" style="left:540px;top:1352px;background:${DIE};opacity:${k2*v};transform:translate(-50%,0) scale(${pop(t,ct('lagbhag diesel'))})">≈ DIESEL ₹5.8L</div>`}}}
+  // B9 odometer: < 500 km/month → EV premium not recovered
+  {const v=vis(t,L[9],ct('ghar pe charging')-.05);if(v>0){const [x,y]=P('s09',0);const km=Math.round(lerp(0,499,ss(L[9]+.3,ct('kam chalate')+.4,t)));
+    h+=`<div style="position:absolute;left:${x}px;top:${y}px;transform:translate(-50%,-50%);opacity:${v};display:flex;gap:8px">${String(km).padStart(4,'0').split('').map(d=>`<div style="width:86px;height:120px;border-radius:10px;background:linear-gradient(#1b1b1b,#3a3a3a 50%,#1b1b1b);color:#FFE3A0;font:700 88px/120px L,serif;text-align:center;box-shadow:inset 0 0 12px #000,0 6px 16px rgba(0,0,0,.6)">${d}</div>`).join('')}<div style="align-self:flex-end;font:700 34px P;color:#FFE3A0;margin-left:10px;text-shadow:0 2px 6px #000">km/mahina</div></div>`;
+    const t0=ct('toh EV ka');if(t>=t0){const [tx,ty]=P('s09',1);const k=bounce((t-t0)/.5);
+      h+=`<div class="tag" style="left:${tx}px;top:${ty-300*(1-k)}px;opacity:${v};transform:translate(-50%,0) rotate(${-5+3*Math.sin((t-t0)*5)*Math.exp(-(t-t0)*1.5)}deg)"><div class="str"></div><div class="card" style="background:radial-gradient(120% 90% at 30% 20%,#ffd9d2,#e98c7c 60%,#b9483a);color:#3a0b05"><span>₹2.65L extra</span><small style="color:#5a1208">5 saal mein wasool nahi</small></div></div>`;
+}}}
+  // B10 simple rule cards
+  {const v=vis(t,L[10],VOEND+.05);if(v>0){const k=fin(t,L[10],.25)*(1-fin(t,ct('ghar pe charging')-.05));if(k>0)h+=`<div class="big" style="top:520px;font-size:120px;opacity:${k};transform:scale(${pop(t,L[10])})">Simple <i>rule</i></div>`;
+    const R=[['ghar pe charging','Highway pe','EV','Ghar pe charging + zyada chalana',EVC],['Highway pe','Kam chalana','DIESEL','Highway, lamba safar',DIE],['Kam chalana',null,'PETROL','Kam chalana',PET]];
+    R.forEach(([a,b,n,d,c])=>{const ta=ct(a),tb=b?ct(b):VOEND+.3;const kk=vis(t,ta,tb);if(kk<=0)return;
+      h+=`<div style="position:absolute;left:540px;top:300px;transform:translate(-50%,0) scale(${pop(t,ta)});opacity:${kk};text-align:center">
+        <div style="display:inline-block;padding:18px 46px;border-radius:60px;background:${c};font:700 76px/1 P;color:#fff;letter-spacing:4px;box-shadow:0 14px 30px rgba(0,0,0,.5)">${n} ✓</div>
+        <div style="font:700 40px/1.2 P;color:#FFF4DE;margin-top:22px;text-shadow:0 3px 12px #000">${d}</div></div>`})}}
+  // ending: loop cue
+  {const k=fin(t,VOEND+.2,.3);if(k>0)h+=`<div class="big" style="top:1470px;font-size:76px;opacity:${k}">Ab sign karo, <i>beta.</i></div>`}
+  h+=caption(t);
+  const sp=vis(t,L[5],VOEND);if(sp>0)h+=`<div class="small" style="opacity:${sp}">Per-km: Autocar India (Sep 2026) · Fuel @ Delhi 1 Nov 2026 · EV home ₹8/unit · Excl. insurance, service, resale · Sirf jaankari ke liye</div>`;
+  ov.innerHTML=h}
+let HOOK_STOP=/*HOOKSTOP*/1.0;
+PUNCH=[HOOK_STOP,ct('aur EV ₹2.65')+.35,ct('EV ₹5.7')];
+// ---------------- grade: vignette + grain + floating diya sparks ----------------
+const fx=document.getElementById('fx'),g=fx.getContext('2d');
+function R(i){let x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)}
+function grade(t){g.clearRect(0,0,540,960);
+  const vg=g.createRadialGradient(270,430,220,270,480,640);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(10,5,0,.55)');g.fillStyle=vg;g.fillRect(0,0,540,960);
+  const bot=g.createLinearGradient(0,660,0,960);bot.addColorStop(0,'rgba(8,4,0,0)');bot.addColorStop(1,'rgba(8,4,0,.62)');g.fillStyle=bot;g.fillRect(0,660,540,300);
+  // sparks (warm, everywhere except the night scenes get teal)
+  const night=(t>=L[8]&&t<L[9]);
+  for(let i=0;i<26;i++){const sp=.25+R(i)*.5;const y=(R(i+50)*1100-(t*40*sp)%1100+1100)%1100-70;const x=R(i+9)*540+18*Math.sin(t*1.3+i);
+    const a=.25+.35*Math.sin(t*3+i*1.7);g.fillStyle=night?`rgba(150,255,240,${a*.6})`:`rgba(255,200,110,${a})`;g.beginPath();g.arc(x,y,1+R(i+3)*1.6,0,7);g.fill()}
+  // film grain
+  const id=g.getImageData(0,0,540,960),d=id.data;let s=Math.floor(t*FPS)*9973;
+  for(let i=0;i<d.length;i+=4){s=(s*1103515245+12345)&0x7fffffff;const n=(s/0x7fffffff-.5)*16;d[i]+=n;d[i+1]+=n;d[i+2]+=n;d[i+3]=Math.max(d[i+3],10)}
+  g.putImageData(id,0,0)}
+async function renderAt(t){await scenes(t);overlays(t);grade(t)}
+window.renderAt=renderAt;
+</script></body></html>
