@@ -73,7 +73,7 @@ Hero frame + 2-line giant headline (white + yellow/red, thick stroke). **Never c
 * YouTube settings: not made for kids, no paid promotion; altered/synthetic = **Yes** only for realistic AI video/images, **No** for code-drawn animation.
 
 ## 8a. YouTube monetization guard — "inauthentic content" (Suraj's standing rule, 1 Nov 2026)
-YouTube (16 Jul 2026) renamed "repetitious" to **inauthentic content**: channels with too much of it can't earn. AI voice itself is allowed; what loses monetization is (1) repetitive/template content where only the words change, (2) distressing/manipulative content made to chase views, (3) AI personas of real-looking people on finance/health/legal, or synthetic voices presented as credentialed experts. Check every reel before delivery:
+YouTube (16 Jul 2026) renamed "repetitious" to **inauthentic content**: channels with too much of it can't earn. AI voice itself is allowed; what loses monetization is (1) repetitive/template content where only the words change, (2) distressing/manipulative content made to chase views, (3) AI personas of real-looking people on finance/health/legal, or synthetic voices presented as credentialed experts. Apply it while making every video — at topic/script stage and again before delivery:
 * **Original input in every video:** own sourced data, comparison, timeline, twist or opinion. No swap-the-topic templates (format can repeat, substance must not).
 * **Unique hook, title, description and tags per video.** Never copy-paste metadata with a few words changed.
 * **Never call Amrut's voice, Momo or any character an "advisor/expert/CA/doctor".** Keep "Sirf jaankari ke liye" on money/health content.
