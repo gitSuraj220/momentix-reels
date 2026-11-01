@@ -19,4 +19,5 @@ Suraj gives all orders in one chat. At the start of a session, read these two sk
 - IG captions never name Suraj or the YouTube channel.
 - YouTube title starts with the exact English search phrase, then the Hinglish hook.
 - Suraj uploads videos himself; Claude fills details and schedules (6 PM IST default). Never type passwords.
+- YouTube monetization guard (inauthentic content, Jul 2026): every video needs original input (own data/twist), unique hook + metadata; AI voice is fine but never present it or any character as an expert/advisor; no realistic AI humans on finance/health; no fear-bait. Details: momentix-reels SKILL.md §8a.
 - Don't commit MP4/WAV renders (see .gitignore); finished videos go to ~/Downloads/<Project>/ on Suraj's Mac.
