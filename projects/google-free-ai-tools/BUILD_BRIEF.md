@@ -16,16 +16,17 @@ You are building ONLY the picture (animation → `build/video_only.mp4`). Voice,
 - Real tool logos ARE allowed for this video (Suraj's exception): Google "G", Antigravity, AI Studio, Stitch, Opal, Jules, n8n, Lovable, Gemini Notebook, Code Wiki, Flow Music. Draw them as clean SVG recreations or use official press/brand assets saved to `projects/google-free-ai-tools/assets/logos/`. No real people, no founder clip.
 - Momo (our character, `characters/momo/`): small cutout bottom-left in beats 1, 7, 8 — shocked (1), pointing at icons (7), pointing down at "Comment AI" (8). Momo is a curious user, never an expert.
 
-## Beats (start = TL.lines[n][0])
-1. Hook — Google "G" centre, 8–10 tool icons orbit on a dashed circle (like ref 0:03), big text "10 FREE AI VIBE CODING TOOLS" + "ChatGPT · Cursor" struck through; Momo shocked.
-2. Antigravity — black card, logo glows in, title "AI Code Editor"; mockup: prompt box types "Login wala e-commerce page banao" → split view: tiny shop page + scrolling code.
-3. AI Studio — black card, "Google AI Studio" wordmark + "ai.studio/build"; mockup: blocks snap together → chatbot bubble app.
-4. Stitch — black card "Stitch BETA" → white card title "AI UI Designer" + 3 phone screens slide in (finance app, dark mode).
-5. Opal — white card: n8n logo + Lovable logo slide together → "= Opal" ; mockup: 4 workflow nodes connect, "Veo 3" and "Nano Banana" chips.
-6. Jules — purple card, octopus logo + "jules"; then dark card title "Run Tests" over an agent panel with green ticks: Features ✓ Tests ✓ Bugs ✓.
-7. "Sirf 12 mein se 5" — fast horizontal icon carousel with motion blur (Gemini Notebook, Code Wiki, Flow Music, …); big "5 / 12".
-8. CTA — white card, huge "Comment  AI" with a pulsing comment bubble + arrow; Momo points down. Hold to the end.
+## Beats (start = TL.lines[n][0]; 7 beats, ~29 s — Jules was cut by Suraj)
+Voice is final: `vo/vo.mp3` (Amrut, take A, pauses tightened). Captions = `TL.chunks` (word groups) — show exactly that text.
+1. Hook (0–6.5 s) — "ChatGPT aur Claude sab use karte hain… par Google ne chupchaap 10 free AI coding tools nikaale hain!" Google "G" centre, 8–10 tool icons orbit on a dashed circle (like ref 0:03); ChatGPT + Claude chips slide in then get dimmed/pushed aside when "par Google" lands; big "10 FREE AI CODING TOOLS". Momo shocked, bottom-left.
+2. Antigravity — black card, logo glows in, title "AI Code Editor"; RICH mockup: editor window, prompt box types "Login wala e-commerce page banao" → split view: shop page renders on the left, code streams on the right. "Cursor jaisa" can flash a small "≈ Cursor" chip.
+3. AI Studio — black card "Google AI Studio" + "ai.studio/build"; RICH mockup: Build mode prompt → an app preview (e.g. image-caption or chatbot app) pops in within 1 s, timer chip "3 sec".
+4. Stitch — black card "Stitch BETA" → white card, italic title "AI UI Designer", 3 phone screens slide in (finance app in dark mode) + a "</> Export code" button press.
+5. Opal — white card: n8n logo + Lovable logo slide together and merge into "Opal"; RICH mockup: 4 workflow nodes (Input → Gemini → Veo 3 → Output) connect with animated lines; "No code" chip.
+6. "12 mein se sirf 4" — fast horizontal icon carousel with motion blur (Gemini Notebook, Code Wiki, Flow Music, Jules, Mixboard, Pomelli…); big counter "4 / 12" ticking.
+7. CTA (to TL.end) — white card, huge "Comment  AI" with pulsing comment bubble + arrow down; Momo points down. Hold to the end.
 Small print from beat 2 to end (20 px, 50% opacity, bottom): "Free tiers have limits and can change. Checked 2 Nov 2026."
+Momo appears ONLY in beats 1 and 7.
 
 ## Output
 - `projects/google-free-ai-tools/build/video_only.mp4` (1080×1920, 30 fps, length = TL.end, no audio).
