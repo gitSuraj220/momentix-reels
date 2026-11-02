@@ -9,12 +9,12 @@ You are building ONLY the picture (animation → `build/video_only.mp4`). Voice,
 - Timing: `projects/google-free-ai-tools/vo/timeline.json` (lines 1–8 start/end, chunks for word-by-word captions). Use `TL.lines[n][0]` for beat starts and `TL.chunks` for captions. Never hard-code seconds.
 
 ## Look (match the reference reel, but our own build)
-- Clean editorial: alternating WHITE soft-gradient cards (#F4F4F2 → #E6E6E3) and BLACK cards (#050505 with faint dot-particle field). One purple (#6A2BD8 → #8B3FE6) card for Jules.
-- Big italic serif titles (Lora Italic 600, ~120 px, black on white / white on black) that slide/scale in: "AI Code Editor", "AI App Builder", "AI UI Designer", "No-Code AI Apps", "Run Tests".
+- Clean editorial: alternating WHITE soft-gradient cards (#F4F4F2 → #E6E6E3) and BLACK cards (#050505 with faint dot-particle field).
+- Big italic serif titles (Lora Italic 600, ~120 px, black on white / white on black) that slide/scale in: "AI Code Editor", "AI App Builder", "AI UI Designer", "No-Code AI Apps".
 - Word-by-word captions: Poppins Bold 56 px, white text in a dark translucent rounded box (rgba(40,40,40,.72), radius 10, padding 6/16), centred at y≈1500 — one chunk at a time from `TL.chunks`, pop-in 0.12 s.
 - Something moves every 0.5 s: card push-ins (1.0→1.06), logo pop (back-ease), parallax, typing cursors, blur-whip transitions (8 frames, motion blur via CSS filter blur + translateX).
 - Real tool logos ARE allowed for this video (Suraj's exception): Google "G", Antigravity, AI Studio, Stitch, Opal, Jules, n8n, Lovable, Gemini Notebook, Code Wiki, Flow Music. Draw them as clean SVG recreations or use official press/brand assets saved to `projects/google-free-ai-tools/assets/logos/`. No real people, no founder clip.
-- Momo (our character, `characters/momo/`): small cutout bottom-left in beats 1, 7, 8 — shocked (1), pointing at icons (7), pointing down at "Comment AI" (8). Momo is a curious user, never an expert.
+- Momo (our character, `characters/momo/`): small cutout bottom-left in beats 1 and 7 only — shocked (1), pointing down at "Comment AI" (7). Momo is a curious user, never an expert.
 
 ## Beats (start = TL.lines[n][0]; 7 beats, ~29 s — Jules was cut by Suraj)
 Voice is final: `vo/vo.mp3` (Amrut, take A, pauses tightened). Captions = `TL.chunks` (word groups) — show exactly that text.
