@@ -27,3 +27,7 @@ projects/*/vo/s_*.mp3
 projects/*/vo/take*.mp3
 projects/*/vo/*.wav
 projects/*/build/*.png
+projects/*/reel_built.html
+projects/*/build/
+projects/*/vo/*take*.mp3
+projects/*/vo/*_t.mp3
