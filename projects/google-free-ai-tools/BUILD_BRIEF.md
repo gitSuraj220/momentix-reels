@@ -1,0 +1,33 @@
+# BUILD BRIEF — "Google ke 10 Free AI Vibe Coding Tools" (for the second Claude session)
+
+You are building ONLY the picture (animation → `build/video_only.mp4`). Voice, timeline, SFX, mix, cover and scheduling are done in the main session.
+
+## Read first
+- `CLAUDE.md` (repo root) and `.claude/skills/momentix-reels/SKILL.md` §8a (monetization guard).
+- `projects/google-free-ai-tools/script.md` — the 8 beats.
+- Template to copy: `projects/nexon-4-fuel/{reel.html, build.py, render.py}` — HTML/DOM → Playwright `renderAt(t)` (async) → ffmpeg. Same pipeline, same render settings (1.25× device scale, lanczos to 1080×1920, 30 fps, libx264 crf 15).
+- Timing: `projects/google-free-ai-tools/vo/timeline.json` (lines 1–8 start/end, chunks for word-by-word captions). Use `TL.lines[n][0]` for beat starts and `TL.chunks` for captions. Never hard-code seconds.
+
+## Look (match the reference reel, but our own build)
+- Clean editorial: alternating WHITE soft-gradient cards (#F4F4F2 → #E6E6E3) and BLACK cards (#050505 with faint dot-particle field). One purple (#6A2BD8 → #8B3FE6) card for Jules.
+- Big italic serif titles (Lora Italic 600, ~120 px, black on white / white on black) that slide/scale in: "AI Code Editor", "AI App Builder", "AI UI Designer", "No-Code AI Apps", "Run Tests".
+- Word-by-word captions: Poppins Bold 56 px, white text in a dark translucent rounded box (rgba(40,40,40,.72), radius 10, padding 6/16), centred at y≈1500 — one chunk at a time from `TL.chunks`, pop-in 0.12 s.
+- Something moves every 0.5 s: card push-ins (1.0→1.06), logo pop (back-ease), parallax, typing cursors, blur-whip transitions (8 frames, motion blur via CSS filter blur + translateX).
+- Real tool logos ARE allowed for this video (Suraj's exception): Google "G", Antigravity, AI Studio, Stitch, Opal, Jules, n8n, Lovable, Gemini Notebook, Code Wiki, Flow Music. Draw them as clean SVG recreations or use official press/brand assets saved to `projects/google-free-ai-tools/assets/logos/`. No real people, no founder clip.
+- Momo (our character, `characters/momo/`): small cutout bottom-left in beats 1, 7, 8 — shocked (1), pointing at icons (7), pointing down at "Comment AI" (8). Momo is a curious user, never an expert.
+
+## Beats (start = TL.lines[n][0])
+1. Hook — Google "G" centre, 8–10 tool icons orbit on a dashed circle (like ref 0:03), big text "10 FREE AI VIBE CODING TOOLS" + "ChatGPT · Cursor" struck through; Momo shocked.
+2. Antigravity — black card, logo glows in, title "AI Code Editor"; mockup: prompt box types "Login wala e-commerce page banao" → split view: tiny shop page + scrolling code.
+3. AI Studio — black card, "Google AI Studio" wordmark + "ai.studio/build"; mockup: blocks snap together → chatbot bubble app.
+4. Stitch — black card "Stitch BETA" → white card title "AI UI Designer" + 3 phone screens slide in (finance app, dark mode).
+5. Opal — white card: n8n logo + Lovable logo slide together → "= Opal" ; mockup: 4 workflow nodes connect, "Veo 3" and "Nano Banana" chips.
+6. Jules — purple card, octopus logo + "jules"; then dark card title "Run Tests" over an agent panel with green ticks: Features ✓ Tests ✓ Bugs ✓.
+7. "Sirf 12 mein se 5" — fast horizontal icon carousel with motion blur (Gemini Notebook, Code Wiki, Flow Music, …); big "5 / 12".
+8. CTA — white card, huge "Comment  AI" with a pulsing comment bubble + arrow; Momo points down. Hold to the end.
+Small print from beat 2 to end (20 px, 50% opacity, bottom): "Free tiers have limits and can change. Checked 2 Nov 2026."
+
+## Output
+- `projects/google-free-ai-tools/build/video_only.mp4` (1080×1920, 30 fps, length = TL.end, no audio).
+- Contact sheet `build/sheet.jpg` (12 frames) for review.
+- Commit code (not mp4/png renders — see .gitignore) and push. Copy the mp4 to `~/Downloads/GoogleAI/video_only.mp4` on Suraj's Mac.
