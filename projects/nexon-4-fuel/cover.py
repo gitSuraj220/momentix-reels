@@ -17,7 +17,7 @@ html,body{{margin:0;width:1080px;height:1920px;overflow:hidden;background:#120c0
 </style></head><body>
 <div class="art"></div><div class="shade"></div>
 <div class="stamp">RUKO!</div>
-<div class="tag">DHANTERAS PE CAR LENE SE PEHLE</div>
+<div class="tag">NAYI CAR LENE SE PEHLE</div>
 <div class="h" style="top:1240px;font-size:112px;white-space:nowrap"><span style="color:#FF6B57">PETROL</span> <span style="color:#fff;font-size:96px">vs</span> <span style="color:#C9D1DB">DIESEL</span></div>
 <div class="h" style="top:1380px;font-size:160px"><span style="color:#fff;font-size:110px">vs</span> <span style="color:#3FE0CF">EV?</span></div>
 </body></html>"""
