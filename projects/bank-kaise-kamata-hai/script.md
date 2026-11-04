@@ -19,3 +19,9 @@ Own Hinglish words, Indian ₹ data, credit-card twist (not in the original); no
 s / broken-loan icons |
 
 Small print: "SBI rates, Nov 2026 · Simple 1-year example: banks also keep reserves (CRR/SLR) and pay staff, costs and bad loans · Sirf jaankari ke liye."
+
+## Screen script note — Shot 2 remold (Suraj, 4 Nov): typical Indian bank humour
+- Counter: a ballpoint pen TIED TO THE DESK WITH A THREAD (string loop, taped) — Momo tries to pick it up, the thread yanks it back (boing), he shrugs.
+- Wall sign (red-bordered, Hindi + English): "गुटखा थूकना मना है / NO SPITTING GUTKA" — with an innocent red splash stain right under it (sarcasm).
+- Extra small gags (background, never block the numbers): slow-wobbling ceiling fan; window sign "LUNCH 1–2" flips to "SERVER DOWN" for half a second, then back; a dusty "Token No. 47" display.
+- Bank Babu sips chai from a small glass, then perks up the moment the ₹1 lakh bundle hits the counter.
