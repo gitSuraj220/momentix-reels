@@ -25,3 +25,11 @@ Small print: "SBI rates, Nov 2026 · Simple 1-year example: banks also keep rese
 - Wall sign (red-bordered, Hindi + English): "गुटखा थूकना मना है / NO SPITTING GUTKA" — with an innocent red splash stain right under it (sarcasm).
 - Extra small gags (background, never block the numbers): slow-wobbling ceiling fan; window sign "LUNCH 1–2" flips to "SERVER DOWN" for half a second, then back; a dusty "Token No. 47" display.
 - Bank Babu sips chai from a small glass, then perks up the moment the ₹1 lakh bundle hits the counter.
+
+## Sarcasm pass (Claude's call, 4 Nov) — max ONE background gag per shot; numbers always lead; Shot 5 (the maths) stays clean
+- Shot 3 (2.5% → ₹2,500): ₹2,500 arrives as a slow trickle of coins, then a tiny "₹2,500" sticker; a "Thank you for banking with us 🙏" banner unrolls, way bigger than the interest.
+- Shot 4 (home loan 8%): borrower signs a paper; the form unrolls to the floor (Terms & Conditions) while the borrower keeps signing; "*T&C apply" pops in tiny text.
+- Shot 6 (crore logon): queue outside the bank is long, and the "Token No." display jumps 47 → 9,99,999; Bank Babu's chai glass upgrades to a big gold mug.
+- Shot 7 (credit card 45%): card statement shows "Minimum Due: ₹200" huge and "Total Due: ₹1,00,000" tiny; Momo pays the ₹200, red ₹45,000 bursts.
+- Shot 8 (pay in full): "PAID IN FULL" stamp; Bank Babu's grin drops back to bored chai face; loop to bank front with "SERVER DOWN" flicker.
+- Keep it gentle: no real bank names/logos on screen, no mocking real staff — just relatable bank-life jokes.
