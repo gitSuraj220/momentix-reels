@@ -1,14 +1,11 @@
-# Script v2 (tight, ~25 s): "Trump haar gaye? India mein bull run?" (4 Nov 2026)
-Hook was requested by Suraj. Line 2 corrects the hook right away: Trump wasn't on the ballot (midterms).
-Style: 2D cartoon Trump with popcorn and a sweating bull, sarcasm like the crowdbluehq reel. No fake headlines, no fake quotes, no "Trump removed" style predictions.
+# Script v3 FINAL (Suraj's own voice), about 25 s. Facts re-checked 5 Nov 2026, 12:40 IST
+Sources: AP via PBS (4 Nov: Democrats win control of the House and the Senate); IIFL 5 Nov 11:43 (Sensex +1,609 to 78,911, over 4,000 pts / about 5% in the 5 sessions through Wed, Brent about $94 after an 8% fall Wed, FII net buy Rs 17,235 cr in Nov, rupee 94.35); NewsOrbiter 5 Nov.
 
-| # | Voice | Screen |
+| # | Voice (read) | Screen |
 |---|---|---|
-| 1 | Trump election haar gaye kya? Aur Indian market mein bull run ready hai? | (Suraj, 4 Nov) Bouncers march into the White House, carry cartoon Trump out and toss him on the lawn, popcorn flying. Corner tag: "FUTURE POSSIBILITY? 🤔 / SATIRE". Sensex bull in sunglasses walks past. |
-| 2 | (Record scratch, freeze frame) Trump abhi bhi President hain, unki party chunav haar rahi hai. (Switch to "haar gayi hai" only once AP calls the chamber.) | Freeze, then rewind back to the White House: Trump is back in his chair, "STILL PRESIDENT (till 2029)" badge; "MIDTERMS" stamp; Congress seat bars (Rep red vs Dem blue). |
-| 3 | Par ab naye tariff aur kanoon ab aasaani se pass nahi honge. | Trump signs a tariff file, which gets stuck in a "CONGRESS" traffic jam; stamp "PENDING..." |
-| 4 | Tariff ka darr kam, toh foreign paisa India aa raha hai. Sensex 5 din mein 4,000 points upar! | Dollar planes land on an India map; Sensex counter rolls +4,000; confetti. |
-| 5 | Par bull run pakka? Itna bhi nahi. Crude 100 dollar ke upar hai, rupee 94 pe. | Oil barrel drops onto the bull's back; bull sweats; rupee coin wobbles. |
-| 6 | Aapko kya lagta hai, ye rally chalegi? Comment karo. | Bull and Trump both look at the camera; comment-box pop. Small print: Sirf jaankari ke liye. |
-
-Data to re-check before voice: AP House/Senate (not called yet on 4 Nov), Sensex 5-day gain, crude, USD/INR.
+| 1 | Trump election haar gaye kya? Aur Indian market mein bull run ready hai? | Bouncers carry cartoon Trump out of the White House and toss him on the lawn, popcorn flying. Tag "FUTURE POSSIBILITY? 🤔 / SATIRE". Sensex bull in sunglasses walks past. |
+| 2 | Trump abhi bhi President hain, par unki party chunav haar gayi hai. House aur Senate, dono Democrats ke paas. | Record scratch, rewind: Trump back in his chair, "STILL PRESIDENT (till 2029)" badge; "MIDTERMS" stamp; House + Senate flip to blue. |
+| 3 | Matlab ab naye tariff aur kanoon aasaani se pass nahi honge. | Tariff file stuck in a "CONGRESS" traffic jam; "PENDING..." stamp. |
+| 4 | Tariff ka darr kam, crude 8% gira, aur foreign investors wapas! Sensex 5 din mein 4,000 points upar. | Oil barrel deflates (-8%); dollar planes land on India map; Sensex counter +4,000; confetti. |
+| 5 | Toh bull run pakka? Itna bhi nahi. Itni tezi ke baad profit booking aa sakti hai, aur crude kabhi bhi palat sakta hai. | Dancing bull steps on a "PROFIT BOOKING" banana peel; the oil barrel re-inflates behind it, wobbling. |
+| 6 | Aapko kya lagta hai, ye rally chalegi? Comment karo. | Trump and the bull look at the camera; comment box pops. Small print: Sirf jaankari ke liye. |
