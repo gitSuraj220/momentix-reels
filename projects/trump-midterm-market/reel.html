@@ -1,0 +1,240 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;font-weight:700;src:url(/*FONTS*//poppins-latin-700-normal.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(/*FONTS*//poppins-latin-800-normal.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(/*FONTS*//poppins-latin-500-normal.woff2)}
+html,body{margin:0;padding:0;background:#050a18;overflow:hidden}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#050a18;font-family:P,sans-serif}
+.L{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 960px}
+.L img.bg{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#cam{z-index:1}#fx{z-index:5;pointer-events:none}#ov{z-index:10}
+.tv{position:absolute;overflow:hidden;background:#06122e;box-shadow:inset 0 0 40px rgba(60,140,255,.45)}
+.cap{position:absolute;left:60px;right:60px;text-align:center;font-weight:800;color:#fff;font-size:86px;line-height:1.05;
+  -webkit-text-stroke:0;text-shadow:0 6px 0 #000,0 0 18px rgba(0,0,0,.85),4px 4px 0 #000,-4px -4px 0 #000,4px -4px 0 #000,-4px 4px 0 #000}
+.cap b{font-weight:800}
+.hl{color:#FFD43B}.up{color:#4ADE80}.dn{color:#FF4D6D}.bl{color:#7CC4FF}
+</style></head>
+<body><div id="stage">
+<div id="cam" class="L"></div>
+<div id="fx" class="L"></div>
+<div id="ov" class="L"></div>
+</div>
+<script>
+const TL=/*TL*/null, ART=/*ART*/{}, CLIPS=/*CLIPS*/{};
+for(const k in ART)ART[k]=ART[k].src||ART[k];
+const FPS=30, END=25.2;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const out=x=>{x=clamp(x);return 1-Math.pow(1-x,3)};
+const back=x=>{x=clamp(x);const c=2.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const prog=(t,a,d)=>clamp((t-a)/d);
+const lerp=(a,b,x)=>a+(b-a)*x;
+const win=(t,a,b,fi=.2,fo=.2)=>Math.min(clamp((t-a)/fi),clamp((b-t)/fo));
+function hash(i){let x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)}
+const F=k=>TL.frags.find(f=>f.text.toLowerCase().includes(k.toLowerCase())).s;   // start time of a caption fragment
+const LN=k=>TL.lines[k];
+// ---- scene times (from Suraj's VO)
+const T1=LN(3)[0]-0.05;          // record scratch -> Oval Office
+const T2=T1+0.36;                // rewind ends
+const T3=LN(4)[0]-0.08;          // Capitol
+const T4=LN(5)[0]-0.08;          // studio graphics
+const T5=LN(6)[0]-0.1;           // bull slip clip
+
+// ---- captions: frags split into 2-3 word chunks, timed by letters
+const CHUNKS=[];
+for(const f of TL.frags){
+  const w=f.text.split(/\s+/); const n=w.length; const k=n<=3?1:Math.ceil(n/3); const per=Math.ceil(n/k);
+  const parts=[];for(let i=0;i<n;i+=per)parts.push(w.slice(i,i+per).join(' '));
+  const tot=parts.reduce((a,p)=>a+p.length,0); let t=f.s;
+  parts.forEach(p=>{const d=(f.e-f.s)*p.length/tot;CHUNKS.push({t,e:t+d,text:p});t+=d});
+}
+for(let i=0;i<CHUNKS.length-1;i++)CHUNKS[i].e=Math.max(CHUNKS[i].e,Math.min(CHUNKS[i+1].t,CHUNKS[i].e+.35));
+const COLOR=[[/haar|gira|nahi|palat|darr|pending/i,'dn'],[/bull run|upar|wapas|4,000|investors/i,'up'],[/trump|president|sensex|crude|tariff|profit booking|8%/i,'hl'],[/democrats|chunav/i,'bl']];
+function colorize(s){let h=s;for(const[re,c]of COLOR){h=h.replace(new RegExp(re.source,'gi'),m=>`<span class="${c}">${m}</span>`)}return h}
+
+// ---- image cache
+const cache={};
+function img(src){if(!cache[src]){const i=new Image();i.src=src;cache[src]=i}return cache[src]}
+async function ready(srcs){await Promise.all(srcs.map(s=>{const i=img(s);return i.complete&&i.naturalWidth?0:i.decode().catch(()=>0)}))}
+function clipSrc(name,ct){const c=CLIPS[name];if(!c)return ART[name==='c_slip'?'tr_5_peel':'tr_1b_voters'];let f=Math.floor(ct*FPS)+1;f=Math.max(1,Math.min(c.n,f));return c.dir+'/'+String(f).padStart(4,'0')+'.jpg'}
+
+// ---- small svg helpers
+function camT(s,x,y,r=0){return `translate(${x}px,${y}px) scale(${s}) rotate(${r}deg)`}
+function shake(t,t0,amp=18,dur=.35){const p=prog(t,t0,dur);if(p<=0||p>=1)return[0,0];const a=amp*(1-p);return[a*Math.sin(t*90),a*Math.cos(t*77)]}
+function stamp(t,t0,html,x,y,rot,col='#E11D48',size=74){const p=prog(t,t0,.22);if(t<t0)return'';const s=lerp(2.4,1,back(p));const o=clamp(p*3);
+  return `<div style="position:absolute;left:${x}px;top:${y}px;transform:translate(-50%,-50%) rotate(${rot}deg) scale(${s});opacity:${o};
+   border:9px solid ${col};color:${col};font-weight:800;font-size:${size}px;padding:6px 26px;border-radius:14px;letter-spacing:3px;white-space:nowrap;
+   background:rgba(255,255,255,.88);box-shadow:0 10px 30px rgba(0,0,0,.5)">${html}</div>`}
+function pop(t,t0,dur=.25){return back(prog(t,t0,dur))}
+
+// ---- TV graphics (drawn into a rect w x h)
+function tvMidterms(t,w,h){
+  const a=pop(t,T2+.1,.3), b=out(prog(t,F('bas unki')-.1,.6)), c=out(prog(t,F('bas unki')+.35,.6));
+  const row=(y,label,p,on)=>`<div style="position:absolute;left:5%;top:${y}%;width:90%;height:22%">
+    <div style="position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;font-size:${h*.1}px;color:#cfe3ff;font-weight:800">${label}</div>
+    <div style="position:absolute;left:34%;top:12%;width:66%;height:76%;background:#1a2a55;border-radius:8px;overflow:hidden">
+      <div style="width:${p*100}%;height:100%;background:linear-gradient(90deg,#1d4ed8,#60a5fa)"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:${h*.085}px;color:#fff;font-weight:800;opacity:${on}">DEMOCRATS ✓</div></div></div>`;
+  return `<div style="position:absolute;inset:0;transform:scale(${a});opacity:${clamp(a)}">
+   <div style="position:absolute;left:0;top:0;width:100%;height:20%;background:#c8102e;color:#fff;font-weight:800;font-size:${h*.09}px;display:flex;align-items:center;justify-content:center;letter-spacing:2px">US MIDTERMS 2026</div>
+   ${row(30,'HOUSE',b,clamp(b*2-1))}${row(60,'SENATE',c,clamp(c*2-1))}
+   <div style="position:absolute;left:4%;bottom:3%;font-size:${h*.065}px;color:#9fb6e6">Source: AP</div></div>`;
+}
+function tvMarket(t,w,h){
+  const f1=F('Tariff ka darr'), f2=F('crude 8%'), f3=F('aur foreign'), f4=F('Sensex 5');
+  const fs=h*.11; let s='';
+  const head=(txt,col='#c8102e')=>`<div style="position:absolute;left:0;top:0;width:100%;height:17%;background:${col};color:#fff;font-weight:800;font-size:${h*.1}px;display:flex;align-items:center;justify-content:center;letter-spacing:2px">${txt}</div>`;
+  if(t<f2){ // tariff fear gauge
+    const p=pop(t,f1-.05,.3), n=ease(prog(t,f1+.2,.6)); const ang=lerp(70,-70,n);
+    s=`<div style="position:absolute;inset:0;transform:scale(${p})">${head('TARIFF FEAR METER')}
+     <svg viewBox="0 0 400 220" style="position:absolute;left:20%;top:22%;width:60%;height:70%">
+      <path d="M40 200 A160 160 0 0 1 360 200" fill="none" stroke="#1a2a55" stroke-width="38"/>
+      <path d="M40 200 A160 160 0 0 1 120 61" fill="none" stroke="#22c55e" stroke-width="38"/>
+      <path d="M280 61 A160 160 0 0 1 360 200" fill="none" stroke="#ef4444" stroke-width="38"/>
+      <g transform="rotate(${ang} 200 200)"><line x1="200" y1="200" x2="200" y2="62" stroke="#fff" stroke-width="10" stroke-linecap="round"/></g>
+      <circle cx="200" cy="200" r="16" fill="#fff"/>
+      <text x="45" y="160" fill="#4ade80" font-size="26" font-weight="800" font-family="P">LOW</text><text x="300" y="160" fill="#ff6b81" font-size="26" font-weight="800" font-family="P">HIGH</text></svg></div>`;
+  } else if(t<f3){ // crude barrel deflates
+    const p=pop(t,f2-.05,.3), d=ease(prog(t,f2+.15,.7)); const sy=lerp(1,.62,d), sx=lerp(1,1.12,d);
+    const pct=Math.round(lerp(0,8,d));
+    s=`<div style="position:absolute;inset:0;transform:scale(${p})">${head('CRUDE OIL (BRENT)','#0f766e')}
+     <svg viewBox="0 0 200 200" style="position:absolute;left:8%;top:24%;width:36%;height:70%"><g transform="translate(100 190) scale(${sx} ${sy}) translate(-100 -190)">
+      <rect x="45" y="30" width="110" height="160" rx="14" fill="#1f2937" stroke="#9ca3af" stroke-width="6"/>
+      <rect x="45" y="70" width="110" height="10" fill="#9ca3af"/><rect x="45" y="140" width="110" height="10" fill="#9ca3af"/>
+      <ellipse cx="100" cy="30" rx="55" ry="10" fill="#374151" stroke="#9ca3af" stroke-width="6"/></g></svg>
+     <div style="position:absolute;left:46%;top:30%;font-size:${h*.3}px;font-weight:800;color:#4ade80">▼ ${pct}%</div>
+     <div style="position:absolute;left:47%;top:72%;font-size:${h*.1}px;font-weight:700;color:#cfe3ff">~$94 / barrel</div></div>`;
+  } else if(t<f4){ // FIIs back
+    const p=pop(t,f3-.05,.3); let planes='';
+    for(let i=0;i<4;i++){const q=((t-f3)*0.9+i*.25)%1; const x=lerp(-12,62,q), y=lerp(30+i*12,48,q);
+      planes+=`<div style="position:absolute;left:${x}%;top:${y}%;font-size:${h*.13}px">✈️<span style="font-size:${h*.09}px;color:#4ade80;font-weight:800">$</span></div>`}
+    s=`<div style="position:absolute;inset:0;transform:scale(${p})">${head('FOREIGN INVESTORS WAPAS','#1d4ed8')}${planes}
+     <div style="position:absolute;right:5%;top:30%;width:${h*.5}px;height:${h*.5}px;border-radius:50%;background:conic-gradient(#ff9933 0 33%,#fff 0 66%,#138808 0);display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(255,255,255,.3)">
+      <div style="background:#06122e;color:#fff;font-weight:800;font-size:${h*.09}px;padding:4px 14px;border-radius:10px">INDIA</div></div>
+     <div style="position:absolute;left:5%;bottom:6%;font-size:${h*.085}px;color:#cfe3ff;font-weight:700">FII net buying: <span style="color:#4ade80">₹17,235 Cr</span> in Nov*</div></div>`;
+  } else { // sensex candles + counter
+    const p=pop(t,f4-.05,.3), g=prog(t,f4+.1,1.6); let c=''; const base=[77,72,64,52,40];
+    for(let i=0;i<5;i++){const on=clamp(g*5-i); const top=base[i]-6, ht=10+i*1.5;
+      c+=`<div style="position:absolute;left:${10+i*12}%;top:${top}%;width:7%;height:${ht*on}%;background:#22c55e;border-radius:4px"></div>
+          <div style="position:absolute;left:${13+i*12}%;top:${top-5}%;width:1%;height:${(ht+9)*on}%;background:#22c55e"></div>
+          <div style="position:absolute;left:${10+i*12}%;top:92%;font-size:${h*.06}px;color:#9fb6e6;opacity:${on}">D${i+1}</div>`}
+    const n=Math.round(4000*ease(prog(t,f4+.1,1.8))/10)*10;
+    s=`<div style="position:absolute;inset:0;transform:scale(${p})">${head('SENSEX · 5 DIN','#15803d')}${c}
+     <div style="position:absolute;right:4%;top:30%;text-align:right"><div style="font-size:${h*.28}px;font-weight:800;color:#4ade80;line-height:1">+${n.toLocaleString('en-IN')}</div>
+     <div style="font-size:${h*.1}px;color:#cfe3ff;font-weight:700">POINTS ▲</div></div></div>`;
+  }
+  return s;
+}
+function tvRisk(t,w,h){
+  const a=F('Toh kya'), b=F('profit booking'), c=F('aur crude kabhi');
+  const head=(txt,col)=>`<div style="position:absolute;left:0;top:0;width:100%;height:17%;background:${col};color:#fff;font-weight:800;font-size:${h*.1}px;display:flex;align-items:center;justify-content:center;letter-spacing:2px">${txt}</div>`;
+  if(t<b-.1){const p=pop(t,a-.05,.3);const q=1+.08*Math.sin(t*12);
+    return `<div style="position:absolute;inset:0;transform:scale(${p})">${head('BULL RUN?','#c8102e')}
+     <div style="position:absolute;left:0;right:0;top:24%;text-align:center;font-size:${h*.5}px;font-weight:800;color:#FFD43B;transform:scale(${q})">?</div></div>`}
+  if(t<c-.05){const p=pop(t,b-.1,.3);const bl=Math.sin(t*20)>0?1:.55;
+    return `<div style="position:absolute;inset:0;transform:scale(${p})">${head('⚠ WARNING','#b45309')}
+     <div style="position:absolute;left:0;right:0;top:30%;text-align:center;font-size:${h*.19}px;font-weight:800;color:#fb923c;opacity:${bl}">PROFIT BOOKING</div>
+     <div style="position:absolute;left:0;right:0;top:62%;text-align:center;font-size:${h*.1}px;font-weight:700;color:#cfe3ff">after a big rally, some investors sell</div></div>`}
+  const p=pop(t,c-.05,.3), d=ease(prog(t,c+.2,1.2)); const sy=lerp(.62,1.05,d)+.03*Math.sin(t*16), sx=lerp(1.12,.97,d);
+  return `<div style="position:absolute;inset:0;transform:scale(${p})">${head('CRUDE: KABHI BHI PALAT?','#c8102e')}
+     <svg viewBox="0 0 200 200" style="position:absolute;left:8%;top:24%;width:36%;height:70%"><g transform="translate(100 190) scale(${sx} ${sy}) translate(-100 -190)">
+      <rect x="45" y="30" width="110" height="160" rx="14" fill="#1f2937" stroke="#9ca3af" stroke-width="6"/>
+      <rect x="45" y="70" width="110" height="10" fill="#9ca3af"/><rect x="45" y="140" width="110" height="10" fill="#9ca3af"/>
+      <ellipse cx="100" cy="30" rx="55" ry="10" fill="#374151" stroke="#9ca3af" stroke-width="6"/></g></svg>
+     <div style="position:absolute;left:46%;top:32%;font-size:${h*.24}px;font-weight:800;color:#ff6b81">▲ ?</div>
+     <div style="position:absolute;left:47%;top:68%;font-size:${h*.1}px;font-weight:700;color:#cfe3ff">risk: Iran tension</div></div>`;
+}
+
+// ---- persistent news chrome
+function chrome(t){
+  const tick='US MIDTERMS: DEMOCRATS WIN HOUSE & SENATE (AP) ●  SENSEX +4,000 PTS IN 5 SESSIONS ●  BRENT CRUDE ~$94, DOWN 8% ●  FIIs NET BUYERS IN NOV ●  SIRF JAANKARI KE LIYE ●  ';
+  const x=-((t*170)%2200);
+  return `<div style="position:absolute;left:0;bottom:70px;width:1080px;height:84px;background:#0b1a3d;border-top:4px solid #c8102e;overflow:hidden">
+    <div style="position:absolute;left:${230+x}px;top:16px;white-space:nowrap;color:#fff;font-weight:700;font-size:40px">${tick}${tick}${tick}</div>
+    <div style="position:absolute;left:0;top:0;height:84px;width:220px;background:#c8102e;color:#fff;font-weight:800;font-size:38px;display:flex;align-items:center;justify-content:center;letter-spacing:2px">BREAKING</div></div>
+   <div style="position:absolute;left:40px;top:70px;display:flex;align-items:center;gap:14px;background:rgba(5,10,24,.75);padding:10px 22px;border-radius:12px;border-left:6px solid #c8102e">
+    <div style="width:20px;height:20px;border-radius:50%;background:#ef4444;opacity:${Math.sin(t*6)>0?1:.35}"></div>
+    <div style="color:#fff;font-weight:800;font-size:34px;letter-spacing:3px">MOMENTIX <span style="color:#9fb6e6;font-weight:700">NEWS</span></div></div>`;
+}
+function captions(t,y){
+  const c=CHUNKS.find(c=>t>=c.t&&t<c.e); if(!c)return'';
+  const p=back(prog(t,c.t,.16));
+  return `<div class="cap" style="top:${y}px;transform:scale(${lerp(.7,1,p)});opacity:${clamp(p*2)}">${colorize(c.text)}</div>`;
+}
+
+const stage={cam:document.getElementById('cam'),fx:document.getElementById('fx'),ov:document.getElementById('ov')};
+// stage-space rects (image 941x1672 drawn at 1080x1920)
+const OVAL_TV={x:41,y:674,w:487,h:344}, STUDIO_TV={x:48,y:491,w:984,h:503}, FOLDER={x:700,y:1235};
+
+async function renderAt(t){
+  let camHTML='', fxHTML='', ovHTML='', camTf='', capY=470, srcs=[];
+  if(t<T1){                         // ---- S1 hook clip
+    const ct=Math.min(t,4.95); const s=clipSrc('c_toss',ct); srcs.push(s);
+    const sc=1.0+0.05*ease(prog(t,0,T1))+0.06*out(prog(t,2.75,.25))*(1-prog(t,3.6,.6)); const [sx,sy]=shake(t,3.05,22,.4);
+    camTf=camT(sc,sx,sy+30*ease(prog(t,0,T1)));
+    camHTML=`<img class="bg" src="${s}">`;
+    // bull walks in at "bull run chalu"
+    const bt=F('bull run chalu'); if(t>bt-.15){const p=out(prog(t,bt-.15,.45)); const bob=Math.abs(Math.sin((t-bt)*9))*-18;
+      ovHTML+=`<img src="${ART.bull_cut}" style="position:absolute;left:${lerp(-300,30,p)}px;top:${1400+bob}px;width:250px;transform:rotate(${Math.sin(t*9)*4}deg)">`}
+    // big SATIRE tag
+    const sp=back(prog(t,.05,.3)); const pul=1+.03*Math.sin(t*8);
+    ovHTML+=`<div style="position:absolute;left:50%;top:205px;transform:translateX(-50%) scale(${sp*pul});background:#c8102e;color:#fff;font-weight:800;font-size:56px;padding:12px 34px;border-radius:14px;white-space:nowrap;box-shadow:0 8px 30px rgba(0,0,0,.6);border:4px solid #fff">⚠ SATIRE · FUTURE POSSIBILITY? 🤔</div>`;
+    capY=430;
+  } else if(t<T2){                  // ---- rewind
+    const r=prog(t,T1,T2-T1); const ct=lerp(4.6,0.2,ease(r)); const s=clipSrc('c_toss',ct); srcs.push(s);
+    camTf=camT(1.05,Math.sin(t*120)*8,0);
+    camHTML=`<img class="bg" src="${s}" style="filter:grayscale(.7) contrast(1.3) hue-rotate(${r*40}deg)">`;
+    let lines='';for(let i=0;i<14;i++){const y=(hash(i+Math.floor(t*30))*1920)|0;lines+=`<div style="position:absolute;left:0;top:${y}px;width:1080px;height:${4+hash(i*3)*14}px;background:rgba(255,255,255,.25)"></div>`}
+    fxHTML=lines+`<div style="position:absolute;left:50%;top:860px;transform:translateX(-50%);color:#fff;font-weight:800;font-size:150px;text-shadow:0 0 30px #000">◀◀</div>`;
+    capY=-999;
+  } else if(t<T3){                  // ---- S2 Oval Office
+    const p=prog(t,T2,T3-T2); const sc=1.0+0.035*ease(p); const [sx,sy]=shake(t,F('bas unki')+.35,10,.3);
+    camTf=camT(sc,30*ease(p)+sx,-10*ease(p)+sy); srcs.push(ART.tr_2_oval);
+    camHTML=`<img class="bg" src="${ART.tr_2_oval}"><div class="tv" style="left:${OVAL_TV.x}px;top:${OVAL_TV.y}px;width:${OVAL_TV.w}px;height:${OVAL_TV.h}px">${tvMidterms(t,OVAL_TV.w,OVAL_TV.h)}</div>`;
+    ovHTML+=stamp(t,F('Dekho')+.45,'STILL PRESIDENT<br><span style="font-size:36px">till 2029</span>',790,560,-7,'#1d4ed8',46);
+    // flash in
+    fxHTML=`<div style="position:absolute;inset:0;background:#fff;opacity:${1-prog(t,T2,.18)}"></div>`;
+    capY=300;
+  } else if(t<T4){                  // ---- S3 Capitol jam
+    const p=prog(t,T3,T4-T3); const sc=1.04+0.08*ease(p); const jig=Math.sin(t*38)*3*(1-prog(t,T3+.2,2.6));
+    const wp=1-out(prog(t,T3,.22)); camTf=camT(sc,jig+wp*900,-25*ease(p)); srcs.push(ART.tr_3_capitol);
+    camHTML=`<img class="bg" src="${ART.tr_3_capitol}">
+      <div style="position:absolute;left:${FOLDER.x}px;top:${FOLDER.y}px;transform:translate(-50%,-50%) rotate(-4deg);color:#7c2d12;font-weight:800;font-size:96px;letter-spacing:4px;opacity:.92">TARIFF</div>
+      <div style="position:absolute;left:${FOLDER.x}px;top:${FOLDER.y+95}px;transform:translate(-50%,-50%) rotate(-4deg);color:#7c2d12;font-weight:700;font-size:40px;opacity:.85">NEW BILL</div>`;
+    camHTML+=stamp(t,F('aasaani se')+.25,'PENDING...',FOLDER.x,FOLDER.y+30,-14,'#E11D48',92);
+    // sweat drops
+    for(let i=0;i<3;i++){const q=((t-T3)*1.6+i/3)%1; camHTML+=`<div style="position:absolute;left:${300+i*40}px;top:${1020+q*120}px;width:18px;height:26px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:#93c5fd;opacity:${1-q}"></div>`}
+    // horns
+    if(Math.sin(t*5)>.6) camHTML+=`<div style="position:absolute;left:140px;top:1530px;color:#fde047;font-weight:800;font-size:54px;transform:rotate(-10deg)">BEEP!</div>`;
+    if(Math.sin(t*4+2)>.7) camHTML+=`<div style="position:absolute;left:820px;top:1600px;color:#fde047;font-weight:800;font-size:46px;transform:rotate(8deg)">HONK!</div>`;
+    capY=300;
+  } else if(t<T5){                  // ---- S4 studio graphics
+    const p=prog(t,T4,T5-T4); const punch=0.05*out(prog(t,F('4,000'),.2))*(1-prog(t,F('4,000')+.6,.5));
+    const wp=1-out(prog(t,T4,.22)); const sc=1.02+0.04*ease(p)+punch; camTf=camT(sc,-wp*900,0); srcs.push(ART.tr_4_studio);
+    camHTML=`<img class="bg" src="${ART.tr_4_studio}"><div class="tv" style="left:${STUDIO_TV.x}px;top:${STUDIO_TV.y}px;width:${STUDIO_TV.w}px;height:${STUDIO_TV.h}px">${tvMarket(t,STUDIO_TV.w,STUDIO_TV.h)}</div>`;
+    // confetti
+    for(let i=0;i<26;i++){const q=((t-T4)*.35+hash(i))%1; const x=hash(i*7)*1080+Math.sin(t*3+i)*40; const y=q*1920;
+      fxHTML+=`<div style="position:absolute;left:${x}px;top:${y}px;width:16px;height:26px;background:${['#22c55e','#facc15','#3b82f6','#ef4444'][i%4]};transform:rotate(${t*200+i*40}deg);opacity:.85"></div>`}
+    capY=300;
+  } else {                          // ---- S5 bull slip clip
+    const ct=(t-T5)+0.6; const s=clipSrc('c_slip',ct); srcs.push(s);
+    const slip=T5+1.65; const [sx,sy]=shake(t,slip,20,.4);
+    const wp=1-out(prog(t,T5,.22)); camTf=camT(1.02+0.03*prog(t,T5,6),sx-wp*900,sy);
+    camHTML=`<img class="bg" src="${s}"><div class="tv" style="left:${STUDIO_TV.x}px;top:${STUDIO_TV.y}px;width:${STUDIO_TV.w}px;height:${STUDIO_TV.h}px">${tvRisk(t,STUDIO_TV.w,STUDIO_TV.h)}</div>`;
+    // PROFIT BOOKING label near the peel
+    const lb=F('profit booking')-.05; if(t>lb){const q=back(prog(t,lb,.25));
+      ovHTML+=`<div style="position:absolute;left:540px;top:1150px;transform:translate(-50%,-50%) rotate(-6deg) scale(${q});background:#facc15;color:#111;font-weight:800;font-size:50px;padding:8px 22px;border-radius:12px;border:5px solid #111;white-space:nowrap">🍌 PROFIT BOOKING</div>`}
+    // small print
+    const sm=prog(t,LN(6)[1]-1.4,.4);
+    ovHTML+=`<div style="position:absolute;left:0;right:0;top:1680px;text-align:center;color:#cbd5e1;font-weight:500;font-size:28px;opacity:${sm}">Sirf jaankari ke liye, financial advice nahi · Data: AP, IIFL (5 Nov 2026)</div>`;
+    capY=300;
+  }
+  stage.cam.style.transform=camTf; stage.cam.innerHTML=camHTML;
+  stage.fx.innerHTML=fxHTML+`<div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.5) 100%)"></div>`;
+  stage.ov.innerHTML=ovHTML+chrome(t)+(capY>0?captions(t,capY):'');
+  await ready(srcs.concat([...stage.ov.querySelectorAll('img')].map(i=>i.src)));
+  await Promise.all([...document.querySelectorAll('#stage img')].map(i=>i.decode().catch(()=>0)));
+}
+window.renderAt=renderAt;
+</script></body></html>

@@ -1,0 +1,340 @@
+{
+ "off": 0.0,
+ "frags": [
+  {
+   "line": 1,
+   "text": "Trump election haar gaye?",
+   "s": 0.0,
+   "e": 1.365
+  },
+  {
+   "line": 2,
+   "text": "Aur Indian market mein",
+   "s": 1.581,
+   "e": 2.846
+  },
+  {
+   "line": 2,
+   "text": "bull run chalu ho jayega kya?",
+   "s": 2.846,
+   "e": 4.376
+  },
+  {
+   "line": 3,
+   "text": "Dekho, Trump abhi bhi President hain,",
+   "s": 4.668,
+   "e": 6.456
+  },
+  {
+   "line": 3,
+   "text": "bas unki party chunav haar gayi hai.",
+   "s": 6.456,
+   "e": 8.185
+  },
+  {
+   "line": 4,
+   "text": "Matlab ab naye tariff",
+   "s": 8.545,
+   "e": 9.875
+  },
+  {
+   "line": 4,
+   "text": "aasaani se pass nahi honge.",
+   "s": 9.875,
+   "e": 11.501
+  },
+  {
+   "line": 5,
+   "text": "Tariff ka darr kam,",
+   "s": 11.765,
+   "e": 12.776
+  },
+  {
+   "line": 5,
+   "text": "crude 8% gira,",
+   "s": 12.776,
+   "e": 14.124
+  },
+  {
+   "line": 5,
+   "text": "aur foreign investors wapas!",
+   "s": 14.333,
+   "e": 15.677
+  },
+  {
+   "line": 5,
+   "text": "Sensex 5 din mein",
+   "s": 15.879,
+   "e": 17.001
+  },
+  {
+   "line": 5,
+   "text": "4,000 points upar.",
+   "s": 17.001,
+   "e": 18.242
+  },
+  {
+   "line": 6,
+   "text": "Toh kya bull run pakka?",
+   "s": 18.568,
+   "e": 19.545
+  },
+  {
+   "line": 6,
+   "text": "Itna bhi nahi.",
+   "s": 19.719,
+   "e": 20.447
+  },
+  {
+   "line": 6,
+   "text": "Itni tezi ke baad",
+   "s": 20.447,
+   "e": 21.374
+  },
+  {
+   "line": 6,
+   "text": "profit booking aa sakti hai,",
+   "s": 21.374,
+   "e": 22.896
+  },
+  {
+   "line": 6,
+   "text": "aur crude kabhi bhi palat sakta hai.",
+   "s": 22.896,
+   "e": 24.816
+  }
+ ],
+ "chunks": [
+  {
+   "t": 0.0,
+   "e": 1.081,
+   "text": "Trump election haar",
+   "line": 1
+  },
+  {
+   "t": 1.081,
+   "e": 1.581,
+   "text": "gaye?",
+   "line": 1
+  },
+  {
+   "t": 1.581,
+   "e": 2.605,
+   "text": "Aur Indian market",
+   "line": 2
+  },
+  {
+   "t": 2.605,
+   "e": 2.846,
+   "text": "mein",
+   "line": 2
+  },
+  {
+   "t": 2.846,
+   "e": 3.611,
+   "text": "bull run chalu",
+   "line": 2
+  },
+  {
+   "t": 3.611,
+   "e": 4.668,
+   "text": "ho jayega kya?",
+   "line": 2
+  },
+  {
+   "t": 4.668,
+   "e": 4.975,
+   "text": "Dekho,",
+   "line": 3
+  },
+  {
+   "t": 4.975,
+   "e": 5.69,
+   "text": "Trump abhi bhi",
+   "line": 3
+  },
+  {
+   "t": 5.69,
+   "e": 6.456,
+   "text": "President hain,",
+   "line": 3
+  },
+  {
+   "t": 6.456,
+   "e": 7.168,
+   "text": "bas unki party",
+   "line": 3
+  },
+  {
+   "t": 7.168,
+   "e": 7.982,
+   "text": "chunav haar gayi",
+   "line": 3
+  },
+  {
+   "t": 7.982,
+   "e": 8.545,
+   "text": "hai.",
+   "line": 3
+  },
+  {
+   "t": 8.545,
+   "e": 9.476,
+   "text": "Matlab ab naye",
+   "line": 4
+  },
+  {
+   "t": 9.476,
+   "e": 9.875,
+   "text": "tariff",
+   "line": 4
+  },
+  {
+   "t": 9.875,
+   "e": 10.813,
+   "text": "aasaani se pass",
+   "line": 4
+  },
+  {
+   "t": 10.813,
+   "e": 11.765,
+   "text": "nahi honge.",
+   "line": 4
+  },
+  {
+   "t": 11.765,
+   "e": 12.551,
+   "text": "Tariff ka darr",
+   "line": 5
+  },
+  {
+   "t": 12.551,
+   "e": 12.776,
+   "text": "kam,",
+   "line": 5
+  },
+  {
+   "t": 12.776,
+   "e": 14.333,
+   "text": "crude 8% gira,",
+   "line": 5
+  },
+  {
+   "t": 14.333,
+   "e": 15.378,
+   "text": "aur foreign investors",
+   "line": 5
+  },
+  {
+   "t": 15.378,
+   "e": 15.879,
+   "text": "wapas!",
+   "line": 5
+  },
+  {
+   "t": 15.879,
+   "e": 16.721,
+   "text": "Sensex 5 din",
+   "line": 5
+  },
+  {
+   "t": 16.721,
+   "e": 17.001,
+   "text": "mein",
+   "line": 5
+  },
+  {
+   "t": 17.001,
+   "e": 18.568,
+   "text": "4,000 points upar.",
+   "line": 5
+  },
+  {
+   "t": 18.568,
+   "e": 19.101,
+   "text": "Toh kya bull",
+   "line": 6
+  },
+  {
+   "t": 19.101,
+   "e": 19.719,
+   "text": "run pakka?",
+   "line": 6
+  },
+  {
+   "t": 19.719,
+   "e": 20.447,
+   "text": "Itna bhi nahi.",
+   "line": 6
+  },
+  {
+   "t": 20.447,
+   "e": 21.142,
+   "text": "Itni tezi ke",
+   "line": 6
+  },
+  {
+   "t": 21.142,
+   "e": 21.374,
+   "text": "baad",
+   "line": 6
+  },
+  {
+   "t": 21.374,
+   "e": 22.332,
+   "text": "profit booking aa",
+   "line": 6
+  },
+  {
+   "t": 22.332,
+   "e": 22.896,
+   "text": "sakti hai,",
+   "line": 6
+  },
+  {
+   "t": 22.896,
+   "e": 23.743,
+   "text": "aur crude kabhi",
+   "line": 6
+  },
+  {
+   "t": 23.743,
+   "e": 24.59,
+   "text": "bhi palat sakta",
+   "line": 6
+  },
+  {
+   "t": 24.59,
+   "e": 24.816,
+   "text": "hai.",
+   "line": 6
+  }
+ ],
+ "lines": {
+  "1": [
+   0.0,
+   1.365
+  ],
+  "2": [
+   1.581,
+   4.376
+  ],
+  "3": [
+   4.668,
+   8.185
+  ],
+  "4": [
+   8.545,
+   11.501
+  ],
+  "5": [
+   11.765,
+   18.242
+  ],
+  "6": [
+   18.568,
+   24.816
+  ]
+ },
+ "end": 26.42
+}
