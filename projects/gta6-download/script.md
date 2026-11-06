@@ -12,11 +12,11 @@ Inspired by @buildingatscale reel De2ymlIzJNw (system design of a GTA 6 launch).
 
 | # | Voice | Screen |
 |---|---|---|
-| 1 | 19 November, raat 12 baje, crore log ek saath GTA 6 download karenge… toh kya internet toot jaayega? | Neon city at night, HUD clock "19 NOV 23:59:58" → 00:00; millions of light streaks shoot toward one tower; tower cracks. |
-| 2 | Leak ke hisaab se game lagbhag 200 GB ka hai. | A giant glowing cube "≈200 GB*" drops on the city; tiny "leak" tag. |
-| 3 | India ka average broadband lagbhag 60 Mbps hai, matlab download mein 7 ghante se zyada! | Progress bar crawling; clock spins 00:00 → 07:30; sleepy gamer emoji. |
-| 4 | Aur agar roz ke 2 GB data se karoge? Pure 100 din! | Calendar pages fly 1 → 100; phone with "2 GB/day" meter. |
-| 5 | Ab socho, 2.5 crore log ek hi raat mein… itna load koi bhi internet nahi utha sakta. | City-wide traffic jam of data packets; "~460 Tbps needed" counter goes red. |
+| 1 | 19 November, raat 12 baje, crore log ek saath GTA 6 download karenge… internet ke servers melt ho jayenge | Neon city at night, HUD clock "19 NOV 23:59:58" → 00:00; millions of light streaks shoot toward one tower; tower cracks. |
+| 2 | Leak ke hisaab se game 200 GB ka hai. | A giant glowing cube "≈200 GB*" drops on the city; tiny "leak" tag. |
+| 3 | India ka average internet speed 60 Mbps hai, matlab download mein 7 ghante se bhi zyada! | Progress bar crawling; clock spins 00:00 → 07:30; sleepy gamer emoji. |
+| 4 | Aur Jio ke 2 GB data se karoge? Toh pure 100 din! | Calendar pages fly 1 → 100; phone with "2 GB/day" meter. |
+| 5 | Ab socho, 2.5 crore log ek hi raat mein… itna load koi bhi internet nahi jhel sakta. | City-wide traffic jam of data packets; "~460 Tbps needed" counter goes red. |
 | 6 | Isliye game pehle hi download ho jaata hai, preload se, aur har shehar ke paas ke server se. | Copies of the cube appear on servers in many cities; streams split and calm down. |
 | 7 | Raat 12 baje bas ek chhoti si unlock key aati hai, aur game khul jaata hai. | A tiny glowing key flies into a console; lock opens; fireworks. |
 | 8 | Aap GTA 6 kahan se download karoge, WiFi ya data? Comment karo. | Two buttons "WiFi 📶 / Data 📱"; small print. |
