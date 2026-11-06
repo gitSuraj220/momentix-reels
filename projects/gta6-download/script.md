@@ -29,3 +29,14 @@ Xbox from 12 a.m. GMT on 10 Nov 2026; up to 212 GB free space needed. (Forbes, 2
 India unlock time is NOT official (US listings suggest midnight ET = 10:30 IST on 19 Nov), so avoid "raat 12 baje" for India.
 
 Final per Suraj (6 Nov 13:19): his lines 1-5 + new 5b (preload date) + original 6-8.
+
+## v2 FINAL (Suraj, 6 Nov 13:25)
+1. 19 November, raat 12 baje, crore log ek saath GTA 6 download karenge… kya internet ke servers melt ho jayenge?
+2. Rockstar ke hisaab se GTA 6 ke liye console mein 200 GB tak jagah chahiye.   (Rockstar FAQ says "up to 212 GB": flagged to Suraj)
+3. India ka average broadband speed 60 Mbps hai, matlab download mein 7 ghante se bhi zyada!
+4. Aur Jio ke 2 GB roz wale data se? Pure 100 din!
+5. Ab socho, 2.5 crore log ek hi raat mein… itna load koi bhi internet nahi jhel sakta.
+6. Lekin GTA 6 ka preload 10 November se hi shuru hai, aur khelna 19 November se.
+7. Isliye game pehle se hi aapke console mein download ho jayega.
+8. Raat 12 baje bas ek chhoti si unlock key aayegi, aur phir aap GTA 6 khel sakte hain.
+(Xbox Series S line and the delete CTA removed per Suraj.)
