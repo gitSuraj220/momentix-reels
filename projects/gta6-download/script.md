@@ -18,8 +18,8 @@ Inspired by @buildingatscale reel De2ymlIzJNw (system design of a GTA 6 launch).
 | 4 | Aur Jio ke 2 GB data se karoge? Toh pure 100 din! | Calendar pages fly 1 → 100; phone with "2 GB/day" meter. |
 | 5 | Ab socho, 2.5 crore log ek hi raat mein… itna load koi bhi internet nahi jhel sakta. | City-wide traffic jam of data packets; "~460 Tbps needed" counter goes red. |
 | 5b | Lekin twist yeh hai: GTA 6 ka preload 10 November se hi shuru hai, aur khelna 19 November se. | Calendar: '10 NOV · PRELOAD' glows green, '19 NOV · PLAY' gold; download bar starts early. |
-| 6 | Isliye game pehle hi download ho jaata hai, preload se, aur har shehar ke paas ke server se. | Copies of the cube appear on servers in many cities; streams split and calm down. |
-| 7 | Raat 12 baje bas ek chhoti si unlock key aati hai, aur game khul jaata hai. | A tiny glowing key flies into a console; lock opens; fireworks. |
+| 6 | Isliye game pehle se hi aapke console mein download ho jayega. | Copies of the cube appear on servers in many cities; streams split and calm down. |
+| 7 | Raat 12 baje bas ek chhoti si unlock key aayegi, aur phir aap GTA 6 khel sakte hain. | A tiny glowing key flies into a console; lock opens; fireworks. |
 | 8 | Aap GTA 6 kahan se download karoge, WiFi ya data? Comment karo. | Two buttons "WiFi 📶 / Data 📱"; small print. |
 
 Small print: "File size = leak; 2.5 crore = example · India median broadband 59 Mbps (Ookla, 2025) · No affiliation with the game's makers."
