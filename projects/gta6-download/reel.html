@@ -1,0 +1,181 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;font-weight:800;src:url(/*FONTS*//poppins-latin-800-normal.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(/*FONTS*//poppins-latin-700-normal.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(/*FONTS*//poppins-latin-500-normal.woff2)}
+html,body{margin:0;padding:0;background:#07021a;overflow:hidden}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#07021a;font-family:P,sans-serif;color:#fff}
+.L{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 960px}
+.L img.bg{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#cam{z-index:1}#fx{z-index:5}#ov{z-index:10}
+.cap{position:absolute;left:50px;right:50px;text-align:center;font-weight:800;font-size:88px;line-height:1.05;color:#fff;
+ text-shadow:0 0 18px rgba(255,64,200,.9),0 0 42px rgba(120,60,255,.7),4px 4px 0 #12002e,-4px -4px 0 #12002e,4px -4px 0 #12002e,-4px 4px 0 #12002e}
+.y{color:#FFE14D}.c{color:#5CF2FF}.r{color:#FF4D6D}.g{color:#5CFF9D}
+.hud{font-family:P;font-weight:700;letter-spacing:2px}
+.panel{position:absolute;border:3px solid rgba(92,242,255,.8);border-radius:28px;background:rgba(10,4,40,.78);
+ box-shadow:0 0 40px rgba(92,242,255,.35),inset 0 0 40px rgba(92,242,255,.15)}
+</style></head>
+<body><div id="stage"><div id="cam" class="L"></div><div id="fx" class="L"></div><div id="ov" class="L"></div></div>
+<script>
+const TL=/*TL*/null, ART=/*ART*/{}, CLIPS=/*CLIPS*/{};
+for(const k in ART)ART[k]=ART[k].src||ART[k];
+const FPS=30, END=32.3;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), lerp=(a,b,x)=>a+(b-a)*x;
+const ease=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}, out=x=>{x=clamp(x);return 1-Math.pow(1-x,3)};
+const back=x=>{x=clamp(x);const c=2.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const prog=(t,a,d)=>clamp((t-a)/d);
+function hash(i){let x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)}
+const LN=k=>TL.lines[k];
+// ---- caption fragments: within each line, split by letters (more even than pause detection)
+const FR=[]; {const by={};TL.frags.forEach(f=>(by[f.line]=by[f.line]||[]).push(f));
+ for(const k in by){const [s,e]=LN(k);const fs=by[k];const tot=fs.reduce((a,f)=>a+f.text.length,0);let t=s;
+  fs.forEach(f=>{const d=(e-s)*f.text.length/tot;FR.push({s:t,e:t+d,text:f.text});t+=d})}}
+const F=k=>FR.find(f=>f.text.toLowerCase().includes(k.toLowerCase())).s;
+const CHUNKS=[];
+for(const f of FR){const w=f.text.split(/\s+/),n=w.length,k=n<=3?1:Math.ceil(n/3),per=Math.ceil(n/k);const parts=[];
+ for(let i=0;i<n;i+=per)parts.push(w.slice(i,i+per).join(' '));const tot=parts.reduce((a,p)=>a+p.length,0);let t=f.s;
+ parts.forEach(p=>{const d=(f.e-f.s)*p.length/tot;CHUNKS.push({t,e:t+d,text:p});t+=d})}
+for(let i=0;i<CHUNKS.length-1;i++)CHUNKS[i].e=Math.max(CHUNKS[i].e,Math.min(CHUNKS[i+1].t,CHUNKS[i].e+.3));
+const COLOR=[[/melt|nahi jhel|\bload\b/i,'r'],[/200 GB|60 Mbps|7 ghante|2 GB|100 din|2\.5 crore/i,'y'],[/10 November|preload|unlock key|khel sakte/i,'g'],[/19 November|GTA 6|raat 12/i,'c']];
+function colorize(s){let h=s;for(const[re,c]of COLOR)h=h.replace(new RegExp(re.source,'gi'),m=>`<span class="${c}">${m}</span>`);return h}
+function captions(t,y){const c=CHUNKS.find(c=>t>=c.t&&t<c.e);if(!c)return'';const p=back(prog(t,c.t,.15));
+ return `<div class="cap" style="top:${y}px;transform:scale(${lerp(.7,1,p)});opacity:${clamp(p*2)}">${colorize(c.text)}</div>`}
+
+// ---- images
+const cache={};function img(s){if(!cache[s]){const i=new Image();i.src=s;cache[s]=i}return cache[s]}
+async function ready(srcs){await Promise.all(srcs.map(s=>{const i=img(s);return i.complete&&i.naturalWidth?0:i.decode().catch(()=>0)}))}
+function clipSrc(name,ct,fallback){const c=CLIPS[name];if(!c)return ART[fallback];let f=Math.floor(ct*FPS)+1;f=Math.max(1,Math.min(c.n,f));return c.dir+'/'+String(f).padStart(4,'0')+'.jpg'}
+function camT(s,x,y,r=0){return `translate(${x}px,${y}px) scale(${s}) rotate(${r}deg)`}
+function shake(t,t0,amp=18,dur=.35){const p=prog(t,t0,dur);if(p<=0||p>=1)return[0,0];const a=amp*(1-p);return[a*Math.sin(t*90),a*Math.cos(t*77)]}
+
+// ---- perspective mapping of a w x h div onto the TV quad (homography -> matrix3d)
+function homog(w,h,q){ // q=[[x0,y0],[x1,y1],[x2,y2],[x3,y3]] TL,TR,BR,BL
+  const src=[[0,0],[w,0],[w,h],[0,h]];const A=[],b=[];
+  for(let i=0;i<4;i++){const[x,y]=src[i],[u,v]=q[i];A.push([x,y,1,0,0,0,-u*x,-u*y]);b.push(u);A.push([0,0,0,x,y,1,-v*x,-v*y]);b.push(v)}
+  // gaussian elimination
+  for(let i=0;i<8;i++){let m=i;for(let r=i+1;r<8;r++)if(Math.abs(A[r][i])>Math.abs(A[m][i]))m=r;[A[i],A[m]]=[A[m],A[i]];[b[i],b[m]]=[b[m],b[i]];
+    for(let r=0;r<8;r++)if(r!==i){const f=A[r][i]/A[i][i];for(let c=i;c<8;c++)A[r][c]-=f*A[i][c];b[r]-=f*b[i]}}
+  const H=b.map((v,i)=>v/A[i][i]);
+  return `matrix3d(${H[0]},${H[3]},0,${H[6]},${H[1]},${H[4]},0,${H[7]},0,0,1,0,${H[2]},${H[5]},0,1)`;
+}
+const TVQ=[[616,804],[1062,650],[1062,1135],[616,1149]];
+function tv(inner,w=640,h=360){return `<div style="position:absolute;left:0;top:0;width:${w}px;height:${h}px;transform-origin:0 0;transform:${homog(w,h,TVQ)};overflow:hidden;background:#05010f">${inner}</div>`}
+
+// ---- neon grid background for data scenes
+function grid(t,red=0){const off=(t*120)%120;const col=red?`rgba(255,60,90,${.35+.25*red})`:'rgba(92,242,255,.35)';
+ return `<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,${red?'#3a0414':'#1c0750'} 0%,#07021a 70%)"></div>
+ <div style="position:absolute;left:-540px;width:2160px;top:1000px;height:1400px;transform:perspective(600px) rotateX(62deg);transform-origin:50% 0;
+  background-image:linear-gradient(${col} 2px,transparent 2px),linear-gradient(90deg,${col} 2px,transparent 2px);background-size:120px 120px;background-position:0 ${off}px"></div>
+ <div style="position:absolute;left:0;right:0;top:960px;height:6px;background:${red?'#ff4d6d':'#ff40c8'};box-shadow:0 0 40px ${red?'#ff4d6d':'#ff40c8'}"></div>`}
+
+// ---- HUD chip (persistent): event + live clock
+function clockStr(t){const mid=F('raat 12')+.9; // 00:00 lands right after "raat 12 baje"
+ const s=Math.floor(t-mid); if(s<0)return `23:59:${String(60+Math.max(-59,s)).padStart(2,'0')}`;
+ return `00:00:${String(Math.min(59,s)).padStart(2,'0')}`}
+function hud(t,red){const blink=Math.sin(t*6)>0;
+ return `<div class="hud" style="position:absolute;left:40px;top:70px;display:flex;gap:16px;align-items:center;background:rgba(7,2,26,.75);padding:12px 24px;border-radius:14px;border:2px solid ${red?'#ff4d6d':'#5cf2ff'};box-shadow:0 0 20px ${red?'rgba(255,77,109,.5)':'rgba(92,242,255,.4)'}">
+  <div style="width:18px;height:18px;border-radius:50%;background:${red?'#ff4d6d':'#5cff9d'};opacity:${blink?1:.3}"></div>
+  <div style="font-size:34px;color:#fff">19 NOV</div><div style="font-size:34px;color:${red?'#ff8fa3':'#5cf2ff'}">${clockStr(t)}</div></div>`}
+
+// ---- data scenes
+function gb(t){const a=LN(2)[0];const p=back(prog(t,a,.4));const n=Math.round(200*ease(prog(t,a+.2,1.6)));const fill=ease(prog(t,a+.3,2.2));
+ return `<img src="${ART.logo_gta6}" style="position:absolute;left:50%;top:430px;height:150px;transform:translateX(-50%) scale(${p});filter:drop-shadow(0 0 20px rgba(255,64,200,.7))">
+  <div style="position:absolute;left:50%;top:620px;transform:translateX(-50%) scale(${p}) rotateY(${Math.sin(t*1.5)*12}deg);width:400px;height:400px">
+   <div style="position:absolute;inset:0;border-radius:40px;background:linear-gradient(135deg,#ff40c8,#7c3aed 55%,#22d3ee);box-shadow:0 0 90px rgba(255,64,200,.7)"></div>
+   <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div style="font-size:150px;font-weight:800;line-height:1">${n}</div><div style="font-size:70px;font-weight:800">GB</div></div></div>
+  <div class="panel" style="left:110px;right:110px;top:1150px;height:190px;padding:26px 34px">
+   <div class="hud" style="font-size:36px;color:#cfe8ff">CONSOLE STORAGE</div>
+   <div style="position:absolute;left:34px;right:34px;top:96px;height:56px;border-radius:14px;background:#1a1240;overflow:hidden">
+    <div style="width:${fill*100*.8}%;height:100%;background:linear-gradient(90deg,#ff40c8,#ffe14d)"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:32px">GTA 6 = 200 GB+</div></div></div>
+  <div style="position:absolute;left:0;right:0;top:1380px;text-align:center;font-size:30px;color:#a9b6e8;font-weight:500">Rockstar Pre-Load FAQ: up to 212 GB free space</div>`}
+function speed(t){const a=LN(3)[0];const p=back(prog(t,a,.35));const ang=lerp(-120,-30,out(prog(t,a+.2,.8)))+Math.sin(t*20)*2;
+ const hrs=7.4*ease(prog(t,F('matlab download'),1.6));const hh=Math.floor(hrs),mm=Math.floor((hrs-hh)*60);const bar=hrs/7.4;
+ return `<div style="position:absolute;left:50%;top:560px;transform:translateX(-50%) scale(${p});width:640px;height:400px">
+   <svg viewBox="0 0 640 400" width="640" height="400"><path d="M70 340 A250 250 0 0 1 570 340" fill="none" stroke="#1d1450" stroke-width="44" stroke-linecap="round"/>
+    <path d="M70 340 A250 250 0 0 1 570 340" fill="none" stroke="url(#gg)" stroke-width="44" stroke-linecap="round" stroke-dasharray="785" stroke-dashoffset="${785*(1-.33)}"/>
+    <defs><linearGradient id="gg"><stop offset="0" stop-color="#ff40c8"/><stop offset="1" stop-color="#5cf2ff"/></linearGradient></defs>
+    <g transform="rotate(${ang} 320 340)"><line x1="320" y1="340" x2="320" y2="130" stroke="#fff" stroke-width="12" stroke-linecap="round"/></g><circle cx="320" cy="340" r="22" fill="#fff"/></svg>
+   <div style="position:absolute;left:0;right:0;top:370px;text-align:center;font-size:96px;font-weight:800;text-shadow:0 0 30px #ff40c8">60 <span style="font-size:50px">Mbps</span></div></div>
+  <div style="position:absolute;left:0;right:0;top:1100px;text-align:center;font-size:34px;color:#a9b6e8" class="hud">AVG INTERNET SPEED · INDIA (OOKLA)</div>
+  <div class="panel" style="left:110px;right:110px;top:1180px;height:260px;padding:26px 34px;opacity:${prog(t,F('matlab download')-.1,.2)}">
+   <div class="hud" style="font-size:36px;color:#cfe8ff">DOWNLOADING… 200 GB</div>
+   <div style="position:absolute;left:34px;right:34px;top:96px;height:50px;border-radius:12px;background:#1a1240;overflow:hidden"><div style="width:${bar*100}%;height:100%;background:linear-gradient(90deg,#5cf2ff,#5cff9d)"></div></div>
+   <div style="position:absolute;left:0;right:0;top:160px;text-align:center;font-size:72px;font-weight:800;color:#ffe14d">${hh}h ${String(mm).padStart(2,'0')}m ⏳</div></div>`}
+function data(t){const a=LN(4)[0];const p=back(prog(t,a,.35));const d=Math.round(lerp(1,100,ease(prog(t,F('Pure 100')-.25,.9))));const used=(t*3)%1;
+ return `<div style="position:absolute;left:130px;top:560px;width:340px;height:640px;transform:scale(${p});border-radius:56px;border:8px solid #5cf2ff;background:#0c0630;box-shadow:0 0 50px rgba(92,242,255,.5)">
+   <div class="hud" style="position:absolute;left:0;right:0;top:70px;text-align:center;font-size:34px;color:#cfe8ff">DAILY DATA</div>
+   <div style="position:absolute;left:40px;right:40px;top:140px;height:380px;border-radius:24px;background:#1a1240;overflow:hidden">
+    <div style="position:absolute;bottom:0;left:0;right:0;height:${(1-used)*100}%;background:linear-gradient(0deg,#ff40c8,#ffe14d)"></div></div>
+   <div style="position:absolute;left:0;right:0;top:540px;text-align:center;font-size:64px;font-weight:800">2 GB</div></div>
+  <div class="panel" style="left:530px;top:640px;width:420px;height:480px;transform:scale(${p})">
+   <div style="position:absolute;left:0;right:0;top:0;height:110px;border-radius:26px 26px 0 0;background:#ff4d6d;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800" class="hud">DAY</div>
+   <div style="position:absolute;left:0;right:0;top:150px;text-align:center;font-size:200px;font-weight:800;color:#ffe14d;line-height:1">${d}</div>
+   <div style="position:absolute;left:0;right:0;top:370px;text-align:center;font-size:44px;font-weight:800">😵 DIN</div></div>`}
+function load(t){const a=LN(5)[0];const k=prog(t,a,3);let dots='';for(let i=0;i<120;i++){const x=hash(i)*1000+40,y=560+hash(i*3)*700;const on=hash(i*7)<k*1.4;
+   if(on)dots+=`<div style="position:absolute;left:${x}px;top:${y}px;width:12px;height:12px;border-radius:50%;background:#ff4d6d;box-shadow:0 0 14px #ff4d6d;opacity:${.5+.5*Math.sin(t*12+i)}"></div>`}
+ const tb=Math.round(460*ease(prog(t,a+.5,2.4)));const cr=(2.5*ease(prog(t,a,1.2))).toFixed(1);
+ return dots+`<div style="position:absolute;left:0;right:0;top:600px;text-align:center"><div style="font-size:130px;font-weight:800;color:#ff4d6d;text-shadow:0 0 40px #ff4d6d">${cr} CRORE</div><div class="hud" style="font-size:44px">PLAYERS · SAME NIGHT</div></div>
+  <div class="panel" style="left:110px;right:110px;top:1060px;height:260px;border-color:#ff4d6d;box-shadow:0 0 60px rgba(255,77,109,.6)">
+   <div class="hud" style="position:absolute;left:34px;top:24px;font-size:36px;color:#ffb3c1">INTERNET LOAD NEEDED</div>
+   <div style="position:absolute;left:34px;right:34px;top:90px;height:60px;border-radius:14px;background:#2a0710;overflow:hidden"><div style="width:${Math.min(100,tb/3.2)}%;height:100%;background:linear-gradient(90deg,#ffe14d,#ff4d6d)"></div></div>
+   <div style="position:absolute;left:0;right:0;top:165px;text-align:center;font-size:64px;font-weight:800;color:#ff4d6d">~${tb} Tbps ${tb>300?'⚠️ OVERLOAD':''}</div></div>`}
+function dates(t){const a=LN(6)[0];const p1=back(prog(t,a+.2,.4)),p2=back(prog(t,F('aur khelna')-.05,.4));
+ const card=(x,p,top,big,lab,col,ic)=>`<div style="position:absolute;left:${x}px;top:620px;width:400px;height:520px;transform:scale(${p});border-radius:30px;background:#0c0630;border:5px solid ${col};box-shadow:0 0 60px ${col}">
+   <div style="height:120px;border-radius:24px 24px 0 0;background:${col};display:flex;align-items:center;justify-content:center;font-size:50px;font-weight:800;color:#07021a">${top}</div>
+   <div style="text-align:center;font-size:210px;font-weight:800;line-height:1.1">${big}</div>
+   <div style="text-align:center;font-size:52px;font-weight:800;color:${col}">${ic} ${lab}</div></div>`;
+ const arr=out(prog(t,F('aur khelna')-.3,.5));
+ return card(80,p1,'NOV','10','PRELOAD','#5cff9d','⬇️')+card(600,p2,'NOV','19','PLAY','#ffe14d','🎮')+
+  `<div style="position:absolute;left:480px;top:860px;width:${120*arr}px;height:10px;background:#fff;box-shadow:0 0 20px #fff"></div>
+   <div class="hud" style="position:absolute;left:0;right:0;top:1200px;text-align:center;font-size:36px;color:#a9b6e8;opacity:${prog(t,a+.5,.3)}">PS5 & XBOX PRE-LOAD · ROCKSTAR FAQ</div>`}
+
+const stage={cam:document.getElementById('cam'),fx:document.getElementById('fx'),ov:document.getElementById('ov')};
+const T_CUT=4.25;                     // melt clip -> Momo stuck TV
+async function renderAt(t){
+ let cam='',fx='',ov='',tf='',capY=300,red=0,srcs=[];
+ const L2=LN(2)[0]-.1,L3=LN(3)[0]-.08,L4=LN(4)[0]-.08,L5=LN(5)[0]-.08,L6=LN(6)[0]-.08,L7=LN(7)[0]-.08,L8=LN(8)[0]-.1;
+ if(t<T_CUT){                          // S1 melting tower clip
+   const s=clipSrc('c_melt',t*1.15,'gta_3_city_tower');srcs.push(s);const[sx,sy]=shake(t,3.1,14,.6);
+   tf=camT(1.02+.04*ease(prog(t,0,T_CUT)),sx,sy);cam=`<img class="bg" src="${s}">`;
+   const rr=prog(t,2.4,1.2);fx=`<div style="position:absolute;inset:0;background:rgba(255,30,60,${.18*rr*(.6+.4*Math.sin(t*20))})"></div>`;red=rr>.5?1:0;
+ } else if(t<L2){                      // Momo: download stuck, TV smoking
+   srcs.push(ART.gta_1_momo_tv);const[sx,sy]=shake(t,T_CUT,22,.35);const z=1.0+.08*out(prog(t,T_CUT,.3));
+   tf=camT(z,sx-60*out(prog(t,T_CUT,.3)),sy+40*out(prog(t,T_CUT,.3)));
+   const err=Math.sin(t*14)>0;
+   cam=`<img class="bg" src="${ART.gta_1_momo_tv}">`+tv(`<div style="position:absolute;inset:0;background:${err?'#2a0710':'#05010f'}"></div>
+     <div style="position:absolute;left:60px;right:60px;top:110px;font-size:40px;font-weight:800;color:#ff4d6d" class="hud">⚠ SERVER BUSY</div>
+     <div style="position:absolute;left:60px;right:60px;top:180px;height:40px;border-radius:10px;background:#1a1240"><div style="width:2%;height:100%;background:#ff4d6d"></div></div>
+     <div style="position:absolute;left:60px;top:240px;font-size:34px;color:#cfe8ff">0.1% · stuck</div>`);
+   for(let i=0;i<10;i++){const q=((t-T_CUT)*.8+i/10)%1;cam+=`<div style="position:absolute;left:${720+hash(i)*300}px;top:${640-q*300}px;width:${60+q*120}px;height:${60+q*120}px;border-radius:50%;background:rgba(120,120,140,${.45*(1-q)});filter:blur(10px)"></div>`}
+   fx=`<div style="position:absolute;inset:0;background:#fff;opacity:${1-prog(t,T_CUT,.12)}"></div>`;red=1;
+ } else if(t<L7){                      // data scenes on neon grid
+   let body='';
+   if(t<L3){body=gb(t)}else if(t<L4){body=speed(t)}else if(t<L5){body=data(t)}else if(t<L6){body=load(t);red=1}else{body=dates(t)}
+   const wipe=[L2,L3,L4,L5,L6].find(a=>t>=a&&t<a+.22);const wp=wipe?1-out(prog(t,wipe,.22)):0;
+   const[sx,sy]=red?shake(t,L5+.6+Math.floor((t-L5)/0.9)*0.9,10,.3):[0,0];
+   tf=camT(1+.02*Math.sin(t*.8),sx-wp*1080,sy);cam=grid(t,red)+body;
+   if(red)fx=`<div style="position:absolute;inset:0;box-shadow:inset 0 0 220px rgba(255,30,60,${.5+.3*Math.sin(t*10)})"></div>`;
+ } else if(t<L8){                      // Momo: preload filling
+   srcs.push(ART.gta_1_momo_tv);const p=ease(prog(t,L7+.2,2.4));tf=camT(1.04+.03*prog(t,L7,3),-30,10);
+   cam=`<img class="bg" src="${ART.gta_1_momo_tv}">`+tv(`<div style="position:absolute;inset:0;background:linear-gradient(135deg,#0b0430,#16063f)"></div>
+     <img src="${ART.logo_gta6}" style="position:absolute;right:40px;top:30px;height:110px"><div class="hud" style="position:absolute;left:60px;top:90px;font-size:38px;color:#5cff9d">PRELOAD · 10 NOV</div>
+     <div style="position:absolute;left:60px;right:60px;top:160px;height:44px;border-radius:12px;background:#1a1240;overflow:hidden"><div style="width:${p*100}%;height:100%;background:linear-gradient(90deg,#5cf2ff,#5cff9d)"></div></div>
+     <div style="position:absolute;left:60px;top:230px;font-size:48px;font-weight:800">${Math.round(p*100)}% ${p>=.999?'✓':''}</div>`);
+   const wp=1-out(prog(t,L7,.22));tf=camT(1.04,-30-wp*1080,10);
+ } else {                              // Momo unlock clip
+   const ct=(t-L8)+1.0;const s=clipSrc('c_unlock',ct,'gta_2_momo_excited');srcs.push(s);tf=camT(1.02+.02*prog(t,L8,4),0,0);cam=`<img class="bg" src="${s}">`;
+   const lg=prog(ct,3.7,.4);if(lg>0)cam+=tv(`<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><img src="${ART.logo_gta6}" style="height:${250*back(lg)}px;filter:drop-shadow(0 0 30px #fff)"></div>`).replace('background:#05010f','background:transparent');
+   const k=back(prog(t,L8+2.45,.35));
+   ov+=`<div class="hud" style="position:absolute;left:50%;top:560px;transform:translateX(-50%) scale(${k});background:rgba(7,2,26,.8);border:3px solid #ffe14d;border-radius:18px;padding:14px 34px;font-size:46px;color:#ffe14d;box-shadow:0 0 40px rgba(255,225,77,.6);white-space:nowrap">🔑 UNLOCKED · 19 NOV</div>`;
+   ov+=`<div style="position:absolute;left:40px;right:40px;top:1760px;text-align:center;font-size:26px;color:#c7c9e8;font-weight:500;opacity:${prog(t,L8+1.2,.4)}">Size: official FAQ up to 212 GB · Speed: Ookla India median · Unlock time varies by region · Not affiliated with Rockstar</div>`;
+ }
+ stage.cam.style.transform=tf;stage.cam.innerHTML=cam;
+ stage.fx.innerHTML=fx+`<div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 58%,rgba(0,0,0,.55) 100%)"></div>`;
+ stage.ov.innerHTML=ov+hud(t,red)+captions(t,capY);
+ await ready(srcs);await Promise.all([...document.querySelectorAll('#stage img')].map(i=>i.decode().catch(()=>0)));
+}
+window.renderAt=renderAt;
+</script></body></html>

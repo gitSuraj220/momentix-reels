@@ -1,0 +1,426 @@
+{
+ "off": 0.0,
+ "frags": [
+  {
+   "line": 1,
+   "text": "19 November, raat 12 baje,",
+   "s": 0.0,
+   "e": 1.024
+  },
+  {
+   "line": 1,
+   "text": "crore log ek saath GTA 6 download karenge…",
+   "s": 1.024,
+   "e": 3.134
+  },
+  {
+   "line": 1,
+   "text": "kya internet ke servers melt ho jayenge?",
+   "s": 3.134,
+   "e": 5.245
+  },
+  {
+   "line": 2,
+   "text": "Rockstar ke hisaab se GTA 6 ke liye",
+   "s": 5.445,
+   "e": 8.838
+  },
+  {
+   "line": 2,
+   "text": "console mein 200 GB tak jagah chahiye.",
+   "s": 9.035,
+   "e": 9.563
+  },
+  {
+   "line": 3,
+   "text": "India ka average internet speed 60 Mbps hai,",
+   "s": 9.718,
+   "e": 11.724
+  },
+  {
+   "line": 3,
+   "text": "matlab download mein 7 ghante se bhi zyada!",
+   "s": 11.724,
+   "e": 13.73
+  },
+  {
+   "line": 4,
+   "text": "Aur Jio ke 2 GB roz wale data se?",
+   "s": 13.906,
+   "e": 15.825
+  },
+  {
+   "line": 4,
+   "text": "Pure 100 din!",
+   "s": 15.825,
+   "e": 16.409
+  },
+  {
+   "line": 5,
+   "text": "Ab socho, 2.5 crore log ek hi raat mein…",
+   "s": 16.572,
+   "e": 18.251
+  },
+  {
+   "line": 5,
+   "text": "itna load koi bhi internet nahi jhel sakta.",
+   "s": 18.251,
+   "e": 20.428
+  },
+  {
+   "line": 6,
+   "text": "Lekin GTA 6 ka preload 10 November se hi shuru hai,",
+   "s": 20.626,
+   "e": 23.289
+  },
+  {
+   "line": 6,
+   "text": "aur khelna 19 November se.",
+   "s": 23.289,
+   "e": 24.657
+  },
+  {
+   "line": 7,
+   "text": "Isliye game pehle se hi aapke console mein download ho jayega.",
+   "s": 24.843,
+   "e": 27.759
+  },
+  {
+   "line": 8,
+   "text": "Raat 12 baje bas ek chhoti si unlock key aayegi,",
+   "s": 27.93,
+   "e": 30.233
+  },
+  {
+   "line": 8,
+   "text": "aur phir aap GTA 6 khel sakte hain.",
+   "s": 30.233,
+   "e": 31.896
+  }
+ ],
+ "chunks": [
+  {
+   "t": 0.0,
+   "e": 0.492,
+   "text": "19 November,",
+   "line": 1
+  },
+  {
+   "t": 0.492,
+   "e": 1.024,
+   "text": "raat 12 baje,",
+   "line": 1
+  },
+  {
+   "t": 1.024,
+   "e": 1.657,
+   "text": "crore log ek",
+   "line": 1
+  },
+  {
+   "t": 1.657,
+   "e": 2.237,
+   "text": "saath GTA 6",
+   "line": 1
+  },
+  {
+   "t": 2.237,
+   "e": 3.134,
+   "text": "download karenge…",
+   "line": 1
+  },
+  {
+   "t": 3.134,
+   "e": 3.967,
+   "text": "kya internet ke",
+   "line": 1
+  },
+  {
+   "t": 3.967,
+   "e": 4.801,
+   "text": "servers melt ho",
+   "line": 1
+  },
+  {
+   "t": 4.801,
+   "e": 5.445,
+   "text": "jayenge?",
+   "line": 1
+  },
+  {
+   "t": 5.445,
+   "e": 7.296,
+   "text": "Rockstar ke hisaab",
+   "line": 2
+  },
+  {
+   "t": 7.296,
+   "e": 8.118,
+   "text": "se GTA 6",
+   "line": 2
+  },
+  {
+   "t": 8.118,
+   "e": 9.035,
+   "text": "ke liye",
+   "line": 2
+  },
+  {
+   "t": 9.035,
+   "e": 9.27,
+   "text": "console mein 200",
+   "line": 2
+  },
+  {
+   "t": 9.27,
+   "e": 9.446,
+   "text": "GB tak jagah",
+   "line": 2
+  },
+  {
+   "t": 9.446,
+   "e": 9.718,
+   "text": "chahiye.",
+   "line": 2
+  },
+  {
+   "t": 9.718,
+   "e": 10.482,
+   "text": "India ka average",
+   "line": 3
+  },
+  {
+   "t": 10.482,
+   "e": 11.294,
+   "text": "internet speed 60",
+   "line": 3
+  },
+  {
+   "t": 11.294,
+   "e": 11.724,
+   "text": "Mbps hai,",
+   "line": 3
+  },
+  {
+   "t": 11.724,
+   "e": 12.703,
+   "text": "matlab download mein",
+   "line": 3
+  },
+  {
+   "t": 12.703,
+   "e": 13.241,
+   "text": "7 ghante se",
+   "line": 3
+  },
+  {
+   "t": 13.241,
+   "e": 13.906,
+   "text": "bhi zyada!",
+   "line": 3
+  },
+  {
+   "t": 13.906,
+   "e": 14.525,
+   "text": "Aur Jio ke",
+   "line": 4
+  },
+  {
+   "t": 14.525,
+   "e": 15.02,
+   "text": "2 GB roz",
+   "line": 4
+  },
+  {
+   "t": 15.02,
+   "e": 15.825,
+   "text": "wale data se?",
+   "line": 4
+  },
+  {
+   "t": 15.825,
+   "e": 16.572,
+   "text": "Pure 100 din!",
+   "line": 4
+  },
+  {
+   "t": 16.572,
+   "e": 16.98,
+   "text": "Ab socho,",
+   "line": 5
+  },
+  {
+   "t": 16.98,
+   "e": 17.57,
+   "text": "2.5 crore log",
+   "line": 5
+  },
+  {
+   "t": 17.57,
+   "e": 18.024,
+   "text": "ek hi raat",
+   "line": 5
+  },
+  {
+   "t": 18.024,
+   "e": 18.251,
+   "text": "mein…",
+   "line": 5
+  },
+  {
+   "t": 18.251,
+   "e": 18.941,
+   "text": "itna load koi",
+   "line": 5
+  },
+  {
+   "t": 18.941,
+   "e": 19.844,
+   "text": "bhi internet nahi",
+   "line": 5
+  },
+  {
+   "t": 19.844,
+   "e": 20.626,
+   "text": "jhel sakta.",
+   "line": 5
+  },
+  {
+   "t": 20.626,
+   "e": 21.236,
+   "text": "Lekin GTA 6",
+   "line": 6
+  },
+  {
+   "t": 21.236,
+   "e": 21.958,
+   "text": "ka preload 10",
+   "line": 6
+  },
+  {
+   "t": 21.958,
+   "e": 22.734,
+   "text": "November se hi",
+   "line": 6
+  },
+  {
+   "t": 22.734,
+   "e": 23.289,
+   "text": "shuru hai,",
+   "line": 6
+  },
+  {
+   "t": 23.289,
+   "e": 24.0,
+   "text": "aur khelna 19",
+   "line": 6
+  },
+  {
+   "t": 24.0,
+   "e": 24.843,
+   "text": "November se.",
+   "line": 6
+  },
+  {
+   "t": 24.843,
+   "e": 25.683,
+   "text": "Isliye game pehle",
+   "line": 7
+  },
+  {
+   "t": 25.683,
+   "e": 26.227,
+   "text": "se hi aapke",
+   "line": 7
+  },
+  {
+   "t": 26.227,
+   "e": 27.265,
+   "text": "console mein download",
+   "line": 7
+  },
+  {
+   "t": 27.265,
+   "e": 27.93,
+   "text": "ho jayega.",
+   "line": 7
+  },
+  {
+   "t": 27.93,
+   "e": 28.544,
+   "text": "Raat 12 baje",
+   "line": 8
+  },
+  {
+   "t": 28.544,
+   "e": 29.209,
+   "text": "bas ek chhoti",
+   "line": 8
+  },
+  {
+   "t": 29.209,
+   "e": 29.875,
+   "text": "si unlock key",
+   "line": 8
+  },
+  {
+   "t": 29.875,
+   "e": 30.233,
+   "text": "aayegi,",
+   "line": 8
+  },
+  {
+   "t": 30.233,
+   "e": 30.838,
+   "text": "aur phir aap",
+   "line": 8
+  },
+  {
+   "t": 30.838,
+   "e": 31.342,
+   "text": "GTA 6 khel",
+   "line": 8
+  },
+  {
+   "t": 31.342,
+   "e": 31.896,
+   "text": "sakte hain.",
+   "line": 8
+  }
+ ],
+ "lines": {
+  "1": [
+   0.0,
+   5.245
+  ],
+  "2": [
+   5.445,
+   9.563
+  ],
+  "3": [
+   9.718,
+   13.73
+  ],
+  "4": [
+   13.906,
+   16.409
+  ],
+  "5": [
+   16.572,
+   20.428
+  ],
+  "6": [
+   20.626,
+   24.657
+  ],
+  "7": [
+   24.843,
+   27.759
+  ],
+  "8": [
+   27.93,
+   31.896
+  ]
+ },
+ "end": 33.5
+}
