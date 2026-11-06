@@ -15,8 +15,8 @@ Ignored for simplicity: tax on the investment gains, home-loan tax benefit, rent
 | 2 | Bunty ek ₹80 lakh ka flat leta hai, jisme ₹16 lakh down payment, upar se ₹6 lakh stamp duty aur registration. So total ₹22 lakh. | Bunty's wallet empties; ₹21.6 L counter. |
 | 3 | Phir aati hai har mahine ₹53,000 ki EMI, 20 saal ke liye. Matlab ₹64 lakh interest seedha bank ko! | EMI calendar flipping; red "₹64 L INTEREST" stack goes to a bank. |
 | 4 | Momo ne wahi flat ₹20,000 rent pe liya, aur bacha hua saara paisa har mahine invest kiya. | Momo pays rent, extra coins drop into a growing SIP plant. |
-| 5 | 20 saal baad: Bunty ka flat lagbhag ₹3.1 crore ka. Momo ka investment, 12% pe, lagbhag ₹5.3 crore! | Scoreboard: house ₹3.1 Cr vs pot ₹5.3 Cr; pot overtakes. |
-| 6 | Par twist: ye tabhi hoga jab Momo 20 saal tak bina chooke har mahine invest kare. Aur Bunty ke paas apna ghar hai, aur budhape mein koi rent nahi. | Momo tempted by a sale/phone, resists; Bunty relaxing at home, "RENT ₹0". |
+| 5 | 20 saal baad: Bunty ka flat lagbhag ₹3 crore ka. Momo ka investment, 12% pe, lagbhag ₹5 crore! | Scoreboard: house ₹3.1 Cr vs pot ₹5.3 Cr; pot overtakes. |
+| 6 | Momo Bunty se aage tabhi nikla jab usne apni saari SIP time se ki. Market upar ho ya neeche, long term mein market hamesha upar jaata hai, so apni SIP kabhi band na karein. (Suraj 7 Nov; softer wording suggested) | Momo tempted by a sale/phone, resists; Bunty relaxing at home, "RENT ₹0". |
 | 7 | Matlab maths rent ke saath hai, par discipline nahi toh ghar hi behtar. Aap kaun ho, Bunty ya Momo? Comment karo. | Two buttons "Bunty 🏠 / Momo 📈"; small print. |
 
 Small print: "Example only: 8% loan, 7% property growth, 12% returns (not guaranteed), rent +5%/yr; taxes ignored · Sirf jaankari ke liye."
