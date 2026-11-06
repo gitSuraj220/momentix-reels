@@ -1,0 +1,494 @@
+{
+ "off": 0.0,
+ "frags": [
+  {
+   "line": 1,
+   "text": "Ghar khareedna ek smart decision hai\u2026",
+   "s": 0.0,
+   "e": 1.733
+  },
+  {
+   "line": 1,
+   "text": "ya rent pe lena?",
+   "s": 1.733,
+   "e": 2.404
+  },
+  {
+   "line": 1,
+   "text": "20 saal ke hisaab se dekhoge, toh chaunk jaoge!",
+   "s": 2.595,
+   "e": 4.8
+  },
+  {
+   "line": 2,
+   "text": "Bunty ek \u20b980 lakh ka flat leta hai,",
+   "s": 4.952,
+   "e": 7.003
+  },
+  {
+   "line": 2,
+   "text": "jisme \u20b916 lakh down payment,",
+   "s": 7.003,
+   "e": 8.711
+  },
+  {
+   "line": 2,
+   "text": "upar se \u20b96 lakh stamp duty aur registration.",
+   "s": 8.711,
+   "e": 11.616
+  },
+  {
+   "line": 2,
+   "text": "So total \u20b922 lakh.",
+   "s": 11.9,
+   "e": 12.386
+  },
+  {
+   "line": 3,
+   "text": "Phir aati hai har mahine \u20b953,000 ki EMI,",
+   "s": 12.607,
+   "e": 15.273
+  },
+  {
+   "line": 3,
+   "text": "20 saal ke liye.",
+   "s": 15.273,
+   "e": 16.339
+  },
+  {
+   "line": 3,
+   "text": "Matlab \u20b964 lakh interest seedha bank ko!",
+   "s": 16.511,
+   "e": 18.79
+  },
+  {
+   "line": 4,
+   "text": "Momo wahi flat \u20b920,000 rent pe leta hai,",
+   "s": 18.79,
+   "e": 20.689
+  },
+  {
+   "line": 4,
+   "text": "aur bacha hua saara paisa har mahine invest karta hai.",
+   "s": 20.857,
+   "e": 24.207
+  },
+  {
+   "line": 5,
+   "text": "20 saal baad: Bunty ka flat lagbhag \u20b93 crore ka.",
+   "s": 24.207,
+   "e": 26.719
+  },
+  {
+   "line": 5,
+   "text": "Momo ka investment, 12% pe, lagbhag \u20b95 crore!",
+   "s": 26.873,
+   "e": 30.38
+  },
+  {
+   "line": 6,
+   "text": "Momo Bunty se aage tabhi nikla jab usne apni SIP kabhi miss nahi ki.",
+   "s": 30.535,
+   "e": 34.631
+  },
+  {
+   "line": 6,
+   "text": "Market upar ho ya neeche, long term mein market upar hi gaya hai,",
+   "s": 34.631,
+   "e": 38.499
+  },
+  {
+   "line": 6,
+   "text": "isliye SIP mein discipline sabse zaroori hai.",
+   "s": 38.499,
+   "e": 41.381
+  },
+  {
+   "line": 7,
+   "text": "Matlab rent hamesha sahi nahi hai:",
+   "s": 41.381,
+   "e": 43.505
+  },
+  {
+   "line": 7,
+   "text": "agar discipline nahi, toh ghar hi behtar hai.",
+   "s": 43.764,
+   "e": 48.528
+  }
+ ],
+ "chunks": [
+  {
+   "t": 0.0,
+   "e": 0.818,
+   "text": "Ghar khareedna ek",
+   "line": 1
+  },
+  {
+   "t": 0.818,
+   "e": 1.733,
+   "text": "smart decision hai\u2026",
+   "line": 1
+  },
+  {
+   "t": 1.733,
+   "e": 2.18,
+   "text": "ya rent pe",
+   "line": 1
+  },
+  {
+   "t": 2.18,
+   "e": 2.595,
+   "text": "lena?",
+   "line": 1
+  },
+  {
+   "t": 2.595,
+   "e": 3.085,
+   "text": "20 saal ke",
+   "line": 1
+  },
+  {
+   "t": 3.085,
+   "e": 3.967,
+   "text": "hisaab se dekhoge,",
+   "line": 1
+  },
+  {
+   "t": 3.967,
+   "e": 4.952,
+   "text": "toh chaunk jaoge!",
+   "line": 1
+  },
+  {
+   "t": 4.952,
+   "e": 5.698,
+   "text": "Bunty ek \u20b980",
+   "line": 2
+  },
+  {
+   "t": 5.698,
+   "e": 6.444,
+   "text": "lakh ka flat",
+   "line": 2
+  },
+  {
+   "t": 6.444,
+   "e": 7.003,
+   "text": "leta hai,",
+   "line": 2
+  },
+  {
+   "t": 7.003,
+   "e": 7.889,
+   "text": "jisme \u20b916 lakh",
+   "line": 2
+  },
+  {
+   "t": 7.889,
+   "e": 8.711,
+   "text": "down payment,",
+   "line": 2
+  },
+  {
+   "t": 8.711,
+   "e": 9.403,
+   "text": "upar se \u20b96",
+   "line": 2
+  },
+  {
+   "t": 9.403,
+   "e": 10.44,
+   "text": "lakh stamp duty",
+   "line": 2
+  },
+  {
+   "t": 10.44,
+   "e": 11.9,
+   "text": "aur registration.",
+   "line": 2
+  },
+  {
+   "t": 11.9,
+   "e": 12.243,
+   "text": "So total \u20b922",
+   "line": 2
+  },
+  {
+   "t": 12.243,
+   "e": 12.607,
+   "text": "lakh.",
+   "line": 2
+  },
+  {
+   "t": 12.607,
+   "e": 13.519,
+   "text": "Phir aati hai",
+   "line": 3
+  },
+  {
+   "t": 13.519,
+   "e": 14.782,
+   "text": "har mahine \u20b953,000",
+   "line": 3
+  },
+  {
+   "t": 14.782,
+   "e": 15.273,
+   "text": "ki EMI,",
+   "line": 3
+  },
+  {
+   "t": 15.273,
+   "e": 15.984,
+   "text": "20 saal ke",
+   "line": 3
+  },
+  {
+   "t": 15.984,
+   "e": 16.511,
+   "text": "liye.",
+   "line": 3
+  },
+  {
+   "t": 16.511,
+   "e": 17.411,
+   "text": "Matlab \u20b964 lakh",
+   "line": 3
+  },
+  {
+   "t": 17.411,
+   "e": 18.61,
+   "text": "interest seedha bank",
+   "line": 3
+  },
+  {
+   "t": 18.61,
+   "e": 18.79,
+   "text": "ko!",
+   "line": 3
+  },
+  {
+   "t": 18.79,
+   "e": 19.49,
+   "text": "Momo wahi flat",
+   "line": 4
+  },
+  {
+   "t": 19.49,
+   "e": 20.239,
+   "text": "\u20b920,000 rent pe",
+   "line": 4
+  },
+  {
+   "t": 20.239,
+   "e": 20.857,
+   "text": "leta hai,",
+   "line": 4
+  },
+  {
+   "t": 20.857,
+   "e": 21.711,
+   "text": "aur bacha hua",
+   "line": 4
+  },
+  {
+   "t": 21.711,
+   "e": 22.696,
+   "text": "saara paisa har",
+   "line": 4
+  },
+  {
+   "t": 22.696,
+   "e": 23.944,
+   "text": "mahine invest karta",
+   "line": 4
+  },
+  {
+   "t": 23.944,
+   "e": 24.207,
+   "text": "hai.",
+   "line": 4
+  },
+  {
+   "t": 24.207,
+   "e": 24.933,
+   "text": "20 saal baad:",
+   "line": 5
+  },
+  {
+   "t": 24.933,
+   "e": 25.658,
+   "text": "Bunty ka flat",
+   "line": 5
+  },
+  {
+   "t": 25.658,
+   "e": 26.552,
+   "text": "lagbhag \u20b93 crore",
+   "line": 5
+  },
+  {
+   "t": 26.552,
+   "e": 26.873,
+   "text": "ka.",
+   "line": 5
+  },
+  {
+   "t": 26.873,
+   "e": 28.423,
+   "text": "Momo ka investment,",
+   "line": 5
+  },
+  {
+   "t": 28.423,
+   "e": 28.994,
+   "text": "12% pe,",
+   "line": 5
+  },
+  {
+   "t": 28.994,
+   "e": 30.535,
+   "text": "lagbhag \u20b95 crore!",
+   "line": 5
+  },
+  {
+   "t": 30.535,
+   "e": 31.367,
+   "text": "Momo Bunty se",
+   "line": 6
+  },
+  {
+   "t": 31.367,
+   "e": 32.391,
+   "text": "aage tabhi nikla",
+   "line": 6
+  },
+  {
+   "t": 32.391,
+   "e": 33.223,
+   "text": "jab usne apni",
+   "line": 6
+  },
+  {
+   "t": 33.223,
+   "e": 34.119,
+   "text": "SIP kabhi miss",
+   "line": 6
+  },
+  {
+   "t": 34.119,
+   "e": 34.631,
+   "text": "nahi ki.",
+   "line": 6
+  },
+  {
+   "t": 34.631,
+   "e": 35.519,
+   "text": "Market upar ho",
+   "line": 6
+  },
+  {
+   "t": 35.519,
+   "e": 36.153,
+   "text": "ya neeche,",
+   "line": 6
+  },
+  {
+   "t": 36.153,
+   "e": 37.041,
+   "text": "long term mein",
+   "line": 6
+  },
+  {
+   "t": 37.041,
+   "e": 37.928,
+   "text": "market upar hi",
+   "line": 6
+  },
+  {
+   "t": 37.928,
+   "e": 38.499,
+   "text": "gaya hai,",
+   "line": 6
+  },
+  {
+   "t": 38.499,
+   "e": 39.504,
+   "text": "isliye SIP mein",
+   "line": 6
+  },
+  {
+   "t": 39.504,
+   "e": 41.113,
+   "text": "discipline sabse zaroori",
+   "line": 6
+  },
+  {
+   "t": 41.113,
+   "e": 41.381,
+   "text": "hai.",
+   "line": 6
+  },
+  {
+   "t": 41.381,
+   "e": 42.604,
+   "text": "Matlab rent hamesha",
+   "line": 7
+  },
+  {
+   "t": 42.604,
+   "e": 43.764,
+   "text": "sahi nahi hai:",
+   "line": 7
+  },
+  {
+   "t": 43.764,
+   "e": 46.091,
+   "text": "agar discipline nahi,",
+   "line": 7
+  },
+  {
+   "t": 46.091,
+   "e": 47.309,
+   "text": "toh ghar hi",
+   "line": 7
+  },
+  {
+   "t": 47.309,
+   "e": 48.528,
+   "text": "behtar hai.",
+   "line": 7
+  }
+ ],
+ "lines": {
+  "1": [
+   0.0,
+   4.949
+  ],
+  "2": [
+   5.085,
+   12.496
+  ],
+  "3": [
+   12.632,
+   18.248
+  ],
+  "4": [
+   18.385,
+   24.385
+  ],
+  "5": [
+   24.521,
+   30.162
+  ],
+  "6": [
+   30.299,
+   40.333
+  ],
+  "7": [
+   40.47,
+   48.615
+  ]
+ },
+ "end": 48.615
+}

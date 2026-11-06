@@ -1,0 +1,141 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;font-weight:800;src:url(/*FONTS*//poppins-latin-800-normal.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(/*FONTS*//poppins-latin-700-normal.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(/*FONTS*//poppins-latin-500-normal.woff2)}
+html,body{margin:0;padding:0;background:#10141f;overflow:hidden}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:P,sans-serif;color:#fff;background:#10141f}
+.panel{position:absolute;left:0;width:1080px;overflow:hidden}
+.panel img.bg{position:absolute;object-fit:cover}
+.lab{position:absolute;left:40px;font-weight:800;font-size:38px;padding:8px 22px;border-radius:14px;letter-spacing:1px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.chip{position:absolute;font-weight:800;border-radius:18px;padding:10px 26px;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.cap{position:absolute;left:40px;right:40px;text-align:center;font-weight:800;font-size:76px;line-height:1.05;color:#fff;
+ text-shadow:4px 4px 0 #0b0e18,-4px -4px 0 #0b0e18,4px -4px 0 #0b0e18,-4px 4px 0 #0b0e18,0 8px 20px rgba(0,0,0,.6)}
+.o{color:#FFB347}.t{color:#4FF0C8}.r{color:#FF5A6E}.y{color:#FFE14D}
+.num{font-weight:800;font-variant-numeric:tabular-nums}
+</style></head>
+<body><div id="stage"></div>
+<script>
+const TL=/*TL*/null, ART=/*ART*/{}, CLIPS=/*CLIPS*/{};
+for(const k in ART)ART[k]=ART[k].src||ART[k];
+const FPS=30, END=49.2;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), lerp=(a,b,x)=>a+(b-a)*x;
+const ease=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}, out=x=>{x=clamp(x);return 1-Math.pow(1-x,3)};
+const back=x=>{x=clamp(x);const c=2.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const prog=(t,a,d)=>clamp((t-a)/d);
+function hash(i){let x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)}
+const LN=k=>TL.lines[k];
+// caption fragments split by letters inside each line
+const FR=[];{const by={};TL.frags.forEach(f=>(by[f.line]=by[f.line]||[]).push(f));
+ for(const k in by){const[s,e]=LN(k);const fs=by[k];const tot=fs.reduce((a,f)=>a+f.text.length,0);let t=s;
+  fs.forEach(f=>{const d=(e-s)*f.text.length/tot;FR.push({s:t,e:t+d,text:f.text});t+=d})}}
+const F=k=>FR.find(f=>f.text.toLowerCase().includes(k.toLowerCase())).s;
+const CH=[];for(const f of FR){const w=f.text.split(/\s+/),n=w.length,k=n<=3?1:Math.ceil(n/3),per=Math.ceil(n/k);const parts=[];
+ for(let i=0;i<n;i+=per)parts.push(w.slice(i,i+per).join(' '));const tot=parts.reduce((a,p)=>a+p.length,0);let t=f.s;
+ parts.forEach(p=>{const d=(f.e-f.s)*p.length/tot;CH.push({t,e:t+d,text:p});t+=d})}
+for(let i=0;i<CH.length-1;i++)CH[i].e=Math.max(CH[i].e,Math.min(CH[i+1].t,CH[i].e+.3));
+const COL=[[/₹64 lakh|interest|EMI|band|nahi/i,'r'],[/Bunty|ghar|flat|₹80 lakh|₹3 crore/i,'o'],[/Momo|rent|invest|SIP|₹5 crore|discipline/i,'t'],[/20 saal|₹16 lakh|₹6 lakh|₹22 lakh|₹53,000|₹20,000|12%/i,'y']];
+function colorize(s){let h=s;for(const[re,c]of COL)h=h.replace(new RegExp(re.source,'gi'),m=>`<span class="${c}">${m}</span>`);return h}
+
+const cache={};function img(s){if(!cache[s]){const i=new Image();i.src=s;cache[s]=i}return cache[s]}
+function clipSrc(n,ct,fb){const c=CLIPS[n];if(!c)return ART[fb];let f=Math.floor(ct*FPS)+1;f=Math.max(1,Math.min(c.n,f));return c.dir+'/'+String(f).padStart(4,'0')+'.jpg'}
+const inr=v=>{ // rupees -> "₹X L" / "₹X.X Cr"
+ if(v>=1e7)return '₹'+(v/1e7).toFixed(2)+' Cr'; return '₹'+(v/1e5).toFixed(1)+' L'};
+
+// ---- model (same maths as script.md)
+const P=8e6,DOWN=1.6e6,REG=5.6e5,LOAN=P-DOWN,R=.08/12,N=240,EMI=LOAN*R*Math.pow(1+R,N)/(Math.pow(1+R,N)-1);
+const HOUSE=[],POT=[];{let c=DOWN+REG;for(let m=0;m<=N;m++){if(m%12===0){HOUSE.push(P*Math.pow(1.07,m/12));POT.push(c)}
+ const y=Math.floor(m/12);c=c*(1+.01)+Math.max(0,EMI+3000*Math.pow(1.05,y)-20000*Math.pow(1.05,y))}}
+function valAt(arr,yr){const i=Math.floor(yr),f=yr-i;return i>=20?arr[20]:lerp(arr[i],arr[i+1],f)}
+
+// ---- layout: top panel = Bunty (0..900), band 900..1010, bottom = Momo (1010..1920)
+const TOP=900, BAND=110, BOT=TOP+BAND;
+function topPanel(t,src,kb=0,dim=0,extra=''){
+ const z=1.0+.04*kb; return `<div class="panel" style="top:0;height:${TOP}px;background:#2a1a10">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,#3a2414,#2a1a10)"></div><img class="bg" src="${src}" style="left:${-135-30*kb}px;top:160px;width:1350px;height:${TOP}px;transform:scale(${z});transform-origin:50% 40%;filter:brightness(${1-dim*.55}) saturate(${1-dim*.4})">
+  <div class="lab" style="top:250px;background:#E8742A">BUNTY · GHAR KHAREEDA 🏠</div>${extra}</div>`}
+function momoRoom(t){ // code-made rented room, cool teal
+ let s=`<div style="position:absolute;inset:0;background:linear-gradient(180deg,#0f4c4a,#0b2f3a)"></div>
+  <div style="position:absolute;left:640px;top:70px;width:340px;height:300px;border-radius:14px;border:10px solid #e8fff9;background:linear-gradient(#1b3b6b,#5a3b7a)"></div>
+  <div style="position:absolute;left:660px;top:${300}px;width:300px;height:60px;background:repeating-linear-gradient(90deg,#ffd27a 0 18px,transparent 18px 46px);opacity:.6"></div>
+  <div style="position:absolute;left:0;right:0;top:640px;height:300px;background:#0a2530"></div>`;
+ for(let i=0;i<5;i++)s+=`<div style="position:absolute;left:${60+i*14}px;top:${560-i*40}px;width:${60-i*6}px;height:30px;border-radius:50% 50% 50% 0;background:#3ecf8e;transform:rotate(${i%2?-30:30}deg)"></div>`;
+ return s+`<div style="position:absolute;left:50px;top:580px;width:90px;height:70px;border-radius:0 0 18px 18px;background:#c86b3c"></div>`}
+function botPanel(t,momo,dim=0,extra=''){
+ const bob=Math.sin(t*3)*6;
+ return `<div class="panel" style="top:${BOT}px;height:${1920-BOT}px;filter:brightness(${1-dim*.55}) saturate(${1-dim*.4})">${momoRoom(t)}
+  <img src="${momo}" style="position:absolute;left:330px;top:${40+bob}px;height:760px">
+  <div class="lab" style="top:20px;background:#13a98a">MOMO · RENT + SIP 📈</div>${extra}</div>`}
+function band(t,html){return `<div style="position:absolute;left:0;top:${TOP}px;width:1080px;height:${BAND}px;background:#0b0e18;border-top:6px solid #E8742A;border-bottom:6px solid #13a98a">${html}</div>`}
+function captions(t){const c=CH.find(c=>t>=c.t&&t<c.e);if(!c)return'';const p=back(prog(t,c.t,.15));
+ return `<div class="cap" style="top:${TOP+6}px;height:${BAND-12}px;display:flex;align-items:center;justify-content:center;font-size:${c.text.length>22?62:76}px;transform:scale(${lerp(.75,1,p)});opacity:${clamp(p*2)}"><span>${colorize(c.text)}</span></div>`}
+function coins(t,x0,y0,x1,y1,n=6,rate=1.2,col='#FFD24A'){let s='';for(let i=0;i<n;i++){const q=((t*rate)+i/n)%1;
+ s+=`<div style="position:absolute;left:${lerp(x0,x1,q)}px;top:${lerp(y0,y1,q)+Math.sin(q*3.14)*-40}px;width:34px;height:34px;border-radius:50%;background:${col};border:4px solid #b8860b;box-shadow:0 0 12px ${col}"></div>`}return s}
+
+async function renderAt(t){
+ const L=k=>LN(k)[0];let h='';
+ const stage=document.getElementById('stage');
+ // ---------- TOP (Bunty)
+ if(t<L(3)-.1){ // keys
+   const s=clipSrc('c_keys',t*.9,'bvr_1_bunty_keys');
+   let ex='';
+   if(t>=L(2)){const a=back(prog(t,L(2)+.1,.35));
+     ex+=`<div class="chip" style="left:600px;top:340px;background:#fff;color:#7a3b10;font-size:52px;transform:scale(${a}) rotate(-4deg)">₹80 L FLAT</div>`;
+     const d=out(prog(t,F('jisme'),.6)),r=out(prog(t,F('upar se'),.6)),tot=out(prog(t,F('So total'),.4));
+     ex+=`<div class="chip" style="left:600px;top:460px;background:rgba(20,12,6,.85);font-size:40px;opacity:${d}">Down payment <span class="num y">₹16 L</span></div>
+       <div class="chip" style="left:600px;top:545px;background:rgba(20,12,6,.85);font-size:40px;opacity:${r}">Stamp + reg. <span class="num y">₹5.6 L</span></div>
+       <div class="chip" style="left:600px;top:640px;background:#E8742A;font-size:52px;transform:scale(${back(tot)})">= <span class="num">${inr(21.6e5*tot)}</span></div>`}
+   h+=topPanel(t,s,prog(t,0,L(3)),t>=L(4)-.1?1:0,ex);
+ } else { // EMI table / later relaxed
+   const late=t>=L(7)-.1; const src=late?ART.bvr_1_bunty_keys:ART.bvr_2_bunty_emi;
+   let ex='';
+   if(t<L(4)+.2){const m=Math.min(240,Math.floor(240*ease(prog(t,F('20 saal ke liye')-.2,2.6))));const intr=64.5e5*ease(prog(t,F('Matlab ₹64'),1.4));
+     // drain pipe: from top panel down the right edge
+     ex+=`<div style="position:absolute;right:60px;top:300px;width:44px;height:600px;background:linear-gradient(90deg,#7b8794,#c7d0d9,#7b8794);border-radius:22px"></div>`+coins(t,980,320,980,880,5,1.4);
+     ex+=`<div class="chip" style="left:600px;top:330px;background:rgba(20,12,6,.88);font-size:44px">EMI <span class="num y">₹53,532</span>/mo</div>
+       <div class="chip" style="left:600px;top:425px;background:rgba(20,12,6,.88);font-size:40px">Month <span class="num">${m}</span> / 240</div>
+       <div class="chip" style="left:560px;top:530px;background:#FF5A6E;font-size:50px;opacity:${prog(t,F('Matlab ₹64')-.1,.2)};transform:scale(${back(prog(t,F('Matlab ₹64')-.1,.3))})">INTEREST <span class="num">${inr(intr)}</span> 🏦</div>`}
+   if(late){const a=back(prog(t,F('agar discipline')-.1,.35));ex+=`<div class="chip" style="left:590px;top:430px;background:#E8742A;font-size:44px;line-height:1.2;transform:scale(${a})">APNA GHAR 🏠<br>RENT ₹0</div>`}
+   const dim=(t>=L(4)-.1&&t<L(5)-.1)||(t>=L(6)-.1&&t<L(7)-.1)?1:0;
+   h+=topPanel(t,src,late?prog(t,L(7),8):prog(t,L(3),6),dim,ex);
+ }
+ // ---------- BOTTOM (Momo)
+ {let momo=ART.momo_wave_cutout, ex='', dim=0;
+  if(t<L(4)-.1){dim=t>=L(2)?1:0;
+    if(t<L(2))ex+=`<div class="chip" style="left:640px;top:140px;background:#e8fff9;color:#0b5c4f;font-size:40px;transform:rotate(4deg)">📄 RENT AGREEMENT</div>`}
+  else if(t<L(5)-.1){momo=ART.momo_phone_cutout;
+    const a=back(prog(t,L(4)+.1,.35));
+    ex+=`<div class="chip" style="left:620px;top:120px;background:#e8fff9;color:#0b5c4f;font-size:44px;transform:scale(${a})">RENT <span class="num">₹20,000</span>/mo</div>`;
+    if(t>F('aur bacha')-.1){ex+=`<div class="chip" style="left:600px;top:230px;background:#13a98a;font-size:42px">SIP <span class="num">+₹36,500</span>/mo 📈</div>`+coins(t,560,330,820,560,6,1.3,'#4FF0C8');
+     ex+=`<div style="position:absolute;left:740px;top:560px;width:200px;height:150px;border-radius:0 0 30px 30px;background:#0e7d68;border:6px solid #4FF0C8"></div><div class="num" style="position:absolute;left:740px;top:600px;width:200px;text-align:center;font-size:40px">SIP POT</div>`}}
+  else if(t<L(6)-.1){momo=ART.momo_wave_cutout}
+  else if(t<L(7)-.1){momo=ART.momo_phone_cutout; // discipline streak + market zigzag
+    const k=Math.floor(240*ease(prog(t,L(6)+.2,4.5)));let ticks='';for(let i=0;i<24;i++){const on=i<k/10;ticks+=`<div style="width:30px;height:30px;border-radius:6px;background:${on?'#4FF0C8':'#1d3b44'};display:flex;align-items:center;justify-content:center;font-size:20px;color:#0b2f3a">${on?'✓':''}</div>`}
+    ex+=`<div class="chip" style="left:560px;top:110px;background:#0b2f3a;border:3px solid #4FF0C8;font-size:36px">SIP STREAK <span class="num t">${k}/240</span></div>
+     <div style="position:absolute;left:560px;top:190px;width:470px;display:flex;flex-wrap:wrap;gap:8px">${ticks}</div>`;
+    const mp=prog(t,F('Market upar'),3);let pts='';for(let i=0;i<=40;i++){const x=i/40;if(x>mp)break;const y=1-(.15+.6*x+.12*Math.sin(x*18)+.06*Math.sin(x*41));pts+=`${560+x*460},${330+y*230} `}
+    ex+=`<svg style="position:absolute;left:0;top:0" width="1080" height="910"><polyline points="${pts}" fill="none" stroke="#4FF0C8" stroke-width="8" stroke-linejoin="round"/></svg>`;
+    if(t>F('isliye SIP')-.1)ex+=`<div class="chip" style="left:600px;top:600px;background:#FFE14D;color:#1a1a1a;font-size:54px;transform:scale(${back(prog(t,F('isliye SIP')-.1,.3))}) rotate(-3deg)">DISCIPLINE 💪</div>`}
+  else{momo=ART.momo_wave_cutout;dim=0}
+  h+=botPanel(t,momo,dim,ex)}
+ // ---------- L5 race overlay (both panels + band)
+ let bandHTML='';
+ if(t>=L(5)-.1&&t<L(6)-.1){const yr=20*ease(prog(t,L(5)+.2,3.8));const hv=valAt(HOUSE,yr),pv=valAt(POT,yr);const lead=pv>hv;
+   bandHTML=`<div class="num" style="position:absolute;left:0;right:0;top:12px;text-align:center;font-size:70px;color:#FFE14D">SAAL ${Math.floor(yr)} / 20</div>`;
+   h+=`<div class="chip" style="left:60px;top:640px;background:#E8742A;font-size:84px">🏠 <span class="num">${inr(hv)}</span></div>
+     <div class="chip" style="left:560px;top:${BOT+120}px;background:#13a98a;font-size:72px;transform:scale(${lead?1+.04*Math.sin(t*10):1})">📈 <span class="num">${inr(pv)}</span></div>`;
+   if(yr>=19.9)h+=`<div class="chip" style="left:600px;top:${BOT+400}px;background:#FFE14D;color:#1a1a1a;font-size:46px;transform:scale(${back(prog(t,L(5)+4.0,.3))})">MOMO AAGE 🏁</div>`}
+ // ---------- L7 verdict
+ if(t>=L(7)-.1){const a=back(prog(t,L(7)+.1,.4));
+   h+=`<div class="chip" style="left:600px;top:${BOT+190}px;transform:scale(${a});transform-origin:0 0;background:#0b0e18;border:4px solid #FFE14D;font-size:38px;line-height:1.3">RENT ✔ <span class="t">sirf</span><br><span class="t">DISCIPLINE ke saath</span><br>warna GHAR ✔ 🏠</div>`;
+   h+=`<div style="position:absolute;left:60px;right:60px;top:1400px;text-align:center;font-size:24px;color:#e8eef5;font-weight:500;background:rgba(11,14,24,.7);border-radius:12px;padding:6px 10px;opacity:${prog(t,L(7)+1,.4)}">Example only: 8% loan, 7% property growth, 12% returns (not guaranteed), rent +5%/yr, taxes ignored · Sirf jaankari ke liye</div>`}
+ // title chip at start
+ if(t<L(2)){const a=back(prog(t,.1,.35));h+=`<div class="chip" style="left:640px;top:${BOT+330}px;transform:scale(${a});transform-origin:0 50%;background:#FFE14D;color:#1a1a1a;font-size:44px;line-height:1.15">⏳ 20 SAAL<br>KA HISAAB</div>`}
+ h+=band(t,bandHTML);
+ if(!bandHTML)h+=captions(t); else {/* during race, captions sit just above the band */const c=CH.find(c=>t>=c.t&&t<c.e);if(c)h+=`<div class="cap" style="top:${TOP-120}px;font-size:60px"><span>${colorize(c.text)}</span></div>`}
+ stage.innerHTML=h;
+ await Promise.all([...stage.querySelectorAll('img')].map(i=>i.decode().catch(()=>0)));
+}
+window.renderAt=renderAt;
+</script></body></html>
