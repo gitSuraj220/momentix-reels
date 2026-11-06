@@ -20,3 +20,12 @@ Ignored for simplicity: tax on the investment gains, home-loan tax benefit, rent
 | 7 | Matlab maths rent ke saath hai, par discipline nahi toh ghar hi behtar. Aap kaun ho, Bunty ya Momo? Comment karo. | Two buttons "Bunty 🏠 / Momo 📈"; small print. |
 
 Small print: "Example only: 8% loan, 7% property growth, 12% returns (not guaranteed), rent +5%/yr; taxes ignored · Sirf jaankari ke liye."
+
+## FINAL (Suraj, 7 Nov 00:27)
+1. Ghar khareedna ek smart decision hai… ya rent pe lena? 20 saal ke hisaab se dekhoge, toh chaunk jaoge!
+2. Bunty ek ₹80 lakh ka flat leta hai, jisme ₹16 lakh down payment, upar se ₹6 lakh stamp duty aur registration. So total ₹22 lakh.
+3. Phir aati hai har mahine ₹53,000 ki EMI, 20 saal ke liye. Matlab ₹64 lakh interest seedha bank ko!
+4. Momo wahi flat ₹20,000 rent pe leta hai, aur bacha hua saara paisa har mahine invest karta hai.
+5. 20 saal baad: Bunty ka flat lagbhag ₹3 crore ka. Momo ka investment, 12% pe, lagbhag ₹5 crore!
+6. Momo Bunty se aage tabhi nikla jab usne apni SIP kabhi miss nahi ki. Market upar ho ya neeche, long term mein market upar hi gaya hai, isliye SIP mein discipline sabse zaroori hai.
+7. Matlab rent hamesha sahi nahi hai: agar discipline nahi, toh ghar hi behtar hai.
