@@ -11,9 +11,9 @@ Ignored for simplicity: tax on the investment gains, home-loan tax benefit, rent
 
 | # | Voice | Screen |
 |---|---|---|
-| 1 | Ghar khareedna smart hai… ya rent pe rehna? 20 saal ka hisaab dekho, jawab chaunka dega! | Split screen: Bunty with house keys vs Momo with a rent receipt; "20 SAAL" timer. |
-| 2 | Bunty ne ₹80 lakh ka flat liya: ₹16 lakh down payment, upar se ₹5.6 lakh stamp duty aur registration. | Bunty's wallet empties; ₹21.6 L counter. |
-| 3 | Har mahine EMI ₹53,500, 20 saal tak. Sirf byaaj mein bank ko ₹64 lakh! | EMI calendar flipping; red "₹64 L INTEREST" stack goes to a bank. |
+| 1 | Ghar khareedna ek smart decision hai… ya rent pe lena? 20 saal ke hisaab se dekhoge, toh chaunk jaoge! | Split screen: Bunty with house keys vs Momo with a rent receipt; "20 SAAL" timer. |
+| 2 | Bunty ek ₹80 lakh ka flat leta hai, jisme ₹16 lakh down payment, upar se ₹6 lakh stamp duty aur registration. So total ₹22 lakh. | Bunty's wallet empties; ₹21.6 L counter. |
+| 3 | Phir aati hai har mahine ₹53,000 ki EMI, 20 saal ke liye. Matlab ₹64 lakh interest seedha bank ko! | EMI calendar flipping; red "₹64 L INTEREST" stack goes to a bank. |
 | 4 | Momo ne wahi flat ₹20,000 rent pe liya, aur bacha hua saara paisa har mahine invest kiya. | Momo pays rent, extra coins drop into a growing SIP plant. |
 | 5 | 20 saal baad: Bunty ka flat lagbhag ₹3.1 crore ka. Momo ka investment, 12% pe, lagbhag ₹5.3 crore! | Scoreboard: house ₹3.1 Cr vs pot ₹5.3 Cr; pot overtakes. |
 | 6 | Par twist: ye tabhi hoga jab Momo 20 saal tak bina chooke har mahine invest kare. Aur Bunty ke paas apna ghar hai, aur budhape mein koi rent nahi. | Momo tempted by a sale/phone, resists; Bunty relaxing at home, "RENT ₹0". |
