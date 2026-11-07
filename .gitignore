@@ -35,3 +35,5 @@ projects/*/momo_*.png
 projects/google-free-ai-tools/vo.mp3
 projects/*/vo/raw_*
 projects/*/vo/vo_take*
+projects/*/out/*.html
+projects/*/out/slide_*.png
