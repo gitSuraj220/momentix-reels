@@ -99,3 +99,9 @@ Metricool `getAnalyticsDataByMetrics` brand 7365256 (IG Reels IGRE*, YouTube YTV
 * Mechanism + trend + utility beats political controversy.
 * SEO: search phrase first in title and first line of description (Oct 2026).
 * Never type passwords; Suraj signs in himself.* Sound: earshot bank SFX + `sfx check` QA; no continuous bed (Oct 2026).
+
+## Long videos: borrowed from MoneyPrinterTurbo (Suraj, 7 Nov 2026), only the useful parts
+Do NOT use the tool itself: AI script + stock clips + AI voice is exactly the "mass-produced" pattern YouTube demonetizes (§8a).
+1. **Stock B-roll, sparingly:** for 16:9 long videos, up to ~10% real footage between animated chapters (bank branch, city, phone in hand). Source: Pexels/Pixabay (free licence, no attribution needed; never logos or recognisable brands in focus). The container can't reach them, so fetch via Chrome (anchor download) → Mac Downloads → device_stage_files. Pexels API needs a free key from Suraj (store in env, never type it into pages).
+2. **Whisper for takes + subtitles:** transcribe each recorded part per pause-segment (whisper-small, language=hindi) to find retakes; keep the LAST complete take unless a measured one is cleaner; cut repeats before timing captions.
+3. **Shorts from every long video:** plan 3–4 vertical cut-downs at script time (each with its own hook line + 9:16 re-layout inside the safe area x 35–1045, y 240–1460), so one recording feeds the week's Shorts.
