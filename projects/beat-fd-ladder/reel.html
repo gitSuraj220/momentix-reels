@@ -1,0 +1,239 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:PM;src:url(../../engine/fonts/permanent-marker-latin-400-normal.woff2)}
+@font-face{font-family:CV;font-weight:700;src:url(../../engine/fonts/caveat-latin-700-normal.woff2)}
+@font-face{font-family:CP;font-weight:700;src:url(../../engine/fonts/courier-prime-latin-700-normal.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(../../engine/fonts/poppins-latin-800-normal.woff2)}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#3a2c22}
+#cam{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:50% 50%}
+#page{position:absolute;inset:0;background:
+ linear-gradient(90deg,transparent 168px,#e5737b 168px,#e5737b 171px,transparent 171px),
+ repeating-linear-gradient(180deg,transparent 0 52px,#a9c4dc 52px 54px),#f7f2e5}
+#page:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(90,60,30,.22));pointer-events:none}
+.hole{position:absolute;left:62px;width:44px;height:44px;border-radius:50%;background:#3a2c22;box-shadow:inset 3px 3px 6px rgba(0,0,0,.6)}
+#grain{position:absolute;inset:0;opacity:.18;mix-blend-mode:multiply;pointer-events:none}
+.sec{position:absolute;inset:0}
+.a{position:absolute;transform-origin:50% 50%;will-change:transform,opacity}
+.cut{filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(5px 8px 7px rgba(60,40,20,.28))}
+.note{width:470px;height:380px;box-shadow:6px 10px 14px rgba(60,40,20,.28);border-radius:3px}
+.note .n{position:absolute;left:26px;top:20px;width:74px;height:74px;border-radius:50%;border:5px solid #222;font:64px/74px PM;text-align:center;color:#222}
+.note .t{position:absolute;left:30px;right:20px;top:118px;font:86px/1 PM;color:#1d1d1d;white-space:nowrap}
+.note .s{position:absolute;left:32px;top:250px;font:700 52px/1.05 CV;color:#3b3b3b}
+.tape{position:absolute;width:150px;height:44px;background:rgba(236,222,180,.78);box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.hand{font:700 64px/1 CV;color:#1f3d8a;white-space:nowrap}
+.mk{font:150px/1 PM;white-space:nowrap}
+.stamp{font:800 58px/1 P;letter-spacing:2px;padding:10px 26px;border:9px solid currentColor;border-radius:14px;mix-blend-mode:multiply;white-space:nowrap}
+.hl{position:absolute;background:rgba(255,224,0,.65);border-radius:6px;transform-origin:0 50%}
+#momo img{position:absolute;left:0;bottom:0;height:600px}
+.small{font:700 30px CV;color:#6b5b4b}
+</style></head><body>
+<div id="cam"><div id="page">
+ <div class="hole" style="top:170px"></div><div class="hole" style="top:518px"></div><div class="hole" style="top:866px"></div>
+ <svg id="grain" width="1920" height="1080"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 .45  0 0 0 0 .35  0 0 0 0 .25  0 0 0 .9 0"/></filter><rect width="1920" height="1080" filter="url(#g)"/></svg>
+
+ <!-- ===== S0 HOOK ===== -->
+ <div class="sec" id="s0">
+  <div class="a mk" id="h_title" style="left:250px;top:70px;font-size:120px;color:#1d1d1d">FD pe atke ho?</div>
+  <svg class="a" id="h_ul" style="left:250px;top:200px" width="900" height="40"><path d="M5 25 C 200 8, 420 34, 620 14 S 860 22, 890 12" stroke="#e23b3b" stroke-width="9" fill="none" stroke-linecap="round"/></svg>
+  <div class="a cut" id="pig" style="left:240px;top:330px;width:560px;height:430px">
+   <svg width="560" height="430" viewBox="0 0 560 430">
+    <ellipse cx="280" cy="230" rx="215" ry="150" fill="#f4a3b5"/><ellipse cx="250" cy="190" rx="150" ry="70" fill="#f8bccb"/>
+    <path d="M150 105 L175 40 L215 98Z" fill="#ee8fa5"/><path d="M330 98 L372 40 L392 108Z" fill="#ee8fa5"/>
+    <ellipse cx="478" cy="235" rx="52" ry="44" fill="#ee8fa5"/><ellipse cx="465" cy="235" rx="8" ry="12" fill="#a8495d"/><ellipse cx="492" cy="235" rx="8" ry="12" fill="#a8495d"/>
+    <circle cx="395" cy="180" r="13" fill="#222"/><rect x="230" y="92" width="90" height="14" rx="7" fill="#a8495d"/>
+    <rect x="140" y="345" width="50" height="62" rx="12" fill="#ee8fa5"/><rect x="340" y="345" width="50" height="62" rx="12" fill="#ee8fa5"/>
+    <path d="M70 200 q-40 -20 -30 -55" stroke="#ee8fa5" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <g stroke="#7d7d86" stroke-width="16" stroke-dasharray="26 10" fill="none"><path d="M60 120 L500 330"/><path d="M60 330 L500 120"/></g>
+    <g id="lock" transform="translate(280 225)"><path d="M-38 -10 v-34 a38 38 0 0 1 76 0 v34" stroke="#8a8a92" stroke-width="15" fill="none"/>
+     <rect x="-58" y="-12" width="116" height="92" rx="14" fill="#e9b23c" stroke="#9b6d12" stroke-width="5"/><circle cx="0" cy="25" r="11" fill="#5b3f08"/><rect x="-5" y="28" width="10" height="26" fill="#5b3f08"/></g>
+   </svg></div>
+  <div class="a" id="pigtag" style="left:180px;top:300px;width:170px;height:110px">
+   <svg width="170" height="110"><path d="M10 15 h120 l30 40 l-30 40 h-120z" fill="#fff8d8" stroke="#b49a5a" stroke-width="3"/><circle cx="135" cy="55" r="8" fill="#f7f2e5" stroke="#b49a5a" stroke-width="3"/>
+   <text x="68" y="76" text-anchor="middle" font-family="PM" font-size="56" fill="#c2273a">FD</text></svg></div>
+  <div class="a note" id="q1" style="left:860px;top:330px;width:200px;height:200px;background:#ffe36e"><div style="font:150px/200px PM;text-align:center;color:#333">1</div></div>
+  <div class="a note" id="q2" style="left:1060px;top:420px;width:200px;height:200px;background:#ffa9c6"><div style="font:150px/200px PM;text-align:center;color:#333">2</div></div>
+  <div class="a note" id="q3" style="left:1260px;top:320px;width:200px;height:200px;background:#9fe6a8"><div style="font:150px/200px PM;text-align:center;color:#333">3</div></div>
+  <div class="hl" id="h_hl" style="left:850px;top:745px;width:690px;height:84px"></div>
+  <div class="a hand" id="h_cap" style="left:870px;top:742px;font-size:80px;color:#1d1d1d">FD se ZYADA return?</div>
+ </div>
+
+ <!-- ===== S1 LIQUID ===== -->
+ <div class="sec" id="s1">
+  <div class="a note" id="n1" style="left:230px;top:100px;background:#ffe36e"><div class="n">1</div><div class="t">LIQUID</div><div class="s">FUND</div></div>
+  <div class="a tape" id="t1" style="left:390px;top:78px;transform:rotate(-6deg)"></div>
+  <div class="a mk" id="p1" style="left:250px;top:530px;color:#1f3d8a">6–7%</div>
+  <svg class="a" id="c1" style="left:215px;top:505px" width="560" height="230"><ellipse cx="280" cy="115" rx="262" ry="98" stroke="#e23b3b" stroke-width="8" fill="none" stroke-linecap="round" transform="rotate(-3 280 115)"/></svg>
+  <div class="a hand" id="aprx" style="left:260px;top:745px;font-size:70px">≈ FD ke aas-paas</div>
+  <div class="a cut" id="glass" style="left:780px;top:110px;width:420px;height:460px">
+   <svg width="420" height="460" viewBox="0 0 420 460"><defs><clipPath id="gc"><path d="M60 40 L360 40 L325 430 L95 430Z"/></clipPath></defs>
+    <path d="M60 40 L360 40 L325 430 L95 430Z" fill="rgba(210,236,250,.55)"/>
+    <g clip-path="url(#gc)"><rect x="0" y="150" width="420" height="320" fill="rgba(110,185,232,.55)"/><path d="M40 150 q45 -14 90 0 t90 0 t90 0 t90 0" fill="rgba(160,215,245,.8)" id="wave"/>
+     <g id="coins1"></g><g id="bub"></g></g>
+    <path d="M60 40 L360 40 L325 430 L95 430Z" fill="none" stroke="#3f6f98" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M90 70 L118 400" stroke="#fff" stroke-width="10" opacity=".7" stroke-linecap="round"/></svg></div>
+  <div class="a hand" id="fark" style="left:820px;top:585px;font-size:76px;color:#c2273a">Fark?</div>
+  <div class="a cut" id="cmpA" style="left:770px;top:690px;width:330px;height:300px;background:#fff;border-radius:6px">
+   <svg width="330" height="210" viewBox="0 0 560 430" style="position:absolute;left:0;top:10px"><use href="#pigmini"/></svg>
+   <div class="hand" style="position:absolute;left:0;right:0;top:225px;text-align:center;font-size:52px;color:#333">FD todo</div></div>
+  <div class="a stamp" id="stA" style="left:800px;top:840px;color:#d1232f;font-size:40px;padding:6px 16px;border-width:6px">PENALTY ₹</div>
+  <div class="a cut" id="cmpB" style="left:1140px;top:690px;width:330px;height:300px;background:#fff;border-radius:6px">
+   <svg width="330" height="210" viewBox="0 0 420 460" style="position:absolute;left:0;top:10px"><path d="M60 40 L360 40 L325 430 L95 430Z" fill="rgba(110,185,232,.55)" stroke="#3f6f98" stroke-width="10"/>
+    <path d="M210 260 L210 60 M150 120 L210 50 L270 120" stroke="#1d8a3a" stroke-width="26" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   <div class="hand" style="position:absolute;left:0;right:0;top:225px;text-align:center;font-size:52px;color:#333">kabhi bhi nikalo</div></div>
+  <div class="a stamp" id="stB" style="left:1155px;top:840px;color:#1d8a3a;font-size:36px;padding:6px 14px;border-width:6px">NO PENALTY ✓</div>
+ </div>
+
+ <!-- ===== S2 BONDS ===== -->
+ <div class="sec" id="s2">
+  <div class="a note" id="n2" style="left:230px;top:100px;background:#ffa9c6"><div class="n">2</div><div class="t">BONDS</div><div class="s">Triple A = safest</div></div>
+  <div class="a tape" id="t2" style="left:380px;top:80px;transform:rotate(5deg)"></div>
+  <div class="a mk" id="p2" style="left:250px;top:530px;color:#1f3d8a">7–8%</div>
+  <svg class="a" id="c2" style="left:215px;top:505px" width="560" height="230"><ellipse cx="280" cy="115" rx="262" ry="98" stroke="#e23b3b" stroke-width="8" fill="none" stroke-linecap="round" transform="rotate(2 280 115)"/></svg>
+  <div class="a cut" id="cert1" style="left:760px;top:120px;width:470px;height:340px">
+   <svg width="470" height="340"><rect x="4" y="4" width="462" height="332" fill="#fffaf0" stroke="#b08a3e" stroke-width="6"/><rect x="20" y="20" width="430" height="300" fill="none" stroke="#b08a3e" stroke-width="2"/>
+    <text x="235" y="78" text-anchor="middle" font-family="CP" font-weight="700" font-size="44" fill="#4a3a1c">BOND</text>
+    <g fill="#d8cdb4"><rect x="60" y="110" width="350" height="12"/><rect x="60" y="140" width="300" height="12"/><rect x="60" y="170" width="330" height="12"/><rect x="60" y="200" width="200" height="12"/></g>
+    <path d="M370 250 l-18 70 l22 -14 l18 20 l6 -76z" fill="#c2273a"/><circle cx="385" cy="250" r="36" fill="#e2a72e" stroke="#9b6d12" stroke-width="4"/></svg></div>
+  <div class="a stamp" id="aaa" style="left:880px;top:250px;color:#c2273a;font-size:84px;padding:6px 26px">AAA</div>
+  <div class="a cut" id="safe" style="left:1260px;top:150px;width:160px;height:190px">
+   <svg width="160" height="190"><path d="M80 8 L150 34 V92 C150 140 118 170 80 184 C42 170 10 140 10 92 V34Z" fill="#2fa65a" stroke="#1b6e3a" stroke-width="6"/><path d="M45 96 L72 124 L120 70" stroke="#fff" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="a hand" id="safet" style="left:1250px;top:350px;font-size:64px;color:#1b6e3a">SAFE</div>
+  <div class="a cut" id="cert2" style="left:820px;top:520px;width:420px;height:300px">
+   <svg width="420" height="300"><path d="M4 8 L60 4 L120 12 L190 3 L260 10 L330 4 L416 9 L410 80 L416 160 L409 230 L415 296 L330 290 L240 297 L150 290 L70 296 L5 291 L10 200 L3 120Z" fill="#f1e6cf" stroke="#9a8460" stroke-width="5"/>
+    <text x="210" y="70" text-anchor="middle" font-family="CP" font-weight="700" font-size="40" fill="#5a4a2c">BOND</text>
+    <g fill="#d0c3a6"><rect x="50" y="100" width="320" height="11"/><rect x="50" y="128" width="270" height="11"/><rect x="50" y="156" width="300" height="11"/></g></svg></div>
+  <div class="a stamp" id="bb" style="left:900px;top:690px;color:#d9781e;font-size:60px">BB</div>
+  <div class="a mk" id="p2b" style="left:250px;top:770px;font-size:110px;color:#c2273a">9–11%</div>
+  <div class="a cut" id="meter" style="left:1100px;top:790px;width:360px;height:220px">
+   <svg width="360" height="220"><path d="M30 190 A150 150 0 0 1 110 58 L150 120 A75 75 0 0 0 105 190Z" fill="#3cb46a"/><path d="M110 58 A150 150 0 0 1 250 58 L210 120 A75 75 0 0 0 150 120Z" fill="#f2c230"/><path d="M250 58 A150 150 0 0 1 330 190 L255 190 A75 75 0 0 0 210 120Z" fill="#e2453b"/>
+    <g id="needle" transform="translate(180 190)"><path d="M-8 0 L0 -140 L8 0Z" fill="#222"/><circle r="16" fill="#222"/></g>
+    <text x="180" y="215" text-anchor="middle" font-family="PM" font-size="30" fill="#222">RISK</text></svg></div>
+ </div>
+
+ <!-- ===== S3 REITs ===== -->
+ <div class="sec" id="s3">
+  <div class="a note" id="n3" style="left:230px;top:100px;background:#9fe6a8"><div class="n">3</div><div class="t">REITs</div><div class="s">office ka kiraya</div></div>
+  <div class="a tape" id="t3" style="left:395px;top:76px;transform:rotate(-4deg)"></div>
+  <div class="a mk" id="p3" style="left:250px;top:530px;color:#1f3d8a;font-size:130px">6–7%</div>
+  <div class="a hand" id="p3s" style="left:300px;top:680px;font-size:64px">payout</div>
+  <div class="a cut" id="bld" style="left:760px;top:120px;width:300px;height:640px">
+   <svg width="300" height="640" viewBox="0 0 300 640"><g id="floor" ><rect x="40" y="0" width="220" height="110" fill="#6f8fb6"/></g>
+    <rect x="20" y="100" width="260" height="540" fill="#7f9fc6"/><rect x="20" y="100" width="260" height="18" fill="#5b7aa1"/><g id="win"></g>
+    <rect x="115" y="560" width="70" height="80" fill="#3d5677"/></svg></div>
+  <svg class="a" id="arrow" style="left:960px;top:330px" width="460" height="460"><path id="arP" d="M60 60 C 260 20, 380 160, 360 360" stroke="#555" stroke-width="6" stroke-dasharray="16 14" fill="none"/><path d="M335 330 L362 375 L392 335" stroke="#555" stroke-width="6" fill="none"/></svg>
+  <div id="coins3"></div>
+  <div class="a cut" id="wallet" style="left:1190px;top:690px;width:300px;height:210px">
+   <svg width="300" height="210"><rect x="8" y="30" width="284" height="172" rx="22" fill="#8a5a33"/><path d="M8 70 h284" stroke="#6d4424" stroke-width="6"/><rect x="190" y="95" width="102" height="60" rx="14" fill="#a8703f"/><circle cx="222" cy="125" r="11" fill="#e2b04a"/>
+    <text x="100" y="150" text-anchor="middle" font-family="PM" font-size="56" fill="#ffe9c4">AAP</text></svg></div>
+  <div class="a hand" id="growth" style="left:1080px;top:150px;font-size:66px;color:#1d8a3a">growth ↗</div>
+  <div class="a cut" id="tag" style="left:330px;top:770px;width:330px;height:190px">
+   <svg width="330" height="190"><path d="M60 10 H320 V180 H60 L8 95Z" fill="#fff4b8" stroke="#b49a5a" stroke-width="4"/><circle cx="52" cy="95" r="12" fill="#f7f2e5" stroke="#b49a5a" stroke-width="4"/>
+    <text x="195" y="78" text-anchor="middle" font-family="CV" font-weight="700" font-size="50" fill="#333">1 UNIT</text><text x="195" y="146" text-anchor="middle" font-family="PM" font-size="38" fill="#c2273a">₹ kuch sau</text></svg></div>
+  <div class="hl" id="r_hl" style="left:520px;top:880px;width:880px;height:90px"></div>
+  <div class="a hand" id="r_cap" style="left:540px;top:876px;font-size:84px;color:#1d1d1d">Rental property — SASTE mein!</div>
+ </div>
+
+ <!-- ===== OUTRO ===== -->
+ <div class="sec" id="s4">
+  <div class="a note" id="o1" style="left:200px;top:250px;width:400px;height:400px;background:#ffe36e"><div class="n">1</div><div class="t" style="font-size:70px">LIQUID</div><div class="s" style="font:120px PM;top:220px;color:#1f3d8a">6–7%</div></div>
+  <div class="a note" id="o2" style="left:640px;top:230px;width:400px;height:400px;background:#ffa9c6"><div class="n">2</div><div class="t" style="font-size:70px">BONDS</div><div class="s" style="font:110px PM;top:220px;color:#1f3d8a">7–11%</div></div>
+  <div class="a note" id="o3" style="left:1080px;top:260px;width:400px;height:400px;background:#9fe6a8"><div class="n">3</div><div class="t" style="font-size:70px">REITs</div><div class="s" style="font:120px PM;top:220px;color:#1f3d8a;font-size:100px">6–7%+</div></div>
+  <div class="a small" id="fine" style="left:220px;top:760px;font-size:44px">Sirf jaankari ke liye, financial advice nahi. Returns guaranteed nahi hain.</div>
+ </div>
+
+ <div class="a" id="momo" style="left:1540px;top:430px;width:340px;height:600px"></div>
+ <div class="a small" id="foot" style="left:1430px;top:1030px;font-size:28px">Sirf jaankari ke liye</div>
+</div></div>
+<svg width="0" height="0" style="position:absolute"><defs><g id="pigmini">
+ <ellipse cx="280" cy="230" rx="215" ry="150" fill="#f4a3b5"/><ellipse cx="478" cy="235" rx="52" ry="44" fill="#ee8fa5"/><circle cx="395" cy="180" r="13" fill="#222"/>
+ <rect x="140" y="345" width="50" height="62" rx="12" fill="#ee8fa5"/><rect x="340" y="345" width="50" height="62" rx="12" fill="#ee8fa5"/>
+ <path d="M200 120 L250 230 L215 250 L275 360" stroke="#5a2a2a" stroke-width="12" fill="none"/>
+ <g transform="translate(300 230) rotate(25)"><path d="M-38 -10 v-34 a38 38 0 0 1 76 0" stroke="#8a8a92" stroke-width="15" fill="none"/><rect x="-58" y="-12" width="116" height="92" rx="14" fill="#e9b23c" stroke="#9b6d12" stroke-width="5"/></g></g></defs></svg>
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), P=(t,t0,d)=>cl((t-t0)/d);
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c=2.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const hash=(a,b)=>{let h=Math.sin(a*127.1+b*311.7)*43758.5453;return h-Math.floor(h)};
+let IDS=[];function collect(){IDS=[...document.querySelectorAll('.a')].map((e,i)=>{e.dataset.k=i;e.dataset.base=e.style.transform||'';return e})}
+// state per frame
+let S={};
+function st(id,o){S[id]=Object.assign(S[id]||{},o)}
+function slap(id,t,t0,rot=0,from=1.45){const x=P(t,t0,.22);st(id,{o:cl((t-t0)/.05),s:x<1?from+(1-from)*back(x):1,r:rot*(1-eo(x))})}
+function pop(id,t,t0,d=.3){const x=P(t,t0,d);st(id,{o:cl((t-t0)/.06),s:.2+.8*back(x)})}
+function write(id,t,t0,d){const x=P(t,t0,d);st(id,{o:x>0?1:0,clip:x})}
+function stamp(id,t,t0,rot=-10){const x=P(t,t0,.13);st(id,{o:x>0?1:0,s:x<1?2.4-1.4*eo(x):1,r:rot})}
+function fadeIn(id,t,t0,d=.25){st(id,{o:P(t,t0,d)})}
+const SEC=[[0,4.72],[4.72,14.38],[14.38,25.8],[25.8,38.45],[38.45,99]];
+const MOMO={thinking:'art/momo_thinking.png',shocked:'art/momo_shocked.png',pointing:'art/momo_pointing.png',happy:'art/momo_happy.png'};
+const mimg={};for(const k in MOMO){const i=document.createElement('img');i.src=MOMO[k];i.style.opacity=0;$('momo').appendChild(i);mimg[k]=i}
+// glass coins + bubbles
+(function(){let g='';for(let i=0;i<7;i++){const x=120+(i%4)*55+(i>3?28:0),y=405-(i>3?40:0);g+=`<g id="gc${i}" transform="translate(${x} ${y})"><circle r="27" fill="#f1c24a" stroke="#a87b10" stroke-width="5"/><text y="12" text-anchor="middle" font-family="P" font-weight="800" font-size="30" fill="#a87b10">₹</text></g>`}$('coins1').innerHTML=g;
+ let b='';for(let i=0;i<9;i++)b+=`<circle id="bb${i}" r="${5+i%3*3}" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/>`;$('bub').innerHTML=b;
+ let w='';for(let r=0;r<7;r++)for(let c=0;c<4;c++)w+=`<rect id="w${r}_${c}" x="${45+c*58}" y="${140+r*58}" width="38" height="40" fill="#405a7c"/>`;$('win').innerHTML=w;
+ let k='';for(let i=0;i<5;i++)k+=`<div class="a" id="rc${i}" style="left:0;top:0;width:64px;height:64px"><svg width="64" height="64"><circle cx="32" cy="32" r="28" fill="#f1c24a" stroke="#a87b10" stroke-width="5"/><text x="32" y="44" text-anchor="middle" font-family="P" font-weight="800" font-size="32" fill="#a87b10">₹</text></svg></div>`;$('coins3').innerHTML=k;
+})();collect();
+const arP=$('arP'),arL=arP.getTotalLength();
+function renderAt(t){
+ S={};
+ // ---------- S0 hook
+ write('h_title',t,0.05,.75); write('h_ul',t,.85,.35);
+ slap('pig',t,.15,-6); slap('pigtag',t,.45,10);
+ const shake=t>.9&&t<1.5?Math.sin(t*70)*6*(1.5-t)/.6:0; st('pig',{r:(S.pig.r||0)+shake*.6,x:shake});
+ slap('q1',t,1.75,-14);slap('q2',t,2.05,9);slap('q3',t,2.35,-7);
+ st('h_hl',{});write('h_cap',t,2.75,.6);
+ // ---------- S1 liquid
+ slap('n1',t,4.85,-10); fadeIn('t1',t,5.05,.1); slap('glass',t,5.6,7);
+ write('p1',t,6.7,.55); write('c1',t,7.35,.45); write('aprx',t,8.2,.6);
+ pop('fark',t,9.5,.3); slap('cmpA',t,10.45,-6); stamp('stA',t,11.35,-12); slap('cmpB',t,12.55,5); stamp('stB',t,13.25,-8);
+ // ---------- S2 bonds
+ slap('n2',t,14.5,8); fadeIn('t2',t,14.7,.1); slap('cert1',t,15.3,-5); stamp('aaa',t,16.25,-14);
+ write('p2',t,17.9,.55); write('c2',t,18.55,.4); pop('safe',t,19.3,.35); write('safet',t,19.55,.4);
+ slap('cert2',t,21.6,6); stamp('bb',t,22.2,9); write('p2b',t,22.55,.6); slap('meter',t,23.8,-4);
+ // ---------- S3 reits
+ slap('n3',t,25.95,-7); fadeIn('t3',t,26.15,.1); slap('bld',t,27.3,4); write('arrow',t,28.0,.6); slap('wallet',t,28.7,-5);
+ write('p3',t,30.1,.55); write('p3s',t,30.75,.35); pop('growth',t,32.6,.35); slap('tag',t,34.05,-8); if(t>35.7){const q=P(t,35.7,.25);st('tag',{o:1-q,s:1-.4*eo(q)})}
+ write('r_cap',t,35.9,.7);
+ // ---------- outro
+ slap('o1',t,38.55,-8);slap('o2',t,38.75,5);slap('o3',t,38.95,-4); fadeIn('fine',t,39.2,.3);
+ // ---------- apply sections (page-swipe)
+ for(let i=0;i<SEC.length;i++){const[a,b]=SEC[i],e=$('s'+i);let x=0,vis=t>=a-.4&&t<b+.4;
+  if(i>0){const p=P(t,a-.05,.42);x+=2100*(1-eio(p))} if(t>b-.05&&i<SEC.length-1){x-=2100*eio(P(t,b-.05,.4))}
+  e.style.display=vis?'block':'none'; e.style.transform=`translateX(${x}px) rotate(${x/2100*-3}deg)`}
+ // highlighter swipes
+ $('h_hl').style.transform=`scaleX(${eo(P(t,2.7,.45))})`; $('r_hl').style.transform=`scaleX(${eo(P(t,37.35,.45))})`;
+ // glass coins bob + bubbles
+ for(let i=0;i<7;i++){const g=$('gc'+i),x=120+(i%4)*55+(i>3?28:0),y=405-(i>3?40:0)+Math.sin(t*3+i)*4;g.setAttribute('transform',`translate(${x} ${y}) rotate(${Math.sin(t*2+i)*12})`)}
+ for(let i=0;i<9;i++){const ph=(t*.55+i/9)%1;const b=$('bb'+i);b.setAttribute('cx',110+((i*53)%200)+Math.sin(t*4+i)*8);b.setAttribute('cy',430-ph*270);b.setAttribute('opacity',ph<.92?.8:0)}
+ $('wave').setAttribute('transform',`translate(${-((t*60)%90)} 0)`);
+ // building windows light up + floor grows
+ for(let r=0;r<7;r++)for(let c=0;c<4;c++){const on=t>27.6+((6-r)*4+c)*.045+hash(r,c)*.2&&hash(r*4+c,Math.floor(t*1.5))>.12;$(`w${r}_${c}`).setAttribute('fill',on?'#ffd96a':'#405a7c')}
+ const fl=eo(P(t,32.3,.5)); $('floor').setAttribute('transform',`translate(0 ${100*(1-fl)})`);
+ // rent coins along arrow
+ for(let i=0;i<5;i++){const t0=28.7+i*.22,per=1.6;let ph=((t-t0)%per)/per;const on=t>=t0&&t<38.4;const p=arP.getPointAtLength(arL*eio(ph));
+  st('rc'+i,{o:on&&ph<.95?1:0,X:960+p.x-32,Y:330+p.y-32,r:ph*360})}
+ // needle
+ const nd=-70+125*eio(P(t,24.2,.9))+Math.sin(t*9)*(t>24.2?3:0); $('needle').setAttribute('transform',`translate(180 190) rotate(${nd})`);
+ // momo poses
+ let pose=t<1.7?'thinking':t<4.8?'shocked':t<13.2?'pointing':t<14.5?'happy':t<23.8?'pointing':t<25.9?'thinking':t<35.8?'pointing':'happy';
+ const sw=[1.7,4.8,13.2,14.5,23.8,25.9,35.8].reduce((m,s)=>t>=s&&t-s<m?t-s:m,9);
+ for(const k in mimg)mimg[k].style.opacity=k===pose?1:0;
+ const mi=P(t,.25,.35),bob=Math.sin(t*2.6)*8,sq=sw<.25?1+.08*Math.sin(sw/.25*Math.PI):1;
+ st('momo',{o:mi,X:1540+(1-eo(mi))*420,Y:430+bob,s:1,sx:1/sq,sy:sq});
+ st('foot',{o:t>4.9&&t<38.4?.75:0});
+ // camera
+ const st2=[[1.75,.6],[11.35,1],[13.25,1],[16.25,1],[22.2,.7]];let kick=0;for(const[s,a]of st2){if(t>s&&t<s+.25)kick+=a*Math.sin((t-s)/.25*Math.PI)*(1-(t-s)/.25)}
+ const z=1.0+.025*((t%9.6)/9.6)+.012*kick;
+ $('cam').style.transform=`scale(${z}) translate(${Math.sin(t*.4)*6+kick*Math.sin(t*90)*5}px,${Math.cos(t*.33)*4}px)`;
+ // apply element states + stop-motion boil
+ const step=Math.floor(t*8);
+ for(const e of IDS){const id=e.id;if(!id)continue;const s=S[id];
+  if(!s){if(id!=='momo'&&id!=='foot'&&!id.startsWith('rc'))e.style.opacity=(id.startsWith('t')&&id.length===2)?0:(e.closest('#s0,#s1,#s2,#s3,#s4')?0:1);continue}
+  const k=+e.dataset.k,j=id==='momo'?0:(hash(k,step)-.5)*1.2,jx=(hash(k+9,step)-.5)*2.4;
+  e.style.opacity=s.o??1;
+  const base=e.dataset.base;
+  const tr=(s.X!==undefined?`translate(${s.X-parseFloat(e.style.left||0)}px,${s.Y-parseFloat(e.style.top||0)}px) `:'')+`translateX(${(s.x||0)+jx}px) rotate(${(s.r||0)+j}deg) scale(${s.s??1}) `+(s.sx?`scale(${s.sx},${s.sy})`:'');
+  e.style.transform=base+' '+tr;
+  if(s.clip!==undefined)e.style.clipPath=`inset(-20px ${100-s.clip*100}% -20px -20px)`;}
+}
+window.renderAt=renderAt;
+</script></body></html>
