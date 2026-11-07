@@ -3,7 +3,7 @@ import json, os, subprocess
 import numpy as np, soundfile as sf, pyloudnorm as pyln
 D = os.path.dirname(os.path.abspath(__file__))
 SR = 48000
-END = 49.2
+END = 43.8
 vo, sr = sf.read(f'{D}/vo/vo48.wav'); assert sr == SR
 if vo.ndim > 1: vo = vo.mean(1)
 fx, sr = sf.read(f'{D}/audio/sfx_only.wav'); assert sr == SR

@@ -3,7 +3,7 @@ import asyncio, json, os, subprocess
 from playwright.async_api import async_playwright
 D = os.path.dirname(os.path.abspath(__file__))
 FPS = 30
-END = 49.2
+END = 43.8
 N = int(END * FPS)
 
 async def main():

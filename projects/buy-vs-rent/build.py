@@ -11,7 +11,7 @@ for mp4 in sorted(glob.glob(f'{D}/clips/c_*.mp4')):
     if not os.path.exists(f'{out}/0001.jpg') or os.path.getmtime(mp4) > os.path.getmtime(f'{out}/0001.jpg'):
         os.makedirs(out, exist_ok=True)
         for f in glob.glob(f'{out}/*.jpg'): os.remove(f)
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', mp4, '-vf', 'fps=30,scale=1600:900:flags=lanczos', '-q:v', '2', f'{out}/%04d.jpg'], check=True)
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', mp4, '-vf', 'fps=30,scale=1350:900:flags=lanczos', '-q:v', '2', f'{out}/%04d.jpg'], check=True)
     clips[name] = {'dir': 'file://' + out, 'n': len(glob.glob(f'{out}/*.jpg'))}
 pos = json.load(open(f'{D}/pos.json')) if os.path.exists(f'{D}/pos.json') else {}
 html = open(f'{D}/reel.html').read()

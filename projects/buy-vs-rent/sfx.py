@@ -6,7 +6,7 @@ from scipy.signal import butter, sosfilt, resample_poly
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, '../../engine'))
 from earshot_bank import bank
-SR = 48000; END = 49.2
+SR = 48000; END = 43.8
 TL = json.load(open(f'{D}/vo/timeline.json'))
 LN = {int(k): v for k, v in TL['lines'].items()}
 L = {k: LN[k][0] for k in LN}

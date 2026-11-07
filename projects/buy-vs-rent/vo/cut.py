@@ -9,14 +9,14 @@ S = [(11.10, 16.89, 0.16),  # L1 Ghar khareedna... chaunk jaoge (take 4, the onl
      (47.33, 50.15, 0.10),  # L3 Phir aati hai har mahine 53,000 ki EMI
      (52.41, 53.30, 0.10),  #    20 saal ke liye
      (61.80, 64.46, 0.16),  #    matlab 64 lakh interest seedha bank ko (last take)
-     (68.19, 72.24, 0.10),  # L4 Momo wahi flat 20,000 rent pe leta hai
+     (68.19, 70.80, 0.10),  # L4 Momo wahi flat 20,000 rent pe leta hai (cut before the first 'aur bacha')
      (75.25, 78.12, 0.16),  #    aur bacha hua saara paisa... invest karta hai (retake)
      (80.27, 83.39, 0.10),  # L5 20 saal baad Bunty ka flat 3 crore
      (83.91, 87.29, 0.16),  #    Momo ka investment 12% pe 5 crore
      (89.94, 94.49, 0.10),  # L6 Momo Bunty se aage tabhi nikla...
      (95.14, 98.91, 0.10),  #    market upar ho ya neeche...
      (104.51, 107.73, 0.16),#    isliye SIP mein discipline... (take 2)
-     (108.25, 117.78, 0.0)] # L7 Matlab rent hamesha sahi nahi...
+     (113.10, 117.80, 0.0)] # L7 Matlab rent hamesha sahi nahi... (take 2 only)
 parts, fl = [], []
 for i, (a, b, g) in enumerate(S):
     fl.append(f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,afade=t=out:st={b-a-0.04}:d=0.04,apad=pad_dur={g}[s{i}]")
