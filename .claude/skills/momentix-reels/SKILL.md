@@ -105,3 +105,9 @@ Do NOT use the tool itself: AI script + stock clips + AI voice is exactly the "m
 1. **Stock B-roll, sparingly:** for 16:9 long videos, up to ~10% real footage between animated chapters (bank branch, city, phone in hand). Source: Pexels/Pixabay (free licence, no attribution needed; never logos or recognisable brands in focus). The container can't reach them, so fetch via Chrome (anchor download) → Mac Downloads → device_stage_files. Pexels API needs a free key from Suraj (store in env, never type it into pages).
 2. **Whisper for takes + subtitles:** transcribe each recorded part per pause-segment (whisper-small, language=hindi) to find retakes; keep the LAST complete take unless a measured one is cleaner; cut repeats before timing captions.
 3. **Shorts from every long video:** plan 3–4 vertical cut-downs at script time (each with its own hook line + 9:16 re-layout inside the safe area x 35–1045, y 240–1460), so one recording feeds the week's Shorts.
+
+### Meta post/carousel composer gotcha (8 Nov 2026)
+- In the Create post (photo/carousel) composer, a JS ClipboardEvent paste shows text in the box but is NOT saved — the post went out with no caption. Reels composer paste still works.
+- Reliable: click the editor, then `computer type` the caption. Typing "₹" scrambles the editor — write "Rs" in typed captions.
+- Fix after publishing: Content → row ⋯ → Facebook post / Instagram post → Manage post → Edit Post (both IG and FB feed posts are editable).
+- Carousel upload: arm the file-input click capture, click "Add photo/video", then file_upload all slides in one call (order is kept).
