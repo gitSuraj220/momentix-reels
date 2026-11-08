@@ -84,3 +84,9 @@ Small print: "Report: Business Insider, Nov 2026. Meta ne deal details confirm n
 4. Reels wala Instagram… ab seedha YouTube ke ghar mein ghus gaya hai.
 5. Par ruko — ye deal sirf chune hue creators ko mili hai. Aur slowly rollout ho rahi hai.
 Small print: "Report: Business Insider, Nov 2026. Meta ne deal details confirm nahi kiye."
+
+## Visual decisions (Suraj, 8 Nov)
+Voice: ElevenLabs Amrut (Eleven v4). Style: dark news + money bags (BREAKING cards, ₹/$ counters). No character.
+Real Instagram/YouTube logos allowed this time (identification). Captions: 2–3 bold words centre.
+1 Higgsfield hook clip (money bag dropping onto a phone). Rich news SFX, record-scratch on "Par ruko"; Suraj adds BGM.
+Cover: "₹4 CRORE?" + both app icons + money bag. Post ASAP on YT + IG + FB.
