@@ -67,3 +67,12 @@ Small print: "Report: Business Insider, Nov 2026. Meta ne deal details confirm n
 5. Par ruko — ye deal sirf chune hue creators ko mili hai. Aur slowly rollout ho rahi hai.
 6. Aap kya karoge — YouTube ya Instagram? Comment karo.
 Small print: "Report: Business Insider, Nov 2026. Meta ne deal details confirm nahi kiye."
+
+## v7 FINAL VOICE (Suraj, 8 Nov) — caveat moved to on-screen text
+1. Instagram pe ab aap bhi paise kama sakte hai, vo bhi lakhon mein.
+2. Yaani ₹4 crore se zyada. Bas shart ek — YouTube wali video, same Instagram pe bhi.
+3. Naya feature hai "Features" — 90 minute tak ki lambi videos.
+4. Reels wala Instagram… ab seedha YouTube ke ghar mein ghus gaya hai.
+5. Aap kya karoge — YouTube ya Instagram? Comment karo.
+On-screen chip (lines 1–2, readable): "Sirf chune hue creators ke liye · Slowly rollout"
+Small print: "Report: Business Insider, Nov 2026. Meta ne deal details confirm nahi kiye."
