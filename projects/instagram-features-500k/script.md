@@ -28,3 +28,13 @@ On-screen small print: "Source: Business Insider via The Next Web, Nov 2026. Dea
 6. Seekh? Ek platform pe mat ruko. Ek video, har jagah.
 7. Aap kya karoge — YouTube ya Instagram? Comment karo.
 Small print: "Report: Business Insider, Nov 2026. Meta ne deal details confirm nahi kiye."
+
+## v3 FINAL (Suraj picked hook B, ~28 s)
+1. Instagram ne YouTube ke creators ko kharidna shuru kar diya hai… 5 lakh dollar mein!
+2. Yaani ₹4 crore se zyada. Bas shart ek — YouTube wali video, same din Instagram pe bhi.
+3. Naya feature hai "Features" — 90 minute tak ki lambi videos.
+4. Reels wala Instagram… ab seedha YouTube ke ghar mein ghus gaya hai.
+5. Par ruko — ye deal sirf chune hue bade creators ko mili hai. Aur abhi ads ka paisa bhi nahi milta.
+6. Toh hum jaise creators ke liye seekh? Ek video, har platform.
+7. Aap kya karoge — YouTube ya Instagram? Comment karo.
+Small print: "Report: Business Insider, Nov 2026. Meta ne deal details confirm nahi kiye."
