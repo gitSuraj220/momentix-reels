@@ -1,0 +1,133 @@
+<!doctype html><html><head><meta charset="utf-8"><script>window.CLIPN=126</script><style>
+@font-face{font-family:P;font-weight:800;src:url(../../engine/fonts/poppins-latin-800-normal.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(../../engine/fonts/poppins-latin-800-normal.woff2)}
+@font-face{font-family:A;src:url(../../engine/fonts/anton-latin-400-normal.woff2)}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#07060c;font-family:P}
+#cam{position:absolute;inset:0;transform-origin:50% 45%}
+.a{position:absolute;will-change:transform,opacity}
+.sc{position:absolute;inset:0}
+#bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 35%,#2a0d3a 0%,#0b0714 55%,#050409 100%)}
+#grid{position:absolute;inset:0;opacity:.18;background:linear-gradient(#ffffff10 2px,transparent 2px) 0 0/90px 90px,linear-gradient(90deg,#ffffff10 2px,transparent 2px) 0 0/90px 90px}
+#clip{position:absolute;inset:0;overflow:hidden}
+#clip img{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;display:none}
+#clipShade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,4,9,.75) 0%,rgba(5,4,9,.1) 30%,rgba(5,4,9,.15) 60%,rgba(5,4,9,.85) 100%)}
+.bar{left:0;right:0;height:86px;top:240px;background:#e0182b;display:flex;align-items:center;overflow:hidden}
+.bar .tag{position:relative;z-index:2;background:#fff;color:#e0182b;font:800 40px P;padding:0 26px;height:86px;line-height:86px;flex:none}
+.bar .tk{font:600 34px P;color:#fff;white-space:nowrap;padding-left:30px}
+.cap{left:40px;right:40px;text-align:center;font:800 104px/1.02 P;color:#fff;text-shadow:0 6px 0 #000,0 0 30px rgba(0,0,0,.8);letter-spacing:-1px}
+.cap .y{color:#ffd400}.cap .p{color:#ff4fa3}.cap .r{color:#ff3b3b}
+.card{border-radius:44px;box-shadow:0 30px 70px rgba(0,0,0,.6)}
+.big{font:400 230px/1 A;color:#ffd400;text-align:center;left:0;right:0;text-shadow:0 0 40px rgba(255,212,0,.45),0 8px 0 #000}
+.chip{font:800 46px P;color:#111;background:#ffd400;padding:12px 30px;border-radius:999px;white-space:nowrap}
+.stamp{font:800 92px P;color:#ff3b3b;border:12px solid #ff3b3b;border-radius:24px;padding:4px 34px;white-space:nowrap;background:rgba(0,0,0,.35)}
+.phone{width:380px;height:760px;border-radius:56px;background:#111;border:10px solid #2b2b33;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.small{left:60px;right:60px;text-align:center;font:600 28px P;color:#bdb6cc}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <radialGradient id="igg" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset=".05" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285AEB"/></radialGradient>
+ <symbol id="ig" viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="url(#igg)"/><rect x="22" y="22" width="56" height="56" rx="17" fill="none" stroke="#fff" stroke-width="7"/><circle cx="50" cy="50" r="13.5" fill="none" stroke="#fff" stroke-width="7"/><circle cx="68" cy="32" r="4.5" fill="#fff"/></symbol>
+ <symbol id="yt" viewBox="0 0 140 100"><rect y="6" width="140" height="88" rx="26" fill="#ff0000"/><path d="M56 30 L94 50 L56 70Z" fill="#fff"/></symbol>
+</defs></svg>
+<div id="cam">
+ <div id="bg"></div><div id="grid"></div>
+ <div id="clip"></div><div id="clipShade" class="a"></div>
+
+ <!-- S1 hook -->
+ <div class="sc" id="s1">
+  <div class="a cap" id="c1a" style="top:1040px">INSTAGRAM PE<br><span class="p">AB AAP BHI?</span></div>
+  <div class="a cap" id="c1b" style="top:1060px"><span class="y">LAKHON</span> MEIN!</div>
+ </div>
+ <!-- S2 money + condition -->
+ <div class="sc" id="s2">
+  <div class="a big" id="usd" style="top:430px;font-size:200px">$5,00,000</div>
+  <div class="a big" id="inr" style="top:650px">₹4 CRORE+</div>
+  <div class="a stamp" id="shart" style="left:200px;top:930px">BAS SHART EK</div>
+  <div class="a" id="ytp" style="left:70px;top:690px"><div class="phone" style="width:330px;height:600px"><div id="vidA" class="a" style="left:20px;top:200px;width:270px;height:160px;border-radius:18px;background:linear-gradient(135deg,#ffcf3a,#ff7a00)"></div></div>
+   <svg class="a" style="left:95px;top:40px" width="140" height="100"><use href="#yt"/></svg></div>
+  <div class="a" id="igp" style="left:680px;top:690px"><div class="phone" style="width:330px;height:600px"><div id="vidB" class="a" style="left:20px;top:200px;width:270px;height:160px;border-radius:18px;background:linear-gradient(135deg,#ffcf3a,#ff7a00)"></div></div>
+   <svg class="a" style="left:115px;top:30px" width="100" height="100"><use href="#ig"/></svg></div>
+  <div class="a cap" id="c2" style="top:1335px;font-size:84px"><span class="y">SAME VIDEO</span> ➜ INSTA</div>
+  <svg class="a" id="arrow" style="left:420px;top:880px" width="240" height="120"><path d="M10 60 H200 M160 20 L215 60 L160 100" stroke="#ffd400" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+ </div>
+ <!-- S3 Features 90 min -->
+ <div class="sc" id="s3">
+  <div class="a" id="bigphone" style="left:300px;top:380px"><div class="phone" style="width:480px;height:900px;background:#000">
+   <div class="a" style="left:0;right:0;top:0;height:120px;display:flex;align-items:center;gap:20px;padding-left:30px"><svg width="70" height="70"><use href="#ig"/></svg><span style="font:800 46px P;color:#fff">Features</span></div>
+   <div class="a" id="fvid" style="left:24px;right:24px;top:150px;height:250px;border-radius:24px;background:linear-gradient(135deg,#6a2cff,#ff4fa3)"><svg width="90" height="90" style="position:absolute;left:170px;top:80px"><path d="M20 10 L80 45 L20 80Z" fill="#fff"/></svg></div>
+   <div class="a" style="left:24px;right:24px;top:420px;height:14px;border-radius:7px;background:#333"><div id="prog" style="height:14px;border-radius:7px;background:#ff4fa3;width:0"></div></div>
+   <div class="a" id="timer" style="left:24px;right:24px;top:460px;font:800 120px A;color:#fff;text-align:center">00:00</div>
+   <div class="a" style="left:24px;right:24px;top:620px;height:110px;border-radius:20px;background:#1c1c22"></div>
+   <div class="a" style="left:24px;right:24px;top:750px;height:110px;border-radius:20px;background:#1c1c22"></div></div></div>
+  <div class="a cap" id="c3a" style="top:1310px">NAYA: <span class="p">"FEATURES"</span></div>
+  <div class="a cap" id="c3b" style="top:1310px"><span class="y">90 MINUTE</span> TAK</div>
+ </div>
+ <!-- S4 takkar -->
+ <div class="sc" id="s4">
+  <svg class="a" id="ytL" style="left:600px;top:560px" width="420" height="300"><use href="#yt"/></svg>
+  <svg class="a" id="igL" style="left:60px;top:600px" width="260" height="260"><use href="#ig"/></svg>
+  <div class="a" id="vs" style="left:410px;top:620px;font:400 170px A;color:#fff;text-shadow:0 0 30px #ff4fa3,0 8px 0 #000">VS</div>
+  <div class="a" id="boom" style="left:440px;top:560px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,#fff 0,#ffd400 35%,rgba(255,80,0,.0) 70%)"></div>
+  <div class="a cap" id="c4a" style="top:1080px"><span class="p">REELS</span> WALA INSTA…</div>
+  <div class="a cap" id="c4b" style="top:1080px"><span class="r">YOUTUBE</span> SE TAKKAR</div>
+ </div>
+ <!-- S5 par ruko -->
+ <div class="sc" id="s5">
+  <div class="a stamp" id="ruko" style="left:180px;top:470px;font-size:130px">PAR RUKO!</div>
+  <div class="a card" id="chk" style="left:80px;top:760px;width:920px;height:440px;background:#15121f;border:4px solid #3a2f55">
+   <div id="k1" class="a" style="left:50px;top:70px;font:800 62px P;color:#fff">✓ Sirf <span style="color:#ffd400">chune hue</span><br>&nbsp;&nbsp;&nbsp;creators</div>
+   <div id="k2" class="a" style="left:50px;top:280px;font:800 62px P;color:#fff">✓ <span style="color:#ff4fa3">Slowly</span> rollout</div></div>
+ </div>
+
+ <div class="a bar" id="bar"><div class="tag">BREAKING</div><div class="tk" id="tk">INSTAGRAM "FEATURES" · YOUTUBERS KO $50K–$500K TAK KI DEAL (REPORT) · 90 MIN TAK KI VIDEOS · DEALS NON-EXCLUSIVE · </div></div>
+ <div class="a small" id="fine" style="top:1500px">Report: Business Insider (via The Next Web), Nov 2026 · Meta ne deal details confirm nahi kiye · Sirf jaankari ke liye</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),P=(t,t0,d)=>cl((t-t0)/d);
+const eo=x=>1-Math.pow(1-x,3),back=x=>{const c=2.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const CL=window.CLIPN||0; const cimgs=[];
+for(let i=0;i<CL;i++){const im=document.createElement('img');im.src=`build/frames/f_${String(i+1).padStart(4,'0')}.jpg`;$('clip').appendChild(im);cimgs.push(im)}
+let lastImg=null;
+function set(id,o,tf,extra){const e=$(id);e.style.opacity=o;e.style.transform=tf||'';if(extra)Object.assign(e.style,extra)}
+function pop(id,t,t0,t1=99,base=''){const x=P(t,t0,.28),out=P(t,t1,.2);set(id,cl(x/.3)*(1-out),`${base} scale(${(x<1?.3+.7*back(x):1)*(1-.2*out)})`)}
+function sec(id,a,b){$(id).style.display=(t_>=a&&t_<b)?'block':'none'}
+let t_=0;
+function renderAt(t){t_=t;
+ // clip frames (hook 0-4.02)
+ const fi=Math.min(CL-1,Math.floor(t*30)); if(lastImg)lastImg.style.display='none';
+ if(t<4.1&&CL){lastImg=cimgs[fi];lastImg.style.display='block'}else lastImg=null;
+ $('clip').style.opacity=t<4.02?1:cl(1-(t-4.02)/.25); $('clipShade').style.opacity=$('clip').style.opacity;
+ $('clip').style.transform=`scale(${1.04+t*.012})`;
+ sec('s1',0,4.1);sec('s2',4.0,10.7);sec('s3',10.6,15.1);sec('s4',15.0,19.0);sec('s5',18.95,99);
+ // S1
+ pop('c1a',t,.1,2.6); pop('c1b',t,2.7,3.95);
+ // S2
+ const cu=eo(P(t,4.02,.9)); $('usd').textContent='$'+Math.round(500000*cu).toLocaleString('en-IN'); pop('usd',t,4.02,7.6);
+ pop('inr',t,4.9,7.6);
+ {const x=P(t,6.14,.14);set('shart',x>0&&t<7.7?1:0,`rotate(-6deg) scale(${x<1?2.2-1.2*eo(x):1})`)}
+ pop('ytp',t,7.7); pop('igp',t,8.1); pop('c2',t,8.6);
+ {const x=eo(P(t,8.3,.6));set('arrow',P(t,8.2,.1),`scaleX(${x})`);$('arrow').style.transformOrigin='0 50%';
+  set('vidB',P(t,8.85,.15),`translateX(${-600*(1-eo(P(t,8.85,.45)))}px)`)}
+ // S3
+ pop('bigphone',t,10.63); pop('c3a',t,11.0,12.6); pop('c3b',t,12.69);
+ {const x=P(t,12.69,2.0);const m=Math.floor(90*eo(x));$('timer').textContent=String(m).padStart(2,'0')+':00';$('prog').style.width=(100*eo(x))+'%';
+  $('timer').style.color=x>=1?'#ffd400':'#fff'}
+ // S4
+ {const a=P(t,15.06,.5),b=P(t,16.8,.35);
+  set('igL',cl(a*3),`translateX(${-300*(1-eo(a))+170*eo(b)}px) rotate(${-15*(1-eo(a))+10*Math.sin(t*20)*b*(1-P(t,17.3,.4))}deg)`);
+  set('ytL',cl(a*3),`translateX(${300*(1-eo(a))+(b>0?Math.sin(t*60)*12*(1-P(t,17.1,.5)):0)}px)`);
+  pop('vs',t,15.4,16.75); const bo=P(t,16.8,.45); set('boom',bo>0&&bo<1?1-bo:0,`scale(${.3+2*bo})`);
+  pop('c4a',t,15.1,16.7); pop('c4b',t,16.8)}
+ // S5
+ {const x=P(t,18.99,.14);set('ruko',x>0?1:0,`rotate(-5deg) scale(${x<1?2.4-1.4*eo(x):1})`)}
+ pop('chk',t,19.6); set('k1',P(t,19.82,.3),`translateX(${-40*(1-eo(P(t,19.82,.3)))}px)`); set('k2',P(t,22.45,.3),`translateX(${-40*(1-eo(P(t,22.45,.3)))}px)`);
+ const gray=t>=18.99&&t<19.4?1:0; $('cam').style.filter=gray?'grayscale(1) contrast(1.2)':'none';
+ // bar, fine
+ set('bar',1,''); $('tk').style.transform=`translateX(${-((t*160)%1700)}px)`;
+ set('fine',t>19.6?.95:.55,'');
+ // camera
+ const kicks=[[4.02,1],[6.14,1.4],[16.8,1.6],[18.99,2]];let k=0;for(const[s,a]of kicks)if(t>s&&t<s+.3)k+=a*(1-(t-s)/.3);
+ $('cam').style.transform=`scale(${1+.012*Math.sin(t*.7)+.02*k}) translate(${Math.sin(t*70)*6*k}px,${Math.cos(t*55)*5*k}px)`;
+}
+window.renderAt=renderAt;
+</script></body></html>
