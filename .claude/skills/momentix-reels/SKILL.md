@@ -128,3 +128,11 @@ My Gears-
 Tripod: https://amzn.to/41DuZFR
 Camera: iPhone 14 Pro Max
 ```
+
+## Style reference: 2D metaphor explainer (Suraj, 10 Nov 2026 — use for future money explainers)
+Reference: YouTube zEUKLSrbRZk "Why the Stock Market Just Crashed". Flat 2D hand-drawn cartoon: thick black outlines,
+muted warm palette (cream walls, dusty greens/reds), handwritten-style labels on objects (e.g. "WEDNESDAY'S RALLY" tag on a
+balloon, "DATA CENTER" sign), simple stick-ish characters with tiny faces, one visual METAPHOR per idea (balloon about to
+pop = rally/bubble, stopwatch = time pressure, factory conveyor = new chips every year, VIX "fear gauge" dial, split-screen
+company icons, map + smiling water tower = small town). Slow camera pans/push-ins between metaphor scenes, papers flying,
+red mood lighting for panic. Build it in code (SVG/HTML or Remotion) — 0 credits; adapt Momo/Bunty into the flat style.
