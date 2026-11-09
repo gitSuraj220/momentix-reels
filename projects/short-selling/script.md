@@ -38,3 +38,8 @@ On-screen caveats: "India: aam investor sirf intraday short kar sakta hai · Sir
 - Cover: Momo smirk + "DOST KE iPHONE SE ₹20,000 KAMAYE". Post: decide later.
 - Momo ref media_id 8374fc6d-a9f4-43c0-9538-1c9db8d48c96 (imported from public repo raw URL). Keyframe 1 (handover) job db227197-0e05-49e9-a245-06a99d312438.
 - Keyframes (gpt_image_2_6, refs Momo + KF1): 2 sofa scheme 9143f245-d1f8-43ea-91f9-0f982bfba9ed · 3 one-year-later 452d0fc6-e0db-4586-bd62-64b9d3400085 · 4 return/shock 6dcc5d01-7fc2-45a8-8498-1f8138f6f020 · 5 teacher 7494446e-9562-413d-9c0c-f57d9bc40fd5 · 6 follow ending b479d59b-e8f6-480d-9204-6f05a8630077
+- Kling clips (5 s, 9:16): 1 f2633f6b-be3e-40a4-b0dd-971a2d1a3bff · 2 1144220a-fcf5-4b26-aaa0-23b9a644922e · 3 c655c2b4-9a16-4423-9030-2539da70f0c2 · 4 759a26c3-39bb-43d5-8561-481c9474fbaf · 5 6a19d159-4065-4add-9122-91b70f72c676 · 6 64ac948a-092a-4c56-86b1-ad95a4de224e
+
+## VO text (numbers in words)
+BUNTY (Amrut): Momo, ye mera iPhone rakh le… par ek saal baad wapas chahiye. ‖ Oye, mera iPhone? ‖ Matlab mera hi phone udhaar leke… tune mujhpe bees hazaar rupaye kama liye? ‖ Toh badhai ho beta — tune aaj sabak seekh liya. ‖ Short Selling! Share udhaar lo, bech do. Lautane ke time sasta mile toh profit… mehenga mile toh loss. ‖ Saal nahi — sirf chaalees second. Ab follow kar le!
+MOMO: Ajeeb hai… par theek hai. Saal baad hi lautana hai na? Toh abhi assi hazaar mein bech deta hoon. Naya model aayega, ye sasta hoga — saath hazaar mein wapas le lunga. Seedha bees hazaar profit! ‖ Ye lo. Sach bataun? Jis din diya, usi din bech diya tha… daam gire toh sasta wapas khareed liya. ‖ Haan… shayad. ‖ Kaunsa sabak? ‖ Ye samjhane mein poora saal laga diya?

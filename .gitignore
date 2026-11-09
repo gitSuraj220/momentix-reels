@@ -37,3 +37,5 @@ projects/*/vo/raw_*
 projects/*/vo/vo_take*
 projects/*/out/*.html
 projects/*/out/slide_*.png
+projects/*/build/*.html
+projects/*/build/list.txt

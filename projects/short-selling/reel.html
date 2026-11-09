@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8"><script>window.CLIPN=1479</script><style>
+@font-face{font-family:P;font-weight:800;src:url(../../engine/fonts/poppins-latin-800-normal.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(../../engine/fonts/poppins-latin-500-normal.woff2)}
+@font-face{font-family:A;src:url(../../engine/fonts/anton-latin-400-normal.woff2)}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:P}
+#cam{position:absolute;inset:0;transform-origin:50% 45%}
+#clip{position:absolute;inset:0;overflow:hidden}#clip img{position:absolute;left:0;top:0;width:1080px;height:1920px;display:none}
+.a{position:absolute;will-change:transform,opacity;opacity:0}
+#shade{position:absolute;left:0;right:0;top:0;height:760px;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,0));opacity:1}
+#freeze{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(0,0,0,0) 40%,rgba(0,0,0,.55) 100%);opacity:0}
+.cap{left:40px;right:40px;text-align:center;font:800 96px/1.04 P;color:#fff;text-shadow:0 6px 0 #000,0 0 26px rgba(0,0,0,.8)}
+.cap .y{color:#ffd400}.cap .r{color:#ff4d4d}.cap .g{color:#3ee07a}
+.tag{left:0;right:0;text-align:center}
+.tag span{display:inline-block;font:400 120px/1 A;letter-spacing:2px;padding:14px 40px 10px;border-radius:26px;box-shadow:0 14px 0 rgba(0,0,0,.45)}
+.sold span{background:#ffd400;color:#111}.buy span{background:#ff4d4d;color:#fff}.win span{background:#3ee07a;color:#06210f}
+.lbl{left:0;right:0;text-align:center;font:800 40px P;color:#fff;letter-spacing:4px;text-shadow:0 4px 0 #000}
+#card{position:absolute;inset:0;background:#0d0d14;opacity:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
+#card .t1{font:400 210px/1 A;color:#ffd400}#card .t2{font:400 150px/1 A;color:#fff;letter-spacing:6px}
+#cal{width:300px;height:300px;border-radius:30px;background:#fff;margin-bottom:50px;overflow:hidden;box-shadow:0 20px 0 rgba(0,0,0,.4)}
+#cal .top{height:80px;background:#ff4d4d}#cal .num{font:800 160px/220px P;color:#111;text-align:center}
+.ss{left:0;right:0;text-align:center;font:400 150px/1 A;color:#ffd400;text-shadow:0 10px 0 #000,0 0 40px rgba(255,212,0,.45);letter-spacing:3px}
+.rule{left:70px;right:70px;font:800 66px/1.15 P;color:#fff;text-shadow:0 5px 0 #000;text-align:center}
+.small{left:90px;right:90px;top:1385px;text-align:center;font:500 30px/1.35 P;color:#fff;background:rgba(0,0,0,.55);border-radius:18px;padding:10px 20px}
+</style></head><body><div id="cam">
+<div id="clip"></div><div id="shade"></div><div id="freeze"></div>
+<div class="a cap" id="hook" style="top:300px">YE GALTI<br>MAT KARNA,<br><span class="y">BUNTY!</span></div>
+<div class="a tag sold" id="p80" style="top:300px"><span>BECHA ₹80,000</span></div>
+<div class="a lbl" id="lsold" style="top:450px">ABHI BECH DIYA</div>
+<div class="a tag buy" id="p60" style="top:520px"><span>KHARIDA ₹60,000</span></div>
+<div class="a tag win" id="p20" style="top:740px"><span>+₹20,000</span></div>
+<div class="a cap" id="q20" style="top:300px"><span class="y">₹20,000</span><br>MUJH PE?!</div>
+<div class="a ss" id="ssell" style="top:280px">SHORT SELLING</div>
+<div class="a rule" id="r1" style="top:440px">UDHAAR LO → <span style="color:#ffd400">BECH DO</span></div>
+<div class="a rule" id="r2" style="top:540px">SASTA MILA = <span style="color:#3ee07a">PROFIT</span></div>
+<div class="a rule" id="r3" style="top:630px">MEHENGA MILA = <span style="color:#ff4d4d">LOSS</span></div>
+<div class="a cap" id="s40" style="top:300px">SIRF <span class="y">40 SEC!</span></div>
+<div class="a tag sold" id="fol" style="top:430px"><span>FOLLOW KARO</span></div>
+<div id="card"><div id="cal"><div class="top"></div><div class="num" id="calnum">1</div></div><div class="t1">1 SAAL</div><div class="t2">BAAD…</div></div>
+<div class="a small" id="fine">India: aam investor sirf intraday short kar sakta hai · Sirf jaankari ke liye</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),P=(t,t0,d)=>cl((t-t0)/d),eo=x=>1-Math.pow(1-x,3),back=x=>{const c=2.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const imgs=[];for(let i=0;i<CLIPN;i++){const im=document.createElement('img');im.src=`build/frames/f_${String(i+1).padStart(4,'0')}.jpg`;$('clip').appendChild(im);imgs.push(im)}
+let last=null;
+// pop in at t0, out at t1 (scale-back pop, quick fade out)
+function pop(id,t,t0,t1,from=.3){const e=$(id);if(t<t0||t>t1+.2){e.style.opacity=0;return}
+ const x=P(t,t0,.3),o=1-P(t,t1,.2);e.style.opacity=cl(x*3)*o;e.style.transform=`scale(${x<1?from+(1-from)*back(x):1}) translateY(${-8*Math.sin((t-t0)*3)}px)`}
+const KICKS=[0.1,9.0,13.0,15.2,16.6,28.5,36.1,37.2,39.6,41.3,45.8,47.6];
+function renderAt(t){
+ const fi=Math.min(CLIPN-1,Math.floor(t*30)); if(last)last.style.display='none'; last=imgs[fi]; last.style.display='block';
+ // hook: frozen frame 0-1.0 with vignette
+ $('freeze').style.opacity=t<1?1:cl(1-(t-1)/.3);
+ pop('hook',t,.1,4.3);
+ pop('p80',t,9.0,16.4); pop('lsold',t,9.2,12.8,.6);
+ pop('p60',t,13.0,16.4); pop('p20',t,15.2,16.4,.2);
+ // 1 SAAL BAAD card
+ {const a=P(t,16.55,.18),b=1-P(t,17.25,.2);const c=$('card');c.style.opacity=t>16.5&&t<17.5?Math.min(a,b):0;
+  c.style.transform=`scale(${1.08-.08*eo(a)})`;$('calnum').textContent=t<16.9?'1':'365';}
+ pop('q20',t,28.5,30.0);
+ pop('ssell',t,36.1,44.8); pop('r1',t,37.2,44.8,.6); pop('r2',t,39.6,44.8,.6); pop('r3',t,41.3,44.8,.6);
+ pop('s40',t,45.8,49.4); pop('fol',t,47.6,49.4,.2);
+ $('fine').style.opacity=t>36?.92:0;
+ $('shade').style.opacity=1;
+ let k=0;KICKS.forEach(s=>{if(t>s&&t<s+.25)k+=1-(t-s)/.25});
+ $('cam').style.transform=`scale(${1+.015*k}) translate(${Math.sin(t*70)*5*k}px,0)`;
+}
+window.renderAt=renderAt;
+</script></body></html>
