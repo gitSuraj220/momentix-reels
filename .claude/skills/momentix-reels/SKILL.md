@@ -116,3 +116,15 @@ Do NOT use the tool itself: AI script + stock clips + AI voice is exactly the "m
 - Reels were too quiet vs other reels (we mastered at -16 LUFS; YT/IG play ~-14). NEW DEFAULT: master to **-14 LUFS integrated, true peak <= -1 dBTP** (loudnorm I=-14:TP=-1:LRA=7 after mix).
 - Phone-speaker voice chain: highpass 80 Hz, -2.5 dB @250 Hz, +4 dB @3 kHz (q 1.2), +2 dB high shelf @7 kHz, compressor -24 dB 4:1 attack 4 ms release 70 ms makeup 3 dB.
 - Tell Suraj: in CapCut keep our track at 100%, BGM 15-20%, no "normalize loudness".
+
+### Suraj's default YouTube description block (always keep at the bottom; captured 9 Nov 2026)
+```
+Open a free demat account in Groww.
+💁 ♂️ -: https://app.groww.in/v3cO/jxw0y7md
+
+My Gears-
+🎤 Mic: https://amzn.to/3oKRGsT
+💡 Ring Ligth: https://amzn.to/3AtIc82
+Tripod: https://amzn.to/41DuZFR
+Camera: iPhone 14 Pro Max
+```
