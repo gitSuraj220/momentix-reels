@@ -36,3 +36,4 @@ On-screen caveats: "India: aam investor sirf intraday short kar sakta hai · Sir
 - Text: big ₹ pop-ups (₹80,000 / ₹60,000 / +₹20,000 / SHORT SELLING) + "1 SAAL BAAD". No subtitles.
 - Setting: cosy Indian living room. SFX: rich comic (scratch, ka-ching, whoosh, gulp, sting). No BGM.
 - Cover: Momo smirk + "DOST KE iPHONE SE ₹20,000 KAMAYE". Post: decide later.
+- Momo ref media_id 8374fc6d-a9f4-43c0-9538-1c9db8d48c96 (imported from public repo raw URL). Keyframe 1 (handover) job db227197-0e05-49e9-a245-06a99d312438.
