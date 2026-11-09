@@ -37,3 +37,4 @@ On-screen caveats: "India: aam investor sirf intraday short kar sakta hai · Sir
 - Setting: cosy Indian living room. SFX: rich comic (scratch, ka-ching, whoosh, gulp, sting). No BGM.
 - Cover: Momo smirk + "DOST KE iPHONE SE ₹20,000 KAMAYE". Post: decide later.
 - Momo ref media_id 8374fc6d-a9f4-43c0-9538-1c9db8d48c96 (imported from public repo raw URL). Keyframe 1 (handover) job db227197-0e05-49e9-a245-06a99d312438.
+- Keyframes (gpt_image_2_6, refs Momo + KF1): 2 sofa scheme 9143f245-d1f8-43ea-91f9-0f982bfba9ed · 3 one-year-later 452d0fc6-e0db-4586-bd62-64b9d3400085 · 4 return/shock 6dcc5d01-7fc2-45a8-8498-1f8138f6f020 · 5 teacher 7494446e-9562-413d-9c0c-f57d9bc40fd5 · 6 follow ending b479d59b-e8f6-480d-9204-6f05a8630077
