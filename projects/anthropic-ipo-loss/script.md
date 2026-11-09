@@ -1,0 +1,19 @@
+# "Profit bhi, $66 billion loss bhi?" — Anthropic S-1 (Zomato-style results reel, ~38 s) — script v1 (9 Nov 2026)
+Reference: @finance_90seconds reel DfKJtQck5_z (caption read). Our version: Zomato "har ₹100 pe" style + Q3 twist they missed.
+Facts (S-1 filed 26 Oct 2026; Amendment 1, 2 Nov 2026 — via PPC Land, FourWeekMBA, InvestmentNews):
+- Q1 2026 revenue $4.73B. Q2 2026 (Apr–Jun) revenue $11.56B, operating income $974M (8.4%), net loss $66.3B.
+- Q2 net loss mostly non-cash: $59.6B fair-value charges on convertible notes / SAFEs / derivatives (valuation rose around Series H).
+- Q3 2026 (Jul–Sep) revenue $16.96B, operating LOSS $567M, net loss $23.3B.
+- Compute commitments ~ $895B total (per Nov 2 amendment coverage). Planned Nasdaq listing, symbol "ANT". No price set.
+Note for Suraj: Claude (this assistant) is made by Anthropic — keep it strictly factual, no "buy" angle.
+
+1. Ek company ne pehli baar profit kamaya… aur usi 3 mahine mein 66 billion dollar ka loss bhi dikhaya! 🤯
+2. Ye hai Anthropic — Claude AI banane wali company — jisne abhi stock market mein aane ke liye file kiya hai.
+3. April se June mein kamai: 11.6 billion dollar. Sirf 3 mahine pehle ye 4.7 billion thi.
+4. Har 100 dollar ki kamai pe… 8 dollar ka operating profit. Pehli baar!
+5. Toh 66 billion ka loss? Zyaadatar kaagaz pe hai. Investors ko future mein shares dene ka wada tha — company ki value uchhli, toh wo wada accounts mein mehenga ho gaya.
+6. Matlab itna paisa jeb se gaya nahi — ye non-cash loss hai.
+7. Par twist — July se September mein kamai badhkar 17 billion… phir bhi operating loss wapas aa gaya.
+8. Aapko kya lagta hai — AI ka future ya bubble? Comment karo 👇
+
+On-screen small print: "Source: Anthropic S-1 (26 Oct 2026) + Amendment 1 (2 Nov 2026). IPO price abhi tay nahi. Sirf jaankari ke liye."
