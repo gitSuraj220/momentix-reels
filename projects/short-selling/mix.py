@@ -23,7 +23,8 @@ fade = int(.03 * SR); M[-fade:] *= np.linspace(1, 0, fade)[:, None]
 sf.write(f'{D}/audio/mix.wav', M.astype(np.float32), SR, subtype='PCM_24')
 print('mix LUFS', round(meter.integrated_loudness(M), 2), 'peak dBFS', round(20 * np.log10(np.abs(M).max()), 2))
 os.makedirs(f'{D}/final', exist_ok=True)
-subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', f'{D}/build/video_only.mp4', '-i', f'{D}/audio/mix.wav',
+subprocess.run(['ffmpeg','-v','error','-y','-i',f'{D}/audio/mix.wav','-af','loudnorm=I=-14:TP=-1:LRA=7,aresample=48000',f'{D}/audio/mix_ln.wav'],check=True)  # peak guard leaves it quieter; loudnorm lands -14
+subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', f'{D}/build/video_only.mp4', '-i', f'{D}/audio/mix_ln.wav',
                 '-c:v', 'libx264', '-preset', 'slow', '-b:v', '10M', '-maxrate', '12M', '-bufsize', '20M', '-pix_fmt', 'yuv420p',
                 '-c:a', 'aac', '-b:a', '256k', '-movflags', '+faststart', '-shortest', f'{D}/final/Short_Selling_iPhone.mp4'], check=True)
 print('muxed final/Short_Selling_iPhone.mp4')

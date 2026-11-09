@@ -15,17 +15,21 @@ def seg(n, src, dur, speed=1.0, ss=0.0, crop=None, pingpong=False):
     else: run(n, pre + f',tpad=stop_mode=clone:stop_duration=3,trim=duration={dur},setpts=PTS-STARTPTS', out, src)
     return out
 b = {k: v for k, v in TL.items() if k != 'END'}
-cuts = [0, 1.0, 6.04, 17.0, 19.2, 25.5, 29.9, 31.95, 42.8, END]
+MC = {'c1':'440:786:276:180','c4':'440:786:276:180','c5':'380:680:336:220','c6':'420:750:296:160'}   # Momo close-up crops
 segs = [
  run(0, 'trim=end_frame=1,setpts=PTS-STARTPTS,'+S+',tpad=stop_mode=clone:stop_duration=2,trim=duration=1', f'{D}/build/seg/s00.mp4', 'c1') or f'{D}/build/seg/s00.mp4',  # frozen first frame (hook)
- seg(1,'c1',cuts[2]-cuts[1]),
- seg(2,'c2',cuts[3]-cuts[2], speed=.8, pingpong=True),
- seg(3,'c3',cuts[4]-cuts[3]),
- seg(4,'c4',cuts[5]-cuts[4], speed=.8),
- seg(5,'c4',cuts[6]-cuts[5], speed=.6, ss=2.5, crop='440:786:0:180'),     # push-in on shocked Bunty
- seg(6,'c4',cuts[7]-cuts[6], speed=.6, ss=2.5, crop='440:786:276:180'),   # push-in on sheepish Momo
- seg(7,'c5',cuts[8]-cuts[7], speed=.9, pingpong=True),
- seg(8,'c6',cuts[9]-cuts[8], speed=.78),
+ seg(1,'c1',3.5),                                                   # B1 Bunty talks
+ seg(2,'c1',6.04-4.5, ss=3.5, crop=MC['c1']),                       # M1 starts: Momo close-up
+ seg(3,'c2',17.0-6.04, speed=.8, pingpong=True),                    # Momo alone (plan)
+ seg(4,'c3',19.2-17.0),                                             # B2 Bunty asks
+ seg(5,'c4',25.5-19.2, speed=.8, crop=MC['c4']),                    # M2 Momo close-up
+ seg(6,'c4',29.9-25.5, speed=.6, ss=2.5, crop='440:786:0:180'),     # B3 shocked Bunty
+ seg(7,'c4',31.95-29.9, speed=.6, ss=2.5, crop=MC['c4']),           # M3 sheepish Momo
+ seg(8,'c5',35.0-31.95, speed=.9),                                  # B4
+ seg(9,'c5',36.05-35.0, speed=.9, ss=2.75, crop=MC['c5']),          # M4 Momo close-up
+ seg(10,'c5',42.75-36.05, speed=.9, pingpong=True),                 # B5 lesson
+ seg(11,'c6',45.1-42.75, speed=.78, crop=MC['c6']),                 # M5 Momo close-up
+ seg(12,'c6',END-45.1, speed=.78, ss=1.8),                          # B6 follow
 ]
 open(f'{D}/build/list.txt','w').write(''.join(f"file '{s}'\n" for s in segs))
 subprocess.run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',f'{D}/build/list.txt','-c:v','libx264','-crf','14','-preset','fast','-t',str(END),f'{D}/build/base.mp4'],check=True)
