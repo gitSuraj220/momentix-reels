@@ -1,0 +1,84 @@
+<!doctype html><html><head><meta charset="utf-8"><script>window.CLIPN=143</script><style>
+@font-face{font-family:P;font-weight:800;src:url(../../engine/fonts/poppins-latin-800-normal.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(../../engine/fonts/poppins-latin-500-normal.woff2)}
+@font-face{font-family:A;src:url(../../engine/fonts/anton-latin-400-normal.woff2)}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0d0d0f;font-family:P}
+#cam{position:absolute;inset:0;transform-origin:50% 50%}
+.a{position:absolute;will-change:transform,opacity}
+#bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#123a35 0%,#0d0d0f 60%)}
+#clip{position:absolute;inset:0;overflow:hidden}#clip img{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;display:none}
+#shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,0) 28%,rgba(0,0,0,0) 62%,rgba(0,0,0,.7) 100%)}
+.cap{left:40px;right:40px;text-align:center;font:800 100px/1.02 P;color:#fff;text-shadow:0 6px 0 #000,0 0 26px rgba(0,0,0,.8)}
+.cap .g{color:#10e0b0}.cap .y{color:#ffd400}
+.code{left:0;right:0;text-align:center;font:400 150px/1 A;color:#10e0b0;text-shadow:0 0 40px rgba(16,224,176,.5),0 8px 0 #000;letter-spacing:2px}
+.num{left:0;right:0;text-align:center;font:800 46px P;color:#9aa0a6;letter-spacing:6px}
+#phone{left:150px;top:585px;width:780px;height:870px;border-radius:60px;background:#212121;border:12px solid #2f2f33;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.7)}
+#hdr{position:absolute;left:0;right:0;top:0;height:110px;display:flex;align-items:center;padding-left:44px;font:800 40px P;color:#ececec;border-bottom:1px solid #2f2f2f}
+#hdr span{color:#9b9b9b;font-size:30px;margin-left:12px}
+#chat{position:absolute;left:0;right:0;top:120px;bottom:120px;padding:24px 36px;overflow:hidden}
+.u{margin-left:auto;max-width:560px;background:#303030;color:#ececec;border-radius:30px;padding:20px 28px;font:500 36px/1.35 P;width:fit-content}
+.u b{color:#10e0b0;font-weight:800}
+.ans{margin-top:28px;color:#ececec;font:500 34px/1.45 P}
+.ans .h{font-weight:800;color:#fff}
+.tbl{width:100%;border-collapse:collapse;font:500 30px/1.3 P;color:#ececec}.tbl td,.tbl th{border-bottom:1px solid #3a3a3a;padding:12px 8px;text-align:left}.tbl th{font-weight:800;color:#fff}
+.rc{background:#2a2a2e;border-radius:22px;padding:22px 26px}
+#inp{position:absolute;left:30px;right:30px;bottom:24px;height:84px;border-radius:42px;background:#303030;display:flex;align-items:center;padding-left:34px;font:500 32px P;color:#8e8e8e}
+#cursor{display:inline-block;width:16px;height:34px;background:#ececec;border-radius:8px;vertical-align:-4px;margin-left:4px}
+.small{left:60px;right:60px;text-align:center;font:500 28px P;color:#9aa0a6}
+.sat{right:50px;top:260px;font:800 34px P;color:#111;background:#ffd400;padding:6px 18px;border-radius:10px;transform:rotate(4deg)}
+</style></head><body><div id="cam">
+<div id="bg"></div><div id="clip"></div><div id="shade" class="a"></div>
+<div class="a sat" id="sat">SATIRE</div>
+<div class="a cap" id="h1" style="top:300px">CHATGPT KE <span class="g">5 SECRET CODES</span></div>
+<div class="a cap" id="h2" style="top:1280px">JO <span class="y">SAM ALTMAN</span><br>KO BHI NAHI PATA!</div>
+<div class="a num" id="num" style="top:268px">CODE 1/5</div>
+<div class="a code" id="code" style="top:330px">/ELI5</div>
+<div class="a" id="phone"><div id="hdr">ChatGPT <span>5 ▾</span></div><div id="chat"></div><div id="inp">Ask anything</div></div>
+<div class="a small" id="fine" style="top:1480px">Ye official commands nahi — prompt shortcuts hain jo ChatGPT samajh leta hai · Satire</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),P=(t,t0,d)=>cl((t-t0)/d),eo=x=>1-Math.pow(1-x,3),back=x=>{const c=2.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const cimgs=[];for(let i=0;i<CLIPN;i++){const im=document.createElement('img');im.src=`build/frames/f_${String(i+1).padStart(4,'0')}.jpg`;$('clip').appendChild(im);cimgs.push(im)}
+let lastImg=null;
+// [code, user prompt rest, answer html, tCode, tDesc, tEnd]
+const C=[
+ ['/eli5','Inflation kya hai?',`Socho tumhare paas <span class="h">₹10</span> hai aur ek toffee ₹10 ki hai.<br><br>Ek saal baad wahi toffee <span class="h">₹12</span> ki ho gayi — par tumhare paas abhi bhi ₹10 hi hain.<br><br>Matlab paise ki taakat kam ho gayi. <span class="h">Yahi inflation hai!</span>`,4.57,7.58,11.36],
+ ['/resume','Rahul, B.Com, 2 saal Excel + reports',`<div class="rc"><span class="h" style="font-size:40px">RAHUL SHARMA</span><br>Data / MIS Executive<br><br><span class="h">Skills:</span> Excel · Pivot Tables · Reporting<br><span class="h">Experience:</span> 2 years — monthly sales reports, dashboards<br><span class="h">Education:</span> B.Com</div>`,11.36,13.56,16.79],
+ ['/examples','Compound interest',`<span class="h">Example 1:</span> ₹1,000 pe 10% → saal 1: ₹1,100 → saal 2: <span class="h">₹1,210</span> (byaaj pe bhi byaaj!)<br><br><span class="h">Example 2:</span> Barf ka gola — jitna ludhkao, utna bada`,16.79,19.08,22.84],
+ ['/stepbystep','Passport kaise banwaun?',`<span class="h">1.</span> passportindia.gov.in pe register<br><span class="h">2.</span> Online form bharo<br><span class="h">3.</span> Fees bharo + appointment lo<br><span class="h">4.</span> PSK pe documents le jao<br><span class="h">5.</span> Police verification → passport ghar!`,22.84,25.24,28.35],
+ ['/compare','iPhone ya Samsung?',`<table class="tbl"><tr><th></th><th>iPhone</th><th>Samsung</th></tr><tr><td>Ecosystem</td><td>Apple devices</td><td>Android freedom</td></tr><tr><td>Customise</td><td>Kam</td><td>Zyada</td></tr><tr><td>Resale</td><td>Zyada</td><td>Kam</td></tr><tr><td>Best for</td><td>Simple, smooth</td><td>Features, options</td></tr></table>`,28.35,30.40,34.37]
+];
+let cur=-1;
+function setCode(i){cur=i;const c=C[i];$('code').textContent=c[0].toUpperCase();$('num').textContent=`CODE ${i+1}/5`;
+ $('chat').innerHTML=`<div class="u" id="ub"></div><div class="ans" id="ans">${c[2]}</div>`}
+function typed(s,x){return s.slice(0,Math.round(s.length*cl(x)))}
+function renderAt(t){
+ // hook clip
+ const fi=Math.min(CLIPN-1,Math.floor(t*30)); if(lastImg)lastImg.style.display='none';
+ if(t<4.7&&CLIPN){lastImg=cimgs[fi];lastImg.style.display='block'}else lastImg=null;
+ const ho=t<4.57?1:cl(1-(t-4.57)/.25); $('clip').style.opacity=ho; $('shade').style.opacity=ho; $('clip').style.transform=`scale(${1.02+t*.01})`;
+ {const x=P(t,.15,.3);$('h1').style.opacity=cl(x*3)*(t<4.5?1:0);$('h1').style.transform=`scale(${x<1?.3+.7*back(x):1})`}
+ {const x=P(t,2.54,.3);$('h2').style.opacity=cl(x*3)*(t<4.5?1:0);$('h2').style.transform=`scale(${x<1?.3+.7*back(x):1})`}
+ $('sat').style.opacity=t<4.5?.95:0;
+ // codes
+ let i=-1;for(let k=0;k<5;k++)if(t>=C[k][3])i=k;
+ const ph=$('phone');
+ if(i<0){ph.style.opacity=0;$('code').style.opacity=0;$('num').style.opacity=0}
+ else{ if(i!==cur)setCode(i); const c=C[i];
+  const pin=P(t,4.57,.45); ph.style.opacity=1; ph.style.transform=`translateY(${900*(1-eo(pin))}px) scale(${1+.01*Math.sin(t*1.3)})`;
+  const cx=P(t,c[3],.3); $('code').style.opacity=cl(cx*3); $('code').style.transform=`scale(${cx<1?.3+.7*back(cx):1})`; $('num').style.opacity=cl(cx*3);
+  // typing user msg
+  const msg=`<b>${c[0]}</b> ${c[1]}`; const tx=P(t,c[3]+.75,.9);
+  const ub=$('ub'); if(tx<=0){ub.style.opacity=0; $('inp').innerHTML=''+c[0].slice(0,Math.round(c[0].length*P(t,c[3]+.15,.5)))+'<span id="cursor"></span>'}
+  else{ $('inp').innerHTML='Ask anything'; ub.style.opacity=1; ub.innerHTML=msg; ub.style.transform=`translateY(${30*(1-eo(P(t,c[3]+.75,.25)))}px)`}
+  // answer reveal (line by line wipe)
+  const ax=P(t,c[4]+.1,Math.max(.8,(c[5]-c[4])*.75)); const an=$('ans'); an.style.clipPath=`inset(0 0 ${100-100*eo(ax)}% 0)`; an.style.opacity=ax>0?1:0;
+ }
+ $('fine').style.opacity=t>4.6?.85:0;
+ // camera kicks on each code
+ let k=0;[0.15,2.54,...C.map(c=>c[3])].forEach(s=>{if(t>s&&t<s+.25)k+=1-(t-s)/.25});
+ $('cam').style.transform=`scale(${1+.015*k}) translate(${Math.sin(t*70)*5*k}px,0)`;
+}
+window.renderAt=renderAt;
+</script></body></html>

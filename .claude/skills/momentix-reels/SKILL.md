@@ -111,3 +111,8 @@ Do NOT use the tool itself: AI script + stock clips + AI voice is exactly the "m
 - Reliable: click the editor, then `computer type` the caption. Typing "₹" scrambles the editor — write "Rs" in typed captions.
 - Fix after publishing: Content → row ⋯ → Facebook post / Instagram post → Manage post → Edit Post (both IG and FB feed posts are editable).
 - Carousel upload: arm the file-input click capture, click "Add photo/video", then file_upload all slides in one call (order is kept).
+
+### Loudness standard (Suraj, 9 Nov 2026)
+- Reels were too quiet vs other reels (we mastered at -16 LUFS; YT/IG play ~-14). NEW DEFAULT: master to **-14 LUFS integrated, true peak <= -1 dBTP** (loudnorm I=-14:TP=-1:LRA=7 after mix).
+- Phone-speaker voice chain: highpass 80 Hz, -2.5 dB @250 Hz, +4 dB @3 kHz (q 1.2), +2 dB high shelf @7 kHz, compressor -24 dB 4:1 attack 4 ms release 70 ms makeup 3 dB.
+- Tell Suraj: in CapCut keep our track at 100%, BGM 15-20%, no "normalize loudness".
