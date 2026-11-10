@@ -73,14 +73,7 @@ Kisi movement wale part ko dekho — ruka hua menu kuch nahi batata.
 Pehle stream ke liye plan simple rakho: apna intro do, batao kya karne wale ho, aur logon ko rukne ki wajah do.
 Jaise: "Aaj hum apna first playthrough shuru kar rahe hain, aaraam se explore karenge — audio kaisa aa raha hai, comment mein batao."
 
-## 7:00 — Common problems (~55 s)
-Stream shuru nahi ho raha? Pehle account check karo — sahi account linked hai, aur activation ya authentication poora hua hai?
-Viewers ko awaaz nahi aa rahi? Dekho mic mute toh nahi, aur mic audio broadcast mein ON hai ya nahi.
-Picture baar-baar buffer ho rahi hai? Broadcast quality kam karo, aur phir chhota test chalao. Ek saath kai settings mat badlo — warna pata hi nahi chalega kis cheez ne kaam kiya.
-Game se bahar jaate hi picture gayab? PS5 har screen broadcast nahi karta — aur kuch game scenes bhi block ho sakte hain.
-Confuse ho? Toh channel ka preview dekho. TV pe wo dikhta hai jo aap khel rahe ho — preview mein wo, jo audience tak pahunch raha hai.
-
-## 7:55 — Stream band karna + outro (~35 s)
+## 7:00 — Stream band karna + outro (~35 s)
 Khatam karna ho toh control center kholo, Broadcast card chuno, aur Stop Broadcast dabao.
 Phir channel pe check kar lo ki stream sach mein band ho gaya.
 Ab aapka account taiyaar hai, settings set hain, mic check ho gaya, aur viewer wala test bhi.
