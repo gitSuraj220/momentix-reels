@@ -17,3 +17,9 @@ Note for Suraj: Claude (this assistant) is made by Anthropic — keep it strictl
 8. Aapko kya lagta hai — AI ka future ya bubble? Comment karo 👇
 
 On-screen small print: "Source: Anthropic S-1 (26 Oct 2026) + Amendment 1 (2 Nov 2026). IPO price abhi tay nahi. Sirf jaankari ke liye."
+
+## Update 10 Nov 2026 (re-checked)
+- 9 Nov: Anthropic emailed bankers a $70–80/share range (867M shares, up to ~$69.3B raise), then RETRACTED it; says correct pricing coming soon (Reuters via Yahoo Finance, technology.org).
+- WSJ (via TechCrunch 9 Nov): valuation range to be set week of 9 Nov; trading could start Thu/Fri of following week (~19–20 Nov). Investors pushing below the ~$1.5T target (vs ~$2T floated months ago). Nasdaq Private Market: ~$1.46T.
+- Q3 also: cash & liquid assets $146.6B; commitments $895.4B through 2045 (~$69.8B due in next 12 months).
+- Suggested new line (optional, after line 2): "Listing shayad agle hafte — par price range abhi tay nahi, ek baar bata ke wapas le liya!"
