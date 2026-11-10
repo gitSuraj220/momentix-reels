@@ -1,0 +1,204 @@
+<!doctype html><html><head><meta charset="utf-8"><script>window.CLIPN=1410</script><style>
+@font-face{font-family:P;font-weight:800;src:url(../../engine/fonts/poppins-latin-800-normal.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(../../engine/fonts/poppins-latin-500-normal.woff2)}
+@font-face{font-family:A;src:url(../../engine/fonts/anton-latin-400-normal.woff2)}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#05040a;font-family:P}
+#cam{position:absolute;inset:0;transform-origin:50% 45%}
+#clip{position:absolute;inset:0}#clip img{position:absolute;left:0;top:0;width:1080px;height:1920px;display:none}
+.a{position:absolute;opacity:0;will-change:transform,opacity}
+#ui{position:absolute;inset:0;opacity:0;background:url(art/room_bg.jpg) center/cover}
+#glow{position:absolute;left:-100px;right:-100px;top:420px;height:900px;background:radial-gradient(ellipse at 50% 50%,rgba(255,60,200,.28),rgba(0,220,255,.12) 45%,transparent 70%)}
+#tv{position:absolute;left:40px;top:600px;width:1000px;height:563px;border-radius:22px;background:#0c0c18;border:10px solid #15151f;box-shadow:0 0 0 2px #2a2a3a,0 0 80px rgba(255,60,200,.35),0 30px 80px rgba(0,0,0,.8);overflow:hidden}
+.scr{position:absolute;inset:0;opacity:0}
+.mbg{position:absolute;inset:0;background:linear-gradient(135deg,#141432,#2a0f3a 60%,#0d2638)}
+.tile{position:absolute;border-radius:18px;background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.12);color:#fff;font:800 30px P;display:flex;align-items:center;justify-content:center;text-align:center}
+.tile.hl{border-color:#fff;background:rgba(255,255,255,.18);box-shadow:0 0 0 6px rgba(0,220,255,.35),0 0 40px rgba(0,220,255,.5)}
+.row{position:absolute;left:40px;width:420px;height:62px;border-radius:12px;color:#cfd3ff;font:500 28px/62px P;padding-left:24px;box-sizing:border-box}
+.row.hl{background:rgba(255,255,255,.16);color:#fff;font-weight:800;box-shadow:inset 6px 0 0 #00dcff}
+.opt{position:absolute;left:500px;width:440px;height:74px;border-radius:14px;border:3px solid rgba(255,255,255,.14);color:#fff;font:800 30px/68px P;padding-left:26px;box-sizing:border-box}
+.opt.hl{border-color:#00dcff;background:rgba(0,220,255,.15)}
+.opt .tg{position:absolute;right:16px;top:14px;font:800 20px/1 P;background:#3ee07a;color:#062010;padding:8px 12px;border-radius:8px}
+#cur{position:absolute;width:70px;height:70px;border-radius:50%;border:5px solid #fff;box-shadow:0 0 30px #00dcff,inset 0 0 20px rgba(0,220,255,.6);opacity:0;margin:-35px 0 0 -35px}
+.lbl{left:0;right:0;top:300px;text-align:center}
+.lbl .p{display:inline-block;font:800 34px P;color:#0b0b14;background:#00dcff;padding:6px 22px;border-radius:999px;letter-spacing:3px}
+.lbl .t{font:400 96px/1.02 A;color:#fff;margin-top:14px;text-shadow:0 8px 0 rgba(0,0,0,.6),0 0 30px rgba(255,60,200,.5);letter-spacing:1px}
+.lbl .t b{color:#ff4fd8;font-weight:400}
+.kw{left:60px;right:60px;top:1235px;text-align:center;font:800 64px/1.1 P;color:#fff;text-shadow:0 6px 0 #000,0 0 24px rgba(0,0,0,.8)}
+.kw .c{color:#00e5ff}.kw .m{color:#ff4fd8}.kw .g{color:#3ee07a}.kw .y{color:#ffd400}
+.cap{left:40px;right:40px;text-align:center;font:800 100px/1.02 P;color:#fff;text-shadow:0 7px 0 #000,0 0 30px rgba(0,0,0,.9)}
+.cap .m{color:#ff4fd8}.cap .y{color:#ffd400}.cap .c{color:#00e5ff}
+#tag5{right:70px;top:640px;font:800 40px P;color:#111;background:#fff;padding:6px 18px;border-radius:12px;transform:rotate(-5deg)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+#crack{position:absolute;inset:0;opacity:0}
+.stamp{left:0;right:0;text-align:center}
+.stamp span{display:inline-block;font:400 130px/1 A;color:#fff;background:#e0156b;padding:16px 46px 8px;border-radius:24px;box-shadow:0 14px 0 rgba(0,0,0,.5);transform:rotate(-4deg)}
+.x{display:inline-block;margin:0 14px;font:800 52px P;color:#fff;background:rgba(0,0,0,.6);padding:8px 22px;border-radius:14px;border:3px solid #ff3b5c}
+.x i{font-style:normal;color:#ff3b5c;margin-left:10px}
+#live{position:absolute;right:26px;top:22px;font:800 34px P;color:#fff;background:#ff1f3d;padding:6px 18px;border-radius:10px;opacity:0;box-shadow:0 0 30px rgba(255,31,61,.8)}
+#phone{position:absolute;left:640px;top:880px;width:330px;height:640px;border-radius:44px;background:#0d0d14;border:10px solid #23232e;box-shadow:0 30px 80px rgba(0,0,0,.8);opacity:0;overflow:hidden}
+#phone .vid{position:absolute;left:0;right:0;top:110px;height:186px;background:linear-gradient(135deg,#2b1250,#0e3a55)}
+#phone .lv{position:absolute;left:14px;top:120px;font:800 20px P;color:#fff;background:#ff1f3d;padding:3px 10px;border-radius:6px}
+#vc{position:absolute;left:18px;top:316px;font:800 30px P;color:#fff}
+#phone .ch{position:absolute;left:18px;right:18px;top:370px;font:500 22px/1.6 P;color:#c9c9d6}
+.meter{position:absolute;left:520px;width:420px;height:44px;border-radius:22px;background:rgba(255,255,255,.08);overflow:hidden}
+.meter i{position:absolute;left:0;top:0;bottom:0;border-radius:22px}
+.ml{position:absolute;left:520px;font:800 26px P;color:#fff}
+#ctrl{position:absolute;left:190px;top:1185px;width:700px;height:320px;opacity:0}
+.yt{position:absolute;left:60px;top:60px;right:60px;bottom:60px;border-radius:20px;background:#121212;border:2px solid #2a2a2a}
+.sw{position:absolute;right:60px;top:236px;width:150px;height:76px;border-radius:38px;background:#444}
+.sw i{position:absolute;left:8px;top:8px;width:60px;height:60px;border-radius:50%;background:#fff;transition:none}
+.ck{position:absolute;left:80px;font:800 40px/1 P;color:#fff}
+.ck b{display:inline-block;width:46px;height:46px;border-radius:10px;border:4px solid #3ee07a;margin-right:20px;vertical-align:-8px;text-align:center;font:800 34px/42px P;color:#3ee07a}
+.pg{display:inline-block;min-width:84px;margin:0 8px;padding:10px 18px;border-radius:999px;font:800 34px P;color:#8a8aa8;border:3px solid #3a3a55;background:rgba(0,0,0,.5);box-sizing:border-box}.pg.on{color:#0b0b14;background:#00dcff;border-color:#00dcff;box-shadow:0 0 24px rgba(0,220,255,.7)}.pg.done{color:#3ee07a;border-color:#3ee07a}
+</style></head><body><div id="cam">
+<div id="clip"></div>
+<div id="ui"><div id="glow"></div>
+ <div id="tv">
+  <div class="scr" id="s1"><div class="yt"></div>
+   <div style="position:absolute;left:100px;top:100px;font:800 40px P;color:#fff">YouTube <span style="font-weight:500;color:#aaa;font-size:30px">· Channel settings</span></div>
+   <div style="position:absolute;left:100px;top:180px;width:440px;font:500 30px/1.4 P;color:#ddd">Live streaming<br><span id="s1st" style="font:800 34px P;color:#ff4f4f">OFF</span></div>
+   <div class="sw" id="s1sw" style="right:120px;top:190px"><i></i></div>
+   <div id="s1ok" style="position:absolute;left:100px;top:330px;font:800 36px P;color:#3ee07a;opacity:0">Live streaming enabled</div></div>
+  <div class="scr" id="s2"><div class="mbg"></div>
+   <div style="position:absolute;left:40px;top:30px;font:800 30px P;color:#aab">Create</div>
+   <div class="tile" id="t_shot" style="left:40px;top:90px;width:280px;height:170px">Screenshot</div>
+   <div class="tile" id="t_rec" style="left:350px;top:90px;width:280px;height:170px">Start<br>Recording</div>
+   <div class="tile" id="t_bc" style="left:660px;top:90px;width:290px;height:170px">Broadcast</div>
+   <div id="link" style="position:absolute;left:40px;right:40px;top:300px;height:200px;opacity:0">
+    <div class="tile hl" style="left:0;top:0;width:430px;height:180px;flex-direction:column"><span style="color:#ff4f4f">YouTube</span><span style="font:500 24px P;color:#ccd">Account link karo</span></div>
+    <div class="tile" style="left:470px;top:0;width:440px;height:180px;flex-direction:column"><span style="color:#b98bff">Twitch</span><span style="font:500 24px P;color:#ccd">optional</span></div>
+    <div id="lok" style="position:absolute;left:30px;top:190px;font:800 34px P;color:#3ee07a;opacity:0">Linked ✓</div></div>
+   <div id="game" style="position:absolute;inset:0;background:linear-gradient(135deg,#ff7a3d,#ff2f7a 50%,#4a2bd6);opacity:0;display:flex;align-items:center;justify-content:center;font:400 90px A;color:#fff;letter-spacing:4px">GAME ON</div></div>
+  <div class="scr" id="s3"><div class="mbg"></div>
+   <div style="position:absolute;left:40px;top:24px;font:800 30px P;color:#aab">Settings</div>
+   <div class="row" id="r0" style="top:84px">Accessibility</div><div class="row" id="r1" style="top:152px">Captures and Broadcasts</div>
+   <div class="row" id="r2" style="top:220px">Sound</div><div class="row" id="r3" style="top:288px">Network</div>
+   <div id="bsub" style="opacity:0"><div style="position:absolute;left:500px;top:24px;font:800 30px P;color:#fff">Broadcasts</div>
+    <div style="position:absolute;left:500px;top:84px;font:500 26px P;color:#aab">Video Quality</div>
+    <div class="opt" id="o1" style="top:130px">720p · 30 fps</div><div class="opt" id="o2" style="top:220px">1080p · 30 fps<span class="tg" id="safe" style="opacity:0">SAFE</span></div>
+    <div class="opt" id="o3" style="top:310px">1080p · 60 fps</div>
+    <div style="position:absolute;left:500px;top:410px;font:500 24px P;color:#aab">Internet</div>
+    <div class="meter" style="top:450px;left:500px;width:440px"><i id="net" style="background:linear-gradient(90deg,#3ee07a,#ffd400);width:0"></i></div></div></div>
+  <div class="scr" id="s4"><div class="mbg"></div>
+   <div style="position:absolute;left:40px;top:30px;font:800 30px P;color:#aab">Broadcast · Audio</div>
+   <div style="position:absolute;left:60px;top:110px;font:800 38px P;color:#fff">Microphone</div>
+   <div class="sw" id="s4sw" style="left:340px;right:auto;top:100px"><i></i></div>
+   <div class="ml" style="left:60px;top:230px">AAPKI AWAAZ</div><div class="meter" style="left:60px;top:270px;width:880px"><i id="mv" style="background:linear-gradient(90deg,#00e5ff,#3ee07a)"></i></div>
+   <div class="ml" style="left:60px;top:350px">GAME</div><div class="meter" style="left:60px;top:390px;width:880px"><i id="mg" style="background:linear-gradient(90deg,#ff4fd8,#ff7a3d)"></i></div></div>
+  <div class="scr" id="s5"><div class="mbg"></div>
+   <div id="golive" style="position:absolute;left:300px;top:190px;width:400px;height:150px;border-radius:24px;background:#ff1f3d;color:#fff;font:800 56px/150px P;text-align:center;box-shadow:0 0 50px rgba(255,31,61,.7)">GO LIVE</div>
+   <div id="streaming" style="position:absolute;inset:0;background:linear-gradient(135deg,#ff7a3d,#ff2f7a 50%,#4a2bd6);opacity:0;display:flex;align-items:center;justify-content:center;font:400 90px A;color:#fff">STREAMING…</div></div>
+  <div class="scr" id="s6"><div class="mbg"></div>
+   <div style="position:absolute;left:60px;top:40px;font:800 34px P;color:#ffd400">TEST STREAM · kisi aur game pe</div>
+   <div class="ck" id="k1" style="top:140px;opacity:0"><b>✓</b>Picture saaf hai</div>
+   <div class="ck" id="k2" style="top:230px;opacity:0"><b>✓</b>Awaaz clear hai</div>
+   <div class="ck" id="k3" style="top:320px;opacity:0"><b>✓</b>Title sahi hai</div>
+   <div id="d19" style="position:absolute;right:60px;top:150px;width:200px;height:220px;border-radius:24px;background:#fff;opacity:0;text-align:center;overflow:hidden"><div style="height:56px;background:#e0156b;font:800 30px/56px P;color:#fff">NOV</div><div style="font:400 130px/160px A;color:#111">19</div></div></div>
+  <div id="live">● LIVE</div><div id="cur"></div>
+ </div>
+ <svg id="ctrl" viewBox="0 0 700 320"><path d="M120 60 Q350 20 580 60 Q690 80 680 220 Q670 300 600 290 Q540 285 500 220 L200 220 Q160 285 100 290 Q30 300 20 220 Q10 80 120 60Z" fill="#ececf2" stroke="#9a9ab0" stroke-width="6"/>
+  <circle cx="160" cy="130" r="42" fill="#d6d6e0"/><circle cx="540" cy="130" r="42" fill="#d6d6e0"/><circle cx="260" cy="200" r="32" fill="#2a2a38"/><circle cx="440" cy="200" r="32" fill="#2a2a38"/>
+  <rect id="cbtn" x="222" y="88" width="46" height="22" rx="11" fill="#2a2a38"/><text x="245" y="80" font-family="P" font-weight="800" font-size="20" fill="#2a2a38" text-anchor="middle">CREATE</text>
+  <rect id="cring" x="210" y="76" width="70" height="46" rx="23" fill="none" stroke="#00dcff" stroke-width="6" opacity="0"/></svg>
+ <div id="phone"><div style="position:absolute;left:18px;top:40px;font:800 26px P;color:#fff">Your channel</div><div class="vid"></div><div class="lv">LIVE</div><div id="vc">0 watching</div>
+  <div class="ch">rahul: bhai GTA 6 kab?<br>aman: audio clear hai ✓<br>neha: first!!</div></div>
+</div>
+<div id="flash"></div>
+<svg id="crack" viewBox="0 0 1080 1920"><g stroke="#fff" stroke-width="5" fill="none" opacity=".9"><path d="M560 760 L300 420 L210 380 M560 760 L860 470 L990 430 M560 760 L620 1160 L700 1420 M560 760 L200 980 L60 1040 M560 760 L930 1010 L1060 1100 M560 760 L420 1300 M300 420 L360 600 M860 470 L780 650 M200 980 L330 1080 M930 1010 L820 900"/></g></svg>
+<div class="a cap" id="h1" style="top:290px"><span class="y">GTA 6</span><br>PURI DUNIYA<br>KHELEGI…</div>
+<div class="a" id="tag5">GTA 5</div>
+<div class="a cap" id="h2" style="top:290px">TUM <span class="m">LIVE</span> KARKE<br><span class="y">₹ CHHAAPO</span></div>
+<div class="a cap" id="h3" style="top:290px">SIRF <span class="c">PS5</span> SE</div>
+<div class="a" id="h4" style="left:0;right:0;top:1230px;text-align:center"><span class="x">PC<i>✗</i></span><span class="x">CAPTURE CARD<i>✗</i></span></div>
+<div class="a stamp" id="h5" style="top:1240px"><span>19 NOV · GTA 6</span></div>
+<div class="a lbl" id="L1"><span class="p">SABSE PEHLE</span><div class="t">YOUTUBE PE <b>LIVE ON</b></div></div>
+<div class="a lbl" id="L2"><span class="p">STEP 1</span><div class="t">CREATE → <b>BROADCAST</b></div></div>
+<div class="a lbl" id="L3"><span class="p">STEP 2</span><div class="t">VIDEO <b>QUALITY</b></div></div>
+<div class="a lbl" id="L4"><span class="p">STEP 3</span><div class="t">MIC <b>TEST</b></div></div>
+<div class="a lbl" id="L5"><span class="p">STEP 4</span><div class="t"><b>GO LIVE</b></div></div>
+<div class="a lbl" id="L6"><span class="p">PRO TIP</span><div class="t">PEHLE <b>TEST</b> KARO</div></div>
+<div class="a kw" id="k_on">Channel → <span class="c">Live streaming ON</span></div>
+<div class="a kw" id="k_acc">Account <span class="g">link</span> karo</div>
+<div class="a kw" id="k_net">Jitna <span class="y">internet</span> sambhale</div>
+<div class="a kw" id="k_mic">Game ki awaaz <span class="m">kam</span>, aapki <span class="c">zyada</span></div>
+<div class="a kw" id="k_ph" style="left:40px;right:420px;text-align:left;top:1250px">Phone pe<br><span class="c">khud dekho</span></div>
+<div class="a kw" id="k_cr">Game kholo → <span class="c">Create</span> dabao</div>
+<div class="a kw" id="k_set">Settings → <span class="m">Captures &amp; Broadcasts</span></div>
+<div class="a kw" id="k_mon">Mic <span class="g">ON</span> karo</div>
+<div class="a kw" id="k_gl"><span class="m">GO LIVE</span> dabao</div>
+<div class="a kw" id="k_19"><span class="y">19 Nov</span> se pehle test!</div>
+<div id="prog" style="position:absolute;left:0;right:0;top:1440px;text-align:center;opacity:0">
+ <span class="pg" id="p0">YT</span><span class="pg" id="p1">1</span><span class="pg" id="p2">2</span><span class="pg" id="p3">3</span><span class="pg" id="p4">4</span><span class="pg" id="p5">TEST</span></div>
+<div class="a cap" id="e1" style="top:290px">SAVE <span class="y">KARO</span>!</div>
+<div id="black" style="position:absolute;inset:0;background:#000;opacity:0"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),P=(t,t0,d)=>cl((t-t0)/d),eo=x=>1-Math.pow(1-x,3),back=x=>{const c=2.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)},lerp=(a,b,x)=>a+(b-a)*x;
+const imgs=[];for(let i=0;i<CLIPN;i++){const im=document.createElement('img');im.src=`build/frames/f_${String(i+1).padStart(4,'0')}.jpg`;$('clip').appendChild(im);imgs.push(im)}
+let last=null;
+function pop(id,t,t0,t1,from=.3){const e=$(id);if(t<t0||t>t1+.2){e.style.opacity=0;return}
+ const x=P(t,t0,.3),o=1-P(t,t1,.2);e.style.opacity=cl(x*3)*o;e.style.transform=(e.style.transform.match(/rotate\([^)]*\)/)||[''])[0]+` scale(${x<1?from+(1-from)*back(x):1})`}
+function show(id,t,t0,t1){const e=$(id);e.style.opacity=(t>=t0&&t<t1)?cl(Math.min(P(t,t0,.2),1-P(t,t1-.15,.15))):0}
+// cursor path helper: [[t,x,y],...] in tv coords
+function cur(t,K){const c=$('cur');if(!K||t<K[0][0]-.2||t>K[K.length-1][0]+.4){c.style.opacity=0;return}
+ let i=0;while(i<K.length-1&&t>K[i+1][0])i++;const a=K[i],b=K[Math.min(i+1,K.length-1)];const x=b===a?1:eo(P(t,a[0],Math.max(.01,b[0]-a[0])*.6));
+ c.style.opacity=1;c.style.left=lerp(a[1],b[1],x)+'px';c.style.top=lerp(a[2],b[2],x)+'px';
+ const press=K.some(k=>t>k[0]&&t<k[0]+.18&&k[3]);c.style.transform=`scale(${press?.75:1})`}
+const SEC=[[9.2,14.0,'s1','L1'],[14.0,20.66,'s2','L2'],[20.66,28.95,'s3','L3'],[28.95,35.66,'s4','L4'],[35.66,40.1,'s5','L5'],[40.1,44.5,'s6','L6']];
+const KICKS=[3.2,8.8,9.25,14.2,16.3,18.0,20.9,22.6,24.3,29.2,30.3,35.9,36.95,40.3,44.5,46.6];
+function renderAt(t){
+ const fi=Math.min(CLIPN-1,Math.floor(t*30));if(last)last.style.display='none';last=imgs[fi];last.style.display=(t<9.2||t>=44.5)?'block':'none';
+ // UI layer
+ const uiOn=t>=9.2&&t<44.5; $('ui').style.opacity=uiOn?cl(Math.min(P(t,9.2,.25),1-P(t,44.3,.2))):0;
+ SEC.forEach(([a,b,s,l])=>{show(s,t,a,b);pop(l,t,a+.05,b-.2,.6)});
+ // hook
+ pop('h1',t,.15,3.0); pop('tag5',t,.5,3.0,.5); $('tag5').style.transform='rotate(-5deg) '+($('tag5').style.transform.replace(/rotate\([^)]*\)/,''));
+ $('flash').style.opacity=t>=3.2&&t<3.5?(1-P(t,3.2,.3))*.9:0;
+ $('crack').style.opacity=t>=3.2&&t<4.4?1-P(t,3.9,.5):0;
+ pop('h2',t,3.3,5.5); pop('h3',t,5.65,8.75); pop('h4',t,7.4,8.75,.5); pop('h5',t,8.8,9.25,.4);
+ // S1 youtube toggle
+ {const on=t>11.6;$('s1sw').style.background=on?'#ff1f3d':'#444';$('s1sw').firstChild.style.left=(on?82:8)+'px';$('s1st').textContent=on?'ON':'OFF';$('s1st').style.color=on?'#3ee07a':'#ff4f4f';$('s1ok').style.opacity=P(t,11.9,.3)}
+ pop('k_on',t,10.2,13.8,.6);
+ // S2 create -> broadcast -> link
+ $('game').style.opacity=t>=14.9&&t<16.1?1:0;
+ $('ctrl').style.opacity=t>=16.0&&t<17.9?cl(Math.min(P(t,16.0,.2),1-P(t,17.7,.2))):0;
+ $('ctrl').style.transform=`translateY(${60*(1-eo(P(t,16.0,.35)))}px)`;
+ {const pr=t>16.6&&t<16.85;$('cbtn').setAttribute('fill',pr?'#00dcff':'#2a2a38');$('cring').setAttribute('opacity',t>16.4&&t<17.8?(.5+.5*Math.sin(t*14)):0)}
+ ['t_shot','t_rec','t_bc'].forEach((id,i)=>$(id).classList.toggle('hl',t>17.0&&((i===2&&t>17.95)||(i===1&&t>17.5&&t<=17.95)||(i===0&&t<=17.5))));
+ $('link').style.opacity=P(t,19.0,.3);$('lok').style.opacity=P(t,20.0,.25);
+ pop('k_acc',t,19.1,20.6,.6); pop('k_cr',t,15.0,15.9,.6); pop('k_set',t,21.6,25.9,.6); pop('k_mon',t,30.3,33.1,.6); pop('k_gl',t,36.9,37.7,.6); pop('k_19',t,41.0,44.4,.6);
+ $('prog').style.opacity=uiOn&&!(t>=15.95&&t<17.95)?1:0; SEC.forEach((x,i)=>{const e=$('p'+i);e.classList.toggle('on',t>=x[0]&&t<x[1]);e.classList.toggle('done',t>=x[1])});
+ // S3 settings
+ [0,1,2,3].forEach(i=>$('r'+i).classList.toggle('hl',(i===1&&t>22.5)||(i===0&&t>21.0&&t<=22.5)));
+ $('bsub').style.opacity=P(t,24.1,.3);
+ ['o1','o2','o3'].forEach((id,i)=>$(id).classList.toggle('hl',(i===1&&t>26.6)||(i===2&&t>25.6&&t<=26.6)));
+ $('safe').style.opacity=P(t,26.7,.2);$('net').style.width=(70*eo(P(t,25.6,1.2)))+'%';
+ pop('k_net',t,26.0,28.9,.6);
+ // S4 mic
+ {const on=t>30.4;$('s4sw').style.background=on?'#3ee07a':'#444';$('s4sw').firstChild.style.left=(on?82:8)+'px';
+  const v=on?55+30*Math.abs(Math.sin(t*9)*Math.sin(t*3.3)):0;$('mv').style.width=v+'%';
+  const g=lerp(85,35,eo(P(t,33.3,1.0)))*(0.85+.15*Math.sin(t*11));$('mg').style.width=(t>29.2?g:0)+'%'}
+ pop('k_mic',t,33.2,35.6,.6);
+ // S5 go live + phone
+ {const pr=t>36.95&&t<37.15;$('golive').style.transform=`scale(${pr?.9:1+.03*Math.sin(t*6)})`;$('streaming').style.opacity=P(t,37.2,.2);
+  $('live').style.opacity=t>37.2&&t<44.5?(.75+.25*Math.sin(t*8)):0;
+  const ph=t>=37.6&&t<40.1;$('phone').style.opacity=ph?cl(Math.min(P(t,37.6,.2),1-P(t,39.95,.15))):0;$('phone').style.transform=`translateY(${300*(1-eo(P(t,37.6,.4)))}px) rotate(4deg)`;
+  $('vc').textContent=Math.round(1500*eo(P(t,37.9,1.8)))+' watching'}
+ pop('k_ph',t,37.8,40.0,.6);
+ // S6 tip
+ ['k1','k2','k3'].forEach((id,i)=>{$(id).style.opacity=P(t,41.0+i*.6,.2);$(id).style.transform=`translateX(${-40*(1-eo(P(t,41.0+i*.6,.3)))}px)`});
+ $('d19').style.opacity=P(t,42.9,.25);$('d19').style.transform=`rotate(6deg) scale(${.6+.4*back(P(t,42.9,.35))})`;
+ // cursor per section (tv coords)
+ const CK={s2:[[17.0,180,175],[17.5,490,175],[17.95,805,175,1],[19.2,805,175],[19.5,215,390,1],[20.4,215,390]],
+  s3:[[21.0,250,115],[22.5,250,183,1],[24.1,250,183],[24.4,250,183,1],[25.6,720,345,1],[26.6,720,255,1],[28.8,720,255]],
+  s4:[[29.4,560,140],[30.3,416,138,1],[32.6,416,138],[33.3,700,412,1],[35.5,500,412]],
+  s5:[[36.2,700,420],[36.9,500,265,1],[37.3,500,265]]};
+ let K=null;for(const k in CK){const s=SEC.find(x=>x[2]===k);if(t>=s[0]&&t<s[1])K=CK[k]} cur(t,K);
+ // ending
+ pop('e1',t,44.6,46.5); $('black').style.opacity=t>=46.6?1:0; if(t>=46.55&&t<46.75){$('flash').style.opacity=.8;$('crack').style.opacity=1}
+ let k=0;KICKS.forEach(s=>{if(t>s&&t<s+.25)k+=1-(t-s)/.25});
+ $('cam').style.transform=`scale(${1+.02*k}) translate(${Math.sin(t*70)*7*k}px,0)`;
+}
+window.renderAt=renderAt;
+</script></body></html>
