@@ -35,3 +35,14 @@ On-screen small print: "Source: Anthropic S-1 (26 Oct 2026) + Amendment 1 (2 Nov
 8. Toh agli baar headline mein "company ko itne crore ka loss" padho — darna mat. Pehle 2 cheezein dekho: operating profit hai ya nahi, aur loss cash ka hai ya sirf kaagaz ka.
 9. Aapko kya lagta hai — AI ka future ya bubble? Comment karo 👇
 On-screen small print: "Source: Anthropic S-1 (26 Oct 2026) + Amendment 1 (2 Nov 2026). IPO price abhi tay nahi. Sirf jaankari ke liye."
+
+## FINAL v2 — Suraj's exact lines (10 Nov 15:22). USE THIS.
+1. AI ki sabse popular company ne pehli baar profit kamaya… aur usi 3 mahine mein 66 billion dollar ka loss bhi dikhaya! 🤯
+2. Ye hai Anthropic — Claude AI banane wali company — jisne abhi stock market mein aane ke liye file kiya hai.
+3. April se June mein kamai: 11.6 billion dollar. Sirf 3 mahine pehle ye 4.7 billion thi.
+4. Har 100 dollar ki kamai pe… 8 dollar ka operating profit. Pehli baar!
+5. Toh 66 billion ka loss? Zyaadatar kaagaz pe hai. Investors ko future mein shares dene ka wada tha — company ki value uchhli, toh wo wada accounts mein mehenga ho gaya.
+6. Matlab itna paisa jeb se gaya nahi — ye non-cash loss hai.
+7. Par July se September mein kamai badhkar 17 billion… phir bhi operating loss wapas aa gaya.
+8. Toh agli baar headline mein "company ko itne crore ka loss" padho — darna mat. Pehle 2 cheezein dekho: operating profit hai ya nahi, aur loss cash ka hai ya sirf kaagaz ka.
+On-screen small print: "Source: Anthropic S-1 (26 Oct 2026) + Amendment 1 (2 Nov 2026). IPO price abhi tay nahi. Sirf jaankari ke liye."
