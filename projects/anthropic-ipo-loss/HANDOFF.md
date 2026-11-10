@@ -25,7 +25,7 @@ Facts (verified): Q1 2026 revenue $4.73B; Q2 (Apr–Jun) $11.56B, operating inco
 ```
 AI ki sabse popular company ne pehli baar profit kamaya… aur usi teen mahine mein chhiyaasath billion dollar ka loss bhi dikhaya! ... ... Ye hai Anthropic — Claude AI banane wali company — jisne abhi stock market mein aane ke liye file kiya hai. ... ... April se June mein kamai: gyaarah point chhe billion dollar. Sirf teen mahine pehle ye chaar point saat billion thi. ... ... Har sau dollar ki kamai pe… aath dollar ka operating profit. Pehli baar! ... ... Toh chhiyaasath billion ka loss? Zyaadatar kaagaz pe hai. Investors ko future mein shares dene ka wada tha — company ki value uchhli, toh wo wada accounts mein mehenga ho gaya. ... ... Matlab itna paisa jeb se gaya nahi — ye non-cash loss hai. ... ... Par July se September mein kamai badhkar satrah billion… phir bhi operating loss wapas aa gaya. ... ... Toh agli baar headline mein 'company ko itne crore ka loss' padho — darna mat. Pehle do cheezein dekho: operating profit hai ya nahi, aur loss cash ka hai ya sirf kaagaz ka.
 ```
-- NOTE: a generation may already exist in ElevenLabs History from 10 Nov ~15:28 (Amrut, this exact text). Check History first to avoid paying twice.
+- DONE: both Amrut takes are in the repo: `vo/vo.mp3` (take 1) and `vo/vo_alt.mp3` (take 2). Pick the cleaner one (check every word); no new ElevenLabs spend needed.
 - Voice chain (phone-speaker clarity), apply before mixing:
   `highpass=f=80,equalizer=f=250:t=q:w=1:g=-2.5,equalizer=f=3000:t=q:w=1.2:g=4,highshelf=f=7000:g=2,acompressor=threshold=-24dB:ratio=4:attack=4:release=70:makeup=3`
 - Get line start times with `ffmpeg silencedetect` (noise=-38dB:d=0.3) and build the visual timeline on them.
