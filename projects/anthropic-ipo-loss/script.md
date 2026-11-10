@@ -46,3 +46,6 @@ On-screen small print: "Source: Anthropic S-1 (26 Oct 2026) + Amendment 1 (2 Nov
 7. Par July se September mein kamai badhkar 17 billion… phir bhi operating loss wapas aa gaya.
 8. Toh agli baar headline mein "company ko itne crore ka loss" padho — darna mat. Pehle 2 cheezein dekho: operating profit hai ya nahi, aur loss cash ka hai ya sirf kaagaz ka.
 On-screen small print: "Source: Anthropic S-1 (26 Oct 2026) + Amendment 1 (2 Nov 2026). IPO price abhi tay nahi. Sirf jaankari ke liye."
+
+## Visual decisions (Suraj, 10 Nov 15:25)
+Full 3D cinematic, mix of locations, 14 clips from other account (Fable+Higgsfield), real Anthropic logo small (added in code, not AI-drawn), hook = Momo PROFIT vs LOSS split, fast cuts, big numbers + 2–3 keywords in code, cover = split green/red Momo "PROFIT BHI, $66B LOSS BHI?". Voice Amrut, rich money SFX. Brief: FABLE_BRIEF.md
