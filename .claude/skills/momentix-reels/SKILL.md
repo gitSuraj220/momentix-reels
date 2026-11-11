@@ -129,6 +129,23 @@ Tripod: https://amzn.to/41DuZFR
 Camera: iPhone 14 Pro Max
 ```
 
+## Visual default: realistic photos (Suraj, 11 Nov 2026 — overrides the 2D style for new videos)
+Use realistic photo visuals from now on (cinematic, photoreal), not cartoon/2D, unless Suraj asks for Momo/animation.
+Keep it monetization-safe (§8a):
+* Real stock photos/footage (Pexels, Unsplash, Pixabay — free licence) are first choice for people and places; note the source.
+* AI photoreal images (Higgsfield gpt_image_2_6) are fine for scenes, objects, places, hands, backs, silhouettes, crowds out of focus.
+  No sharp, front-facing realistic AI faces as the subject, and never an AI human "speaking" or posing as an expert on money topics.
+* No AI fakes of real public figures. Real people only via licensed/press-kit photos or just their name on screen.
+* No clips or frames from other creators/news channels (copyright + inauthentic content).
+* Mark YouTube "Altered or synthetic content: Yes" whenever AI photoreal images are used.
+Proven look (HFT video, 11 Nov): photoreal hero stills + code motion on top (push-ins, parallax, grain, glow, glitch, big numbers, captions).
+
+## Long-form story format (from Paper Billions, @PaperBillionsTV — 11 Nov 2026)
+Cold-open scene with stakes + "but here's the strange part" in the first 30 s; every big number gets a desi analogy or
+"har Indian ke ₹X"; tiny 2–3 line dialogues every 10–20 s; a catchphrase that returns; ending loops back to the opening image;
+"ye aapki jeb tak kaise aata hai" section near the end; film-style chapter names; description = question hook + chapters +
+"Figures as of <date>" + sources. Publish within 1–3 days of the news. Thumbnail: one huge number top (red/white) + strong emotion image.
+
 ## Style reference: 2D metaphor explainer (Suraj, 10 Nov 2026 — use for future money explainers)
 Reference: YouTube zEUKLSrbRZk "Why the Stock Market Just Crashed". Flat 2D hand-drawn cartoon: thick black outlines,
 muted warm palette (cream walls, dusty greens/reds), handwritten-style labels on objects (e.g. "WEDNESDAY'S RALLY" tag on a
