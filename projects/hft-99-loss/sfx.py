@@ -25,7 +25,7 @@ def hum(d):   # server-room air + fan hum
     t = np.arange(int(d * SR)) / SR; x = bp(rng.standard_normal(len(t)), 200, 3000) * .5 + .3 * np.sin(2 * np.pi * 120 * t)
     e = np.minimum(1, t / .6) * np.minimum(1, (d - t) / .6); return norm(x * e)
 POP = B('pro_pop/boop'); TINK = B('pro_pop/tink'); SW = B('swipe/paper'); WF = B('whoosh_fast/crisp')
-PUNCH = B('impact/punch'); SUB = B('cut_hit/sub'); KICK = B('cut_hit/kick'); GL = B('glitch/hit'); STEP = B('ui_pop/step'); DING = B('pro_notify/ding_2045')
+PUNCH = B('impact/punch'); _f = int(.6 * SR); PUNCH = PUNCH[:_f] * np.r_[np.ones(_f - int(.25 * SR)), np.linspace(1, 0, int(.25 * SR))].astype(np.float32); SUB = B('cut_hit/sub'); KICK = B('cut_hit/kick'); GL = B('glitch/hit'); STEP = B('ui_pop/step'); DING = B('pro_notify/ding_2045')
 # hook
 add(.5, SUB, .45); add(1.3, PUNCH, .55); add(2.1, STEP, .25)
 for i in range(10): add(3.3 + i * .12, TINK, .12, (i - 4.5) / 6)
@@ -33,13 +33,13 @@ add(4.9, DING, .4); add(5.45, GL, .18)
 add(8.84, PUNCH, .7); add(8.84, KICK, .45); add(11.14, POP, .45); add(11.14, TINK, .3)
 add(12.05, WF, .45); add(12.1, KICK, .3)
 # system montage
-for k in range(13): add(13.6 + k * .18, GL if k % 3 == 0 else STEP, .16 if k % 3 == 0 else .12, ((k % 3) - 1) * .4)
+for k in range(13): add(13.6 + k * .18, GL if k % 3 == 0 else STEP, .11 if k % 3 == 0 else .08, ((k % 3) - 1) * .4)
 add(15.9, WF, .5); add(16.86, SUB, .8); add(16.86, PUNCH, .6)
 # pit
 add(19.2, SW, .35); add(24.2, ring(), .32, .3); add(25.04, POP, .4, .3)
 add(26.55, WF, .4); add(27.2, GL, .5)
 r = B('pro_riser/roll', dur=2.2); add(29.95 - len(r) / SR, r, .45)
-add(29.95, SUB, .85); add(29.95, PUNCH, .55); add(29.95, hum(18.5), .10)
+add(29.95, SUB, .85); add(29.95, PUNCH, .55)
 for i in range(22): add(30.6 + i * .038, STEP, .07)
 # you vs giants
 add(32.4, SW, .35); add(34.34, TINK, .5, -.4); add(35.6, WF, .5, .4); add(36.3, PUNCH, .55); add(38.22, GL, .45, .4)

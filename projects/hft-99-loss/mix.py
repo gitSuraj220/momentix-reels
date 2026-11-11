@@ -13,6 +13,11 @@ F = np.zeros((n, 2)); F[:min(n, len(fx))] = fx[:n]
 meter = pyln.Meter(SR)
 V *= 10 ** ((-17 - meter.integrated_loudness(V)) / 20)      # voice leads
 F *= 10 ** ((-25 - meter.integrated_loudness(F)) / 20)      # SFX ~8 LU under voice
+# duck SFX ~6 dB while the voice is speaking (pauses keep full-size hits)
+from scipy.ndimage import maximum_filter1d, uniform_filter1d
+env = uniform_filter1d(np.abs(V[:, 0]), int(.03 * SR)); act = (env > 10 ** (-42 / 20)).astype(float)
+act = maximum_filter1d(act, int(.25 * SR)); act = uniform_filter1d(act, int(.08 * SR))
+F *= (1 - .5 * act)[:, None]
 M = V + F
 M *= 10 ** ((-14 - meter.integrated_loudness(M)) / 20)
 # true-peak guard (4x oversampled estimate)
