@@ -1,0 +1,67 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Poppins ExtraBold,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,0,0,0,0,100,100,0,0,1,7,3,5,40,40,0,1
+Style: Head,Anton,118,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,6,0,5,40,40,0,1
+Style: Fine,Poppins ExtraBold,30,&H00B0A69A,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,2,0,1,2,0,5,40,40,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:03.12,0:00:04.88,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}INDIA MEIN {\c&H00D4FF&}2 CRORE
+Dialogue: 1,0:00:04.88,0:00:06.14,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}F&O TRADERS
+Dialogue: 1,0:00:06.14,0:00:07.70,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}HAR 100 MEIN SE
+Dialogue: 1,0:00:07.70,0:00:09.64,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}SIRF {\c&H7AE03E&}1 PROFIT{\c&HFFFFFF&} MEIN
+Dialogue: 1,0:00:09.64,0:00:11.04,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}100 LOG TRADE KARTE HAIN
+Dialogue: 1,0:00:11.04,0:00:13.26,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}{\c&H5C3BFF&}99 KO LOSS
+Dialogue: 1,0:00:13.26,0:00:14.80,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}AUR {\c&H7AE03E&}1 KO PROFIT
+Dialogue: 1,0:00:14.80,0:00:16.46,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}PAR AISA KYUN?
+Dialogue: 1,0:00:16.46,0:00:17.04,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}ISKE PEECHHE
+Dialogue: 1,0:00:17.04,0:00:18.86,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}EK BAHUT BADA SYSTEM
+Dialogue: 1,0:00:18.86,0:00:21.46,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}SYSTEM OF {\c&HFFE838&}HFTs
+Dialogue: 1,0:00:21.90,0:00:23.04,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}AAPKO LAGTA HOGA
+Dialogue: 1,0:00:23.04,0:00:25.64,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}TRADE AISE HOTA HOGA…
+Dialogue: 1,0:00:27.82,0:00:30.42,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}PAR {\c&HFFE838&}REALITY{\c&HFFFFFF&} MEIN…
+Dialogue: 1,0:00:30.76,0:00:32.34,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}ISE KEHTE HAIN
+Dialogue: 1,0:00:32.34,0:00:34.20,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}{\c&HFFE838&}HIGH FREQUENCY TRADING
+Dialogue: 1,0:00:34.20,0:00:35.74,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}JAB AAP TRADING KARTE HO
+Dialogue: 1,0:00:35.74,0:00:37.78,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}AUR {\c&H7AE03E&}BUY{\c&HFFFFFF&} DABATE HO
+Dialogue: 1,0:00:37.78,0:00:38.92,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}AAPKE OPPOSITE MEIN
+Dialogue: 1,0:00:38.92,0:00:39.56,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}YE {\c&HFFE838&}GIANTS
+Dialogue: 1,0:00:39.56,0:00:42.12,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}APNI {\c&HFFE838&}ALGORITHM{\c&HFFFFFF&} SE TRADE
+Dialogue: 1,0:00:42.12,0:00:44.32,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}SYSTEM FAST BANANE KE LIYE
+Dialogue: 1,0:00:44.32,0:00:45.92,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}SERVERS EXCHANGE KE
+Dialogue: 1,0:00:45.92,0:00:47.92,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}{\c&H00D4FF&}DATA CENTRE KE ANDAR
+Dialogue: 1,0:00:47.92,0:00:48.90,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}AUR TEZ PRIVATE
+Dialogue: 1,0:00:48.90,0:00:51.08,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}{\c&HFFE838&}NETWORK LINES
+Dialogue: 1,0:00:51.08,0:00:52.90,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}NANOSECONDS KA DELAY BHI
+Dialogue: 1,0:00:52.90,0:00:53.48,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}{\c&H5C3BFF&}MANZOOR NAHI
+Dialogue: 1,0:00:53.48,0:00:55.10,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}EK REPORT KE HISAAB SE
+Dialogue: 1,0:00:55.10,0:00:56.20,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}EK SAAL MEIN
+Dialogue: 1,0:00:56.20,0:00:56.88,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}IN FIRMS NE
+Dialogue: 1,0:00:56.88,0:00:59.48,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}{\c&H7AE03E&}$7 BILLION{\c&HFFFFFF&} KA PROFIT
+Dialogue: 1,0:01:00.42,0:01:01.78,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}SAME UTNA HI PAISA
+Dialogue: 1,0:01:01.78,0:01:02.76,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}INDIAN TRADERS NE
+Dialogue: 1,0:01:02.76,0:01:04.64,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}{\c&H5C3BFF&}LOSS MEIN GAWAYA
+Dialogue: 1,0:01:04.64,0:01:05.34,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}KYUNKI INDIA MEIN
+Dialogue: 1,0:01:05.34,0:01:06.48,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}OFFICE WALA
+Dialogue: 1,0:01:06.48,0:01:07.34,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}CHAI WALA
+Dialogue: 1,0:01:07.34,0:01:08.42,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}AUTO-RICKSHAW WALA
+Dialogue: 1,0:01:08.42,0:01:09.86,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}SAB TRADE KAR RAHE HAIN
+Dialogue: 1,0:01:09.86,0:01:10.48,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}AUR INKE CHANCES
+Dialogue: 1,0:01:10.48,0:01:12.28,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}{\c&HFFE838&}HFT FIRMS{\c&HFFFFFF&} KE SAAMNE
+Dialogue: 1,0:01:12.28,0:01:14.42,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}{\c&H5C3BFF&}NULL
+Dialogue: 1,0:01:14.42,0:01:17.02,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}TOH EK CHHOTI SI REQUEST
+Dialogue: 1,0:01:17.56,0:01:18.44,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}BINA PROPER KNOWLEDGE
+Dialogue: 1,0:01:18.44,0:01:19.28,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}AUR LEARNING KE
+Dialogue: 1,0:01:19.28,0:01:20.66,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}APNI MEHNAT KI KAMAI
+Dialogue: 1,0:01:20.66,0:01:21.52,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}IS MARKET MEIN
+Dialogue: 1,0:01:21.52,0:01:22.16,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}{\c&H00D4FF&}MAT LAGANA
+Dialogue: 1,0:01:22.16,0:01:24.50,Cap,,0,0,0,,{\pos(540,1400)\fscx78\fscy78\t(0,110,\fscx106\fscy106)\t(110,190,\fscx100\fscy100)}THANK YOU
+Dialogue: 0,0:00:00.00,0:01:24.50,Head,,0,0,0,,{\pos(540,400)\fad(200,0)}100 MEIN SE SIRF 1
+Dialogue: 0,0:00:00.00,0:01:24.50,Head,,0,0,0,,{\pos(540,535)\fad(200,0)\c&H7AE03E&}PROFIT MEIN KYUN?
+Dialogue: 0,0:00:00.00,0:01:24.50,Fine,,0,0,0,,{\pos(540,1292)}Sirf jaankari ke liye
