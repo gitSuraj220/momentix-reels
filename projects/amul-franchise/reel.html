@@ -1,0 +1,89 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas><script>
+const W=1080,H=1920,C=document.getElementById('c');let X=C.getContext('2d');const FD='../../engine/fonts/';
+const FONTS=[['A','anton-latin-400-normal','400'],['P','poppins-latin-800-normal','800'],['P','poppins-latin-700-normal','700'],['P','poppins-latin-500-normal','500']];
+const IM={};
+window.READY=(async()=>{for(const [f,n,w] of FONTS){const ff=new FontFace(f,`url(${FD}${n}.woff2)`,{weight:w});await ff.load();document.fonts.add(ff);}
+ await Promise.all(['bunty','parlour','sundae','college'].map(k=>new Promise(r=>{const i=new Image();i.onload=r;i.src=`art/u_${k}.jpg`;IM[k]=i;})));
+ window.GR=[];for(let k=0;k<5;k++){const g=document.createElement('canvas');g.width=270;g.height=480;const gx=g.getContext('2d');const d=gx.createImageData(270,480);for(let i=0;i<d.data.length;i+=4){const v=Math.random()*255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255;}gx.putImageData(d,0,0);GR.push(g);}return true;})();
+const cl=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),P=(t,a,b)=>cl((t-a)/(b-a)),eo=x=>1-Math.pow(1-x,3),eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c1=1.9,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};const R=i=>{const x=Math.sin(i*12.9898+78.233)*43758.5453;return x-Math.floor(x)};const lerp=(a,b,x)=>a+(b-a)*x;
+const YL='#ffd400',G='#3ee07a',BL='#1e5bd8',WH='#ffffff',RD='#ff3b5c';
+function cover(I,z=1,ox=0,oy=0,a=1,f='none'){if(a<=0)return;X.save();X.globalAlpha=a;X.filter=f;const s=Math.max(W/I.width,H/I.height)*z,w=I.width*s,h=I.height*s;X.drawImage(I,(W-w)/2+ox,(H-h)/2+oy,w,h);X.restore();}
+function T(s,x,y,o={}){const a=o.a??1;if(a<=0)return;X.save();X.globalAlpha=a;X.translate(x,y);const sc=o.sc??1;X.scale(sc,sc);X.rotate(o.rot||0);
+ X.font=`${o.w||''} ${o.size||80}px ${o.f||'A'}`;X.textAlign=o.al||'center';X.textBaseline='middle';
+ if(o.glow){X.shadowColor=o.glow;X.shadowBlur=o.gb||30;}
+ if(o.stroke){X.lineJoin='round';X.lineWidth=o.stroke;X.strokeStyle=o.sc2||'rgba(0,0,0,.9)';X.strokeText(s,0,0);}
+ X.fillStyle=o.c||WH;X.fillText(s,0,0);X.restore();}
+function rr(x,y,w,h,r){X.beginPath();X.roundRect(x,y,w,h,r);}
+function shade(c,a){X.save();X.globalAlpha=a;X.fillStyle=c;X.fillRect(0,0,W,H);X.restore();}
+function vign(s=.7){const g=X.createRadialGradient(W/2,H/2,H*.25,W/2,H/2,H*.75);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,`rgba(0,0,0,${s})`);X.fillStyle=g;X.fillRect(0,0,W,H);}
+function grain(t,a=.06){X.save();X.globalAlpha=a;X.globalCompositeOperation='overlay';X.drawImage(GR[Math.floor(t*24)%5],0,0,W,H);X.restore();}
+function flash(t,t0,d=.25,c='#fff',m=.85){const k=P(t,t0,t0+d);if(t>=t0&&k<1)shade(c,m*(1-k));}
+function shakeAt(t,t0,amp=26,d=.4){if(t<t0||t>t0+d)return[0,0];const k=1-P(t,t0,t0+d);return[(R(Math.floor(t*60))-.5)*amp*2*k,(R(Math.floor(t*60)+7)-.5)*amp*2*k];}
+function topBand(a=1){const g=X.createLinearGradient(0,0,0,700);g.addColorStop(0,`rgba(0,0,0,${.75*a})`);g.addColorStop(1,'rgba(0,0,0,0)');X.fillStyle=g;X.fillRect(0,0,W,700);}
+function botBand(a=1){const g=X.createLinearGradient(0,H-800,0,H);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,`rgba(0,0,0,${.85*a})`);X.fillStyle=g;X.fillRect(0,H-800,W,800);}
+// phrase captions (lower third, safe area)
+const CAPS=[[0.80,2.30,'AAJ HI APNA IPHONE BECH DO!'],[2.30,4.40,'AUR YE BUSINESS CHALU KARO…'],[4.40,6.30,'AUR LAKHON KI KAMAI KARO!'],
+ [6.40,8.70,'BUSINESS HAI AMUL KI FRANCHISE'],[8.70,10.20,'MAATRA 2 LAKH MEIN!'],[10.20,13.80,'BAS 100–150 SQ FT JAGAH CHAHIYE'],
+ [14.20,15.20,'1 LAKH DUKAAN KE'],[15.20,16.90,'70 HAZAAR KA SAAMAAN'],[16.90,19.10,'AUR 25 HAZAAR SECURITY DEPOSIT'],[19.20,20.80,'WO BHI EK SAAL MEIN WAPAS!'],
+ [20.90,23.00,'APPLY KARNE KE LIYE'],[23.00,25.40,'AMUL KI OFFICIAL WEBSITE PE FORM BHARO']];
+function captions(t){for(const [a,b,s] of CAPS){if(t>=a&&t<b){const k=back(P(t,a,a+.18));X.font='800 52px P';const fit=Math.min(1,960/X.measureText(s).width);T(s,W/2,1395,{f:'P',w:'800',size:Math.floor(52*fit),stroke:12,sc:.85+.15*k,a:P(t,a,a+.08)*(1-P(t,b-.08,b))});}}}
+function fine(t,a){T('Approx. figures · Amul ki official site pe confirm karein · Sirf jaankari ke liye',W/2,1470,{f:'P',w:'500',size:22,c:'#d8dce6',a,stroke:5});}
+function card(x,y,w,h,amt,lbl,col,k,t){if(k<=0)return;const s=.6+.4*back(k);X.save();X.globalAlpha=cl(k*2);X.translate(x+w/2,y+h/2);X.scale(s,s);X.rotate((1-cl(k*1.4))*-.08);X.translate(-w/2,-h/2);
+ X.shadowColor='rgba(0,0,0,.6)';X.shadowBlur=30;rr(0,0,w,h,28);X.fillStyle='rgba(255,255,255,.96)';X.fill();X.shadowBlur=0;rr(0,0,16,h,8);X.fillStyle=col;X.fill();X.restore();
+ T(amt,x+50,y+h/2-26,{size:96,al:'left',c:'#12203a',a:cl(k*2),sc:1});T(lbl,x+52,y+h/2+48,{f:'P',w:'800',size:34,al:'left',c:col,a:cl(k*2)});}
+function phoneUI(cx,cy,s,t,t0){X.save();X.translate(cx,cy);X.scale(s,s);rr(-250,-480,500,960,60);X.fillStyle='#0d1018';X.fill();X.lineWidth=8;X.strokeStyle='#2c3346';X.stroke();
+ rr(-225,-450,450,900,40);X.fillStyle='#f5f7fb';X.fill();rr(-205,-420,410,60,30);X.fillStyle='#e3e7ef';X.fill();T('amul.com  ·  Franchise',-0,-390,{f:'P',w:'700',size:26,c:'#36415a'});
+ T('FRANCHISE FORM',0,-300,{f:'P',w:'800',size:40,c:BL});
+ const F=['Naam','Mobile','Sheher / Area','Dukaan ki jagah (sq ft)'],V=['Rahul Sharma','98xxxxxx10','Indore, MP','120'];
+ F.forEach((f,i)=>{const y=-210+i*130;T(f,-195,y,{f:'P',w:'700',size:24,al:'left',c:'#5b6680'});rr(-195,y+18,390,62,14);X.fillStyle='#fff';X.fill();X.strokeStyle='#c9d1e0';X.lineWidth=3;X.stroke();
+  const n=Math.floor(V[i].length*P(t,t0+.35*i,t0+.35*i+.35));T(V[i].slice(0,n)+((n>0&&n<V[i].length&&Math.floor(t*8)%2)?'|':''),-180,y+50,{f:'P',w:'500',size:30,al:'left',c:'#12203a'});});
+ const pk=t>t0+2.1?P(t,t0+2.1,t0+2.25):0;const ok=t>t0+2.25;rr(-195,330+(pk>0&&pk<1?6:0),390,90,22);X.fillStyle=ok?G:BL;X.fill();T(ok?'SUBMITTED!':'APPLY NOW',0,375,{f:'P',w:'800',size:38,c:'#fff'});
+ if(ok){const r=P(t,t0+2.25,t0+2.9);X.strokeStyle=`rgba(62,224,122,${1-r})`;X.lineWidth=8;X.beginPath();X.arc(0,375,60+r*220,0,7);X.stroke();}
+ X.restore();}
+window.renderAt=function(t){X.setTransform(1,0,0,1,0,0);X.globalAlpha=1;X.filter='none';X.fillStyle='#05070c';X.fillRect(0,0,W,H);
+ const [sx,sy]=shakeAt(t,0.62,34,.5);X.save();X.translate(sx,sy);
+ if(t<0.62){cover(IM.bunty,1.04+.04*t,0,0,1,'contrast(1.05)');vign(.6);}
+ else if(t<6.4){ // SLOT for Suraj's own artwork (centre ~ y 480–1300): dark warm stage + spotlight, text top
+  const g=X.createRadialGradient(W/2,900,60,W/2,900,760);g.addColorStop(0,'#3a2a1c');g.addColorStop(1,'#07080d');X.fillStyle=g;X.fillRect(0,0,W,H);
+  // flying iPhone
+  const k=P(t,.62,1.9);if(k<1){X.save();X.translate(lerp(560,1250,eo(k)),lerp(1150,300,eo(k))-300*Math.sin(k*Math.PI)*.4);X.rotate(k*9);rr(-70,-140,140,280,26);X.fillStyle='#d7dbe2';X.fill();rr(-58,-126,116,252,18);X.fillStyle='#1b2030';X.fill();X.restore();}
+  if(t>.62&&t<1.1)T('THWACK!',W/2+160,560,{size:150,c:YL,rot:-.12,sc:.7+.5*back(P(t,.62,.85)),stroke:16,a:1-P(t,.95,1.1)});
+  T('AAJ HI APNA',W/2,270,{size:96,stroke:14,a:P(t,.8,.95),sc:.8+.2*back(P(t,.8,1.05))});
+  T('IPHONE BECH DO!',W/2,375,{size:110,c:YL,stroke:14,a:P(t,1.0,1.15),sc:.8+.2*back(P(t,1.0,1.25))});
+  T('AUR BUSINESS CHALU KARO',W/2,1330,{f:'P',w:'800',size:56,stroke:12,a:P(t,2.3,2.45),sc:.85+.15*back(P(t,2.3,2.55))});
+  T('LAKHON KI KAMAI!',W/2,1425,{size:96,c:G,stroke:14,a:P(t,4.4,4.55),sc:.8+.2*back(P(t,4.4,4.7)),glow:'rgba(62,224,122,.5)'});
+ }
+ else if(t<10.3){const k=P(t,6.4,10.3);cover(IM.parlour,1.06+.08*k,0,-40*k,1,'saturate(1.12)');topBand();
+  T('AMUL',W/2,250,{size:150,c:WH,stroke:16,a:P(t,7.0,7.15),sc:.8+.2*back(P(t,7.0,7.3))});T('FRANCHISE',W/2,385,{size:120,c:YL,stroke:16,a:P(t,7.6,7.75),sc:.8+.2*back(P(t,7.6,7.9))});
+  if(t>8.9){const k2=P(t,9.55,9.8);rr(W/2-330,995,660,250,34);X.save();X.globalAlpha=P(t,8.9,9.0);X.fillStyle='rgba(0,0,0,.72)';X.fill();X.restore();
+   T('SIRF',W/2,1040,{f:'P',w:'800',size:44,c:'#ddd',a:P(t,8.9,9.0)});T('₹2 LAKH',W/2,1150,{size:150,c:G,glow:'rgba(62,224,122,.6)',a:P(t,9.4,9.55),sc:1.4-.4*back(k2)});}
+  flash(t,9.55,.2,'#fff',.35);botBand(.8);}
+ else if(t<14.1){cover(IM.parlour,1.25,0,-120,.55,'blur(6px) brightness(.6)');shade('#06101f',.45);
+  // floor plan fills
+  const x0=190,y0=520,w=700,h=560,k=eio(P(t,10.6,12.6));X.save();X.strokeStyle='#fff';X.lineWidth=8;X.setLineDash([22,14]);X.strokeRect(x0,y0,w,h);X.setLineDash([]);
+  X.fillStyle='rgba(30,91,216,.55)';X.fillRect(x0,y0+h*(1-k),w,h*k);X.restore();
+  T('OUTLET',W/2,y0-80,{f:'P',w:'800',size:52,a:P(t,10.3,10.5)});T('100–150',W/2,y0+h/2-40,{size:170,c:YL,stroke:14,a:P(t,11.6,11.8),sc:.8+.2*back(P(t,11.6,11.9))});
+  T('SQ FT',W/2,y0+h/2+100,{size:96,stroke:12,a:P(t,12.5,12.7)});T('bas itni jagah!',W/2,y0+h+80,{f:'P',w:'700',size:46,c:'#e8ecf5',a:P(t,13.0,13.2)});}
+ else if(t<21.0){cover(IM.sundae,1.1+.05*P(t,14.1,21),0,0,.5,'blur(5px) brightness(.55)');shade('#07101e',.4);
+  T('KHARCHA KITNA?',W/2,330,{size:110,stroke:14,a:P(t,14.1,14.3)});
+  card(110,470,860,200,'₹1,00,000','DUKAAN (RENOVATION)',BL,P(t,14.32,14.7),t);
+  card(110,700,860,200,'₹70,000','SAAMAAN (FRIDGE, FREEZER)','#e8840c',P(t,15.26,15.65),t);
+  card(110,930,860,200,'₹25,000','SECURITY DEPOSIT','#7a3fe0',P(t,17.1,17.5),t);
+  if(t>18.2){T('= LAGBHAG ₹2 LAKH',W/2,1210,{size:92,c:G,stroke:14,a:P(t,18.2,18.4),sc:.85+.15*back(P(t,18.2,18.5))});}
+  if(t>19.3){const k=back(P(t,19.3,19.6));X.save();X.translate(W/2+170,1060);X.rotate(-.18);X.scale(2.2-1.2*k,2.2-1.2*k);X.globalAlpha=P(t,19.3,19.42);rr(-270,-56,540,112,18);X.lineWidth=10;X.strokeStyle=RD;X.stroke();X.restore();
+   T('1 SAAL MEIN WAPAS',W/2+170,1060,{size:54,c:RD,rot:-.18,sc:2.2-1.2*k,a:P(t,19.3,19.42)});}
+  flash(t,19.3,.15,'#fff',.25);}
+ else if(t<25.6){cover(IM.parlour,1.3,0,0,.45,'blur(8px) brightness(.5)');shade('#050912',.5);
+  T('APPLY KAISE KAREIN?',W/2,250,{size:96,stroke:14,a:P(t,20.96,21.15)});phoneUI(W/2,840,.95*(.85+.15*back(P(t,21.0,21.4))),t,21.6);}
+ else {const k=P(t,25.6,28.6);cover(IM.college,1.05+.06*k,0,0,1,'saturate(1.1)');topBand();botBand();
+  T('SAVE KARO',W/2,280,{size:110,stroke:14,a:P(t,25.7,25.9),sc:.85+.15*back(P(t,25.7,26))});
+  T('& US DOST KO BHEJO',W/2,1300,{f:'P',w:'800',size:56,stroke:12,a:P(t,26.2,26.4)});T('JO BUSINESS SHURU KARNA CHAHTA HAI',W/2,1380,{f:'P',w:'800',size:40,c:YL,stroke:10,a:P(t,26.6,26.8)});
+  shade('#000',P(t,28.2,28.6));}
+ X.restore();
+ if(t>6.4&&t<25.5)captions(t);
+ if(t>6.4&&t<25.5)fine(t,P(t,6.4,6.8));
+ flash(t,0.62,.22,'#fff',.95);vign(.5);grain(t,.05);
+};
+</script></body></html>
