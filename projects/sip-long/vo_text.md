@@ -1,0 +1,53 @@
+# VO text for ElevenLabs (phonetic numbers). Model Eleven v4, stability 50, similarity 75.
+# Order: A1 (Amrut) -> D1 (Devi) -> A2 (Amrut) -> D2 (Devi) -> A3 (Amrut)
+
+## A1 — Amrut
+SIP ke baare mein aapne bahut suna hoga. Par ho sakta hai aap aaj tak SIP chalu nahi kar paaye... ya phir aapko SIP samajh hi nahi aayi. Toh ye video aapke liye hai. Is video ko end tak dekhne ke baad, SIP ko lekar aapka koi doubt nahi rahega... aur aap aaraam se apni SIP shuru kar paayenge.
+
+SIP ka matlab hai... Systematic Investment Plan. Aasaan bhasha mein: har mahine ek tay date pe, ek tay paisa, apne aap aapke bank account se kat ke stock market mein lag jaata hai.
+
+SIP un investors ke liye hai jo har mahine thoda-thoda invest karna chahte hain. SIP ka ek bada fayda hai. Jab market neeche hota hai, toh aapki SIP mein zyada units milti hain. Jab market upar hota hai, toh kam units milti hain. Aisa karne se long term mein aapki investment achha return de sakti hai.
+
+## D1 — Devi
+Par aapko toh pata nahi hai ki paise kahan lagaane hain?
+
+## A2 — Amrut
+Toh ab baat aati hai... mutual fund ki.
+
+Mutual fund ko ek badi tokri samjho. Hazaaron logon ka paisa is tokri mein jaata hai. Ek expert, jise fund manager kehte hain, is paise ko alag-alag companies ke shares mein lagaata hai. Badle mein aapko units milti hain.
+
+Ab mutual fund bhi apne risk ke hisaab se mainly teen categories mein bante hue hain: Large cap, Mid cap, aur Small cap.
+
+India ki sau sabse badi companies... Large cap hain. Ek sau ek se do sau pachaas number tak ki companies... Mid cap hain. Aur do sau ikyaavan ke baad ki saari companies... Small cap hain.
+
+Ise example se samjho. Large cap ek badi SUV jaisa hai. Speed thodi kam hai, par safar aaraam ka hai, aur jhatke kam lagte hain. Mid cap ek sedan jaisa hai. Speed bhi theek hai, aur jhatke bhi beech ke hain. Small cap ek sports bike jaisa hai. Bahut tez bhaag sakti hai... par girne ka risk bhi sabse zyada hai.
+
+Jab market girta hai, toh small cap aksar sabse zyada girte hain. Aur bahut log isi waqt ghabra ke SIP band kar dete hain.
+
+## D2 — Devi
+Toh aapke liye kaunsa sahi hai?
+
+## A3 — Amrut
+Agar utaar-chadhaav kam chahiye, toh large cap. Aur agar zyada utaar-chadhaav jhel sakte ho, toh mid cap ya small cap.
+
+App pe SIP kaise shuru karein? Chhe steps. Har app thoda alag dikhta hai, par steps lagbhag same hote hain.
+
+Step one: KYC. PAN card, Aadhaar, aur bank account ki details daalo. KYC ek hi baar hota hai, phir har fund mein chalega.
+
+Step two: fund chuno. Category dekho... Large cap, Mid cap, ya Small cap.
+
+Step three: SIP pe click karo, One-time pe nahi. Phir amount daalo, jaise ek hazaar rupaye.
+
+Step four: date chuno. Salary aane ke do-teen din baad ki date rakho, taaki account mein paisa ho.
+
+Step five: autopay lagao. UPI Autopay ya bank mandate approve karo. Ek baar approve kar diya, toh har mahine paisa apne aap katega.
+
+Step six: confirm karo. Pehli kisht katne ke kuch din baad, units aapke account mein dikhne lagengi.
+
+Bas! Aapki SIP chalu ho gayi.
+
+Ye chaar galtiyan mat karna. Ek: market gira, aur SIP band kar di. Jabki girte market mein hi zyada units milti hain. Do: ek saath aath-das fund le liye. Aksar sabke andar same companies hoti hain. Teen: sirf pichhle saal ka return dekh ke fund chun liya. Chaar: emergency ke liye paisa alag rakhe bina SIP shuru kar di.
+
+Toh yaad rakho: SIP matlab har mahine tay paisa, apne aap. Large cap mein kam jhatke hain, mid cap beech ka hai, aur small cap mein sabse zyada utaar-chadhaav hai. Shuru karne ke liye bas chhe steps hain.
+
+Video kaam ki lagi, toh video ko like aur channel ko subscribe karna na bhoolein.
