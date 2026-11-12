@@ -117,7 +117,7 @@ function S_tokri(t,s,d){bg(t,'#0b1530');
 }
 const CATS=[['LARGE CAP',CY],['MID CAP',PU],['SMALL CAP',MG]];
 function S_cats(t,s,d){bg(t,'#0d1234');T('RISK KE HISAAB SE 3 CATEGORIES',W/2,170,{f:'P',w:'800',size:46,c:YL,a:P(s,.2,.4)});
- CATS.forEach(([n,c],i)=>{const t0=cue('c_'+i,2+i*1.1);if(s<t0)return;const k=pop(s,t0);const x=W/2+(i-1)*560;X.save();X.translate(x,560);X.scale(k,k);neonBox(-230,-230,460,460,c,1);X.restore();
+ CATS.forEach(([n,c],i)=>{const t0=cue('c_'+i,2+i*1.1);const pre=.6+i*.25;if(s<pre)return;if(s<t0){const x=W/2+(i-1)*560,a=.3*P(s,pre,pre+.3);X.save();X.translate(x,560+Math.sin(s*2+i)*6);neonBox(-230,-230,460,460,c,a);X.restore();T('?',x,560,{size:160,c,a:a*1.8,glow:c});return;}const k=pop(s,t0);const x=W/2+(i-1)*560;X.save();X.translate(x,560);X.scale(k,k);neonBox(-230,-230,460,460,c,1);X.restore();
   T(n,x,500,{size:96,c:WH,sc:k,glow:c});const bars=[1,2,3][i];for(let j=0;j<3;j++){X.save();X.globalAlpha=P(s,t0+.3,t0+.5)*(j<bars?1:.18);rr(x-90+j*65,690-j*30,50,40+j*30,8);X.fillStyle=c;X.fill();X.restore();}
   T('RISK',x,750,{f:'P',w:'700',size:26,c:DIM,a:P(s,t0+.3,t0+.5)});});}
 function S_rank(t,s,d){bg(t,'#0b1030');
@@ -204,7 +204,7 @@ window.renderAt=function(t){X.setTransform(1,0,0,1,0,0);X.globalAlpha=1;X.filter
  let id=ORDER[0];for(const k of ORDER){if(t>=TL[k][0])id=k;}const [a,b]=TL[id];const s=t-a,d=b-a;
  if(FN[id])FN[id](t,s,d);else S_app(t,id,s,d);
  // scene transition: quick fade from black at each scene start
- shade('#03040a',1-P(s,0,.18));
+ if(!['st2','st3','st4','st5','st6'].includes(id))shade('#03040a',1-P(s,0,.18));
  vign(.55);grain(t,.045);};
 window.END=END;
 </script></body></html>
