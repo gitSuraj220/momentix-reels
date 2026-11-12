@@ -1,4 +1,4 @@
-# SIP long video — FINAL script v3 (Suraj's words, flow corrected)
+# SIP long video — FINAL script v4 (Suraj's words, flow corrected)
 
 Narrator: Amrut. Visuals: animation only (generic "MF app" mockup, no real brand/fund names).
 On-screen (not VO): "Sirf jaankari ke liye · Mutual fund nivesh market jokhim ke adheen hai" — hook + outro.
@@ -42,13 +42,7 @@ Step 5, autopay lagao: UPI Autopay ya bank mandate approve karo. Ek baar approve
 Step 6, confirm karo: pehli kisht katne ke kuch din baad units aapke account mein dikhne lagengi.
 Bas! Aapki SIP chalu ho gayi.
 
-## 5. Baad mein kaam aane wali baatein
-Paise ki tangi hai, toh bahut se apps mein SIP kuch mahino ke liye "pause" karne ka option hota hai.
-SIP "cancel" karne se aapka jama paisa nahi nikalta. Bas aage ki kisht rukti hai.
-Salary badhi, toh "Step-up" se har saal SIP ka amount badha sakte ho.
-Kai funds mein 1 saal se pehle paisa nikalne pe thodi fees lagti hai, jise exit load kehte hain. Ye aksar 1% ke aas-paas hoti hai.
-
-## 6. Ye 4 galtiyan mat karna
+## 5. Ye 4 galtiyan mat karna
 1. Market gira aur SIP band kar di, jabki girte market mein hi zyada units milti hain.
 2. Ek saath 8-10 fund le liye. Aksar sabke andar same companies hoti hain.
 3. Sirf pichhle saal ka return dekh ke fund chun liya.
