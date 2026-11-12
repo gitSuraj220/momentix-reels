@@ -1,7 +1,7 @@
 # SIP long video — FINAL script v4 (Suraj's words, flow corrected)
 
 Narrator: Amrut. Visuals: animation only (generic "MF app" mockup, no real brand/fund names).
-On-screen (not VO): "Sirf jaankari ke liye · Mutual fund nivesh market jokhim ke adheen hai" — hook + outro.
+No disclaimer on screen or in VO (Suraj, 12 Nov). "Sirf jaankari ke liye" + MF risk line go in the YouTube description only.
 
 ## HOOK
 SIP ke baare mein aapne bahut suna hoga. Par ho sakta hai aap aaj tak SIP chalu nahi kar paaye, ya phir aapko SIP samajh hi nahi aayi. Toh ye video aapke liye hai. Is video ko end tak dekhne ke baad SIP ko lekar aapka koi doubt nahi rahega, aur aap aaraam se apni SIP shuru kar paayenge.
