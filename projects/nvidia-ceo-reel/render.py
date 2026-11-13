@@ -1,7 +1,7 @@
 """Render reel.html -> build/video_only.mp4 (1080x1920, 30 fps)."""
 import asyncio, os, subprocess
 from playwright.async_api import async_playwright
-D = os.path.dirname(os.path.abspath(__file__)); FPS = 30; END = 49.02; N = int(END * FPS)
+D = os.path.dirname(os.path.abspath(__file__)); FPS = 30; END = 48.039; N = int(END * FPS)
 async def main():
     os.makedirs(f'{D}/build', exist_ok=True)
     ff = subprocess.Popen(['ffmpeg','-v','error','-y','-f','image2pipe','-framerate',str(FPS),'-c:v','mjpeg','-i','-',
