@@ -175,7 +175,7 @@ function sAffair(t){const s0=S('M2');X.fillStyle='#09070f';X.fillRect(0,0,W,H);
    X.bezierCurveTo(sd*130,10,sd*120,-90,sd*55,-90);X.bezierCurveTo(sd*22,-90,0,-70,0,-50);X.lineTo(-14*sd,-14);X.lineTo(12*sd,18);X.lineTo(0,90);X.closePath();
    X.fillStyle=RD;X.fill();X.restore();}X.restore();}
  // headline cards falling
- const hs=[['CEO SCANDAL',-.12,260,cue('affair','M2',.35)],['SHOCK NEWS',.1,820,cue('affair','M2',.48)],['MARKET PANIC',-.05,560,cue('down','M2',.75)]];
+ const hs=[['CEO SCANDAL',-.12,260,cue('affair','M2',.35)-.35],['SHOCK NEWS',.1,820,cue('affair','M2',.48)+.2],['MARKET PANIC',-.05,560,cue('down','M2',.75)]];
  for(const [s,r,x,t0] of hs){if(t<t0)continue;const k=eo(P(t,t0,t0+.45));const y=lerp(-150,[1120,1260,1190][hs.findIndex(h=>h[0]===s)],k);
   X.save();X.translate(x,y);X.rotate(r+Math.sin(t*2+x)*.03);fillRR(-200,-62,400,124,10,CREAM);fillRR(-200,-62,400,30,10,RD);T(s,0,12,{f:'A',size:58,c:INK,max:360});X.restore();}
  // share arrow down
