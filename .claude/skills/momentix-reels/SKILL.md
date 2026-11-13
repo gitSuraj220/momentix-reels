@@ -153,3 +153,11 @@ balloon, "DATA CENTER" sign), simple stick-ish characters with tiny faces, one v
 pop = rally/bubble, stopwatch = time pressure, factory conveyor = new chips every year, VIX "fear gauge" dial, split-screen
 company icons, map + smiling water tower = small town). Slow camera pans/push-ins between metaphor scenes, papers flying,
 red mood lighting for panic. Build it in code (SVG/HTML or Remotion) — 0 credits; adapt Momo/Bunty into the flat style.
+
+## Paper Billions story style (Suraj, 13 Nov 2026) — for reels and long videos
+Reference: Paper Billions "Why Nvidia Would Fail Without Jensen Huang" (14:20, 245 cuts, avg shot 3.5 s, hook 1.6 s/shot, -14.4 LUFS, LRA 2.3).
+- One flat 2D cartoon art style, locked per video; the character is created to fit each script (Suraj's call) — never a real-person caricature, no brand logos.
+- Script is a story, not a list: line 1 = character + problem + number; sentences under ~10 words; 1-2 short dialogue lines; one recurring motif object; hook ends on a question, then title card.
+- One shot per sentence (reel: 12-18 shots, 2-3 s; long: ~1 shot / 3 s). Every shot moves: camera push/pan, counters, items popping in.
+- Data lives inside the world (price tags, boards, objects in grids, strings), not chart overlays. Punch lines on black in a handwritten font. Few or no subtitles.
+- Build: Higgsfield backgrounds + props on separate layers in one style, animated in code (parallax, camera, counters). Voice: Amrut narrator + short character dialogue lines.
