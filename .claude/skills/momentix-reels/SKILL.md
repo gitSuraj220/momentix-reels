@@ -161,3 +161,8 @@ Reference: Paper Billions "Why Nvidia Would Fail Without Jensen Huang" (14:20, 2
 - One shot per sentence (reel: 12-18 shots, 2-3 s; long: ~1 shot / 3 s). Every shot moves: camera push/pan, counters, items popping in.
 - Data lives inside the world (price tags, boards, objects in grids, strings), not chart overlays. Punch lines on black in a handwritten font. Few or no subtitles.
 - Build: Higgsfield backgrounds + props on separate layers in one style, animated in code (parallax, camera, counters). Voice: Amrut narrator + short character dialogue lines.
+
+## ElevenLabs account + Suraj's own voice (Suraj, 14 Nov 2026)
+- New ElevenLabs login has enough credits. Use it ONLY for voice generation (TTS), nothing else.
+- Always use the best model available (currently Eleven v4; check the model list each time, pick the newest/highest-quality).
+- Suraj's cloned voice: name "harry potter", voice ID `pgRz5COLMSBlaG5Fezay` (in My Voices). Use it when Suraj wants his own voice.
