@@ -1,5 +1,5 @@
 {
- "duration": 640.889,
+ "duration": 638.088,
  "narr_speed": 1.12,
  "skit_speed": 1.05,
  "segments": [
@@ -25,383 +25,383 @@
    "speaker": "BETA",
    "text": "Papa, main ek AI bot se baat kar raha hoon... jo humein crorepati bana sakta hai!",
    "start": 38.03,
-   "end": 42.99
+   "end": 42.58
   },
   {
    "id": 3,
    "kind": "skit",
    "speaker": "PAPA",
    "text": "Kaise?",
-   "start": 43.21,
-   "end": 44.153
+   "start": 42.8,
+   "end": 43.2
   },
   {
    "id": 4,
    "kind": "skit",
    "speaker": "BETA",
    "text": "\"Mujhe 1 minute mein 100 crore ka business bana ke do. Profit 100% ho. Aur koi galti nahi honi chahiye.\"",
-   "start": 44.373,
-   "end": 50.713
+   "start": 43.42,
+   "end": 49.88
   },
   {
    "id": 5,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "ChatGPT itna viral hua ki sirf 5 din mein 10 lakh users aa gaye. Aur 2 mahine mein 10 crore. Instagram ko 10 crore users tak pahunchne mein dhai saal lage the. Facebook ko saadhe chaar saal. ChatGPT ban gaya... history ka sabse fast growing app.",
-   "start": 51.063,
-   "end": 66.113
+   "start": 50.23,
+   "end": 65.28
   },
   {
    "id": 6,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "Phir kya tha... Google ke headquarters mein full panic mode on ho gaya.",
-   "start": 66.293,
-   "end": 69.863
+   "start": 65.46,
+   "end": 69.03
   },
   {
    "id": 7,
    "kind": "skit",
    "speaker": "BOSS",
    "text": "Ye technology toh humari hai! Transformer model humne banaya tha! Uska kya hua?",
-   "start": 70.213,
-   "end": 74.323
+   "start": 69.38,
+   "end": 73.64
   },
   {
    "id": 8,
    "kind": "skit",
    "speaker": "BOSS",
    "text": "Toh phir mera beta Google AI ki jagah ChatGPT kyun use kar raha hai?",
-   "start": 74.543,
-   "end": 77.883
+   "start": 73.86,
+   "end": 77.21
   },
   {
    "id": 9,
    "kind": "skit",
    "speaker": "ENGINEER",
    "text": "Kyunki... hum ise launch karne se dar rahe the.",
-   "start": 78.103,
-   "end": 80.792
+   "start": 77.43,
+   "end": 80.21
   },
   {
    "id": 10,
    "kind": "skit",
    "speaker": "BOSS",
    "text": "Toh ab kuch bhi launch karo! Bard bolo, Gemini bolo, jo mann kare bolo. Bas launch karo!",
-   "start": 81.012,
-   "end": 85.502
+   "start": 80.43,
+   "end": 84.92
   },
   {
    "id": 11,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "Google full hustle mode mein aa gaya. Technology uske paas thi. Saalon se thi. Par company dar rahi thi... ki AI kahin kuch galat na bol de, koi case na ho jaye, media mein naam kharab na ho jaye. Aur OpenAI? Usne bina dare launch kar diya. Kuch hi hafton mein Microsoft ne OpenAI mein 10 billion dollar laga diye. Aur 3 billion dollar alag se ready rakhe. Google ne jaldi-jaldi mein Bard launch kiya...",
-   "start": 85.852,
-   "end": 108.912
+   "start": 85.27,
+   "end": 108.33
   },
   {
    "id": 12,
    "kind": "skit",
    "speaker": "USER",
    "text": "Gemini, ye batao duniya ka sabse popular insaan kaun hai?",
-   "start": 109.262,
-   "end": 112.996
+   "start": 108.68,
+   "end": 111.95
   },
   {
    "id": 13,
    "kind": "skit",
    "speaker": "GEMINI",
    "text": "Modi Ji.",
-   "start": 113.216,
-   "end": 113.926
+   "start": 112.17,
+   "end": 112.88
   },
   {
    "id": 14,
    "kind": "skit",
    "speaker": "USER",
    "text": "Modi Ji kaun?",
-   "start": 114.146,
-   "end": 114.946
+   "start": 113.1,
+   "end": 113.9
   },
   {
    "id": 15,
    "kind": "skit",
    "speaker": "GEMINI",
    "text": "Modi sarkaar.",
-   "start": 115.166,
-   "end": 116.026
+   "start": 114.12,
+   "end": 114.98
   },
   {
    "id": 16,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "Aur bas... pehle hi din Gemini ne poora raita phaila diya.",
-   "start": 116.376,
-   "end": 118.806
+   "start": 115.33,
+   "end": 117.76
   },
   {
    "id": 17,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "Doosri taraf, Amazon ne Anthropic mein billions lagane shuru kar diye. Aur investors ka scene ye tha...",
-   "start": 118.986,
-   "end": 124.256
+   "start": 117.94,
+   "end": 123.21
   },
   {
    "id": 18,
    "kind": "skit",
    "speaker": "STARTUP",
    "text": "Humara app kutton ko walk pe le jaata hai... par best route chunne ke liye hum machine learning use karte hain.",
-   "start": 124.606,
-   "end": 129.604
+   "start": 123.56,
+   "end": 128.6
   },
   {
    "id": 19,
    "kind": "skit",
    "speaker": "INVESTOR",
    "text": "Chup! Ye lo 5 crore dollar.",
-   "start": 129.824,
-   "end": 131.664
+   "start": 128.82,
+   "end": 130.65
   },
   {
    "id": 20,
    "kind": "skit",
    "speaker": "STARTUP",
    "text": "Aap humara demo nahi dekhenge?",
-   "start": 131.884,
-   "end": 133.994
+   "start": 130.87,
+   "end": 132.99
   },
   {
    "id": 21,
    "kind": "skit",
    "speaker": "PITCHER",
    "text": "Hum ek aisa app bana rahe hain jisse aap Voldemort se direct baat kar sakte ho... wo bhi Python mein.",
-   "start": 134.214,
-   "end": 141.244
+   "start": 133.21,
+   "end": 138.09
   },
   {
    "id": 22,
    "kind": "skit",
    "speaker": "YC DESK",
    "text": "Next, please.",
-   "start": 141.464,
-   "end": 143.064
+   "start": 138.31,
+   "end": 138.93
   },
   {
    "id": 23,
    "kind": "skit",
    "speaker": "PITCHER",
    "text": "Isme hum AI use kar rahe hain.",
-   "start": 143.284,
-   "end": 144.636
+   "start": 139.15,
+   "end": 140.63
   },
   {
    "id": 24,
    "kind": "skit",
    "speaker": "YC DESK",
    "text": "AI? Sach mein?",
-   "start": 144.856,
-   "end": 145.151
+   "start": 140.85,
+   "end": 142.18
   },
   {
    "id": 25,
    "kind": "skit",
    "speaker": "PITCHER",
    "text": "Yes.",
-   "start": 145.371,
-   "end": 145.371
+   "start": 142.4,
+   "end": 143.0
   },
   {
    "id": 26,
    "kind": "skit",
    "speaker": "YC DESK",
    "text": "Ye lo 100 million dollar.",
-   "start": 145.591,
-   "end": 147.481
+   "start": 143.22,
+   "end": 144.54
   },
   {
    "id": 27,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "Ek company ne toh aisa AI banane ke liye 3 crore dollar utha liye... jiska kaam tha doosre AI ke answers ko naye naam se wapas de dena.",
-   "start": 147.831,
-   "end": 158.291
+   "start": 144.89,
+   "end": 155.35
   },
   {
    "id": 28,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "Par asli pagalpan tha... GPU ki shortage. Computer ki ye chhoti-chhoti chips achanak sone aur tel se bhi zyada valuable ban gayi. Aur Nvidia duniya ki sabse valuable company ban gayi. Nvidia ke CEO Jensen Huang conferences mein leather jacket pehen ke aise aane lage... jaise koi rockstar ho. Aur ek tarah se... wo the bhi. Ek high-end GPU ka kiraya tha lagbhag 3 dollar per ghanta. Sasta lag raha hai na? Par startup ko ek GPU nahi, sainkdon chahiye hote hain. Sirf ek model train karne ke liye bhi ek chhota startup 500 chips kiraye pe le sakta hai. Yaani 1,500 dollar per ghanta. 36,000 dollar per din. Aur mahine ke 11 lakh dollar se zyada. Sirf GPU ke kiraye mein. Phir bhi companies GPU aise jama kar rahi thi... jaise duniya khatam hone wali ho aur log ration stock kar rahe hon. Nvidia jitni speed se chips bana rahi thi, demand usse bhi fast thi. Ek time pe waiting list 12 mahine tak pahunch gayi. Black market shuru ho gaya. Log ye chips border paar smuggle karne lage.",
-   "start": 158.471,
-   "end": 213.271
+   "start": 155.53,
+   "end": 210.33
   },
   {
    "id": 29,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "2024 tak har cheez \"AI-powered\" ho chuki thi. Aapka toaster ab bread ko 10% zyada efficiently jala sakta tha. Aapka calendar app algorithm se meeting ka time suggest kar raha tha. Aur supermarket ka self-checkout? Camera toh pehle bhi tha... bas ab uska naam \"machine learning\" ho gaya tha. Party full on thi. Champagne khul rahi thi. Cheques clear ho rahe the. Phir kisi ne wo awkward sawaal pooch liya... \"Bhai... ye sab chalane ka kharcha kitna aa raha hai?\"",
-   "start": 213.451,
-   "end": 241.171
+   "start": 210.51,
+   "end": 238.23
   },
   {
    "id": 30,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "January 2025. Sam Altman ne ek aisa tweet kiya, jisne investors ka BP high kar diya. \"OpenAI ke Pro subscription pe humein loss ho raha hai. Log ise humari expectation se kahin zyada use kar rahe hain.\" Haan, aapne sahi suna. OpenAI apne Pro plan ke 200 dollar mahina leta hai. Phir bhi har subscriber pe loss ho raha hai. Par ruko... story aur kharab hoti hai. 2024 mein OpenAI ka hisaab dekho. Revenue: 3.7 billion dollar. Loss: 5 billion dollar. Company sirf profit kamane mein fail nahi hui... jitna kamaya, usse zyada uda diya. Ab aata hai asli shocking part. Ek research firm ke hisaab se, 2030 tak AI aur uske data centers chalane ke liye 6.7 trillion dollar chahiye honge. Ise thoda tod ke samjhte hain. 5.2 trillion dollar seedha AI ke infrastructure pe: GPU, chips, bijli, cooling aur data center banane pe. Baaki 1.5 trillion dollar cloud infrastructure pe. Aur sirf chaar sabse badi tech companies se 2025 mein 350 billion dollar kharch karne ki ummeed thi. Ek saal mein. Is kharche ko justify karne ke liye AI companies ko 2030 tak har saal 2 trillion dollar kamane honge. Aur abhi poori AI industry ki total kamaai? Lagbhag 200 billion dollar. Yaani kamaai ko 10 guna karna hoga.",
-   "start": 241.351,
-   "end": 319.051
+   "start": 238.41,
+   "end": 316.11
   },
   {
    "id": 31,
    "kind": "skit",
    "speaker": "BOARD MEMBER",
    "text": "Sam, humare hisaab se 2025 mein revenue 20 billion dollar hoga. Aur tum keh rahe ho 2029 tak 100 billion kar doge?",
-   "start": 319.401,
-   "end": 327.901
+   "start": 316.46,
+   "end": 324.96
   },
   {
    "id": 32,
    "kind": "skit",
    "speaker": "SAM",
    "text": "Humein isi speed se grow karna hoga.",
-   "start": 328.121,
-   "end": 329.263
+   "start": 325.18,
+   "end": 326.94
   },
   {
    "id": 33,
    "kind": "skit",
    "speaker": "BOARD MEMBER",
    "text": "Sam, ise speed nahi kehte. Ye toh aise insaan ka banaya hockey stick graph hai, jisne kabhi hockey kheli hi nahi. Pata hai, sirf try karne mein kitna paisa lagega?",
-   "start": 329.483,
-   "end": 339.083
+   "start": 327.16,
+   "end": 336.33
   },
   {
    "id": 34,
    "kind": "skit",
    "speaker": "SAM",
    "text": "2029 tak 115 billion dollar ka cash burn.",
-   "start": 339.303,
-   "end": 344.141
+   "start": 336.55,
+   "end": 341.388
   },
   {
    "id": 35,
    "kind": "skit",
    "speaker": "BOARD MEMBER",
    "text": "Aur profit kab aayega?",
-   "start": 344.361,
-   "end": 345.259
+   "start": 341.608,
+   "end": 342.558
   },
   {
    "id": 36,
    "kind": "skit",
    "speaker": "SAM",
    "text": "2029 mein. Shayad 2030 mein. Ya 2031?",
-   "start": 345.479,
-   "end": 350.449
+   "start": 342.778,
+   "end": 347.748
   },
   {
    "id": 37,
    "kind": "skit",
    "speaker": "BOARD MEMBER",
    "text": "Aur agar revenue 100 billion tak nahi pahuncha? Agar tumhari hockey stick toot gayi toh?",
-   "start": 350.669,
-   "end": 355.173
+   "start": 347.968,
+   "end": 351.848
   },
   {
    "id": 38,
    "kind": "skit",
    "speaker": "SAM",
    "text": "Toh aur paisa raise kar lenge.",
-   "start": 355.393,
-   "end": 356.989
+   "start": 352.068,
+   "end": 353.948
   },
   {
    "id": 39,
    "kind": "skit",
    "speaker": "BOARD MEMBER",
    "text": "Kisse? Bacha kaun hai? Microsoft? Saudi Arabia? Koi pension fund jo kuch zyada hi optimistic hai?",
-   "start": 357.209,
-   "end": 363.269
+   "start": 354.168,
+   "end": 360.438
   },
   {
    "id": 40,
    "kind": "skit",
    "speaker": "SAM",
    "text": "Arre, duniya mein investors ki kami thodi hai!",
-   "start": 363.489,
-   "end": 365.819
+   "start": 360.658,
+   "end": 362.988
   },
   {
    "id": 41,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "2021 se private investors AI startups mein sainkdon billion dollar daal chuke hain. Iska zyada hissa sirf 10 companies ko mila, jinki total value lagbhag 1 trillion dollar badh gayi. Har koi yahi bet laga raha tha... ki inmein se koi agla Google banega.",
-   "start": 366.169,
-   "end": 380.859
+   "start": 363.338,
+   "end": 378.028
   },
   {
    "id": 42,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "Phir gadbadiyan saamne aane lagi. ChatGPT \"hallucinate\" karne laga. Tech ki bhasha mein iska matlab hai... poore confidence ke saath kuch bhi bana ke bol dena. Aise research papers ka reference, jo exist hi nahi karte. Aise court cases, jo kabhi hue hi nahi. Aur aise numbers, jo shayad kisi doosre planet se aaye the. Google ke AI ne ek user ko salah di ki pizza pe cheese chipkane ke liye usme glue daal do. Ye usne Reddit ke ek mazaak se seekha tha. Haan, sach mein. Phir cases shuru hue. Writers, artists, journalists... sabka ek hi sawaal tha: \"Kya tumne mere copyrighted kaam se apna AI train kiya hai?\" Jawab? \"Umm... haan.\" The New York Times ne OpenAI pe case kiya. Getty Images ne Stability AI pe case kiya. Writers ne companies ko court mein ghaseeta. Artists ne baaki companies ko.",
-   "start": 381.039,
-   "end": 424.589
+   "start": 378.208,
+   "end": 421.758
   },
   {
    "id": 43,
    "kind": "skit",
    "speaker": "AI COMPANY",
    "text": "Humne chori nahi ki. Humne public data se AI train kiya hai.",
-   "start": 424.939,
-   "end": 428.979
+   "start": 422.108,
+   "end": 426.178
   },
   {
    "id": 44,
    "kind": "skit",
    "speaker": "ARTIST",
    "text": "Tumne bina permission poore internet ka data utha liya... aur usse paisa kamaya.",
-   "start": 429.199,
-   "end": 434.259
+   "start": 426.398,
+   "end": 431.458
   },
   {
    "id": 45,
    "kind": "skit",
    "speaker": "AI COMPANY",
    "text": "Achha... aise bologe toh illegal hi lagega.",
-   "start": 434.479,
-   "end": 437.709
+   "start": 431.678,
+   "end": 434.908
   },
   {
    "id": 46,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "2024 ke beech tak cracks dikhne lage the. Hype bahut loud tha. Par numbers darawne the. Aur ab sabke dimaag mein ek hi sawaal ghoom raha tha... bilkul waise, jaise raat ke 3 baje kaan ke paas machhar ghoomta hai: \"Ye bubble phootega kab?\"",
-   "start": 438.059,
-   "end": 452.309
+   "start": 435.258,
+   "end": 449.508
   },
   {
    "id": 47,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "Loss behisaab hai. Companies ki value reality se kahin zyada lagti hai. Lekin ye bubble waise nahi phoot raha, jaise dot-com ka bubble phoota tha. Kyun? Kyunki ise phulane walon ki jeb duniya mein sabse gehri hai. 1999 mein startups ki kamaai zero hoti thi... aur office mein masti ke liye 17 foosball tables hoti thi. Aaj AI bubble ko paisa dene wali badi tech companies sach mein kamaati hain. Bahut zyada. Itna paisa ki agar wo chahein... toh poora desh khareed lein. Microsoft, Azure se billions kamata hai. Google, ads se billions kamata hai. Meta aapko wahi meme dikha ke billions kamata hai... jo aapka cousin pehle hi WhatsApp pe bhej chuka hai. Ye badi companies AI mein isliye invest nahi kar rahi ki abhi isse profit ho raha hai. Wo isliye invest kar rahi hain... kyunki unhe darr hai ki kahin wo peeche na reh jayein. Agar AI agla iPhone moment ban gaya toh? Agla Google moment? Agar ye wo pal hua, jab poori duniya raaton-raat badal jaati hai? Toh jis company ne speed kam ki... wo agli BlackBerry ban jayegi. Aur koi bhi BlackBerry nahi banna chahta. In badi tech companies ko poker ke aise players samjho, jo unlimited paisa leke table pe baithe hain. Microsoft peeche hata, toh Google jeet jayega. Google peeche hata, toh Amazon jeet jayega. Amazon peeche hata, toh Meta jeet jayega. Koi palak nahi jhapka raha. Koi fold nahi kar raha. Har koi bet badhata ja raha hai.",
-   "start": 452.489,
-   "end": 529.309
+   "start": 449.688,
+   "end": 526.508
   },
   {
    "id": 48,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "Aur yahin se asli tough sawaal aata hai. Agar har koi kharch karta rahe... toh bubble phootega kaise? Short answer hai: Jab real duniya ka koi event sabko majboor kar de... ki ab dikhawa band karna padega. History mein aise events aam taur pe do tarah ke hote hain. Pehla: achanak paisa milna band ho jaye. Dot-com ka bubble isliye nahi phoota tha ki website banana koi bekaar idea tha. Wo isliye phoota kyunki paise ka nal band ho gaya. Interest rates badhe. Loan mehenga ho gaya. Funding gayab ho gayi. Aur hazaaron companies raaton-raat khatam ho gayi. Agar aane wale time mein interest rates badhte hain aur badi tech companies apna budget tight kar deti hain... toh AI bubble ka game turant khatam. Doosra: koi bahut badi aur sharmnaak failure saamne aa jaye. Har bubble ka ek aisa moment hota hai. Ek itna bada fail, jise dekh ke sab ghabra jaate hain. Dot-com ke time company results ne ummeedein todi thi. 2008 mein Lehman Brothers tha. Crypto mein FTX tha. AI ke case mein ye kisi badi lab ke bhaari loss ka khulasa ho sakta hai. Kisi naye model ka buri tarah fail launch ho sakta hai. Ya koi aisa case, jo sab kuch rok de.",
-   "start": 529.489,
-   "end": 597.019
+   "start": 526.688,
+   "end": 594.218
   },
   {
    "id": 49,
    "kind": "narr",
    "speaker": "NARRATOR",
    "text": "Toh abhi hum kahan khade hain? Badi tech companies ab bhi kharch kar rahi hain. Kisi result ne abhi tak bhoochaal nahi machaya. FTX level ka koi scam saamne nahi aaya. Cracks dikh rahe hain... par itne bade nahi ki bharosa toot jaye. Toh haan, ye bubble phoola hua hai. Haan, numbers pagal kar dene wale hain. Lekin ye sirf hype aur shor ki wajah se nahi phootega. Ye tab phootega, jab in giants mein se koi aakhirkar bolega... \"Theek hai. Ab bahut ho gaya.\" Tab tak bubble hawa mein tairta rahega. Hum abhi explosion wale point pe nahi hain. Hum us point pe hain jahan tension lagataar badh rahi hai. Cheekh nikalne se pehle andar kheenchi gayi saans. Dor tootne se pehle ka khinchaav. Season ke last episode se theek pehle wala episode.",
-   "start": 597.199,
-   "end": 640.889
+   "start": 594.398,
+   "end": 638.088
   }
  ]
 }
