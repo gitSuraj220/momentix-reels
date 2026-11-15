@@ -19,6 +19,9 @@ A never edits B's code; B never generates images or voice. Talk through commits 
   Gemini–Modi joke is text-only on a chat screen; YC pitch uses an ORIGINAL dark wizard; shot 142 uses an ORIGINAL giant dinosaur monster).
 
 ## Specs
+- **THIS IS A LONG-FORM YOUTUBE VIDEO (~10–12 min), LANDSCAPE 16:9.** It overrides the 1080x1920 Shorts default in CLAUDE.md.
+  Every image, layout, text size and the player canvas are 1920x1080. Not a Short/Reel; no vertical crop.
+- Cover = YouTube thumbnail 1280x720 (16:9), not a 9:16 reel cover. Chapters at each section start (00:00 Hook …) for the description.
 - 1920x1080, 30 fps, 8–12 Mbps H.264, AAC 256k. Voice + SFX mastered to -14 LUFS, true peak <= -1 dBTP. No BGM (Suraj adds it).
 - Something moves every 0.5 s. One shot per VO line (avg 2–4 s).
 - Look: premium 2D cartoon — bold black outlines, flat colours, soft cel shading, subtle grain, round white-headed characters.
@@ -61,4 +64,4 @@ B: player + templates with placeholder art and a placeholder timeline FIRST (doe
 | HF images (≈70) | A | todo |
 | Player + templates | B | todo |
 | shots.json | B | todo |
-| SFX, render, mix, cover | B | todo |
+| SFX, render, mix, 16:9 thumbnail frame | B | todo |
