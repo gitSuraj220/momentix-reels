@@ -65,6 +65,16 @@ def split_by_words(a, texts, words_json, speed):
     edges = [0] + [int(c * SR) for c in cuts] + [len(a)]
     return [trim(a[edges[i]:edges[i + 1]]) for i in range(len(texts))]
 
+def split_at(a, raw_cuts, speed):
+    sil = silences(a, min_len=0.06)
+    cuts = []
+    for c in raw_cuts:
+        c /= speed
+        near = [s for s in sil if abs((s[0] + s[1]) / 2 - c) < 0.45]
+        cuts.append((lambda s: (s[0] + s[1]) / 2)(min(near, key=lambda s: abs((s[0] + s[1]) / 2 - c))) if near else c)
+    edges = [0] + [int(c * SR) for c in cuts] + [len(a)]
+    return [trim(a[edges[i]:edges[i + 1]]) for i in range(len(edges) - 1)]
+
 def split_lines(a, texts):
     """Split a take of paragraph-separated lines: choose n-1 pauses (DP) so each piece's length
     matches its line's share of characters, rewarding long pauses (paragraph breaks)."""
@@ -112,7 +122,11 @@ skit = {}
 for v in ['gaurav', 'amrut', 'devi']:
     tx = [b[2] for b in blocks if b[0] == 'S' and VOICE[b[1]] == v]
     f = f"skit_{v}_{TAKE['skit_' + v]}"
-    skit[v] = split_by_words(load(f'vo/{f}.mp3', SKIT_SPEED), tx, f'vo/words_{f}.json', SKIT_SPEED)
+    CUTS = json.load(open('vo/cuts.json'))
+    if f in CUTS:
+        skit[v] = split_at(load(f'vo/{f}.mp3', SKIT_SPEED), CUTS[f], SKIT_SPEED); assert len(skit[v]) == len(tx), (f, len(skit[v]))
+    else:
+        skit[v] = split_by_words(load(f'vo/{f}.mp3', SKIT_SPEED), tx, f'vo/words_{f}.json', SKIT_SPEED)
 # year lines regenerated with years spelled out (TTS read 2029 ambiguously)
 g2 = split_by_words(load(f"vo/fix_gaurav_{TAKE['fix_gaurav']}.mp3", SKIT_SPEED),
                  ['Do hazaar untees tak, ek sau pandrah billion dollar ka cash burn.',
