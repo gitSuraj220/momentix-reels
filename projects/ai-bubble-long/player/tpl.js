@@ -15,7 +15,8 @@ TPL.image=(ctx,p,lt,dur,s)=>{
   const info=L.art(ctx,p.src,slt,sd,{crop,kb,flip:p.flip,speed:p.speed,freeze:p.freeze,shake:p.shake});
   if(p.freeze!=null&&lt/dur>p.freeze){ctx.save();ctx.globalCompositeOperation='saturation';ctx.fillStyle=`rgba(0,0,0,${.7*S(lt/dur,p.freeze,p.freeze+.05)})`;ctx.fillRect(0,0,W,H);ctx.restore()}
   L.dust(ctx,lt,36,.45);
-  for(const o of p.ov||[])OV[o.k]&&OV[o.k](ctx,o,lt,dur,info,s);
+  const ci=p.cuts?Math.min(p.cuts.length-1,Math.floor(lt/(dur/p.cuts.length))):-1;
+  for(const o of p.ov||[])if(o.cut==null||o.cut===ci)OV[o.k]&&OV[o.k](ctx,o,lt,dur,info,s);
   if(p.kw)L.hilite(ctx,p.kw,W/2,H*.86,{px:84,p:S(lt,.2,.5)});
 };
 function pending(ctx,p,lt,dur,s){
@@ -299,7 +300,7 @@ TPL.cards=(ctx,p,lt,dur)=>{const st=p.style;L.bg(ctx,lt,{hue:st==='fan'||st==='f
     ctx.save();ctx.translate(W/2,H*.45);ctx.scale(q,q);ctx.rotate((1-q)*.5);L.icon(ctx,ic,0,0,360);ctx.restore();L.hilite(ctx,lab,W/2,H*.82,{px:76,p:S(pl,.1,.4)});
     for(let k=0;k<n;k++){ctx.fillStyle=k===i?Y:'rgba(255,255,255,.3)';ctx.beginPath();ctx.arc(W/2+(k-1)*40,H*.94,10,0,7);ctx.fill()}return}
   // fan / flip: numbered trigger cards
-  p.items.forEach(([num,lab],i)=>{const fan=E.back(S(lt,i*.15,i*.15+.5)),x=W/2+(i-1)*480*fan,rot=(i-1)*.08*fan;
+  p.items.forEach(([num,lab],i)=>{const fan=E.back(S(lt,i*.15,i*.15+.5)),c=i-(n-1)/2,x=W/2+c*520*fan,rot=c*.08*fan;
     let flip=0;if(st==='flip'&&p.flip===i)flip=E.io(S(lt,.2,.8));const big=st==='flip'&&p.flip===i?1+.15*flip:st==='flip'?.9:1;
     ctx.save();ctx.translate(x,H*.52+(st==='flip'&&p.flip!==i?40:0));ctx.rotate(rot);ctx.scale(Math.abs(Math.cos(flip*Math.PI))*big||.01,big);
     if(st==='flip'&&p.flip!==i)ctx.globalAlpha=.45;const face=flip>.5;

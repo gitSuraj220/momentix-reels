@@ -141,13 +141,13 @@ S = {
  137: ('image', {'kb': 'in', 'ov': [{'k': 'logorow', 'items': ['Google', 'Microsoft', 'Meta', 'Amazon']}]}),
  138: ('image', {'ov': [{'k': 'spotmove', 'n': 4}]}),
  140: ('balloon', {'mode': 'hold', 'needle': 1}),
- 142: ('cards', {'style': 'fan', 'items': [['1', 'PAISA BAND'], ['2', 'BADA FAIL'], ['3', 'MONSTER']]}),
- 143: ('cards', {'style': 'flip', 'items': [['1', 'PAISA BAND'], ['2', 'BADA FAIL'], ['3', 'MONSTER']], 'flip': 0}),
+ 142: ('cards', {'style': 'fan', 'items': [['1', 'PAISA BAND'], ['2', 'BADA FAIL']]}),
+ 143: ('cards', {'style': 'flip', 'items': [['1', 'PAISA BAND'], ['2', 'BADA FAIL']], 'flip': 0}),
  144: ('paper', {'mode': 'site', 'title': 'www.startup1999.com'}),
  146: ('cards', {'style': 'icons', 'items': [['rate', 'INTEREST RATES ↑'], ['tag', 'LOAN MEHENGA'], ['bag', 'FUNDING GAYAB']]}),
  147: ('grid', {'mode': 'signs'}),
  148: ('image', {'kb': 'in', 'ov': [{'k': 'tag', 'text': 'GAME OVER', 'x': .5, 'y': .5, 'at': .65, 'red': 1}]}),
- 149: ('cards', {'style': 'flip', 'items': [['1', 'PAISA BAND'], ['2', 'BADA FAIL'], ['3', 'MONSTER']], 'flip': 1}),
+ 149: ('cards', {'style': 'flip', 'items': [['1', 'PAISA BAND'], ['2', 'BADA FAIL']], 'flip': 1}),
  151: ('paper', {'mode': 'earnings', 'title': 'Q4 1999 RESULTS'}),
  155: ('map', {'mode': 'timeline'}),
  157: ('meter', {'mode': 'seismo'}),
@@ -170,6 +170,15 @@ S.update({
  138: ('image', {'ov': [HEADS137, {'k': 'spotmove', 'n': 4}]}),
  156: ('image', {'kb': 'out', 'ov': [HEADS137]}),
  98: ('image', {'kb': 'r', 'ov': [{'k': 'logo', 'name': 'Microsoft', 'rect': [.30, .07, .12, .06]}, {'k': 'plaque', 'text': 'SAUDI', 'rect': [.545, .075, .13, .07], 'chip': 0}, {'k': 'plaque', 'text': 'PENSION FUND', 'rect': [.78, .08, .12, .055], 'chip': 0}]}),
+})
+S.update({
+ 148: ('image', {'kb': 'in', 'ov': [{'k': 'plaque', 'text': 'BUDGET', 'rect': [.32, .585, .14, .05], 'col': '#ffd23f', 'chip': 0}, {'k': 'tag', 'text': 'GAME OVER', 'x': .5, 'y': .5, 'at': .7, 'red': 1}]}),
+ 150: ('image', {'kb': 'in', 'ov': [{'k': 'plaque', 'text': 'BADA FAIL', 'rect': [.56, .03, .39, .27], 'col': '#d11', 'chip': 0}]}),
+ 152: ('image', {'kb': 'l', 'ov': [{'k': 'plaque', 'text': 'LEHMAN BROTHERS', 'rect': [.54, .045, .33, .12], 'col': '#222', 'chip': 0}, {'k': 'tag', 'text': '2008', 'x': .1, 'y': .12}]}),
+ 153: ('image', {'kb': 'in', 'ov': [{'k': 'plaque', 'text': 'FTX', 'rect': [.46, .06, .48, .24], 'col': '#222', 'chip': 0}]}),
+ 154: ('image', {'cuts': [[0, 0, .36, 1], [.32, 0, .36, 1], [.64, 0, .36, 1]], 'ov': [{'k': 'plaque', 'text': 'STOP', 'rect': [.84, .3, .1, .3], 'col': '#fff', 'chip': 0, 'cut': 2}]}),
+ 161: ('image', {'kb': 'in', 'ov': [{'k': 'headlogo', 'heads': [[.13, .32, .045, 'Google'], [.53, .335, .045, 'Microsoft'], [.7, .355, .045, 'Meta'], [.885, .355, .045, 'Amazon']]}]}),
+ 162: ('image', {'kb': 'up', 'ov': [{'k': 'plaque', 'text': 'AI', 'rect': [.43, .16, .14, .16], 'col': 'rgba(255,255,255,.85)', 'chip': 0}]}),
 })
 SPEAKER_RE = re.compile(r'(?:SKIT(?:\s*\([^)]*\))?\s*[—-]+\s*)?(?:^|(?<=/ )|(?<=^))[A-Z][A-Z ]{1,20}(?:\s*\([^)]*\))?(?: typing)?:\s*')
 

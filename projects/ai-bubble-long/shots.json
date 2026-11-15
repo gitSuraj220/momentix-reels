@@ -2912,7 +2912,7 @@
       "n": 4
      }
     ],
-    "pending": 1
+    "src": "s137"
    },
    "vo": "Microsoft peeche hata, toh Google jeet jayega. Google peeche hata, toh Amazon jeet jayega. Amazon peeche hata, toh Meta jeet jayega.",
    "visual": "Spotlight moves player to player; each one glances at the next.",
@@ -2921,13 +2921,13 @@
    "seg": 47,
    "kind": "narr",
    "t1": 520.98,
-   "tr": "whip"
+   "tr": "punch"
   },
   {
    "id": 139,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s139"
    },
    "vo": "Koi palak nahi jhapka raha. Koi fold nahi kar raha. Har koi bet badhata ja raha hai.",
    "visual": "Close-ups of unblinking eyes; chips pushed to the middle, the pile grows taller.",
@@ -2958,7 +2958,7 @@
    "id": 141,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s141"
    },
    "vo": "Short answer hai: jab real duniya ka koi event sabko majboor kar de... ki ab dikhawa band karna padega.",
    "visual": "A hand pulls a curtain off a stage set, revealing cardboard props.",
@@ -2982,10 +2982,6 @@
      [
       "2",
       "BADA FAIL"
-     ],
-     [
-      "3",
-      "MONSTER"
      ]
     ]
    },
@@ -3011,10 +3007,6 @@
      [
       "2",
       "BADA FAIL"
-     ],
-     [
-      "3",
-      "MONSTER"
      ]
     ],
     "flip": 0
@@ -3048,7 +3040,7 @@
    "id": 145,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s145"
    },
    "vo": "Wo isliye phoota kyunki paise ka nal band ho gaya.",
    "visual": "A money tap squeaks shut; last coin drips.",
@@ -3110,15 +3102,27 @@
     "kb": "in",
     "ov": [
      {
+      "k": "plaque",
+      "text": "BUDGET",
+      "rect": [
+       0.32,
+       0.585,
+       0.14,
+       0.05
+      ],
+      "col": "#ffd23f",
+      "chip": 0
+     },
+     {
       "k": "tag",
       "text": "GAME OVER",
       "x": 0.5,
       "y": 0.5,
-      "at": 0.65,
+      "at": 0.7,
       "red": 1
      }
     ],
-    "pending": 1
+    "src": "s148"
    },
    "vo": "Agar aane wale time mein interest rates badhte hain aur badi tech companies apna budget tight kar deti hain... toh AI bubble ka game turant khatam.",
    "visual": "Exec tightens a belt labelled \"BUDGET\"; the balloon's air hose kinks; \"GAME OVER\" flashes.",
@@ -3142,10 +3146,6 @@
      [
       "2",
       "BADA FAIL"
-     ],
-     [
-      "3",
-      "MONSTER"
      ]
     ],
     "flip": 1
@@ -3163,7 +3163,22 @@
    "id": 150,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "kb": "in",
+    "ov": [
+     {
+      "k": "plaque",
+      "text": "BADA FAIL",
+      "rect": [
+       0.56,
+       0.03,
+       0.39,
+       0.27
+      ],
+      "col": "#d11",
+      "chip": 0
+     }
+    ],
+    "src": "s150"
    },
    "vo": "Har bubble ka ek aisa moment hota hai. Ek itna bada fail, jise dekh ke sab ghabra jaate hain.",
    "visual": "Crowd watching a giant screen, all mouths open.",
@@ -3194,7 +3209,28 @@
    "id": 152,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "kb": "l",
+    "ov": [
+     {
+      "k": "plaque",
+      "text": "LEHMAN BROTHERS",
+      "rect": [
+       0.54,
+       0.045,
+       0.33,
+       0.12
+      ],
+      "col": "#222",
+      "chip": 0
+     },
+     {
+      "k": "tag",
+      "text": "2008",
+      "x": 0.1,
+      "y": 0.12
+     }
+    ],
+    "src": "s152"
    },
    "vo": "2008 mein Lehman Brothers tha.",
    "visual": "Lehman Brothers building; employee walking out with a cardboard box.",
@@ -3209,7 +3245,22 @@
    "id": 153,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "kb": "in",
+    "ov": [
+     {
+      "k": "plaque",
+      "text": "FTX",
+      "rect": [
+       0.46,
+       0.06,
+       0.48,
+       0.24
+      ],
+      "col": "#222",
+      "chip": 0
+     }
+    ],
+    "src": "s153"
    },
    "vo": "Crypto mein FTX tha.",
    "visual": "Crypto coins falling off a table, an \"FTX\" sign cracking.",
@@ -3224,7 +3275,42 @@
    "id": 154,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "cuts": [
+     [
+      0,
+      0,
+      0.36,
+      1
+     ],
+     [
+      0.32,
+      0,
+      0.36,
+      1
+     ],
+     [
+      0.64,
+      0,
+      0.36,
+      1
+     ]
+    ],
+    "ov": [
+     {
+      "k": "plaque",
+      "text": "STOP",
+      "rect": [
+       0.84,
+       0.3,
+       0.1,
+       0.3
+      ],
+      "col": "#fff",
+      "chip": 0,
+      "cut": 2
+     }
+    ],
+    "src": "s154"
    },
    "vo": "AI ke case mein ye kisi badi lab ke bhaari loss ka khulasa ho sakta hai. Kisi naye model ka buri tarah fail launch ho sakta hai. Ya koi aisa case, jo sab kuch rok de.",
    "visual": "Three mini-scenes: a giant red loss report, a launch stage where the robot faceplants, a court \"STOP\" order on a data center.",
@@ -3363,7 +3449,39 @@
    "id": 161,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "kb": "in",
+    "ov": [
+     {
+      "k": "headlogo",
+      "heads": [
+       [
+        0.13,
+        0.32,
+        0.045,
+        "Google"
+       ],
+       [
+        0.53,
+        0.335,
+        0.045,
+        "Microsoft"
+       ],
+       [
+        0.7,
+        0.355,
+        0.045,
+        "Meta"
+       ],
+       [
+        0.885,
+        0.355,
+        0.045,
+        "Amazon"
+       ]
+      ]
+     }
+    ],
+    "src": "s161"
    },
    "vo": "Ye tab phootega, jab in giants mein se koi aakhirkar bolega... \"Theek hai. Ab bahut ho gaya.\"",
    "visual": "One poker player slowly lays his cards down (Devi or Amrut voice for the quote).",
@@ -3378,7 +3496,22 @@
    "id": 162,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "kb": "up",
+    "ov": [
+     {
+      "k": "plaque",
+      "text": "AI",
+      "rect": [
+       0.43,
+       0.16,
+       0.14,
+       0.16
+      ],
+      "col": "rgba(255,255,255,.85)",
+      "chip": 0
+     }
+    ],
+    "src": "s162"
    },
    "vo": "Tab tak bubble hawa mein tairta rahega.",
    "visual": "The balloon drifts up over a city skyline at dusk.",
@@ -3408,7 +3541,7 @@
    "id": 164,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s164"
    },
    "vo": "Cheekh nikalne se pehle andar kheenchi gayi saans.",
    "visual": "A character takes a deep breath, eyes wide.",
@@ -3423,7 +3556,7 @@
    "id": 165,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s165"
    },
    "vo": "Dor tootne se pehle ka khinchaav.",
    "visual": "A rope stretched between two hands, last threads snapping.",

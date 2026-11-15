@@ -18,14 +18,21 @@ env = sosfiltfilt(butter(2, 6, 'low', fs=SR, output='sos'), np.abs(V[:, 0]))
 duck = 1 - .5 * np.clip(env / (np.percentile(env[env > 1e-4], 60) + 1e-9), 0, 1)   # up to -6 dB under speech
 F *= duck[:, None]
 M = V + F
-M *= 10 ** ((-14 - meter.integrated_loudness(M)) / 20)
+# look-ahead limiter, vectorised: gain = box-smoothed running minimum of the needed gain (never overshoots)
+def limit(M, ceil_db=-2.0, win=.02):
+    from scipy.ndimage import maximum_filter1d, minimum_filter1d, uniform_filter1d
+    c = 10 ** (ceil_db / 20); w = int(win * SR)
+    need = np.minimum(1, c / np.maximum(np.abs(M).max(1), 1e-9))
+    g = uniform_filter1d(minimum_filter1d(need, 2 * w + 1), w + 1)
+    return M * g[:, None]
+for _ in range(3):
+    M *= 10 ** ((-14 - meter.integrated_loudness(M)) / 20); M = limit(M)
 tp = np.abs(resample_poly(M, 4, 1, axis=0)).max()
 if tp > 10 ** (-1.2 / 20): M *= 10 ** (-1.2 / 20) / tp
 f = int(.05 * SR); M[-f:] *= np.linspace(1, 0, f)[:, None]
 sf.write(f'{D}/audio/mix.wav', M.astype(np.float32), SR, subtype='PCM_24')
-# loudnorm second pass lands -14 after the peak guard (linear mode keeps dynamics)
-subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', f'{D}/audio/mix.wav', '-af', 'loudnorm=I=-14:TP=-1:LRA=11,aresample=48000', f'{D}/audio/mix_ln.wav'], check=True)
-x, _ = sf.read(f'{D}/audio/mix_ln.wav')
+subprocess.run(['cp', f'{D}/audio/mix.wav', f'{D}/audio/mix_ln.wav'], check=True)
+x = M
 print('mix LUFS', round(meter.integrated_loudness(x), 2), 'TP~', round(20 * np.log10(np.abs(resample_poly(x, 4, 1, axis=0)).max()), 2), 'dBTP')
 out = f'{D}/final/AI_Bubble_Long_16x9.mp4'
 subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', f'{D}/build/video_only.mp4', '-i', f'{D}/audio/mix_ln.wav',
