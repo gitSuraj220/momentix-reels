@@ -1,0 +1,73 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AI Bubble — player</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block;width:100vw;height:56.25vw;max-height:100vh;max-width:177.78vh;margin:auto}</style>
+</head><body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script src="shots.js"></script>
+<script src="lib.js"></script>
+<script src="tpl.js"></script>
+<script>
+/* AI Bubble long-form player (B — animator).
+   window.READY  -> promise (fonts + art loaded)
+   window.renderAt(t) -> draws frame at t seconds (deterministic)
+   ?t=12.3 previews a frame, ?play=1 plays in real time (no audio), ?qa=1 shows shot ids. */
+(function(){
+const W=1920,H=1080,FPS=30,D=SHOTS.shots,DUR=SHOTS.duration;
+const C=document.getElementById('c'),X=C.getContext('2d');
+const BUF=[mk(),mk()];function mk(){const c=document.createElement('canvas');c.width=W;c.height=H;return c}
+const FD='../../../engine/fonts/';
+const FONTS=[['Anton','anton-latin-400-normal',400],['Poppins','poppins-latin-500-normal',500],['Poppins','poppins-latin-700-normal',700],
+ ['Poppins','poppins-latin-800-normal',800],['Poppins','poppins-devanagari-800-normal',800],['Marker','permanent-marker-latin-400-normal',400],
+ ['Courier Prime','courier-prime-latin-400-normal',400],['Courier Prime','courier-prime-latin-700-normal',700],['Caveat','caveat-latin-700-normal',700]];
+const QS=new URLSearchParams(location.search);L.QA=QS.has('qa');
+window.READY=(async()=>{
+  for(const [f,n,w] of FONTS){try{const ff=new FontFace(f,`url(${FD}${n}.woff2)`,{weight:String(w)});await ff.load();document.fonts.add(ff)}catch(e){console.warn('font',n,e)}}
+  const srcs=new Set(['style_frame','character_sheet']);
+  for(const s of D){if(s.p.src)srcs.add(s.p.src);(s.p.srcs||[]).forEach(x=>srcs.add(x))}
+  await Promise.all([...srcs].map(n=>new Promise(r=>{const im=new Image();im.onload=()=>{L.IMG[n]=im;r()};im.onerror=()=>{console.warn('missing art',n);r()};im.src='../art/'+n+'.png'})));
+  L.init();return true})();
+function find(t){let lo=0,hi=D.length-1;while(lo<hi){const m=(lo+hi+1)>>1;if(D[m].t0<=t)lo=m;else hi=m-1}return lo}
+function shot(ctx,s,t){
+  const lt=Math.max(0,t-s.t0),dur=s.t1-s.t0;
+  ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.filter='none';
+  ctx.fillStyle='#07080c';ctx.fillRect(0,0,W,H);
+  const f=TPL[s.tpl]||TPL.image;
+  try{f(ctx,s.p,lt,dur,s,t)}catch(e){console.error('shot',s.id,e);L.err=(L.err||0)+1}
+  ctx.restore();
+}
+const TR=0.2;
+window.renderAt=function(t){
+  t=Math.max(0,Math.min(DUR-1e-3,t));
+  const i=find(t),s=D[i],lt=t-s.t0;L.frame=Math.round(t*FPS);
+  X.setTransform(1,0,0,1,0,0);X.globalAlpha=1;X.filter='none';
+  if(i>0&&lt<TR&&s.tr!=='cut'){
+    const p=lt/TR,prev=D[i-1];
+    if(s.tr==='whip'){
+      shot(BUF[0].getContext('2d'),prev,prev.t1-1e-3+lt*0.5);shot(BUF[1].getContext('2d'),s,t);
+      const e=L.ease.ioc(p),dir=(s.id%2?1:-1),off=e*W*dir;
+      X.fillStyle='#000';X.fillRect(0,0,W,H);
+      for(let k=0;k<5;k++){X.globalAlpha=k?0.22:1;
+        X.drawImage(BUF[0],-off-k*dir*60*Math.sin(p*Math.PI),0);X.drawImage(BUF[1],W*dir-off-k*dir*60*Math.sin(p*Math.PI),0)}
+      X.globalAlpha=1;
+    }else if(s.tr==='flash'){
+      shot(BUF[1].getContext('2d'),s,t);const z=1+0.06*(1-L.ease.oc(p));
+      X.setTransform(z,0,0,z,W/2*(1-z),H/2*(1-z));X.drawImage(BUF[1],0,0);X.setTransform(1,0,0,1,0,0);
+      X.fillStyle=`rgba(255,250,235,${0.85*(1-p)*(1-p)})`;X.fillRect(0,0,W,H);
+    }else{ // punch
+      shot(BUF[1].getContext('2d'),s,t);const z=1.07-0.07*L.ease.oc(p);
+      X.setTransform(z,0,0,z,W/2*(1-z),H/2*(1-z));X.drawImage(BUF[1],0,0);X.setTransform(1,0,0,1,0,0);
+    }
+  }else shot(X,s,t);
+  L.post(X,t,s);
+  if(L.QA){X.font='700 26px Poppins';X.fillStyle='rgba(0,0,0,.6)';X.fillRect(0,0,560,44);X.fillStyle='#ff0';
+    X.fillText(`#${s.id} ${s.tpl}${s.p.pending?' (art pending)':''}  ${t.toFixed(2)}s`,12,31)}
+};
+window.DURATION=DUR;window.SHOT_AT=t=>D[find(t)].id;
+READY.then(()=>{
+  if(QS.has('t'))renderAt(+QS.get('t'));
+  else if(QS.has('shot')){const s=D.find(x=>x.id==QS.get('shot'));renderAt((s.t0+s.t1)/2)}
+  if(QS.has('play')){const t0=performance.now()-(+QS.get('t')||0)*1000;(function f(){renderAt((performance.now()-t0)/1000);requestAnimationFrame(f)})()}
+});
+})();
+</script>
+</body></html>

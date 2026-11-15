@@ -228,7 +228,7 @@ def main():
             first = bi == 0 or words[bi - 1][2] != seg
             sh['t0'] = next(s['start'] for s in TL['segments'] if s['id'] == seg) if first else snap(t)
             sh['seg'], sh['kind'] = seg, kind
-        if 'HF' in d['asset'] and tpl in ('image', 'counter', 'windows'):
+        if 'HF' in d['asset'] and tpl in ('image', 'counter'):
             src, note = art_for(n)
             if src:
                 prm.setdefault('src', src)
