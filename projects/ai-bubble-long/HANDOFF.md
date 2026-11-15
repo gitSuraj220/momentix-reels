@@ -24,7 +24,15 @@ A never edits B's code; B never generates images or voice. Talk through commits 
 - Cover = YouTube thumbnail 1280x720 (16:9), not a 9:16 reel cover. Chapters at each section start (00:00 Hook …) for the description.
 - 1920x1080, 30 fps, 8–12 Mbps H.264, AAC 256k. Voice + SFX mastered to -14 LUFS, true peak <= -1 dBTP. No BGM (Suraj adds it).
 - Something moves every 0.5 s. One shot per VO line (avg 2–4 s).
-- Look: premium 2D cartoon — bold black outlines, flat colours, soft cel shading, subtle grain, round white-headed characters.
+- Look (Suraj, 15 Nov): **cinematic 2.5D** — same round-white-head cartoon characters with bold outlines, but deep lighting,
+  every HF shot split into 3 parallax layers (bg / mid / fg), camera dolly + push-ins, depth blur on bg, light rays/dust, film grain + vignette.
+- Pace: **fast, ~9 min** (Gen-Z cuts). Narration is generated at a quick pace; shots cut on word times.
+- On-screen text: **only key words + every number** (big counters, punch words). No full subtitles.
+- No channel intro — open straight on the hook. End screen 20 s (shot 167).
+- SFX: **heavy cinematic** — whoosh every cut, risers into reveals, impacts on numbers, foley in skits, room tone per scene.
+- Voices: narrator = Suraj's clone; skits = Gaurav / Amrut / Devi, Suraj's clone may also play a skit role.
+- Section 10: Suraj chose **"do tarah ke"** — two trigger cards only; card 3 and the dinosaur monster are dropped (shot 142 = two cards).
+- Thumbnail: decide later.
 
 ## What A delivers (into this folder)
 - `art/style_frame.png`, `art/character_sheet.png` (style lock).
