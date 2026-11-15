@@ -72,4 +72,4 @@ B: player + templates with placeholder art and a placeholder timeline FIRST (doe
 | HF images (≈70) | A | done — all sections (81 files in art/, see art/index.json) |
 | Player + templates | B | done (player/: 30 templates, 0 errors on all 167 shots; HF shots without art show a labelled placeholder) |
 | shots.json | B | done (make_shots.py; rerun after new art lands, it picks up art/sNNN.png automatically) |
-| SFX, render, mix, 16:9 thumbnail frame | B | todo |
+| SFX, render, mix, 16:9 thumbnail frame | B | done: final/AI_Bubble_Long_16x9.mp4 (B container, not in git) 1920x1080 30fps ~10 Mbps, AAC 256k, 10:57, -14.0 LUFS / -1.8 dBTP; final/thumb_v1.jpg + thumb_v2.jpg. SFX hand-synth (earshot install blocked). Rebuild: make_shots.py, sfx.py, render.py, mix.py |
