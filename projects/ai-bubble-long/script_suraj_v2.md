@@ -204,7 +204,7 @@ Aur yahin se asli tough sawaal aata hai.
 Agar har koi kharch karta rahe... toh bubble phootega kaise?
 Short answer hai:
 Jab real duniya ka koi event sabko majboor kar de... ki ab dikhawa band karna padega.
-History mein aise events aam taur pe teen tarah ke hote hain.
+History mein aise events aam taur pe do tarah ke hote hain.
 
 Pehla: achanak paisa milna band ho jaye.
 Dot-com ka bubble isliye nahi phoota tha ki website banana koi bekaar idea tha.
