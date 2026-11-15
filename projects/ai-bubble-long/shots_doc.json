@@ -1,0 +1,1004 @@
+[
+ {
+  "id": 1,
+  "vo": "Duniya ki sabse hyped AI company ka CEO tension mein hai.",
+  "visual": "Glass office at night. Young exec in grey sweater (Sam-type) holds his head, red loss chart behind him. Slow push-in.",
+  "asset": "HF"
+ },
+ {
+  "id": 2,
+  "vo": "Kyunki uska ChatGPT ghar-ghar pahunch gaya...",
+  "visual": "Map of the world, ChatGPT logo pins pop on houses in every country.",
+  "asset": "CODE"
+ },
+ {
+  "id": 3,
+  "vo": "...phir bhi company loss mein ja rahi hai.",
+  "visual": "Pins freeze; a red \"LOSS\" stamp slams on the CEO's desk.",
+  "asset": "CODE"
+ },
+ {
+  "id": 4,
+  "vo": "(no VO, 3 s)",
+  "visual": "Three windows open one by one: Window 1, a US garage team builds a startup with ChatGPT. Window 2, a European dev ships a website. Window 3, an Indian couple makes cute AI couple photos and giggles.",
+  "asset": "HF x3"
+ },
+ {
+  "id": 5,
+  "vo": "Welcome to the AI era...",
+  "visual": "Windows zoom out into a neon \"AI ERA\" title card.",
+  "asset": "CODE"
+ },
+ {
+  "id": 6,
+  "vo": "...jahan ek simple sa chatbot, dekhte-dekhte 7 trillion dollar ka gamble ban gaya.",
+  "visual": "A tiny chat bubble inflates into a huge balloon; counter rolls $0 → $7,000,000,000,000. Balloon stretches tight.",
+  "asset": "CODE"
+ },
+ {
+  "id": 7,
+  "vo": "30 November 2022. Budhwar ka din.",
+  "visual": "Calendar page flips to WED, 30 NOV 2022.",
+  "asset": "CODE"
+ },
+ {
+  "id": 8,
+  "vo": "Ek company mein sab normal chal raha tha.",
+  "visual": "Wide shot of a lazy tech office, plants, laptops.",
+  "asset": "HF"
+ },
+ {
+  "id": 9,
+  "vo": "Log coffee pi rahe the, memes share kar rahe the, developers bugs fix kar rahe the.",
+  "visual": "Quick cuts on the same office: coffee sip, laughing at a phone meme, dev squashing a cartoon bug on screen.",
+  "asset": "HF (1 image, 3 crops)"
+ },
+ {
+  "id": 10,
+  "vo": "Aur usi din OpenAI ne apna chatbot drop kiya... ChatGPT.",
+  "visual": "Screen glows; \"ChatGPT\" title drops in with OpenAI logo. Typewriter text: today we launched ChatGPT, 8:38 PM.",
+  "asset": "CODE"
+ },
+ {
+  "id": 11,
+  "vo": "(tweet)",
+  "visual": "Sam Altman's launch tweet as a phone card.",
+  "asset": "CODE"
+ },
+ {
+  "id": 12,
+  "vo": "24 ghante ke andar internet ko naya obsession mil gaya.",
+  "visual": "Phone notifications explode, a \"24 HRS\" clock spins.",
+  "asset": "CODE"
+ },
+ {
+  "id": 13,
+  "vo": "Koi email likhwa raha tha, koi code fix karwa raha tha, aur koi apni breakup story.",
+  "visual": "Three split panels: office guy writing email, dev fixing code, a teen crying while typing a breakup story.",
+  "asset": "HF"
+ },
+ {
+  "id": 14,
+  "vo": "SKIT — BETA (Gaurav): Papa, main ek AI bot se baat kar raha hoon... jo humein crorepati bana sakta hai!",
+  "visual": "Living room sofa: Beta with laptop, excited; Papa with newspaper.",
+  "asset": "HF"
+ },
+ {
+  "id": 15,
+  "vo": "PAPA (Amrut): Kaise?",
+  "visual": "Papa lowers the newspaper, one eyebrow up.",
+  "asset": "HF (same scene)"
+ },
+ {
+  "id": 16,
+  "vo": "BETA typing: \"Mujhe 1 minute mein 100 crore ka business bana ke do. Profit 100% ho. Aur koi galti nahi honi chahiye.\"",
+  "visual": "Laptop close-up, prompt types out letter by letter; ChatGPT \"thinking\" dots; Papa face-palms.",
+  "asset": "CODE"
+ },
+ {
+  "id": 17,
+  "vo": "ChatGPT itna viral hua ki sirf 5 din mein 10 lakh users aa gaye.",
+  "visual": "Counter 0 → 10,00,000 with \"5 DAYS\" tag.",
+  "asset": "CODE"
+ },
+ {
+  "id": 18,
+  "vo": "Aur 2 mahine mein 10 crore.",
+  "visual": "Counter jumps to 10,00,00,000, \"2 MONTHS\".",
+  "asset": "CODE"
+ },
+ {
+  "id": 19,
+  "vo": "Instagram ko 10 crore users tak pahunchne mein dhai saal lage the. Facebook ko saadhe chaar saal.",
+  "visual": "Race track: Instagram runner (2.5 yrs), Facebook runner (4.5 yrs) on a globe.",
+  "asset": "CODE"
+ },
+ {
+  "id": 20,
+  "vo": "ChatGPT ban gaya... history ka sabse fast growing app.",
+  "visual": "ChatGPT rocket zooms past both, \"FASTEST EVER\" trophy.",
+  "asset": "CODE"
+ },
+ {
+  "id": 21,
+  "vo": "Phir kya tha... Google ke headquarters mein full panic mode on ho gaya.",
+  "visual": "Google HQ exterior, red alarm light spinning on the roof.",
+  "asset": "HF"
+ },
+ {
+  "id": 22,
+  "vo": "SKIT — BOSS (Amrut): Ye technology toh humari hai! Transformer model humne banaya tha! Uska kya hua?",
+  "visual": "Boardroom: angry boss slams a \"Attention Is All You Need\" paper on the table; execs flinch.",
+  "asset": "HF"
+ },
+ {
+  "id": 23,
+  "vo": "BOSS: Toh phir mera beta Google AI ki jagah ChatGPT kyun use kar raha hai?",
+  "visual": "Boss holds up a phone showing ChatGPT.",
+  "asset": "HF (same room)"
+ },
+ {
+  "id": 24,
+  "vo": "ENGINEER (Gaurav): Kyunki... hum ise launch karne se dar rahe the.",
+  "visual": "Nervous engineer in hoodie, sweat drop, tiny voice.",
+  "asset": "HF"
+ },
+ {
+  "id": 25,
+  "vo": "BOSS: Toh ab kuch bhi launch karo! Bard bolo, Gemini bolo, jo mann kare bolo. Bas launch karo!",
+  "visual": "Boss points at the door; name cards \"Bard\" and \"Gemini\" fly across the table.",
+  "asset": "HF + CODE"
+ },
+ {
+  "id": 26,
+  "vo": "Google full hustle mode mein aa gaya.",
+  "visual": "Fast-forward office: people running, papers flying, speed lines.",
+  "asset": "HF"
+ },
+ {
+  "id": 27,
+  "vo": "Technology uske Saalon se thi.",
+  "visual": "Dusty vault opens, a glowing AI box sits inside covered in cobwebs.",
+  "asset": "HF"
+ },
+ {
+  "id": 28,
+  "vo": "Par company dar rahi thi... ki AI kahin kuch galat na bol de, koi case na ho jaye, media mein naam kharab na ho jaye.",
+  "visual": "Three worry bubbles pop over execs: speech bubble with \"???\", judge's gavel, newspaper headline.",
+  "asset": "CODE"
+ },
+ {
+  "id": 29,
+  "vo": "Aur OpenAI? Usne bina dare launch kar diya.",
+  "visual": "OpenAI guy cuts a ribbon with giant scissors, confetti.",
+  "asset": "HF"
+ },
+ {
+  "id": 30,
+  "vo": "Kuch hi hafton mein Microsoft ne OpenAI mein 10 billion dollar laga diye. Aur 3 billion dollar alag se ready rakhe.",
+  "visual": "Microsoft logo truck dumps money bags \"$10B\" at OpenAI's door; a second \"$3B\" bag waits on the side.",
+  "asset": "CODE"
+ },
+ {
+  "id": 31,
+  "vo": "Google ne jaldi-jaldi mein Bard launch kiya...",
+  "visual": "Launch stage, Bard logo on screen, small crowd.",
+  "asset": "HF"
+ },
+ {
+  "id": 32,
+  "vo": "SKIT — USER (Gaurav): Gemini, ye batao duniya ka sabse popular insaan kaun hai?",
+  "visual": "Phone chat UI, user types the question.",
+  "asset": "CODE"
+ },
+ {
+  "id": 33,
+  "vo": "GEMINI (Devi): Modi Ji.",
+  "visual": "Reply bubble appears.",
+  "asset": "CODE"
+ },
+ {
+  "id": 34,
+  "vo": "USER: Modi Ji kaun? / GEMINI: Modi sarkaar.",
+  "visual": "Second Q and A bubbles; user's face goes blank.",
+  "asset": "CODE + HF"
+ },
+ {
+  "id": 35,
+  "vo": "Aur bas... pehle hi din Gemini ne poora raita phaila diya.",
+  "visual": "A bowl of raita tips over the Google stage; audience gasps.",
+  "asset": "HF"
+ },
+ {
+  "id": 36,
+  "vo": "Doosri taraf, Amazon ne Anthropic mein billions lagane shuru kar diye.",
+  "visual": "Amazon logo crane lowers a vault labelled \"$$$ BILLIONS\" next to an Anthropic logo building.",
+  "asset": "CODE"
+ },
+ {
+  "id": 37,
+  "vo": "Aur investors ka scene ye tha...",
+  "visual": "Door with sign \"VC — We fund AI\", camera pushes in.",
+  "asset": "HF"
+ },
+ {
+  "id": 38,
+  "vo": "SKIT — STARTUP (Gaurav): Humara app kutton ko walk pe le jaata hai...",
+  "visual": "Founder in hoodie with a dog on a leash and a slide \"DogWalk\".",
+  "asset": "HF"
+ },
+ {
+  "id": 39,
+  "vo": "...par best route chunne ke liye hum machine learning use karte hain.",
+  "visual": "Slide changes to a map with a glowing \"ML\" route; the dog looks confused.",
+  "asset": "HF + CODE"
+ },
+ {
+  "id": 40,
+  "vo": "INVESTOR (Amrut): Chup! Ye lo 5 crore dollar.",
+  "visual": "Investor in red tie throws a cheque, money rains.",
+  "asset": "HF"
+ },
+ {
+  "id": 41,
+  "vo": "STARTUP: Aap humara demo nahi dekhenge?",
+  "visual": "Founder holds a laptop up; investor already walking off with a cigar.",
+  "asset": "HF"
+ },
+ {
+  "id": 42,
+  "vo": "SKIT (2023) — PITCHER (Gaurav): Hum ek aisa app bana rahe hain jisse aap Voldemort se direct baat kar sakte ho... wo bhi Python mein.",
+  "visual": "Y Combinator-style pitch room, \"2023\" tag. Slide: an original spooky dark wizard (hooded black robe, wand, glowing green eyes) chatting with Python code.",
+  "asset": "HF"
+ },
+ {
+  "id": 43,
+  "vo": "YC DESK (Amrut): Next, please.",
+  "visual": "Bored judge with a stamp, not even looking up.",
+  "asset": "HF"
+ },
+ {
+  "id": 44,
+  "vo": "PITCHER: Isme hum AI use kar rahe hain.",
+  "visual": "Pitcher clicks; slide flashes a huge \"AI\" in sparkles.",
+  "asset": "CODE"
+ },
+ {
+  "id": 45,
+  "vo": "YC DESK: AI? Sach mein? / PITCHER: Yes.",
+  "visual": "Judge's eyes pop out, glasses fly off.",
+  "asset": "HF"
+ },
+ {
+  "id": 46,
+  "vo": "YC DESK: Ye lo 100 million dollar.",
+  "visual": "Briefcase opens, \"$100M\" glows.",
+  "asset": "CODE"
+ },
+ {
+  "id": 47,
+  "vo": "Ek company ne toh aisa AI banane ke liye 3 crore dollar utha liye...",
+  "visual": "Robot A in a tiny office counts money, \"$30M\" tag.",
+  "asset": "HF"
+ },
+ {
+  "id": 48,
+  "vo": "...jiska kaam tha doosre AI ke answers ko naye naam se wapas de dena.",
+  "visual": "Robot A copies a paper from Robot B, rubs out the name, writes its own, hands it back.",
+  "asset": "HF"
+ },
+ {
+  "id": 49,
+  "vo": "Par asli pagalpan tha... GPU ki shortage.",
+  "visual": "Empty shop shelf with a \"GPU — SOLD OUT\" sign, flies buzzing.",
+  "asset": "HF"
+ },
+ {
+  "id": 50,
+  "vo": "Computer ki ye chhoti-chhoti chips achanak sone aur tel se bhi zyada valuable ban gayi.",
+  "visual": "Scale: a GPU on one side outweighs a gold bar and an oil barrel.",
+  "asset": "HF"
+ },
+ {
+  "id": 51,
+  "vo": "Aur Nvidia duniya ki sabse valuable company ban gayi.",
+  "visual": "Nvidia logo climbs a podium to #1, crown drops on it.",
+  "asset": "CODE"
+ },
+ {
+  "id": 52,
+  "vo": "Nvidia ke CEO Jensen Huang conferences mein leather jacket pehen ke aise aane lage... jaise koi rockstar ho.",
+  "visual": "Stage with smoke and spotlights, generic cartoon CEO in a black leather jacket with an \"NVIDIA CEO\" label, holding a chip like a guitar, crowd with phones.",
+  "asset": "HF"
+ },
+ {
+  "id": 53,
+  "vo": "Aur ek tarah se... wo the bhi.",
+  "visual": "Crowd cheers, \"#1\" foam fingers.",
+  "asset": "HF (same)"
+ },
+ {
+  "id": 54,
+  "vo": "Ek high-end GPU ka kiraya tha lagbhag 3 dollar per ghanta.",
+  "visual": "One GPU with a price tag \"$3 / hr\".",
+  "asset": "CODE"
+ },
+ {
+  "id": 55,
+  "vo": "Sasta lag raha hai na?",
+  "visual": "Narrator shrug emoji; tag wiggles.",
+  "asset": "CODE"
+ },
+ {
+  "id": 56,
+  "vo": "Par startup ka kaam  ek GPU se  nahi hone wala tha,..",
+  "visual": "GPUs multiply on screen into a grid.",
+  "asset": "CODE"
+ },
+ {
+  "id": 57,
+  "vo": "Sirf ek model train karne ke liye bhi ek chhota startup 500 chips kiraye pe le sakta hai.",
+  "visual": "Grid fills to \"x500\".",
+  "asset": "CODE"
+ },
+ {
+  "id": 58,
+  "vo": "Yaani 1,500 dollar per ghanta.",
+  "visual": "Bill counter: $1,500 / hr.",
+  "asset": "CODE"
+ },
+ {
+  "id": 59,
+  "vo": "36,000 dollar per din.",
+  "visual": "Counter jumps: $36,000 / day.",
+  "asset": "CODE"
+ },
+ {
+  "id": 60,
+  "vo": "Aur mahine ke 11 lakh dollar se zyada. Sirf GPU ke kiraye mein.",
+  "visual": "Counter slams to $1.1M+ / month; founder faints behind it.",
+  "asset": "CODE + HF"
+ },
+ {
+  "id": 61,
+  "vo": "Phir bhi companies GPU aise jama kar rahi thi... jaise duniya khatam hone wali ho aur log ration stock kar rahe hon.",
+  "visual": "Bunker shelves stacked with GPU boxes next to atta sacks and Maggi; exec counting them.",
+  "asset": "HF"
+ },
+ {
+  "id": 62,
+  "vo": "Nvidia jitni speed se chips bana rahi thi, demand usse bhi fast thi.",
+  "visual": "Factory belt spitting chips vs a queue of hands grabbing faster.",
+  "asset": "HF"
+ },
+ {
+  "id": 63,
+  "vo": "Ek time pe waiting list 12 mahine tak pahunch gayi.",
+  "visual": "Token machine shows \"Your wait: 12 MONTHS\"; calendar pages fly.",
+  "asset": "CODE"
+ },
+ {
+  "id": 64,
+  "vo": "Black market shuru ho gaya.",
+  "visual": "Dark alley, man in trench coat opens his coat lined with GPUs.",
+  "asset": "HF"
+ },
+ {
+  "id": 65,
+  "vo": "Log ye chips border paar smuggle karne lage.",
+  "visual": "Border checkpoint at night, a truck of \"vegetables\" with GPUs peeking out.",
+  "asset": "HF"
+ },
+ {
+  "id": 66,
+  "vo": "2024 tak har cheez \"AI-powered\" ho chuki thi.",
+  "visual": "\"2024\" title; a sticker \"AI-POWERED\" slaps onto random objects.",
+  "asset": "CODE"
+ },
+ {
+  "id": 67,
+  "vo": "Aapka toaster ab bread ko 10% zyada efficiently jala sakta tha.",
+  "visual": "Toaster with an \"AI\" sticker pops out black, smoking toast; \"+10% EFFICIENCY\" badge.",
+  "asset": "HF"
+ },
+ {
+  "id": 68,
+  "vo": "Aapka calendar app algorithm se meeting ka time suggest kar raha tha.",
+  "visual": "Phone calendar shows \"AI suggests: 3:00 AM meeting\"; user groans.",
+  "asset": "CODE"
+ },
+ {
+  "id": 69,
+  "vo": "Aur supermarket ka self-checkout? Camera toh pehle bhi tha...",
+  "visual": "Self-checkout with an old camera on top.",
+  "asset": "HF"
+ },
+ {
+  "id": 70,
+  "vo": "...bas ab uska naam \"machine learning\" ho gaya tha.",
+  "visual": "A worker sticks a new label \"MACHINE LEARNING\" over the same camera.",
+  "asset": "HF (same)"
+ },
+ {
+  "id": 71,
+  "vo": "Party full on thi.",
+  "visual": "Rooftop party of execs, disco lights, AI balloons.",
+  "asset": "HF"
+ },
+ {
+  "id": 72,
+  "vo": "Champagne khul rahi thi. Cheques clear ho rahe the.",
+  "visual": "Champagne pops; a cheque printer spits cheques like confetti.",
+  "asset": "HF + CODE"
+ },
+ {
+  "id": 73,
+  "vo": "Phir kisi ne wo awkward sawaal pooch liya...",
+  "visual": "Music cuts (SFX record scratch); everyone freezes mid-dance.",
+  "asset": "HF (same)"
+ },
+ {
+  "id": 74,
+  "vo": "\"Bhai... ye sab chalane ka kharcha kitna aa raha hai?\"",
+  "visual": "A small intern with a calculator raises his hand; spotlight on him.",
+  "asset": "HF"
+ },
+ {
+  "id": 75,
+  "vo": "January 2025.",
+  "visual": "Calendar flips to JAN 2025.",
+  "asset": "CODE"
+ },
+ {
+  "id": 76,
+  "vo": "Sam Altman ne ek aisa tweet kiya, jisne investors ka BP high kar diya.",
+  "visual": "Phone card with the tweet; investor holding chest, BP meter needle into red.",
+  "asset": "CODE + HF"
+ },
+ {
+  "id": 77,
+  "vo": "\"OpenAI ke Pro subscription pe humein loss ho raha hai. Log ise humari expectation se kahin zyada use kar rahe hain.\"",
+  "visual": "Tweet text highlights word by word.",
+  "asset": "CODE"
+ },
+ {
+  "id": 78,
+  "vo": "Haan, aapne sahi suna.",
+  "visual": "Narrator text \"YES, REALLY.\" shakes.",
+  "asset": "CODE"
+ },
+ {
+  "id": 79,
+  "vo": "OpenAI apne Pro plan ke 200 dollar mahina leta hai. Phir bhi har subscriber pe loss ho raha hai.",
+  "visual": "Price card \"$200 / month\"; under it a red arrow \"- per user\".",
+  "asset": "CODE"
+ },
+ {
+  "id": 80,
+  "vo": "Par ruko... story aur kharab hoti hai.",
+  "visual": "Screen tilts, dramatic zoom (SFX dun-dun).",
+  "asset": "CODE"
+ },
+ {
+  "id": 81,
+  "vo": "2024 mein OpenAI ka hisaab dekho. Revenue: 3.7 billion dollar. Loss: 5 billion dollar.",
+  "visual": "Bar chart \"OpenAI 2024\": green bar $3.7B up, red bar $5B down, taller.",
+  "asset": "CODE"
+ },
+ {
+  "id": 82,
+  "vo": "Company sirf profit kamane mein fail nahi hui... jitna kamaya, usse zyada uda diya.",
+  "visual": "Wallet with wings flying off, money trailing.",
+  "asset": "HF"
+ },
+ {
+  "id": 83,
+  "vo": "Ab aata hai asli shocking part.",
+  "visual": "Curtain opens.",
+  "asset": "CODE"
+ },
+ {
+  "id": 84,
+  "vo": "Ek research firm ke hisaab se, 2030 tak AI aur uske data centers chalane ke liye 6.7 trillion dollar chahiye honge.",
+  "visual": "Giant counter \"$6.7 TRILLION by 2030\" over a glowing data-centre city.",
+  "asset": "HF + CODE"
+ },
+ {
+  "id": 85,
+  "vo": "Ise thoda tod ke samjhte hain. 5.2 trillion dollar seedha AI ke infrastructure pe: GPU, chips, bijli, cooling aur data center banane pe.",
+  "visual": "The $6.7T block splits: $5.2T chunk with icons (GPU, chip, bolt, snowflake, building).",
+  "asset": "CODE"
+ },
+ {
+  "id": 86,
+  "vo": "Baaki 1.5 trillion dollar cloud infrastructure pe.",
+  "visual": "Remaining $1.5T chunk with a cloud icon.",
+  "asset": "CODE"
+ },
+ {
+  "id": 87,
+  "vo": "Aur sirf chaar sabse badi tech companies se 2025 mein 350 billion dollar kharch karne ki ummeed thi. Ek saal mein.",
+  "visual": "Four logo tiles (Microsoft, Google, Amazon, Meta) around \"$350B in 2025\".",
+  "asset": "CODE"
+ },
+ {
+  "id": 88,
+  "vo": "Is kharche ko justify karne ke liye AI companies ko 2030 tak har saal 2 trillion dollar kamane honge.",
+  "visual": "Target bar \"$2T / year needed by 2030\".",
+  "asset": "CODE"
+ },
+ {
+  "id": 89,
+  "vo": "Aur abhi poori AI industry ki total kamaai? Lagbhag 200 billion dollar.",
+  "visual": "Tiny bar \"$200B today\" next to the huge target.",
+  "asset": "CODE"
+ },
+ {
+  "id": 90,
+  "vo": "Yaani kamaai ko 10 guna karna hoga.",
+  "visual": "\"10x\" arrow climbs between the bars.",
+  "asset": "CODE"
+ },
+ {
+  "id": 91,
+  "vo": "SKIT — BOARD MEMBER (Amrut): Sam, humare hisaab se 2025 mein revenue 20 billion dollar hoga. Aur tum keh rahe ho 2029 tak 100 billion kar doge?",
+  "visual": "Boardroom: old board member with glasses holds a report; Sam-type exec in grey sweater at the whiteboard.",
+  "asset": "HF"
+ },
+ {
+  "id": 92,
+  "vo": "SAM (Gaurav): Humein isi speed se grow karna hoga.",
+  "visual": "Sam proudly draws a line shooting straight up.",
+  "asset": "HF + CODE"
+ },
+ {
+  "id": 93,
+  "vo": "BOARD MEMBER: Sam, ise speed nahi kehte. Ye toh aise insaan ka banaya hockey stick graph hai, jisne kabhi hockey kheli hi nahi.",
+  "visual": "The drawn line morphs into a wobbly red hockey stick.",
+  "asset": "CODE"
+ },
+ {
+  "id": 94,
+  "vo": "BOARD MEMBER: Pata hai, sirf try karne mein kitna paisa lagega? / SAM: 2029 tak 115 billion dollar ka cash burn.",
+  "visual": "Counter \"$115B burn\" with a match lighting money.",
+  "asset": "CODE"
+ },
+ {
+  "id": 95,
+  "vo": "BOARD MEMBER: Aur profit kab aayega? / SAM: 2029 mein. Shayad 2030 mein. Ya 2031?",
+  "visual": "Sam flips calendar pages faster and faster.",
+  "asset": "HF + CODE"
+ },
+ {
+  "id": 96,
+  "vo": "BOARD MEMBER: Aur agar revenue 100 billion tak nahi pahuncha? Agar tumhari hockey stick toot gayi toh?",
+  "visual": "Hockey stick snaps in two (SFX crack).",
+  "asset": "CODE"
+ },
+ {
+  "id": 97,
+  "vo": "SAM: Toh aur paisa raise kar lenge.",
+  "visual": "Sam shrugs with a big smile.",
+  "asset": "HF"
+ },
+ {
+  "id": 98,
+  "vo": "BOARD MEMBER: Kisse? Bacha kaun hai? Microsoft? Saudi Arabia? Koi pension fund jo kuch zyada hi optimistic hai?",
+  "visual": "Three doors behind him: Microsoft logo, desert palace, an old man with a \"PENSION\" cap and rose-tinted glasses.",
+  "asset": "HF"
+ },
+ {
+  "id": 99,
+  "vo": "SAM: Arre, duniya mein investors ki kami thodi hai!",
+  "visual": "Sam winks, finger guns.",
+  "asset": "HF"
+ },
+ {
+  "id": 100,
+  "vo": "2021 se private investors AI startups mein sainkdon billion dollar daal chuke hain.",
+  "visual": "Money river flowing from a \"2021\" sign into an \"AI\" funnel.",
+  "asset": "CODE"
+ },
+ {
+  "id": 101,
+  "vo": "Iska zyada hissa sirf 10 companies ko mila, jinki total value lagbhag 1 trillion dollar badh gayi.",
+  "visual": "Funnel feeds 10 balloons that inflate; label \"+$1 TRILLION\".",
+  "asset": "CODE"
+ },
+ {
+  "id": 102,
+  "vo": "Har koi yahi bet laga raha tha... ki inmein se koi agla Google banega.",
+  "visual": "Roulette wheel with 10 slots; investors betting chips.",
+  "asset": "HF"
+ },
+ {
+  "id": 103,
+  "vo": "Phir gadbadiyan saamne aane lagi.",
+  "visual": "Glass crack spreads across the screen.",
+  "asset": "CODE"
+ },
+ {
+  "id": 104,
+  "vo": "ChatGPT \"hallucinate\" karne laga.",
+  "visual": "Robot with spiral eyes and a halo of stars.",
+  "asset": "HF"
+ },
+ {
+  "id": 105,
+  "vo": "Tech ki bhasha mein iska matlab hai... poore confidence ke saath kuch bhi bana ke bol dena.",
+  "visual": "Robot in sunglasses presenting a slide of nonsense, chest out.",
+  "asset": "HF"
+ },
+ {
+  "id": 106,
+  "vo": "Aise research papers ka reference, jo exist hi nahi karte.",
+  "visual": "Paper titled \"Study, 2031\" fades to dust.",
+  "asset": "CODE"
+ },
+ {
+  "id": 107,
+  "vo": "Aise court cases, jo kabhi hue hi nahi.",
+  "visual": "Lawyer reads a case file; the pages are blank.",
+  "asset": "HF"
+ },
+ {
+  "id": 108,
+  "vo": "Aur aise numbers, jo shayad kisi doosre planet se aaye the.",
+  "visual": "A UFO beams a chart down to earth.",
+  "asset": "HF"
+ },
+ {
+  "id": 109,
+  "vo": "Google ke AI ne ek user ko salah di ki pizza pe cheese chipkane ke liye usme glue daal do.",
+  "visual": "Search UI answer \"Add 1/8 cup glue\"; cut to a chef pouring glue on pizza.",
+  "asset": "CODE + HF"
+ },
+ {
+  "id": 110,
+  "vo": "Ye usne Reddit ke ek mazaak se seekha tha. Haan, sach mein.",
+  "visual": "A Reddit-style comment card with \"lol use glue\" and an upvote arrow.",
+  "asset": "CODE"
+ },
+ {
+  "id": 111,
+  "vo": "Phir cases shuru hue.",
+  "visual": "Judge's gavel slams (SFX).",
+  "asset": "HF"
+ },
+ {
+  "id": 112,
+  "vo": "Writers, artists, journalists... sabka ek hi sawaal tha: \"Kya tumne mere copyrighted kaam se apna AI train kiya hai?\"",
+  "visual": "Angry crowd holding pens, brushes, mics and protest signs in front of an AI office.",
+  "asset": "HF"
+ },
+ {
+  "id": 113,
+  "vo": "Jawab? \"Umm... haan.\"",
+  "visual": "AI rep sweating, tiny voice bubble \"umm... haan\".",
+  "asset": "HF"
+ },
+ {
+  "id": 114,
+  "vo": "The New York Times ne OpenAI pe case kiya. Getty Images ne Stability AI pe case kiya.",
+  "visual": "Two lawsuit papers slap onto a table with each logo pair.",
+  "asset": "CODE"
+ },
+ {
+  "id": 115,
+  "vo": "Writers ne companies ko court mein ghaseeta. Artists ne baaki companies ko.",
+  "visual": "Writers dragging a robot by the leg into court; artists dragging another.",
+  "asset": "HF"
+ },
+ {
+  "id": 116,
+  "vo": "SKIT — AI COMPANY (Gaurav): Humne chori nahi ki. Humne public data se AI train kiya hai.",
+  "visual": "Courtroom: AI lawyer in suit, confident.",
+  "asset": "HF"
+ },
+ {
+  "id": 117,
+  "vo": "ARTIST (Devi): Tumne bina permission poore internet ka data utha liya... aur usse paisa kamaya.",
+  "visual": "Artist points at a truck labelled \"THE INTERNET\" being loaded.",
+  "asset": "HF"
+ },
+ {
+  "id": 118,
+  "vo": "AI COMPANY: Achha... aise bologe toh illegal hi lagega.",
+  "visual": "AI lawyer slowly sinks into his chair.",
+  "asset": "HF (same)"
+ },
+ {
+  "id": 119,
+  "vo": "2024 ke beech tak cracks dikhne lage the.",
+  "visual": "AI balloon with small cracks, air hissing (SFX).",
+  "asset": "CODE"
+ },
+ {
+  "id": 120,
+  "vo": "Hype bahut loud tha. Par numbers darawne the.",
+  "visual": "Split: megaphone shouting \"AI!\" vs a dark spreadsheet with red numbers.",
+  "asset": "CODE"
+ },
+ {
+  "id": 121,
+  "vo": "Aur ab sabke dimaag mein ek hi sawaal ghoom raha tha... bilkul waise, jaise raat ke 3 baje kaan ke paas machhar ghoomta hai:",
+  "visual": "Dark bedroom, 3:00 AM clock, a mosquito circles a sleeping investor's ear (SFX buzz).",
+  "asset": "HF"
+ },
+ {
+  "id": 122,
+  "vo": "\"Ye bubble phootega kab?\"",
+  "visual": "Black screen, white text: Ye bubble phootega kab?",
+  "asset": "CODE"
+ },
+ {
+  "id": 123,
+  "vo": "Loss behisaab hai. Companies ki value reality se kahin zyada lagti hai.",
+  "visual": "Two meters: \"LOSS\" maxed red, \"VALUATION\" balloon far above a small \"REALITY\" box.",
+  "asset": "CODE"
+ },
+ {
+  "id": 124,
+  "vo": "Lekin ye bubble waise nahi phoot raha, jaise dot-com ka bubble phoota tha. Kyun?",
+  "visual": "Old 1999 browser window shatters next to the intact AI balloon; \"KYUN?\"",
+  "asset": "CODE"
+ },
+ {
+  "id": 125,
+  "vo": "Kyunki ise phulane walon ki jeb duniya mein sabse gehri hai.",
+  "visual": "A giant suit pocket, endless money falling into it.",
+  "asset": "HF"
+ },
+ {
+  "id": 126,
+  "vo": "1999 mein startups ki kamaai zero hoti thi... aur office mein masti ke liye 17 foosball tables hoti thi.",
+  "visual": "\"1999\" sepia office with rows of foosball tables, revenue board \"$0\".",
+  "asset": "HF"
+ },
+ {
+  "id": 127,
+  "vo": "Aaj AI bubble ko paisa dene wali badi tech companies sach mein kamaati hain. Bahut zyada.",
+  "visual": "Today: shiny towers with Microsoft, Google, Amazon, Meta logos, money pouring out of windows.",
+  "asset": "HF"
+ },
+ {
+  "id": 128,
+  "vo": "Itna paisa ki agar wo chahein... toh poora desh khareed lein.",
+  "visual": "Exec pulls a small globe-shaped country out of a shopping cart.",
+  "asset": "HF"
+ },
+ {
+  "id": 129,
+  "vo": "Microsoft, Azure se billions kamata hai.",
+  "visual": "Microsoft logo + Azure cloud raining money.",
+  "asset": "CODE"
+ },
+ {
+  "id": 130,
+  "vo": "Google, ads se billions kamata hai.",
+  "visual": "Google logo, ad cards turning into coins.",
+  "asset": "CODE"
+ },
+ {
+  "id": 131,
+  "vo": "Meta aapko wahi meme dikha ke billions kamata hai... jo aapka cousin pehle hi WhatsApp pe bhej chuka hai.",
+  "visual": "Phone shows the same meme twice: WhatsApp from cousin, then the feed; coins drop.",
+  "asset": "HF + CODE"
+ },
+ {
+  "id": 132,
+  "vo": "Ye badi companies AI mein isliye invest nahi kar rahi ki abhi isse profit ho raha hai.",
+  "visual": "Profit meter at zero, crossed out.",
+  "asset": "CODE"
+ },
+ {
+  "id": 133,
+  "vo": "Wo isliye invest kar rahi hain... kyunki unhe darr hai ki kahin wo peeche na reh jayein.",
+  "visual": "Execs running a race, all looking back nervously.",
+  "asset": "HF"
+ },
+ {
+  "id": 134,
+  "vo": "Agar AI agla iPhone moment ban gaya toh? Agla Google moment?",
+  "visual": "Flash of a phone and a search bar morphing into an AI chip.",
+  "asset": "CODE"
+ },
+ {
+  "id": 135,
+  "vo": "Agar ye wo pal hua, jab poori duniya raaton-raat badal jaati hai?",
+  "visual": "Day-night swipe over a city that turns futuristic.",
+  "asset": "HF"
+ },
+ {
+  "id": 136,
+  "vo": "Toh jis company ne speed kam ki... wo agli BlackBerry ban jayegi. Aur koi bhi BlackBerry nahi banna chahta.",
+  "visual": "Exec in front of a falling chart with a \"BlackBerry\" sign; others back away.",
+  "asset": "HF"
+ },
+ {
+  "id": 137,
+  "vo": "In badi tech companies ko poker ke aise players samjho, jo unlimited paisa leke table pe baithe hain.",
+  "visual": "Poker table: four players with logo heads (Google, Microsoft, Meta, Amazon), endless chip towers.",
+  "asset": "HF"
+ },
+ {
+  "id": 138,
+  "vo": "Microsoft peeche hata, toh Google jeet jayega. Google peeche hata, toh Amazon jeet jayega. Amazon peeche hata, toh Meta jeet jayega.",
+  "visual": "Spotlight moves player to player; each one glances at the next.",
+  "asset": "HF (same) + CODE"
+ },
+ {
+  "id": 139,
+  "vo": "Koi palak nahi jhapka raha. Koi fold nahi kar raha. Har koi bet badhata ja raha hai.",
+  "visual": "Close-ups of unblinking eyes; chips pushed to the middle, the pile grows taller.",
+  "asset": "HF"
+ },
+ {
+  "id": 140,
+  "vo": "Aur yahin se asli tough sawaal aata hai. Agar har koi kharch karta rahe... toh bubble phootega kaise?",
+  "visual": "The AI balloon floats over the poker table; a needle hovers near it.",
+  "asset": "CODE"
+ },
+ {
+  "id": 141,
+  "vo": "Short answer hai: jab real duniya ka koi event sabko majboor kar de... ki ab dikhawa band karna padega.",
+  "visual": "A hand pulls a curtain off a stage set, revealing cardboard props.",
+  "asset": "HF"
+ },
+ {
+  "id": 142,
+  "vo": "History mein aise events aam taur pe teen tarah ke hote hain.",
+  "visual": "Three numbered cards fan out. Card 3 visual: an original giant dinosaur monster stomps into the city at night, people running.",
+  "asset": "CODE"
+ },
+ {
+  "id": 143,
+  "vo": "Pehla: achanak paisa milna band ho jaye.",
+  "visual": "Card 1 flips: \"PAISA BAND\".",
+  "asset": "CODE"
+ },
+ {
+  "id": 144,
+  "vo": "Dot-com ka bubble isliye nahi phoota tha ki website banana koi bekaar idea tha.",
+  "visual": "A 1999 website mock-up, perfectly fine, with a check mark.",
+  "asset": "CODE"
+ },
+ {
+  "id": 145,
+  "vo": "Wo isliye phoota kyunki paise ka nal band ho gaya.",
+  "visual": "A money tap squeaks shut; last coin drips.",
+  "asset": "HF"
+ },
+ {
+  "id": 146,
+  "vo": "Interest rates badhe. Loan mehenga ho gaya. Funding gayab ho gayi.",
+  "visual": "Three quick icons: % arrow up, loan tag price jumps, money bag vanishes in smoke.",
+  "asset": "CODE"
+ },
+ {
+  "id": 147,
+  "vo": "Aur hazaaron companies raaton-raat khatam ho gayi.",
+  "visual": "Rows of startup office signs go dark one after another.",
+  "asset": "CODE"
+ },
+ {
+  "id": 148,
+  "vo": "Agar aane wale time mein interest rates badhte hain aur badi tech companies apna budget tight kar deti hain... toh AI bubble ka game turant khatam.",
+  "visual": "Exec tightens a belt labelled \"BUDGET\"; the balloon's air hose kinks; \"GAME OVER\" flashes.",
+  "asset": "HF + CODE"
+ },
+ {
+  "id": 149,
+  "vo": "Doosra: koi bahut badi aur sharmnaak failure saamne aa jaye.",
+  "visual": "Card 2 flips: \"BADA FAIL\".",
+  "asset": "CODE"
+ },
+ {
+  "id": 150,
+  "vo": "Har bubble ka ek aisa moment hota hai. Ek itna bada fail, jise dekh ke sab ghabra jaate hain.",
+  "visual": "Crowd watching a giant screen, all mouths open.",
+  "asset": "HF"
+ },
+ {
+  "id": 151,
+  "vo": "Dot-com ke time company results ne ummeedein todi thi.",
+  "visual": "1999 earnings sheet with a red arrow crashing.",
+  "asset": "CODE"
+ },
+ {
+  "id": 152,
+  "vo": "2008 mein Lehman Brothers tha.",
+  "visual": "Lehman Brothers building; employee walking out with a cardboard box.",
+  "asset": "HF"
+ },
+ {
+  "id": 153,
+  "vo": "Crypto mein FTX tha.",
+  "visual": "Crypto coins falling off a table, an \"FTX\" sign cracking.",
+  "asset": "HF"
+ },
+ {
+  "id": 154,
+  "vo": "AI ke case mein ye kisi badi lab ke bhaari loss ka khulasa ho sakta hai. Kisi naye model ka buri tarah fail launch ho sakta hai. Ya koi aisa case, jo sab kuch rok de.",
+  "visual": "Three mini-scenes: a giant red loss report, a launch stage where the robot faceplants, a court \"STOP\" order on a data center.",
+  "asset": "HF x3"
+ },
+ {
+  "id": 155,
+  "vo": "Toh abhi hum kahan khade hain?",
+  "visual": "A \"YOU ARE HERE\" map pin drops on a timeline from 2022 to now.",
+  "asset": "CODE"
+ },
+ {
+  "id": 156,
+  "vo": "Badi tech companies ab bhi kharch kar rahi hain.",
+  "visual": "Poker table again, chips still flowing.",
+  "asset": "HF (reuse 137)"
+ },
+ {
+  "id": 157,
+  "vo": "Kisi result ne abhi tak bhoochaal nahi machaya. FTX level ka koi scam saamne nahi aaya.",
+  "visual": "Seismograph line flat; an empty \"SCAM\" frame.",
+  "asset": "CODE"
+ },
+ {
+  "id": 158,
+  "vo": "Cracks dikh rahe hain... par itne bade nahi ki bharosa toot jaye.",
+  "visual": "Close-up of the balloon: thin cracks, but holding.",
+  "asset": "CODE"
+ },
+ {
+  "id": 159,
+  "vo": "Toh haan, ye bubble phoola hua hai. Haan, numbers pagal kar dene wale hain.",
+  "visual": "Balloon inflates a notch with each \"haan\".",
+  "asset": "CODE"
+ },
+ {
+  "id": 160,
+  "vo": "Lekin ye sirf hype aur shor ki wajah se nahi phootega.",
+  "visual": "Megaphones shout at the balloon; it does not pop.",
+  "asset": "CODE"
+ },
+ {
+  "id": 161,
+  "vo": "Ye tab phootega, jab in giants mein se koi aakhirkar bolega... \"Theek hai. Ab bahut ho gaya.\"",
+  "visual": "One poker player slowly lays his cards down (Devi or Amrut voice for the quote).",
+  "asset": "HF"
+ },
+ {
+  "id": 162,
+  "vo": "Tab tak bubble hawa mein tairta rahega.",
+  "visual": "The balloon drifts up over a city skyline at dusk.",
+  "asset": "HF"
+ },
+ {
+  "id": 163,
+  "vo": "Hum abhi explosion wale point pe nahi hain. Hum us point pe hain jahan tension lagataar badh rahi hai.",
+  "visual": "Camera holds on the balloon, which is now stretched tight.",
+  "asset": "CODE"
+ },
+ {
+  "id": 164,
+  "vo": "Cheekh nikalne se pehle andar kheenchi gayi saans.",
+  "visual": "A character takes a deep breath, eyes wide.",
+  "asset": "HF"
+ },
+ {
+  "id": 165,
+  "vo": "Dor tootne se pehle ka khinchaav.",
+  "visual": "A rope stretched between two hands, last threads snapping.",
+  "asset": "HF"
+ },
+ {
+  "id": 166,
+  "vo": "Season ke last episode se theek pehle wala episode.",
+  "visual": "TV screen: \"NEXT: SEASON FINALE\", then cut to black.",
+  "asset": "CODE"
+ },
+ {
+  "id": 167,
+  "vo": "(end card)",
+  "visual": "Subscribe end screen with two video slots.",
+  "asset": "CODE"
+ }
+]
