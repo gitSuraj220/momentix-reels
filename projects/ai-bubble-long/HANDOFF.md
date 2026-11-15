@@ -66,10 +66,10 @@ B: player + templates with placeholder art and a placeholder timeline FIRST (doe
 |---|---|---|
 | Script v2 | A | done |
 | Shot list doc | A | done (share/export pending — Suraj) |
-| Style frame + character sheet | A | next |
-| Narration + skit voices | A | todo |
-| timeline.json | A | todo |
-| HF images (≈70) | A | todo |
+| Style frame + character sheet | A | done (art/) |
+| Narration + skit voices | A | done (vo/vo_full.wav, 10:37) |
+| timeline.json | A | done (50 VO segments; shot-level split = B maps doc shots onto segments) |
+| HF images (≈70) | A | in progress: sections 1–2 done |
 | Player + templates | B | todo |
 | shots.json | B | todo |
 | SFX, render, mix, 16:9 thumbnail frame | B | todo |

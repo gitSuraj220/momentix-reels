@@ -1,0 +1,4 @@
+{"_note": "HF images are 1344x752 (gpt_image_2_6 16:9). Player should scale to 1920x1080 with lanczos + film grain; Ken Burns max 1.15x. Shared images: shot -> file.",
+ "1": "s001.png", "4a": "s004a.png", "4b": "s004b.png", "4c": "s004c.png",
+ "8": "s008.png", "9": "s008.png (3 crops: coffee left, meme centre, bug-dev right)",
+ "13": "s013.png (triptych: email / code / breakup)", "14": "s014.png", "15": "s014.png (push-in on Papa)"}
