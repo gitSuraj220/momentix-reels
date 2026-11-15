@@ -1066,6 +1066,21 @@
    "id": 49,
    "tpl": "image",
    "p": {
+    "kb": "in",
+    "ov": [
+     {
+      "k": "plaque",
+      "text": "GPU — SOLD OUT",
+      "rect": [
+       0.53,
+       0.13,
+       0.245,
+       0.1
+      ],
+      "col": "#8b1a1a",
+      "chip": 0
+     }
+    ],
     "src": "s049"
    },
    "vo": "Par asli pagalpan tha... GPU ki shortage.",
@@ -1120,6 +1135,15 @@
    "id": 52,
    "tpl": "image",
    "p": {
+    "kb": "in",
+    "ov": [
+     {
+      "k": "tag",
+      "text": "NVIDIA CEO",
+      "x": 0.66,
+      "y": 0.2
+     }
+    ],
     "src": "s052"
    },
    "vo": "Nvidia ke CEO Jensen Huang conferences mein leather jacket pehen ke aise aane lage... jaise koi rockstar ho.",
@@ -1439,10 +1463,23 @@
     "kb": "in",
     "ov": [
      {
+      "k": "plaque",
+      "text": "MACHINE LEARNING",
+      "rect": [
+       0.305,
+       0.075,
+       0.065,
+       0.09
+      ],
+      "col": "#1d4ed8",
+      "chip": 0
+     },
+     {
       "k": "tag",
       "text": "MACHINE LEARNING",
-      "x": 0.5,
-      "y": 0.2
+      "x": 0.55,
+      "y": 0.14,
+      "at": 0.45
      }
     ],
     "src": "s070"
@@ -2019,6 +2056,41 @@
    "id": 98,
    "tpl": "image",
    "p": {
+    "kb": "r",
+    "ov": [
+     {
+      "k": "logo",
+      "name": "Microsoft",
+      "rect": [
+       0.3,
+       0.07,
+       0.12,
+       0.06
+      ]
+     },
+     {
+      "k": "plaque",
+      "text": "SAUDI",
+      "rect": [
+       0.545,
+       0.075,
+       0.13,
+       0.07
+      ],
+      "chip": 0
+     },
+     {
+      "k": "plaque",
+      "text": "PENSION FUND",
+      "rect": [
+       0.78,
+       0.08,
+       0.12,
+       0.055
+      ],
+      "chip": 0
+     }
+    ],
     "src": "s098"
    },
    "vo": "BOARD MEMBER: Kisse? Bacha kaun hai? Microsoft? Saudi Arabia? Koi pension fund jo kuch zyada hi optimistic hai?",
@@ -2160,7 +2232,7 @@
    "id": 107,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s107"
    },
    "vo": "Aise court cases, jo kabhi hue hi nahi.",
    "visual": "Lawyer reads a case file; the pages are blank.",
@@ -2175,7 +2247,7 @@
    "id": 108,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s108"
    },
    "vo": "Aur aise numbers, jo shayad kisi doosre planet se aaye the.",
    "visual": "A UFO beams a chart down to earth.",
@@ -2242,7 +2314,7 @@
     "sfx": [
      "gavel"
     ],
-    "pending": 1
+    "src": "s111"
    },
    "vo": "Phir cases shuru hue.",
    "visual": "Judge's gavel slams (SFX).",
@@ -2257,7 +2329,7 @@
    "id": 112,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s112"
    },
    "vo": "Writers, artists, journalists... sabka ek hi sawaal tha: \"Kya tumne mere copyrighted kaam se apna AI train kiya hai?\"",
    "visual": "Angry crowd holding pens, brushes, mics and protest signs in front of an AI office.",
@@ -2281,7 +2353,7 @@
       "y": 0.25
      }
     ],
-    "pending": 1
+    "src": "s113"
    },
    "vo": "Jawab? \"Umm... haan.\"",
    "visual": "AI rep sweating, tiny voice bubble \"umm... haan\".",
@@ -2321,7 +2393,7 @@
    "id": 115,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s115"
    },
    "vo": "Writers ne companies ko court mein ghaseeta. Artists ne baaki companies ko.",
    "visual": "Writers dragging a robot by the leg into court; artists dragging another.",
@@ -2336,7 +2408,7 @@
    "id": 116,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s116"
    },
    "vo": "SKIT — AI COMPANY (Gaurav): Humne chori nahi ki. Humne public data se AI train kiya hai.",
    "visual": "Courtroom: AI lawyer in suit, confident.",
@@ -2351,7 +2423,22 @@
    "id": 117,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "kb": "r",
+    "ov": [
+     {
+      "k": "plaque",
+      "text": "THE INTERNET",
+      "rect": [
+       0.69,
+       0.24,
+       0.21,
+       0.12
+      ],
+      "col": "#1a1a1a",
+      "chip": 0
+     }
+    ],
+    "src": "s117"
    },
    "vo": "ARTIST (Devi): Tumne bina permission poore internet ka data utha liya... aur usse paisa kamaya.",
    "visual": "Artist points at a truck labelled \"THE INTERNET\" being loaded.",
@@ -2366,7 +2453,7 @@
    "id": 118,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s118"
    },
    "vo": "AI COMPANY: Achha... aise bologe toh illegal hi lagega.",
    "visual": "AI lawyer slowly sinks into his chair.",
@@ -2423,7 +2510,7 @@
     "sfx": [
      "buzz"
     ],
-    "pending": 1
+    "src": "s121"
    },
    "vo": "Aur ab sabke dimaag mein ek hi sawaal ghoom raha tha... bilkul waise, jaise raat ke 3 baje kaan ke paas machhar ghoomta hai:",
    "visual": "Dark bedroom, 3:00 AM clock, a mosquito circles a sleeping investor's ear (SFX buzz).",
@@ -2486,7 +2573,7 @@
    "id": 125,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s125"
    },
    "vo": "Kyunki ise phulane walon ki jeb duniya mein sabse gehri hai.",
    "visual": "A giant suit pocket, endless money falling into it.",
@@ -2501,7 +2588,35 @@
    "id": 126,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "kb": "in",
+    "ov": [
+     {
+      "k": "plaque",
+      "text": "REVENUE: $0",
+      "rect": [
+       0.71,
+       0.06,
+       0.24,
+       0.28
+      ],
+      "col": "#b91c1c",
+      "chip": 0
+     },
+     {
+      "k": "tag",
+      "text": "1999",
+      "x": 0.1,
+      "y": 0.12
+     },
+     {
+      "k": "tag",
+      "text": "17 FOOSBALL TABLES",
+      "x": 0.35,
+      "y": 0.9,
+      "at": 0.55
+     }
+    ],
+    "src": "s126"
    },
    "vo": "1999 mein startups ki kamaai zero hoti thi... aur office mein masti ke liye 17 foosball tables hoti thi.",
    "visual": "\"1999\" sepia office with rows of foosball tables, revenue board \"$0\".",
@@ -2528,7 +2643,7 @@
       ]
      }
     ],
-    "pending": 1
+    "src": "s127"
    },
    "vo": "Aaj AI bubble ko paisa dene wali badi tech companies sach mein kamaati hain. Bahut zyada.",
    "visual": "Today: shiny towers with Microsoft, Google, Amazon, Meta logos, money pouring out of windows.",
@@ -2543,7 +2658,7 @@
    "id": 128,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s128"
    },
    "vo": "Itna paisa ki agar wo chahein... toh poora desh khareed lein.",
    "visual": "Exec pulls a small globe-shaped country out of a shopping cart.",
@@ -2596,7 +2711,7 @@
    "id": 131,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s131"
    },
    "vo": "Meta aapko wahi meme dikha ke billions kamata hai... jo aapka cousin pehle hi WhatsApp pe bhej chuka hai.",
    "visual": "Phone shows the same meme twice: WhatsApp from cousin, then the feed; coins drop.",
@@ -2626,7 +2741,7 @@
    "id": 133,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s133"
    },
    "vo": "Wo isliye invest kar rahi hain... kyunki unhe darr hai ki kahin wo peeche na reh jayein.",
    "visual": "Execs running a race, all looking back nervously.",
@@ -2670,7 +2785,7 @@
    "id": 135,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s135"
    },
    "vo": "Agar ye wo pal hua, jab poori duniya raaton-raat badal jaati hai?",
    "visual": "Day-night swipe over a city that turns futuristic.",
@@ -2688,13 +2803,19 @@
     "kb": "in",
     "ov": [
      {
-      "k": "tag",
+      "k": "plaque",
       "text": "BlackBerry",
-      "x": 0.3,
-      "y": 0.15
+      "rect": [
+       0.4,
+       0.065,
+       0.37,
+       0.11
+      ],
+      "col": "#f5f5f5",
+      "chip": 0
      }
     ],
-    "pending": 1
+    "src": "s136"
    },
    "vo": "Toh jis company ne speed kam ki... wo agli BlackBerry ban jayegi. Aur koi bhi BlackBerry nahi banna chahta.",
    "visual": "Exec in front of a falling chart with a \"BlackBerry\" sign; others back away.",
@@ -2712,16 +2833,36 @@
     "kb": "in",
     "ov": [
      {
-      "k": "logorow",
-      "items": [
-       "Google",
-       "Microsoft",
-       "Meta",
-       "Amazon"
+      "k": "headlogo",
+      "heads": [
+       [
+        0.09,
+        0.39,
+        0.052,
+        "Google"
+       ],
+       [
+        0.375,
+        0.375,
+        0.052,
+        "Microsoft"
+       ],
+       [
+        0.68,
+        0.385,
+        0.052,
+        "Meta"
+       ],
+       [
+        0.915,
+        0.4,
+        0.048,
+        "Amazon"
+       ]
       ]
      }
     ],
-    "pending": 1
+    "src": "s137"
    },
    "vo": "In badi tech companies ko poker ke aise players samjho, jo unlimited paisa leke table pe baithe hain.",
    "visual": "Poker table: four players with logo heads (Google, Microsoft, Meta, Amazon), endless chip towers.",
@@ -2737,6 +2878,35 @@
    "tpl": "image",
    "p": {
     "ov": [
+     {
+      "k": "headlogo",
+      "heads": [
+       [
+        0.09,
+        0.39,
+        0.052,
+        "Google"
+       ],
+       [
+        0.375,
+        0.375,
+        0.052,
+        "Microsoft"
+       ],
+       [
+        0.68,
+        0.385,
+        0.052,
+        "Meta"
+       ],
+       [
+        0.915,
+        0.4,
+        0.048,
+        "Amazon"
+       ]
+      ]
+     },
      {
       "k": "spotmove",
       "n": 4
@@ -3084,7 +3254,39 @@
    "id": 156,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "kb": "out",
+    "ov": [
+     {
+      "k": "headlogo",
+      "heads": [
+       [
+        0.09,
+        0.39,
+        0.052,
+        "Google"
+       ],
+       [
+        0.375,
+        0.375,
+        0.052,
+        "Microsoft"
+       ],
+       [
+        0.68,
+        0.385,
+        0.052,
+        "Meta"
+       ],
+       [
+        0.915,
+        0.4,
+        0.048,
+        "Amazon"
+       ]
+      ]
+     }
+    ],
+    "src": "s137"
    },
    "vo": "Badi tech companies ab bhi kharch kar rahi hain.",
    "visual": "Poker table again, chips still flowing.",

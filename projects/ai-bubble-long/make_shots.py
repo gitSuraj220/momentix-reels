@@ -158,6 +158,19 @@ S = {
  166: ('title', {'text': 'NEXT: SEASON FINALE', 'style': 'tv'}),
  167: ('endscreen', {}),
 }
+HEADS137 = {'k': 'headlogo', 'heads': [[.09, .39, .052, 'Google'], [.375, .375, .052, 'Microsoft'], [.68, .385, .052, 'Meta'], [.915, .4, .048, 'Amazon']]}
+S.update({
+ 49: ('image', {'kb': 'in', 'ov': [{'k': 'plaque', 'text': 'GPU — SOLD OUT', 'rect': [.53, .13, .245, .1], 'col': '#8b1a1a', 'chip': 0}]}),
+ 52: ('image', {'kb': 'in', 'ov': [{'k': 'tag', 'text': 'NVIDIA CEO', 'x': .66, 'y': .2}]}),
+ 70: ('image', {'kb': 'in', 'ov': [{'k': 'plaque', 'text': 'MACHINE LEARNING', 'rect': [.305, .075, .065, .09], 'col': '#1d4ed8', 'chip': 0}, {'k': 'tag', 'text': 'MACHINE LEARNING', 'x': .55, 'y': .14, 'at': .45}]}),
+ 117: ('image', {'kb': 'r', 'ov': [{'k': 'plaque', 'text': 'THE INTERNET', 'rect': [.69, .24, .21, .12], 'col': '#1a1a1a', 'chip': 0}]}),
+ 126: ('image', {'kb': 'in', 'ov': [{'k': 'plaque', 'text': 'REVENUE: $0', 'rect': [.71, .06, .24, .28], 'col': '#b91c1c', 'chip': 0}, {'k': 'tag', 'text': '1999', 'x': .1, 'y': .12}, {'k': 'tag', 'text': '17 FOOSBALL TABLES', 'x': .35, 'y': .9, 'at': .55}]}),
+ 136: ('image', {'kb': 'in', 'ov': [{'k': 'plaque', 'text': 'BlackBerry', 'rect': [.40, .065, .37, .11], 'col': '#f5f5f5', 'chip': 0}]}),
+ 137: ('image', {'kb': 'in', 'ov': [HEADS137]}),
+ 138: ('image', {'ov': [HEADS137, {'k': 'spotmove', 'n': 4}]}),
+ 156: ('image', {'kb': 'out', 'ov': [HEADS137]}),
+ 98: ('image', {'kb': 'r', 'ov': [{'k': 'logo', 'name': 'Microsoft', 'rect': [.30, .07, .12, .06]}, {'k': 'plaque', 'text': 'SAUDI', 'rect': [.545, .075, .13, .07], 'chip': 0}, {'k': 'plaque', 'text': 'PENSION FUND', 'rect': [.78, .08, .12, .055], 'chip': 0}]}),
+})
 SPEAKER_RE = re.compile(r'(?:SKIT(?:\s*\([^)]*\))?\s*[—-]+\s*)?(?:^|(?<=/ )|(?<=^))[A-Z][A-Z ]{1,20}(?:\s*\([^)]*\))?(?: typing)?:\s*')
 
 

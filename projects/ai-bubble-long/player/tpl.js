@@ -44,8 +44,11 @@ const OV={
     ctx.lineWidth=2+L.hash(i,54)*5;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+len,y);ctx.stroke()}ctx.restore()},
   confetti:(ctx,o,lt)=>L.confetti(ctx,lt,{cheques:o.cheques}),
   plaque:(ctx,o,lt,dur,info)=>{const [x,y,w,h]=L.map(o.rect,info);ctx.save();ctx.globalAlpha=E.oc(S(lt,.1,.5));
-    L.font(ctx,h*.42,800);const tw=ctx.measureText(o.text).width;const k=Math.min(1,w*.9/tw);T(ctx,o.text,x+w/2,y+h/2,{px:h*.42*k,fill:'#3b2a10'});ctx.restore();
-    if(lt>dur*.4){ctx.save();ctx.globalAlpha=E.oc(S(lt,dur*.4,dur*.6));L.chip(ctx,o.text,W*.5,H*.16,{px:56});ctx.restore()}},
+    L.font(ctx,h*.42,800);const tw=ctx.measureText(o.text).width;const k=Math.min(1,w*.9/tw);T(ctx,o.text,x+w/2,y+h/2,{px:h*.42*k,fill:o.col||'#3b2a10'});ctx.restore();
+    if(o.chip!==0&&lt>dur*.4){ctx.save();ctx.globalAlpha=E.oc(S(lt,dur*.4,dur*.6));L.chip(ctx,o.text,W*.5,H*.16,{px:56});ctx.restore()}},
+  headlogo:(ctx,o,lt,dur,info)=>{o.heads.forEach(([nx,ny,nr,name],i)=>{const [x,y]=L.map([nx,ny],info),r=nr*W*(info?(W+24)/info.sw*info.im.width/W:1);const q=E.back(S(lt,.15+i*.12,.5+i*.12));if(q<=0)return;
+    ctx.save();ctx.translate(x,y);ctx.scale(q,q);ctx.fillStyle='#fff';ctx.shadowColor='rgba(0,0,0,.4)';ctx.shadowBlur=20;ctx.beginPath();ctx.arc(0,0,r,0,7);ctx.fill();ctx.shadowBlur=0;
+    ctx.save();ctx.globalAlpha=0;const w=L.logo(ctx,name,0,0,100,{light:false});ctx.restore();const h=Math.min(r*.9,100*r*1.7/w);L.logo(ctx,name,0,0,h,{light:false});ctx.restore()})},
   slide:(ctx,o,lt,dur,info)=>{const [x,y,w,h]=L.map(o.rect,info);ctx.save();ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();
     ctx.fillStyle='#f4f7fb';ctx.fillRect(x,y,w,h);
     if(o.mode==='dogwalk'){T(ctx,'DogWalk',x+w/2,y+h*.32,{px:h*.2,fill:'#1f6feb'});T(ctx,'AI that walks your dog',x+w/2,y+h*.55,{px:h*.08,w:600,fill:'#334'});
