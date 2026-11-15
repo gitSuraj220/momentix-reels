@@ -128,17 +128,16 @@ for v in ['gaurav', 'amrut', 'devi']:
     else:
         skit[v] = split_by_words(load(f'vo/{f}.mp3', SKIT_SPEED), tx, f'vo/words_{f}.json', SKIT_SPEED)
 # year lines regenerated with years spelled out (TTS read 2029 ambiguously)
-g2 = split_by_words(load(f"vo/fix_gaurav_{TAKE['fix_gaurav']}.mp3", SKIT_SPEED),
-                 ['Do hazaar untees tak, ek sau pandrah billion dollar ka cash burn.',
-                  'Do hazaar untees mein. Shayad do hazaar tees mein. Ya do hazaar iktees?'],
-                 f"vo/words_fix_gaurav_{TAKE['fix_gaurav']}.json", SKIT_SPEED)
+fg = f"fix_gaurav_{TAKE['fix_gaurav']}"
+g2 = split_at(load(f'vo/{fg}.mp3', SKIT_SPEED), json.load(open('vo/cuts.json'))[fg], SKIT_SPEED)
 skit['gaurav'][11], skit['gaurav'][12] = g2
 skit['amrut'][8] = trim(load(f"vo/fix_amrut_{TAKE['fix_amrut']}.mp3", SKIT_SPEED))
 
 # ---------- narration chunks, split where skits interrupt ----------
 groups = [[0, 1], [2, 3, 4], [5, 6], [7, 8], [9, 10]]  # section indexes per chunk (same as vo/narration_0N.txt)
 chunk_txt = [open(f'vo/narration_0{i}.txt').read().replace('\n\n', ' ').strip() for i in range(1, 6)]
-chunk_audio = [trim(load(f"vo/n0{i}_{TAKE[f'n0{i}']}.mp3", NARR_SPEED)) for i in range(1, 6)]
+chunk_audio = [load(f"vo/n0{i}_{TAKE[f'n0{i}']}.mp3", NARR_SPEED) for i in range(1, 6)]  # untrimmed: raw times map 1:1
+NCUT = json.load(open('vo/cuts.json')).get('narr', {})  # {first 30 chars of a block: raw time (s) where that block ends}
 
 def norm(t): return re.sub(r'\s+', ' ', t).strip()
 # walk the blocks; each 'N' block is a substring of one chunk -> cut chunk audio at proportional point snapped to a pause
@@ -155,6 +154,10 @@ for b in blocks:
     assert k >= 0, t[:60]
     end_c = k + len(t); a = chunk_audio[ci]; dur = len(a) / SR
     if end_c >= len(full) - 2: end_s = dur
+    elif t[:30] in NCUT:
+        c = NCUT[t[:30]] / NARR_SPEED
+        near = [x for x in silences(a, min_len=0.08) if abs((x[0] + x[1]) / 2 - c) < 0.5]
+        end_s = (lambda x: (x[0] + x[1]) / 2)(min(near, key=lambda x: abs((x[0] + x[1]) / 2 - c))) if near else c
     else:
         guess = dur * end_c / len(full)
         sil = [s for s in silences(a, min_len=0.15) if abs((s[0] + s[1]) / 2 - guess) < 3.0]
