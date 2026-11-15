@@ -69,7 +69,7 @@ B: player + templates with placeholder art and a placeholder timeline FIRST (doe
 | Style frame + character sheet | A | done (art/) |
 | Narration + skit voices | A | done (vo/vo_full.wav, 10:37) |
 | timeline.json | A | done (50 VO segments; shot-level split = B maps doc shots onto segments) |
-| HF images (≈70) | A | in progress: sections 1–4 done |
+| HF images (≈70) | A | done — all sections (81 files in art/, see art/index.json) |
 | Player + templates | B | done (player/: 30 templates, 0 errors on all 167 shots; HF shots without art show a labelled placeholder) |
 | shots.json | B | done (make_shots.py; rerun after new art lands, it picks up art/sNNN.png automatically) |
 | SFX, render, mix, 16:9 thumbnail frame | B | todo |
