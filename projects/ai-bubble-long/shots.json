@@ -1066,7 +1066,7 @@
    "id": 49,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s049"
    },
    "vo": "Par asli pagalpan tha... GPU ki shortage.",
    "visual": "Empty shop shelf with a \"GPU — SOLD OUT\" sign, flies buzzing.",
@@ -1090,7 +1090,7 @@
       "y": 0.12
      }
     ],
-    "pending": 1
+    "src": "s050"
    },
    "vo": "Computer ki ye chhoti-chhoti chips achanak sone aur tel se bhi zyada valuable ban gayi.",
    "visual": "Scale: a GPU on one side outweighs a gold bar and an oil barrel.",
@@ -1120,7 +1120,7 @@
    "id": 52,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s052"
    },
    "vo": "Nvidia ke CEO Jensen Huang conferences mein leather jacket pehen ke aise aane lage... jaise koi rockstar ho.",
    "visual": "Stage with smoke and spotlights, generic cartoon CEO in a black leather jacket with an \"NVIDIA CEO\" label, holding a chip like a guitar, crowd with phones.",
@@ -1144,7 +1144,7 @@
       "y": 0.2
      }
     ],
-    "pending": 1
+    "src": "s053"
    },
    "vo": "Aur ek tarah se... wo the bhi.",
    "visual": "Crowd cheers, \"#1\" foam fingers.",
@@ -1272,7 +1272,7 @@
     "style": "bill",
     "tag": "SIRF GPU KIRAYA",
     "slam": 1,
-    "pending": 1
+    "src": "s060"
    },
    "vo": "Aur mahine ke 11 lakh dollar se zyada. Sirf GPU ke kiraye mein.",
    "visual": "Counter slams to $1.1M+ / month; founder faints behind it.",
@@ -1287,7 +1287,7 @@
    "id": 61,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s061"
    },
    "vo": "Phir bhi companies GPU aise jama kar rahi thi... jaise duniya khatam hone wali ho aur log ration stock kar rahe hon.",
    "visual": "Bunker shelves stacked with GPU boxes next to atta sacks and Maggi; exec counting them.",
@@ -1302,7 +1302,7 @@
    "id": 62,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s062"
    },
    "vo": "Nvidia jitni speed se chips bana rahi thi, demand usse bhi fast thi.",
    "visual": "Factory belt spitting chips vs a queue of hands grabbing faster.",
@@ -1335,7 +1335,7 @@
    "id": 64,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s064"
    },
    "vo": "Black market shuru ho gaya.",
    "visual": "Dark alley, man in trench coat opens his coat lined with GPUs.",
@@ -1350,7 +1350,7 @@
    "id": 65,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s065"
    },
    "vo": "Log ye chips border paar smuggle karne lage.",
    "visual": "Border checkpoint at night, a truck of \"vegetables\" with GPUs peeking out.",
@@ -1390,7 +1390,7 @@
       "y": 0.2
      }
     ],
-    "pending": 1
+    "src": "s067"
    },
    "vo": "Aapka toaster ab bread ko 10% zyada efficiently jala sakta tha.",
    "visual": "Toaster with an \"AI\" sticker pops out black, smoking toast; \"+10% EFFICIENCY\" badge.",
@@ -1421,7 +1421,7 @@
    "id": 69,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s069"
    },
    "vo": "Aur supermarket ka self-checkout? Camera toh pehle bhi tha...",
    "visual": "Self-checkout with an old camera on top.",
@@ -1445,7 +1445,7 @@
       "y": 0.2
      }
     ],
-    "pending": 1
+    "src": "s070"
    },
    "vo": "...bas ab uska naam \"machine learning\" ho gaya tha.",
    "visual": "A worker sticks a new label \"MACHINE LEARNING\" over the same camera.",
@@ -1460,7 +1460,7 @@
    "id": 71,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s071"
    },
    "vo": "Party full on thi.",
    "visual": "Rooftop party of execs, disco lights, AI balloons.",
@@ -1482,7 +1482,7 @@
       "cheques": 1
      }
     ],
-    "pending": 1
+    "src": "s072"
    },
    "vo": "Champagne khul rahi thi. Cheques clear ho rahe the.",
    "visual": "Champagne pops; a cheque printer spits cheques like confetti.",
@@ -1501,7 +1501,7 @@
     "sfx": [
      "scratch"
     ],
-    "pending": 1
+    "src": "s073"
    },
    "vo": "Phir kisi ne wo awkward sawaal pooch liya...",
    "visual": "Music cuts (SFX record scratch); everyone freezes mid-dance.",
@@ -1522,7 +1522,7 @@
       "k": "spot"
      }
     ],
-    "pending": 1
+    "src": "s074"
    },
    "vo": "\"Bhai... ye sab chalane ka kharcha kitna aa raha hai?\"",
    "visual": "A small intern with a calculator raises his hand; spotlight on him.",
@@ -1672,7 +1672,7 @@
    "id": 82,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s082"
    },
    "vo": "Company sirf profit kamane mein fail nahi hui... jitna kamaya, usse zyada uda diya.",
    "visual": "Wallet with wings flying off, money trailing.",
@@ -1709,7 +1709,7 @@
     "suffix": " TRILLION",
     "tag": "BY 2030",
     "city": 1,
-    "pending": 1
+    "src": "s084"
    },
    "vo": "Ek research firm ke hisaab se, 2030 tak AI aur uske data centers chalane ke liye 6.7 trillion dollar chahiye honge.",
    "visual": "Giant counter \"$6.7 TRILLION by 2030\" over a glowing data-centre city.",
@@ -1896,7 +1896,7 @@
    "id": 91,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s091"
    },
    "vo": "SKIT — BOARD MEMBER (Amrut): Sam, humare hisaab se 2025 mein revenue 20 billion dollar hoga. Aur tum keh rahe ho 2029 tak 100 billion kar doge?",
    "visual": "Boardroom: old board member with glasses holds a report; Sam-type exec in grey sweater at the whiteboard.",
@@ -1917,7 +1917,7 @@
       "k": "drawline"
      }
     ],
-    "pending": 1
+    "src": "s092"
    },
    "vo": "SAM (Gaurav): Humein isi speed se grow karna hoga.",
    "visual": "Sam proudly draws a line shooting straight up.",
@@ -2004,7 +2004,7 @@
    "id": 97,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s097"
    },
    "vo": "SAM: Toh aur paisa raise kar lenge.",
    "visual": "Sam shrugs with a big smile.",
@@ -2019,7 +2019,7 @@
    "id": 98,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s098"
    },
    "vo": "BOARD MEMBER: Kisse? Bacha kaun hai? Microsoft? Saudi Arabia? Koi pension fund jo kuch zyada hi optimistic hai?",
    "visual": "Three doors behind him: Microsoft logo, desert palace, an old man with a \"PENSION\" cap and rose-tinted glasses.",
@@ -2034,7 +2034,7 @@
    "id": 99,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s099"
    },
    "vo": "SAM: Arre, duniya mein investors ki kami thodi hai!",
    "visual": "Sam winks, finger guns.",
@@ -2083,7 +2083,7 @@
    "id": 102,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s102"
    },
    "vo": "Har koi yahi bet laga raha tha... ki inmein se koi agla Google banega.",
    "visual": "Roulette wheel with 10 slots; investors betting chips.",
@@ -2114,7 +2114,7 @@
    "id": 104,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s104"
    },
    "vo": "ChatGPT \"hallucinate\" karne laga.",
    "visual": "Robot with spiral eyes and a halo of stars.",
@@ -2129,7 +2129,7 @@
    "id": 105,
    "tpl": "image",
    "p": {
-    "pending": 1
+    "src": "s105"
    },
    "vo": "Tech ki bhasha mein iska matlab hai... poore confidence ke saath kuch bhi bana ke bol dena.",
    "visual": "Robot in sunglasses presenting a slide of nonsense, chest out.",
