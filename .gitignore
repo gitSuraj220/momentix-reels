@@ -40,3 +40,4 @@ projects/*/out/slide_*.png
 projects/*/build/*.html
 projects/*/build/list.txt
 projects/*/final/*.part*
+projects/*/final/*_part*
