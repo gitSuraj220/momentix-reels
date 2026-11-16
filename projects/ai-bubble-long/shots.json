@@ -138,7 +138,7 @@
    "t0": 15.35,
    "seg": 1,
    "kind": "narr",
-   "t1": 17.184,
+   "t1": 18.397,
    "tr": "whip"
   },
   {
@@ -151,7 +151,7 @@
    "vo": "Ek company mein sab normal chal raha tha.",
    "visual": "Wide shot of a lazy tech office, plants, laptops.",
    "asset": "HF",
-   "t0": 17.184,
+   "t0": 18.397,
    "seg": 1,
    "kind": "narr",
    "t1": 20.513,
@@ -207,7 +207,7 @@
    "t0": 25.307,
    "seg": 1,
    "kind": "narr",
-   "t1": 27.174,
+   "t1": 27.905,
    "tr": "whip"
   },
   {
@@ -222,8 +222,8 @@
    "vo": "(tweet)",
    "visual": "Sam Altman's launch tweet as a phone card.",
    "asset": "CODE",
-   "t0": 27.174,
-   "t1": 28.703,
+   "t0": 27.905,
+   "t1": 30.031,
    "tr": "whip"
   },
   {
@@ -236,10 +236,10 @@
    "vo": "24 ghante ke andar internet ko naya obsession mil gaya.",
    "visual": "Phone notifications explode, a \"24 HRS\" clock spins.",
    "asset": "CODE",
-   "t0": 28.703,
+   "t0": 30.031,
    "seg": 1,
    "kind": "narr",
-   "t1": 32.474,
+   "t1": 33.297,
    "tr": "whip"
   },
   {
@@ -271,7 +271,7 @@
    "vo": "Koi email likhwa raha tha, koi code fix karwa raha tha, aur koi apni breakup story.",
    "visual": "Three split panels: office guy writing email, dev fixing code, a teen crying while typing a breakup story.",
    "asset": "HF",
-   "t0": 32.474,
+   "t0": 33.297,
    "seg": 1,
    "kind": "narr",
    "t1": 38.03,
@@ -367,7 +367,7 @@
    "t0": 54.608,
    "seg": 5,
    "kind": "narr",
-   "t1": 55.943,
+   "t1": 56.743,
    "tr": "flash"
   },
   {
@@ -391,7 +391,7 @@
    "vo": "Instagram ko 10 crore users tak pahunchne mein dhai saal lage the. Facebook ko saadhe chaar saal.",
    "visual": "Race track: Instagram runner (2.5 yrs), Facebook runner (4.5 yrs) on a globe.",
    "asset": "CODE",
-   "t0": 55.943,
+   "t0": 56.743,
    "seg": 5,
    "kind": "narr",
    "t1": 62.1,
@@ -1043,7 +1043,7 @@
    "t0": 144.97,
    "seg": 27,
    "kind": "narr",
-   "t1": 150.316,
+   "t1": 148.845,
    "tr": "whip"
   },
   {
@@ -1056,7 +1056,7 @@
    "vo": "...jiska kaam tha doosre AI ke answers ko naye naam se wapas de dena.",
    "visual": "Robot A copies a paper from Robot B, rubs out the name, writes its own, hands it back.",
    "asset": "HF",
-   "t0": 150.316,
+   "t0": 148.845,
    "seg": 27,
    "kind": "narr",
    "t1": 155.61,
@@ -1089,7 +1089,7 @@
    "t0": 155.61,
    "seg": 28,
    "kind": "narr",
-   "t1": 157.959,
+   "t1": 160.265,
    "tr": "whip"
   },
   {
@@ -1110,10 +1110,10 @@
    "vo": "Computer ki ye chhoti-chhoti chips achanak sone aur tel se bhi zyada valuable ban gayi.",
    "visual": "Scale: a GPU on one side outweighs a gold bar and an oil barrel.",
    "asset": "HF",
-   "t0": 157.959,
+   "t0": 160.265,
    "seg": 28,
    "kind": "narr",
-   "t1": 162.879,
+   "t1": 163.571,
    "tr": "whip"
   },
   {
@@ -1125,10 +1125,10 @@
    "vo": "Aur Nvidia duniya ki sabse valuable company ban gayi.",
    "visual": "Nvidia logo climbs a podium to #1, crown drops on it.",
    "asset": "CODE",
-   "t0": 162.879,
+   "t0": 163.571,
    "seg": 28,
    "kind": "narr",
-   "t1": 165.899,
+   "t1": 165.96,
    "tr": "whip"
   },
   {
@@ -1149,10 +1149,10 @@
    "vo": "Nvidia ke CEO Jensen Huang conferences mein leather jacket pehen ke aise aane lage... jaise koi rockstar ho.",
    "visual": "Stage with smoke and spotlights, generic cartoon CEO in a black leather jacket with an \"NVIDIA CEO\" label, holding a chip like a guitar, crowd with phones.",
    "asset": "HF",
-   "t0": 165.899,
+   "t0": 165.96,
    "seg": 28,
    "kind": "narr",
-   "t1": 171.718,
+   "t1": 170.615,
    "tr": "whip"
   },
   {
@@ -1173,7 +1173,7 @@
    "vo": "Aur ek tarah se... wo the bhi.",
    "visual": "Crowd cheers, \"#1\" foam fingers.",
    "asset": "HF (same)",
-   "t0": 171.718,
+   "t0": 170.615,
    "seg": 28,
    "kind": "narr",
    "t1": 173.98,
@@ -1192,7 +1192,7 @@
    "t0": 173.98,
    "seg": 28,
    "kind": "narr",
-   "t1": 176.65,
+   "t1": 175.565,
    "tr": "whip"
   },
   {
@@ -1207,10 +1207,10 @@
    "vo": "Sasta lag raha hai na?",
    "visual": "Narrator shrug emoji; tag wiggles.",
    "asset": "CODE",
-   "t0": 176.65,
+   "t0": 175.565,
    "seg": 28,
    "kind": "narr",
-   "t1": 178.089,
+   "t1": 176.665,
    "tr": "whip"
   },
   {
@@ -1223,10 +1223,10 @@
    "vo": "Par startup ka kaam  ek GPU se  nahi hone wala tha,..",
    "visual": "GPUs multiply on screen into a grid.",
    "asset": "CODE",
-   "t0": 178.089,
+   "t0": 176.665,
    "seg": 28,
    "kind": "narr",
-   "t1": 181.444,
+   "t1": 179.929,
    "tr": "whip"
   },
   {
@@ -1240,10 +1240,10 @@
    "vo": "Sirf ek model train karne ke liye bhi ek chhota startup 500 chips kiraye pe le sakta hai.",
    "visual": "Grid fills to \"x500\".",
    "asset": "CODE",
-   "t0": 181.444,
+   "t0": 179.929,
    "seg": 28,
    "kind": "narr",
-   "t1": 186.477,
+   "t1": 184.838,
    "tr": "whip"
   },
   {
@@ -1259,10 +1259,10 @@
    "vo": "Yaani 1,500 dollar per ghanta.",
    "visual": "Bill counter: $1,500 / hr.",
    "asset": "CODE",
-   "t0": 186.477,
+   "t0": 184.838,
    "seg": 28,
    "kind": "narr",
-   "t1": 188.21,
+   "t1": 187.354,
    "tr": "flash"
   },
   {
@@ -1279,10 +1279,10 @@
    "vo": "36,000 dollar per din.",
    "visual": "Counter jumps: $36,000 / day.",
    "asset": "CODE",
-   "t0": 188.21,
+   "t0": 187.354,
    "seg": 28,
    "kind": "narr",
-   "t1": 189.31,
+   "t1": 189.292,
    "tr": "flash"
   },
   {
@@ -1301,10 +1301,10 @@
    "vo": "Aur mahine ke 11 lakh dollar se zyada. Sirf GPU ke kiraye mein.",
    "visual": "Counter slams to $1.1M+ / month; founder faints behind it.",
    "asset": "CODE + HF",
-   "t0": 189.31,
+   "t0": 189.292,
    "seg": 28,
    "kind": "narr",
-   "t1": 193.075,
+   "t1": 193.816,
    "tr": "flash"
   },
   {
@@ -1316,7 +1316,7 @@
    "vo": "Phir bhi companies GPU aise jama kar rahi thi... jaise duniya khatam hone wali ho aur log ration stock kar rahe hon.",
    "visual": "Bunker shelves stacked with GPU boxes next to atta sacks and Maggi; exec counting them.",
    "asset": "HF",
-   "t0": 193.075,
+   "t0": 193.816,
    "seg": 28,
    "kind": "narr",
    "t1": 199.924,
@@ -1398,7 +1398,7 @@
    "t0": 210.59,
    "seg": 29,
    "kind": "narr",
-   "t1": 213.154,
+   "t1": 213.961,
    "tr": "flash"
   },
   {
@@ -1419,10 +1419,10 @@
    "vo": "Aapka toaster ab bread ko 10% zyada efficiently jala sakta tha.",
    "visual": "Toaster with an \"AI\" sticker pops out black, smoking toast; \"+10% EFFICIENCY\" badge.",
    "asset": "HF",
-   "t0": 213.154,
+   "t0": 213.961,
    "seg": 29,
    "kind": "narr",
-   "t1": 216.722,
+   "t1": 218.046,
    "tr": "whip"
   },
   {
@@ -1435,10 +1435,10 @@
    "vo": "Aapka calendar app algorithm se meeting ka time suggest kar raha tha.",
    "visual": "Phone calendar shows \"AI suggests: 3:00 AM meeting\"; user groans.",
    "asset": "CODE",
-   "t0": 216.722,
+   "t0": 218.046,
    "seg": 29,
    "kind": "narr",
-   "t1": 220.625,
+   "t1": 221.6,
    "tr": "whip"
   },
   {
@@ -1450,10 +1450,10 @@
    "vo": "Aur supermarket ka self-checkout? Camera toh pehle bhi tha...",
    "visual": "Self-checkout with an old camera on top.",
    "asset": "HF",
-   "t0": 220.625,
+   "t0": 221.6,
    "seg": 29,
    "kind": "narr",
-   "t1": 223.395,
+   "t1": 224.771,
    "tr": "whip"
   },
   {
@@ -1487,7 +1487,7 @@
    "vo": "...bas ab uska naam \"machine learning\" ho gaya tha.",
    "visual": "A worker sticks a new label \"MACHINE LEARNING\" over the same camera.",
    "asset": "HF (same)",
-   "t0": 223.395,
+   "t0": 224.771,
    "seg": 29,
    "kind": "narr",
    "t1": 227.373,
@@ -1505,7 +1505,7 @@
    "t0": 227.373,
    "seg": 29,
    "kind": "narr",
-   "t1": 228.473,
+   "t1": 228.58,
    "tr": "whip"
   },
   {
@@ -1524,10 +1524,10 @@
    "vo": "Champagne khul rahi thi. Cheques clear ho rahe the.",
    "visual": "Champagne pops; a cheque printer spits cheques like confetti.",
    "asset": "HF + CODE",
-   "t0": 228.473,
+   "t0": 228.58,
    "seg": 29,
    "kind": "narr",
-   "t1": 230.771,
+   "t1": 231.456,
    "tr": "whip"
   },
   {
@@ -1543,10 +1543,10 @@
    "vo": "Phir kisi ne wo awkward sawaal pooch liya...",
    "visual": "Music cuts (SFX record scratch); everyone freezes mid-dance.",
    "asset": "HF (same)",
-   "t0": 230.771,
+   "t0": 231.456,
    "seg": 29,
    "kind": "narr",
-   "t1": 233.918,
+   "t1": 233.995,
    "tr": "whip"
   },
   {
@@ -1564,7 +1564,7 @@
    "vo": "\"Bhai... ye sab chalane ka kharcha kitna aa raha hai?\"",
    "visual": "A small intern with a calculator raises his hand; spotlight on him.",
    "asset": "HF",
-   "t0": 233.918,
+   "t0": 233.995,
    "seg": 29,
    "kind": "narr",
    "t1": 236.47,
@@ -1583,7 +1583,7 @@
    "t0": 236.47,
    "seg": 30,
    "kind": "narr",
-   "t1": 237.57,
+   "t1": 238.262,
    "tr": "whip"
   },
   {
@@ -1598,10 +1598,10 @@
    "vo": "Sam Altman ne ek aisa tweet kiya, jisne investors ka BP high kar diya.",
    "visual": "Phone card with the tweet; investor holding chest, BP meter needle into red.",
    "asset": "CODE + HF",
-   "t0": 237.57,
+   "t0": 238.262,
    "seg": 30,
    "kind": "narr",
-   "t1": 242.816,
+   "t1": 242.869,
    "tr": "whip"
   },
   {
@@ -1616,10 +1616,10 @@
    "vo": "\"OpenAI ke Pro subscription pe humein loss ho raha hai. Log ise humari expectation se kahin zyada use kar rahe hain.\"",
    "visual": "Tweet text highlights word by word.",
    "asset": "CODE",
-   "t0": 242.816,
+   "t0": 242.869,
    "seg": 30,
    "kind": "narr",
-   "t1": 249.667,
+   "t1": 249.183,
    "tr": "whip"
   },
   {
@@ -1632,7 +1632,7 @@
    "vo": "Haan, aapne sahi suna.",
    "visual": "Narrator text \"YES, REALLY.\" shakes.",
    "asset": "CODE",
-   "t0": 249.667,
+   "t0": 249.183,
    "seg": 30,
    "kind": "narr",
    "t1": 250.902,
@@ -1655,7 +1655,7 @@
    "t0": 250.902,
    "seg": 30,
    "kind": "narr",
-   "t1": 257.728,
+   "t1": 257.031,
    "tr": "flash"
   },
   {
@@ -1671,10 +1671,10 @@
    "vo": "Par ruko... story aur kharab hoti hai.",
    "visual": "Screen tilts, dramatic zoom (SFX dun-dun).",
    "asset": "CODE",
-   "t0": 257.728,
+   "t0": 257.031,
    "seg": 30,
    "kind": "narr",
-   "t1": 260.599,
+   "t1": 259.417,
    "tr": "whip"
   },
   {
@@ -1699,10 +1699,10 @@
    "vo": "2024 mein OpenAI ka hisaab dekho. Revenue: 3.7 billion dollar. Loss: 5 billion dollar.",
    "visual": "Bar chart \"OpenAI 2024\": green bar $3.7B up, red bar $5B down, taller.",
    "asset": "CODE",
-   "t0": 260.599,
+   "t0": 259.417,
    "seg": 30,
    "kind": "narr",
-   "t1": 265.798,
+   "t1": 267.099,
    "tr": "flash"
   },
   {
@@ -1714,7 +1714,7 @@
    "vo": "Company sirf profit kamane mein fail nahi hui... jitna kamaya, usse zyada uda diya.",
    "visual": "Wallet with wings flying off, money trailing.",
    "asset": "HF",
-   "t0": 265.798,
+   "t0": 267.099,
    "seg": 30,
    "kind": "narr",
    "t1": 272.089,
@@ -1789,7 +1789,7 @@
    "t0": 282.18,
    "seg": 30,
    "kind": "narr",
-   "t1": 290.994,
+   "t1": 291.824,
    "tr": "whip"
   },
   {
@@ -1822,10 +1822,10 @@
    "vo": "Baaki 1.5 trillion dollar cloud infrastructure pe.",
    "visual": "Remaining $1.5T chunk with a cloud icon.",
    "asset": "CODE",
-   "t0": 290.994,
+   "t0": 291.824,
    "seg": 30,
    "kind": "narr",
-   "t1": 294.394,
+   "t1": 295.459,
    "tr": "punch"
   },
   {
@@ -1844,10 +1844,10 @@
    "vo": "Aur sirf chaar sabse badi tech companies se 2025 mein 350 billion dollar kharch karne ki ummeed thi. Ek saal mein.",
    "visual": "Four logo tiles (Microsoft, Google, Amazon, Meta) around \"$350B in 2025\".",
    "asset": "CODE",
-   "t0": 294.394,
+   "t0": 295.459,
    "seg": 30,
    "kind": "narr",
-   "t1": 302.247,
+   "t1": 303.322,
    "tr": "whip"
   },
   {
@@ -1866,10 +1866,10 @@
    "vo": "Is kharche ko justify karne ke liye AI companies ko 2030 tak har saal 2 trillion dollar kamane honge.",
    "visual": "Target bar \"$2T / year needed by 2030\".",
    "asset": "CODE",
-   "t0": 302.247,
+   "t0": 303.322,
    "seg": 30,
    "kind": "narr",
-   "t1": 308.858,
+   "t1": 309.955,
    "tr": "flash"
   },
   {
@@ -1894,7 +1894,7 @@
    "vo": "Aur abhi poori AI industry ki total kamaai? Lagbhag 200 billion dollar.",
    "visual": "Tiny bar \"$200B today\" next to the huge target.",
    "asset": "CODE",
-   "t0": 308.858,
+   "t0": 309.955,
    "seg": 30,
    "kind": "narr",
    "t1": 314.001,
@@ -2225,7 +2225,7 @@
    "t0": 385.719,
    "seg": 42,
    "kind": "narr",
-   "t1": 389.761,
+   "t1": 388.924,
    "tr": "whip"
   },
   {
@@ -2237,10 +2237,10 @@
    "vo": "Aise court cases, jo kabhi hue hi nahi.",
    "visual": "Lawyer reads a case file; the pages are blank.",
    "asset": "HF",
-   "t0": 389.761,
+   "t0": 388.924,
    "seg": 42,
    "kind": "narr",
-   "t1": 392.048,
+   "t1": 391.201,
    "tr": "whip"
   },
   {
@@ -2252,10 +2252,10 @@
    "vo": "Aur aise numbers, jo shayad kisi doosre planet se aaye the.",
    "visual": "A UFO beams a chart down to earth.",
    "asset": "HF",
-   "t0": 392.048,
+   "t0": 391.201,
    "seg": 42,
    "kind": "narr",
-   "t1": 395.479,
+   "t1": 394.529,
    "tr": "whip"
   },
   {
@@ -2277,10 +2277,10 @@
    "vo": "Google ke AI ne ek user ko salah di ki pizza pe cheese chipkane ke liye usme glue daal do.",
    "visual": "Search UI answer \"Add 1/8 cup glue\"; cut to a chef pouring glue on pizza.",
    "asset": "CODE + HF",
-   "t0": 395.479,
+   "t0": 394.529,
    "seg": 42,
    "kind": "narr",
-   "t1": 400.682,
+   "t1": 399.829,
    "tr": "whip"
   },
   {
@@ -2299,10 +2299,10 @@
    "vo": "Ye usne Reddit ke ek mazaak se seekha tha. Haan, sach mein.",
    "visual": "A Reddit-style comment card with \"lol use glue\" and an upvote arrow.",
    "asset": "CODE",
-   "t0": 400.682,
+   "t0": 399.829,
    "seg": 42,
    "kind": "narr",
-   "t1": 404.643,
+   "t1": 403.328,
    "tr": "whip"
   },
   {
@@ -2319,10 +2319,10 @@
    "vo": "Phir cases shuru hue.",
    "visual": "Judge's gavel slams (SFX).",
    "asset": "HF",
-   "t0": 404.643,
+   "t0": 403.328,
    "seg": 42,
    "kind": "narr",
-   "t1": 405.743,
+   "t1": 404.643,
    "tr": "whip"
   },
   {
@@ -2334,7 +2334,7 @@
    "vo": "Writers, artists, journalists... sabka ek hi sawaal tha: \"Kya tumne mere copyrighted kaam se apna AI train kiya hai?\"",
    "visual": "Angry crowd holding pens, brushes, mics and protest signs in front of an AI office.",
    "asset": "HF",
-   "t0": 405.743,
+   "t0": 404.643,
    "seg": 42,
    "kind": "narr",
    "t1": 411.882,
@@ -2361,7 +2361,7 @@
    "t0": 411.882,
    "seg": 42,
    "kind": "narr",
-   "t1": 412.982,
+   "t1": 414.056,
    "tr": "whip"
   },
   {
@@ -2383,7 +2383,7 @@
    "vo": "The New York Times ne OpenAI pe case kiya. Getty Images ne Stability AI pe case kiya.",
    "visual": "Two lawsuit papers slap onto a table with each logo pair.",
    "asset": "CODE",
-   "t0": 412.982,
+   "t0": 414.056,
    "seg": 42,
    "kind": "narr",
    "t1": 418.725,
@@ -2494,7 +2494,7 @@
    "t0": 438.714,
    "seg": 46,
    "kind": "narr",
-   "t1": 440.247,
+   "t1": 441.823,
    "tr": "whip"
   },
   {
@@ -2515,10 +2515,10 @@
    "vo": "Aur ab sabke dimaag mein ek hi sawaal ghoom raha tha... bilkul waise, jaise raat ke 3 baje kaan ke paas machhar ghoomta hai:",
    "visual": "Dark bedroom, 3:00 AM clock, a mosquito circles a sleeping investor's ear (SFX buzz).",
    "asset": "HF",
-   "t0": 440.247,
+   "t0": 441.823,
    "seg": 46,
    "kind": "narr",
-   "t1": 447.257,
+   "t1": 447.581,
    "tr": "whip"
   },
   {
@@ -2531,7 +2531,7 @@
    "vo": "\"Ye bubble phootega kab?\"",
    "visual": "Black screen, white text: Ye bubble phootega kab?",
    "asset": "CODE",
-   "t0": 447.257,
+   "t0": 447.581,
    "seg": 46,
    "kind": "narr",
    "t1": 448.69,
@@ -2549,7 +2549,7 @@
    "t0": 448.69,
    "seg": 47,
    "kind": "narr",
-   "t1": 452.686,
+   "t1": 451.693,
    "tr": "whip"
   },
   {
@@ -2563,10 +2563,10 @@
    "vo": "Lekin ye bubble waise nahi phoot raha, jaise dot-com ka bubble phoota tha. Kyun?",
    "visual": "Old 1999 browser window shatters next to the intact AI balloon; \"KYUN?\"",
    "asset": "CODE",
-   "t0": 452.686,
+   "t0": 451.693,
    "seg": 47,
    "kind": "narr",
-   "t1": 457.182,
+   "t1": 458.112,
    "tr": "whip"
   },
   {
@@ -2578,10 +2578,10 @@
    "vo": "Kyunki ise phulane walon ki jeb duniya mein sabse gehri hai.",
    "visual": "A giant suit pocket, endless money falling into it.",
    "asset": "HF",
-   "t0": 457.182,
+   "t0": 458.112,
    "seg": 47,
    "kind": "narr",
-   "t1": 460.568,
+   "t1": 459.212,
    "tr": "whip"
   },
   {
@@ -2621,10 +2621,10 @@
    "vo": "1999 mein startups ki kamaai zero hoti thi... aur office mein masti ke liye 17 foosball tables hoti thi.",
    "visual": "\"1999\" sepia office with rows of foosball tables, revenue board \"$0\".",
    "asset": "HF",
-   "t0": 460.568,
+   "t0": 459.212,
    "seg": 47,
    "kind": "narr",
-   "t1": 466.396,
+   "t1": 465.15,
    "tr": "whip"
   },
   {
@@ -2648,10 +2648,10 @@
    "vo": "Aaj AI bubble ko paisa dene wali badi tech companies sach mein kamaati hain. Bahut zyada.",
    "visual": "Today: shiny towers with Microsoft, Google, Amazon, Meta logos, money pouring out of windows.",
    "asset": "HF",
-   "t0": 466.396,
+   "t0": 465.15,
    "seg": 47,
    "kind": "narr",
-   "t1": 471.392,
+   "t1": 472.229,
    "tr": "whip"
   },
   {
@@ -2663,7 +2663,7 @@
    "vo": "Itna paisa ki agar wo chahein... toh poora desh khareed lein.",
    "visual": "Exec pulls a small globe-shaped country out of a shopping cart.",
    "asset": "HF",
-   "t0": 471.392,
+   "t0": 472.229,
    "seg": 47,
    "kind": "narr",
    "t1": 475.174,
@@ -2719,7 +2719,7 @@
    "t0": 479.105,
    "seg": 47,
    "kind": "narr",
-   "t1": 484.991,
+   "t1": 486.418,
    "tr": "whip"
   },
   {
@@ -2731,10 +2731,10 @@
    "vo": "Ye badi companies AI mein isliye invest nahi kar rahi ki abhi isse profit ho raha hai.",
    "visual": "Profit meter at zero, crossed out.",
    "asset": "CODE",
-   "t0": 484.991,
+   "t0": 486.418,
    "seg": 47,
    "kind": "narr",
-   "t1": 489.82,
+   "t1": 490.878,
    "tr": "whip"
   },
   {
@@ -2746,7 +2746,7 @@
    "vo": "Wo isliye invest kar rahi hain... kyunki unhe darr hai ki kahin wo peeche na reh jayein.",
    "visual": "Execs running a race, all looking back nervously.",
    "asset": "HF",
-   "t0": 489.82,
+   "t0": 490.878,
    "seg": 47,
    "kind": "narr",
    "t1": 495.19,
@@ -2778,7 +2778,7 @@
    "t0": 495.19,
    "seg": 47,
    "kind": "narr",
-   "t1": 497.713,
+   "t1": 498.979,
    "tr": "whip"
   },
   {
@@ -2790,10 +2790,10 @@
    "vo": "Agar ye wo pal hua, jab poori duniya raaton-raat badal jaati hai?",
    "visual": "Day-night swipe over a city that turns futuristic.",
    "asset": "HF",
-   "t0": 497.713,
+   "t0": 498.979,
    "seg": 47,
    "kind": "narr",
-   "t1": 501.809,
+   "t1": 502.615,
    "tr": "whip"
   },
   {
@@ -2820,10 +2820,10 @@
    "vo": "Toh jis company ne speed kam ki... wo agli BlackBerry ban jayegi. Aur koi bhi BlackBerry nahi banna chahta.",
    "visual": "Exec in front of a falling chart with a \"BlackBerry\" sign; others back away.",
    "asset": "HF",
-   "t0": 501.809,
+   "t0": 502.615,
    "seg": 47,
    "kind": "narr",
-   "t1": 507.804,
+   "t1": 508.477,
    "tr": "whip"
   },
   {
@@ -2867,7 +2867,7 @@
    "vo": "In badi tech companies ko poker ke aise players samjho, jo unlimited paisa leke table pe baithe hain.",
    "visual": "Poker table: four players with logo heads (Google, Microsoft, Meta, Amazon), endless chip towers.",
    "asset": "HF",
-   "t0": 507.804,
+   "t0": 508.477,
    "seg": 47,
    "kind": "narr",
    "t1": 513.832,
@@ -2966,7 +2966,7 @@
    "t0": 532.301,
    "seg": 48,
    "kind": "narr",
-   "t1": 537.979,
+   "t1": 538.857,
    "tr": "whip"
   },
   {
@@ -2988,10 +2988,10 @@
    "vo": "History mein aise events aam taur pe teen tarah ke hote hain.",
    "visual": "Three numbered cards fan out. Card 3 visual: an original giant dinosaur monster stomps into the city at night, people running.",
    "asset": "CODE",
-   "t0": 537.979,
+   "t0": 538.857,
    "seg": 48,
    "kind": "narr",
-   "t1": 541.558,
+   "t1": 542.236,
    "tr": "whip"
   },
   {
@@ -3014,10 +3014,10 @@
    "vo": "Pehla: achanak paisa milna band ho jaye.",
    "visual": "Card 1 flips: \"PAISA BAND\".",
    "asset": "CODE",
-   "t0": 541.558,
+   "t0": 542.236,
    "seg": 48,
    "kind": "narr",
-   "t1": 544.004,
+   "t1": 545.113,
    "tr": "whip"
   },
   {
@@ -3030,10 +3030,10 @@
    "vo": "Dot-com ka bubble isliye nahi phoota tha ki website banana koi bekaar idea tha.",
    "visual": "A 1999 website mock-up, perfectly fine, with a check mark.",
    "asset": "CODE",
-   "t0": 544.004,
+   "t0": 545.113,
    "seg": 48,
    "kind": "narr",
-   "t1": 548.777,
+   "t1": 549.465,
    "tr": "whip"
   },
   {
@@ -3045,10 +3045,10 @@
    "vo": "Wo isliye phoota kyunki paise ka nal band ho gaya.",
    "visual": "A money tap squeaks shut; last coin drips.",
    "asset": "HF",
-   "t0": 548.777,
+   "t0": 549.465,
    "seg": 48,
    "kind": "narr",
-   "t1": 551.819,
+   "t1": 552.598,
    "tr": "whip"
   },
   {
@@ -3074,7 +3074,7 @@
    "vo": "Interest rates badhe. Loan mehenga ho gaya. Funding gayab ho gayi.",
    "visual": "Three quick icons: % arrow up, loan tag price jumps, money bag vanishes in smoke.",
    "asset": "CODE",
-   "t0": 551.819,
+   "t0": 552.598,
    "seg": 48,
    "kind": "narr",
    "t1": 556.213,
@@ -3130,7 +3130,7 @@
    "t0": 559.149,
    "seg": 48,
    "kind": "narr",
-   "t1": 567.72,
+   "t1": 566.853,
    "tr": "whip"
   },
   {
@@ -3153,7 +3153,7 @@
    "vo": "Doosra: koi bahut badi aur sharmnaak failure saamne aa jaye.",
    "visual": "Card 2 flips: \"BADA FAIL\".",
    "asset": "CODE",
-   "t0": 567.72,
+   "t0": 566.853,
    "seg": 48,
    "kind": "narr",
    "t1": 571.012,

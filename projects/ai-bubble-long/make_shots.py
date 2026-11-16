@@ -208,14 +208,26 @@ def art_for(n):
     return None, ''
 
 
+ANCH = json.load(open(os.path.join(HERE, 'vo/anchors.json'))) if os.path.exists(os.path.join(HERE, 'vo/anchors.json')) else {}
+
+
+def char_time(A, c):
+    # piecewise-linear char -> time between sentence anchors on real pauses (pause_align.py)
+    for (c0, t0), (c1, t1) in zip(A, A[1:]):
+        if c0 <= c <= c1: return t0 + (t1 - t0) * (c - c0) / max(1, c1 - c0)
+    return A[-1][1]
+
+
 def main():
     # word list with estimated times
     words = []
     for seg in TL['segments']:
         toks = [(m.group(0).lower(), m.start()) for m in re.finditer(r'[A-Za-z0-9]+', seg['text'])]
         L = len(seg['text']) or 1
+        A = ANCH.get(str(seg['id'])) or [[0, seg['start']], [L, seg['end']]]
         for w, c in toks:
-            words.append((w, seg['start'] + (seg['end'] - seg['start']) * c / L, seg['id'], seg['kind']))
+            words.append((w, char_time(A, c), seg['id'], seg['kind'], any(c == ac or c == ac + 1 for ac, _ in A[1:-1])))
+    REAL = bool(ANCH)
     ws = [w[0] for w in words]
     p, starts = 0, {}
     for d in DOC:
@@ -248,7 +260,8 @@ def main():
             bi, t, seg, kind = starts[n]
             # first shot of a segment starts at the segment start (pause before it is silence)
             first = bi == 0 or words[bi - 1][2] != seg
-            sh['t0'] = next(s['start'] for s in TL['segments'] if s['id'] == seg) if first else snap(t)
+            # cut ~3 frames before the first word so the picture leads the voice, never trails it
+            sh['t0'] = next(s['start'] for s in TL['segments'] if s['id'] == seg) if first else (t - .06 if words[bi][4] else snap(t) if REAL else snap(t))
             sh['seg'], sh['kind'] = seg, kind
         if 'HF' in d['asset'] and tpl in ('image', 'counter'):
             src, note = art_for(n)
