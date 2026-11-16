@@ -35,7 +35,11 @@ subprocess.run(['cp', f'{D}/audio/mix.wav', f'{D}/audio/mix_ln.wav'], check=True
 x = M
 print('mix LUFS', round(meter.integrated_loudness(x), 2), 'TP~', round(20 * np.log10(np.abs(resample_poly(x, 4, 1, axis=0)).max()), 2), 'dBTP')
 out = f'{D}/final/AI_Bubble_Long_16x9.mp4'
+# colour grade: gentle S-curve + shadow lift, cool shadows / neutral whites, vibrance, luma-only sharpen
+# (colorbalance pl=1 speckles saturated reds in this ffmpeg - keep it off)
+GRADE = ("curves=master='0/0.012 0.1/0.1 0.3/0.3 0.55/0.575 0.8/0.83 1/1',colorbalance=rs=-0.02:bs=0.025:rm=0.008:bm=-0.008,"
+         'vibrance=intensity=0.15,unsharp=5:5:0.45:5:5:0')
 subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', f'{D}/build/video_only.mp4', '-i', f'{D}/audio/mix_ln.wav',
-                '-c:v', 'libx264', '-preset', 'slow', '-b:v', '10M', '-maxrate', '12M', '-bufsize', '20M', '-pix_fmt', 'yuv420p', '-r', '30',
+                '-vf', GRADE, '-c:v', 'libx264', '-preset', 'slow', '-tune', 'animation', '-b:v', '12M', '-maxrate', '14M', '-bufsize', '24M', '-pix_fmt', 'yuv420p', '-r', '30',
                 '-c:a', 'aac', '-b:a', '256k', '-movflags', '+faststart', '-shortest', out], check=True)
 print('muxed', out)
