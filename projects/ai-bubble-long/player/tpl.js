@@ -8,17 +8,61 @@ const prog=(lt,dur,a=.05,b=.7)=>E.oc(S(lt,dur*a,dur*b));
 const MS={2:'ChatGPT'};
 
 /* ================= image (HF art + code overlays) ================= */
-TPL.image=(ctx,p,lt,dur,s)=>{
+TPL.image=(ctx,p,lt,dur,s,t)=>{
   if(p.pending||!L.IMG[p.src])return pending(ctx,p,lt,dur,s);
   let crop=p.crop,kb=p.kb||['in','l','out','r'][s.id%4],slt=lt,sd=dur;
   if(p.cuts){const n=p.cuts.length,i=Math.min(n-1,Math.floor(lt/(dur/n)));crop=p.cuts[i];slt=lt-i*dur/n;sd=dur/n;kb=['in','r','l'][i%3]}
   const info=L.art(ctx,p.src,slt,sd,{crop,kb,flip:p.flip,speed:p.speed,freeze:p.freeze,shake:p.shake});
   if(p.freeze!=null&&lt/dur>p.freeze){ctx.save();ctx.globalCompositeOperation='saturation';ctx.fillStyle=`rgba(0,0,0,${.7*S(lt/dur,p.freeze,p.freeze+.05)})`;ctx.fillRect(0,0,W,H);ctx.restore()}
+  if(window.FACES&&!p.flip&&info)faceRig(ctx,p,lt,dur,info,s,t==null?s.t0+lt:t);
   L.dust(ctx,lt,36,.45);
   const ci=p.cuts?Math.min(p.cuts.length-1,Math.floor(lt/(dur/p.cuts.length))):-1;
   for(const o of p.ov||[])if(o.cut==null||o.cut===ci)OV[o.k]&&OV[o.k](ctx,o,lt,dur,info,s);
   if(p.kw)L.hilite(ctx,p.kw,W/2,H*.86,{px:84,p:S(lt,.2,.5)});
 };
+/* ---------- face rig: blinks, mouth on the voice, brow jump, sweat drop (data: faces.js, vo_env.js) ---------- */
+const MC=document.createElement('canvas');
+function voAmp(t){const E=window.VOENV;if(!E)return 0;let a=0,n=0;for(let k=-3;k<=3;k++){const i=Math.round(t*100)+k;if(i>=0&&i<E.length){a+=(E.charCodeAt(i)-48)/60;n++}}return n?a/n:0}
+function rgb(c,a=1){return `rgba(${c[0]},${c[1]},${c[2]},${a})`}
+function faceRig(ctx,p,lt,dur,info,s,t){
+  const F=FACES[p.src];if(!F)return;const im=info.im,IW=im.width,IH=im.height,kx=(W+24)/info.sw;
+  const sp=SPEAK[s.id],re=REACT[s.id]||{};
+  F.forEach((f,i)=>{
+    const dxp=(f.eyes[1][0]-f.eyes[0][0])*IW,ey=(f.eyes[0][1]+f.eyes[1][1])/2;
+    if(L.QA){ctx.save();ctx.strokeStyle='#0f0';ctx.lineWidth=2;for(const e of f.eyes){const [X,Y]=L.map(e,info);ctx.strokeRect(X-6,Y-6,12,12)}if(f.mouth){const [X,Y]=L.map(f.mouth,info);ctx.strokeStyle='#f0f';ctx.strokeRect(X-10,Y-6,20,12)}ctx.fillStyle=rgb(f.skin);ctx.fillRect(...L.map(f.eyes[0],info).map((v,k)=>v-(k?40:0)),14,14);ctx.restore()}
+    const isSp=sp&&sp[0]===p.src&&sp[1]===i;
+    // mouth: stretch the jaw region open with the voice loudness (speaker only)
+    if(isSp&&f.mouth){
+      const a=L.clamp((voAmp(t)-.12)/.6);
+      if(a>.02){const mw=f.mouth[2]*IW,mh=mw*.55,x0=f.mouth[0]*IW-mw*.65,y0=f.mouth[1]*IH-mh*.45,sw=mw*1.3,sh=mh*1.5;
+        const [X0,Y0]=L.map([x0/IW,y0/IH],info),dw=sw*kx,dh=sh*kx,st=1+.42*a;
+        MC.width=Math.ceil(dw)+2;MC.height=Math.ceil(dh*st)+2;const m=MC.getContext('2d');
+        m.clearRect(0,0,MC.width,MC.height);m.drawImage(im,x0,y0,sw,sh,0,0,dw,dh*st);
+        m.globalCompositeOperation='destination-in';
+        const g=m.createRadialGradient(dw/2,dh*st*.45,Math.min(dw,dh)*.2,dw/2,dh*st*.45,Math.max(dw,dh*st)*.55);
+        g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.75,'rgba(0,0,0,1)');g.addColorStop(1,'rgba(0,0,0,0)');
+        m.fillStyle=g;m.fillRect(0,0,MC.width,MC.height);m.globalCompositeOperation='source-over';
+        ctx.drawImage(MC,X0,Y0)}}
+    // brow jump
+    if(re.brow&&(sp?isSp:i===0)){
+      for(const at of re.brow){const q=lt-at;if(q<0||q>.45)continue;const k=Math.sin(q/.45*Math.PI);
+        const bx=f.eyes[0][0]*IW-dxp*.7,by=ey*IH-dxp*1.15,bw=dxp*2.4,bh=dxp*.8,[X,Y]=L.map([bx/IW,by/IH],info);
+        ctx.save();ctx.fillStyle=rgb(f.skin);ctx.beginPath();ctx.ellipse(X+bw*kx/2,Y+bh*kx*.6,bw*kx*.48,bh*kx*.42,0,0,7);ctx.fill();
+        ctx.drawImage(im,bx,by,bw,bh,X,Y-dxp*.28*k*kx,bw*kx,bh*kx);ctx.restore()}}
+    // blink: skin-coloured lids close over the eye, then a lash line
+    if(f.blink){const per=2.6+L.hash(i+3,s.id)*1.6,ph=(t+L.hash(i,s.id+7)*per)%per,bd=.14;
+      if(ph<bd){const k=Math.sin(ph/bd*Math.PI);
+        for(const e of f.eyes){const [X,Y]=L.map(e,info),rx=Math.max(3,f.ew*IW*kx*.85),ry=Math.max(4,f.eh*IH*kx*.62);
+          ctx.save();ctx.beginPath();ctx.ellipse(X,Y,rx*1.35,ry*1.25,0,0,7);ctx.clip();ctx.fillStyle=rgb(f.skin);
+          ctx.fillRect(X-rx*2,Y-ry*1.3,rx*4,ry*2.6*k);ctx.restore();
+          if(k>.6){ctx.save();ctx.strokeStyle='rgba(25,18,15,.9)';ctx.lineWidth=Math.max(2,ry*.28);ctx.lineCap='round';ctx.beginPath();
+            ctx.moveTo(X-rx*1.1,Y+ry*.15);ctx.quadraticCurveTo(X,Y+ry*.55,X+rx*1.1,Y+ry*.15);ctx.stroke();ctx.restore()}}}}
+    // sweat drop sliding down beside the head
+    if(re.sweat&&i===0){const q=(lt*.8)%1,[X,Y]=L.map([f.eyes[1][0]+dxp*.9/IW,ey-dxp*.35/IH],info),r=Math.max(6,dxp*.16*kx),yy=Y+q*dxp*1.3*kx;
+      ctx.save();ctx.globalAlpha=Math.sin(q*Math.PI);ctx.fillStyle='#9fd8ff';ctx.strokeStyle='#123';ctx.lineWidth=Math.max(1.5,r*.18);ctx.beginPath();
+      ctx.moveTo(X,yy-r*1.8);ctx.quadraticCurveTo(X+r,yy-r*.2,X+r,yy+r*.2);ctx.arc(X,yy+r*.2,r,0,Math.PI);ctx.quadraticCurveTo(X-r,yy-r*.2,X,yy-r*1.8);
+      ctx.fill();ctx.stroke();ctx.fillStyle='rgba(255,255,255,.8)';ctx.beginPath();ctx.ellipse(X-r*.35,yy,r*.18,r*.32,0,0,7);ctx.fill();ctx.restore()}
+  })}
 function pending(ctx,p,lt,dur,s){
   L.bg(ctx,lt,{hue:'grey',src:'style_frame',alpha:.35});
   L.card(ctx,W/2-620,H/2-250,1240,500,{fill:'rgba(10,12,18,.82)',r:36});
