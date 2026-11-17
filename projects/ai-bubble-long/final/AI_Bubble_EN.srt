@@ -1,0 +1,867 @@
+1
+00:00:00,000 --> 00:00:03,846
+The CEO of the world's most hyped AI
+company is stressed.
+
+2
+00:00:03,886 --> 00:00:06,392
+Because his ChatGPT has reached almost
+every home...
+
+3
+00:00:06,432 --> 00:00:08,534
+...and yet the company keeps losing money.
+
+4
+00:00:10,274 --> 00:00:11,534
+Welcome to the AI era...
+
+5
+00:00:11,574 --> 00:00:15,310
+...where a simple chatbot turned into a $7
+trillion gamble almost overnight.
+
+6
+00:00:15,350 --> 00:00:18,357
+30 November 2022. A Wednesday.
+
+7
+00:00:18,397 --> 00:00:20,473
+At one company, everything was normal.
+
+8
+00:00:20,513 --> 00:00:25,267
+People were drinking coffee, sharing
+memes, developers were fixing bugs.
+
+9
+00:00:25,307 --> 00:00:27,865
+And that same day, OpenAI dropped its
+chatbot... ChatGPT.
+
+10
+00:00:30,031 --> 00:00:33,257
+Within 24 hours, the internet had a new
+obsession.
+
+11
+00:00:33,297 --> 00:00:37,990
+Someone was writing emails with it,
+someone was fixing code, and someone was
+writing their breakup story.
+
+12
+00:00:38,030 --> 00:00:42,760
+SON: Dad, I'm talking to an AI bot... that
+can make us crorepatis!
+
+13
+00:00:42,800 --> 00:00:43,860
+DAD: How?
+
+14
+00:00:43,900 --> 00:00:48,967
+SON (typing): "Build me a ₹100 crore
+business in 1 minute. 100% profit.
+
+15
+00:00:49,007 --> 00:00:50,190
+And no mistakes."
+
+16
+00:00:50,230 --> 00:00:54,568
+ChatGPT went so viral that it got 1
+million users in just 5 days.
+
+17
+00:00:54,608 --> 00:00:56,703
+And 100 million in 2 months.
+
+18
+00:00:56,743 --> 00:01:00,332
+Instagram took two and a half years to
+reach 100 million users.
+
+19
+00:01:00,372 --> 00:01:02,060
+Facebook took four and a half.
+
+20
+00:01:02,100 --> 00:01:05,420
+ChatGPT became... the fastest-growing app
+in history.
+
+21
+00:01:05,460 --> 00:01:09,340
+Then... Google's headquarters went into
+full panic mode.
+
+22
+00:01:09,380 --> 00:01:13,820
+BOSS: This technology is ours! We built
+the Transformer model! What happened to
+it?
+
+23
+00:01:13,860 --> 00:01:17,390
+BOSS: Then why is my own son using ChatGPT
+instead of Google's AI?
+
+24
+00:01:17,430 --> 00:01:20,390
+ENGINEER: Because... we were scared to
+launch it.
+
+25
+00:01:20,430 --> 00:01:21,861
+BOSS: Then launch anything now!
+
+26
+00:01:21,901 --> 00:01:24,518
+Call it Bard, call it Gemini, call it
+whatever you want.
+
+27
+00:01:24,558 --> 00:01:25,230
+Just launch it!
+
+28
+00:01:25,270 --> 00:01:28,507
+Google went into full hustle mode.
+
+29
+00:01:28,547 --> 00:01:29,607
+It had the technology for years.
+
+30
+00:01:29,647 --> 00:01:36,092
+But the company was scared... that the AI
+might say something wrong, there might be
+a lawsuit, or its name might get dragged
+in the media.
+
+31
+00:01:36,132 --> 00:01:38,929
+And OpenAI? It launched without fear.
+
+32
+00:01:38,969 --> 00:01:42,392
+Within weeks, Microsoft put $10 billion
+into OpenAI.
+
+33
+00:01:42,432 --> 00:01:45,455
+And kept another $3 billion ready on the
+side.
+
+34
+00:01:45,495 --> 00:01:47,900
+Google rushed to launch Bard...
+
+35
+00:01:47,940 --> 00:01:51,390
+USER: Gemini, tell me, who is the most
+popular person in the world?
+
+36
+00:01:51,430 --> 00:01:52,490
+GEMINI: Modi Ji.
+
+37
+00:01:52,530 --> 00:01:54,550
+- USER: Who is Modi Ji?
+- GEMINI: The Modi government.
+
+38
+00:01:54,590 --> 00:01:57,980
+And that's it... on day one, Gemini made a
+complete mess.
+
+39
+00:01:58,020 --> 00:02:01,760
+On the other side, Amazon started pouring
+billions into Anthropic.
+
+40
+00:02:01,800 --> 00:02:03,600
+And this was the investors' scene...
+
+41
+00:02:03,640 --> 00:02:05,643
+STARTUP: Our app takes dogs for walks...
+
+42
+00:02:05,683 --> 00:02:08,860
+...but we use machine learning to pick the
+best route.
+
+43
+00:02:08,900 --> 00:02:10,910
+INVESTOR: Shh! Here's $50 million.
+
+44
+00:02:10,950 --> 00:02:13,250
+STARTUP: Won't you look at our demo?
+
+45
+00:02:13,290 --> 00:02:18,350
+PITCHER (2023): We're building an app that
+lets you talk directly to Voldemort... in
+Python.
+
+46
+00:02:18,390 --> 00:02:19,450
+JUDGE: Next, please.
+
+47
+00:02:19,490 --> 00:02:20,890
+PITCHER: We're using AI in it.
+
+48
+00:02:20,930 --> 00:02:23,260
+- JUDGE: AI? Really?
+- PITCHER: Yes.
+
+49
+00:02:23,300 --> 00:02:24,930
+JUDGE: Here's $100 million.
+
+50
+00:02:24,970 --> 00:02:28,805
+One company even raised $30 million to
+build an AI...
+
+51
+00:02:28,845 --> 00:02:35,570
+...whose job was to give back another AI's
+answers under a new name.
+
+52
+00:02:35,610 --> 00:02:40,225
+But the real madness was... the GPU
+shortage.
+
+53
+00:02:40,265 --> 00:02:43,531
+These tiny computer chips suddenly became
+more valuable than gold and oil.
+
+54
+00:02:43,571 --> 00:02:45,920
+And Nvidia became the most valuable
+company in the world.
+
+55
+00:02:45,960 --> 00:02:50,575
+Nvidia's CEO Jensen Huang started showing
+up at conferences in a leather jacket...
+like a rockstar.
+
+56
+00:02:50,615 --> 00:02:53,940
+And in a way... he was one.
+
+57
+00:02:53,980 --> 00:02:55,525
+Renting one high-end GPU cost about $3 an
+hour.
+
+58
+00:02:55,565 --> 00:02:56,625
+Sounds cheap, right?
+
+59
+00:02:56,665 --> 00:02:59,889
+But a startup's work was never going to
+run on one GPU...
+
+60
+00:02:59,929 --> 00:03:04,798
+Even a small startup may rent 500 chips
+just to train one model.
+
+61
+00:03:04,838 --> 00:03:07,314
+That's $1,500 an hour.
+
+62
+00:03:07,354 --> 00:03:09,252
+$36,000 a day.
+
+63
+00:03:09,292 --> 00:03:13,776
+And over $1.1 million a month. Just in GPU
+rent.
+
+64
+00:03:13,816 --> 00:03:19,884
+Still, companies were hoarding GPUs... as
+if the world was ending and people were
+stocking up on rations.
+
+65
+00:03:19,924 --> 00:03:23,874
+As fast as Nvidia made chips, demand grew
+even faster.
+
+66
+00:03:23,914 --> 00:03:26,754
+At one point, the waiting list reached 12
+months.
+
+67
+00:03:26,794 --> 00:03:28,115
+A black market started.
+
+68
+00:03:28,155 --> 00:03:30,550
+People began smuggling these chips across
+borders.
+
+69
+00:03:30,590 --> 00:03:33,921
+By 2024, everything had become
+"AI-powered".
+
+70
+00:03:33,961 --> 00:03:38,006
+Your toaster could now burn bread 10% more
+efficiently.
+
+71
+00:03:38,046 --> 00:03:41,560
+Your calendar app was suggesting meeting
+times with an algorithm.
+
+72
+00:03:41,600 --> 00:03:44,731
+And the supermarket self-checkout? The
+camera was always there...
+
+73
+00:03:44,771 --> 00:03:47,333
+...it just got renamed "machine learning".
+
+74
+00:03:47,373 --> 00:03:48,540
+The party was in full swing.
+
+75
+00:03:48,580 --> 00:03:51,416
+Champagne was popping. Cheques were
+clearing.
+
+76
+00:03:51,456 --> 00:03:53,955
+Then someone asked that awkward
+question...
+
+77
+00:03:53,995 --> 00:03:56,430
+"Bro... how much does it cost to run all
+this?"
+
+78
+00:03:56,470 --> 00:03:58,222
+January 2025.
+
+79
+00:03:58,262 --> 00:04:02,829
+Sam Altman posted a tweet that sent
+investors' blood pressure through the
+roof.
+
+80
+00:04:02,869 --> 00:04:06,196
+"We're losing money on OpenAI Pro
+subscriptions.
+
+81
+00:04:06,236 --> 00:04:09,143
+People use it much more than we expected."
+
+82
+00:04:09,183 --> 00:04:10,862
+Yes, you heard that right.
+
+83
+00:04:10,902 --> 00:04:14,032
+OpenAI charges $200 a month for its Pro
+plan.
+
+84
+00:04:14,072 --> 00:04:16,991
+And still loses money on every subscriber.
+
+85
+00:04:17,031 --> 00:04:19,377
+But wait... the story gets worse.
+
+86
+00:04:19,417 --> 00:04:27,059
+Look at OpenAI's numbers for 2024.
+Revenue: $3.7 billion. Loss: $5 billion.
+
+87
+00:04:27,099 --> 00:04:32,049
+The company didn't just fail to make a
+profit... it burned more than it earned.
+
+88
+00:04:32,089 --> 00:04:33,991
+Now comes the really shocking part.
+
+89
+00:04:34,031 --> 00:04:42,140
+According to one research firm, running AI
+and its data centres will need $6.7
+trillion by 2030.
+
+90
+00:04:42,180 --> 00:04:43,798
+Let's break that down.
+
+91
+00:04:43,838 --> 00:04:51,784
+$5.2 trillion goes straight into AI
+infrastructure: GPUs, chips, power,
+cooling and building data centres.
+
+92
+00:04:51,824 --> 00:04:55,419
+The remaining $1.5 trillion goes into
+cloud infrastructure.
+
+93
+00:04:55,459 --> 00:05:02,309
+And just the four biggest tech companies
+were expected to spend $350 billion in
+2025.
+
+94
+00:05:02,349 --> 00:05:03,282
+In one year.
+
+95
+00:05:03,322 --> 00:05:09,915
+To justify this spending, AI companies
+would need to earn $2 trillion every year
+by 2030.
+
+96
+00:05:09,955 --> 00:05:13,961
+And the whole AI industry's revenue today?
+About $200 billion.
+
+97
+00:05:14,001 --> 00:05:16,300
+So revenue has to grow 10 times.
+
+98
+00:05:16,340 --> 00:05:21,303
+BOARD MEMBER: Sam, by our numbers revenue
+will be $20 billion in 2025.
+
+99
+00:05:21,343 --> 00:05:25,020
+And you're saying you'll reach $100
+billion by 2029?
+
+100
+00:05:25,060 --> 00:05:27,000
+SAM: We need to grow at exactly this
+speed.
+
+101
+00:05:27,040 --> 00:05:29,244
+BOARD MEMBER: Sam, that's not speed.
+
+102
+00:05:29,284 --> 00:05:33,794
+That's a hockey-stick graph drawn by
+someone who has never played hockey.
+
+103
+00:05:33,834 --> 00:05:40,650
+- BOARD MEMBER: Do you know how much just trying will cost?
+- SAM: $115 billion of cash burn by 2029.
+
+104
+00:05:40,690 --> 00:05:47,500
+- BOARD MEMBER: And when will profit come?
+- SAM: In 2029. Maybe 2030. Or 2031?
+
+105
+00:05:47,540 --> 00:05:50,080
+BOARD MEMBER: And if revenue doesn't reach
+$100 billion?
+
+106
+00:05:50,120 --> 00:05:51,600
+What if your hockey stick breaks?
+
+107
+00:05:51,640 --> 00:05:53,160
+SAM: Then we'll raise more money.
+
+108
+00:05:53,200 --> 00:05:56,860
+BOARD MEMBER: From whom? Who's left?
+Microsoft? Saudi Arabia?
+
+109
+00:05:56,900 --> 00:05:59,650
+Some pension fund that's a bit too
+optimistic?
+
+110
+00:05:59,690 --> 00:06:02,330
+SAM: Come on, the world isn't short of
+investors!
+
+111
+00:06:02,370 --> 00:06:07,345
+Since 2021, private investors have poured
+hundreds of billions of dollars into AI
+startups.
+
+112
+00:06:07,385 --> 00:06:13,048
+Most of it went to just 10 companies,
+whose total value grew by about $1
+trillion.
+
+113
+00:06:13,088 --> 00:06:17,200
+Everyone was making the same bet... that
+one of them would become the next Google.
+
+114
+00:06:17,240 --> 00:06:19,009
+Then the cracks started to show.
+
+115
+00:06:19,049 --> 00:06:21,326
+ChatGPT started to "hallucinate".
+
+116
+00:06:21,366 --> 00:06:25,679
+In tech language, that means... making
+things up with complete confidence.
+
+117
+00:06:25,719 --> 00:06:28,884
+Citing research papers that don't exist.
+
+118
+00:06:28,924 --> 00:06:31,161
+Court cases that never happened.
+
+119
+00:06:31,201 --> 00:06:34,489
+And numbers that probably came from
+another planet.
+
+120
+00:06:34,529 --> 00:06:39,789
+Google's AI told a user to add glue to
+pizza so the cheese would stick.
+
+121
+00:06:39,829 --> 00:06:43,288
+It learned that from a joke on Reddit.
+Yes, really.
+
+122
+00:06:43,328 --> 00:06:44,603
+Then the lawsuits began.
+
+123
+00:06:44,643 --> 00:06:51,842
+Writers, artists, journalists... all had
+the same question: "Did you train your AI
+on my copyrighted work?"
+
+124
+00:06:51,882 --> 00:06:54,016
+The answer? "Umm... yes."
+
+125
+00:06:54,056 --> 00:06:58,685
+The New York Times sued OpenAI. Getty
+Images sued Stability AI.
+
+126
+00:06:58,725 --> 00:07:02,890
+Writers dragged companies to court.
+Artists went after the rest.
+
+127
+00:07:02,930 --> 00:07:07,180
+AI COMPANY: We didn't steal. We trained
+our AI on public data.
+
+128
+00:07:07,220 --> 00:07:12,460
+ARTIST: You took the whole internet's data
+without permission... and made money from
+it.
+
+129
+00:07:12,500 --> 00:07:16,040
+AI COMPANY: Well... when you put it like
+that, it does sound illegal.
+
+130
+00:07:16,080 --> 00:07:18,674
+By mid-2024, cracks had started to appear.
+
+131
+00:07:18,714 --> 00:07:21,783
+The hype was very loud. But the numbers
+were scary.
+
+132
+00:07:21,823 --> 00:07:27,541
+And now one question was buzzing in
+everyone's head... just like a mosquito
+near your ear at 3 AM:
+
+133
+00:07:27,581 --> 00:07:28,650
+"When will this bubble burst?"
+
+134
+00:07:28,690 --> 00:07:31,653
+The losses are huge. Company valuations
+look far bigger than reality.
+
+135
+00:07:31,693 --> 00:07:38,072
+But this bubble isn't bursting the way the
+dot-com bubble did. Why?
+
+136
+00:07:38,112 --> 00:07:39,172
+Because the people inflating it have the
+deepest pockets in the world.
+
+137
+00:07:39,212 --> 00:07:45,110
+In 1999, startups had zero revenue... and
+17 foosball tables in the office for fun.
+
+138
+00:07:45,150 --> 00:07:51,178
+Today, the big tech companies funding the
+AI bubble actually make money.
+
+139
+00:07:51,218 --> 00:07:52,189
+A lot of it.
+
+140
+00:07:52,229 --> 00:07:55,134
+So much that, if they wanted... they could
+buy a whole country.
+
+141
+00:07:55,174 --> 00:07:56,565
+Microsoft makes billions from Azure.
+
+142
+00:07:56,605 --> 00:07:59,065
+Google makes billions from ads.
+
+143
+00:07:59,105 --> 00:08:06,378
+Meta makes billions showing you the same
+meme... your cousin already sent you on
+WhatsApp.
+
+144
+00:08:06,418 --> 00:08:10,838
+These big companies aren't investing in AI
+because it's profitable right now.
+
+145
+00:08:10,878 --> 00:08:15,150
+They're investing... because they're
+scared of being left behind.
+
+146
+00:08:15,190 --> 00:08:18,939
+What if AI becomes the next iPhone moment?
+The next Google moment?
+
+147
+00:08:18,979 --> 00:08:22,575
+What if this is the moment the whole world
+changes overnight?
+
+148
+00:08:22,615 --> 00:08:26,403
+Then the company that slows down...
+becomes the next BlackBerry.
+
+149
+00:08:26,443 --> 00:08:28,437
+And nobody wants to be BlackBerry.
+
+150
+00:08:28,477 --> 00:08:33,792
+Think of these big tech companies as poker
+players sitting at the table with
+unlimited money.
+
+151
+00:08:33,832 --> 00:08:38,746
+If Microsoft backs off, Google wins. If
+Google backs off, Amazon wins.
+
+152
+00:08:38,786 --> 00:08:40,940
+If Amazon backs off, Meta wins.
+
+153
+00:08:40,980 --> 00:08:45,650
+Nobody is blinking. Nobody is folding.
+Everyone keeps raising the bet.
+
+154
+00:08:45,690 --> 00:08:48,865
+And this is where the really tough
+question comes in.
+
+155
+00:08:48,905 --> 00:08:52,261
+If everyone keeps spending... how does the
+bubble burst?
+
+156
+00:08:52,301 --> 00:08:58,817
+Short answer: when a real-world event
+forces everyone... to stop pretending.
+
+157
+00:08:58,857 --> 00:09:02,196
+Historically, such events come in two
+kinds.
+
+158
+00:09:02,236 --> 00:09:05,073
+One: the money suddenly stops coming.
+
+159
+00:09:05,113 --> 00:09:09,425
+The dot-com bubble didn't burst because
+building websites was a bad idea.
+
+160
+00:09:09,465 --> 00:09:12,558
+It burst because the money tap was shut.
+
+161
+00:09:12,598 --> 00:09:16,173
+Interest rates rose. Loans got expensive.
+Funding vanished.
+
+162
+00:09:16,213 --> 00:09:19,109
+And thousands of companies died overnight.
+
+163
+00:09:19,149 --> 00:09:26,813
+If interest rates rise in the coming years
+and big tech tightens its budgets... the
+AI bubble's game is over instantly.
+
+164
+00:09:26,853 --> 00:09:30,972
+Two: a huge, embarrassing failure comes
+out.
+
+165
+00:09:31,012 --> 00:09:36,667
+Every bubble has that moment. A failure so
+big that everyone panics.
+
+166
+00:09:36,707 --> 00:09:39,717
+In the dot-com era, company results
+crushed expectations.
+
+167
+00:09:39,757 --> 00:09:41,748
+In 2008, it was Lehman Brothers.
+
+168
+00:09:41,788 --> 00:09:43,627
+In crypto, it was FTX.
+
+169
+00:09:43,667 --> 00:09:47,979
+For AI, it could be a big lab revealing a
+massive loss.
+
+170
+00:09:48,019 --> 00:09:53,360
+A new model's disastrous launch. Or a
+lawsuit that stops everything.
+
+171
+00:09:53,400 --> 00:09:55,059
+So where do we stand right now?
+
+172
+00:09:55,099 --> 00:09:57,623
+Big tech is still spending.
+
+173
+00:09:57,663 --> 00:10:03,186
+No result has caused an earthquake yet. No
+FTX-level scam has come out.
+
+174
+00:10:03,226 --> 00:10:06,921
+Cracks are showing... but not big enough
+to break trust.
+
+175
+00:10:06,961 --> 00:10:11,613
+So yes, this bubble is inflated. Yes, the
+numbers are insane.
+
+176
+00:10:11,653 --> 00:10:14,614
+But it won't burst just because of hype
+and noise.
+
+177
+00:10:14,654 --> 00:10:20,338
+It will burst when one of these giants
+finally says... "Okay. That's enough."
+
+178
+00:10:20,378 --> 00:10:22,849
+Until then, the bubble will keep floating.
+
+179
+00:10:22,889 --> 00:10:28,733
+We're not at the explosion yet. We're at
+the point where the tension keeps
+building.
+
+180
+00:10:28,773 --> 00:10:31,794
+The breath you take in before a scream.
+
+181
+00:10:31,834 --> 00:10:34,021
+The pull on a rope just before it snaps.
+
+182
+00:10:34,061 --> 00:10:37,050
+The episode right before the season
+finale.
+
