@@ -1,0 +1,53 @@
+{
+ "duration": 38.63,
+ "lines": [
+  {
+   "id": "B1",
+   "start": 0.25,
+   "end": 6.018,
+   "text": "Dada ji, aapki govt naukri toh lagi nahi, phir bhi har mahine pension aati rehti hai? Scene kya hai?"
+  },
+  {
+   "id": "D1",
+   "start": 6.138,
+   "end": 6.684,
+   "text": "Pension?"
+  },
+  {
+   "id": "B2",
+   "start": 6.804,
+   "end": 16.112,
+   "text": "Haan! Aap din bhar ghar pe full chill karte ho, shaam ko doston ke saath bidi phookte ho, aur raat ko Doraemon dekhte ho. Phir bhi har mahine pension aa jaati hai!"
+  },
+  {
+   "id": "D2",
+   "start": 16.232,
+   "end": 19.542,
+   "text": "Arre, woh pension nahi, dividend hai meri jaan!"
+  },
+  {
+   "id": "B3",
+   "start": 19.662,
+   "end": 24.621,
+   "text": "Dada ji, ye toh OP hai! Batao na, mujhe bhi jaanna hai, ye dividend milta kaise hai?"
+  },
+  {
+   "id": "D3",
+   "start": 24.741,
+   "end": 30.29,
+   "text": "Beta, aisi 5 companies bata raha hoon jo saalon se accha dividend deti aayi hain. Likh:"
+  },
+  {
+   "id": "D4",
+   "start": 30.49,
+   "end": 35.966,
+   "text": "Ye companies apne profit ka ek hissa regular apne shareholders ke saath baant-ti rehti hain..."
+  },
+  {
+   "id": "D5",
+   "start": 36.216,
+   "end": 37.63,
+   "text": "Isi ko dividend kehte hain."
+  }
+ ]
+}

@@ -1,0 +1,165 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P8;src:url(../../engine/fonts/poppins-latin-800-normal.woff2)}
+@font-face{font-family:P7;src:url(../../engine/fonts/poppins-latin-700-normal.woff2)}
+@font-face{font-family:Hand;src:url(../../engine/fonts/caveat-latin-700-normal.woff2)}
+@font-face{font-family:Mark;src:url(../../engine/fonts/permanent-marker-latin-400-normal.woff2)}
+html,body{margin:0;background:#000}canvas{display:block}
+</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+const W=1080,H=1920,FPS=30,END=38.63;
+const c=document.getElementById('c'),x=c.getContext('2d');
+let ENV=[];const IMG={};let LIP=[];const LIP_N=window.LIP_N||0;
+const ease=t=>t<0?0:t>1?1:1-Math.pow(1-t,3);
+const back=t=>{t=Math.max(0,Math.min(1,t));const s=2.2;return 1+(s+1)*Math.pow(t-1,3)+s*Math.pow(t-1,2)};
+const env=t=>ENV[Math.max(0,Math.min(ENV.length-1,Math.round(t*FPS)))]||0;
+// speaking windows (from timeline.json)
+const B=[[0.25,6.018],[6.804,16.112],[19.662,24.621]], D=[[6.138,6.684],[16.232,19.542],[24.741,30.29],[30.49,35.966],[36.216,37.63]];
+const inW=(t,ws)=>ws.some(w=>t>=w[0]&&t<=w[1]);
+
+// ---------- shots ----------
+// z0->z1 zoom, (px,py) pan in px over the shot, glow=[u,v] Momo bulb (image fraction), talk=Dada ji bob
+const S=[
+ {id:'s01',t0:0,t1:3.0,z0:1.05,z1:1.16,px:-30,py:-20,glow:[.15,.42]},
+ {id:'s02',t0:3.0,t1:5.0,z0:1.04,z1:1.12,px:0,py:20,notif:3.25},
+ {id:'s03',t0:5.0,t1:6.1,z0:1.10,z1:1.22,px:0,py:0,glow:[.55,.40],tilt:-1.5},
+ {id:'s04',t0:6.1,t1:6.85,z0:1.30,z1:1.40,px:0,py:40,talk:1,shake:10},
+ {id:'s05',t0:6.85,t1:9.95,z0:1.04,z1:1.15,px:40,py:0},
+ {id:'s06',t0:9.95,t1:12.15,z0:1.05,z1:1.14,px:-30,py:10,smoke:[.53,.33]},
+ {id:'s07',t0:12.15,t1:13.9,z0:1.06,z1:1.16,px:30,py:0,tv:1},
+ {id:'s08',t0:13.9,t1:16.15,z0:1.08,z1:1.18,px:0,py:-20,glow:[.43,.49],shake:6},
+ {id:'s09',t0:16.15,t1:19.6,z0:1.02,z1:1.10,px:0,py:0,lip:1},
+ {id:'s10',t0:19.6,t1:21.15,z0:1.10,z1:1.22,px:0,py:30,glow:[.50,.25],flash:20.55},
+ {id:'s11',t0:21.15,t1:24.65,z0:1.04,z1:1.14,px:-20,py:0,glow:[.17,.50]},
+ {id:'s12',t0:24.65,t1:28.0,z0:1.05,z1:1.18,px:0,py:30,talk:1},
+ {id:'s13',t0:28.0,t1:30.35,z0:1.04,z1:1.12,px:0,py:0,pen:1},
+ {id:'card',t0:30.35,t1:36.05},
+ {id:'s14',t0:36.05,t1:37.75,z0:1.08,z1:1.20,px:0,py:20,talk:1},
+ {id:'s02',t0:37.75,t1:END+0.1,z0:1.10,z1:1.14,px:0,py:0,notif:37.85,ping:1},
+];
+// key words + numbers only
+const POPS=[
+ {t0:1.45,t1:3.0,txt:['GOVT NAUKRI?','NAHI!'],hl:1,y:380},
+ {t0:5.0,t1:6.1,txt:['SCENE KYA HAI?'],y:360},
+ {t0:6.15,t1:6.85,txt:['PENSION?'],y:420,big:1,col:'#FFD43B'},
+ {t0:8.9,t1:9.95,txt:['FULL CHILL'],y:380,col:'#7CF29A'},
+ {t0:14.6,t1:16.15,txt:['PHIR BHI','PENSION?!'],hl:1,y:360},
+ {t0:17.9,t1:19.6,txt:['DIVIDEND'],y:250,big:1,col:'#FFD43B',sub:'hai meri jaan'},
+ {t0:20.5,t1:21.15,txt:['OP!'],y:360,huge:1,col:'#FF8A3D'},
+ {t0:23.7,t1:24.65,txt:['KAISE?'],y:380},
+ {t0:25.75,t1:28.0,txt:['5 COMPANIES'],y:330,col:'#FFD43B'},
+ {t0:29.55,t1:30.35,txt:['LIKH!'],y:380,big:1},
+ {t0:36.6,t1:37.75,txt:['= DIVIDEND'],y:330,big:1,col:'#FFD43B'},
+];
+
+function cover(img,z,px,py,rot){
+  const s=Math.max(W/img.width,H/img.height)*z, w=img.width*s, h=img.height*s;
+  x.save();x.translate(W/2+px,H/2+py);if(rot)x.rotate(rot*Math.PI/180);x.translate(-w/2,-h/2);
+  return {s,w,h};
+}
+function drawShot(sh,t){
+  const L=t-sh.t0, d=sh.t1-sh.t0, k=ease(L/d);
+  const punch=1+0.10*(1-ease(L/0.22));            // punch-in on every cut
+  let z=(sh.z0+(sh.z1-sh.z0)*k)*punch, px=sh.px*k, py=sh.py*k, rot=sh.tilt? sh.tilt*k:0;
+  if(sh.shake&&L<0.45){const a=sh.shake*(1-L/0.45);px+=Math.sin(L*90)*a;py+=Math.cos(L*77)*a}
+  const e=env(t);
+  if(sh.talk&&inW(t,D)){z*=1+e*0.010;py-=e*8;rot+=Math.sin(t*9)*e*0.5}
+  let img=IMG[sh.id];
+  if(sh.lip&&LIP.length){const f=Math.floor((t-LIP_T0)*FPS);const im=LIP[Math.max(0,Math.min(LIP.length-1,f))];if(im&&im.complete&&im.width)img=im}
+  const g=cover(img,z,px,py,rot);
+  x.drawImage(img,0,0,g.w,g.h);
+  const U=(u,v)=>[u*g.w,v*g.h];
+  // Momo bulb glow pulses while Beta speaks
+  if(sh.glow){const[gx,gy]=U(...sh.glow);const a=inW(t,B)?0.15+e*0.55:0.08;
+    const r=g.w*0.16;const grd=x.createRadialGradient(gx,gy,0,gx,gy,r);grd.addColorStop(0,`rgba(255,230,140,${a})`);grd.addColorStop(1,'rgba(255,200,80,0)');
+    x.globalCompositeOperation='lighter';x.fillStyle=grd;x.fillRect(gx-r,gy-r,2*r,2*r);x.globalCompositeOperation='source-over'}
+  // bidi smoke
+  if(sh.smoke){const[sx,sy]=U(...sh.smoke);for(let i=0;i<9;i++){const p=((L*0.55+i/9)%1);const yy=sy-p*g.h*0.22,xx=sx+Math.sin(p*6+i)*g.w*0.03*p;
+    x.fillStyle=`rgba(235,235,240,${0.16*(1-p)})`;x.beginPath();x.arc(xx,yy,g.w*(0.012+0.05*p),0,7);x.fill()}}
+  // TV flicker + spill
+  if(sh.tv){const f=0.5+0.5*Math.sin(t*23)*Math.sin(t*7.3);x.globalCompositeOperation='lighter';
+    x.fillStyle=`rgba(60,120,255,${0.10+0.12*f})`;x.beginPath();x.moveTo(.79*g.w,.19*g.h);x.lineTo(g.w,.09*g.h);x.lineTo(g.w,.45*g.h);x.lineTo(.77*g.w,.44*g.h);x.fill();
+    const grd=x.createRadialGradient(.8*g.w,.3*g.h,0,.8*g.w,.3*g.h,g.w*.7);grd.addColorStop(0,`rgba(70,130,255,${0.05+0.08*f})`);grd.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=grd;x.fillRect(0,0,g.w,g.h);
+    x.globalCompositeOperation='source-over'}
+  // phone notification (image space, on the white screen area)
+  if(sh.notif&&t>=sh.notif){const p=back((t-sh.notif)/0.28);const nx=.235*g.w,ny=.29*g.h,nw=.43*g.w,nh=.16*g.h;
+    x.save();x.translate(nx+nw/2,ny+nh/2);x.scale(p,p);x.translate(-nw/2,-nh/2);
+    x.fillStyle='#fff';rr(0,0,nw,nh,26);x.fill();x.fillStyle='#1DB954';rr(16,16,84,84,20);x.fill();
+    x.fillStyle='#fff';x.font='800 62px P8';x.textAlign='center';x.fillText('₹',58,80);
+    x.textAlign='left';x.fillStyle='#111';x.font='800 50px P8';x.fillText('Credited',114,62);
+    x.fillStyle='#666';x.font='700 30px P7';x.fillText('A/c XX42',114,100);
+    x.fillStyle='#1DB954';x.font='800 64px P8';x.fillText('+ ₹₹₹',22,nh-26);x.restore()}
+  x.restore();
+  // pen scribble hint on the diary
+  if(sh.pen){}
+  // cut flash + whip
+  if(L<0.10){x.fillStyle=`rgba(255,255,255,${0.35*(1-L/0.10)})`;x.fillRect(0,0,W,H)}
+  if(sh.flash&&t>=sh.flash&&t<sh.flash+0.2){x.fillStyle=`rgba(255,240,180,${0.6*(1-(t-sh.flash)/0.2)})`;x.fillRect(0,0,W,H)}
+}
+function rr(a,b,w,h,r){x.beginPath();x.moveTo(a+r,b);x.arcTo(a+w,b,a+w,b+h,r);x.arcTo(a+w,b+h,a,b+h,r);x.arcTo(a,b+h,a,b,r);x.arcTo(a,b,a+w,b,r);x.closePath()}
+
+function drawCard(t){
+  const L=t-30.35;
+  // blurred diary bg
+  const img=IMG.s13;x.save();x.filter='blur(16px) brightness(0.45)';const g=cover(img,1.15+0.03*L/6,0,0,0);x.drawImage(img,0,0,g.w,g.h);x.restore();x.filter='none';
+  // paper slams in
+  const p=back(L/0.30), rot=-2.2*Math.PI/180;
+  x.save();x.translate(W/2,H/2-40);x.rotate(rot);x.scale(p,p);
+  const pw=900,ph=1060;x.shadowColor='rgba(0,0,0,.55)';x.shadowBlur=60;x.shadowOffsetY=24;
+  x.fillStyle='#FBF4E2';rr(-pw/2,-ph/2,pw,ph,22);x.fill();x.shadowColor='transparent';
+  x.strokeStyle='rgba(70,110,200,.28)';x.lineWidth=3;for(let yy=-ph/2+250;yy<ph/2-40;yy+=150){x.beginPath();x.moveTo(-pw/2+30,yy);x.lineTo(pw/2-30,yy);x.stroke()}
+  x.strokeStyle='rgba(220,60,60,.55)';x.lineWidth=4;x.beginPath();x.moveTo(-pw/2+120,-ph/2+20);x.lineTo(-pw/2+120,ph/2-20);x.stroke();
+  x.fillStyle='#1d2b6b';x.textAlign='center';x.font='700 96px Hand';x.fillText('Dada ji ki list',40,-ph/2+160);
+  const N=['BPCL','IOCL','NMDC','Coal India','RITES'];
+  N.forEach((n,i)=>{const yy=-ph/2+235+i*150+120;x.textAlign='left';x.fillStyle='#c0392b';x.font='400 92px Mark';x.fillText((i+1)+'.',-pw/2+140,yy);
+    x.fillStyle='#14215a';x.font='400 116px Mark';x.fillText(n,-pw/2+250,yy)});
+  x.restore();
+  // screenshot pill (pulses)
+  const q=0.5+0.5*Math.sin(L*6), s=1+0.05*q, yb=1610;
+  x.save();x.translate(W/2,yb);x.scale(s,s);x.fillStyle='#FFD43B';rr(-300,-58,600,116,58);x.fill();
+  x.fillStyle='#111';rr(-250,-30,76,58,12);x.fill();x.fillStyle='#FFD43B';x.beginPath();x.arc(-212,0,17,0,7);x.fill();x.fillStyle='#111';x.beginPath();x.arc(-212,0,9,0,7);x.fill();x.fillRect(-235,-38,26,10);
+  x.font='800 50px P8';x.textAlign='left';x.fillText('SCREENSHOT LO',-150,18);x.restore();
+  x.fillStyle='rgba(255,255,255,.85)';x.font='700 30px P7';x.textAlign='center';x.fillText('Sirf jaankari ke liye. Investment advice nahi.',W/2,1720);
+  if(L<0.10){x.fillStyle=`rgba(255,255,255,${0.5*(1-L/0.10)})`;x.fillRect(0,0,W,H)}
+}
+function drawPop(p,t){
+  const L=t-p.t0, out=Math.max(0,(t-(p.t1-0.08))/0.08);
+  const sc=back(L/0.22)*(1-out*0.3), a=1-out;
+  const fs=p.huge?260:p.big?170:118;
+  x.save();x.globalAlpha=a;x.translate(W/2,p.y);x.rotate((-3+6*((p.y%7)/7))*Math.PI/180*(1-ease(L/0.3)));x.scale(sc,sc);
+  x.textAlign='center';x.lineJoin='round';
+  p.txt.forEach((s,i)=>{const yy=i*fs*1.0;const f=fs*(p.hl&&i===1?1.15:1);x.font=`800 ${f}px P8`;
+    let ff=f;while(x.measureText(s).width>W-120){ff-=6;x.font=`800 ${ff}px P8`}
+    x.lineWidth=ff*0.16;x.strokeStyle='#000';x.strokeText(s,0,yy);
+    x.fillStyle=(p.hl&&i===1)||(!p.hl&&p.col)?(p.col||'#FFD43B'):'#fff';x.fillText(s,0,yy)});
+  if(p.sub){x.font='800 64px P8';x.lineWidth=12;x.strokeStyle='#000';x.strokeText(p.sub,0,fs*0.62);x.fillStyle='#fff';x.fillText(p.sub,0,fs*0.62)}
+  x.restore();
+}
+function grade(t){
+  const v=x.createRadialGradient(W/2,H/2,H*0.35,W/2,H/2,H*0.75);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.45)');x.fillStyle=v;x.fillRect(0,0,W,H);
+  // grain
+  const n=GR[Math.floor(t*FPS)%GR.length];x.globalAlpha=0.06;x.drawImage(n,0,0,W,H);x.globalAlpha=1;
+}
+const GR=[];
+function mkGrain(){for(let k=0;k<6;k++){const g=document.createElement('canvas');g.width=540;g.height=960;const gx=g.getContext('2d');const d=gx.createImageData(540,960);
+  for(let i=0;i<d.data.length;i+=4){const v=Math.random()*255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255}gx.putImageData(d,0,0);GR.push(g)}}
+let LIP_T0=16.15;
+window.renderAt=function(t){
+  x.fillStyle='#000';x.fillRect(0,0,W,H);
+  const sh=S.find(s=>t>=s.t0&&t<s.t1)||S[S.length-1];
+  if(sh.id==='card')drawCard(t);else drawShot(sh,t);
+  grade(t);
+  POPS.forEach(p=>{if(t>=p.t0&&t<p.t1)drawPop(p,t)});
+};
+const load=src=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(i);i.src=src});
+window.READY=(async()=>{
+  await document.fonts.load('800 50px P8');await document.fonts.load('700 50px P7');await document.fonts.load('700 50px Hand');await document.fonts.load('400 50px Mark');
+  ENV=await fetch('env.json').then(r=>r.json());
+  for(const s of S){if(s.id!=='card'&&!IMG[s.id])IMG[s.id]=await load(`art/${s.id}.png`)}
+  IMG.s13=IMG.s13||await load('art/s13.png');
+  try{const meta=await fetch('art/lip/meta.json').then(r=>r.json());LIP_T0=meta.t0;
+    for(let i=0;i<meta.n;i++)LIP.push(await load(`art/lip/f${String(i).padStart(4,'0')}.jpg`))}catch(e){}
+  mkGrain();return true})();
+</script></body></html>
