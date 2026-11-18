@@ -1,4 +1,4 @@
-VIDEO: Dada_Dividend_Short.mp4 (1080x1920, 30 fps, ~38.6 s, loops back to frame 1)
+VIDEO: Dada_Dividend_Short.mp4 (1080x1920, 30 fps, ~35.1 s (1.1x), loops back to frame 1)
 
 === YOUTUBE SHORTS ===
 TITLE

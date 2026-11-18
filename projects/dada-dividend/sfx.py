@@ -69,29 +69,26 @@ tl = {l['id']: l for l in json.load(open('timeline.json'))['lines']}
 cuts = [3.0, 5.0, 6.1, 6.85, 9.95, 12.15, 13.9, 16.15, 19.6, 21.15, 24.65, 28.0, 36.05, 37.75]
 for c in cuts: add(c - .18, whoosh(.34, .28), pan=rng.uniform(-.3, .3))
 # room tone per scene
-for a, b, k, g in [(0, 9.95, 'room', .02), (9.95, 12.15, 'park', .05), (12.15, 13.9, 'room', .02), (13.9, 30.35, 'room', .02), (36.05, END, 'room', .02)]:
-    seg = tone_bed(a, b, k, g); add(a, seg)
+# (no room-tone beds: they read as buzz)
 # key-word pops / impacts
 for t0, kind in [(1.45, 'pop'), (5.0, 'pop'), (8.9, 'pop'), (14.6, 'pop'), (23.7, 'pop'), (25.75, 'pop'), (29.55, 'pop')]:
     add(t0, pop(rng.uniform(600, 900)))
 add(6.1, thud(1.0)); add(6.15, pop(1100), .8)                       # PENSION?
 add(13.9, thud(.6))                                                  # Momo arms up
 add(17.3, riser(.6, .22)); add(17.9, impact(.75)); add(17.9, kaching(), .8)   # DIVIDEND
-add(20.5, zap(), 1.0); add(20.5, impact(.5))                          # OP!
+add(20.5, impact(.5)); add(20.5, ping(), .6)                          # OP!
 add(3.25, kaching(), .9); add(37.85, ping(), 1.0); add(37.95, kaching(), .7)  # phone credited + loop ping
-add(28.2, scribble(1.8), .5)                                          # pen ready
+for k in range(3): add(28.3 + k * .18, tick(), .5)                    # pen clicks
 # stock card: slam in, scribble under VO, tick-tock, shutter on the way out
 add(30.0, riser(.35, .2)); add(30.35, impact(.9)); add(30.36, whoosh(.3, .3))
-add(30.6, scribble(4.2), .35)
 for k in range(10): add(30.8 + k * .5, tick(), .8, pan=(-.3 if k % 2 else .3))
 add(35.85, shutter(), 1.0)
 add(36.6, impact(.6)); add(36.6, pop(800))                            # = DIVIDEND
 # smoke + TV + park extras
-add(9.95, lp(rng.standard_normal(int(1.2 * SR)), 900) * env(int(1.2 * SR), .3, .6) * .15)
-add(12.2, lp(rng.standard_normal(int(1.6 * SR)), 1800) * .03)        # TV hiss
-for k in range(3): add(12.4 + k * .45, pop(400 + 120 * k), .35)       # cartoon boings on TV
+
 os.makedirs('final', exist_ok=True); os.makedirs('build', exist_ok=True)
 sfx = mix[:int(END * SR)]
+subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'f32le', '-ar', str(SR), '-ac', '2', '-i', '-', 'build/sfx_only.wav'], input=(sfx * .55).astype(np.float32).tobytes())
 vo = np.frombuffer(subprocess.run(['ffmpeg', '-v', 'error', '-i', 'vo/vo_full.wav', '-ac', '1', '-ar', str(SR), '-f', 'f32le', '-'],
                                   capture_output=True).stdout, np.float32)[:len(sfx)]
 vo = np.pad(vo, (0, len(sfx) - len(vo)))
@@ -100,8 +97,9 @@ e = np.convolve(np.abs(vo), np.ones(2400) / 2400, 'same'); duck = 1 - np.clip(e 
 out = sfx * duck[:, None] * .55 + vo[:, None] * 1.0
 out = out / np.abs(out).max() * .95
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'f32le', '-ar', str(SR), '-ac', '2', '-i', '-', 'build/mix_raw.wav'], input=out.astype(np.float32).tobytes())
-subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/mix_raw.wav', '-af', 'loudnorm=I=-14:TP=-2.2:LRA=9', '-ar', '48000', 'build/mix.wav'])
-subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/video_only.mp4', '-i', 'build/mix.wav', '-map', '0:v', '-map', '1:a',
+SPD = 1.10
+subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/mix_raw.wav', '-af', f'atempo={SPD},loudnorm=I=-14:TP=-2.2:LRA=9', '-ar', '48000', 'build/mix.wav'])
+subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/video_only.mp4', '-i', 'build/mix.wav', '-map', '0:v', '-map', '1:a', '-vf', f'setpts=PTS/{SPD}', '-r', '30',
                 '-c:v', 'libx264', '-preset', 'slow', '-b:v', '10M', '-maxrate', '12M', '-bufsize', '20M', '-pix_fmt', 'yuv420p',
                 '-c:a', 'aac', '-b:a', '256k', '-shortest', '-movflags', '+faststart', 'final/Dada_Dividend_Short.mp4'])
 print('ok')
