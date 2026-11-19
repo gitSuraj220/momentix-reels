@@ -20,3 +20,8 @@ Facts: Nvidia Q3 FY27 release (17 Nov 2026), CEO transition (12 Nov), board on n
 - Line 9–10: black leather jacket hanging on the empty chair, "WANTED: CEO" note pinned. No face/likeness.
 - Voice: Suraj clone (harry potter), very fast (~38 s). SFX: heavy cinematic, no BGM. Ending: hard end on "talaash jaari hai".
 - Cover: later. Publish: later. "Sirf jaankari ke liye" in description + caption.
+
+## Motion clips (Higgsfield kling3_0, 9:16, 5 s) — frames in art/k1, art/k2 are git-ignored
+- k1 chair swivel: job c7e4b606-35d3-4d36-b39a-5b993918af1f
+- k2 chip money: job 21130cb7-6824-4c61-af05-9b20605a86d9
+Regenerate frames: ffmpeg -i kN.mp4 -vf "fps=30,scale=1215:2172:flags=lanczos" -q:v 3 art/kN/%04d.jpg

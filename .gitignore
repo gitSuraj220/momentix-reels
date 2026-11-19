@@ -41,3 +41,6 @@ projects/*/build/*.html
 projects/*/build/list.txt
 projects/*/final/*.part*
 projects/*/final/*_part*
+
+# extracted motion-clip frames (regenerate: ffmpeg -i clip.mp4 -vf fps=30,scale=1215:2172 art/kN/%04d.jpg)
+projects/*/art/k[0-9]*/
