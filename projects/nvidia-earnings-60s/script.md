@@ -12,3 +12,11 @@ Facts: Nvidia Q3 FY27 release (17 Nov 2026), CEO transition (12 Nov), board on n
 8. Aur chip banane ke baad bachne wala hissa, ₹75 se ghat ke ₹71–72 pe aa jayega.
 9. Par Jensen ka kya hua? Wo wapas aayenge kya?
 10. Board ne saaf kaha: purane boss wapas nahi aayenge. Scene khatam. Naye CEO ki talaash jaari hai.
+
+## Decisions (Suraj, 19 Nov)
+- Hook: empty CEO chair drawn live + ₹10.9 lakh cr counter. Accent: Nvidia green (red for drops). Nvidia logo pencil-sketched on chip + chair (Suraj OK'd logo).
+- Text: big numbers + one-line headline per beat. NO sources on screen.
+- Motion: 1–2 Higgsfield clips for the hook, rest code-animated pencil sketches (finance_90seconds-like notebook look).
+- Line 9–10: black leather jacket hanging on the empty chair, "WANTED: CEO" note pinned. No face/likeness.
+- Voice: Suraj clone (harry potter), very fast (~38 s). SFX: heavy cinematic, no BGM. Ending: hard end on "talaash jaari hai".
+- Cover: later. Publish: later. "Sirf jaankari ke liye" in description + caption.
