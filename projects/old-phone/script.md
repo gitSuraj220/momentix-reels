@@ -38,3 +38,15 @@ Link and prompt are NOT shown in the video; viewers comment "PHONE" to get them.
 7. 124 widgets, 30 ready-made pages.
 8. Link aur prompt chahiye? Comment karo "PHONE". 👇
 Deliverables after video: PDF (link + prompt + steps) uploaded to Google Drive, shareable link for viewers.
+
+## Decisions (Suraj, 20 Nov 2026)
+- Look: dark tech desk (night desk, glowing phone panel, neon accents). Character: illustrated hands only.
+- Hook: 1 Higgsfield AI clip — hand tosses old phone toward dustbin, freeze + STOP stamp.
+- Voice: clone, 1.3x. Phone UI: our own PhoneBox-style widgets in code (no screenshots).
+- Logos: Claude + Android. No GitHub logo. Ending: big comment box typing "PHONE", send pulses, hard cut.
+- SFX: heavy + UI clicks, no BGM. Cover: 1 option. YouTube AI-use: No (Suraj's call).
+- PDF: English; GitHub link + prompt, step-by-step setup, Momentix branding + IG handle; Google Drive, anyone with link.
+- Audience: normal users (not coders).
+
+## VO text (numbers in Hindi words)
+Purana phone fekne se pehle, ye video poora dekh lo. Phone ko USB se computer se jodo, Claude ko ek link aur ek prompt do. Bas, done. Ab ye ban gaya tumhara desk panel — shortcut buttons, focus timer, calendar. Setup full pro. Gaana chal raha hai? Skip aur volume yahin se. Claude Code permission maang raha hai? Phone pe Allow dabao, kaam chalta rahega. Claude ka kitna limit bacha, kab reset hoga — sab live. Ek sau chaubees widgets, tees ready-made pages. Link aur prompt chahiye? Comment karo PHONE.
