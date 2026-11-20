@@ -1,0 +1,92 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Po;font-weight:400;src:url('../zomato-earnings-explained/build/fonts/poppins-latin-500-normal.woff2')}
+@font-face{font-family:Po;font-weight:700;src:url('../zomato-earnings-explained/build/fonts/poppins-latin-700-normal.woff2')}
+@font-face{font-family:Po;font-weight:800;src:url('../zomato-earnings-explained/build/fonts/poppins-latin-800-normal.woff2')}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+body{margin:0;font-family:Po,Arial,sans-serif;font-weight:400;color:#1b2230;font-size:11.5pt;line-height:1.5}
+.pg{width:210mm;height:297mm;padding:20mm 18mm;position:relative;page-break-after:always;overflow:hidden}
+.cover{background:radial-gradient(ellipse at 50% 35%,#16243a 0%,#07090D 70%);color:#EEF1F5}
+.cover h1{font-weight:800;font-size:40pt;line-height:1.05;margin:38mm 0 6mm;letter-spacing:-1px}
+.cover h1 span{color:#2DE2E6}
+.cover p{font-size:14pt;color:#a9b3c4;max-width:150mm}
+.brand{position:absolute;left:18mm;top:16mm;font-weight:700;letter-spacing:4px;font-size:11pt;color:#7d8798}
+.foot{position:absolute;left:18mm;right:18mm;bottom:14mm;font-size:9.5pt;color:#7d8798;display:flex;justify-content:space-between}
+.mock{margin-top:16mm;width:150mm;height:78mm;border-radius:14mm;background:#0c0e12;border:2px solid #2a2f38;box-shadow:0 0 0 5mm #111318,0 0 25mm rgba(45,226,230,.35);padding:7mm;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm}
+.mock div{border-radius:5mm;display:flex;align-items:center;justify-content:center;font-size:22pt}
+h2{font-weight:800;font-size:20pt;margin:0 0 4mm;letter-spacing:-.5px}
+h2 small{display:block;font-size:10pt;color:#7d8798;letter-spacing:2px;font-weight:700}
+.step{display:flex;gap:5mm;margin:0 0 5.5mm}
+.num{flex:0 0 11mm;height:11mm;border-radius:50%;background:#07090D;color:#2DE2E6;font-weight:800;font-size:14pt;display:flex;align-items:center;justify-content:center}
+.step b{font-weight:800}
+.box{background:#0f141c;color:#e6ebf2;border-radius:5mm;padding:6mm 7mm;font-size:10.5pt;line-height:1.55;border-left:2.2mm solid #2DE2E6}
+.box .t{color:#2DE2E6;font-weight:800;font-size:9.5pt;letter-spacing:2px;margin-bottom:2mm}
+.link{font-weight:800;font-size:13pt;color:#0a7f86;word-break:break-all}
+.note{background:#fff6e8;border-radius:4mm;padding:4mm 5mm;font-size:10pt;margin-top:5mm;border-left:2mm solid #FF8A3D}
+ul{margin:2mm 0 0;padding-left:6mm} li{margin:1mm 0}
+.light .foot{color:#9aa3b2}
+</style></head><body>
+
+<div class="pg cover">
+  <div class="brand">MOMENTIX</div>
+  <h1>Turn your old Android phone into a <span>desk panel</span></h1>
+  <p>Shortcut buttons, a focus timer, your calendar, music controls, Claude usage limits and Allow/Deny for Claude Code, all on a phone you were about to throw away.</p>
+  <div class="mock">
+    <div style="background:#3a5bff">⚡</div><div style="background:#FF8A3D;color:#fff;font-weight:800;font-size:16pt">25:00</div><div style="background:#ff4d5a;color:#fff;font-weight:800;font-size:16pt">NOV 20</div>
+    <div style="background:#2BE37A">▶</div><div style="background:#7b3dff;color:#fff;font-weight:800;font-size:14pt">68%</div><div style="background:#2BE37A;color:#06260f;font-weight:800;font-size:14pt">Allow ✓</div>
+  </div>
+  <div class="foot"><span>Free guide · Follow @momentixbysuraj on Instagram</span><span>Nov 2026</span></div>
+</div>
+
+<div class="pg light">
+  <div class="brand" style="color:#9aa3b2">MOMENTIX</div>
+  <div style="height:8mm"></div>
+  <h2><small>WHAT YOU NEED</small>Before you start</h2>
+  <ul>
+    <li>An old <b>Android</b> phone (Android 6 or newer recommended; iPhone is not supported)</li>
+    <li>A USB <b>data</b> cable (some charging-only cables won't work)</li>
+    <li>A Windows 10/11, Mac or Linux computer</li>
+    <li><b>Claude</b> with access to your computer, for example Claude Code or the Claude desktop app</li>
+  </ul>
+  <div style="height:6mm"></div>
+  <h2><small>THE TOOL</small>PhoneBox: free and open source</h2>
+  <p style="margin:0 0 2mm">PhoneBox is a free, open-source project on GitHub (MIT license). No account and no cloud service needed.</p>
+  <div class="link">https://github.com/ersinkoc/phonebox</div>
+  <div style="height:7mm"></div>
+  <h2><small>STEP BY STEP</small>Setup in 5 steps</h2>
+  <div class="step"><div class="num">1</div><div><b>Turn on USB debugging on the phone.</b> Settings → About phone → tap <b>Build number</b> 7 times (this unlocks Developer options). Then Settings → Developer options → turn on <b>USB debugging</b>. Menu names can differ a little by brand.</div></div>
+  <div class="step"><div class="num">2</div><div><b>Plug the phone into your computer</b> with the data cable. When the phone asks <i>"Allow USB debugging?"</i>, tap <b>Allow</b> (only for your own computer).</div></div>
+  <div class="step"><div class="num">3</div><div><b>Open Claude</b> and paste the prompt from the next page. Claude reads the project first, tells you what it will install, and waits for your OK.</div></div>
+  <div class="step"><div class="num">4</div><div><b>Let Claude install it.</b> It runs PhoneBox's official setup for your computer and installs the PhoneBox app on your phone over USB.</div></div>
+  <div class="step"><div class="num">5</div><div><b>Pick your layout.</b> Settings open at <b>http://127.0.0.1:8765</b> on your computer. Choose one of the ready-made pages or drag widgets in yourself.</div></div>
+  <div class="foot"><span>Momentix · Free guide</span><span>2</span></div>
+</div>
+
+<div class="pg light">
+  <div class="brand" style="color:#9aa3b2">MOMENTIX</div>
+  <div style="height:8mm"></div>
+  <h2><small>COPY-PASTE</small>The prompt for Claude</h2>
+  <div class="box"><div class="t">PASTE THIS INTO CLAUDE</div>
+I want to turn my old Android phone into a desk panel using PhoneBox: https://github.com/ersinkoc/phonebox<br><br>
+1. First read the project's README and its setup script, and tell me in simple words what will be installed on my computer and my phone. Wait for my OK.<br>
+2. Then run PhoneBox's official install command for my operating system.<br>
+3. My phone is connected by USB with USB debugging turned on. Install the PhoneBox phone app on it and check that the phone shows the panel.<br>
+4. Open the settings page (http://127.0.0.1:8765) and set up a starter page with: shortcut buttons, a focus timer, my calendar, music controls (play, skip, volume) and my Claude usage limits with reset time.<br>
+5. Turn on the Claude Code permission prompts so I can tap Allow or Deny on the phone (see docs/GUIDE.md in the project).<br><br>
+Explain each step in simple language, and ask me before changing any important setting.
+  </div>
+  <div class="note"><b>Good to know</b>
+    <ul>
+      <li>On Windows, the antivirus or SmartScreen may show a warning because the PhoneBox app is not signed yet. That is expected for this project; only continue if you are comfortable.</li>
+      <li>Phone not detected? Try another cable or USB port, unlock the phone, and accept the "Allow USB debugging" prompt.</li>
+      <li>Prefer no cable? PhoneBox can also pair over Wi-Fi with a QR code (see the project's setup guide).</li>
+      <li>Keep the phone on a stand and plugged in, so it stays charged while it works as a panel.</li>
+    </ul>
+  </div>
+  <div style="margin-top:7mm;background:#07090D;color:#EEF1F5;border-radius:6mm;padding:8mm;text-align:center">
+    <div style="font-weight:800;font-size:18pt">More tech that actually helps 🚀</div>
+    <div style="color:#a9b3c4;margin-top:2mm">Follow <b style="color:#2DE2E6">@momentixbysuraj</b> on Instagram and Momentix on YouTube</div>
+  </div>
+  <div class="foot"><span>PhoneBox is an independent open-source project; Momentix is not affiliated with it. Info as of Nov 2026.</span><span>3</span></div>
+</div>
+</body></html>

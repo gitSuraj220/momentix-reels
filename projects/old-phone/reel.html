@@ -1,0 +1,247 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Ka;font-weight:700;src:url('../zomato-earnings-explained/build/fonts/kalam-latin-700-normal.woff2')}
+@font-face{font-family:Po;font-weight:700;src:url('../zomato-earnings-explained/build/fonts/poppins-latin-700-normal.woff2')}
+@font-face{font-family:Po;font-weight:800;src:url('../zomato-earnings-explained/build/fonts/poppins-latin-800-normal.woff2')}
+:root{--bg:#07090D;--ink:#EEF1F5;--mute:#8A93A3;--c:#2DE2E6;--o:#FF8A3D;--g:#2BE37A;--r:#FF4D5A;--y:#FFD24A}
+html,body{margin:0;background:#000}
+#st{position:relative;width:1080px;height:1920px;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,#121a26 0%,#07090D 62%);font-family:Po;color:var(--ink)}
+#desk{position:absolute;left:-40px;right:-40px;top:1380px;height:600px;background:linear-gradient(180deg,#2a1d14 0%,#160f0a 60%,#0b0806 100%);border-top:3px solid #3b2a1d}
+#desk:before{content:'';position:absolute;left:0;right:0;top:0;height:140px;background:linear-gradient(180deg,rgba(45,226,230,.10),transparent)}
+#dust{position:absolute;inset:0;pointer-events:none}
+.dt{position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(255,220,180,.35)}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.65) 100%);pointer-events:none}
+#brand{position:absolute;right:66px;top:112px;font-weight:700;font-size:28px;letter-spacing:4px;color:#5d6676}
+.sc{position:absolute;inset:0;opacity:0;display:none}
+.hl{position:absolute;left:70px;right:70px;font-weight:800;font-size:96px;line-height:1.02;letter-spacing:-2px}
+.hl i{font-style:normal;color:var(--c);text-shadow:0 0 34px rgba(45,226,230,.5)}
+.lab{position:absolute;font-weight:700;font-size:36px;color:var(--mute);letter-spacing:3px}
+.hand{position:absolute;font-family:Ka;font-weight:700;white-space:nowrap}
+.stamp{position:absolute;font-weight:800;border:10px solid currentColor;border-radius:18px;padding:8px 32px 4px;letter-spacing:3px;white-space:nowrap;background:rgba(7,9,13,.55)}
+.plate{position:absolute;left:-60px;top:-110px;width:1200px;height:2144px;transform-origin:50% 45%}
+.plate img{width:100%;height:100%;display:block;object-fit:cover}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+svg.ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible;pointer-events:none}
+/* landscape phone panel */
+.ph{position:absolute;left:90px;top:820px;width:900px;height:470px;border-radius:64px;background:#0c0e12;border:4px solid #2a2f38;box-shadow:0 0 0 18px #111318,0 0 90px rgba(45,226,230,.35),0 40px 80px rgba(0,0,0,.7)}
+.ph .scr{position:absolute;left:30px;top:26px;right:30px;bottom:26px;border-radius:38px;background:#0f141c;overflow:hidden}
+.ph .cam{position:absolute;left:10px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:#222}
+.stand{position:absolute;left:400px;top:1300px;width:280px;height:110px;background:linear-gradient(180deg,#30353f,#1a1d23);clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);border-radius:10px}
+.k{position:absolute;width:150px;height:150px;border-radius:30px;display:flex;align-items:center;justify-content:center;font-size:74px;box-shadow:inset 0 -8px 0 rgba(0,0,0,.25)}
+.card{position:absolute;border-radius:28px;background:#161d28;border:2px solid #263042}
+.pill{position:absolute;border-radius:24px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:44px}
+.blur{display:inline-block;height:34px;border-radius:10px;background:linear-gradient(90deg,#3a4558,#566278,#3a4558);vertical-align:middle;filter:blur(3px)}
+#hnd{position:absolute;left:0;top:0;width:220px;height:300px;opacity:0;transform-origin:30% 10%;z-index:30}
+</style></head><body><div id="st">
+<div id="desk"></div><div id="dust"></div>
+
+<!-- A: hook clip -->
+<div class="sc" id="sA">
+  <div class="plate" id="pA"><img id="vA" src="art/g1.png"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,rgba(0,0,0,.6) 100%)"></div>
+  <div class="hl" id="hA" style="top:250px;font-size:104px">Purana phone<br><i>fekne se pehle…</i></div>
+  <img id="andA" src="art/logos/android.png" style="position:absolute;left:820px;top:520px;width:150px">
+  <div class="stamp" id="stA" style="left:250px;top:880px;font-size:150px;color:var(--r);transform:rotate(-8deg)">STOP 🛑</div>
+  <div class="hand" id="wA" style="left:0;right:0;text-align:center;top:1560px;font-size:72px;color:#fff;text-shadow:0 4px 20px #000">ye video poora dekh lo 👀</div>
+</div>
+
+<!-- B: USB + Claude link/prompt -->
+<div class="sc" id="sB">
+  <div class="lab" style="left:70px;top:270px">STEP 1</div>
+  <div class="hl" id="hB" style="top:320px;font-size:92px">USB se <i>jodo</i> 🔌</div>
+  <!-- laptop -->
+  <div id="lap" style="position:absolute;left:330px;top:640px;width:690px;height:440px;border-radius:26px;background:#0c0f14;border:14px solid #2a2f38">
+    <div id="ccard" style="position:absolute;inset:18px;border-radius:14px;background:#F4F1EA;color:#1d1b18;opacity:0">
+      <img src="art/logos/claude.png" style="position:absolute;left:28px;top:24px;height:58px">
+      <div id="rowL" style="position:absolute;left:28px;top:120px;font-weight:800;font-size:40px;opacity:0">🔗 Link&nbsp; <span class="blur" style="width:300px;background:#c9c2b5"></span></div>
+      <div id="rowP" style="position:absolute;left:28px;top:200px;font-weight:800;font-size:40px;opacity:0">📝 Prompt&nbsp; <span class="blur" style="width:240px;background:#c9c2b5"></span></div>
+      <div id="send" style="position:absolute;right:26px;bottom:24px;width:74px;height:74px;border-radius:20px;background:#D97757;color:#fff;font-size:44px;display:flex;align-items:center;justify-content:center;opacity:0">↑</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:290px;top:1080px;width:770px;height:34px;border-radius:0 0 30px 30px;background:#3a404b"></div>
+  <!-- old phone portrait -->
+  <div id="opB" style="position:absolute;left:70px;top:840px;width:200px;height:400px;border-radius:36px;background:#0c0e12;border:10px solid #2a2f38;box-shadow:0 0 60px rgba(45,226,230,.25)">
+    <img src="art/logos/android.png" style="position:absolute;left:50px;top:120px;width:80px;opacity:.9">
+  </div>
+  <svg class="ov" id="oB"></svg>
+  <div class="stamp" id="stB" style="left:330px;top:1290px;font-size:130px;color:var(--g);transform:rotate(-6deg)">✅ DONE</div>
+</div>
+
+<!-- C..G share the landscape phone -->
+<div class="sc" id="sC">
+  <div class="hl" id="hC" style="top:270px">Ab ye ban gaya<br><i>desk panel</i> 🖥️</div>
+</div>
+<div class="sc" id="sD"><div class="hl" id="hD" style="top:270px">Gaana chal<br>raha hai? <i>🎧</i></div></div>
+<div class="sc" id="sE"><div class="hl" id="hE" style="top:270px;font-size:88px">Claude Code<br><i>permission</i> maang raha?</div></div>
+<div class="sc" id="sF"><div class="hl" id="hF" style="top:270px;font-size:92px">Claude ka limit<br><i>kitna bacha?</i></div></div>
+<div class="sc" id="sG"><div class="hl" id="hG" style="top:250px;font-size:200px;color:var(--c)"><span id="nG">0</span></div><div class="hl" style="top:470px;font-size:84px">widgets</div></div>
+
+<div id="PH" style="position:absolute;inset:0;opacity:0;display:none">
+  <div class="stand"></div>
+  <div class="ph" id="ph"><div class="cam"></div><div class="scr" id="scr">
+    <!-- C: dashboard -->
+    <div id="boot" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:150px;color:var(--c);text-shadow:0 0 40px rgba(45,226,230,.7)">21:53</div>
+    <div id="vC" style="position:absolute;inset:0">
+      <div id="kbtn" style="position:absolute;left:24px;top:24px;width:340px;height:370px">
+        <div class="k" style="left:0;top:0;background:#3a5bff">⚡</div><div class="k" style="left:170px;top:0;background:#ff4d5a">🎙️</div>
+        <div class="k" style="left:0;top:190px;background:#2BE37A">📸</div><div class="k" style="left:170px;top:190px;background:#ffb020">🔒</div>
+      </div>
+      <div id="tmr" class="card" style="left:384px;top:24px;width:200px;height:370px">
+        <svg width="200" height="230" style="position:absolute;top:20px"><circle cx="100" cy="115" r="78" fill="none" stroke="#263042" stroke-width="16"/><circle id="tring" cx="100" cy="115" r="78" fill="none" stroke="#FF8A3D" stroke-width="16" stroke-linecap="round" transform="rotate(-90 100 115)" stroke-dasharray="490" stroke-dashoffset="0"/></svg>
+        <div id="tnum" style="position:absolute;left:0;right:0;top:110px;text-align:center;font-weight:800;font-size:46px">25:00</div>
+        <div style="position:absolute;left:0;right:0;bottom:30px;text-align:center;font-weight:700;font-size:26px;color:var(--mute)">FOCUS</div>
+      </div>
+      <div id="cal" class="card" style="left:604px;top:24px;width:192px;height:370px;padding:0">
+        <div style="position:absolute;left:0;right:0;top:0;height:70px;border-radius:26px 26px 0 0;background:#ff4d5a;text-align:center;font-weight:800;font-size:32px;line-height:70px">NOV</div>
+        <div style="position:absolute;left:0;right:0;top:80px;text-align:center;font-weight:800;font-size:96px">20</div>
+        <div id="ev1" style="position:absolute;left:14px;right:14px;top:220px;height:50px;border-radius:12px;background:#2a3b5a;font-weight:700;font-size:22px;line-height:50px;padding-left:12px">10:00 Standup</div>
+        <div id="ev2" style="position:absolute;left:14px;right:14px;top:286px;height:50px;border-radius:12px;background:#3d2a5a;font-weight:700;font-size:22px;line-height:50px;padding-left:12px">18:00 Upload</div>
+      </div>
+    </div>
+    <!-- D: music -->
+    <div id="vD" style="position:absolute;inset:0;opacity:0">
+      <div style="position:absolute;left:30px;top:40px;width:220px;height:220px;border-radius:28px;background:linear-gradient(135deg,#ff8a3d,#ff4d5a 50%,#7b3dff)" id="art"></div>
+      <div id="trk" style="position:absolute;left:280px;top:60px;font-weight:800;font-size:48px">Lo-fi Focus Mix</div>
+      <div style="position:absolute;left:282px;top:130px;font-weight:700;font-size:30px;color:var(--mute)">Now playing</div>
+      <div style="position:absolute;left:282px;top:200px;width:480px;height:10px;border-radius:5px;background:#263042"><div id="prog" style="width:30%;height:100%;border-radius:5px;background:var(--c)"></div></div>
+      <div id="bPrev" class="pill" style="left:290px;top:250px;width:110px;height:100px;background:#1c2533">⏮</div>
+      <div id="bPlay" class="pill" style="left:420px;top:250px;width:130px;height:100px;background:#1c2533">⏸</div>
+      <div id="bNext" class="pill" style="left:570px;top:250px;width:110px;height:100px;background:#1c2533">⏭</div>
+      <div style="position:absolute;left:30px;top:300px;font-size:44px">🔊</div>
+      <div style="position:absolute;left:96px;top:322px;width:160px;height:14px;border-radius:7px;background:#263042"><div id="vol" style="width:30%;height:100%;border-radius:7px;background:var(--g)"></div></div>
+    </div>
+    <!-- E: permission -->
+    <div id="vE" style="position:absolute;inset:0;opacity:0">
+      <img src="art/logos/claudesym.png" style="position:absolute;left:34px;top:30px;width:70px">
+      <div style="position:absolute;left:124px;top:36px;font-weight:800;font-size:40px">Claude Code wants to run</div>
+      <div style="position:absolute;left:34px;top:120px;right:34px;height:84px;border-radius:18px;background:#0a0d12;border:2px solid #263042;font-family:monospace;font-size:40px;line-height:84px;padding-left:24px;color:#9fe7a8">$ npm run build</div>
+      <div id="bDeny" class="pill" style="left:34px;top:250px;width:340px;height:120px;background:#252c38;color:#c4cad4">Deny</div>
+      <div id="bAllow" class="pill" style="left:400px;top:250px;width:406px;height:120px;background:var(--g);color:#06260f">Allow ✓</div>
+      <div id="runE" style="position:absolute;inset:0;background:#0f141c;opacity:0">
+        <div style="position:absolute;left:34px;top:110px;font-weight:800;font-size:56px;color:var(--g)">✓ Allowed</div>
+        <div style="position:absolute;left:34px;top:200px;font-weight:700;font-size:34px;color:var(--mute)">Running…</div>
+        <div style="position:absolute;left:34px;top:270px;width:772px;height:18px;border-radius:9px;background:#263042"><div id="runP" style="width:0;height:100%;border-radius:9px;background:var(--g)"></div></div>
+      </div>
+    </div>
+    <!-- F: limit -->
+    <div id="vF" style="position:absolute;inset:0;opacity:0">
+      <svg width="300" height="300" style="position:absolute;left:40px;top:60px"><circle cx="150" cy="150" r="118" fill="none" stroke="#263042" stroke-width="28"/><circle id="lring" cx="150" cy="150" r="118" fill="none" stroke="#D97757" stroke-width="28" stroke-linecap="round" transform="rotate(-90 150 150)" stroke-dasharray="741" stroke-dashoffset="741"/></svg>
+      <div id="lpct" style="position:absolute;left:40px;width:300px;top:160px;text-align:center;font-weight:800;font-size:70px">0%</div>
+      <div style="position:absolute;left:40px;width:300px;top:250px;text-align:center;font-weight:700;font-size:26px;color:var(--mute)">USED</div>
+      <img src="art/logos/claude.png" style="position:absolute;left:390px;top:70px;height:62px;filter:invert(1)">
+      <div style="position:absolute;left:392px;top:170px;font-weight:700;font-size:34px;color:var(--mute)">Resets in</div>
+      <div id="lcd" style="position:absolute;left:390px;top:212px;font-weight:800;font-size:76px">2h 14m 09s</div>
+      <div id="live" style="position:absolute;left:392px;top:320px;font-weight:800;font-size:40px;color:var(--r);opacity:0">● LIVE</div>
+    </div>
+    <!-- G: widget wall -->
+    <div id="vG" style="position:absolute;inset:0;opacity:0"></div>
+  </div></div>
+  <div class="stamp" id="stC" style="left:110px;top:1440px;font-size:80px;color:var(--y);transform:rotate(-5deg);opacity:0">SETUP FULL PRO 😎</div>
+  <div class="hand" id="wD" style="left:0;right:0;text-align:center;top:1460px;font-size:66px;color:var(--mute);opacity:0">skip + volume, yahin se</div>
+  <div class="hand" id="wE" style="left:0;right:0;text-align:center;top:1460px;font-size:66px;color:var(--g);opacity:0">kaam chalta rahega ✓</div>
+  <div class="hand" id="wF" style="left:0;right:0;text-align:center;top:1460px;font-size:66px;color:var(--mute);opacity:0">sab live 🔴</div>
+  <div class="stamp" id="stG" style="left:250px;top:1450px;font-size:90px;color:var(--c);transform:rotate(-5deg);opacity:0">+30 PAGES</div>
+</div>
+
+<!-- H: comment -->
+<div class="sc" id="sH">
+  <div class="hl" id="hH" style="top:300px">Link + prompt<br><i>chahiye?</i> 👇</div>
+  <div id="cbox" style="position:absolute;left:60px;right:60px;top:860px;height:220px;border-radius:110px;background:#161d28;border:4px solid #2c3850">
+    <div style="position:absolute;left:30px;top:30px;width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,#ff8a3d,#d6249f,#285aeb)"></div>
+    <div id="ctxt" style="position:absolute;left:230px;top:0;line-height:212px;font-weight:800;font-size:110px;letter-spacing:6px"></div>
+    <div id="cph" style="position:absolute;left:230px;top:0;line-height:212px;font-weight:700;font-size:56px;color:#5d6676">Add a comment…</div>
+    <div id="csend" style="position:absolute;right:28px;top:28px;width:160px;height:160px;border-radius:50%;background:var(--c);color:#06262a;font-size:86px;font-weight:800;display:flex;align-items:center;justify-content:center">➤</div>
+  </div>
+  <div class="hand" id="wH" style="left:0;right:0;text-align:center;top:1200px;font-size:70px;color:var(--mute)">comment karo <b style="color:var(--c)">"PHONE"</b></div>
+</div>
+
+<svg id="hnd" viewBox="0 0 220 300"><g stroke="#7a4a2c" stroke-width="6" stroke-linejoin="round" fill="#E9B48A">
+  <rect x="58" y="10" width="54" height="150" rx="27"/>
+  <rect x="40" y="120" width="150" height="160" rx="54"/>
+  <rect x="112" y="96" width="46" height="90" rx="23"/><rect x="150" y="110" width="44" height="86" rx="22"/>
+  <rect x="2" y="150" width="70" height="44" rx="22" transform="rotate(-28 37 172)"/></g>
+  <rect x="40" y="250" width="150" height="50" fill="#1d2a44"/></svg>
+
+<div id="vig"></div><div id="brand">MOMENTIX</div><div id="flash"></div>
+</div>
+<script>
+const END=21.8;
+const W={sA:[0,2.42],sB:[2.42,6.22],sC:[6.22,10.3],sD:[10.3,12.15],sE:[12.15,14.95],sF:[14.95,17.88],sG:[17.88,19.7],sH:[19.7,END+1]};
+const CUTS=Object.values(W).map(w=>w[0]).slice(1);
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ss=(a,b,x)=>{const k=cl((x-a)/(b-a));return k*k*(3-2*k)};
+const back=k=>{k=cl(k);const c=1.7;return 1+(c+1)*Math.pow(k-1,3)+c*Math.pow(k-1,2)};
+const eo=k=>1-Math.pow(1-cl(k),3);
+const pr=(t,a,d)=>cl((t-a)/d);
+const NS='http://www.w3.org/2000/svg';
+function path(svg,d,col,w,glow){const p=document.createElementNS(NS,'path');p.setAttribute('d',d);p.setAttribute('fill','none');p.setAttribute('stroke',col);p.setAttribute('stroke-width',w);p.setAttribute('stroke-linecap','round');if(glow)p.style.filter=`drop-shadow(0 0 10px ${col})`;svg.appendChild(p);return p}
+function drawOn(p,k){const L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L*(1-cl(k))}
+function vis(id,k,dy=26){const e=$(id);e.style.opacity=cl(k);e.style.transform=`translateY(${(1-eo(k))*dy}px)`}
+function popE(id,k,rot=0){const e=$(id);e.style.opacity=cl(k*1.4);e.style.transform=`scale(${back(k)}) rotate(${rot}deg)`}
+function slam(id,k,rot=0){const e=$(id);e.style.opacity=cl(k*3);e.style.transform=`scale(${1+1.4*(1-eo(k))}) rotate(${rot}deg)`}
+function wipe(id,k){const e=$(id);e.style.clipPath=`inset(-30px ${100-100*eo(k)}% -30px -30px)`;e.style.opacity=k>0?1:0}
+// dust
+for(let i=0;i<26;i++){const d=document.createElement('div');d.className='dt';d.dataset.x=(i*397)%1080;d.dataset.y=(i*733)%1900;d.dataset.s=0.4+((i*37)%10)/10;$('dust').appendChild(d)}
+// cable (B)
+const cab=path($('oB'),'M 170 1240 C 170 1330 260 1330 330 1300 S 520 1180 640 1110','#EEF1F5',12,false);
+const cabG=path($('oB'),'M 170 1240 C 170 1330 260 1330 330 1300 S 520 1180 640 1110','#2DE2E6',4,true);
+// widget wall (G)
+const COLS=['#3a5bff','#ff4d5a','#2BE37A','#ffb020','#7b3dff','#2DE2E6','#ff8a3d','#d6249f'];const ICO=['⚡','🎵','⏱','📅','📊','🔔','🌡','💾','🌐','🎙','📸','🔒','⌨️','☀️','🐙','🧠'];
+const TILES=[];for(let r=0;r<4;r++)for(let c=0;c<9;c++){const d=document.createElement('div');d.className='k';Object.assign(d.style,{left:(14+c*92)+'px',top:(14+r*102)+'px',width:'80px',height:'90px',borderRadius:'18px',fontSize:'40px',background:COLS[(r*9+c*5)%8],opacity:0});d.textContent=ICO[(r*7+c*3)%16];$('vG').appendChild(d);TILES.push(d)}
+// hook clip frames
+const NF=151;const fr=f=>`art/k1/${String(Math.max(1,Math.min(NF,f))).padStart(4,'0')}.jpg`;let lastF='';
+// hand pointer: x,y = fingertip target
+function hand(x,y,kIn,press,kOut=0){const h=$('hnd');const k=eo(kIn)*(1-eo(kOut));h.style.opacity=k>0.01?1:0;const dy=(1-eo(kIn))*500+eo(kOut)*500;const s=1-0.08*press;
+  h.style.transform=`translate(${x-85}px,${y-6+dy+press*10}px) scale(${s}) rotate(-8deg)`}
+function tap(t,a){return Math.max(0,1-Math.abs(t-a)/0.09)}
+const two=n=>String(n).padStart(2,'0');
+window.renderAt=function(t){
+  for(const [id,[a,b]] of Object.entries(W)){const o=Math.min(ss(a-0.04,a+0.06,t),1-ss(b-0.06,b+0.04,t));const e=$(id);e.style.opacity=o;e.style.display=o>0.001?'block':'none';}
+  const phO=Math.min(ss(W.sC[0]-0.04,W.sC[0]+0.08,t),1-ss(W.sG[1]-0.06,W.sG[1]+0.04,t));$('PH').style.opacity=phO;$('PH').style.display=phO>0.001?'block':'none';
+  let fl=0;for(const c of CUTS){if(t>=c&&t<c+0.1)fl=0.22*(1-(t-c)/0.1)}$('flash').style.opacity=fl;
+  for(const d of $('dust').children){const s=+d.dataset.s;d.style.transform=`translate(${(+d.dataset.x+t*12*s)%1080}px,${((+d.dataset.y-t*30*s)%1900+1900)%1900}px)`}
+  const shake=(a)=>{const k=1-pr(t,a,0.3);return k>0&&k<1?`translate(${Math.sin(t*90)*14*k}px,${Math.cos(t*80)*10*k}px)`:''};
+  $('st').style.transform=shake(1.2)||shake(5.64)||shake(9.58)||shake(13.7)||shake(17.96);
+  hand(0,0,0,0);
+  // A hook: play -> freeze at 1.2 (STOP) -> rewind
+  if(t<W.sA[1]+.2){let f;if(t<1.2)f=1+Math.floor(t*52);else if(t<1.9)f=63;else f=Math.max(1,Math.floor(63-(t-1.9)*120));
+    if(lastF!==f){$('vA').src=fr(f);lastF=f}
+    $('pA').style.transform=`scale(${1.04+0.05*pr(t,0,2.4)})`;$('pA').style.filter=t>=1.2&&t<1.9?'saturate(.35) contrast(1.15)':'none';
+    popE('hA',pr(t,0,0.25),-2);popE('andA',pr(t,0.35,0.3),8);slam('stA',pr(t,1.2,0.2),-8);$('stA').style.opacity=t>1.9?cl(1-(t-1.9)/0.2):$('stA').style.opacity;vis('wA',pr(t,1.26,0.3));}
+  if(t>W.sB[0]-.2&&t<W.sB[1]+.2){wipe('hB',pr(t,2.45,0.35));vis('opB',pr(t,2.5,0.3),60);vis('lap',pr(t,2.55,0.3),60);drawOn(cab,pr(t,2.75,0.8));drawOn(cabG,pr(t,2.95,0.8));
+    $('ccard').style.opacity=cl(pr(t,4.04,0.2));vis('rowL',pr(t,4.48,0.25));vis('rowP',pr(t,5.08,0.25));popE('send',pr(t,5.3,0.25));
+    $('send').style.boxShadow=`0 0 ${40*tap(t,5.5)}px #D97757`;slam('stB',pr(t,5.64,0.2),-6);}
+  if(phO>0){ // phone shared
+    const ph=$('ph');ph.style.transform=`translateY(${(1-eo(pr(t,6.3,0.4)))*700}px)`;
+    const show=(id,a,b)=>{$(id).style.opacity=Math.min(ss(a-0.05,a+0.1,t),1-ss(b-0.05,b+0.05,t))};
+    show('vC',6.2,10.3);if(t>10.3)$('boot').style.opacity=0;show('vD',10.3,12.15);show('vE',12.15,14.95);show('vF',14.95,17.88);show('vG',17.88,99);
+    if(t<10.4){wipe('hC',pr(t,6.24,0.4));$('boot').style.opacity=t<6.2?0:Math.min(pr(t,6.55,0.2),1-pr(t,7.65,0.15));$('boot').style.transform=`scale(${0.9+0.1*eo(pr(t,6.55,0.4))})`;popE('kbtn',pr(t,7.8,0.3));popE('tmr',pr(t,8.5,0.3));popE('cal',pr(t,9.16,0.3));vis('ev1',pr(t,9.4,0.2));vis('ev2',pr(t,9.55,0.2));
+      const sec=Math.floor(Math.max(0,t-8.5)*6);const left=1500-sec;$('tnum').textContent=two(Math.floor(left/60))+':'+two(left%60);$('tring').setAttribute('stroke-dashoffset',490*sec/1500*6);
+      const ks=$('kbtn').children;for(let i=0;i<4;i++){ks[i].style.filter=`brightness(${1+0.6*tap(t,8.0+i*0.12)})`}
+      slam('stC',pr(t,9.58,0.2),-5);if(t>10.15)$('stC').style.opacity=cl(1-(t-10.15)/0.15);}
+    else $('stC').style.opacity=0;
+    if(t>10.2&&t<12.3){wipe('hD',pr(t,10.36,0.35));$('prog').style.width=(t<11.06?30+(t-10.3)*10:4+(t-11.06)*10)+'%';
+      $('trk').textContent=t<11.06?'Lo-fi Focus Mix':'Night Drive';$('art').style.filter=t<11.06?'none':'hue-rotate(150deg)';
+      $('bNext').style.background=tap(t,11.06)>0?'#2DE2E6':'#1c2533';$('bNext').style.transform=`scale(${1-0.12*tap(t,11.06)})`;
+      $('vol').style.width=(30+50*eo(pr(t,11.44,0.4)))+'%';
+      if(t<11.25)hand(749,1150,pr(t,10.75,0.25),tap(t,11.06));else{const m=eo(pr(t,11.25,0.2));hand(749+(300-749)*m,1150+(1179-1150)*m,1,tap(t,11.5),pr(t,11.85,0.25));}
+      vis('wD',pr(t,11.44,0.3));}
+    else $('wD').style.opacity=0;
+    if(t>12.1&&t<15.1){wipe('hE',pr(t,12.2,0.4));const a=tap(t,13.7);$('bAllow').style.transform=`scale(${1-0.1*a})`;$('bAllow').style.boxShadow=`0 0 ${60*a}px #2BE37A`;
+      hand(727,1160,pr(t,13.2,0.3),a,pr(t,14.0,0.3));$('runE').style.opacity=cl(pr(t,13.85,0.15));$('runP').style.width=(100*eo(pr(t,14.0,0.9)))+'%';vis('wE',pr(t,14.32,0.3));}
+    else $('wE').style.opacity=0;
+    if(t>14.9&&t<18){wipe('hF',pr(t,15.0,0.4));const k=eo(pr(t,15.6,1.0));$('lring').setAttribute('stroke-dashoffset',741*(1-0.68*k));$('lpct').textContent=Math.round(68*k)+'%';
+      const s=Math.max(0,Math.floor((t-14.95)*4));const r=2*3600+14*60+9-s;$('lcd').textContent=`${Math.floor(r/3600)}h ${two(Math.floor(r%3600/60))}m ${two(r%60)}s`;
+      $('live').style.opacity=t>17.22?(0.55+0.45*Math.sin(t*14)):0;vis('wF',pr(t,17.22,0.25));}
+    else $('wF').style.opacity=0;
+    if(t>17.8){const k=pr(t,17.96,0.8);$('nG').textContent=Math.round(124*eo(k));TILES.forEach((d,i)=>{const kk=pr(t,17.96+i*0.018,0.18);d.style.opacity=cl(kk*1.5);d.style.transform=`scale(${back(kk)})`});
+      popE('hG',pr(t,17.92,0.25));slam('stG',pr(t,18.8,0.2),-5);}
+    else $('stG').style.opacity=0;
+  }
+  if(t>W.sH[0]-.2){wipe('hH',pr(t,19.75,0.4));vis('cbox',pr(t,19.8,0.3),80);const L=['P','H','O','N','E'];const n=Math.min(5,Math.max(0,Math.floor((t-20.55)/0.08)+1));
+    $('ctxt').textContent=L.slice(0,n).join('');$('cph').style.opacity=n>0?0:1;const pu=t>21.0?0.5+0.5*Math.sin((t-21)*16):0;
+    $('csend').style.transform=`scale(${1+0.1*pu})`;$('csend').style.boxShadow=`0 0 ${70*pu}px #2DE2E6`;vis('wH',pr(t,20.6,0.3));
+    hand(912,968,pr(t,20.9,0.25),tap(t,21.35));}
+  return true};
+window.READY=Promise.all([document.fonts.load('700 40px Ka'),document.fonts.load('700 40px Po'),document.fonts.load('800 40px Po')]).then(()=>{renderAt(0);return true});
+</script></body></html>
