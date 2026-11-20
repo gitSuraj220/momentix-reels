@@ -1,0 +1,160 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Se;font-weight:700;src:url('../zomato-earnings-explained/build/fonts/noto-serif-latin-700-normal.woff2')}
+@font-face{font-family:Se;font-weight:700;unicode-range:U+0100-024F,U+20A0-20CF;src:url('../zomato-earnings-explained/build/fonts/noto-serif-latin-ext-700-normal.woff2')}
+@font-face{font-family:Se;font-weight:700;font-style:italic;src:url('../zomato-earnings-explained/build/fonts/noto-serif-latin-700-italic.woff2')}
+@font-face{font-family:Se;font-weight:700;font-style:italic;unicode-range:U+0100-024F,U+20A0-20CF;src:url('../zomato-earnings-explained/build/fonts/noto-serif-latin-ext-700-italic.woff2')}
+@font-face{font-family:Ka;font-weight:700;src:url('../zomato-earnings-explained/build/fonts/kalam-latin-700-normal.woff2')}
+@font-face{font-family:Po;font-weight:700;src:url('../zomato-earnings-explained/build/fonts/poppins-latin-700-normal.woff2')}
+@font-face{font-family:Po;font-weight:700;unicode-range:U+20B9;src:url('../zomato-earnings-explained/build/fonts/poppins-devanagari-700-normal.woff2')}
+@font-face{font-family:Po;font-weight:800;src:url('../zomato-earnings-explained/build/fonts/poppins-latin-800-normal.woff2')}
+:root{--bg:#0B0D10;--ink:#EDEBE6;--mute:#8B8F98;--g:#2BE37A;--r:#FF4D5A;--o:#E07A55}
+html,body{margin:0;background:#000}
+#st{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:Po;color:var(--ink)}
+#grid{position:absolute;inset:-80px;background-image:linear-gradient(rgba(43,227,122,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(43,227,122,.07) 1px,transparent 1px);background-size:80px 80px}
+#tick{position:absolute;left:0;top:1720px;width:4000px;height:70px;font-family:Po;font-weight:700;font-size:34px;line-height:70px;white-space:nowrap;color:var(--mute);border-top:1px solid #222;border-bottom:1px solid #222;background:#08090c}
+#tick b{color:var(--g)} #tick i{color:var(--r);font-style:normal}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.6) 100%);pointer-events:none}
+.sc{position:absolute;inset:0;opacity:0;display:none}
+.lab{position:absolute;font-weight:700;font-size:38px;color:var(--mute);letter-spacing:2px}
+.big{position:absolute;font-weight:800;white-space:nowrap;letter-spacing:-2px}
+.se{position:absolute;font-family:Se;font-weight:700;letter-spacing:-1px;line-height:1.05}
+.hand{position:absolute;font-family:Ka;font-weight:700;white-space:nowrap}
+.g{color:var(--g);text-shadow:0 0 30px rgba(43,227,122,.45)} .r{color:var(--r);text-shadow:0 0 30px rgba(255,77,90,.4)} .o{color:var(--o)}
+.tag{position:absolute;height:170px;border-radius:24px;border:5px solid currentColor;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:96px;padding:0 44px;background:rgba(255,255,255,.04)}
+.tag:before{content:'';position:absolute;left:22px;width:22px;height:22px;border-radius:50%;border:4px solid currentColor}
+.stamp{position:absolute;font-weight:800;border:10px solid currentColor;border-radius:16px;padding:8px 30px 4px;letter-spacing:3px;white-space:nowrap}
+.chip{position:absolute;background:#F4F1EA;border-radius:18px;padding:14px 26px;display:flex;align-items:center}
+.chip img{display:block}
+.plate{position:absolute;left:-67px;top:-126px;width:1215px;height:2172px;transform-origin:50% 60%}
+.plate img{width:100%;height:100%;display:block}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#logoA{position:absolute;left:70px;top:110px;height:44px;filter:invert(1)}
+#brand{position:absolute;right:66px;top:112px;font-weight:700;font-size:28px;letter-spacing:4px;color:#555a63}
+svg.ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+</style></head><body><div id="st">
+<div id="grid"></div>
+
+<div class="sc" id="sA">
+  <div class="se" id="hookA" style="left:70px;top:300px;font-size:110px;line-height:1">Anthropic IPO<br><i class="o" style="font-size:80px">pehla din 🔔</i></div>
+  <div class="tag" id="t83" style="left:70px;top:620px;color:#EDEBE6">$83</div>
+  <div class="lab" id="l83" style="left:76px;top:805px">Anthropic ne becha</div>
+  <div class="tag g" id="t111" style="left:430px;top:1000px;color:var(--g)">$111.50</div>
+  <div class="lab" id="l111" style="left:436px;top:1185px">pehle buyer ne diya</div>
+  <svg class="ov" id="oA"></svg>
+  <div class="big g" id="gapA" style="left:470px;top:740px;font-size:76px">+$28.50</div>
+</div>
+
+<div class="sc" id="sB">
+  <div class="se" id="tB" style="left:70px;top:300px;font-size:120px">Plot<br><i class="o">twist…</i></div>
+  <img id="lgB" src="art/logos/anthropic.png" style="position:absolute;left:150px;top:760px;width:780px;filter:invert(1)">
+  <div class="stamp r" id="stB" style="left:150px;top:930px;font-size:110px;transform:rotate(-7deg)">₹0 GAIN</div>
+  <div class="hand" id="hB" style="left:0;right:0;text-align:center;top:1220px;font-size:76px;color:var(--mute)">fayda mila hi nahi 💀</div>
+</div>
+
+<div class="sc" id="sC">
+  <div class="lab" style="left:70px;top:300px">KYUN?</div>
+  <div class="se" id="tC" style="left:70px;top:350px;font-size:104px">Daam ek raat<br><i class="o">pehle fix tha</i></div>
+  <svg class="ov" id="oC"></svg>
+  <div class="tag" id="t83b" style="left:330px;top:900px;color:#EDEBE6">$83</div>
+  <div class="big" id="lockC" style="left:770px;top:870px;font-size:150px">🔒</div>
+  <div class="big" id="moonC" style="left:120px;top:760px;font-size:120px">🌙</div>
+</div>
+
+<div class="sc" id="sD">
+  <div class="lab" style="left:70px;top:300px">ANTHROPIC NE UTHAYE</div>
+  <div class="big g" id="nD" style="left:66px;top:350px;font-size:120px">₹0</div>
+  <div class="se" id="tD" style="left:70px;top:620px;font-size:84px">sabse bade IPOs<br>mein se ek 🏆</div>
+  <div class="chip" id="chipD" style="left:70px;top:1060px"><img src="art/logos/claude.png" style="height:96px"></div>
+  <div class="hand" id="hD" style="left:80px;top:1220px;font-size:58px;color:var(--mute)">(haan, Claude wali company)</div>
+</div>
+
+<div class="sc" id="sE">
+  <div class="se" id="tE" style="left:70px;top:300px;font-size:104px">Ab khel<br><i class="g">investors</i> ka</div>
+  <svg class="ov" id="oE"></svg>
+  <div class="big" id="boxE" style="left:110px;top:900px;font-size:64px;border:5px solid var(--o);color:var(--o);border-radius:20px;padding:24px 34px">ANTHROPIC ✓ paisa mil gaya</div>
+  <div class="big g" id="arrE" style="left:0;right:0;text-align:center;top:1200px;font-size:110px">💸 ⇄ 💸</div>
+  <div class="hand" id="hE" style="left:0;right:0;text-align:center;top:1360px;font-size:58px;color:var(--mute)">investor ↔ investor</div>
+</div>
+
+<div class="sc" id="sF">
+  <div class="plate" id="pF"><img id="vF"></div>
+  <div class="chip" id="chipF" style="left:70px;top:290px;padding:10px 22px"><img src="art/logos/nasdaq.png" style="height:70px"></div>
+  <div class="big g" id="nF" style="left:66px;top:420px;font-size:200px">+34%</div>
+  <div class="hand" id="hF" style="left:76px;top:660px;font-size:64px;color:#fff">seedha upar khula 🚀</div>
+</div>
+
+<div class="sc" id="sG">
+  <div class="lab" style="left:70px;top:300px">DIN KA END</div>
+  <svg class="ov" id="oG"></svg>
+  <div class="big g" id="lbOpen" style="left:600px;top:560px;font-size:60px">$111.50</div>
+  <div class="big" id="lb83" style="left:70px;top:1290px;font-size:46px;color:var(--mute)">IPO $83 ———————————</div>
+  <div class="big g" id="nG" style="left:640px;top:880px;font-size:120px">$97</div>
+  <div class="lab" id="lG" style="left:650px;top:1020px">CLOSE</div>
+</div>
+
+<div class="sc" id="sH">
+  <div class="lab" style="left:70px;top:300px">$83 PE KHAREEDNE WALON KI KAMAI</div>
+  <div class="big g" id="nH" style="left:60px;top:350px;font-size:120px">₹0</div>
+  <svg class="ov" id="oH"></svg>
+  <div class="big" id="subH" style="left:66px;top:520px;font-size:56px;color:var(--mute)">(≈ $13.9 billion)</div>
+  <div class="big" id="emH" style="left:0;right:0;text-align:center;top:700px;font-size:260px">🤑</div>
+  <div class="stamp o" id="stH" style="left:100px;top:1100px;font-size:84px;transform:rotate(-6deg)">LITERALLY EK DIN 🤯</div>
+</div>
+
+<div id="tick">&nbsp; ANT <b>▲ $111.50</b> &nbsp;·&nbsp; IPO $83 &nbsp;·&nbsp; ANT <b>▲ 34.3%</b> &nbsp;·&nbsp; CLOSE <b>$97.17 ▲17.1%</b> &nbsp;·&nbsp; RAISED <b>$81.3B</b> &nbsp;·&nbsp; FEES <i>$550M</i> &nbsp;·&nbsp; ANT <b>▲ $111.50</b> &nbsp;·&nbsp; IPO $83 &nbsp;·&nbsp; ANT <b>▲ 34.3%</b> &nbsp;·&nbsp; CLOSE <b>$97.17 ▲17.1%</b> &nbsp;·&nbsp; RAISED <b>$81.3B</b></div>
+<div id="vig"></div>
+<img id="logoA" src="art/logos/anthropic.png"><div id="brand">MOMENTIX</div>
+<div id="flash"></div>
+</div>
+<script>
+const END=29.76;
+const W={sA:[0,5.65],sB:[5.65,8.25],sC:[8.25,12.5],sD:[12.5,16.45],sE:[16.45,18.95],sF:[18.95,22.1],sG:[22.1,24.1],sH:[24.1,END+1]};
+const CUTS=Object.values(W).map(w=>w[0]).slice(1);
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ss=(a,b,x)=>{const k=cl((x-a)/(b-a));return k*k*(3-2*k)};
+const back=k=>{k=cl(k);const c=1.7;return 1+(c+1)*Math.pow(k-1,3)+c*Math.pow(k-1,2)};
+const eo=k=>1-Math.pow(1-cl(k),3);
+const pr=(t,a,d)=>cl((t-a)/d);
+const NS='http://www.w3.org/2000/svg';
+function path(svg,d,col,w,id,glow){const p=document.createElementNS(NS,'path');p.setAttribute('d',d);p.setAttribute('fill','none');p.setAttribute('stroke',col);p.setAttribute('stroke-width',w);p.setAttribute('stroke-linecap','round');p.setAttribute('stroke-linejoin','round');if(glow)p.style.filter=`drop-shadow(0 0 12px ${col})`;if(id)p.id=id;svg.appendChild(p);return p}
+function drawOn(p,k){const L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L*(1-cl(k))}
+// A: gap arrow from $83 to $111.50
+const aA=path($('oA'),'M 330 800 C 420 900 430 960 470 1000','#2BE37A',6,'arrA',true);
+// C: lock chain
+// E: arrow out
+// G: price path open 111.50 -> intraday -> close 97.17 ; y scale: 83 -> 1290, 115 -> 560
+const yv=v=>1290-(v-83)/(115-83)*730;
+let pts=[[80,yv(111.5)]];const rnd=[0.4,-0.6,0.9,-0.8,0.3,-0.5,-0.9,0.2,-0.4,0.6,-0.7,0.1,-0.3,0.4,-0.2,0.3];
+let v=111.5;for(let i=0;i<16;i++){v+= (i<2?1.6:0)+rnd[i]*2.2-0.9;pts.push([80+(i+1)*34,yv(v)])}pts.push([660,yv(97.17)]);
+const pG=path($('oG'),'M '+pts.map(p=>p.join(' ')).join(' L '),'#2BE37A',6,'pG',true);
+const fr=f=>`art/k1/${String(Math.max(1,Math.min(150,f))).padStart(4,'0')}.jpg`;
+let lastF='';
+function vis(id,k,dy=26){const e=$(id);e.style.opacity=cl(k);e.style.transform=`translateY(${(1-eo(k))*dy}px)`}
+function popE(id,k,rot=0){const e=$(id);e.style.opacity=cl(k*1.4);e.style.transform=`scale(${back(k)}) rotate(${rot}deg)`}
+function slam(id,k,rot=0){const e=$(id);e.style.opacity=cl(k*3);e.style.transform=`scale(${1+1.4*(1-eo(k))}) rotate(${rot}deg)`}
+function wipe(id,k){const e=$(id);e.style.clipPath=`inset(-20px ${100-100*eo(k)}% -20px -20px)`;e.style.opacity=k>0?1:0}
+const inr=x=>x.toFixed(1);
+window.renderAt=function(t){
+  for(const [id,[a,b]] of Object.entries(W)){const o=Math.min(ss(a-0.04,a+0.06,t),1-ss(b-0.06,b+0.04,t));const e=$(id);e.style.opacity=o;e.style.display=o>0.001?'block':'none';}
+  let fl=0;for(const c of CUTS){if(t>=c&&t<c+0.1)fl=0.25*(1-(t-c)/0.1)}$('flash').style.opacity=fl;
+  $('tick').style.transform=`translateX(${-t*120}px)`;$('grid').style.transform=`translate(${(t*14)%80}px,${(t*8)%80}px)`;
+  const shake=(a)=>{const k=1-pr(t,a,0.3);return k>0&&k<1?`translate(${Math.sin(t*90)*14*k}px,${Math.cos(t*80)*10*k}px)`:''};
+  $('st').style.transform=shake(1.58)||shake(4.2)||shake(6.8)||shake(13.3)||shake(21.0)||shake(26.3)||shake(28.2);
+  if(t<W.sA[1]+.2){popE('hookA',pr(t,0,0.25),-2);slam('t83',pr(t,1.5,0.22),-3);vis('l83',pr(t,1.8,0.3));slam('t111',pr(t,4.15,0.22),2);vis('l111',pr(t,4.45,0.3));
+    drawOn(aA,pr(t,4.6,0.4));popE('gapA',pr(t,4.9,0.3),-4);}
+  if(t>W.sB[0]-.2&&t<W.sB[1]+.2){wipe('tB',pr(t,5.7,0.35));vis('lgB',pr(t,6.3,0.3));slam('stB',pr(t,6.75,0.22),-7);vis('hB',pr(t,7.5,0.3));}
+  if(t>W.sC[0]-.2&&t<W.sC[1]+.2){wipe('tC',pr(t,8.3,0.5));popE('moonC',pr(t,9.3,0.3));slam('t83b',pr(t,10.25,0.22),-2);popE('lockC',pr(t,10.7,0.3),-8);}
+  if(t>W.sD[0]-.2&&t<W.sD[1]+.2){const k=eo(pr(t,12.6,1.4));$('nD').textContent='₹'+inr(7.6*k)+' lakh crore';$('nD').style.opacity=cl(pr(t,12.5,0.15));
+    vis('tD',pr(t,14.4,0.35));popE('chipD',pr(t,15.0,0.3),-2);vis('hD',pr(t,15.3,0.3));}
+  if(t>W.sE[0]-.2&&t<W.sE[1]+.2){wipe('tE',pr(t,16.5,0.45));const k=eo(pr(t,17.2,0.6));$('boxE').style.opacity=cl(pr(t,16.6,0.2))*(1-0.6*k);$('boxE').style.transform=`translateX(${-k*500}px)`;
+    popE('arrE',pr(t,17.6,0.3));vis('hE',pr(t,17.9,0.3));}
+  if(t>W.sF[0]-.2&&t<W.sF[1]+.2){const f=1+Math.floor((t-W.sF[0])*30);if(lastF!==f){$('vF').src=fr(f);lastF=f}
+    $('pF').style.transform=`scale(${1.08-0.06*eo(pr(t,18.95,0.35))+0.04*pr(t,18.95,3)})`;popE('chipF',pr(t,19.1,0.3));slam('nF',pr(t,20.95,0.22),-3);vis('hF',pr(t,21.3,0.3));}
+  if(t>W.sG[0]-.2&&t<W.sG[1]+.2){drawOn(pG,pr(t,22.15,1.3));vis('lbOpen',pr(t,22.2,0.2));$('lbOpen').style.left='70px';$('lbOpen').style.top=(yv(111.5)-80)+'px';
+    vis('lb83',pr(t,22.3,0.3));popE('nG',pr(t,23.3,0.3));$('nG').style.top=(yv(97.17)-60)+'px';vis('lG',pr(t,23.5,0.2));$('lG').style.top=(yv(97.17)+70)+'px';}
+  if(t>W.sH[0]-.2){const k=eo(pr(t,25.6,1.3));$('nH').textContent='₹'+inr(1.3*k)+' lakh crore';$('nH').style.opacity=cl(pr(t,25.55,0.15));
+    slam('stH',pr(t,28.15,0.22),-6);vis('subH',pr(t,27.0,0.3));popE('emH',pr(t,26.4,0.35),-6);}
+  return true};
+window.READY=Promise.all([document.fonts.load('700 40px Se'),document.fonts.load('italic 700 40px Se'),document.fonts.load('700 40px Ka'),document.fonts.load('700 40px Po'),document.fonts.load('800 40px Po')]).then(()=>{renderAt(0);return true});
+</script></body></html>
