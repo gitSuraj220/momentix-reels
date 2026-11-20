@@ -51,6 +51,6 @@ out = out / np.abs(out).max() * .95
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'f32le', '-ar', str(SR), '-ac', '2', '-i', '-', 'build/mix_raw.wav'], input=out.astype(np.float32).tobytes())
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/mix_raw.wav', '-af', 'loudnorm=I=-13.5:TP=-2.2:LRA=9', '-ar', '48000', 'build/mix.wav'])
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/video_only.mp4', '-i', 'build/mix.wav', '-map', '0:v', '-map', '1:a',
-                '-c:v', 'libx264', '-preset', 'slow', '-crf', '9', '-maxrate', '12M', '-bufsize', '24M', '-pix_fmt', 'yuv420p',
+                '-c:v', 'libx264', '-preset', 'slow', '-b:v', '10M', '-minrate', '10M', '-maxrate', '10M', '-bufsize', '10M', '-x264-params', 'nal-hrd=cbr', '-pix_fmt', 'yuv420p',
                 '-c:a', 'aac', '-b:a', '256k', '-shortest', '-movflags', '+faststart', 'final/Old_Phone_Desk_Panel.mp4'])
 print('ok')
