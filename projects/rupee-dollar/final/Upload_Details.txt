@@ -1,0 +1,42 @@
+VIDEO: Rupee_Dollar_Long.mp4 (1920x1080, 30 fps, 3:06) — voice + SFX, NO music (add your music in editing)
+STEMS (for your edit): stems/vo.wav, stems/sfx.wav, stems/video_only.mp4 — same gain as the final mix; lay music under the VO at about -24 to -28 LUFS and duck it under the voice.
+
+=== YOUTUBE (long video) ===
+TITLE
+What If 1 Rupee Becomes 1 Dollar? Why It Would Crash India's Economy in a Week
+
+DESCRIPTION
+Socho kal subah TV pe news aaye: ₹1 = $1! iPhone ₹1,100 mein, Dubai trip kuch sau rupaye mein… sunke maza aa gaya? Par ek hafte mein ye poori Indian economy hila dega. 😳
+
+Verma family ke saath dekho: Papa ka Dubai se bheja ₹76,000 kaise ₹817 ban jaata hai, Priya ki IT job kyun khatre mein aati hai, aur Chhotu ka US college ka sapna kagaz pe hi kyun reh jaata hai.
+
+⏱️ Chapters
+0:00 ₹1 = $1 ho gaya!
+0:19 Din 1: dollar gayab, black market shuru
+0:43 Papa (Dubai): ₹76,000 → ₹817
+1:06 Priya ki IT job + Chhotu ka US college
+1:31 Zimbabwe ne try kiya tha
+1:44 WhatsApp myth: 1947 mein ₹1 = $1?
+1:57 Rupaya gira kyun? Teen wajah
+2:26 Plot twist: Japan aur Turkey
+2:47 Rupaya strong kaise hoga
+
+📊 Numbers used (checked 21 Nov 2026)
+• USD/INR ~₹93.15 (20 Nov 2026); record low ₹96.9 (20 May 2026)
+• RBI forex reserves ~$720 bn
+• Remittances to India FY25: $135.6 bn (world's largest)
+• 1947: $1 ≈ ₹3.30 · 1991: 47 tonnes of gold pledged
+• India prices ~10× since 1990 vs US ~2.5× (World Bank CPI)
+• India imports ~88% of its crude oil
+• Dollar on one side of 89% of global FX trades (BIS 2025)
+
+Sirf jaankari ke liye. Ye investment advice nahi hai. Exchange rates roz badalte hain.
+
+#rupee #dollar #indianeconomy #rupeevsdollar #finance #economy #momentix
+
+TAGS
+1 rupee 1 dollar, what if 1 rupee becomes 1 dollar, rupee vs dollar, rupee dollar explained, why rupee is falling, rupee record low, indian rupee, dollar rate today, rupee devaluation, 1947 rupee dollar myth, indian economy explained, economics in hindi, finance in hindi, rbi forex reserves, momentix
+
+SETTINGS
+Category: Education | Made for kids: No | AI use: YES (the TV-news hook and the 1991 gold-plane shot are AI-generated realistic scenes with people — Suraj's choice)
+Thumbnail: decide later (ask Claude for 2 options)
