@@ -29,7 +29,7 @@ for i, k in enumerate(SCN):
 add(0.0, bank('pro_impact/air'), .35); add(T['rate'] + 0.25, bank('pro_impact/short'), .55); add(T['rate'] + 0.27, bank('pro_notify/ding_2045'), .3)
 pop(T['iphone'] - 0.2); add(T['gyaarah'] - 0.35, bank('swish/stick'), .3); kaching(T['gyaarah']); pop(T['dubai'], pan=-.3)
 # S2 dark side
-add(T['maza'], bank('pro_pop_in/knock'), .35); add(T['dark'] - 0.05, bank('pro_glitch/crunchy'), .35); add(T['dark'], bank('pro_impact/deep'), .7)
+add(T['maza'], bank('pro_pop_in/knock'), .35); add(T['dark'], bank('pro_impact/deep'), .7)
 for d in range(7): add(T['hafte'] + d * 0.12, bank('knock/wood'), .26, pan=-.45 + .15 * d)
 # S3 bank rush + vault
 add(T['bank'], bank('pro_impact/rumble'), .4); bubble(T['mujhe']); add(T['rbi'] - 0.3, bank('pro_riser/roll', dur=0.6), .22); add(T['rbi'], bank('pro_impact/short'), .45)
@@ -87,9 +87,9 @@ w = lambda arr, ch, f: subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'f32
 w(sfx, 2, 'build/sfx_only.wav'); w(out * g, 2, 'build/mix_raw.wav')
 # stems at the same gain as the mix, so they line up with the final when Suraj adds music
 w(vo * g, 1, 'final/stems/vo.wav'); w(sfxd * g, 2, 'final/stems/sfx.wav')
-subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/mix_raw.wav', '-af', 'loudnorm=I=-14:TP=-2.2:LRA=11', '-ar', '48000', 'build/mix.wav'])
+subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/mix_raw.wav', '-af', 'loudnorm=I=-12.8:TP=-2.2:LRA=11', '-ar', '48000', 'build/mix.wav'])
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/video_only.mp4', '-i', 'build/mix.wav', '-map', '0:v', '-map', '1:a',
-                '-c:v', 'libx264', '-preset', 'slow', '-b:v', '12M', '-minrate', '10M', '-maxrate', '14M', '-bufsize', '24M', '-x264-params', 'nal-hrd=vbr', '-pix_fmt', 'yuv420p',
+                '-c:v', 'libx264', '-preset', 'slow', '-b:v', '10M', '-minrate', '10M', '-maxrate', '10M', '-bufsize', '10M', '-x264-params', 'nal-hrd=cbr', '-pix_fmt', 'yuv420p',
                 '-c:a', 'aac', '-b:a', '256k', '-shortest', '-movflags', '+faststart', 'final/Rupee_Dollar_Long.mp4'])
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/video_only.mp4', '-c:v', 'copy', '-an', 'final/stems/video_only.mp4'])
 print('ok')
