@@ -100,3 +100,31 @@ Sirf jaankari ke liye.
 9. Big reveal — Ab plot twist: ek dollar mein lagbhag 158 Japanese yen aate hain — phir bhi Japan amir hai. Matlab number se kuch nahi hota. Turkey ne 2005 mein apne note se 6 zero hata diye — daam chhote, salary chhoti, badla kuch nahi. India bhi "93 purane = 1 naya rupaya" kar sakta hai… par tab Priya ki ₹1 lakh salary bhi ₹1,075 ban jaayegi.
 10. Rupaya strong kaise — Toh rupaya strong kaise hoga? Duniya ke 89% currency trades mein dollar hota hai — kyunki duniya ko us pe bharosa hai. Rupaya strong hoga jab duniya zyada Made in India khareede, hum kam tel import karein — EV, solar —, mehngai control mein rahe, aur duniya ka bharosa bane.
 11. Ending — Toh ₹1 = $1 aise nahi milega — kamaana padega. 💪
+
+## Production decisions (Suraj, 21 Nov 2026)
+- Format: 16:9, 1920×1080, 30 fps. Whole video made in this account. Top quality; Claude builds, Suraj gets the final video.
+- Style: mix — flat 2D Indian family (Verma: Rajesh/Dubai, Sunita, Priya/IT, Chhotu/US college) + realistic AI shots for the TV-news hook and the 1991 gold plane (Higgsfield, 20.5 credits). AI shots may show faces → YouTube "AI used" = YES for this video.
+- Data visuals: flip-board rate + live ₹ calculator + animated charts. Captions: key words/numbers only.
+- Logos: phone shape (no Apple logo), RBI name/building, country flags.
+- Palette: warm Indian home (cream/saffron) + navy/money green, red for danger. Pace: new visual every 2–3 s.
+- Voice: clone 1.15x. SFX: rich (whooshes, cash, flip-board clacks). Music: NONE from us — Suraj adds music in editing → deliver stems (VO, SFX, video-only) + full mix.
+- Speech bubbles for family reactions. No intro, no end screen, hard end. No Shorts cut. Thumbnail: decide later.
+
+## VO text (numbers in Hindi words), 3 parts
+### Part 1 (sections 1–3)
+Aap subah so kar uthte ho, TV pe breaking news chal rahi hai: ek rupaya barabar ek dollar ho gaya hai! Ek lakh battees hazaar nau sau wala iPhone seventeen Pro... ab sirf gyaarah sau rupaye mein. Dubai trip? Bas kuch sau rupaye.
+Sunke maza aa gaya na? Par ab iski dark side bhi dekh lo. Ek hafte mein ye poori Indian economy hila dega.
+Sabse pehle poora desh bank pahunchega: "Mujhe dollar do, ek rupaye ka ek!" RBI ke paas lagbhag saat sau bees billion dollar hain. Sunne mein bahut, par ek rupaya barabar ek dollar pe ye sirf bahattar hazaar crore rupaye. Crores log ek saath maangenge... dopahar tak sab khatam. Game over.
+Phir dollar milega black market mein, asli rate pe, ya usse bhi mehenga. Matlab iPhone sasta hua hi nahi. Sasta dollar sirf unko milega jinki "setting" hai.
+Ab milo Rajesh ji se. Dubai mein kaam karte hain, har mahine teen hazaar dirham ghar bhejte hain. Aaj woh lagbhag chhihattar hazaar rupaye bante hain. Kal? Sirf aath sau satrah rupaye. Big L.
+Par EMI, Chhotu ki fees, Mummy ka kitchen... sab utne ke utne. Aur ye sirf ek ghar ki kahani nahi. Bahar kaam karne wale Indians ne pichhle saal ek sau paintees billion dollar se zyada ghar bheja. Duniya mein sabse zyada.
+### Part 2 (sections 4–7)
+Unki beti Priya IT mein hai. Uski ek lakh rupaye ki salary ke liye US client aaj lagbhag das sau pachhattar dollar deta hai. Ek rupaya barabar ek dollar pe? Poore ek lakh dollar. Bhai, tiraanve guna zyada kaun dega? Koi nahi. Kaam dusre desh shift... aur lakhon naukriyan khatre mein.
+Aur Chhotu ka US college wala sapna? Pachaas hazaar dollar wali college aaj chhiyaalees point chhe lakh rupaye ki. Kagaz pe kal sirf pachaas hazaar. Par itne dollar milenge kahan?
+Aur ye sirf theory nahi, real mein ho chuka hai. Zimbabwe ne do hazaar solah mein naye note nikaale aur bola: ye US dollar ke barabar hain. Kuch hi time mein bazaar ne unhe dollar se kaafi kam pe lena shuru kar diya. Kanoon se rate likh sakte ho. Bharosa nahi.
+Ab ek WhatsApp forward ka fact-check: "Unnees sau saintaalees mein ek rupaya barabar ek dollar tha." No cap, ye galat hai. Unnees sau saintaalees mein ek dollar lagbhag teen rupaye tees paise ka tha. Toh teen se tiraanve tak pahunche kaise?
+### Part 3 (sections 8–11)
+Teen wajah. Pehli, mehngai. Unnees sau nabbe se India mein daam lagbhag das guna badhe, America mein sirf dhaai guna. Doosri, tel. India lagbhag athaasi percent crude bahar se khareedta hai, woh bhi dollar mein. Teesri, jhatke. Unnees sau ikyaanve mein haalat itni kharab thi ki saintaalees ton sona girvi rakhna pada. Aur is saal West Asia ki jung, tel sau dollar ke paar, foreign investors ne do lakh crore rupaye se zyada nikaale. May mein rupaya chhiyaanve point nau, ab tak ka sabse neeche.
+Ab plot twist. Ek dollar mein lagbhag ek sau atthaavan Japanese yen aate hain. Phir bhi Japan amir hai. Matlab number se kuch nahi hota. Turkey ne do hazaar paanch mein apne note se chhe zero hata diye. Daam chhote, salary chhoti, badla kuch nahi. India bhi "tiraanve purane rupaye barabar ek naya rupaya" kar sakta hai... par tab Priya ki ek lakh ki salary bhi das sau pachhattar rupaye ban jaayegi.
+Toh rupaya strong kaise hoga? Duniya ke nawaasi percent currency trades mein dollar hota hai, kyunki duniya ko us pe bharosa hai. Rupaya strong hoga jab duniya zyada Made in India khareede, hum kam tel import karein, EV, solar, mehngai control mein rahe, aur duniya ka bharosa bane.
+Toh ek rupaya barabar ek dollar aise nahi milega. Kamaana padega.
