@@ -74,12 +74,17 @@ window.fam = function(who, o={}){
   const bob = (o.bob!==false) ? Math.sin(t*2.4 + who.length)*4 : 0;
   const H=c.h, W=c.w;
   const legH=170*H, torsoH=210*H, headY = 700 - legH - torsoH - 70;
-  let s=`<g transform="translate(200 0)">`;
+  let s=`<g transform="translate(200 0) scale(${o.flip?-1:1} 1)">`;
   s+=`<ellipse cx="0" cy="700" rx="${110*W}" ry="16" fill="rgba(0,0,0,.18)"/>`;
   // legs
-  if (c.saree) s+=`<path d="M${-62*W} ${700-legH-10} L${-78*W} 692 L${78*W} 692 L${62*W} ${700-legH-10} Z" fill="${c.pants}"/><path d="M${-78*W} 680 L${78*W} 680" stroke="${c.saree}" stroke-width="12"/>`;
-  else s+=`<rect x="${-52*W}" y="${700-legH}" width="${44*W}" height="${legH-8}" rx="16" fill="${c.pants}"/><rect x="${8*W}" y="${700-legH}" width="${44*W}" height="${legH-8}" rx="16" fill="${c.pants}"/><rect x="${-60*W}" y="684" width="${56*W}" height="18" rx="9" fill="#222"/><rect x="${4*W}" y="684" width="${56*W}" height="18" rx="9" fill="#222"/>`;
-  s+=`<g transform="translate(0 ${r(bob)})">`;
+  const wk = o.walk ? Math.sin(t*9) : 0, hipY = 700-legH;
+  if (c.saree) s+=`<g transform="rotate(${r(wk*4)} 0 ${hipY})"><path d="M${-62*W} ${hipY-10} L${-78*W} 692 L${78*W} 692 L${62*W} ${hipY-10} Z" fill="${c.pants}"/><path d="M${-78*W} 680 L${78*W} 680" stroke="${c.saree}" stroke-width="12"/></g>`;
+  else for (const [sx, ph] of [[-30*W, 1], [30*W, -1]]) {
+    const a = r(wk*22*ph);
+    s+=`<g transform="rotate(${a} ${sx} ${hipY+10})"><rect x="${sx-22*W}" y="${hipY}" width="${44*W}" height="${legH-8}" rx="16" fill="${c.pants}"/><rect x="${sx-30*W}" y="684" width="${56*W}" height="18" rx="9" fill="#222"/></g>`;
+  }
+  const lean = (o.lean||0) + (o.walk ? 3 : 0), walkBob = o.walk ? -Math.abs(Math.sin(t*9))*10 : 0;
+  s+=`<g transform="translate(0 ${r(bob+walkBob)}) rotate(${r(lean)} 0 ${hipY})">`;
   const ty=700-legH-torsoH;
   s+=`<g transform="translate(0 ${r(ty)})">`;
   s+=arm(c,-1,a==='point'?'down':a,t);
@@ -91,8 +96,8 @@ window.fam = function(who, o={}){
   s+=arm(c,1,a,t);
   s+=`</g>`;
   // head
-  const hy=ty-62;
-  s+=`<g transform="translate(0 ${r(hy)})">`;
+  const hy=ty-62, tilt=(o.tilt||0) + Math.sin(t*1.3 + who.length)*2.5;
+  s+=`<g transform="translate(0 ${r(hy)}) rotate(${r(tilt)} 0 60)">`;
   s+=`<rect x="-16" y="40" width="32" height="34" fill="${c.skinD}"/>`;
   s+=hairBack(c);
   s+=`<ellipse cx="-62" cy="6" rx="11" ry="16" fill="${c.skinD}"/><ellipse cx="62" cy="6" rx="11" ry="16" fill="${c.skinD}"/>`;
