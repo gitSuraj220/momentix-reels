@@ -3,4 +3,4 @@
 
 - 22 Nov 2026: https://www.instagram.com/reel/Df8gNFHPOG5/ (Suraj: not watched yet, work on later)
 
-- 22 Nov 2026: Fundamentals PDF guide (₹299, SuperProfile) + 40- 22 Nov 2026: Fundamentals PDF guide (₹299, SuperProfile) + 40% portfolio reel. ON HOLD, waiting for Suraj's script. See projects/fundamentals-guide/NOTES.md
+- 22 Nov 2026: Fundamentals PDF guide (₹299, SuperProfile) + 40% portfolio reel. ON HOLD, waiting for Suraj's script. See projects/fundamentals-guide/NOTES.md
