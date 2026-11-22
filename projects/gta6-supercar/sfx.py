@@ -43,10 +43,11 @@ add(T['easy'] - 0.1, bank('pro_notify/ding_2296'), 0.4); add(T['mehengi'] - 0.1,
 for k in range(int((T['engine'] - 0.35 - B['clone']) / 0.18)): add(B['clone'] + 0.1 + k * 0.18, bank('pro_hover_tick/glass'), 0.22)
 add(T['engine'] - 0.38, bank('pro_notify/ding_2045'), 0.4)
 # engine on: press + engine start; RUNNING slam
-add(T['engine'] - 0.06, bank('pro_click/snap'), 0.45); add(T['engine'] - 0.55, LIB['enginestart'], 0.55)
+ON = json.load(open('sfx_lib/onsets.json'))
+add(T['engine'] - 0.06, bank('pro_click/snap'), 0.45); add(T['engine'] + 0.05 - ON['enginestart'], LIB['enginestart'], 0.6)
 add(T['engine'] + 0.05, bank('pro_impact/short'), 0.45)
 # chase: rev away + chirp + far sirens fading
-add(T['police'] - 0.1, LIB['chirp'], 0.35); add(T['police'] - 0.05, LIB['revaway'], 0.55)
+add(T['police'] - 0.1, LIB['chirp'], 0.35); add(T['police'] + 0.1 - ON['revaway'], LIB['revaway'], 0.6)
 add(T['police'], LIB['siren_far'], 0.22, fade=(0.3, T['main'] - T['police'] + 0.6))
 # pass: low whoosh as car passes; dikkat = sub drop + silence
 add(T['main'] + 0.6, bank('pro_whoosh_big/swell'), 0.35); add(T['dikkat'] - 0.05, bank('pro_sub_drop/low'), 0.55)
