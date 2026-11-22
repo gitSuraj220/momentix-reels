@@ -1,4 +1,4 @@
-VIDEO: GTA6_Supercar.mp4 (1080x1920, 30 fps, ~50 s) — voice + SFX, NO music (add yours). Stems: stems/vo.wav, stems/sfx.wav, stems/video_only.mp4 (same gain as the mix; music ~ -24 to -28 LUFS under the voice).
+VIDEO: GTA6_Supercar.mp4 (1080x1920, 30 fps, 53 s, 10.2 Mbps, -13.8 LUFS) — voice + SFX, NO music (add yours). Stems: stems/vo.wav, stems/sfx.wav, stems/video_only.mp4 (same gain as the mix; music ~ -24 to -28 LUFS under the voice).
 
 === YOUTUBE SHORTS ===
 TITLE (pattern of our best GTA 6 Short, 39.9K views)

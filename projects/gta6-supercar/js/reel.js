@@ -255,7 +255,7 @@ label('kl', S.scene, () => V(0.6, 1.4, 3.1), T.mehengi, B.two[1], 'KEYLESS SUPER
 label('kc', S.scene, wp(C.phone, V(0, 0.4, 0)), B.clone[0] + 0.1, B.clone[1], 'KEY CLONER', 'in-game phone tool', '#ffb347', [-420, -300]);
 label('trk', S.scene, wp(S.tracker), T.tracker - 0.15, B.track[1], 'TRACKER', 'hidden under the car', '#5b9dff', [-150, -380]);
 label('loc', MP.scene, () => MP.car.position.clone(), T.dhoondh - 0.3, B.map[1], 'POLICE KO LOCATION', 'ping every second', '#5b9dff', [-300, -300]);
-label('hcar', S.scene, () => V(-0.6, 1.2, 0), T.heat + 0.3, B.heat[1], 'CAR', 'remembered', '#5b9dff', [-340, -40]);
+label('hcar', S.scene, () => V(1.1, 1.15, 0.2), T.heat + 0.3, B.heat[1], 'CAR', 'remembered', '#5b9dff', [-40, -300]);
 label('hkap', S.scene, wp(S.momo, V(0, 0.62, 0)), T.kapde - 0.1, B.heat[1], 'KAPDE', 'navy hoodie', '#5b9dff', [120, -60]);
 label('hlook', S.scene, wp(S.momo, V(0, 1.45, 0)), T.look - 0.1, B.heat[1], 'LOOK', 'bulb head, lol', '#5b9dff', [100, -260]);
 
@@ -291,7 +291,8 @@ window.renderAt = (t) => {
   $('flashw').style.opacity = fl * 0.55;
   const sc = seg(t, T.lowkey - 0.05, T.lowkey + 0.25) * (1 - seg(t, T.basically - 0.2, T.basically)); $('scary').style.opacity = 0; $('scary').style.transform = `translateX(${Math.sin(t * 50) * 6 * (1 - seg(t, T.lowkey, T.lowkey + .4))}px)`;
   const pa = PUNCH.some(p => t >= p.t0 - 0.1 && t < p.t1); labsEl.style.opacity = linesEl.style.opacity = pa ? 0 : 1;
-  drawLabels(t, scene); drawCap(t); drawPunch(t); drawChip(t);
+  drawLabels(t, scene); drawCap(t);
+  if (window.COVER) { $('ov').style.display = 'none'; } drawPunch(t); drawChip(t);
   $('tag').style.opacity = ['xray', 'map', 'track'].includes(key) ? 0.9 : 0.6; $('tag').textContent = ['xray', 'track'].includes(key) ? 'SIMPLIFIED SCHEMATIC' : 'ILLUSTRATIVE RECREATION';
 };
 window.SHOTS = B; window.DBG = {S, C, G, MP}; window.READY = true;

@@ -73,7 +73,7 @@ sfxd = sfx * duck[:, None] * .6; out = sfxd + vo[:, None]; g = .95 / (np.abs(out
 w = lambda arr, ch, f: subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'f32le', '-ar', str(SR), '-ac', str(ch), '-i', '-', f], input=arr.astype(np.float32).tobytes())
 w(sfx, 2, 'build/sfx_only.wav'); w(out * g, 2, 'build/mix_raw.wav')
 w(vo * g, 1, 'final/stems/vo.wav'); w(sfxd * g, 2, 'final/stems/sfx.wav')
-target = '-16' if NOVO else '-12.8'
+target = '-16' if NOVO else '-13.6'
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/mix_raw.wav', '-af', f'loudnorm=I={target}:TP=-2.2:LRA=11', '-ar', '48000', 'build/mix.wav'])
 name = 'final/GTA6_Supercar_DRAFT_novoice.mp4' if NOVO else 'final/GTA6_Supercar.mp4'
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'build/video_only.mp4', '-i', 'build/mix.wav', '-map', '0:v', '-map', '1:a',
