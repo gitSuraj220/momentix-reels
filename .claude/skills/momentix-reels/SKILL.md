@@ -5,7 +5,7 @@ description: "Make, schedule and analyze Momentix by Suraj Hinglish YouTube Shor
 
 # Momentix Reels pipeline (YouTube Shorts + Instagram Reels)
 
-Channel: **Momentix by Suraj** — YouTube `UC7CsAnrzevaMh-aCbNkaaFg` (@SURU2200, a *Brand Account* under suraj220.kr@gmail.com), Instagram **@momentixbysuraj** (Creator), Facebook page **Momentix By Suraj**. Faceless, Hindi voice (or pure animation), Roman-Hinglish captions. **Animation-first** (since Oct 2026). No stock footage, no real people's likeness.
+Channel: **Momentix by Suraj** — YouTube `UC7CsAnrzevaMh-aCbNkaaFg` (@momentixbysuraj since 22 Nov 2026, was @SURU2200; a *Brand Account* under suraj220.kr@gmail.com), Instagram **@momentixbysuraj** (Creator), Facebook page **Momentix By Suraj**. Faceless, Hindi voice (or pure animation), Roman-Hinglish captions. **Animation-first** (since Oct 2026). No stock footage, no real people's likeness.
 
 The helper scripts (align.py, build_scene.py, render.py, snapmany.py, sheet.py, audio_lib.py, mix.py, render_cover.py, lib.js, head.html, tail.js), example frames and Poppins fonts ship in the `momentix-reels.zip` package; unpack it and use its folder as `<skill>`. Work in a fresh folder per video. Make a task list; send drafts (script, preview frames, video) as soon as they exist. Ask before anything public; once Suraj says "post/schedule", do it and report.
 
