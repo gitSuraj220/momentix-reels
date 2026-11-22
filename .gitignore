@@ -46,3 +46,7 @@ projects/*/final/*_part*
 projects/*/art/k[0-9]*/
 projects/*/ref/
 projects/*/art/k_*/
+projects/gta6-supercar/build/
+projects/gta6-supercar/sf/
+projects/gta6-supercar/test/
+projects/gta6-supercar/node_modules/

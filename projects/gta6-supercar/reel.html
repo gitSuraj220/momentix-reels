@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<style>
+@font-face{font-family:A2;src:url(fonts/anton.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(fonts/p500.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(fonts/p800.woff2)}
+@font-face{font-family:CP;font-weight:700;src:url(fonts/cp700.woff2)}
+*{margin:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#c{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#ov{position:absolute;inset:0;pointer-events:none;font-family:P}
+.chip{position:absolute;left:46px;top:250px;display:flex;align-items:center;gap:12px;padding:12px 24px 12px 18px;border-radius:40px;border:2.5px solid;font:700 30px P;letter-spacing:3px;background:rgba(8,6,14,.55);backdrop-filter:blur(6px)}
+.chip svg{width:34px;height:34px}
+.tag{position:absolute;right:46px;top:262px;font:500 21px P;letter-spacing:4px;color:rgba(255,255,255,.55);padding:6px 12px;border:1.5px solid rgba(255,255,255,.25);border-radius:6px}
+#wm{position:absolute;left:48px;top:330px;font:110px A2;letter-spacing:2px;line-height:1;background:linear-gradient(100deg,#ff4fb4,#ffb347 60%,#ffe08a);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+#capband{position:absolute;left:0;right:0;top:1180px;height:330px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.55) 45%,rgba(0,0,0,.55) 60%,rgba(0,0,0,0))}
+#cap{position:absolute;left:60px;right:60px;top:1290px;text-align:center;font:84px A2;letter-spacing:1.5px;line-height:1.08;text-transform:uppercase}
+#cap span{color:rgba(205,205,220,.42);transition:none;display:inline-block;margin:0 .14em}
+#cap span.on{color:#fff;text-shadow:0 4px 22px rgba(0,0,0,.7)}
+#cap span.hot{color:#ffd23f}
+#punch{position:absolute;left:56px;top:380px;max-width:980px}
+#punch .k{font:700 30px P;letter-spacing:5px;display:flex;align-items:center;gap:14px}
+#punch .k:before{content:"";width:44px;height:4px;background:currentColor;display:inline-block}
+#punch .w{font:210px A2;line-height:.95;color:#f4f6ff;letter-spacing:2px;text-shadow:0 10px 40px rgba(0,0,0,.65)}
+svg#lines{position:absolute;inset:0;width:1080px;height:1920px}
+.lab{position:absolute;padding:10px 16px;background:rgba(8,6,14,.62);border:1.5px solid rgba(255,255,255,.22);border-radius:8px;white-space:nowrap}
+.lab .t{font:700 30px P;letter-spacing:3px;color:#fff}
+.lab .s{font:500 22px P;letter-spacing:1px;color:rgba(255,255,255,.6);margin-top:2px}
+#retro{position:absolute;inset:0;display:none}
+#retro .scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 3px,transparent 3px 6px);mix-blend-mode:multiply}
+#retro .rt{position:absolute;left:60px;top:360px;font:700 58px CP;color:#ffe9a8;letter-spacing:4px;text-shadow:4px 4px 0 #7a3b00}
+#prompt{position:absolute;left:50%;top:860px;transform:translateX(-50%);font:700 50px CP;color:#fff;background:rgba(0,0,0,.72);border:5px solid #fff;padding:20px 34px;letter-spacing:3px;white-space:nowrap}
+#prompt b{display:inline-block;background:#fff;color:#000;padding:0 16px;margin-right:18px}
+#yours{position:absolute;left:50%;top:1000px;transform:translateX(-50%);font:700 56px CP;color:#7dff6a;text-shadow:4px 4px 0 #0a4a00;white-space:nowrap}
+#stamp{position:absolute;left:50%;top:880px;transform:translate(-50%,-50%) rotate(-8deg);font:150px A2;color:#ff2a4d;border:10px solid #ff2a4d;padding:6px 30px;letter-spacing:4px;background:rgba(20,0,6,.55);white-space:nowrap}
+#glitch{position:absolute;inset:0;mix-blend-mode:screen;opacity:0}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 45%,rgba(0,0,0,.55) 100%)}
+#tint{position:absolute;inset:0;opacity:0}
+#flashw{position:absolute;inset:0;background:#fff;opacity:0}
+#scary{position:absolute;left:0;right:0;top:600px;text-align:center;font:96px A2;color:#9fc4ff;letter-spacing:6px;opacity:0;text-shadow:0 0 30px rgba(61,139,255,.8)}
+</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<div id="ov">
+ <div id="tint"></div><div id="vig"></div>
+ <div id="retro"><div class="scan"></div><div class="rt" id="rt">PURANE GTA</div><div id="prompt"><b>E</b>CAR CHURAO</div><div id="yours">✓ CAR TUMHARI</div><div id="stamp">SCENE KHATAM</div></div>
+ <svg id="lines"></svg><div id="labs"></div>
+ <div id="wm">GTA 6</div>
+ <div class="chip" id="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="7.5" cy="12" r="4"/><path d="M11.5 12H21M18 12v3M21 12v2.5"/></svg><span id="chipt">NO KEY</span></div>
+ <div class="tag" id="tag">ILLUSTRATIVE RECREATION</div>
+ <div id="punch"><div class="k" id="pk"></div><div class="w" id="pw"></div></div>
+ <div id="scary">LOWKEY SCARY</div>
+ <div id="capband"></div><div id="cap"></div>
+ <div id="glitch"></div><div id="flashw"></div>
+</div>
+<script type="module" src="js/reel.js"></script>
+</body></html>
