@@ -30,10 +30,10 @@ for k in range(18):
 save('glass', room(x, 0.3))
 
 # start fail: relay click + low error buzz x2
-t = t_(0.9); x = np.zeros_like(t); L = int(0.006 * SR); x[:L] += hp(R.standard_normal(L), 2500) * 0.8
+t = t_(0.9); x = np.zeros_like(t); L = int(0.006 * SR); x[:L] += hp(R.standard_normal(L), 2500) * 0.8 * np.hanning(L)
 for s in (0.08, 0.36):
     n = t[(t >= s) & (t < s + 0.2)] - s; buzz = np.sign(np.sin(2 * np.pi * 110 * n)) * 0.3 + np.sin(2 * np.pi * 220 * n) * 0.4
-    x[(t >= s) & (t < s + 0.2)] += lp(buzz, 2500) * np.minimum(1, n * 200) * np.exp(-n * 4)
+    x[(t >= s) & (t < s + 0.2)] += lp(buzz, 1800) * np.minimum(1, n * 60) * np.minimum(1, (0.2 - n) * 60) * np.exp(-n * 4)
 save('startfail', x)
 
 def engine(f0, dur, grit=0.25, seed=3):

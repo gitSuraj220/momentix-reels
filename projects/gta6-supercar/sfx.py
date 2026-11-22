@@ -40,7 +40,7 @@ add(T['game'] - 0.05, bank('pro_impact/deep'), 0.7); add(T['game'] - 0.03, LIB['
 for k in range(5): add(T['hotwire'] + k * 0.11, bank('pro_typing_key/crackle'), 0.35, pan=-.3)
 add(T['easy'] - 0.1, bank('pro_notify/ding_2296'), 0.4); add(T['mehengi'] - 0.1, bank('pro_pop_in/knock'), 0.35)
 # key cloner scan chirps -> cloned
-for k in range(int((T['engine'] - 0.35 - B['clone']) / 0.18)): add(B['clone'] + 0.1 + k * 0.18, LIB['scan'], 0.18)
+for k in range(int((T['engine'] - 0.35 - B['clone']) / 0.18)): add(B['clone'] + 0.1 + k * 0.18, bank('pro_hover_tick/glass'), 0.22)
 add(T['engine'] - 0.38, bank('pro_notify/ding_2045'), 0.4)
 # engine on: press + engine start; RUNNING slam
 add(T['engine'] - 0.06, bank('pro_click/snap'), 0.45); add(T['engine'] - 0.55, LIB['enginestart'], 0.55)
