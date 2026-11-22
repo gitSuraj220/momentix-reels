@@ -19,7 +19,7 @@ Reference: ref/ref.mp4 (Scroll Engineer, 80 s) — ref/ is gitignored. Story chi
 ~150 words → ~50 s at clone 1.15x.
 
 ## SCRIPT v2 (Suraj's edits + flow fix + Gen Z words, 22 Nov) — waiting for Suraj's OK
-1. [NO KEY · glass smash at 0.3 s] GTA 6 mein car ka sheesha tod ke andar baith jao… phir bhi car start nahi hogi. → WON'T START.
+1. [NO KEY · glass smash at 0.3 s] GTA 6 mein car ka glass tod ke andar toh baith jaoge… phir bhi car start nahi hogi. → WON'T START.
 2. Aur bro, iske peeche ki engineering literally next level hai.
 3. [old GTA vs GTA 6] Purane GTA mein? Ek button dabao, car tumhari. GTA 6 ne ye scene hi khatam kar diya.
 4. [x-ray dash] Wajah? Modern cars mein hota hai immobilizer. Andar ghus bhi gaye, toh engine ka computer check karta hai: sahi coded chaabi hai ya nahi? Code galat? Fuel aur spark band. Game over.
