@@ -173,7 +173,7 @@ const SHOT = {
     resetStreet(t); S.old.visible = true; S.old.position.set(0, 0, -3.1); S.car.position.set(0, 0, 3.1);
     const easy = t > T.easy - 0.1; S.old.userData.headMat.emissiveIntensity = easy ? 6 : 0.3;
     const k = eio(seg(t, B.two[0], T.purani)), k2 = eio(seg(t, T.mehengi - 0.3, T.mehengi + 0.7));
-    let p = lerpV(V(10.5, 4.5, 0.5), V(6.2, 2.0, -5.6), k), l = lerpV(V(0, 0.6, 0), V(0, 0.8, -3.1), k);
+    let p = lerpV(V(8.5, 5.2, 7.5), V(6.2, 2.0, -5.6), k), l = lerpV(V(0, 0.5, 0), V(0, 0.8, -3.1), k);
     p = lerpV(p, V(6.0, 1.6, 7.0), k2); l = lerpV(l, V(0, 0.8, 3.1), k2);
     camAt(p, l, 40, 0, t); return S.scene;
   },
@@ -226,9 +226,9 @@ const SHOT = {
     return MP.scene;
   },
   heat(t) {
-    resetStreet(t); const m = S.momo; m.visible = true; m.position.set(1.2, 0.02, 2.0); m.rotation.y = -0.25; poseMomo(m, {rz: 0.25, lz: -0.25, turn: 0.35 * Math.sin(seg(t, T.lowkey - 0.2, T.lowkey + 0.6) * Math.PI)});
+    resetStreet(t); const m = S.momo; m.visible = true; m.position.set(0.5, 0.02, 1.65); m.rotation.y = -0.25; poseMomo(m, {rz: 0.25, lz: -0.25, turn: 0.35 * Math.sin(seg(t, T.lowkey - 0.2, T.lowkey + 0.6) * Math.PI)});
     S.syncOutline(0.85 * eo(seg(t, B.heat[0] + 0.15, B.heat[0] + 0.6)));
-    const k = eio(seg(t, B.heat[0], B.heat[1])); camAt(lerpV(V(6.5, 1.5, 6.8), V(4.2, 1.25, 4.6), k), V(0.4, 0.85, 1.2), 40, 0, t);
+    const k = eio(seg(t, B.heat[0], B.heat[1])); camAt(lerpV(V(7.2, 1.6, 7.6), V(5.4, 1.35, 5.8), k), V(0.3, 0.8, 1.0), 40, 0, t);
     return S.scene;
   },
   garage(t) {
@@ -289,7 +289,7 @@ window.renderAt = (t) => {
   $('tint').style.background = key === 'pass' ? 'rgba(10,10,30,1)' : '#5a0010'; $('tint').style.opacity = redT;
   const fl = Math.max(0.55 * seg(t, tSmash, tSmash + 0.02) * (1 - seg(t, tSmash + .02, tSmash + .14)), 0.6 * (1 - seg(t, T.engine, T.engine + .25)) * (t >= T.engine ? 1 : 0));
   $('flashw').style.opacity = fl * 0.55;
-  const sc = seg(t, T.lowkey - 0.05, T.lowkey + 0.25) * (1 - seg(t, T.basically - 0.2, T.basically)); $('scary').style.opacity = sc; $('scary').style.transform = `translateX(${Math.sin(t * 50) * 6 * (1 - seg(t, T.lowkey, T.lowkey + .4))}px)`;
+  const sc = seg(t, T.lowkey - 0.05, T.lowkey + 0.25) * (1 - seg(t, T.basically - 0.2, T.basically)); $('scary').style.opacity = 0; $('scary').style.transform = `translateX(${Math.sin(t * 50) * 6 * (1 - seg(t, T.lowkey, T.lowkey + .4))}px)`;
   const pa = PUNCH.some(p => t >= p.t0 - 0.1 && t < p.t1); labsEl.style.opacity = linesEl.style.opacity = pa ? 0 : 1;
   drawLabels(t, scene); drawCap(t); drawPunch(t); drawChip(t);
   $('tag').style.opacity = ['xray', 'map', 'track'].includes(key) ? 0.9 : 0.6; $('tag').textContent = ['xray', 'track'].includes(key) ? 'SIMPLIFIED SCHEMATIC' : 'ILLUSTRATIVE RECREATION';

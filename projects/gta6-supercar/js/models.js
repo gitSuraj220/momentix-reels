@@ -65,7 +65,7 @@ export function supercar() {
 }
 
 // Boxy 80s sedan (cream) — the "purani gaadi".
-export function oldCar(color = 0xe9d9b8) {
+export function oldCar(color = 0xe6bf7e) {
   const car = new THREE.Group(); const paint = new THREE.MeshPhysicalMaterial({color, roughness: 0.45, metalness: 0.1, clearcoat: 0.4, envMapIntensity: 0.9});
   const lower = new THREE.Mesh(new RoundedBoxGeometry(4.6, 0.62, 1.85, 3, 0.08), paint); lower.position.y = 0.66; lower.castShadow = true; car.add(lower);
   const upper = new THREE.Mesh(new RoundedBoxGeometry(2.3, 0.6, 1.62, 3, 0.07), paint); upper.position.set(-0.25, 1.24, 0); car.add(upper);
