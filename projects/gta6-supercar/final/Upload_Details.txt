@@ -35,3 +35,9 @@ COVER: final/cover_FINAL_gpt.png (Suraj made it in ChatGPT from our prompt: WORS
 PUBLISHED (scheduled 22 Nov)
 YouTube: https://youtube.com/shorts/nxYAX6htDEA scheduled Tue 24 Nov 2026 4:00 PM IST (Gaming, game title GTA VI, AI No, cover_FINAL)
 Instagram + Facebook reel: scheduled Tue 24 Nov 2026 10:00 AM IST, caption + cover_FINAL set. Check the IG caption shows after it publishes.
+
+UPDATE 22 Nov 19:09: Suraj asked to post ASAP.
+- YouTube: made Public at ~19:10 → https://youtube.com/shorts/nxYAX6htDEA . SEO updated 19:20 (from live search check): title "GTA 6 Car Stealing Explained: Key Cloner, Tracker & Why Supercars Won't Start #shorts", description opens "How stealing cars actually works in GTA 6…", tags led by gta 6 key cloner / how stealing cars works in gta 6.
+- Facebook: published 19:12 → https://www.facebook.com/reel/1590240732871023
+- Instagram: Meta "Publish now" on the scheduled IG copy silently failed. Re-posted IG-only at 22:29 with caption + cover (verified in Published list, profile 67→68 posts).
+LESSON: don't use "Publish now" on a scheduled crosspost; post fresh with Share now instead.
