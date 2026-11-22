@@ -1,5 +1,6 @@
 # GTA 6 supercar theft — Short (9:16, 45–55 s) — SCRIPT v1 (draft, waiting for Suraj)
 Decisions (22 Nov): game only · 45–55 s · full 3D like the ref (rainy neon city, own car designs) · plain "GTA 6" text, no logos/cover art.
+More decisions: clone voice 1.15x · captions like the ref (condensed bold, 2–4 words, grey→white per word) · Suraj adds music later (deliver VO + SFX + stems) · 1 cover from a 3D frame.
 Reference: ref/ref.mp4 (Scroll Engineer, 80 s) — ref/ is gitignored. Story chip top-left: NO KEY → RUNNING → TRACKED.
 
 | # | Chip | Visual | VO (Hinglish) |
