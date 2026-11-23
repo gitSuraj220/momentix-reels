@@ -1,0 +1,53 @@
+CHATGPT STUDENT CODES — UPLOAD DETAILS
+=======================================
+Video: ChatGPT_Student_Codes.mp4 (1080x1920, 30 fps, CBR 10 Mbps, about -14 LUFS, about 34 s)
+Stems: final/stems/ (vo.wav, sfx.wav, video_only.mp4) — add music under the VO, keep music about 18 dB below voice.
+
+YOUTUBE TITLE (pick one; A is my pick)
+A) ChatGPT Secret Codes for Students: 3 Prompts That Cut Study Time in Half #shorts
+B) ChatGPT Tricks for Exam: Quiz, Notes and an Examiner That Marks Your Answer #shorts
+C) ChatGPT Secret Code for Students — The 3rd One Grades Your Answer Like an Examiner #shorts
+
+YOUTUBE DESCRIPTION
+ChatGPT secret codes for students — exam se pehle ye 3 codes try karo: /quiz, /snapnotes aur /examiner.
+छात्रों के लिए ChatGPT के 3 सीक्रेट कोड — परीक्षा की तैयारी आधे समय में।
+
+1) /quiz <chapter> — ChatGPT ek-ek karke MCQ poochta hai, galat hone pe wahin samjhata hai.
+2) /snapnotes + textbook page ki photo — short notes + yaad rakhne ki trick.
+3) /examiner + apna answer — examiner ki tarah marks deta hai aur batata hai marks kahan kat rahe hain.
+
+Note: ye official commands nahi hain — ye shortcut prompts hain. Pehli line mein likh do ki "/quiz" ka matlab kya hai
+(jaise: "Jab main /quiz likhun, mujhse us chapter pe ek-ek MCQ poochna aur galat answer pe samjhana"), phir code use karo.
+AI galti kar sakta hai — important facts apni textbook / NCERT se cross-check karo.
+
+Comment mein batao: kaunsa exam de rahe ho? Next video usi ke liye.
+
+#chatgpt #chatgpttricks #studytips #examtips #upsc #neet #jee #momentix
+
+TAGS
+chatgpt secret code for students, chatgpt secret codes, chatgpt tricks for students, chatgpt tricks for exam, chatgpt for students,
+chatgpt study tips, chatgpt prompts for students, how to use chatgpt for study, chatgpt quiz, chatgpt notes, chatgpt for upsc,
+chatgpt for neet, chatgpt for jee, exam preparation tips, study hacks, ai for students, chatgpt hindi, momentix, momentix by suraj
+
+Category: Education | AI content disclosure: No (no realistic people) | Made for kids: No
+
+INSTAGRAM / FACEBOOK CAPTION (no channel / Suraj name)
+Exam se pehle ChatGPT pe ye 3 codes daalo 👇
+1️⃣ /quiz — chapter likho, MCQ test + galti pe explanation
+2️⃣ /snapnotes — page ki photo → short notes + trick
+3️⃣ /examiner — answer paste karo → marks + kahan kat rahe hain
+Ye shortcut prompts hain: pehle ChatGPT ko bata do har code ka matlab, phir use karo.
+Save karo exam ke liye 📌 Kaunsa exam de rahe ho? Comment karo.
+#chatgpt #studytips #examtips #upsc #neet #jee #studyhacks #aitools
+
+POSTING TIME: decide later (best-time data: YouTube weekday 4 PM IST; Instagram 6 PM; Facebook 10 AM).
+
+COVER — GPT PROMPT (paste into ChatGPT image)
+Vertical 1080x1920 YouTube Shorts cover, 3D Pixar-style render. A cute character with a glowing glass light-bulb head
+(warm yellow, simple black oval eyes, happy surprised mouth) in a navy hoodie sits at a wooden study desk at night,
+desk lamp glow, stack of colourful books, rain on the window behind with city lights. A giant floating smartphone
+in dark mode glows in front of him. On the desk, three big white mechanical keycaps spell "/quiz", "/snapnotes"
+and a golden glowing keycap spells "/examiner". Top of the image: huge bold condensed white text "CHATGPT SECRET
+CODES" with "FOR STUDENTS" in mint green below. Bottom-middle: a red-to-green score badge "6/10 → 9/10".
+Cinematic lighting, bloom, high contrast, clean, no other text, no real people, no brand logos.
+Keep the top 15% and bottom 20% free of important details.

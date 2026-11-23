@@ -20,7 +20,7 @@ function drawRich(x, s, X, Y, o) { // **gold** segments
 }
 function AIHead(t0) { return {t0, h: () => 84, draw(x, y) { x.fillStyle = '#ffffff'; x.beginPath(); x.arc(88, y + 30, 28, 0, 7); x.fill(); logo(x, 88, y + 30, 1.85, '#0d0d0d'); x.fillStyle = '#9b9b9b'; x.font = F(600, 32); x.textBaseline = 'middle'; x.fillText('ChatGPT', 132, y + 30); }}; }
 function Opt(L, text, t0, st) { // st(t) -> 'none' | 'picked' | 'wrong' | 'right'
-  return {t0, h: () => 112, draw(x, y, t) { const s = st(t); const col = {none: '#3a3a3a', picked: '#5b8cff', wrong: '#ff4d5e', right: '#2fd17a'}[s];
+  return {t0, opt: true, h: () => 112, draw(x, y, t) { const s = st(t); const col = {none: '#3a3a3a', picked: '#5b8cff', wrong: '#ff4d5e', right: '#2fd17a'}[s];
     const a = eo(seg(t, t0, t0 + 0.25)); x.globalAlpha *= a; rr(x, 60 + (1 - a) * 40, y, 780, 94, 26); x.fillStyle = s === 'none' ? '#2a2a2a' : col + '33'; x.fill(); x.lineWidth = s === 'none' ? 2 : 5; x.strokeStyle = col; x.stroke();
     x.fillStyle = s === 'none' ? '#444' : col; x.beginPath(); x.arc(118, y + 47, 28, 0, 7); x.fill(); x.fillStyle = '#fff'; x.font = F(700, 34); x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(s === 'wrong' ? '✕' : s === 'right' ? '✓' : L, 118, y + 48); x.textAlign = 'left';
     x.font = F(600, 40); x.fillStyle = '#f2f2f2'; x.fillText(text, 170, y + 48); x.globalAlpha = 1; }};
@@ -119,7 +119,7 @@ export function drawChat(ph, chat, t, o = {}) {
     const avg = [0, 0.08, 0.16, 0.24].reduce((s, d) => s + scrollOf(x, chat, Math.max(chat.send, t - d)), 0) / 4;
     const {out, bottom} = layout(x, chat, t); x.save(); x.beginPath(); x.rect(0, CTOP - 20, SW, CBOT - CTOP + 30); x.clip(); x.translate(0, -avg);
     for (const [b, y] of out) b.draw(x, y, t);
-    if (chat.tap && t > chat.tap[0] - 0.15 && t < chat.tap[0] + 0.5) { const ent = out.find(([b]) => b.draw && b.t0 && b.h() === 112); if (ent) { const k = seg(t, chat.tap[0] - 0.15, chat.tap[0] + 0.5); x.globalAlpha = 1 - k; x.fillStyle = '#ffffff'; x.beginPath(); x.arc(300, ent[1] + 47, 30 + 80 * k, 0, 7); x.fill(); x.globalAlpha = 1; } }
+    if (chat.tap && t > chat.tap[0] - 0.15 && t < chat.tap[0] + 0.5) { const ent = out.find(([b]) => b.opt); if (ent) { const k = seg(t, chat.tap[0] - 0.15, chat.tap[0] + 0.5); x.globalAlpha = 1 - k; x.fillStyle = '#ffffff'; x.beginPath(); x.arc(300, ent[1] + 47, 30 + 80 * k, 0, 7); x.fill(); x.globalAlpha = 1; } }
     x.restore(); focus = bottom - avg;
   }
   // header, status, input on top
