@@ -19,3 +19,14 @@ Earlier attempt "ChatGPT Secret Codes: 5 Prompt Shortcuts" (Nov 10) = 1.3K views
 3 /snapnotes: Doosra: slash snapnotes. Textbook page ki photo daalo — seconds mein short notes, plus yaad rakhne ki trick.
 4 /examiner: Aur teesra, sabse OP: slash examiner. Apna answer paste karo — ChatGPT examiner ban ke marks dega, aur batayega kahan marks kat rahe hain.
 (No closing line — Suraj removed it.)
+
+## PRODUCTION DECISIONS (23 Nov, 13:25) — script v2 is FINAL
+- World: 3D (same three.js pipeline as gta6-supercar) — Momo at a study desk + a giant floating phone with the ChatGPT chat.
+- Setting: night before the exam: dark room, desk lamp, piled books, clock at 2 AM, rain on the window → sunrise at the end.
+- Code reveal: 3D keyboard keycaps spelling /quiz, /snapnotes, /examiner slam onto the desk.
+- Momo: stressed student → relieved; reacts to every answer.
+- Chat UI: dark mode, real ChatGPT logo (Suraj approved).
+- Demos: competitive exams — /quiz JEE Physics, /snapnotes NEET Biology (NCERT page), /examiner UPSC answer.
+- Ending: marks climb 6/10 → 9/10, Momo celebrates, sunrise (no extra VO).
+- Voice: clone ("harry potter", Eleven v4) at 1.15x. Captions: like GTA reel (Anton, word highlight, yellow key words).
+- Music: Suraj adds later → deliver VO + SFX + stems. Cover: GPT prompt for Suraj. Posting: decide later.
