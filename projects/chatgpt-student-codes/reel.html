@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<style>
+@font-face{font-family:A2;src:url(fonts/anton.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(fonts/p500.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(fonts/p800.woff2)}
+*{margin:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#c{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#ov{position:absolute;inset:0;pointer-events:none;font-family:P}
+.chip{position:absolute;left:46px;top:250px;display:flex;align-items:center;gap:12px;padding:12px 24px 12px 18px;border-radius:40px;border:2.5px solid;font:700 30px P;letter-spacing:3px;background:rgba(8,6,14,.55);backdrop-filter:blur(6px)}
+.chip svg{width:34px;height:34px}
+#wm{position:absolute;left:48px;top:330px;font:120px A2;letter-spacing:2px;line-height:1;background:linear-gradient(100deg,#7dffcf,#7dd3ff 55%,#c6b6ff);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+#capband{position:absolute;left:0;right:0;top:1180px;height:330px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.55) 45%,rgba(0,0,0,.55) 60%,rgba(0,0,0,0))}
+#cap{position:absolute;left:60px;right:60px;top:1290px;text-align:center;font:84px A2;letter-spacing:1.5px;line-height:1.08;text-transform:uppercase}
+#cap span{color:rgba(205,205,220,.42);display:inline-block;margin:0 .14em}
+#cap span.on{color:#fff;text-shadow:0 4px 22px rgba(0,0,0,.7)}
+#cap span.hot{color:#7dffcf}
+#punch{position:absolute;left:56px;top:380px;max-width:980px}
+#punch .k{font:700 30px P;letter-spacing:5px;display:flex;align-items:center;gap:14px}
+#punch .k:before{content:"";width:44px;height:4px;background:currentColor;display:inline-block}
+#punch .w{font:190px A2;line-height:.95;color:#f4f6ff;letter-spacing:2px;text-shadow:0 10px 40px rgba(0,0,0,.65);white-space:nowrap}
+#codeno{position:absolute;left:56px;top:350px}
+#codeno .n{font:150px A2;letter-spacing:4px;line-height:1;text-shadow:0 10px 40px rgba(0,0,0,.7)}
+#codeno .s{font:700 32px P;letter-spacing:6px;color:#fff;opacity:.85;margin-top:6px}
+#sticker{position:absolute;right:60px;top:345px;padding:16px 28px;border-radius:18px;background:#2fd17a;color:#04140a;font:800 40px P;letter-spacing:3px;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0}
+#tint{position:absolute;inset:0;opacity:0;background:#5a0010}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 50%,rgba(0,0,0,.5) 100%)}
+#flashw{position:absolute;inset:0;background:#fff;opacity:0}
+</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<div id="ov">
+ <div id="tint"></div><div id="vig"></div>
+ <div id="wm">CHATGPT CODES</div>
+ <div class="chip" id="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span id="chipt"></span></div>
+ <div id="punch"><div class="k" id="pk"></div><div class="w" id="pw"></div></div>
+ <div id="codeno"><div class="n"></div><div class="s"></div></div>
+ <div id="sticker">PERSONAL TUTOR ✓</div>
+ <div id="capband"></div><div id="cap"></div>
+ <div id="flashw"></div>
+</div>
+<script type="module" src="js/reel.js"></script>
+</body></html>
