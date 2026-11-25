@@ -1,0 +1,211 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:CH;src:url(fonts/ph.woff2)}
+@font-face{font-family:CH;src:url(fonts/ph-ext.woff2);unicode-range:U+0100-024F,U+20A0-20CF}
+@font-face{font-family:CH;src:url(fonts/kalam-dev-700.woff2);unicode-range:U+0900-097F,U+1CD0-1CFF,U+A8E0-A8FF}
+@font-face{font-family:KD;src:url(fonts/kalam-dev-700.woff2)}
+@font-face{font-family:KD;src:url(fonts/kalam-lat-700.woff2);unicode-range:U+0000-024F}
+@font-face{font-family:P;font-weight:700;src:url(fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(fonts/p800.woff2)}
+@font-face{font-family:HD;font-weight:700;src:url(fonts/hind-dev-700.woff2)}
+@font-face{font-family:HD;font-weight:700;src:url(fonts/hind-lat-700.woff2);unicode-range:U+0000-024F,U+20B9}
+*{margin:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#2e1e14}
+#bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,#3d2819 0%,#2a1b12 70%,#1f140d 100%)}
+#hdr{position:absolute;left:56px;right:56px;top:300px}
+#hdr .l{font:700 30px P;letter-spacing:5px;color:#f4d56a}
+#hdr .r{position:absolute;right:0;top:6px;font:700 22px P;color:rgba(255,255,255,.45);letter-spacing:1px}
+#hdr .bar{position:relative;margin-top:14px;height:5px;border-radius:3px;background:rgba(255,255,255,.12)}
+#hdr .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:#f4d56a}
+#board{position:absolute;left:24px;top:380px;width:1032px;height:1070px;border-radius:14px;background:#8a5a2c;box-shadow:0 18px 50px rgba(0,0,0,.55),inset 0 0 0 3px #6d4420}
+#slate{position:absolute;left:18px;top:18px;right:18px;bottom:18px;border-radius:6px;background:radial-gradient(ellipse at 50% 42%,#2f6a4c 0%,#24563d 55%,#1b4430 100%);overflow:hidden}
+#smudge{position:absolute;inset:0}
+#stage{position:absolute;inset:0;transform-origin:540px 900px}
+.el{position:absolute;white-space:nowrap;font-family:CH;line-height:1;text-shadow:0 0 3px rgba(255,255,255,.28);-webkit-mask-image:var(--grain);-webkit-mask-size:400px 400px}
+.dev{font-family:KD}
+svg.ov{position:absolute;inset:0;width:1080px;height:1920px;overflow:visible}
+#hand{position:absolute;left:0;top:0;width:300px;height:300px;transform-origin:0 0;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
+#eraser{position:absolute;left:0;top:0;width:260px;height:110px;filter:drop-shadow(0 10px 16px rgba(0,0,0,.5))}
+.shot{position:absolute;inset:0;opacity:0;overflow:hidden}
+.shot img{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 900px}
+#cap{position:absolute;left:0;right:0;top:1492px;text-align:center}
+#cap .p{display:inline-block;padding:14px 30px 16px;border-radius:16px;background:rgba(22,18,13,.92);font:64px CH;color:#fff;letter-spacing:.5px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+#cap .p span{display:inline-block;margin:0 .12em}
+#cap .p span.hot{color:#ffe27a}
+#cap .p span.dv{font-family:KD;font-weight:700}
+#cap .p span.num{font:700 60px HD;position:relative;top:4px}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+#tapring{position:absolute;border-radius:40px;border:8px solid #ffe27a;opacity:0}
+#arrow{position:absolute;left:490px;top:1735px;width:100px;height:110px;opacity:0}
+</style></head><body>
+<div id="bg"></div>
+<div id="hdr"><div class="l">BOARD PE SAMJHO · MATHS</div><div class="r">@board.pe.samzo</div><div class="bar"><i id="prog"></i></div></div>
+<div id="board"><div id="slate"><canvas id="smudge" width="996" height="1034"></canvas></div></div>
+<div id="stage"></div>
+<svg class="ov" id="ov"></svg>
+<div id="eraser"><svg viewBox="0 0 260 110" width="260" height="110"><rect x="8" y="6" width="244" height="62" rx="10" fill="#b07a45"/><rect x="8" y="6" width="244" height="20" rx="8" fill="#c99360"/><rect x="14" y="62" width="232" height="38" rx="6" fill="#3b3f46"/><rect x="14" y="88" width="232" height="12" rx="4" fill="#d9d9d9" opacity=".55"/></svg></div>
+<div id="hand"><svg viewBox="0 0 300 300" width="300" height="300">
+ <g transform="translate(0,0)">
+  <rect x="-6" y="-8" width="70" height="22" rx="7" fill="#f4f1e8" transform="rotate(38)"/>
+  <path d="M40 40 C70 20 110 30 130 55 L210 120 C235 140 250 170 245 200 C240 240 205 262 170 258 L120 250 C95 246 80 228 84 206 L60 150 C50 120 30 80 40 40 Z" fill="#e3a67c"/>
+  <path d="M40 40 C55 32 72 34 82 46 L118 92 C104 98 88 94 78 84 Z" fill="#d18f66"/>
+  <path d="M130 55 C150 52 168 64 172 80 L176 100 C160 104 146 98 140 86 Z" fill="#d18f66"/>
+  <path d="M210 120 C228 126 238 140 238 156" stroke="#c07f58" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M84 206 C110 214 140 210 160 196" stroke="#c07f58" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M150 250 L300 300 L300 236 L230 170 Z" fill="#2b4a7a"/>
+ </g></svg></div>
+<div class="shot" id="s_cover"><img src="assets/1-cover.png"></div>
+<div class="shot" id="s_trick"><img src="assets/3-trick.png"></div>
+<div class="shot" id="s_mcq"><img src="assets/4-mcq.png"></div>
+<div class="shot" id="s_end"><img src="assets/6-end-card.png"><div id="tapring"></div><svg id="arrow" viewBox="0 0 100 110"><path d="M50 6 L50 80 M20 54 L50 90 L80 54" stroke="#ffe27a" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="cap"></div>
+<div id="flash"></div>
+<script type="module">
+const TL = await (await fetch('timeline.json?' + Date.now())).json(); const T = TL.T, W = TL.words;
+await Promise.all(['56px CH', '56px KD', '700 30px P', '700 40px HD'].map(f => document.fonts.load(f, 'Aa18%दंगल₹')));
+const $ = id => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x)), seg = (t, a, b) => cl((t - a) / (b - a));
+const eo = x => 1 - Math.pow(1 - x, 3), eio = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c = 2.2; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+// chalk grain mask
+{ const c = document.createElement('canvas'); c.width = c.height = 400; const x = c.getContext('2d'); const im = x.createImageData(400, 400);
+  let s = 7; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < im.data.length; i += 4) { const v = r(); im.data[i] = im.data[i + 1] = im.data[i + 2] = 255; im.data[i + 3] = v < 0.12 ? 60 : 200 + v * 55; }
+  x.putImageData(im, 0, 0); document.documentElement.style.setProperty('--grain', `url(${c.toDataURL()})`); }
+// board smudge marks (static, like the reference)
+{ const x = $('smudge').getContext('2d'); let s = 3; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < 26; i++) { x.fillStyle = `rgba(255,255,255,${0.04 + r() * 0.05})`; const w = 50 + r() * 90; x.beginPath(); x.roundRect(r() * 940, r() * 1000, w, 8 + r() * 6, 5); x.fill(); } }
+const C = {w: '#f5f3ec', y: '#ffe27a', b: '#9ed0ff', p: '#f6a8c8', g: '#9be7b0'};
+// ---- wipes ----
+const WIPES = [[T.dekho - 0.05, T.dekho + 0.45, 760, 1300], [T.kyun - 0.2, T.kyun + 0.35, 420, 1360], [T.par - 0.15, T.par + 0.38, 420, 1360], [T.isliye - 0.05, T.isliye + 0.3, 420, 1360]];
+// ---- board elements ----  [id, html, cx, cy, size, color, t0(write), dur, wipe index (-1 none), extra]
+const E = [];
+const add = (id, html, cx, cy, size, color, t0, dur, wipe, o = {}) => E.push({id, html, cx, cy, size, color, t0, dur, wipe, ...o});
+add('L1', '<span id="nA">18</span><span>% of </span><span id="nB">50</span><span id="eq"> =</span>', 540, 600, 142, C.w, 0.22, 0.95, 1);
+add('q', '?', 0, 600, 142, C.w, T.ye - 0.05, 0.2, 0, {after: 'L1'});
+add('calc', 'calculator? NAHI!', 540, 1175, 78, C.p, T.teen + 0.45, 0.55, 0);
+add('ulta', 'ULTA kar do!', 540, 840, 100, C.p, T.ulta - 0.05, 0.5, 1);
+add('half', '50% = aadha', 540, 1005, 108, C.w, T.aadha - 0.45, 0.6, 1);
+add('nine', '9', 540, 1205, 170, C.y, T.nau - 0.08, 0.18, 1);
+add('pct', '% = ÷ 100', 540, 600, 118, C.b, T.sau - 0.45, 0.55, 2, {});
+add('m1', '18 × 50 / 100', 540, 800, 118, C.w, T.guna1 - 0.45, 0.8, 2);
+add('eqs', '=', 540, 925, 110, C.y, T.guna2 - 0.55, 0.15, 2);
+add('m2', '50 × 18 / 100', 540, 1050, 118, C.w, T.guna2 - 0.45, 0.8, 2);
+add('spd', 'Speed', 540, 720, 185, C.y, T.speed - 0.15, 0.45, 3);
+add('spd2', '= roz ki practice', 540, 950, 112, C.w, T.practice - 0.7, 0.75, 3);
+add('ch1', 'प्रतिशत', 540, 620, 104, C.y, T.percentage - 0.05, 0.3, -1, {chip: '#ffe27a', dev: 1});
+add('ch2', 'लाभ-हानि', 540, 830, 104, C.p, T.percentage + 0.45, 0.3, -1, {chip: '#f6a8c8', dev: 1});
+add('ch3', 'समय और कार्य', 540, 1040, 104, C.b, T.time - 0.05, 0.35, -1, {chip: '#9ed0ff', dev: 1});
+add('ch4', '12 chapters', 540, 1255, 165, C.y, T.barah - 0.1, 0.5, -1);
+const stage = $('stage');
+for (const e of E) { const d = document.createElement('div'); d.className = 'el' + (e.dev ? ' dev' : ''); d.id = e.id; d.innerHTML = e.html; d.style.fontSize = e.size + 'px'; d.style.color = e.color;
+  if (e.chip) { d.style.padding = '14px 46px 6px'; d.style.border = `5px solid ${e.chip}`; d.style.borderRadius = '60px'; }
+  stage.appendChild(d); e.d = d; }
+const placeAll = () => { for (const e of E) { const r = e.d.getBoundingClientRect(); e.w = r.width; e.h = r.height; let cx = e.cx;
+  if (e.after) { const L = E.find(x => x.id === e.after); cx = L.cx + L.w / 2 + 14 + r.width / 2; }
+  e.x = cx - r.width / 2; e.y = e.cy - r.height / 2; e.d.style.left = e.x + 'px'; e.d.style.top = e.y + 'px'; } };
+placeAll();
+// swap geometry
+const L1 = E[0]; const nA = $('nA'), nB = $('nB');
+const off = el => { const r = el.getBoundingClientRect(), p = L1.d.getBoundingClientRect(); return {x: r.left - p.left, w: r.width}; };
+const gA = off(nA), gB = off(nB);
+const ax = L1.x + gA.x + gA.w / 2, bx = L1.x + gB.x + gB.w / 2, ly = L1.cy;
+// overlay svg: arrows, countdown ring, nine ring, SAME stamp
+const NS = 'http://www.w3.org/2000/svg', ov = $('ov');
+const mk = (tag, at) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); ov.appendChild(e); return e; };
+const arcT = mk('path', {d: `M${ax} ${ly - 80} Q${(ax + bx) / 2} ${ly - 190} ${bx} ${ly - 80}`, stroke: C.p, 'stroke-width': 7, fill: 'none', 'stroke-linecap': 'round'});
+const arcB = mk('path', {d: `M${bx} ${ly + 70} Q${(ax + bx) / 2} ${ly + 180} ${ax} ${ly + 70}`, stroke: C.p, 'stroke-width': 7, fill: 'none', 'stroke-linecap': 'round'});
+const headT = mk('path', {d: `M${bx - 30} ${ly - 112} L${bx} ${ly - 80} L${bx - 40} ${ly - 70}`, stroke: C.p, 'stroke-width': 7, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round'});
+const headB = mk('path', {d: `M${ax + 30} ${ly + 102} L${ax} ${ly + 70} L${ax + 40} ${ly + 60}`, stroke: C.p, 'stroke-width': 7, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round'});
+for (const p of [arcT, arcB, headT, headB]) { const L = p.getTotalLength(); p.style.strokeDasharray = L; p._L = L; }
+const ringBg = mk('circle', {cx: 540, cy: 900, r: 130, stroke: 'rgba(255,255,255,.12)', 'stroke-width': 12, fill: 'none'});
+const ring = mk('circle', {cx: 540, cy: 900, r: 130, stroke: C.y, 'stroke-width': 12, fill: 'none', 'stroke-linecap': 'round', transform: 'rotate(-90 540 900)'});
+const RL = 2 * Math.PI * 130; ring.style.strokeDasharray = RL;
+const cnt = mk('text', {x: 540, y: 952, 'text-anchor': 'middle', 'font-family': 'CH', 'font-size': 150, fill: C.y});
+const nineRing = mk('circle', {cx: 540, cy: 1198, r: 112, stroke: C.y, 'stroke-width': 8, fill: 'none', transform: 'rotate(-100 540 1198)'}); const NL = 2 * Math.PI * 112; nineRing.style.strokeDasharray = NL;
+const stamp = mk('g', {}); stamp.innerHTML = `<rect x="-190" y="-75" width="380" height="150" rx="18" fill="rgba(246,168,200,.12)" stroke="${C.p}" stroke-width="9"/><text x="0" y="40" text-anchor="middle" font-family="CH" font-size="120" fill="${C.p}">SAME!</text>`;
+const und = mk('path', {d: '', stroke: C.y, 'stroke-width': 8, fill: 'none', 'stroke-linecap': 'round'});
+const sp2 = E.find(e => e.id === 'spd2'); und.setAttribute('d', `M${sp2.x + sp2.w * 0.42} ${sp2.cy + 58} Q${sp2.x + sp2.w * 0.7} ${sp2.cy + 72} ${sp2.x + sp2.w} ${sp2.cy + 54}`); const UL = und.getTotalLength(); und.style.strokeDasharray = UL;
+const ch4 = E.find(e => e.id === 'ch4'); const und2 = mk('path', {d: `M${ch4.x} ${ch4.cy + 88} Q540 ${ch4.cy + 110} ${ch4.x + ch4.w} ${ch4.cy + 84}`, stroke: C.y, 'stroke-width': 9, fill: 'none', 'stroke-linecap': 'round'}); const UL2 = und2.getTotalLength(); und2.style.strokeDasharray = UL2;
+// ---- PDF shots ----
+const SH = [['s_cover', T.maths - 0.32, T.pehle - 0.42], ['s_trick', T.pehle - 0.42, T.practice2 - 0.2], ['s_mcq', T.practice2 - 0.2, T.percentage - 0.12], ['s_end', T.teen2 - 0.12, 99]];
+// ---- countdown ----
+const c0 = T.teen + 0.02, cStep = (T.nahi - c0) / 3;
+// ---- captions ----
+const DEV = /[ऀ-ॿ]/;
+function drawCap(t) {
+  const i = TL.caps.findIndex((c, j) => t >= c.s - 0.06 && t < (TL.caps[j + 1]?.s ?? 1e9) - 0.06); const c = TL.caps[i];
+  if (!c || t > T.end - 0.4) { $('cap').innerHTML = ''; return; }
+  const k = eo(seg(t, c.s - 0.06, c.s + 0.1));
+  const html = c.i.filter(j => t >= W[j].s - 0.05).map(j => `<span class="${W[j].hot ? 'hot' : ''} ${DEV.test(W[j].w) ? 'dv' : ''} ${/[0-9₹]/.test(W[j].w) ? 'num' : ''}">${W[j].w}</span>`).join('');
+  $('cap').innerHTML = html ? `<div class="p">${html}</div>` : '';
+  $('cap').style.transform = `translateY(${(1 - k) * 14}px)`; $('cap').style.opacity = k;
+  const onEnd = t >= T.teen2 - 0.12; $('cap').style.top = onEnd ? '292px' : '1492px';
+}
+// ---- frame ----
+window.renderAt = (t) => {
+  $('prog').style.width = (cl(t / T.end) * 100) + '%';
+  // writing progress + wipes
+  let pen = null;
+  for (const e of E) {
+    const p = seg(t, e.t0, e.t0 + e.dur); let op = t >= e.t0 ? 1 : 0; let blur = 0;
+    if (e.wipe >= 0) { const [w0, w1] = WIPES[e.wipe]; const bx = -260 + 1600 * seg(t, w0, w1); const er = cl((bx - (e.x + e.w * 0.3)) / 260); op *= 1 - er; blur = er * 8; }
+    if (e.id === 'eq' ) {}
+    e.d.style.opacity = op; e.d.style.filter = blur ? `blur(${blur}px)` : 'none';
+    e.d.style.clipPath = e.chip ? 'none' : `inset(-40px ${(1 - p) * 100}% -40px -20px)`;
+    if (e.chip) { const b = back(seg(t, e.t0, e.t0 + 0.4)); e.d.style.transform = `scale(${t >= e.t0 ? 0.4 + 0.6 * b : 0})`; }
+    if (p > 0 && p < 1 && !e.chip) pen = {x: e.x + e.w * p, y: e.cy + e.size * 0.18, t};
+  }
+  // " = ?" fades with the countdown wipe; "% of" line stays
+  const wq = WIPES[0]; const eqOut = seg(t, wq[0] + 0.1, wq[0] + 0.35); $('eq').style.opacity = 1 - eqOut;
+  E.find(e => e.id === 'q').d.style.opacity *= 1 - eqOut;
+  // swap 18 <-> 50
+  const sw = eio(seg(t, T.e18 + 0.25, T.barabar + 0.55)); const dx = bx - ax;
+  nA.style.transform = `translate(${dx * sw}px, ${-Math.sin(sw * Math.PI) * 120}px)`; nB.style.transform = `translate(${-dx * sw}px, ${Math.sin(sw * Math.PI) * 110}px)`;
+  nA.style.display = nB.style.display = 'inline-block';
+  const colored = t > T.bas; nA.style.color = colored ? C.y : C.w; nB.style.color = colored ? C.b : C.w;
+  const ar = seg(t, T.bas + 0.05, T.bas + 0.6), arH = seg(t, T.bas + 0.55, T.bas + 0.7), arOut = 1 - cl((-260 + 1600 * seg(t, WIPES[1][0], WIPES[1][1]) - 300) / 300);
+  arcT.style.strokeDashoffset = arcT._L * (1 - ar); arcB.style.strokeDashoffset = arcB._L * (1 - ar); headT.style.strokeDashoffset = headT._L * (1 - arH); headB.style.strokeDashoffset = headB._L * (1 - arH);
+  for (const p of [arcT, arcB, headT, headB]) p.style.opacity = t > T.bas ? arOut : 0;
+  // countdown
+  const cOn = t >= c0 - 0.05 && t < wq[0] + 0.4; const cOut = 1 - seg(t, wq[0] + 0.05, wq[0] + 0.35);
+  for (const e of [ring, ringBg, cnt]) e.style.opacity = cOn ? cOut : 0;
+  const n = t < T.nahi ? 3 - Math.floor((t - c0) / cStep) : 0; const up = t >= T.nahi;
+  cnt.textContent = up ? 'TIME UP!' : Math.max(1, n); cnt.setAttribute('font-size', up ? 76 : 150); cnt.setAttribute('y', up ? 926 : 952); cnt.setAttribute('fill', up ? C.p : C.y);
+  ring.style.strokeDashoffset = RL * seg(t, c0, T.nahi); ring.setAttribute('stroke', up ? '#ff6b7a' : C.y);
+  const tick = (t - c0) % cStep / cStep; cnt.setAttribute('transform', `translate(540 ${up ? 926 : 952}) scale(${up ? 1 + 0.25 * Math.exp(-(t - T.nahi) * 8) : 1 + 0.2 * Math.exp(-tick * 8)}) translate(-540 ${up ? -926 : -952})`);
+  // nine ring
+  const nr = seg(t, T.nau + 0.02, T.nau + 0.42); nineRing.style.strokeDashoffset = NL * (1 - nr); nineRing.style.opacity = t > T.nau ? 1 - cl((-260 + 1600 * seg(t, WIPES[1][0], WIPES[1][1]) - 440) / 260) : 0;
+  // SAME stamp
+  const sm = seg(t, T.same - 0.08, T.same + 0.25); const smOut = cl((-260 + 1600 * seg(t, WIPES[2][0], WIPES[2][1]) - 350) / 260);
+  stamp.setAttribute('transform', `translate(540 1235) rotate(-7) scale(${t < T.same - 0.08 ? 0 : 1.6 - 0.6 * eo(sm)})`); stamp.style.opacity = t < T.same - 0.08 ? 0 : cl(sm * 3) * (1 - smOut);
+  // underlines
+  und.style.strokeDashoffset = UL * (1 - seg(t, T.practice + 0.05, T.practice + 0.45)); und.style.opacity = t > T.practice ? 1 - cl((-260 + 1600 * seg(t, WIPES[3][0], WIPES[3][1]) - 500) / 260) : 0;
+  und2.style.strokeDashoffset = UL2 * (1 - seg(t, T.barah + 0.35, T.barah + 0.8)); und2.style.opacity = t > T.barah ? 1 : 0;
+  // eraser
+  const wi = WIPES.find(w => t >= w[0] - 0.05 && t <= w[1] + 0.05); const er = $('eraser');
+  if (wi) { const k = seg(t, wi[0], wi[1]); const x = -300 + 1650 * k; const y = (wi[2] + wi[3]) / 2 + Math.sin(k * Math.PI * 4) * (wi[3] - wi[2]) * 0.32 - 55; er.style.opacity = 1; er.style.transform = `translate(${x}px, ${y}px) rotate(${-8 + 6 * Math.sin(k * 20)}deg)`; } else er.style.opacity = 0;
+  // chalk hand
+  const hd = $('hand');
+  if (pen) { const j = Math.sin(t * 60) * 3; hd.style.opacity = 1; hd.style.transform = `translate(${pen.x - 4 + j}px, ${pen.y - 6 + Math.cos(t * 47) * 3}px) rotate(-6deg)`; }
+  else { // linger near last stroke briefly
+    const last = E.filter(e => !e.chip && t >= e.t0 + e.dur && t < e.t0 + e.dur + 0.35).pop();
+    if (last) { const k = seg(t, last.t0 + last.dur, last.t0 + last.dur + 0.35); hd.style.opacity = 1 - k; hd.style.transform = `translate(${last.x + last.w + 30 * k}px, ${last.cy + last.size * 0.18 + 80 * k}px) rotate(-6deg)`; } else hd.style.opacity = 0; }
+  // stage breathing / push-ins
+  const push = 1 + 0.02 * seg(t, 0, 4) + 0.025 * Math.exp(-Math.max(0, t - T.nahi) * 3) * (t > T.nahi ? 1 : 0) + 0.03 * Math.exp(-Math.max(0, t - T.same) * 3) * (t > T.same ? 1 : 0);
+  for (const id of ['stage', 'ov']) $(id).style.transform = `scale(${push})`; $('ov').style.transformOrigin = '540px 900px';
+  const shake = t > T.nahi && t < T.nahi + 0.35 ? Math.sin(t * 90) * 8 * (1 - seg(t, T.nahi, T.nahi + 0.35)) : 0; $('board').style.transform = `translateX(${shake}px)`; $('stage').style.marginLeft = shake + 'px';
+  // PDF shots
+  let anyShot = 0;
+  for (const [id, a, b] of SH) { const el = $(id); const inn = eo(seg(t, a, a + 0.28)); const out = id === 's_end' ? 0 : seg(t, b - 0.05, b + 0.18);
+    const vis = t >= a && t < b + 0.18; el.style.opacity = vis ? Math.min(inn * 1.4, 1) * (1 - out) : 0; if (vis && t < b) anyShot = 1;
+    const z = 1 + 0.06 * seg(t, a, b === 99 ? T.end : b); el.querySelector('img').style.transform = `translateY(${(1 - inn) * 140}px) scale(${z * (0.94 + 0.06 * inn)})`; }
+  // end card: ₹99 pulse + arrow
+  const tr = $('tapring'); const pk = seg(t, T.ninety - 0.1, T.ninety + 0.6);
+  tr.style.left = '346px'; tr.style.top = '1133px'; tr.style.width = '398px'; tr.style.height = '222px'; tr.style.opacity = t > T.ninety - 0.1 ? (1 - pk) * 0.95 + 0.0 : 0; tr.style.transform = `scale(${1 + 0.18 * pk})`;
+  const arw = $('arrow'); const ak = t - T.neeche; arw.style.opacity = ak > 0 ? cl(ak * 4) : 0; arw.style.transform = `translateY(${Math.abs(Math.sin(ak * 7)) * 22}px)`;
+  $('flash').style.opacity = 0;
+  drawCap(t);
+};
+window.READY = true;
+</script></body></html>
