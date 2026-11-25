@@ -1,0 +1,4 @@
+<!doctype html><html><head><meta charset="utf-8"><script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<style>html,body{margin:0;width:1080px;height:1920px;background:#0d1110}canvas{position:absolute;left:40px;top:300px}</style></head><body><canvas id="c" width="1000" height="1000" style="width:1000px;height:1000px"></canvas>
+<script type="module">import {makeRoom} from './js/room.js'; const R=makeRoom(document.getElementById('c'),{width:1000,height:1000});
+window.renderAt=(t)=>{ R.items.sofa.visible=t>1; if(t>2) R.setWall(0xb5c7a4); R.select('bed', t>1); R.doorWarn(t>1?1:0); R.render(); }; window.READY=true;</script></body></html>

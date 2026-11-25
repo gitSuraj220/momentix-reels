@@ -1,0 +1,229 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<style>
+@font-face{font-family:P;font-weight:500;src:url(fonts/p500.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(fonts/p800.woff2)}
+@font-face{font-family:A2;src:url(fonts/anton.woff2)}
+*{margin:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#090c0b;font-family:P}
+#bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 42%,rgba(61,220,132,.10),rgba(0,0,0,0) 70%),#090c0b}
+.abs{position:absolute}
+#win{position:absolute;left:40px;top:300px;width:1000px;height:1040px;border-radius:26px;background:#141917;border:2px solid #232b28;box-shadow:0 30px 80px rgba(0,0,0,.6);opacity:0}
+#win .bar{height:58px;display:flex;align-items:center;gap:12px;padding:0 22px;border-bottom:1px solid #232b28}
+#win .dot{width:14px;height:14px;border-radius:50%;background:#2c3431}
+#win .url{margin-left:18px;flex:1;height:36px;border-radius:10px;background:#0d1110;color:#8fa39a;font:500 22px P;display:flex;align-items:center;padding:0 16px;gap:10px}
+#cv{position:absolute;left:40px;top:340px;width:1000px;height:1000px}
+.card{position:absolute;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;top:14px;left:14px;width:52px;height:52px;border-radius:50%;background:#3ddc84;color:#06210f;font:800 28px P;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.pill{position:absolute;padding:12px 24px;border-radius:40px;background:#1a211e;border:2px solid #2c3631;color:#e8f2ec;font:600 28px P;white-space:nowrap;display:flex;align-items:center;gap:12px}
+.pill i{color:#ff8a4c;font-style:normal}
+#quote{left:150px;top:380px;width:780px;padding:44px 50px;border-radius:26px;background:#fbfaf7;color:#1b1f1d}
+#quote h4{font:800 26px P;letter-spacing:4px;color:#6d756f}
+#quote .row{display:flex;justify-content:space-between;font:500 34px P;margin-top:26px;color:#333}
+#quote .tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:40px;padding-top:28px;border-top:3px dashed #ccc}
+#quote .tot b{font:800 92px P;color:#111;position:relative}
+#strike{position:absolute;left:-10px;top:52%;height:12px;border-radius:6px;background:#ff4d5e;width:0;transform:rotate(-6deg)}
+#free{left:50%;top:1150px;transform:translateX(-50%);padding:14px 40px;border:6px solid #3ddc84;border-radius:22px;color:#3ddc84;font:110px A2;letter-spacing:3px;background:rgba(61,220,132,.08);text-shadow:0 0 30px rgba(61,220,132,.5);white-space:nowrap}
+svg.ov{position:absolute;inset:0;width:1080px;height:1920px;overflow:visible}
+.lbl{position:absolute;padding:8px 16px;border-radius:10px;font:700 28px P;white-space:nowrap;transform:translate(-50%,-50%)}
+.lbl.y{background:#ffd23f;color:#2a2000}.lbl.g{background:#0f1a14;color:#7dffb0;border:2px solid #3ddc84}
+#cursor{position:absolute;width:54px;height:54px;left:0;top:0;opacity:0;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
+#chat{position:absolute;left:80px;top:1240px;width:920px;height:84px;border-radius:18px;background:#0d1110;border:2px solid #2c3631;display:flex;align-items:center;gap:14px;padding:0 24px;font:600 38px P;color:#e8f2ec;opacity:0}
+#chat .st{color:#ff8a4c}
+#fit{position:absolute;left:80px;top:390px;width:440px;border-radius:18px;background:rgba(13,17,16,.94);border:2px solid #2c3631;padding:20px 24px;opacity:0}
+#fit h5{font:700 24px P;color:#8fa39a;letter-spacing:2px;margin-bottom:8px}
+#fit .r{display:flex;align-items:center;gap:14px;font:600 32px P;color:#e8f2ec;margin-top:12px;opacity:0}
+#fit .ic{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 24px P;color:#fff}
+#sw{position:absolute;left:50%;top:1252px;transform:translateX(-50%);display:flex;gap:22px;align-items:center;padding:14px 26px;border-radius:40px;background:rgba(13,17,16,.94);border:2px solid #2c3631;opacity:0}
+#sw .s{width:56px;height:56px;border-radius:50%;border:3px solid rgba(255,255,255,.25)}
+#sw .n{font:700 30px P;color:#e8f2ec;min-width:120px}
+#lay{position:absolute;left:80px;top:390px;padding:14px 24px;border-radius:14px;background:#fff;color:#111;font:700 30px P;opacity:0;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+#tbl{position:absolute;left:70px;top:420px;width:940px;border-radius:24px;background:#121816;border:2px solid #2c3631;padding:34px 40px;opacity:0}
+#tbl h5{font:700 32px P;color:#e8f2ec;display:flex;justify-content:space-between;align-items:center}
+#tbl h5 span{font:700 22px P;color:#1a1200;background:#ffd23f;padding:6px 14px;border-radius:10px}
+#tbl .r{display:flex;align-items:center;font:500 38px P;color:#c9d6cf;padding:24px 0;border-bottom:1px solid #222b27}
+#tbl .r b{flex:1;text-align:right;color:#fff;font-weight:700;margin-right:24px}
+#tbl .t{font:700 22px P;padding:6px 14px;border-radius:10px;min-width:100px;text-align:center}
+#tbl .t.k{background:#163a25;color:#7dffb0}#tbl .t.u{background:#3a2e0e;color:#ffd23f}
+#cta{position:absolute;inset:0;opacity:0}
+#kit{position:absolute;left:50%;top:420px;transform:translateX(-50%) rotate(-3deg);padding:14px 44px;border:7px solid #3ddc84;border-radius:24px;color:#3ddc84;font:120px A2;letter-spacing:4px;background:rgba(61,220,132,.08);text-shadow:0 0 30px rgba(61,220,132,.45);white-space:nowrap}
+#cmt{position:absolute;left:50%;top:720px;transform:translateX(-50%);text-align:center}
+#cmt .l{font:600 32px P;color:#8fa39a;margin-bottom:16px}
+#cmt .b{min-width:520px;height:170px;border:5px solid #3ddc84;border-radius:26px;background:#0d1110;display:flex;align-items:center;justify-content:center;font:120px A2;letter-spacing:6px;color:#fff;box-shadow:0 0 50px rgba(61,220,132,.25)}
+#cmt .b i{display:inline-block;width:6px;height:110px;background:#3ddc84;margin-left:8px}
+#gift{position:absolute;left:50%;top:1080px;transform:translateX(-50%);font:700 38px P;color:#e8f2ec;white-space:nowrap;padding:16px 30px;border-radius:18px;background:#121816;border:2px solid #2c3631}
+#cap{position:absolute;left:50px;right:50px;top:1392px;text-align:center;font:600 54px P;line-height:1.35}
+#cap span{display:inline-block;margin:0 .12em;color:rgba(255,255,255,.28);padding:0 .12em;border-radius:10px;border:3px solid transparent}
+#cap span.on{color:#fff}
+#cap span.hot.on{color:#7dffb0;border-color:#3ddc84;background:rgba(61,220,132,.12)}
+</style></head><body>
+<div id="bg"></div>
+<div id="win"><div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><div class="url">🔒 localhost:8000/room.html</div></div></div>
+<canvas id="cv" width="1000" height="1000"></canvas>
+<div id="quote" class="card"><h4>INTERIOR DESIGN QUOTATION</h4>
+ <div class="row"><span>3D design + layout</span><span>₹45,000</span></div><div class="row"><span>Site visit + measurement</span><span>₹15,000</span></div><div class="row"><span>Bedroom makeover plan</span><span>₹1,40,000</span></div>
+ <div class="tot"><span style="font:600 34px P;color:#555">Total</span><b>₹2,00,000<i id="strike"></i></b></div></div>
+<div id="free" class="abs">FREE MEIN?</div>
+<div id="ph1" class="card"><img src="photos/p1.png"><div class="badge">1</div></div>
+<div id="ph2" class="card"><img src="photos/p2.png"><div class="badge">2</div></div>
+<div id="ph3" class="card"><img src="photos/p3.png"><div class="badge">3</div></div>
+<div id="pClaude" class="pill"><i>✳</i>Claude · 3 photos</div>
+<div id="big" class="card"><img src="photos/p2.png"></div>
+<div id="pRead" class="pill"><i>✳</i>reading the perspective</div>
+<svg class="ov" id="ov"></svg>
+<div id="lDoor" class="lbl y">darwaza · 7 ft</div><div id="lSw" class="lbl g">switchboard ≈ 4 ft upar</div><div id="lWall" class="lbl g">deewar ≈ 11 ft</div>
+<div id="lSofa" class="lbl y">sofa · 7 ft</div><div id="lFix" class="lbl g">1 ft khiskao → fit ✓</div>
+<div id="fit"><h5>FIT CHECK</h5>
+ <div class="r" id="f1"><span class="ic" style="background:#2fbf6a">✓</span>Deewar</div>
+ <div class="r" id="f2"><span class="ic" id="f2i" style="background:#ff4d5e">✕</span><span id="f2t">Darwaza takrayega</span></div>
+ <div class="r" id="f3"><span class="ic" style="background:#2fbf6a">✓</span>Chalne ki jagah</div></div>
+<div id="chat"><span class="st">✳</span><span id="chatT"></span></div>
+<div id="sw"><div class="s" style="background:#efe9dc"></div><div class="s" id="sSage" style="background:#b5c7a4"></div><div class="s" id="sPeach" style="background:#f2c4a2"></div><div class="s" style="background:#bfd6e8"></div><div class="n" id="swN">White</div></div>
+<div id="lay"></div>
+<div id="tbl"><h5>✳ Har size jo maine andaza lagaya <span>verify</span></h5><div id="rows"></div></div>
+<div id="cta"><div id="kit">FREE KIT</div><div id="cmt"><div class="l">Comment</div><div class="b"><span id="cmtT"></span><i id="caret"></i></div></div><div id="gift">🎁 Setup + 3 prompts, DM mein</div></div>
+<svg id="cursor" viewBox="0 0 24 24"><path d="M3 2 L3 19 L8 14.5 L11.5 22 L14.5 20.6 L11 13.2 L17.5 13.2 Z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg>
+<div id="cap"></div>
+<script type="module">
+import {makeRoom, LAYOUTS, SIZES, WALLS} from './js/room.js';
+const TL = await (await fetch('timeline.json?' + Date.now())).json(); const T = TL.T, Wd = TL.words;
+await Promise.all(['600 54px P', '800 30px P', '110px A2'].map(f => document.fonts.load(f)));
+await Promise.all([...document.images].map(i => i.decode().catch(() => 0)));
+const $ = id => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x)), seg = (t, a, b) => cl((t - a) / (b - a));
+const eo = x => 1 - Math.pow(1 - x, 3), eio = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const lerp = (a, b, k) => a + (b - a) * k;
+const R = makeRoom($('cv'), {width: 1000, height: 1000, viewSize: 21});
+const CVX = 40, CVY = 340; const P = (x, y, z) => { const p = R.project(x, y, z); return {x: p.x + CVX, y: p.y + CVY}; };
+// size table rows
+$('rows').innerHTML = SIZES.map(([a, b, c], i) => `<div class="r" id="sr${i}"><span>${a}</span><b>${b}</b><span class="t ${c === 'pakka' ? 'k' : 'u'}">${c}</span></div>`).join('');
+// overlay svg for photo analysis
+const NS = 'http://www.w3.org/2000/svg', ov = $('ov'); const mk = (tag, at) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); ov.appendChild(e); return e; };
+// big photo card geometry: p2 (880x1168) shown at 660x876, left 210 top 360
+const BX = 210, BY = 360, BS = 660 / 880; const bp = (x, y) => [BX + x * BS, BY + y * BS];
+const [dx0, dy0] = bp(228, 350), [dx1, dy1] = bp(376, 715);
+const doorR = mk('rect', {x: dx0, y: dy0, width: dx1 - dx0, height: dy1 - dy0, fill: 'rgba(255,210,63,.18)', stroke: '#ffd23f', 'stroke-width': 6, rx: 4});
+const DL = 2 * ((dx1 - dx0) + (dy1 - dy0)); doorR.style.strokeDasharray = DL;
+const [sx0, sy0] = bp(110, 515), [sx1, sy1] = bp(160, 550); const swR = mk('rect', {x: sx0, y: sy0, width: sx1 - sx0, height: sy1 - sy0, fill: 'none', stroke: '#3ddc84', 'stroke-width': 5, rx: 4});
+const lines = [[bp(250, 687), bp(700, 687)], [bp(0, 760), bp(250, 687)], [bp(250, 300), bp(250, 687)], [bp(160, 0), bp(250, 300)]].map(([a, b]) => { const l = mk('line', {x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: '#3ddc84', 'stroke-width': 5, 'stroke-linecap': 'round'}); const L = Math.hypot(b[0] - a[0], b[1] - a[1]); l.style.strokeDasharray = L; l._L = L; return l; });
+const hgt = mk('line', {x1: dx1 + 18, y1: dy0, x2: dx1 + 18, y2: dy1, stroke: '#ffd23f', 'stroke-width': 4, 'stroke-dasharray': '10 8'});
+const show = (id, op, tf) => { const e = $(id); e.style.opacity = op; if (tf !== undefined) e.style.transform = tf; };
+const at = (id, x, y) => { const e = $(id); e.style.left = x + 'px'; e.style.top = y + 'px'; };
+function cursorTo(x, y, op, press) { const c = $('cursor'); c.style.opacity = op; c.style.transform = `translate(${x - 8}px, ${y - 4}px) scale(${press ? 0.85 : 1})`; }
+// photo card layout
+const PH = [{id: 'ph1', x: 50, y: 520, r: -9}, {id: 'ph2', x: 375, y: 470, r: 0}, {id: 'ph3', x: 700, y: 520, r: 9}];
+for (const p of PH) { const e = $(p.id); e.style.width = '330px'; e.style.height = '440px'; e.style.left = '0px'; e.style.top = '0px'; e.style.transformOrigin = '165px 220px'; }
+$('big').style.cssText += 'left:210px;top:360px;width:660px;height:876px';
+at('pClaude', 0, 0); at('pRead', 0, 0);
+// ---- caption ----
+function drawCap(t) {
+  const i = TL.caps.findIndex((c, j) => t >= c.s - 0.06 && t < (TL.caps[j + 1]?.s ?? 1e9) - 0.06); const c = TL.caps[i];
+  if (!c || t > T.end - 0.25) { $('cap').innerHTML = ''; return; }
+  const k = eo(seg(t, c.s - 0.06, c.s + 0.12));
+  $('cap').innerHTML = c.i.map(j => `<span class="${t >= Wd[j].s - 0.04 ? 'on' : ''} ${Wd[j].hot ? 'hot' : ''}">${Wd[j].w}</span>`).join('');
+  $('cap').style.opacity = k; $('cap').style.transform = `translateY(${(1 - k) * 16}px)`;
+}
+// ---- scenes ----
+const S = {hook: [0, T.bas - 0.1], photos: [T.bas - 0.1, T.measuring - 0.12], size: [T.measuring - 0.12, T.phir - 0.08], browse: [T.phir - 0.08, T.poocho - 0.1],
+  sofa: [T.poocho - 0.1, T.room2 - 0.1], color: [T.room2 - 0.1, T.do - 0.12], layout: [T.do - 0.12, T.size - 0.2], table: [T.size - 0.2, T.comment - 0.12], cta: [T.comment - 0.12, 99]};
+const sc = t => Object.keys(S).find(k => t >= S[k][0] && t < S[k][1]);
+const PA = Math.PI / 4;
+window.renderAt = (t) => {
+  const k = sc(t), u = n => seg(t, S[n][0], S[n][1]);
+  // defaults
+  for (const id of ['quote', 'free', 'ph1', 'ph2', 'ph3', 'pClaude', 'big', 'pRead', 'lDoor', 'lSw', 'lWall', 'lSofa', 'lFix', 'fit', 'chat', 'sw', 'lay', 'tbl', 'cta', 'win']) $(id).style.opacity = 0;
+  ov.style.opacity = 0; $('cv').style.opacity = 0; cursorTo(0, 0, 0);
+  R.setLayout('A'); R.items.sofa.visible = false; R.place('sofa', 5.0, 10.4, 0); R.select(null, false); R.outlineOn(null, 0, false); R.doorWarn(0); R.setWall(WALLS.white); R.orbit(PA, 0.62); R.zoom(1.17, 5.5, 6.3);
+  const cv = $('cv'); let cvScale = 1, cvY = 0;
+  if (k === 'hook') {
+    const qa = eo(seg(t, 0, 0.35)), qo = eio(seg(t, T.free - 0.35, T.free + 0.05));
+    show('quote', qa * (1 - qo), `translateY(${(1 - qa) * 60 - qo * 120}px) scale(${1 - 0.25 * qo}) rotate(${-4 * qo}deg)`);
+    $('strike').style.width = (eo(seg(t, T.architect + 0.35, T.architect + 0.85)) * 112) + '%';
+    const ra = eo(seg(t, T.free - 0.15, T.free + 0.4)); cv.style.opacity = ra; cvScale = 0.55 + 0.45 * back(seg(t, T.free - 0.15, T.free + 0.45)); R.orbit(PA + (1 - ra) * 0.8);
+    const fa = back(seg(t, T.free, T.free + 0.35)); show('free', cl(fa * 2), `translateX(-50%) scale(${0.5 + 0.5 * fa}) rotate(-3deg)`);
+  }
+  if (k === 'photos') {
+    const fly = eio(seg(t, T['3d'] - 0.45, T['3d'] + 0.15));
+    PH.forEach((p, i) => { const ts = T.bas + 0.05 + i * 0.28; const a = back(seg(t, ts, ts + 0.4)); const op = cl(seg(t, ts, ts + 0.15) * 1) * (1 - fly);
+      const x = lerp(p.x, 390, fly), y = lerp(p.y + (1 - a) * 160, 600, fly); const e = $(p.id); e.style.opacity = op; e.style.transform = `translate(${x}px, ${y}px) rotate(${p.r * (1 - fly)}deg) scale(${(0.6 + 0.4 * a) * (1 - 0.6 * fly)})`; });
+    const ca = back(seg(t, T.claude - 0.05, T.claude + 0.3)); show('pClaude', cl(ca * 2) * (1 - fly), `translate(${540 - 170}px, 1060px) scale(${0.6 + 0.4 * ca})`);
+    const ra = eo(seg(t, T['3d'] - 0.2, T['3d'] + 0.5)); cv.style.opacity = ra; cvScale = 0.3 + 0.7 * back(seg(t, T['3d'] - 0.2, T['3d'] + 0.55)); R.orbit(PA + (1 - eo(seg(t, T['3d'] - 0.2, S.photos[1]))) * 2.2, 0.62);
+  }
+  if (k === 'size') {
+    const a = eo(seg(t, S.size[0], S.size[0] + 0.35)); show('big', a, `translateY(${(1 - a) * 80}px) scale(${0.92 + 0.08 * a})`); ov.style.opacity = 1;
+    show('pRead', a, `translate(${540 - 190}px, 395px)`);
+    const d = eo(seg(t, T.darwaza - 0.05, T.darwaza + 0.5)); doorR.style.strokeDashoffset = DL * (1 - d); doorR.style.opacity = t > T.darwaza - 0.05 ? 1 : 0; hgt.style.opacity = d;
+    const la = back(seg(t, T.darwaza + 0.35, T.darwaza + 0.7)); show('lDoor', cl(la * 2), `translate(-50%,-50%) scale(${0.6 + 0.4 * la})`); at('lDoor', (dx0 + dx1) / 2 + 40, dy0 - 36);
+    lines.forEach((l, i) => { const p = eo(seg(t, T.andaza - 0.25 + i * 0.12, T.andaza + 0.2 + i * 0.12)); l.style.strokeDashoffset = l._L * (1 - p); l.style.opacity = p > 0 ? 1 : 0; });
+    const s2 = back(seg(t, T.andaza - 0.1, T.andaza + 0.25)); swR.style.opacity = cl(s2 * 2); show('lSw', cl(s2 * 2), `translate(-50%,-50%) scale(${0.6 + 0.4 * s2})`); at('lSw', sx1 + 150, sy0 - 40);
+    const w2 = back(seg(t, T.andaza + 0.2, T.andaza + 0.55)); show('lWall', cl(w2 * 2), `translate(-50%,-50%) scale(${0.6 + 0.4 * w2})`); at('lWall', bp(480, 687)[0], bp(480, 687)[1] + 40);
+    $('big').querySelector('img').style.transform = `scale(${1 + 0.05 * u('size')})`;
+  } else { ov.style.opacity = 0; }
+  const inWin = ['browse', 'sofa', 'color', 'layout'].includes(k);
+  if (inWin) {
+    const a = k === 'browse' ? eo(seg(t, S.browse[0], S.browse[0] + 0.4)) : 1; show('win', a, `scale(${0.94 + 0.06 * a})`); cv.style.opacity = a; cvScale = 0.94 + 0.06 * a; cvY = 52;
+  }
+  if (k === 'browse') {
+    // bed rotate + move, almirah slide, then back
+    const b1 = eio(seg(t, T.bed + 0.05, T.bed + 0.6)), back1 = eio(seg(t, T.full + 0.1, T.full + 0.7));
+    const A = LAYOUTS.A, B = LAYOUTS.B; const kb = b1 * (1 - back1);
+    R.place('bed', lerp(A.bed[0], B.bed[0], kb), lerp(A.bed[1], B.bed[1], kb), lerp(A.bed[2], B.bed[2], kb));
+    const ka = eio(seg(t, T.almirah + 0.05, T.almirah + 0.55)) * (1 - back1); R.place('almirah', lerp(9.4, 7.0, ka), 0.85, 0);
+    const sel = t < T.almirah ? 'bed' : 'almirah'; if (t > T.bed - 0.25 && t < T.full + 0.1) R.select(sel);
+    const tgt = sel === 'bed' ? R.items.bed.position : R.items.almirah.position; const p = P(tgt.x, 1.5, tgt.z);
+    cursorTo(p.x + 30, p.y + 10, cl(seg(t, T.bed - 0.4, T.bed - 0.2)) * (1 - seg(t, T.full + 0.6, T.full + 0.8)), (t > T.bed && t < T.bed + 0.6) || (t > T.almirah && t < T.almirah + 0.55));
+    R.orbit(PA + 0.12 * Math.sin(u('browse') * Math.PI), 0.62);
+  }
+  if (k === 'sofa') {
+    // typing
+    const q = '7 ft sofa fit hoga ki nahi?'; const n = Math.floor(cl((t - T.poocho) / (T.sofa - 0.2 - T.poocho)) * q.length); $('chatT').textContent = q.slice(0, n) + (n < q.length && Math.floor(t * 4) % 2 ? '|' : '');
+    show('chat', eo(seg(t, S.sofa[0], S.sofa[0] + 0.25)));
+    const drop = eo(seg(t, T.sofa - 0.1, T.sofa + 0.35)); R.items.sofa.visible = t > T.sofa - 0.1; const fix = eio(seg(t, T.check - 0.3, T.check + 0.35));
+    R.place('sofa', lerp(5.0, 3.9, fix), 10.4, 0); R.items.sofa.position.y = (1 - drop) * 6;
+    const sp = P(R.items.sofa.position.x, 3.4 + R.items.sofa.position.y, 10.4); const la = back(seg(t, T.sofa + 0.2, T.sofa + 0.5));
+    show('lSofa', cl(la * 2) * (1 - seg(t, T.deewar - 0.2, T.deewar)), `translate(-50%,-50%) scale(${0.6 + 0.4 * la})`); at('lSofa', sp.x, sp.y - 30);
+    show('fit', eo(seg(t, T.deewar - 0.35, T.deewar - 0.05)));
+    for (const [id, tt] of [['f1', T.deewar], ['f2', T.darwaza2], ['f3', T.chalne]]) { const a = back(seg(t, tt - 0.08, tt + 0.25)); $(id).style.opacity = cl(a * 2); $(id).style.transform = `translateX(${(1 - cl(a)) * -30}px)`; }
+    const bad = t > T.darwaza2 - 0.05 && fix < 0.6; R.doorWarn(bad ? 0.6 + 0.4 * Math.sin(t * 12) : 0); R.outlineOn('sofa', fix > 0.6 ? 0x3ddc84 : (t > T.darwaza2 - 0.05 ? 0xff4d5e : 0xffd23f), t > T.deewar - 0.2);
+    $('f2i').style.background = fix > 0.6 ? '#2fbf6a' : '#ff4d5e'; $('f2i').textContent = fix > 0.6 ? '✓' : '✕'; $('f2t').textContent = fix > 0.6 ? 'Darwaza ab free' : 'Darwaza takrayega';
+    const fl = back(seg(t, T.check + 0.3, T.check + 0.6)); show('lFix', cl(fl * 2), `translate(-50%,-50%) scale(${0.6 + 0.4 * fl})`); at('lFix', sp.x, sp.y - 40);
+    const cp = P(lerp(5.0, 3.9, fix) + 1.2, 2.5, 10.4); cursorTo(cp.x, cp.y, seg(t, T.check - 0.6, T.check - 0.4) * (1 - seg(t, T.check + 0.6, T.check + 0.8)), t > T.check - 0.3 && t < T.check + 0.35);
+    R.orbit(PA, 0.62);
+  }
+  if (k === 'color') {
+    R.items.sofa.visible = true; R.place('sofa', 3.9, 10.4, 0);
+    show('sw', eo(seg(t, S.color[0], S.color[0] + 0.3)), `translateX(-50%) translateY(${(1 - eo(seg(t, S.color[0], S.color[0] + 0.3))) * 30}px)`);
+    const g = eo(seg(t, T.sage, T.sage + 0.45)), pe = eo(seg(t, T.peach, T.peach + 0.45));
+    if (t < T.peach) R.setWallMix(WALLS.white, WALLS.sage, g); else R.setWallMix(WALLS.sage, WALLS.peach, pe);
+    $('swN').textContent = t >= T.peach ? 'Peach' : t >= T.sage ? 'Sage green' : 'White';
+    $('sSage').style.borderColor = t >= T.sage && t < T.peach ? '#3ddc84' : 'rgba(255,255,255,.25)'; $('sPeach').style.borderColor = t >= T.peach ? '#3ddc84' : 'rgba(255,255,255,.25)';
+    const r1 = $('sSage').getBoundingClientRect(), r2 = $('sPeach').getBoundingClientRect(); const tx = t < T.peach - 0.5 ? r1 : r2; const mv = t < T.peach - 0.5 ? eio(seg(t, T.sage - 0.6, T.sage - 0.1)) : eio(seg(t, T.peach - 0.5, T.peach - 0.05));
+    const from = t < T.peach - 0.5 ? {x: 700, y: 1100} : {x: r1.left + 28, y: r1.top + 28}; cursorTo(lerp(from.x, tx.left + 28, mv), lerp(from.y, tx.top + 28, mv), cl(seg(t, S.color[0] + 0.3, S.color[0] + 0.5)), (t > T.sage - 0.05 && t < T.sage + 0.15) || (t > T.peach - 0.05 && t < T.peach + 0.15));
+    R.orbit(PA - 0.15 * u('color'), 0.62);
+  }
+  if (k === 'layout') {
+    R.setWall(WALLS.peach); const L = ['A', 'B', 'C']; const steps = [S.layout[0], T.layout + 0.15, T.layout + 0.75];
+    let i = 0; for (let j = 0; j < 3; j++) if (t >= steps[j]) i = j; const prev = L[Math.max(0, i - 1)], cur = L[i]; const m = eio(seg(t, steps[i], steps[i] + 0.35));
+    for (const it of ['bed', 'almirah', 'table']) { const a = LAYOUTS[prev][it], b = LAYOUTS[cur][it]; R.place(it, lerp(a[0], b[0], m), lerp(a[1], b[1], m), lerp(a[2], b[2], m)); }
+    $('lay').textContent = 'Layout ' + LAYOUTS[cur].label; const la = back(seg(t, steps[i], steps[i] + 0.3)); show('lay', cl(la * 2), `scale(${0.8 + 0.2 * la})`);
+  }
+  if (k === 'table') {
+    const a = eo(seg(t, S.table[0], S.table[0] + 0.3)); show('tbl', a, `translateY(${(1 - a) * 40}px)`);
+    SIZES.forEach((_, i) => { const r = $('sr' + i); const ra = eo(seg(t, S.table[0] + 0.15 + i * 0.13, S.table[0] + 0.4 + i * 0.13)); r.style.opacity = ra; r.style.transform = `translateX(${(1 - ra) * 30}px)`; });
+    const pulse = Math.exp(-Math.max(0, t - (T.size + 0.25)) * 3) * (t > T.size + 0.25 ? 1 : 0); document.querySelectorAll('#tbl .t.u').forEach(e => e.style.transform = `scale(${1 + 0.18 * pulse})`);
+  }
+  if (k === 'cta') {
+    show('cta', eo(seg(t, S.cta[0], S.cta[0] + 0.25)));
+    const ka = back(seg(t, S.cta[0], S.cta[0] + 0.4)); $('kit').style.transform = `translateX(-50%) rotate(-3deg) scale(${0.5 + 0.5 * ka})`;
+    const word = 'ROOM'; const n = Math.floor(cl((t - T.roomcta + 0.1) / 0.45) * 4.999); $('cmtT').textContent = word.slice(0, Math.max(0, n));
+    $('caret').style.opacity = Math.floor(t * 3) % 2 ? 1 : 0.2; const ga = back(seg(t, T.setup - 0.1, T.setup + 0.25)); $('gift').style.opacity = cl(ga * 2); $('gift').style.transform = `translateX(-50%) scale(${0.7 + 0.3 * ga})`;
+  }
+  cv.style.transform = `translateY(${cvY}px) scale(${cvScale})`;
+  R.render(); drawCap(t);
+};
+window.READY = true;
+</script></body></html>
