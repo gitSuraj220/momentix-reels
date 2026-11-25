@@ -1,0 +1,44 @@
+ROOM 3D WITH CLAUDE — UPLOAD DETAILS (draft; posting time + music: decide later)
+=======================================================================
+Video: Room_3D_Claude.mp4 (1080x1920, 30 fps, 10 Mbps CBR, about -14 LUFS, about 33 s)
+Stems: stems/vo.wav, stems/sfx.wav, stems/video_only.mp4 (add music about 18 dB under the voice)
+Free kit (deliver via SuperProfile auto-DM on keyword ROOM): Room_3D_Free_Kit.pdf
+
+YOUTUBE TITLE (pick one)
+A) Claude AI Room Design: 3 Photos Se Apna Room 3D Mein Banao (Free) #shorts
+B) AI Room Planner Free: Will a 7 ft Sofa Fit? Claude Checks in 3D #shorts
+C) Room Design With AI in Hindi: 3 Photos to a 3D Room Using Claude #shorts
+(Before posting: run YouTube autocomplete check on "ai room design", "room design ai free", "claude ai" and pick the strongest phrase.)
+
+DESCRIPTION
+Claude AI room design: sirf 3 photos se apna room 3D mein banao, sofa fit check karo aur deewar ka colour try karo.
+सिर्फ 3 फोटो से अपना कमरा 3D में बनाओ, Claude AI की मदद से।
+
+Kaise: room ki 3 photo lo (ek mein darwaza saaf dikhe), Claude ko prompt ke saath bhejo, wo darwaze ke size (7 ft) se baaki sizes ka andaza lagata hai aur ek 3D room banata hai jo browser mein khulta hai.
+Note: sizes andaza hain, kharidne se pehle measuring tape se confirm karo. Construction/structural kaam ke liye architect se hi baat karo.
+
+Comment karo ROOM, setup + 3 prompts ka free kit bhej dunga.
+
+#claude #ai #roomdesign #interiordesign #aitools #homedecor #roommakeover
+
+TAGS
+claude ai, claude ai room design, ai room design, ai room planner, room design with ai, room design ideas, 3d room design, ai interior design, interior design hindi, room makeover, sofa fit, claude ai hindi, ai tools, momentix, momentix by suraj
+
+IG / FB CAPTION (no channel / Suraj name)
+3 photo bhejo, Claude tumhara room 3D mein bana dega 🏠✨
+Sofa fit hoga ya nahi, darwaza takrayega ya nahi, deewar ka colour kaisa lagega: sab pehle hi check karo.
+Comment karo "ROOM" 👇 setup + 3 prompts free kit DM mein.
+(Sizes andaza hain, kharidne se pehle ek baar measure kar lena.)
+#claude #aitools #roomdesign #interiordesign #homedecor #roommakeover #reelsindia
+
+SUPERPROFILE AUTO-DM (keyword: ROOM / room / रूम)
+Ye raha tumhara free kit 🎁 Room 3D (setup + 3 prompts): [SuperProfile link]
+Photo lete waqt darwaza saaf dikhna chahiye, wahi se size nikalta hai. Bana ke dikhao, tag karo!
+
+COVER — GPT PROMPT
+Vertical 1080x1920 cover, dark near-black background with a soft green glow. Center: a clean isometric 3D dollhouse
+of a middle-class Indian bedroom (wooden double bed with maroon floral bedsheet, grey steel almirah, study table under a
+window with orange curtains, grey tile floor, blue sofa), slightly tilted, premium soft shadows. On the left, three real
+phone photos of the same room fan out with green number badges 1, 2, 3 and arrows flowing into the 3D room. Big bold text
+at the top: "3 PHOTO → 3D ROOM" in white with "3D ROOM" in bright green (#3ddc84). Small green outlined tag below:
+"FREE AI TRICK". No logos, no real people. Keep the top 15% and bottom 20% free of important details.

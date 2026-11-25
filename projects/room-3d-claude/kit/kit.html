@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;font-weight:500;src:url(../fonts/p500.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(../fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(../fonts/p800.woff2)}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0}
+body{font-family:P,sans-serif;color:#17201b;font-size:12.5pt;line-height:1.55}
+.page{width:210mm;height:297mm;padding:18mm 18mm;page-break-after:always;position:relative;overflow:hidden}
+.cover{background:#0b100e;color:#eaf4ee;display:flex;flex-direction:column;justify-content:center}
+.cover .tag{align-self:flex-start;display:inline-block;border:3px solid #3ddc84;color:#3ddc84;padding:6px 18px;border-radius:12px;font-weight:800;letter-spacing:3px;font-size:14pt}
+.cover h1{font-size:40pt;line-height:1.1;margin:22px 0 14px;font-weight:800}
+.cover h1 b{color:#3ddc84}
+.cover p{font-size:15pt;color:#a9bcb2}
+.cover img{width:130mm;align-self:center;border-radius:16px;margin-top:22px}
+h2{font-size:17pt;font-weight:800;margin:0 0 10px;color:#0e1a14}
+h2 small{display:block;font-size:11pt;color:#4b8a64;letter-spacing:2px;font-weight:700}
+h3{font-size:14pt;margin:18px 0 6px}
+ul,ol{padding-left:20px} li{margin:5px 0}
+.box{background:#f2f7f4;border:2px solid #cfe6d8;border-radius:12px;padding:14px 16px;margin:12px 0}
+.prompt{background:#0f1512;color:#e6f2ea;border-radius:12px;padding:12px 16px;font-size:10pt;line-height:1.5;margin:8px 0 12px;white-space:pre-wrap}
+.prompt b{color:#7dffb0}
+.warn{background:#fff6e5;border:2px solid #ffd58a;border-radius:12px;padding:12px 16px;margin:14px 0}
+.foot{position:absolute;bottom:12mm;left:18mm;right:18mm;font-size:9pt;color:#7a8a81;display:flex;justify-content:space-between}
+</style></head><body>
+<div class="page cover">
+ <span class="tag">FREE KIT</span>
+ <h1>3 photo → <b>tumhara room 3D mein</b></h1>
+ <p>Claude se apna room 3D dollhouse ki tarah banao, furniture ghumao, sofa fit check karo, deewar ka colour try karo. Setup + 3 ready prompts, Hinglish mein.</p>
+ <img src="../build/kit_room.png">
+</div>
+<div class="page">
+ <h2><small>STEP 1</small>Kya chahiye</h2>
+ <ul><li><b>Claude</b> (claude.ai, web ya app). Free plan pe bhi try kar sakte ho; Pro mein limits zyada milti hain.</li>
+ <li>Apne room ki <b>3 photos</b> phone se.</li><li>Laptop/PC ka browser, 3D room kholne ke liye (phone pe bhi khul jaata hai).</li></ul>
+ <h2 style="margin-top:22px"><small>STEP 2</small>Photos kaise lo (sabse important)</h2>
+ <ol><li><b>Photo 1:</b> darwaze se, poora room dikhe (corner se khade hoke).</li>
+ <li><b>Photo 2:</b> ulti taraf se, <b>darwaza</b> saaf dikhe. Claude isi se size ka andaza lagata hai (normal darwaza 7 ft hota hai).</li>
+ <li><b>Photo 3:</b> khidki wali deewar, table/almirah ke saath.</li></ol>
+ <div class="box">Tips: din ki roshni mein lo, phone seedha pakdo (tilt mat karo), wide mode (0.5x) mat use karo, floor thoda dikhna chahiye.</div>
+ <h2 style="margin-top:22px"><small>STEP 3</small>Prompts use karo</h2>
+ <p>Agle page pe 3 prompts hain. Pehla prompt photos ke saath bhejo. Claude ek HTML file banayega. Use <b>download karke browser mein kholo</b> (ya claude.ai pe preview mein dekho).</p>
+ <div class="warn"><b>Dhyan rahe:</b> sizes <b>andaza</b> hain, exact measurement nahi. Sofa/almirah kharidne se pehle measuring tape se ek baar confirm kar lena. Construction ya structural kaam ke liye architect/engineer se hi baat karo.</div>
+ <div class="foot"><span>Room 3D · Free Kit</span><span>2</span></div>
+</div>
+<div class="page">
+ <h2><small>PROMPT 1</small>Room ko 3D mein banao</h2>
+ <div class="prompt">Main apne room ki 3 photos bhej raha hoon. Inse mera room ek <b>3D dollhouse</b> ki tarah banao, ek single HTML file mein (three.js use karo).
+
+1. Photos dhyan se dekho. Darwaze ko <b>7 ft</b> maan ke (ya koi aur cheez jiska size pakka ho) deewar, ceiling, khidki aur furniture ke size ka andaza lagao.
+2. Room ko isometric view mein dikhao: 2 deewarein poori, baaki 2 neechi (cutaway), floor pe tiles/flooring jaisa photo mein hai.
+3. Furniture (bed, almirah, table, chair, etc.) wahi rakho jo photo mein hai, sahi jagah pe, simple 3D shapes aur sahi colours mein.
+4. Har furniture ko <b>mouse se drag</b> kar sakun, aur <b>R</b> dabane pe 90° ghoom jaaye.
+5. Darwaze ka khulne ka area (door swing) floor pe dikhao.
+6. Side mein ek table do: har size jo tumne andaza lagaya, aur har ek ke saath likho "pakka" ya "guess".</div>
+ <h2><small>PROMPT 2</small>Fit check (sofa, almirah, bed)</h2>
+ <div class="prompt">Is room mein ek <b>[7 ft x 3 ft]</b> ka sofa add karo, jahan tumhe sabse sahi lage.
+Phir check karo aur saaf batao:
+✓/✕ Deewar ke andar aata hai?
+✓/✕ Darwaza khulte waqt takrayega?
+✓/✕ Chalne ki jagah kam se kam 2 ft bachti hai?
+Agar koi ✕ hai, toh sofa ko kahan/kitna khiskaun ki sab ✓ ho jaaye, wo bhi batao aur 3D mein dikhao.</div>
+ <h2><small>PROMPT 3</small>Colour + layout makeover</h2>
+ <div class="prompt">Room mein neeche ek colour bar add karo: White, <b>Sage green</b>, <b>Peach</b>, Sky blue. Click karne pe deewaron ka colour badal jaaye.
+Phir mere room ke liye <b>3 alag layout</b> suggest karo (A, B, C) aur buttons do jinse furniture animate hoke naye layout mein chala jaaye. Har layout ke saath 1 line mein likho ki ye kyun achha hai (zyada jagah, khidki ki roshni, etc.).</div>
+ <div class="box">Kuch galat lage toh seedha bolo: "almirah left wali deewar pe hai", "bed 6 ft ka hai". Claude update kar dega.</div>
+ <div class="foot"><span>Room 3D · Free Kit</span><span>3</span></div>
+</div>
+</body></html>
