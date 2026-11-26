@@ -35,3 +35,9 @@ screen showing a big red generic "EMERGENCY ALERT" card, red alarm rings radiati
 from inside. Rows of empty exam desks fade into the background. Big bold text at the top: "KOREA KA AI ALARM 🚨" in white with
 "AI ALARM" in alarm red (#ff3b47); small white tag below: "49 PAKDE GAYE". No logos, no flags, no real people, no faces.
 Keep the top 15% and bottom 20% free of important details.
+
+PUBLISHED / SCHEDULED (27 Nov 2026)
+- YouTube: https://youtube.com/shorts/Nruu9KOiCEM — Fri 27 Nov 9:00 PM IST (GMT+05:30). Title "Korea Emergency Alert: Every Phone Rang to Catch AI Cheating in Exam 2026 #shorts".
+  Description (Hinglish + Hindi + sources) above the channel footer, 19 tags, Hindi, Education, AI disclosure Yes, not for kids, playlist "Tech & AI Hacks (Hinglish)", custom thumbnail = cover.png.
+- Instagram + Facebook: scheduled Fri 27 Nov 21:00 (Meta Business Suite), caption above, cover.png as thumbnail.
+  Note: the last hashtag shows as "##ʀᴇᴇʟsɪɴᴅɪᴀ" in Business Suite (autocomplete swapped #reelsindia); fix in the app if needed.
