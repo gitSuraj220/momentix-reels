@@ -37,3 +37,28 @@ Original input (monetization guard): India link (NDMA 2 May 2026 test) + verifie
 ## Caption draft (IG/FB)
 Korea ne exam ke din poore desh ke phones pe emergency alarm bajaya 🚨 49 pakde gaye. India mein bhi JEE-NEET pe aisa ho? Comment karo 👇
 #korea #aicheating #csat #exam #jee #neet #ai #reelsindia
+
+---
+# FINAL SCRIPT v2 (Suraj's flow + GenZ pass, 27 Nov 2026)
+Corona mein thali bajayi thi, aur iss saal sarkar ne sabke phone baja diye. Yaad hai na?
+Korea ne bhi yahi kiya, par full smart way mein.
+Scene ye hai: Korea ke national tax exam ka topper khud bola, "Rank 1 maine AI se cheat karke liya."
+Chhupe camera se paper ki photo li, AI ko bheji, aur answer phone pe.
+Iske baad sarkar full alert pe aa gayi.
+19 November ko, jab lagbhag 5 lakh bachche Korea ka sabse bada college exam de rahe the,
+sarkar ne poore desh ke phones pe emergency alarm baja diya. Teen baar. Silent pe bhi.
+Jinhone phone jama nahi kiya tha, unka bag hi cheekh pada. Literally caught in 4K: 49 bachche pakde gaye.
+Ek ke paas toh mini camera aur wireless earphones bhi mile.
+Aur ab sarkar AI companies se exam wale din ka data maang rahi hai.
+India mein ye alarm abhi sirf disaster ke liye bajta hai...   (loop: cut straight back to the thali opening)
+(Banned words: lowkey, no cap, "toh khud check kar lena". "Bro, seedha topper ban gaya" cut.)
+
+# PRODUCTION DECISIONS (Suraj, 27 Nov 2026)
+- Style: Mixed. Code-made illustrated world, night navy + alarm red, white captions.
+- Realistic shots: code-made generic phone alert close-ups (no logos); Higgsfield images for exam hall wide (empty, no faces), bag ringing, thali balconies (no faces).
+- No guide character. Tax topper = generic illustrated student (not a real person).
+- Voice: ElevenLabs "harry potter", Eleven v4, 1.15x. Target ~35 s.
+- Ending: no poll; loop back to the thali first frame.
+- Audio: full SFX + voice, stems; Suraj adds music.
+- Captions: Room reel style, word by word, green box on hot words.
+- Cover: GPT prompt only. Schedule: decide later.
