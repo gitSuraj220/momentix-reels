@@ -1,0 +1,39 @@
+KOREA AI CHEATING ALARM — UPLOAD DETAILS (draft; schedule: decide later)
+=======================================================================
+Video: Korea_AI_Alarm.mp4 (1080x1920, 30 fps, 10 Mbps CBR, -14.1 LUFS, 38.5 s). Loops back to the first frame.
+Stems: stems/vo.wav, stems/sfx.wav, stems/video_only.mp4 (add music about 18 dB under the voice; tense, low pulse).
+
+YOUTUBE TITLE (pick one; run autocomplete check before posting)
+A) Korea AI Cheating: Emergency Alarm Rang on Every Phone to Catch Exam Cheaters #shorts
+B) Korea Exam Cheating With AI: Why the Whole Country's Phones Rang #shorts
+C) AI Cheating in Exams: Korea Used an Emergency Alert to Catch 49 Students #shorts
+
+DESCRIPTION
+Korea AI cheating: exam ke din sarkar ne poore desh ke phones pe emergency alarm bajaya, aur 49 bachche pakde gaye.
+कोरिया में AI से नकल रोकने के लिए परीक्षा के दिन हर फोन पर इमरजेंसी अलार्म बजाया गया।
+
+Kya hua: Korea ke national tax accountant exam ke topper ne AI aur chhupe camera se cheating confess ki. Iske baad 19 Nov 2026 ke college entrance exam (CSAT) mein sarkar ne 3 baar emergency alert bheja; jinhone phone jama nahi kiya tha unke phone baj gaye. Ek test centre pe mini camera aur wireless earphones mile. Sarkar AI companies se exam day records maang rahi hai.
+India mein cell broadcast alert ka test May 2026 mein hua tha, abhi sirf disaster ke liye.
+
+Sources: Korea JoongAng Daily, The Korea Times (Nov 2026); NDMA test, ETV Bharat (May 2026).
+Kya India mein JEE-NEET pe bhi aisa hona chahiye? Comment karo 👇
+
+#korea #aicheating #exam #ai #jee #neet #shorts
+
+TAGS
+korea ai cheating, ai cheating, ai cheating in exams, korea exam, csat korea, korea emergency alert, emergency alert phone, exam cheating, ai news hindi, ai news, cell broadcast alert india, jee neet, momentix, momentix by suraj
+
+YouTube settings: Education, Hindi. AI disclosure = YES (realistic AI images of balconies, exam hall and bag). Not made for kids.
+
+IG / FB CAPTION (no channel / Suraj name)
+Korea ne exam ke din poore desh ke phones pe emergency alarm baja diya 🚨
+Wajah? AI se cheating. Result: 49 bachche pakde gaye.
+India mein JEE-NEET pe bhi aisa hona chahiye? Comment karo 👇
+#korea #aicheating #exam #jee #neet #ainews #reelsindia
+
+COVER — GPT PROMPT
+Vertical 1080x1920 cover, dark navy night background with red emergency glow. Center: a smartphone lying on an exam desk,
+screen showing a big red generic "EMERGENCY ALERT" card, red alarm rings radiating out, a school backpack behind it glowing red
+from inside. Rows of empty exam desks fade into the background. Big bold text at the top: "KOREA KA AI ALARM 🚨" in white with
+"AI ALARM" in alarm red (#ff3b47); small white tag below: "49 PAKDE GAYE". No logos, no flags, no real people, no faces.
+Keep the top 15% and bottom 20% free of important details.

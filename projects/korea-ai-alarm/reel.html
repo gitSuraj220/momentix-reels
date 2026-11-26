@@ -1,0 +1,300 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;font-weight:500;src:url(fonts/p500.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(fonts/p800.woff2)}
+@font-face{font-family:A2;src:url(fonts/anton.woff2)}
+*{margin:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#070b16;font-family:P;color:#fff}
+.sc{position:absolute;inset:0;opacity:0;overflow:hidden}
+.full{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 45%,rgba(0,0,0,0) 40%,rgba(3,5,12,.85) 100%)}
+.navy{background:radial-gradient(ellipse 90% 60% at 50% 40%,#14213f 0%,#0a1124 55%,#060914 100%)}
+.stamp{position:absolute;padding:10px 26px;border:6px solid #ff3b47;border-radius:16px;color:#ff3b47;font:90px A2;letter-spacing:4px;white-space:nowrap;background:rgba(255,59,71,.08);text-shadow:0 0 24px rgba(255,59,71,.5)}
+.chip{position:absolute;padding:12px 26px;border-radius:40px;background:rgba(10,16,34,.92);border:2px solid #2a3a66;color:#e9eefc;font:700 34px P;white-space:nowrap;display:flex;align-items:center;gap:14px}
+.chip i{font-style:normal;color:#ff4d57}
+/* phone */
+.phone{position:absolute;width:500px;height:960px;border-radius:72px;background:#0b0d12;border:14px solid #1d2230;box-shadow:0 40px 120px rgba(0,0,0,.7),0 0 0 2px #39415a inset;overflow:hidden}
+.phone .wall{position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,#2b3d7a,#101a3a 55%,#080c1c)}
+.phone .clk{position:absolute;top:110px;width:100%;text-align:center;font:800 140px P;letter-spacing:-3px;color:#f2f4ff}
+.phone .dt{position:absolute;top:84px;width:100%;text-align:center;font:600 30px P;color:#c9d1ee}
+.phone .notch{position:absolute;top:18px;left:50%;width:150px;height:40px;margin-left:-75px;border-radius:30px;background:#000}
+.alert{position:absolute;left:24px;right:24px;top:360px;border-radius:34px;background:rgba(30,10,14,.96);border:3px solid #ff3b47;padding:30px 30px 34px;box-shadow:0 0 60px rgba(255,59,71,.45)}
+.alert h3{display:flex;align-items:center;gap:14px;font:800 32px P;color:#ff5a63}
+.alert h3 b{width:46px;height:46px;border-radius:50%;background:#ff3b47;color:#fff;display:flex;align-items:center;justify-content:center;font:800 30px P}
+.alert p{margin-top:18px;font:600 30px P;line-height:1.35;color:#ffe9ea}
+.alert small{display:block;margin-top:16px;font:600 24px P;color:#ff9aa0}
+/* rank board */
+#board{position:absolute;left:110px;top:330px;width:860px;border-radius:30px;background:#0f1730;border:3px solid #2a3a66;padding:34px 36px;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+#board h4{font:800 30px P;letter-spacing:4px;color:#8ea2d8;text-align:center}
+#board h5{font:600 26px P;color:#5f72a8;text-align:center;margin:6px 0 20px}
+.rk{display:flex;align-items:center;gap:22px;height:118px;margin-top:14px;border-radius:20px;background:#16213f;padding:0 24px;font:700 40px P;color:#c8d2f0;position:relative}
+.rk .n{width:64px;font:800 52px P;color:#6e82bd}
+.rk .bar{flex:1;height:22px;border-radius:11px;background:#26345e}
+.rk.one{background:linear-gradient(90deg,#4a3a10,#2a2212);border:3px solid #ffcf3f}
+.rk.one .n{color:#ffcf3f}.rk.one .bar{background:#ffcf3f}
+.av{width:84px;height:84px;border-radius:50%;background:#2b3a6c;position:relative;overflow:hidden;flex:none}
+/* method */
+.node{position:absolute;width:260px;height:260px;border-radius:40px;background:#111a36;border:3px solid #2a3a66;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;font:700 32px P;color:#dfe6ff}
+.node svg{width:130px;height:130px}
+.arrow{position:absolute;height:8px;border-radius:4px;background:#ff4d57;transform-origin:0 50%}
+#ansb{position:absolute;padding:18px 26px;border-radius:24px 24px 24px 6px;background:#fff;color:#111;font:800 44px P;white-space:nowrap}
+/* siren */
+#siren{position:absolute;left:390px;top:520px;width:300px;height:300px}
+/* hall */
+#count{position:absolute;left:0;right:0;top:420px;text-align:center;font:150px A2;letter-spacing:4px;color:#fff;text-shadow:0 6px 30px rgba(0,0,0,.8)}
+#countL{position:absolute;left:0;right:0;top:620px;text-align:center;font:700 40px P;color:#ffd7da;text-shadow:0 4px 20px rgba(0,0,0,.9)}
+/* phone grid */
+#grid{position:absolute;left:90px;top:300px;width:900px;height:1000px}
+.mp{position:absolute;width:120px;height:210px;border-radius:24px;background:#141b30;border:4px solid #283255}
+.mp i{position:absolute;left:14px;right:14px;top:70px;height:56px;border-radius:12px;background:#ff3b47;opacity:0}
+.lamp{position:absolute;width:150px;height:150px;border-radius:50%;background:#3a1216;border:6px solid #5a2328;display:flex;align-items:center;justify-content:center;font:90px A2;color:#5a2328}
+.lamp.on{background:radial-gradient(circle,#ff6a72,#ff2735 60%,#a5101a);border-color:#ff9aa0;color:#fff;box-shadow:0 0 70px rgba(255,59,71,.8)}
+/* viewfinder */
+.vf{position:absolute;width:110px;height:110px;border-color:#fff;border-style:solid;border-width:0}
+#rec{position:absolute;left:120px;top:330px;font:800 40px P;color:#fff;display:flex;align-items:center;gap:14px}
+#rec b{width:30px;height:30px;border-radius:50%;background:#ff3b47}
+#k4{position:absolute;right:120px;top:322px;font:800 44px P;color:#fff;padding:2px 16px;border:4px solid #fff;border-radius:10px}
+/* counter 49 */
+#n49{position:absolute;left:0;right:0;top:250px;text-align:center;font:330px A2;color:#ff3b47;text-shadow:0 0 60px rgba(255,59,71,.6)}
+#n49l{position:absolute;left:0;right:0;top:680px;text-align:center;font:700 40px P;color:#ffd7da}
+#dots{position:absolute;left:274px;top:790px;width:540px}
+.dt7{display:inline-block;width:56px;height:56px;margin:10px;border-radius:16px;background:#1c2440;border:3px solid #2d3a66;position:relative}
+.dt7.on{background:#ff3b47;border-color:#ff9aa0;box-shadow:0 0 20px rgba(255,59,71,.6)}
+/* blueprint */
+.bp{background:#0d2a5c;background-image:linear-gradient(rgba(255,255,255,.06) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.06) 2px,transparent 2px);background-size:60px 60px}
+.call{position:absolute;padding:12px 24px;border:3px solid #fff;border-radius:14px;font:700 34px P;color:#fff;background:rgba(13,42,92,.9);white-space:nowrap}
+/* AI data */
+.co{position:absolute;width:170px;height:330px;border-radius:20px;background:#111a36;border:3px solid #2a3a66;display:flex;flex-direction:column;align-items:center;padding-top:26px;gap:14px;font:700 26px P;color:#9fb0e0}
+.co .chip2{width:90px;height:90px;border-radius:18px;border:4px solid #7aa2ff;display:flex;align-items:center;justify-content:center;font:800 34px P;color:#7aa2ff}
+.co .ln{width:110px;height:10px;border-radius:5px;background:#26345e}
+#gov{position:absolute;left:330px;top:300px;width:420px;height:330px}
+#file{position:absolute;width:190px;height:240px;border-radius:14px;background:#f5f1e6;color:#222;padding:22px 18px;font:800 24px P;box-shadow:0 18px 40px rgba(0,0,0,.6)}
+#file .l{height:10px;border-radius:5px;background:#cfc8b6;margin-top:14px}
+#req{position:absolute;left:300px;top:980px;transform:rotate(-8deg)}
+/* caption */
+#cap{position:absolute;left:50px;right:50px;top:1392px;text-align:center;font:600 54px P;line-height:1.35;text-shadow:0 4px 18px rgba(0,0,0,.85)}
+#cap span{display:inline-block;margin:0 .12em;color:rgba(255,255,255,.32);padding:0 .12em;border-radius:10px;border:3px solid transparent}
+#cap span.on{color:#fff}
+#cap span.hot.on{color:#7dffb0;border-color:#3ddc84;background:rgba(10,30,20,.55)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#redwash{position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 45%,rgba(255,40,55,.0),rgba(255,40,55,.35));opacity:0;pointer-events:none}
+</style></head><body>
+
+<!-- A: thali -->
+<div class="sc" id="sA"><img class="full" id="thaliImg" src="photos/thali.png"><div class="vig"></div><svg class="full" id="glints" viewBox="0 0 1080 1920"><defs><radialGradient id="gg"><stop offset="0" stop-color="#fffbe8" stop-opacity="1"/><stop offset=".25" stop-color="#ffe7a8" stop-opacity=".7"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient></defs></svg><div class="chip" id="y2020" style="left:70px;top:300px"><i>●</i>2020 · Corona</div></div>
+
+<!-- B: phone alert -->
+<div class="sc navy" id="sB"><div id="ringsB" style="position:absolute;inset:0"></div>
+ <div class="phone" id="phB" style="left:290px;top:390px"><div class="wall"></div><div class="notch"></div><div class="dt">Saturday, 2 May</div><div class="clk">11:42</div>
+  <div class="alert" id="alB"><h3><b>!</b>Emergency alert</h3><p>Extremely severe alert. This is a TEST message. No action is required.</p><small>Test · cell broadcast</small></div></div>
+ <div class="chip" id="may" style="left:70px;top:300px"><i>●</i>May 2026 · India</div>
+ <div class="stamp" id="yaad" style="left:540px;top:1120px;transform:translate(-50%,0) rotate(-6deg)">YAAD HAI NA?</div></div>
+
+<!-- C: korea map -->
+<div class="sc navy" id="sC"><svg class="full" id="map" viewBox="0 0 1080 1920"></svg><div class="chip" id="krL" style="left:600px;top:470px"><i>●</i>South Korea</div><div class="stamp" id="smart" style="left:120px;top:1150px;transform:rotate(-5deg);border-color:#7dffb0;color:#7dffb0;text-shadow:0 0 24px rgba(61,220,132,.5);background:rgba(61,220,132,.08)">SMART WAY</div></div>
+
+<!-- D: rank board -->
+<div class="sc navy" id="sD"><div id="board"><h4>TAX ACCOUNTANT EXAM</h4><h5>Korea · national result</h5><div id="rows"></div></div>
+ <div class="stamp" id="cheat" style="left:540px;top:640px;transform:translate(-50%,0) rotate(-8deg);font-size:100px">AI SE CHEAT</div>
+ <div class="chip" id="conf" style="left:540px;top:1180px;transform:translateX(-50%)"><i>●</i>Topper ka khud ka confession</div></div>
+
+<!-- E: method -->
+<div class="sc navy" id="sE">
+ <div class="node" id="n1" style="left:60px;top:560px"><svg viewBox="0 0 100 100"><rect x="14" y="30" width="72" height="50" rx="10" fill="none" stroke="#dfe6ff" stroke-width="6"/><circle cx="50" cy="55" r="15" fill="none" stroke="#ff4d57" stroke-width="6"/><rect x="36" y="20" width="28" height="12" rx="4" fill="#dfe6ff"/></svg>Chhupa camera</div>
+ <div class="node" id="n2" style="left:410px;top:560px"><svg viewBox="0 0 100 100"><rect x="22" y="22" width="56" height="56" rx="10" fill="none" stroke="#7aa2ff" stroke-width="6"/><text x="50" y="62" text-anchor="middle" font-family="P" font-weight="800" font-size="28" fill="#7aa2ff">AI</text><g stroke="#7aa2ff" stroke-width="5"><path d="M36 8v14M50 8v14M64 8v14M36 78v14M50 78v14M64 78v14M8 36h14M8 50h14M8 64h14M78 36h14M78 50h14M78 64h14"/></g></svg>AI</div>
+ <div class="node" id="n3" style="left:760px;top:560px"><svg viewBox="0 0 100 100"><rect x="28" y="6" width="44" height="88" rx="10" fill="none" stroke="#dfe6ff" stroke-width="6"/><circle cx="50" cy="84" r="4" fill="#dfe6ff"/></svg>Phone</div>
+ <div class="arrow" id="a1" style="left:330px;top:686px;width:80px"></div><div class="arrow" id="a2" style="left:680px;top:686px;width:80px"></div>
+ <div id="ansb" style="left:700px;top:430px">Q7 → B ✓</div>
+ <svg class="full" id="paper" viewBox="0 0 1080 1920"><g id="pg" transform="translate(120 920)"><rect width="340" height="420" rx="16" fill="#f3efe4"/><text x="30" y="60" font-family="P" font-weight="800" font-size="30" fill="#333">Q7.</text><g fill="#cfc8b6"><rect x="30" y="90" width="270" height="14" rx="7"/><rect x="30" y="124" width="230" height="14" rx="7"/><rect x="30" y="158" width="250" height="14" rx="7"/></g><g fill="none" stroke="#888" stroke-width="4"><circle cx="60" cy="240" r="18"/><circle cx="60" cy="290" r="18"/><circle cx="60" cy="340" r="18"/></g></g><rect id="pflash" x="120" y="920" width="340" height="420" rx="16" fill="#fff" opacity="0"/></svg></div>
+
+<!-- F: siren -->
+<div class="sc" id="sF" style="background:#12060a"><svg class="full" id="sir" viewBox="0 0 1080 1920"></svg><div class="stamp" id="fa" style="left:540px;top:1100px;transform:translate(-50%,0) rotate(-4deg);font-size:120px">FULL ALERT</div></div>
+
+<!-- G: exam hall -->
+<div class="sc" id="sG"><img class="full" id="hallImg" src="photos/hall.png"><div class="vig"></div>
+ <div class="chip" id="d19" style="left:70px;top:300px"><i>●</i>19 Nov 2026 · Korea</div>
+ <div id="count">0</div><div id="countL">bachche · sabse bada college exam</div>
+ <div class="chip" id="csat" style="left:540px;top:1180px;transform:translateX(-50%)"><i>●</i>CSAT · ~5.5 lakh registered</div></div>
+
+<!-- H: phones grid -->
+<div class="sc navy" id="sH"><div id="grid"></div><div id="lamps" style="position:absolute;left:0;right:0;top:300px"></div>
+ <div class="chip" id="muted" style="left:540px;top:1290px;transform:translateX(-50%)"><i>🔕</i>Silent mode? Phir bhi bajega</div></div>
+
+<!-- I: bag -->
+<div class="sc" id="sI"><img class="full" id="bagImg" src="photos/bag.png"><div class="vig"></div><div id="bagGlow" style="position:absolute;inset:0;background:radial-gradient(circle at 62% 47%,rgba(255,40,55,.55),rgba(255,40,55,0) 45%);mix-blend-mode:screen;opacity:0"></div>
+ <div id="vfw" style="position:absolute;inset:0;opacity:0"><div class="vf" style="left:90px;top:300px;border-top-width:8px;border-left-width:8px"></div><div class="vf" style="right:90px;top:300px;border-top-width:8px;border-right-width:8px"></div><div class="vf" style="left:90px;top:1210px;border-bottom-width:8px;border-left-width:8px"></div><div class="vf" style="right:90px;top:1210px;border-bottom-width:8px;border-right-width:8px"></div><div id="rec"><b></b>REC</div><div id="k4">4K</div></div>
+ <div class="stamp" id="caught" style="left:540px;top:1120px;transform:translate(-50%,0) rotate(-6deg)">CAUGHT IN 4K</div></div>
+
+<!-- J: 49 -->
+<div class="sc navy" id="sJ"><div id="n49">0</div><div id="n49l">bachche alarm se pakde gaye</div><div id="dots"></div></div>
+
+<!-- K: jacket blueprint -->
+<div class="sc bp" id="sK"><svg class="full" id="jk" viewBox="0 0 1080 1920"></svg><div class="call" id="cCam" style="left:640px;top:660px">mini camera</div><div class="call" id="cEar" style="left:90px;top:420px">wireless earphones</div><div class="chip" id="oneC" style="left:540px;top:1200px;transform:translateX(-50%);background:rgba(13,42,92,.95);border-color:#6f9cff"><i>●</i>Ek test centre pe</div></div>
+
+<!-- L: AI data -->
+<div class="sc navy" id="sL"><svg id="gov" viewBox="0 0 420 330"><path d="M30 120 L210 40 L390 120 Z" fill="#1b2750" stroke="#7aa2ff" stroke-width="6" stroke-linejoin="round"/><g fill="#1b2750" stroke="#7aa2ff" stroke-width="5"><rect x="60" y="130" width="40" height="150"/><rect x="140" y="130" width="40" height="150"/><rect x="240" y="130" width="40" height="150"/><rect x="320" y="130" width="40" height="150"/></g><rect x="20" y="285" width="380" height="30" fill="#1b2750" stroke="#7aa2ff" stroke-width="6"/><text x="210" y="105" text-anchor="middle" font-family="P" font-weight="800" font-size="30" fill="#dfe6ff">SARKAR</text></svg>
+ <div id="cos"></div>
+ <div id="file">EXAM DAY<br>LOGS<div class="l"></div><div class="l" style="width:70%"></div><div class="l" style="width:85%"></div><div class="l" style="width:60%"></div></div>
+ <div class="stamp" id="req" style="font-size:80px">DATA DO</div>
+ <div class="chip" id="four" style="left:540px;top:1190px;transform:translateX(-50%)"><i>●</i>4 companies ne haan bola</div></div>
+
+<!-- M: India -->
+<div class="sc navy" id="sM"><div id="ringsM" style="position:absolute;inset:0"></div>
+ <div class="phone" id="phM" style="left:290px;top:390px"><div class="wall"></div><div class="notch"></div><div class="dt">India</div><div class="clk" id="mclk">8:30</div>
+  <div class="alert"><h3><b>!</b>Disaster alert</h3><p>Sirf disaster ke liye: earthquake, cyclone, flood.</p><small id="mexam">Exam day? Abhi nahi</small></div></div>
+ <div class="chip" id="indC" style="left:70px;top:300px"><i>●</i>India · cell broadcast</div></div>
+<!-- loop return -->
+<div class="sc" id="sZ"><img class="full" id="thaliImg2" src="photos/thali.png"><div class="vig"></div></div>
+
+<div id="redwash"></div><div id="flash"></div>
+<div id="cap"></div>
+<script type="module">
+const TL = await (await fetch('timeline.json?' + Date.now())).json(); const T = TL.T, Wd = TL.words;
+await Promise.all(['600 54px P', '800 30px P', '700 34px P', '110px A2'].map(f => document.fonts.load(f)));
+await Promise.all([...document.images].map(i => i.decode().catch(() => 0)));
+const $ = id => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x)), seg = (t, a, b) => cl((t - a) / (b - a));
+const eo = x => 1 - Math.pow(1 - x, 3), eio = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const lerp = (a, b, k) => a + (b - a) * k;
+const NS = 'http://www.w3.org/2000/svg';
+const mk = (par, tag, at) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); par.appendChild(e); return e; };
+const wt = (w, after = 0) => { const x = Wd.find(o => o.s >= after && o.w.toLowerCase().replace(/[^a-z0-9]/g, '') === w); return x ? x.s : after; };
+// pop-in: opacity + scale overshoot
+const pop = (id, t, t0, base = '', dur = 0.32) => { const k = seg(t, t0, t0 + dur), e = $(id); e.style.opacity = t < t0 ? 0 : cl(k * 3); e.style.transform = `${base} scale(${t < t0 ? 0.6 : lerp(0.6, 1, back(k))})`; };
+const shake = (t, f, a) => Math.sin(t * f) * a;
+// scene windows
+const SC = [['sA', 0, T.sarkar1], ['sB', T.sarkar1, T.korea], ['sC', T.korea, T.scene], ['sD', T.scene, T.chhupe], ['sE', T.chhupe, T.iske], ['sF', T.iske, T.nov], ['sG', T.nov, T.sarkar3],
+  ['sH', T.sarkar3, T.jinhone], ['sI', T.jinhone, T.unchaas], ['sJ', T.unchaas, T.ek], ['sK', T.ek, T.ab], ['sL', T.ab, T.india], ['sM', T.india, T.end - 0.5], ['sZ', T.end - 0.5, T.end + 1]];
+const CUTS = SC.slice(1).map(s => s[1]);
+// ---- build static content ----
+// A glints (thali flashes on balconies) - positions in 1080x1920 space
+const GL = [[160, 160], [240, 380], [200, 1040], [190, 1290], [150, 1960 * .78], [330, 860], [420, 620], [520, 1500]].map(([x, y], i) => ({x, y, t: 0.15 + i * 0.22, e: mk($('glints'), 'circle', {cx: x, cy: y, r: 0, fill: 'url(#gg)'})}));
+// B rings
+const ringB = [0, 1, 2].map(i => { const d = document.createElement('div'); d.style.cssText = 'position:absolute;left:540px;top:870px;width:10px;height:10px;border-radius:50%;border:6px solid #ff3b47'; $('ringsB').appendChild(d); return d; });
+const ringM = [0, 1, 2].map(i => { const d = document.createElement('div'); d.style.cssText = 'position:absolute;left:540px;top:870px;width:10px;height:10px;border-radius:50%;border:6px solid #ffb13b'; $('ringsM').appendChild(d); return d; });
+// C korea map (lon/lat -> px)
+const LX = lo => 250 + (lo - 124.6) * 150, LY = la => 1200 - (la - 33.0) * 150;
+const SK = [[126.4, 37.75], [127.1, 38.1], [128.0, 38.3], [128.4, 38.6], [128.6, 38.3], [129.0, 37.7], [129.4, 37.0], [129.45, 36.0], [129.55, 35.6], [129.3, 35.2], [129.0, 35.1], [128.5, 34.9], [127.7, 34.75], [127.0, 34.55], [126.4, 34.4], [126.3, 34.8], [126.5, 35.5], [126.5, 36.0], [126.2, 36.6], [126.6, 37.0], [126.7, 37.4]];
+const NK = [[124.6, 39.8], [125.3, 40.6], [126.5, 41.6], [128.2, 41.9], [129.6, 42.4], [129.8, 41.0], [128.6, 40.1], [127.5, 39.7], [127.6, 39.1], [128.4, 38.6], [128.0, 38.3], [127.1, 38.1], [126.4, 37.75], [125.4, 37.7], [124.7, 38.1], [125.2, 38.9]];
+const poly = (pts) => pts.map(([a, b]) => `${LX(a).toFixed(0)},${LY(b).toFixed(0)}`).join(' ');
+const mapS = $('map');
+mk(mapS, 'polygon', {points: poly(NK), fill: '#131d3a', stroke: '#2a3a66', 'stroke-width': 4});
+const skP = mk(mapS, 'polygon', {points: poly(SK), fill: '#1d2a55', stroke: '#7aa2ff', 'stroke-width': 6, 'stroke-linejoin': 'round'});
+mk(mapS, 'ellipse', {cx: LX(126.55), cy: LY(33.38), rx: 55, ry: 26, fill: '#1d2a55', stroke: '#7aa2ff', 'stroke-width': 5});
+const SEO = [LX(127.0), LY(37.55)];
+const mRings = [0, 1, 2, 3].map(() => mk(mapS, 'circle', {cx: SEO[0], cy: SEO[1], r: 0, fill: 'none', stroke: '#ff3b47', 'stroke-width': 6}));
+const CITIES = [[127.0, 37.55], [129.07, 35.18], [128.6, 35.87], [126.85, 35.16], [127.38, 36.35], [126.7, 37.45], [129.3, 35.55], [127.15, 37.3], [128.9, 37.75], [126.5, 34.8], [127.48, 36.64], [128.1, 35.2]];
+const cDots = CITIES.map(([a, b]) => mk(mapS, 'circle', {cx: LX(a), cy: LY(b), r: 0, fill: '#ff3b47'}));
+const trail = mk(mapS, 'path', {d: `M 200 1700 Q 300 1000 ${SEO[0]} ${SEO[1]}`, fill: 'none', stroke: '#ff3b47', 'stroke-width': 6, 'stroke-dasharray': '18 14', opacity: 0});
+const trailDot = mk(mapS, 'circle', {r: 16, fill: '#ff3b47', opacity: 0});
+const reti = mk(mapS, 'g', {opacity: 0}); mk(reti, 'circle', {r: 70, fill: 'none', stroke: '#7dffb0', 'stroke-width': 6}); ['M-100 0h50', 'M50 0h50', 'M0 -100v50', 'M0 50v50'].forEach(d => mk(reti, 'path', {d, stroke: '#7dffb0', 'stroke-width': 6}));
+// D rows with generic illustrated avatars
+const avatar = (hair, skin, shirt) => `<div class="av"><svg viewBox="0 0 84 84" width="84" height="84"><rect width="84" height="84" fill="#2b3a6c"/><path d="M14 84 Q14 58 42 58 Q70 58 70 84Z" fill="${shirt}"/><circle cx="42" cy="38" r="17" fill="${skin}"/><path d="M24 36 Q24 16 42 16 Q60 16 60 36 Q52 26 42 27 Q32 26 24 36Z" fill="${hair}"/><circle cx="36" cy="40" r="2.2" fill="#222"/><circle cx="48" cy="40" r="2.2" fill="#222"/></svg></div>`;
+const AV = [['#1b1b1b', '#e7c3a0', '#3b5bd6'], ['#3b2a1a', '#d9b08c', '#2f8f6a'], ['#111', '#f0cfae', '#8a4fd1'], ['#2c2c2c', '#caa07a', '#c8553d'], ['#4a3320', '#e2bb98', '#4a7fb5']];
+$('rows').innerHTML = [1, 2, 3, 4, 5].map((n, i) => `<div class="rk ${n === 1 ? 'one' : ''}" id="rk${n}"><span class="n">${n}</span>${avatar(...AV[i])}<span class="bar" style="flex:none;width:${[520, 470, 440, 410, 380][i]}px"></span></div>`).join('');
+// F siren
+const sir = $('sir'); const beams = [0, 1].map(i => mk(sir, 'path', {d: 'M540 700 L1400 520 L1400 880 Z', fill: 'rgba(255,50,60,.28)'}));
+mk(sir, 'rect', {x: 360, y: 820, width: 360, height: 70, rx: 16, fill: '#2a2f3d'}); const dome = mk(sir, 'path', {d: 'M400 820 Q400 560 540 560 Q680 560 680 820Z', fill: '#ff2735'});
+mk(sir, 'path', {d: 'M450 800 Q450 620 540 610', fill: 'none', stroke: 'rgba(255,255,255,.55)', 'stroke-width': 18, 'stroke-linecap': 'round'});
+// H phone grid
+const MP = []; for (let r = 0; r < 4; r++) for (let c = 0; c < 6; c++) { const d = document.createElement('div'); d.className = 'mp'; d.style.left = (c * 150 + 15) + 'px'; d.style.top = (r * 250) + 'px'; d.innerHTML = '<i></i>'; $('grid').appendChild(d); MP.push({d, r, c, dist: Math.hypot(c - 2.5, r - 1.5)}); }
+$('lamps').innerHTML = [1, 2, 3].map(n => `<div class="lamp" id="lp${n}" style="left:${150 + (n - 1) * 300}px">${n}</div>`).join('');
+// J dots (49 shown as 7x7)
+$('dots').innerHTML = Array.from({length: 49}, (_, i) => `<span class="dt7" id="dd${i}"></span>`).join('').replace(/(<span class="dt7" id="dd\d+"><\/span>){7}/g, m => m + '<br>');
+// K jacket blueprint
+const jk = $('jk'); const jP = mk(jk, 'path', {d: 'M380 420 L540 380 L700 420 L860 520 L900 1000 L780 1000 L770 640 L760 1260 L320 1260 L310 640 L300 1000 L180 1000 L220 520 Z', fill: 'none', stroke: '#e6efff', 'stroke-width': 6, 'stroke-linejoin': 'round'});
+mk(jk, 'path', {d: 'M480 392 L540 520 L600 392 M540 520 L540 1260', fill: 'none', stroke: '#e6efff', 'stroke-width': 5}); [620, 760, 900, 1040, 1180].forEach(y => mk(jk, 'circle', {cx: 560, cy: y, r: 12, fill: 'none', stroke: '#e6efff', 'stroke-width': 5}));
+const JL = jP.getTotalLength(); jP.style.strokeDasharray = JL;
+const camC = mk(jk, 'circle', {cx: 560, cy: 760, r: 0, fill: 'none', stroke: '#ff3b47', 'stroke-width': 8}); const camL = mk(jk, 'path', {d: 'M572 760 L640 700', stroke: '#fff', 'stroke-width': 4, opacity: 0});
+const earW = mk(jk, 'path', {d: 'M560 760 Q700 560 600 330 Q560 260 470 300', fill: 'none', stroke: '#ffcf3f', 'stroke-width': 6}); const EL = earW.getTotalLength(); earW.style.strokeDasharray = EL;
+const earC = mk(jk, 'circle', {cx: 460, cy: 300, r: 0, fill: '#ffcf3f'}); const earL = mk(jk, 'path', {d: 'M450 290 L380 470', stroke: '#fff', 'stroke-width': 4, opacity: 0});
+// L companies
+$('cos').innerHTML = [0, 1, 2, 3].map(i => `<div class="co" id="co${i}" style="left:${70 + i * 245}px;top:${760}px"><div class="chip2">AI</div><div class="ln"></div><div class="ln" style="width:80px"></div><div class="ln" style="width:96px"></div>AI co. ${i + 1}</div>`).join('');
+// ---- caption ----
+function drawCap(t) {
+  const i = TL.caps.findIndex((c, j) => t >= c.s - 0.06 && t < (TL.caps[j + 1]?.s ?? 1e9) - 0.06); const c = TL.caps[i];
+  if (!c || t > T.end - 0.5) { $('cap').innerHTML = ''; return; }
+  const k = eo(seg(t, c.s - 0.06, c.s + 0.12));
+  $('cap').innerHTML = c.i.map(j => `<span class="${t >= Wd[j].s - 0.04 ? 'on' : ''} ${Wd[j].hot ? 'hot' : ''}">${Wd[j].w}</span>`).join('');
+  $('cap').style.opacity = k; $('cap').style.transform = `translateY(${(1 - k) * 16}px)`;
+}
+// ---- frame ----
+window.renderAt = (t) => {
+  // scene visibility with 0.16 s crossfade + punch
+  for (const [id, a, b] of SC) { const e = $(id); const o = id === 'sZ' ? eo(seg(t, a, a + 0.42)) : Math.min(seg(t, a - 0.08, a + 0.08), 1 - seg(t, b - 0.08, b + 0.08)); e.style.opacity = o; e.style.display = o > 0 ? 'block' : 'none'; }
+  const near = Math.min(...CUTS.map(c => Math.abs(t - c))); $('flash').style.opacity = near < 0.1 && t < T.end - 0.6 ? (0.1 - near) * 2.2 : 0;
+  // A thali
+  if (t < T.sarkar1 + 0.2) { const k = seg(t, 0, T.sarkar1); $('thaliImg').style.transform = `scale(${1.04 + 0.12 * eio(k)}) translate(${shake(t, 23, 3)}px,${-20 * k}px)`;
+    for (const g of GL) { const q = (t - g.t) % 0.7; g.e.setAttribute('r', t < g.t ? 0 : q < 0.3 ? 46 * Math.sin(q / 0.3 * Math.PI) : 0); }
+    pop('y2020', t, 0.35); }
+  // B phone alert
+  if (t > T.sarkar1 - 0.2 && t < T.korea + 0.2) { const k = seg(t, T.sarkar1, T.sarkar1 + 0.35); const fr = t > T.yaad - 0.05; const vib = fr ? 0 : shake(t, 70, 7) * seg(t, T.phones - 0.3, T.phones);
+    const z = fr ? lerp(1, 1.12, eo(seg(t, T.yaad, T.yaad + 0.4))) : 1; $('phB').style.transform = `translate(${vib}px,${(1 - eo(k)) * 700}px) rotate(${vib * 0.3}deg) scale(${z})`;
+    const ak = seg(t, T.phones - 0.35, T.phones); $('alB').style.opacity = eo(ak); $('alB').style.transform = `translateY(${(1 - eo(ak)) * -60}px)`;
+    ringB.forEach((r, i) => { const q = ((t - T.phones + i * 0.33) % 1 + 1) % 1; const on = t > T.phones - 0.3 && !fr; const s = q * 900; r.style.opacity = on ? 1 - q : 0; r.style.width = r.style.height = s + 'px'; r.style.transform = `translate(${-s / 2}px,${-s / 2}px)`; });
+    pop('may', t, T.sarkar1 + 0.3); pop('yaad', t, T.yaad, 'translate(-50%,0) rotate(-6deg)');
+    $('redwash').style.opacity = t > T.phones - 0.3 && !fr && t < T.korea ? 0.6 + 0.4 * Math.sin(t * 18) : 0; } else $('redwash').style.opacity = 0;
+  // C map
+  if (t > T.korea - 0.2 && t < T.scene + 0.2) { const k = seg(t, T.korea, T.korea + 0.7); trail.setAttribute('opacity', 1 - seg(t, T.korea + 0.9, T.korea + 1.2)); trail.style.strokeDashoffset = -t * 60;
+    const p = trail.getPointAtLength(trail.getTotalLength() * eio(k)); trailDot.setAttribute('cx', p.x); trailDot.setAttribute('cy', p.y); trailDot.setAttribute('opacity', k < 1 ? 1 : 0);
+    mRings.forEach((r, i) => { const q = ((t - T.korea - 0.7 + i * 0.3) % 1.2 + 1.2) % 1.2 / 1.2; r.setAttribute('r', t < T.korea + 0.7 ? 0 : q * 700); r.setAttribute('opacity', 1 - q); });
+    cDots.forEach((d, i) => d.setAttribute('r', t > T.korea + 0.75 + i * 0.07 ? 12 + 4 * Math.sin(t * 9 + i) : 0));
+    const mz = 1 + 0.06 * seg(t, T.korea, T.scene); mapS.style.transform = `scale(${mz})`; pop('krL', t, T.korea + 0.6);
+    const rk = seg(t, T.smart, T.smart + 0.4); reti.setAttribute('opacity', rk > 0 ? 1 : 0); reti.setAttribute('transform', `translate(${SEO[0]} ${SEO[1]}) scale(${lerp(2.2, 1, eo(rk))}) rotate(${(1 - eo(rk)) * 90})`);
+    pop('smart', t, T.smart + 0.15, 'rotate(-5deg)'); }
+  // D rank
+  if (t > T.scene - 0.2 && t < T.chhupe + 0.2) { for (let n = 1; n <= 5; n++) { const e = $('rk' + n); const k = eo(seg(t, T.scene + 0.1 + (5 - n) * 0.12, T.scene + 0.45 + (5 - n) * 0.12)); e.style.opacity = k; e.style.transform = `translateX(${(1 - k) * 200}px)`; }
+    const z = eo(seg(t, T.rank - 0.1, T.rank + 0.35)); $('rk1').style.transform = `scale(${1 + 0.08 * z})`; $('rk1').style.boxShadow = `0 0 ${60 * z}px rgba(255,207,63,${0.6 * z})`;
+    $('board').style.transform = `translateY(${-10 * seg(t, T.scene, T.chhupe)}px)`;
+    const ct = wt('cheat', T.rank); pop('cheat', t, ct - 0.05, 'translate(-50%,0) rotate(-8deg)', 0.22); pop('conf', t, T.scene + 1.4, 'translateX(-50%)'); }
+  // E method
+  if (t > T.chhupe - 0.2 && t < T.iske + 0.2) { pop('n1', t, T.chhupe); pop('n2', t, T.ai1 - 0.1); pop('n3', t, T.answer - 0.1);
+    const pt = wt('photo', T.chhupe); $('pflash').setAttribute('opacity', t > pt ? Math.max(0, 1 - (t - pt) * 4) : 0); $('pg').setAttribute('transform', `translate(120 920) rotate(${-4 + 2 * Math.sin(t * 2)})`);
+    $('a1').style.transform = `scaleX(${eo(seg(t, T.ai1 - 0.3, T.ai1))})`; $('a2').style.transform = `scaleX(${eo(seg(t, T.answer - 0.3, T.answer))})`;
+    pop('ansb', t, T.answer + 0.15); [1, 2, 3].forEach(i => { const e = $('n' + i); e.style.borderColor = (i === 1 && t < T.ai1) || (i === 2 && t >= T.ai1 && t < T.answer) || (i === 3 && t >= T.answer) ? '#ff4d57' : '#2a3a66'; }); }
+  // F siren
+  if (t > T.iske - 0.2 && t < T.nov + 0.2) { const a = t * 5; beams[0].setAttribute('transform', `rotate(${(a * 57) % 360} 540 700)`); beams[1].setAttribute('transform', `rotate(${(a * 57 + 180) % 360} 540 700)`);
+    dome.setAttribute('fill', Math.sin(t * 20) > 0 ? '#ff2735' : '#c3121f'); $('sF').style.background = `rgb(${18 + 20 * (0.5 + 0.5 * Math.sin(t * 20))},6,10)`;
+    $('sir').style.transform = `scale(${1 + 0.05 * seg(t, T.iske, T.nov)})`; pop('fa', t, T.alert - 0.1, 'translate(-50%,0) rotate(-4deg)'); }
+  // G hall
+  if (t > T.nov - 0.2 && t < T.sarkar3 + 0.2) { const k = seg(t, T.nov, T.sarkar3); $('hallImg').style.transform = `scale(${1.05 + 0.1 * k}) translateY(${10 - 30 * k}px)`; pop('d19', t, T.nov + 0.05);
+    const ck = eo(seg(t, T.paanch - 0.1, T.paanch + 0.8)); const n = Math.round(500000 * ck / 1000) * 1000; $('count').textContent = '~' + n.toLocaleString('en-IN'); $('count').style.opacity = t > T.paanch - 0.1 ? 1 : 0; $('countL').style.opacity = eo(seg(t, T.paanch + 0.5, T.paanch + 0.8));
+    pop('csat', t, T.college - 0.05, 'translateX(-50%)'); }
+  // H phones grid
+  if (t > T.sarkar3 - 0.2 && t < T.jinhone + 0.2) { const g = seg(t, T.sarkar3, T.sarkar3 + 0.5); $('grid').style.transform = `scale(${lerp(1.15, 1, eo(g))})`; $('grid').style.opacity = eo(g) * (1 - 0.6 * seg(t, T.teen - 0.2, T.teen));
+    const tp = wt('phones', T.sarkar3) - 0.1;
+    for (const m of MP) { const pre = t > tp + m.dist * 0.09, on = t > T.alarm - 0.1 + m.dist * 0.07; const v = on ? shake(t + m.r, 60, 5) : 0; m.d.style.transform = `translate(${v}px,${pre && !on ? -6 * Math.sin(Math.min(1, (t - tp - m.dist * 0.09) / 0.25) * Math.PI) : 0}px)`;
+      m.d.querySelector('i').style.opacity = on ? 0.75 + 0.25 * Math.sin(t * 16 + m.c) : pre ? 0.22 : 0; m.d.style.borderColor = on ? '#ff6a72' : pre ? '#6a3a55' : '#283255'; }
+    $('lamps').style.opacity = seg(t, T.teen - 0.25, T.teen); const tb = wt('baar', T.teen);
+    [1, 2, 3].forEach(n => { const tn = T.teen + (n - 1) * (tb - T.teen + 0.12) / 2; const e = $('lp' + n); e.className = 'lamp' + (t > tn ? ' on' : ''); e.style.transform = `scale(${t > tn ? lerp(1.3, 1, eo(seg(t, tn, tn + 0.2))) : 1})`; });
+    pop('muted', t, T.silent - 0.05, 'translateX(-50%)'); $('redwash').style.opacity = t > T.alarm ? 0.35 + 0.3 * Math.sin(t * 16) : 0; }
+  // I bag
+  if (t > T.jinhone - 0.2 && t < T.unchaas + 0.2) { const k = seg(t, T.jinhone, T.unchaas); const b = t > T.bag - 0.1; const v = b ? shake(t, 55, 6) : 0;
+    $('bagImg').style.transform = `scale(${1.08 + 0.1 * eio(k)}) translate(${v - 20 * k}px,${-10 * k}px)`; $('bagGlow').style.opacity = b ? 0.6 + 0.4 * Math.sin(t * 18) : 0;
+    $('vfw').style.opacity = seg(t, T.literally - 0.1, T.literally + 0.1); $('rec').querySelector('b').style.opacity = Math.sin(t * 8) > 0 ? 1 : 0.2;
+    pop('caught', t, wt('four', T.literally) - 0.05, 'translate(-50%,0) rotate(-6deg)', 0.22); }
+  // J 49
+  if (t > T.unchaas - 0.2 && t < T.ek + 0.2) { const k = eo(seg(t, T.unchaas - 0.05, T.unchaas + 0.6)); const n = Math.round(49 * k); $('n49').textContent = n; $('n49').style.transform = `scale(${1 + 0.04 * Math.sin(t * 10)})`;
+    for (let i = 0; i < 49; i++) $('dd' + i).className = 'dt7' + (i < n ? ' on' : ''); $('n49l').style.opacity = seg(t, T.unchaas + 0.4, T.unchaas + 0.6); }
+  // K jacket
+  if (t > T.ek - 0.2 && t < T.ab + 0.2) { jP.style.strokeDashoffset = JL * (1 - eio(seg(t, T.ek - 0.05, T.ek + 0.7))); const ctm = wt('camera', T.ek);
+    camC.setAttribute('r', t > ctm ? 26 + 6 * Math.sin(t * 9) : 0); camL.setAttribute('opacity', t > ctm ? 1 : 0); pop('cCam', t, ctm + 0.05);
+    earW.style.strokeDashoffset = EL * (1 - eo(seg(t, T.earphones - 0.4, T.earphones + 0.1))); earC.setAttribute('r', t > T.earphones ? 20 : 0); earL.setAttribute('opacity', t > T.earphones ? 1 : 0); pop('cEar', t, T.earphones + 0.05);
+    $('jk').style.transform = `scale(${1 + 0.05 * seg(t, T.ek, T.ab)})`; pop('oneC', t, T.ek + 0.3, 'translateX(-50%)'); }
+  // L AI data
+  if (t > T.ab - 0.2 && t < T.india + 0.2) { pop('gov', t, T.ab - 0.05); for (let i = 0; i < 4; i++) pop('co' + i, t, T.companies - 0.2 + i * 0.1);
+    const fk = eio(seg(t, T.data - 0.9, T.data)); $('file').style.left = lerp(320, 445, fk) + 'px'; $('file').style.top = lerp(800, 380, fk) + 'px'; $('file').style.opacity = t > T.data - 1.0 ? 1 : 0; $('file').style.transform = `rotate(${lerp(-12, 4, fk)}deg) scale(${lerp(0.8, 1, fk)})`;
+    pop('req', t, T.data + 0.1, 'rotate(-8deg)', 0.22); pop('four', t, T.companies + 0.5, 'translateX(-50%)'); }
+  // M India
+  if (t > T.india - 0.2) { const k = seg(t, T.india, T.india + 0.35); $('phM').style.transform = `translateY(${(1 - eo(k)) * 700}px) translate(${shake(t, 60, 3) * seg(t, T.disaster - 0.2, T.disaster)}px,0)`;
+    ringM.forEach((r, i) => { const q = ((t - T.india + i * 0.33) % 1 + 1) % 1; const s = q * 900; r.style.opacity = t > T.disaster - 0.2 ? 1 - q : 0; r.style.width = r.style.height = s + 'px'; r.style.transform = `translate(${-s / 2}px,${-s / 2}px)`; });
+    pop('indC', t, T.india + 0.1); $('mexam').style.opacity = t > T.disaster + 0.3 ? 1 : 0.0; }
+  // Z loop back to the first frame of A
+  $('thaliImg2').style.transform = `scale(${lerp(1.0, 1.04, eo(seg(t, T.end - 0.5, T.end)))})`;
+  drawCap(t);
+};
+window.renderAt(0); window.READY = true;
+</script></body></html>
