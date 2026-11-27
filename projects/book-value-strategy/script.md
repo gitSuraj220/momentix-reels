@@ -14,7 +14,7 @@ Aur ye sirf aapke saath nahi hua. Zyadatar investors ka portfolio ya toh laal ha
 Toh question ye hai bro, jab market so raha tha, mera portfolio kaam kaise kar raha tha?
 
 [0:45 Promise]
-Aaj main apni poori strategy kholke rakh dunga. Isi type ki cheezon ke liye bahut saare influencers hazaaron ke courses bechte hain. Par aap sab ke liye, ye bilkul free.
+Aaj main apni poori strategy kholke rakh dunga. Isi type ki cheezon ke liye bahut saare influencers hazaaron-lakhon ke courses bechte hain. Par aap sab ke liye, ye bilkul free.
 Aur isme koi rocket science nahi hai. Poori baat data pe hogi.
 (Screen, small text for 3 sec: "Personal strategy · Not investment advice · Not SEBI registered")
 Video end tak dekhna, kyunki last mein bataunga ki ye saara kaam main AI se 2 minute mein kaise karta hoon.
