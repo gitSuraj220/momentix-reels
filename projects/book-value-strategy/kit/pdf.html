@@ -1,0 +1,94 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:PF;src:url(../fonts/playfair-display-latin-900-normal.woff2);font-weight:900}
+@font-face{font-family:PF;src:url(../fonts/playfair-display-latin-700-italic.woff2);font-weight:700;font-style:italic}
+@font-face{font-family:JB;src:url(../fonts/jetbrains-mono-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:JB;src:url(../fonts/jetbrains-mono-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:P;src:url(../fonts/p500.woff2);font-weight:500}
+@font-face{font-family:P;src:url(../fonts/p700.woff2);font-weight:700}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:P;color:#1c1813;background:#f6f0e4;font-size:12pt;line-height:1.5}
+.pg{width:210mm;height:297mm;padding:18mm 18mm 16mm;position:relative;page-break-after:always;overflow:hidden}
+.pg:last-child{page-break-after:auto}
+.k{font-family:JB;font-size:9pt;letter-spacing:.2em;text-transform:uppercase;color:#a8650f}
+h1{font-family:PF;font-weight:900;font-size:40pt;line-height:1.02;margin-top:4mm}
+h2{font-family:PF;font-weight:900;font-size:20pt;margin:7mm 0 2mm}
+p{margin:2mm 0}
+.rule{height:2px;background:#e2a03a;width:60mm;margin:6mm 0}
+.step{display:flex;gap:6mm;margin:4.5mm 0;align-items:flex-start}
+.n{font-family:JB;font-weight:700;font-size:22pt;color:#a8650f;min-width:14mm;line-height:1}
+.prompt{background:#1b1814;color:#efe4cf;font-family:JB;font-size:9.4pt;line-height:1.55;padding:5mm 6mm;border-radius:3mm;margin:2.5mm 0 4mm;white-space:pre-wrap}
+.code{display:inline-block;background:#1b1814;color:#f2a33a;font-family:JB;font-size:10pt;padding:1.5mm 3mm;border-radius:2mm}
+.note{border-left:3px solid #e2a03a;padding:2mm 4mm;background:#efe5d2;font-size:10.5pt;margin:4mm 0}
+.foot{position:absolute;left:18mm;right:18mm;bottom:9mm;font-family:JB;font-size:7.5pt;color:#8a7a62;display:flex;justify-content:space-between}
+ul{margin:1mm 0 0 5mm}li{margin:1mm 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:5mm}
+.card{background:#fffaf1;border:1px solid #e3d6be;border-radius:3mm;padding:4.5mm 5mm}
+.card .n{font-size:16pt}
+.card b{font-family:PF;font-weight:900;font-size:13.5pt;display:block;margin:1.5mm 0 1mm;line-height:1.15}
+</style></head><body>
+
+<div class="pg">
+  <div class="k">Free PDF · Book value strategy</div>
+  <h1>AI se 2 minute mein<br>apni stock filtering</h1>
+  <div class="rule"></div>
+  <p>Video mein jo 4-step system bataya, usko AI chatbot (Claude, ChatGPT ya koi bhi) aur free Screener.in account se kaise chalate hain, step by step. Koi stock list nahi hai: list aap khud banaoge.</p>
+  <div class="grid">
+    <div class="card"><div class="n">01</div><b>Book value se neeche</b>Price / Book value (P/B) &lt; 1</div>
+    <div class="card"><div class="n">02</div><b>Last quarter = 3 saal ka best</b>Latest quarter ka net profit, pichhle 12 quarters mein sabse zyada</div>
+    <div class="card"><div class="n">03</div><b>Human test</b>Kya company agle 3–4 saal tikegi aur growth maintain karegi? (ye aapka dimaag karega)</div>
+    <div class="card"><div class="n">04</div><b>Exit rules</b>6 mahine mein price book value tak = profit book. Nahi pahuncha = hold, target 2× book value. Har 6 mahine target update.</div>
+  </div>
+  <div class="note"><b>Sirf jaankari ke liye.</b> Main SEBI registered advisor nahi hoon. Ye meri personal strategy hai, koi stock tip ya investment advice nahi. AI galat bhi ho sakta hai: har number company ki official filing (BSE/NSE) se khud verify karo.</div>
+  <div class="foot"><span>Momentix · Book Value Strategy</span><span>1 / 3</span></div>
+</div>
+
+<div class="pg">
+  <div class="k">Part A · Screener.in (free)</div>
+  <h2>Step 1: P/B &lt; 1 wali list banao</h2>
+  <div class="step"><div class="n">1</div><div>screener.in pe free account banao → upar <b>Screens</b> → <b>Create new screen</b>.</div></div>
+  <div class="step"><div class="n">2</div><div>Query box mein ye likho aur <b>Run this query</b> dabao:<br><span class="code">Price to book value &lt; 1 AND Market Capitalization &gt; 500</span><br><span style="font-size:10pt;color:#6b5a40">Market cap &gt; 500 (₹ crore) bahut chhoti, illiquid companies hata deta hai. Apne hisaab se badal sakte ho.</span></div></div>
+  <div class="step"><div class="n">3</div><div>Result table mein <b>Edit columns</b> se ye columns add karo: Price to book value, Net profit (latest quarter), Sales growth, Debt to equity. Phir poori table select karke copy karo.</div></div>
+  <h2>Step 2: AI se best-quarter filter</h2>
+  <p>Har shortlisted company ke Screener page pe <b>Quarterly Results</b> section hota hai (12+ quarters). Uski <b>Net Profit</b> row copy karke AI ko do:</p>
+  <div class="prompt">Tum ek careful data assistant ho. Main neeche kuch companies ka quarterly
+Net Profit data (₹ crore, purane se naya) de raha hoon.
+Har company ke liye check karo:
+1) Latest quarter ka net profit, pichhle 12 quarters (3 saal) ka
+   sabse zyada hai ya nahi? (Haan / Nahi)
+2) Kya latest profit kisi one-time gain ki wajah se ho sakta hai?
+   (agar data se lagta hai to flag karo)
+Result ek table mein do: Company | Latest qtr | 3-saal ka max | Best? | Flag
+Koi buy/sell recommendation mat do, sirf data check karo.
+
+[yahan data paste karo]</div>
+  <div class="note">Tip: ek baar mein 5–10 companies ka data do. Jo "Best = Haan" aaye, wahi Step 3 ke liye shortlist hai.</div>
+  <div class="foot"><span>Momentix · Book Value Strategy</span><span>2 / 3</span></div>
+</div>
+
+<div class="pg">
+  <div class="k">Part B · Human test + exit tracker</div>
+  <h2>Step 3: Human test (AI sirf sawaal puchhega)</h2>
+  <div class="prompt">Company: [naam]. Main khud decide karunga ki ye company agle 3–4 saal
+survive aur grow karegi ya nahi. Mujhe answer mat do, mujhse sahi sawaal pucho:
+- business kya bechta hai, demand kitni stable hai
+- karz (debt) kitna hai, interest bhar pa rahi hai ya nahi
+- promoter holding / pledge me koi badlaav
+- result sentiment ya one-time cheez se to nahi aaya
+- sector ke 10 saal ke risk
+Har sawaal ke saath batao main ye data kahan check karun
+(annual report, BSE filing, Screener page).</div>
+  <h2>Step 4: Exit tracker</h2>
+  <div class="prompt">Meri buy details: Company [naam], buy date [DD-MM-YYYY], buy price ₹[x],
+book value per share ₹[y] (latest balance sheet).
+Ek simple table banao:
+- Rule 1 window: buy date se 6 mahine tak ki last date
+- Rule 1 target: ₹[y] (book value)
+- Rule 2 target: ₹[2y] (2x book value), agar 6 mahine mein Rule 1 hit nahi hua
+- Next update dates: har 6 mahine (naye balance sheet ke baad book value badlo)
+Sirf calculation karo, koi advice nahi.</div>
+  <div class="note"><b>Value trap se bacho:</b> kuch companies saalon tak book value se neeche rehti hain. Isiliye Step 3 skip mat karna.<br><br><b>Disclaimer:</b> Sirf jaankari aur education ke liye. Main SEBI registered investment advisor nahi hoon. Market risk hota hai; paisa lagane se pehle khud research karo ya SEBI registered advisor se baat karo.</div>
+  <div class="foot"><span>Momentix · Book Value Strategy</span><span>3 / 3</span></div>
+</div>
+</body></html>

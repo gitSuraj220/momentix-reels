@@ -1,0 +1,522 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:PF;src:url(fonts/playfair-display-latin-900-normal.woff2);font-weight:900}
+@font-face{font-family:PF;src:url(fonts/playfair-display-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:PF;src:url(fonts/playfair-display-latin-400-italic.woff2);font-weight:400;font-style:italic}
+@font-face{font-family:PF;src:url(fonts/playfair-display-latin-700-italic.woff2);font-weight:700;font-style:italic}
+@font-face{font-family:JB;src:url(fonts/jetbrains-mono-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:JB;src:url(fonts/jetbrains-mono-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:P;src:url(fonts/p500.woff2);font-weight:500}
+@font-face{font-family:P;src:url(fonts/p700.woff2);font-weight:700}
+@font-face{font-family:P;src:url(fonts/p800.woff2);font-weight:800}
+:root{--ink:#0c0b0a;--paper:#efe4cf;--amber:#f2a33a;--amberD:#b8721c;--red:#e5484d;--green:#4fd08a;--mute:#9b9183}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--ink);color:var(--paper);font-family:P}
+.L{position:absolute;inset:0;overflow:hidden;display:none}
+.abs{position:absolute}
+.mono{font-family:JB;letter-spacing:.18em;text-transform:uppercase}
+.serif{font-family:PF}
+.plate{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 50%}
+#grain{position:absolute;inset:0;width:1920px;height:1080px;opacity:.085;mix-blend-mode:overlay;pointer-events:none;z-index:90}
+#vig{position:absolute;inset:0;z-index:89;pointer-events:none;background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+#flash{position:absolute;inset:0;z-index:95;background:#fff;opacity:0;pointer-events:none}
+#lower{position:absolute;left:96px;bottom:70px;z-index:80;display:none;align-items:center;gap:18px;padding:14px 22px;border-left:3px solid var(--amber);background:rgba(12,11,10,.72);font-family:JB;font-size:22px;letter-spacing:.08em;color:#d9cfbf}
+.tag{display:inline-block;padding:6px 14px;border:1.5px solid var(--amber);color:var(--amber);font-family:JB;font-size:22px;letter-spacing:.2em}
+/* chapter card */
+.chap{background:#0a0908}
+.chap .rule{position:absolute;left:50%;top:600px;height:2px;background:var(--amber);transform:translateX(-50%)}
+.chap .num{position:absolute;width:100%;text-align:center;top:360px;font-family:JB;font-size:26px;letter-spacing:.5em;color:var(--amber)}
+.chap .ttl{position:absolute;width:100%;text-align:center;top:420px;font-family:PF;font-weight:900;font-size:150px;line-height:1}
+.chap .sub{position:absolute;width:100%;text-align:center;top:640px;font-family:PF;font-style:italic;font-size:40px;color:#cbbfa9}
+/* chart */
+svg text{font-family:JB}
+/* iPad */
+#ipad{position:absolute;left:0;top:0;width:700px;height:1008px;border-radius:46px;background:#141414;box-shadow:0 0 0 3px #2a2a2a,0 40px 120px rgba(0,0,0,.8),0 0 160px rgba(242,163,58,.12);padding:22px;transform-origin:0 0}
+#ipad .scr{position:relative;width:100%;height:100%;border-radius:26px;overflow:hidden;background:#000}
+#ipad img{width:100%;height:100%;object-fit:cover;transform-origin:0 0}
+#ring{position:absolute;border:4px solid var(--amber);border-radius:40px;box-shadow:0 0 40px rgba(242,163,58,.9),inset 0 0 20px rgba(242,163,58,.5);opacity:0}
+.card{position:absolute;width:380px;height:220px;border-radius:14px;background:#191715;border:1px solid #2c2925;padding:26px 30px;font-family:JB}
+.card .h{font-size:18px;letter-spacing:.25em;color:#7d7468}
+.card .v{font-family:P;font-weight:800;font-size:64px;margin-top:26px}
+.card .bar{position:absolute;left:30px;right:30px;bottom:28px;height:6px;border-radius:3px;background:#2c2925}
+.ptag{position:absolute;width:440px;height:200px;background:#e9dcc2;color:#1b1712;border-radius:10px;box-shadow:0 20px 40px rgba(0,0,0,.6);padding:24px 34px;font-family:JB}
+.ptag:before{content:'';position:absolute;left:24px;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;background:#0c0b0a;box-shadow:inset 0 0 0 4px #6b5a40}
+.ptag .k{margin-left:44px;font-size:22px;letter-spacing:.2em;color:#6b5a40}
+.ptag .p{margin-left:44px;font-family:P;font-weight:800;font-size:72px;line-height:1.1}
+#stamp{position:absolute;left:960px;top:540px;font-family:P;font-weight:800;font-size:230px;color:var(--red);border:16px solid var(--red);padding:0 50px;border-radius:24px;letter-spacing:.06em;mix-blend-mode:normal}
+.typ{font-family:PF;font-weight:900;font-size:120px;line-height:1.05}
+.kin{position:absolute;font-family:PF;font-weight:900;color:#fff;text-shadow:0 6px 40px rgba(0,0,0,.7)}
+</style></head><body>
+
+<!-- S1 cold open plate -->
+<div class="L" id="s1"><img class="plate" id="s1p">
+  <div class="abs mono" id="s1a" style="left:96px;top:86px;font-size:24px;color:#d8cdb9">Nifty 50 &nbsp;·&nbsp; Nov 2024 → Nov 2026</div>
+  <div class="kin" id="s1b" style="left:96px;bottom:150px;font-size:110px">Pichhle <span style="color:var(--amber)">2 saal</span></div>
+</div>
+
+<!-- S2 nifty chart -->
+<div class="L" id="s2"><img class="plate" src="photos/10.png" style="filter:brightness(.8)">
+  <svg class="abs" width="1920" height="1080" id="ch">
+    <g id="grid" stroke="#3a332b" stroke-width="1"></g>
+    <path id="nl" fill="none" stroke="var(--amber)" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    <g id="dots"></g>
+  </svg>
+  <div class="abs mono" style="left:150px;top:110px;font-size:24px;color:var(--amber)">Nifty 50 · closing levels</div>
+  <div class="abs mono" id="s2src" style="left:150px;bottom:64px;font-size:18px;color:#857b6d;letter-spacing:.08em">Source: NSE closes 27 Nov 2024, 5 Jan 2026 (record), 27 Nov 2026 · line joins these 3 points only</div>
+  <div class="abs" id="s2big" style="right:110px;top:150px;text-align:right">
+    <div class="serif" style="font-weight:900;font-size:200px;line-height:1">+5.5<span style="font-size:120px">%</span></div>
+    <div class="mono" style="font-size:26px;color:#cbbfa9;margin-top:6px">in 2 saal · price return</div></div>
+  <div class="kin serif" id="s2q" style="left:150px;bottom:150px;font-size:96px;font-style:italic;font-weight:700">Aur mera portfolio?</div>
+</div>
+
+<!-- S3 iPad live recording -->
+<div class="L" id="s3"><img class="plate" src="photos/10.png" style="filter:brightness(.7)"><div class="abs" style="left:1100px;top:80px;width:800px;height:900px;background:radial-gradient(closest-side,rgba(242,163,58,.16),rgba(242,163,58,0))"></div>
+  <div id="ipw" class="abs" style="left:860px;top:0;width:1060px;height:1080px;overflow:hidden"><div id="ipad"><div class="scr"><img id="zd"></div><div id="ring"></div></div></div>
+  <div class="abs" id="s3l" style="left:110px;top:170px;width:820px">
+    <div class="mono" style="font-size:22px;color:#e0d4c0"><span id="rec" style="color:var(--red)">●</span>&nbsp; Rec · Live screen recording</div>
+    <div class="mono" style="font-size:20px;color:#8f8576;margin-top:12px">iPad · Fri 27 Nov 2026 · 11:44 PM</div>
+    <div class="serif" id="s3ns" style="font-weight:900;font-size:92px;line-height:1.05;margin-top:70px">Screenshot<br><span style="font-style:italic;font-weight:700;color:#cbbfa9">nahi hai.</span></div>
+    <div id="steps" style="margin-top:56px;font-family:JB;font-size:30px;letter-spacing:.06em;line-height:2"></div>
+    <div id="ff" class="mono" style="font-size:20px;color:#8f8576;margin-top:8px">▶▶ 3× speed</div>
+  </div>
+  <div class="abs" id="s3ret" style="left:110px;top:300px">
+    <div class="mono" style="font-size:24px;color:var(--amber)">Mera portfolio · total return</div>
+    <div class="serif" style="font-weight:900;font-size:230px;line-height:1.05;color:var(--green)">+35.53%</div>
+    <div class="tag" id="livetag" style="color:var(--red);border-color:var(--red)">● Live</div>
+  </div>
+</div>
+
+<!-- chapter cards -->
+<div class="L chap" id="c1"><div class="num">Chapter 01</div><div class="ttl">The Flat Market</div><div class="rule"></div><div class="sub">jab market so raha tha</div></div>
+<div class="L chap" id="c2"><div class="num">Chapter 02 · Step 1</div><div class="ttl">The Price Tag</div><div class="rule"></div><div class="sub">book value se neeche</div></div>
+
+<!-- S4 rupee note -->
+<div class="L" id="s4"><img class="plate" id="s4p" src="photos/2.png">
+  <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(10,9,8,.86) 0%,rgba(10,9,8,.55) 42%,rgba(10,9,8,0) 70%)"></div>
+  <div class="abs" id="s4l" style="left:110px;top:200px">
+    <div class="mono" id="s4d" style="font-size:28px;color:var(--amber)">Nov 2024</div>
+    <div class="serif" id="s4v" style="font-weight:900;font-size:250px;line-height:1.05">₹100</div>
+    <div class="mono" id="s4n" style="font-size:20px;color:#a39886;letter-spacing:.06em">Nifty 50: 24,274.90 → 25,607 · +5.5%</div>
+  </div>
+  <div class="abs" id="bars" style="right:120px;bottom:120px;width:640px;height:560px"></div>
+</div>
+
+<!-- S5 portfolio grid -->
+<div class="L" id="s5" style="background:#0b0a09"><div id="grid5"></div>
+  <div class="abs mono" style="left:96px;top:60px;font-size:22px;color:#8f8576">Zyadatar investors · 2 saal baad</div>
+  <div class="abs mono" style="right:96px;top:60px;font-size:18px;color:#5f574d">Illustration</div>
+</div>
+
+<!-- S6 question -->
+<div class="L" id="s6"><img class="plate" id="s6p">
+  <div class="abs" style="inset:0;background:linear-gradient(0deg,rgba(8,7,6,.85),rgba(8,7,6,.1) 60%)"></div>
+  <div class="kin serif" id="s6a" style="left:110px;bottom:300px;font-size:80px;font-style:italic;font-weight:700;color:#d9cdb8">Jab market so raha tha…</div>
+  <div class="kin serif" id="s6b" style="left:110px;bottom:150px;font-size:88px;white-space:nowrap">mera portfolio kaam <span style="color:var(--amber)">kaise</span> kar raha tha?</div>
+</div>
+
+<!-- S7 courses / free -->
+<div class="L" id="s7"><img class="plate" src="photos/10.png">
+  <div class="abs mono" id="s7h" style="left:0;width:100%;text-align:center;top:90px;font-size:26px;color:var(--amber)">Meri poori strategy · step by step</div>
+  <div class="ptag" id="t1"><div class="k">Trading course</div><div class="p">₹9,999</div></div>
+  <div class="ptag" id="t2"><div class="k">Masterclass</div><div class="p">₹49,999</div></div>
+  <div class="ptag" id="t3"><div class="k">Mentorship</div><div class="p">₹1,49,999</div></div>
+  <div id="stamp">FREE</div>
+</div>
+
+<!-- S8 data -->
+<div class="L" id="s8" style="background:#0b0a09">
+  <div id="tick" class="abs mono" style="left:0;top:0;width:100%;height:100%;font-size:30px;color:#2a2520;line-height:1.9;white-space:nowrap"></div>
+  <div class="abs typ" id="s8a" style="left:150px;top:300px">No rocket science.</div>
+  <div class="abs typ" id="s8b" style="left:150px;top:470px;color:var(--amber)">Sirf data.</div>
+</div>
+
+<!-- S9 AI teaser on iPad -->
+<div class="L" id="s9"><img class="plate" id="s9p" src="photos/9.png">
+  <div id="scr9" class="abs" style="left:0;top:0;width:1000px;height:625px;transform-origin:0 0;background:linear-gradient(160deg,#141210,#0b0a09);border-radius:14px;overflow:hidden">
+    <div class="mono" style="position:absolute;left:60px;top:60px;font-size:26px;color:var(--amber)">AI shortcut</div>
+    <div class="serif" style="position:absolute;left:60px;top:120px;font-weight:900;font-size:64px;line-height:1.1">Poori filtering</div>
+    <div id="clock" style="position:absolute;left:60px;top:250px;font-family:JB;font-weight:700;font-size:200px;color:#fff;letter-spacing:.02em">00:00</div>
+    <div class="mono" style="position:absolute;left:60px;bottom:60px;font-size:24px;color:#8f8576">Video ke end mein</div>
+  </div>
+  <div class="abs mono" id="s9h" style="left:110px;top:90px;font-size:24px;color:#e0d4c0">Video end tak dekhna</div>
+</div>
+
+<!-- S10 factory -->
+<div class="L" id="s10"><img class="plate" id="s10p">
+  <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(8,7,6,.8),rgba(8,7,6,0) 60%)"></div>
+  <div class="abs mono" id="s10a" style="left:110px;top:120px;font-size:26px;color:var(--amber)">Step 1</div>
+  <div class="kin serif" id="s10b" style="left:110px;top:180px;font-size:120px;line-height:1.05">Book value<br><span style="font-style:italic;font-weight:700;color:#d9cdb8">se neeche.</span></div>
+</div>
+
+<!-- ===== PART B ===== -->
+<div class="L" id="b1"><img class="plate" src="photos/10.png" style="filter:brightness(.75)">
+  <div class="abs mono" style="left:110px;top:80px;font-size:22px;color:var(--amber)">Book value · example</div>
+  <div class="abs" id="qpop" style="left:50%;top:50%;transform:translate(-50%,-50%);padding:34px 60px;background:var(--paper);color:#17130e;border-radius:18px;font-family:PF;font-weight:900;font-size:92px;white-space:nowrap;box-shadow:0 30px 80px rgba(0,0,0,.6)">Book value kya hai?</div>
+  <div id="liq" class="abs" style="left:0;top:0;width:1920px;height:1080px"></div>
+</div>
+<div class="L" id="b2"><img class="plate" id="b2p" src="photos/4.png">
+  <div id="sign" class="abs" style="left:0;top:0;width:700px;height:520px;transform-origin:0 0;background:#f4efe4;color:#16120d;padding:44px 54px;font-family:P">
+    <div id="signin"></div></div>
+  <div class="abs mono" style="left:110px;top:80px;font-size:22px;color:#f7e9cf;text-shadow:0 2px 10px #000">Ghar wala example</div>
+</div>
+<div class="L" id="b3"><img class="plate" src="photos/10.png" style="filter:brightness(.7)">
+  <div id="pvb" class="abs" style="inset:0"></div>
+</div>
+<div class="L" id="b4" style="background:#0b0a09"><div id="sink" class="abs" style="inset:0"></div></div>
+<div class="L chap" id="c3"><div class="num">Chapter 03 · Step 2</div><div class="ttl">The Filter</div><div class="rule"></div><div class="sub">sasti bhi, peak pe bhi</div></div>
+<div class="L" id="b5"><img class="plate" src="photos/10.png" style="filter:brightness(.65)"><div id="flt" class="abs" style="inset:0"></div></div>
+<div class="L chap" id="c4"><div class="num">Chapter 04 · Step 3</div><div class="ttl">The Human Test</div><div class="rule"></div><div class="sub">ye software nahi, aapka dimaag karega</div></div>
+<div class="L" id="b6"><img class="plate" id="b6p" src="photos/5.png"><div class="abs" style="inset:0;background:rgba(8,7,6,.35)"></div><div id="ht" class="abs" style="inset:0"></div></div>
+<div class="L" id="b7"><img class="plate" src="photos/10.png" style="filter:brightness(.7)"><div id="cian" class="abs" style="inset:0"></div></div>
+<div class="L" id="b8"><img class="plate" id="b8p"><div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(8,7,6,.85),rgba(8,7,6,.2) 65%)"></div><div id="psu" class="abs" style="inset:0"></div></div>
+<div class="L chap" id="c5"><div class="num">Chapter 05 · Step 4</div><div class="ttl">The Exit</div><div class="rule"></div><div class="sub">khareedna kab, bechna kab</div></div>
+<div class="L" id="b9"><img class="plate" src="photos/10.png" style="filter:brightness(.6)"><svg id="ex" class="abs" width="1920" height="1080"></svg><div id="exl" class="abs" style="inset:0"></div></div>
+<div class="L chap" id="c6"><div class="num">Chapter 06</div><div class="ttl">The Trap</div><div class="rule"></div><div class="sub">har sasta share achha nahi hota</div></div>
+<div class="L" id="b10"><img class="plate" id="b10p" src="photos/8.png"><div class="abs" style="inset:0;background:linear-gradient(0deg,rgba(8,7,6,.9),rgba(8,7,6,.15) 70%)"></div><div id="trap" class="abs" style="inset:0"></div></div>
+<div class="L" id="b11" style="background:#0b0a09"><div id="rc" class="abs" style="inset:0"></div></div>
+<div class="L" id="b12"><img class="plate" id="b12p" src="photos/9.png">
+  <div id="scr12" class="abs" style="left:0;top:0;width:1000px;height:625px;transform-origin:0 0;background:#f3eee5;border-radius:14px;overflow:hidden;color:#18140f"></div>
+  <div id="cta" class="abs" style="inset:0"></div></div>
+<div class="L" id="b13"><img class="plate" src="photos/10.png"><div id="dis" class="abs" style="inset:0"></div></div>
+
+<div id="lower"><span style="color:var(--amber)">●</span> Personal strategy · Not investment advice · Not SEBI registered</div>
+<div id="vig"></div><canvas id="grain" width="480" height="270"></canvas><div id="flash"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const P=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2, back=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+let WORDS=[];
+function W(w,n=1,after=0){let c=0;for(const x of WORDS){if(x.s>=after&&x.w===w){c++;if(c===n)return x.s}}throw new Error('word '+w+' '+n+' after '+after)}
+const show=(id,on)=>{$(id).style.display=on?'block':'none'};
+const op=(id,v)=>{$(id).style.opacity=v};
+const tf=(id,s)=>{$(id).style.transform=s};
+function rnd(seed){let s=seed>>>0;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+
+/* --- frame-sequence images --- */
+const pad=n=>String(n).padStart(3,'0');
+function seq(img,dir,count,fps,t){const i=Math.max(1,Math.min(count,1+Math.floor(t*fps)));const src=`plates/${dir}/${pad(i)}.jpg`;if(img.dataset.src!==src){img.dataset.src=src;img.src=src;return img.decode().catch(()=>{})}return null}
+
+/* --- grain --- */
+const g=$('grain').getContext('2d');const gd=g.createImageData(480,270);
+function grain(f){const r=rnd(f*7919+1);for(let i=0;i<gd.data.length;i+=4){const v=r()*255;gd.data[i]=gd.data[i+1]=gd.data[i+2]=v;gd.data[i+3]=255}g.putImageData(gd,0,0)}
+
+let T={};
+function anchors(){
+  T.pichhle=W('pichhle');T.literally=W('literally');T.kuch=W('kuch');T.aur1=W('aur');T.ye1=W('ye');T.screenshot=W('screenshot');
+  T.app=W('app');T.zerodha=W('zerodha');T.yeraha=W('raha');T.actual=W('actual');T.ret1=W('return',2);T.live=W('live');
+  T.ab=W('ab');T.sau=W('sau');T.aaj=W('aaj');T.ek=W('ek');T.paanch=W('paanch');T.fd=W('fd');
+  T.zyadatar=W('zyadatar');T.laal=W('laal');T.wahin=W('wahin');T.question=W('question');T.jab=W('jab');T.mera3=W('mera',3);T.tha2=W('tha',1,32.6);
+  T.aaj2=W('aaj',2);T.isi=W('isi');T.hazaaron=W('hazaaron');T.par=W('par');T.free=W('free');T.isme=W('isme');T.data=W('data');
+  T.video=W('video');T.ai=W('ai');T.hoon2=W('hoon',1,55);T.step1=W('step');T.book1=W('book');T.neeche=W('neeche');
+  T.end=63.5;
+}
+
+/* --- S2 chart geometry --- */
+const CH={x0:150,x1:1130,y0:860,y1:330,v0:23500,v1:27000};
+const months=(y,m,d)=>(y-2024)*12+(m-11)+(d-27)/30; // months from 27 Nov 2024
+const PTS=[[months(2024,11,27),24274.90,'24,274.90','27 Nov 2024'],[months(2026,1,5),26358.25,'26,358 record','5 Jan 2026'],[months(2026,11,27),25607,'25,607','27 Nov 2026']];
+const X=m=>CH.x0+(CH.x1-CH.x0)*m/24, Y=v=>CH.y0-(CH.y0-CH.y1)*(v-CH.v0)/(CH.v1-CH.v0);
+function buildChart(){
+  let gs='';for(let v=24000;v<=27000;v+=1000){gs+=`<line x1="${CH.x0}" x2="${CH.x1}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${CH.x1+20}" y="${Y(v)+8}" fill="#6f665a" stroke="none" font-size="20">${v.toLocaleString('en-IN')}</text>`}
+  ['Nov 24','May 25','Nov 25','May 26','Nov 26'].forEach((l,i)=>{gs+=`<text x="${X(i*6)-40}" y="${CH.y0+50}" fill="#6f665a" stroke="none" font-size="20">${l}</text>`});
+  $('grid').innerHTML=gs;
+  $('nl').setAttribute('d',PTS.map((p,i)=>(i?'L':'M')+X(p[0])+' '+Y(p[1])).join(' '));
+  $('dots').innerHTML=PTS.map((p,i)=>`<g id="d${i}"><circle cx="${X(p[0])}" cy="${Y(p[1])}" r="11" fill="#0c0b0a" stroke="var(--amber)" stroke-width="5"/><text x="${X(p[0])+(i==2?-40:16)}" y="${Y(p[1])-30}" text-anchor="${i==2?'end':'start'}" fill="#efe4cf" font-size="28" font-weight="700">${p[2]}</text><text x="${X(p[0])+(i==2?-40:16)}" y="${Y(p[1])-64}" text-anchor="${i==2?'end':'start'}" fill="#8f8576" font-size="18">${p[3]}</text></g>`).join('');
+}
+
+/* --- S5 grid cards --- */
+function buildGrid(){
+  const r=rnd(42);let h='';
+  for(let i=0;i<12;i++){const c=i%4,rw=Math.floor(i/4);const red=r()<.62;const v=red?-(1.5+r()*14):(r()*1.6-.6);
+    h+=`<div class="card" id="g${i}" data-red="${red?1:0}" style="left:${150+c*415}px;top:${170+rw*275}px"><div class="h">Portfolio ${String(i+1).padStart(2,'0')}</div><div class="v" style="color:${red?'var(--red)':'#9b9183'}">${v>0?'+':''}${v.toFixed(1)}%</div><div class="bar"><div style="height:100%;width:${Math.min(100,Math.abs(v)*6+8)}%;background:${red?'var(--red)':'#6f665a'};border-radius:3px"></div></div></div>`}
+  $('grid5').innerHTML=h;
+}
+function buildTick(){let s='';const r=rnd(7);const items=['24,274.90','25,607','+5.5%','6.40% FD','₹113.6','P/B 1.3','26,358.25','₹1,27,244','₹2,08,090','Q2 FY26','BV/share','0.7x','+35.53%'];for(let l=0;l<15;l++){let line='';for(let k=0;k<14;k++)line+=items[Math.floor(r()*items.length)]+'   ·   ';s+=`<div style="transform:translateX(${-r()*600}px)">${line}</div>`}$('tick').innerHTML=s}
+
+/* footage mapping: video t -> footage seconds (piecewise) */
+function zdT(t){const K=[[T.ye1,0.4],[T.app,3.0],[T.zerodha,6.0],[T.yeraha-0.1,11.0],[T.ab,13.6]];
+  if(t<=K[0][0])return K[0][1];for(let i=1;i<K.length;i++)if(t<=K[i][0])return lerp(K[i-1][1],K[i][1],(t-K[i-1][0])/(K[i][0]-K[i-1][0]));return 13.6}
+
+/* perspective quad for S9 screen */
+function quad(w,h,p){ // map (0,0)(w,0)(w,h)(0,h) -> p[0..3]
+  const [x0,y0]=p[0],[x1,y1]=p[1],[x2,y2]=p[2],[x3,y3]=p[3];
+  const dx1=x1-x2,dx2=x3-x2,dy1=y1-y2,dy2=y3-y2,sx=x0-x1+x2-x3,sy=y0-y1+y2-y3;
+  const den=dx1*dy2-dx2*dy1;const g=(sx*dy2-dx2*sy)/den,hh=(dx1*sy-sx*dy1)/den;
+  const a=x1-x0+g*x1,b=x3-x0+hh*x3,c=x0,d=y1-y0+g*y1,e=y3-y0+hh*y3,f=y0;
+  return `matrix3d(${a/w},${d/w},0,${g/w},${b/h},${e/h},0,${hh/h},0,0,1,0,${c},${f},0,1)`}
+const Q9=[[272,342],[920,330],[1075,780],[415,875]];
+
+/* ===== PART B ===== */
+const B={};
+function anchorsB(){
+  const a=(w,after,k=1)=>W(w,k,after);
+  Object.assign(B,{q:a('book',63.5),simple:a('simple',64),saamaan:a('saamaan',66),factory:a('factory',66),sab:a('sab',68),karz:a('karz',69),bachega:a('bachega',70),wahi:a('wahi',72),usko:a('usko',73),divide:a('divide',73),mil:a('mil',75),per:a('per',76),
+  ex:a('example',77),pachaas:a('pachaas',79),tees:a('tees',80),asli:a('asli',82),bees:a('bees',83),pandrah:a('pandrah',85),sale1:a('sale',87),
+  socho:a('socho',88),price:a('price',89),kam:a('kam',90),sasti:a('sasti',94),sale2:a('sale',96),
+  par:a('par',98.5),doob:a('doob',103),step2:a('step',104),list:a('list',105),quarter:a('quarter',108),best:a('best',111),highest:a('highest',114),sasti2:a('sasti',115),peak:a('peak',117),rare:a('rare',118),haan:a('haan',120),chill:a('chill',122),
+  ab4:a('ab',126),dimaag:a('dimaag',130),sawaal:a('sawaal',132),survive:a('survive',135),growth:a('growth',136),
+  example2:a('example',138),cian:a('cian',139),quarterly:a('quarterly',141),growth2:a('growth',143),personal:a('personal',145),hype:a('hype',148),agar:a('agar',150),gir:a('gir',153),doubt:a('doubt',156),invest:a('invest',158),soch:a('soch',160),verdict:a('verdict',162),
+  ulta:a('ulta',164),psu:a('psu',165),kai:a('kai',166),das:a('das',171),india:a('india',173),bank:a('bank',177),kitna:a('kitna',179),tikega:a('tikega',182),haan2:a('haan',184),
+  company5:a('company',186),khareedna:a('khareedna',188),bechna:a('bechna',190),khareedta:a('khareedta',191),tick:a('tick',193),rules:a('rules',197),rule1:a('rule',198),chhe:a('chhe',200),pahunch:a('pahunch',202),profit:a('profit',204),
+  rule2:a('rule',206.5),pahuncha:a('pahuncha',209),hold:a('hold',210),double:a('double',213),sau:a('sau',216),dosau:a('sau',217),pro:a('pro',219),update:a('update',221),balance:a('balance',223),target:a('target',225),
+  ab6:a('ab',228.5),saalon:a('saalon',232),trap:a('trap',236),three:a('three',237),recap:a('recap',239),ek:a('ek',240),do2:a('do',243),teen:a('teen',246),chaar:a('chaar',249),yahi:a('yahi',253),
+  ab7:a('ab',256),filtering:a('filtering',258),pdf:a('pdf',262),desc:a('description',262),like:a('like',265),subscribe:a('subscribe',267),baar:a('baar',269),
+  par8:a('par',272),sebi:a('sebi',273),personal8:a('personal',275),seekho:a('seekho',278),samjho:a('samjho',278),research:a('research',280),thank:a('thank',281)});
+}
+const fadeIn=(t,s,d=.25)=>P(t,s,s+d);
+const pop=(t,s)=>`opacity:${P(t,s,s+.15)};transform:scale(${.85+.15*back(P(t,s,s+.4))})`;
+const up=(t,s)=>`opacity:${P(t,s,s+.25)};transform:translateY(${(1-eo(P(t,s,s+.45)))*26}px)`;
+const Q4=[[1373,340],[1728,333],[1728,592],[1376,606]];
+function chap(id,w,t){const lt=t-w[0],d=w[1]-w[0];const el=$(id);el.querySelector('.rule').style.width=(900*eio(P(lt,.05,.6)))+'px';const k=eo(P(lt,0,.5));el.querySelector('.ttl').style.letterSpacing=(0.12*(1-k))+'em';el.style.opacity=Math.min(P(lt,0,.12),1-P(lt,d-.18,d));el.querySelector('.sub').style.opacity=P(lt,.35,.7)}
+function chart(pts,box,vmin,vmax){const X=x=>box[0]+(box[2]-box[0])*x,Y=v=>box[3]-(box[3]-box[1])*(v-vmin)/(vmax-vmin);return{X,Y,d:pts.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(' ')}}
+
+function renderB(t,waits){
+  const win={b1:[B.q-.1,B.ex-.25],b2:[B.ex-.25,B.socho-.15],b3:[B.socho-.15,B.par-.1],b4:[B.par-.1,B.step2-.15],c3:[B.step2-.15,B.step2+1.1],b5:[B.step2+1.1,B.ab4-.1],c4:[B.ab4-.1,B.ab4+1.3],b6:[B.ab4+1.3,B.example2-.1],
+    b7:[B.example2-.1,B.ulta-.1],b8:[B.ulta-.1,B.company5-.1],c5:[B.company5-.1,B.company5+1.2],b9:[B.company5+1.2,B.ab6-.1],c6:[B.ab6-.1,B.ab6+1.2],b10:[B.ab6+1.2,B.recap-.25],b11:[B.recap-.25,B.ab7-.15],b12:[B.ab7-.15,B.par8-.1],b13:[B.par8-.1,999]};
+  for(const k in win)show(k,t>=win[k][0]&&t<win[k][1]);const on=k=>t>=win[k][0]&&t<win[k][1];
+  for(const c of ['c3','c4','c5','c6'])if(on(c))chap(c,win[c],t);
+  if(on('b1')){const lt=t-win.b1[0];op('b1',P(lt,0,.25));const q=P(t,B.q,B.q+.3)*(1-P(t,B.simple-.1,B.simple+.2));$('qpop').style.opacity=q;$('qpop').style.transform=`translate(-50%,-50%) scale(${.8+.2*back(P(t,B.q,B.q+.4))})`;
+    // assets stack (left) vs loans (right), example numbers
+    const A=[['Factory','₹400 cr',B.saamaan],['Machines','₹250 cr',B.factory],['Zameen','₹200 cr',B.sab],['Cash','₹150 cr',B.sab+.35]];const unit=.42;
+    let h=`<div class="mono" style="position:absolute;left:300px;top:150px;font-size:22px;color:#a39886;${up(t,B.saamaan-.3)}">Company bech di: assets</div>
+      <div class="mono" style="position:absolute;left:1120px;top:150px;font-size:22px;color:#a39886;${up(t,B.karz-.2)}">Karz chukaya</div>`;
+    let y=880;const shrink=P(t,B.bachega-.2,B.wahi);
+    A.forEach((a,i)=>{const v=parseInt(a[1].slice(1));const hh=v*unit;y-=hh;h+=`<div style="position:absolute;left:300px;top:${y}px;width:520px;height:${hh-6}px;background:${shrink>0?`rgba(242,163,58,${.25+.6*shrink})`:'#2b2620'};border:1px solid #4a4036;border-radius:8px;${pop(t,a[2])};transform-origin:50% 100%;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-family:JB;font-size:26px"><span>${a[0]}</span><span style="color:#cbbfa9">${a[1]}</span></div>`});
+    const loanH=600*unit, ly=880-loanH;const mv=eio(P(t,B.bachega-.3,B.wahi-.1));
+    h+=`<div style="position:absolute;left:${1120-mv*820}px;top:${ly-mv*(1000*unit-loanH)+mv*0}px;width:520px;height:${loanH-6}px;background:rgba(229,72,77,${.25+.35*(1-mv)});border:1px solid var(--red);border-radius:8px;${pop(t,B.karz)};display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-family:JB;font-size:26px;opacity:${P(t,B.karz,B.karz+.15)*(1-P(t,B.wahi-.1,B.wahi+.2))}"><span>Karz (loans)</span><span>−₹600 cr</span></div>`;
+    const bv=P(t,B.wahi-.1,B.wahi+.3);
+    h+=`<div style="position:absolute;left:880px;top:${880-400*unit}px;${pop(t,B.wahi)};transform-origin:0 50%"><div class="mono" style="font-size:24px;color:var(--amber)">Jo bacha = Book value</div><div style="font-family:PF;font-weight:900;font-size:110px;line-height:1.1">₹400 cr</div></div>`;
+    const dv=P(t,B.usko-.1,B.divide+.3);
+    h+=`<div style="position:absolute;left:880px;top:${880-400*unit+190}px;opacity:${dv};font-family:JB;font-size:34px;color:#cbbfa9">÷ 10 crore shares</div>`;
+    h+=`<div style="position:absolute;left:1280px;top:300px;padding:30px 44px;border:3px solid var(--amber);border-radius:16px;background:rgba(10,9,8,.85);${pop(t,B.mil)}"><div class="mono" style="font-size:22px;color:var(--amber)">Book value per share</div><div style="font-family:PF;font-weight:900;font-size:130px;line-height:1.1">₹40</div></div>`;
+    $('liq').innerHTML=h;$('liq').style.opacity=P(t,B.simple-.2,B.simple+.2);}
+  if(on('b2')){const lt=t-win.b2[0];op('b2',P(lt,0,.3));const sc=1+lt*.008;tf('b2p',`scale(${sc})`);const Q=Q4.map(([x,y])=>[960+(x-960)*sc,540+(y-540)*sc]);tf('sign',quad(700,520,Q));
+    const row=(s,l,v,c='#16120d',big=false)=>`<div style="opacity:${P(t,s,s+.15)};display:flex;justify-content:space-between;align-items:baseline;font-size:${big?58:44}px;font-weight:${big?800:700};color:${c};margin-bottom:${big?0:14}px"><span style="font-family:JB;font-size:28px;letter-spacing:.06em;color:#6b5a40">${l}</span><span>${v}</span></div>`;
+    const st=P(t,B.pandrah-.1,B.pandrah+.2);
+    $('signin').innerHTML=st<1?row(B.pachaas,'Ghar ki keemat','₹50 lakh')+row(B.tees,'Loan baaki','−₹30 lakh','#b3322f')+`<div style="height:3px;background:#16120d;opacity:${P(t,B.asli-.2,B.asli)};margin:10px 0 22px"></div>`+row(B.bees,'Asli value','₹20 lakh','#a8650f',true)
+      :`<div style="font-family:JB;font-size:28px;color:#6b5a40;letter-spacing:.08em">Wahi ghar, offer</div><div style="font-size:150px;font-weight:800;line-height:1.1">₹15 lakh</div><div style="display:inline-block;margin-top:10px;padding:6px 26px;background:#c9302c;color:#fff;font-size:64px;font-weight:800;border-radius:10px;${pop(t,B.sale1)}">SALE</div>`;
+    $('sign').style.opacity=P(t,B.pachaas-.4,B.pachaas-.1);}
+  if(on('b3')){const lt=t-win.b3[0];op('b3',P(lt,0,.25));const bvY=470;const pY=lerp(330,640,eio(P(t,B.price,B.kam+.3)));
+    $('pvb').innerHTML=`<div style="position:absolute;left:200px;right:200px;top:${bvY}px;height:6px;background:var(--amber);box-shadow:0 0 30px rgba(242,163,58,.6);transform-origin:0 50%;transform:scaleX(${eio(P(lt,.1,.8))})"></div>
+      <div class="mono" style="position:absolute;right:200px;top:${bvY-48}px;font-size:24px;color:var(--amber);opacity:${P(lt,.5,.8)}">Book value / share · ₹40</div>
+      <div style="position:absolute;left:520px;top:${pY}px;width:340px;height:6px;background:#efe4cf;opacity:${P(t,B.price-.2,B.price)}"></div>
+      <div style="position:absolute;left:520px;top:${pY+18}px;opacity:${P(t,B.price-.2,B.price)};font-family:JB;font-size:24px;color:#efe4cf">Share price · ₹${Math.round(lerp(52,30,eio(P(t,B.price,B.kam+.3))))}</div>
+      <div style="position:absolute;left:200px;top:760px;${up(t,B.sasti)}"><div class="mono" style="font-size:22px;color:#a39886">Price ÷ Book value</div><div style="font-family:PF;font-weight:900;font-size:110px">P/B = 0.75</div></div>
+      <div style="position:absolute;left:1240px;top:600px;padding:16px 48px;background:var(--red);color:#fff;font-family:P;font-weight:800;font-size:110px;border-radius:14px;opacity:${P(t,B.sale2-.1,B.sale2+.05)};transform:rotate(${-8+6*(1-eo(P(t,B.sale2,B.sale2+.5)))*Math.sin((t-B.sale2)*14)}deg) scale(${lerp(1.6,1,eo(P(t,B.sale2-.1,B.sale2+.15)))})">SALE</div>`;}
+  if(on('b4')){const lt=t-win.b4[0];op('b4',P(lt,0,.25));const vals=[100,92,88,79,70,61,55,47,38,30,24,18];let bars='';
+    vals.forEach((v,i)=>{const s=win.b4[0]+.5+i*.18;bars+=`<div style="position:absolute;left:${980+i*68}px;bottom:${220}px;width:46px;height:${v*4.6*eo(P(t,s,s+.3))}px;background:${i>5?'var(--red)':'#5b5249'};border-radius:4px 4px 0 0"></div>`});
+    $('sink').innerHTML=`<div style="position:absolute;left:150px;top:300px;${up(t,B.par+.1)}"><div style="font-family:PF;font-weight:900;font-size:120px;line-height:1.05">Sasta ≠<br><span style="color:var(--amber)">Achha</span></div></div>
+      <div class="mono" style="position:absolute;left:150px;top:620px;font-size:28px;color:#cbbfa9;${up(t,B.doob-.6)}">Business hi doob raha hai</div>
+      ${bars}<div class="mono" style="position:absolute;left:980px;bottom:170px;font-size:20px;color:#7d7468">Quarterly profit · illustration</div>`;}
+  if(on('b5')){const lt=t-win.b5[0];op('b5',P(lt,0,.25));
+    const f1=P(t,B.list-.2,B.list+.3),f2=P(t,B.quarter-.3,B.quarter+.2),f3=P(t,B.rare-.2,B.rare+.3);
+    const stage=(y,w,label,on,col)=>`<div style="position:absolute;left:${960-w/2}px;top:${y}px;width:${w}px;height:92px;border:2px solid ${col};border-radius:12px;background:rgba(10,9,8,.7);opacity:${on};display:flex;align-items:center;justify-content:center;font-family:JB;font-size:28px;letter-spacing:.06em">${label}</div>`;
+    const fun=stage(150,1100,'Saari listed companies',f1,'#5b5249')+stage(270,820,'P/B &lt; 1 · book value se neeche',f1,'#8a7a62')+stage(390,560,'Last quarter = 3 saal ka best',f2,'var(--amber)')+stage(510,320,'Shortlist',f3,'var(--green)');
+    const zoomQ=P(t,B.quarter,B.quarter+.4)*(1-P(t,B.sasti2-.3,B.sasti2));
+    let qb='';const qs=[52,58,49,61,57,63,55,66,60,64,59,88];qs.forEach((v,i)=>{const s=B.quarter+.1+i*.08;const last=i===11;qb+=`<div style="position:absolute;left:${560+i*72}px;bottom:200px;width:50px;height:${v*4.2*eo(P(t,s,s+.3))}px;background:${last?'var(--amber)':'#4a4036'};border-radius:4px 4px 0 0;${last&&t>B.best?'box-shadow:0 0 30px rgba(242,163,58,.7)':''}"></div>`});
+    qb+=`<div style="position:absolute;left:560px;right:${1920-560-12*72}px;bottom:${200+66*4.2}px;border-top:2px dashed #8f8576;opacity:${P(t,B.highest-.3,B.highest)}"></div>
+      <div class="mono" style="position:absolute;left:560px;bottom:${200+66*4.2+12}px;font-size:20px;color:#8f8576;opacity:${P(t,B.highest-.3,B.highest)}">Pichhle 3 saal ka high</div>
+      <div style="position:absolute;left:${560+11*72-18}px;bottom:${200+88*4.2+16}px;font-size:60px;${pop(t,B.best)}">👑</div>
+      <div class="mono" style="position:absolute;left:560px;bottom:150px;font-size:20px;color:#7d7468">12 quarters · illustration</div>`;
+    const combo=P(t,B.sasti2-.2,B.sasti2+.1)*(1-P(t,B.haan-.2,B.haan));
+    const cb=`<div style="position:absolute;left:330px;top:700px;${pop(t,B.sasti2)}" class="tag">✓ Sasti · P/B &lt; 1</div><div style="position:absolute;left:800px;top:700px;${pop(t,B.peak)}" class="tag">✓ Business peak pe</div>
+      <div style="position:absolute;left:1290px;top:676px;padding:10px 30px;background:var(--amber);color:#14100b;font-family:P;font-weight:800;font-size:56px;border-radius:10px;${pop(t,B.rare)}">RARE COMBO</div>`;
+    const note=`<div style="position:absolute;left:1180px;top:640px;width:520px;padding:30px 36px;background:#f2d77a;color:#1d1810;transform:rotate(-3deg);box-shadow:0 20px 40px rgba(0,0,0,.5);font-family:PF;font-weight:700;font-size:46px;line-height:1.2;${pop(t,B.chill-.1)}">Chill 😌<br><span style="font-size:34px;font-style:italic">AI shortcut end mein aa raha hai</span></div>`;
+    $('flt').innerHTML=`<div style="opacity:${1-zoomQ}">${fun}</div><div style="opacity:${zoomQ}">${qb}</div><div style="opacity:${combo>0?1:0}">${t>B.sasti2-.2&&t<B.haan?cb:''}</div>${t>B.chill-.2?note:''}`;}
+  if(on('b6')){const lt=t-win.b6[0];op('b6',P(lt,0,.3));tf('b6p',`scale(${1.05+lt*.008})`);
+    $('ht').innerHTML=`<div style="position:absolute;left:0;width:100%;text-align:center;top:120px;${up(t,B.dimaag-.2)}"><span class="mono" style="font-size:24px;color:var(--amber)">Software nahi ·</span><span style="font-family:PF;font-weight:900;font-size:70px"> aapka dimaag</span></div>
+      <div style="position:absolute;left:50%;top:560px;transform:translateX(-50%);width:1300px;padding:44px 60px;background:rgba(239,228,207,.95);color:#17130e;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);opacity:${P(t,B.sawaal,B.sawaal+.3)}">
+      <div class="mono" style="font-size:22px;color:#8a6a3a">Bas ek sawaal</div><div style="font-family:PF;font-weight:900;font-size:64px;line-height:1.15;margin-top:12px">Kya ye company agle 3–4 saal <span style="background:linear-gradient(transparent 60%,rgba(242,163,58,${P(t,B.survive,B.survive+.4)}) 60%)">survive</span> karegi, aur <span style="background:linear-gradient(transparent 60%,rgba(242,163,58,${P(t,B.growth,B.growth+.4)}) 60%)">growth</span> maintain kar paayegi?</div></div>`;}
+  if(on('b7')){const lt=t-win.b7[0];op('b7',P(lt,0,.3));
+    // Cian Agro: 3 sourced points (Business Today 9 Oct & 30 Dec 2025); Oct 2024 implied by +1,398% one-year gain
+    const pts=[[0,243],[1/14.5*12.2,3633.15],[1,1381.6]];const box=[860,330,1720,820];const c=chart(pts,box,0,4000);
+    const draw=eio(P(t,B.hype-.6,B.hype+.8)),crash=P(t,B.gir-.3,B.gir+.3);
+    const L1=`M${c.X(0)} ${c.Y(243)} L${c.X(pts[1][0])} ${c.Y(3633.15)}`,L2=`M${c.X(pts[1][0])} ${c.Y(3633.15)} L${c.X(1)} ${c.Y(1381.6)}`;
+    const typ=(txt,s)=>txt.slice(0,Math.floor(cl((t-s)/.06,0,txt.length)));
+    $('cian').innerHTML=`<div style="position:absolute;left:110px;top:120px;width:640px;height:820px;background:#d9c39a;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6);color:#1d1810;padding:50px 50px;transform:rotate(-1.5deg)">
+        <div class="mono" style="font-size:22px;color:#6b5330">Case file A</div>
+        <div style="font-family:JB;font-weight:700;font-size:64px;margin-top:16px;letter-spacing:.04em">${typ('CIAN AGRO',B.cian-.1)}</div>
+        <div style="margin-top:40px;font-family:JB;font-size:30px;line-height:1.9">
+          <div style="opacity:${P(t,B.quarterly,B.quarterly+.2)}">✓ Quarterly results achhe</div>
+          <div style="opacity:${P(t,B.growth2,B.growth2+.2)}">✓ Growth dikh rahi hai</div>
+          <div style="opacity:${P(t,B.hype,B.hype+.2)};color:#8a2a22">? Sentiment + hype</div>
+          <div style="opacity:${P(t,B.doubt,B.doubt+.2)};color:#8a2a22">? Fundamentals pe doubt</div></div>
+        <div style="position:absolute;left:50px;bottom:60px;padding:10px 26px;border:5px solid #a8650f;color:#a8650f;font-family:P;font-weight:800;font-size:54px;border-radius:10px;transform:rotate(-7deg) scale(${lerp(1.8,1,eo(P(t,B.invest,B.invest+.2)))});opacity:${P(t,B.invest,B.invest+.1)}">SKIP · my view</div></div>
+      <div style="position:absolute;left:880px;top:150px;width:420px;padding:22px 28px;background:#f2d77a;color:#1d1810;transform:rotate(2deg);font-family:PF;font-weight:700;font-size:38px;line-height:1.2;box-shadow:0 14px 30px rgba(0,0,0,.5);${pop(t,B.personal)}">Mera personal view<br><span style="font-size:26px;font-style:italic">koi final verdict nahi</span></div>
+      <svg class="abs" width="1920" height="1080" style="opacity:${P(t,B.hype-.6,B.hype-.3)}">
+        <line x1="${box[0]}" x2="${box[2]}" y1="${box[3]}" y2="${box[3]}" stroke="#3a332b"/>
+        <path d="${L1}" fill="none" stroke="var(--amber)" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${1-draw}"/>
+        <path d="${L2}" fill="none" stroke="var(--red)" stroke-width="7" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${1-crash}"/>
+        <text x="${c.X(0)}" y="${c.Y(243)+44}" fill="#a39886" font-size="20">~₹243 · Oct 2024</text>
+        <text x="${c.X(pts[1][0])-20}" y="${c.Y(3633.15)-24}" text-anchor="middle" fill="#efe4cf" font-size="24" font-weight="700" opacity="${P(draw,.9,1)}">₹3,633 · 16 Oct 2025</text>
+        <text x="${c.X(1)}" y="${c.Y(1381.6)+50}" text-anchor="end" fill="#efe4cf" font-size="22" opacity="${crash}">₹1,382 · 30 Dec 2025</text></svg>
+      <div style="position:absolute;left:${c.X(.62)}px;top:${c.Y(3633)-120}px;padding:6px 20px;background:var(--amber);color:#14100b;font-family:P;font-weight:800;font-size:40px;border-radius:8px;${pop(t,B.hype+.3)}">HYPE?</div>
+      <div style="position:absolute;left:${c.X(.93)+10}px;top:${c.Y(2600)}px;font-family:PF;font-weight:900;font-size:76px;color:var(--red);${pop(t,B.gir+.2)}">−62%</div>
+      <div class="mono" style="position:absolute;left:880px;top:880px;font-size:17px;color:#7d7468;letter-spacing:.04em;opacity:${P(t,B.hype,B.hype+.3)}">Share price · Source: Business Today (9 Oct, 30 Dec 2025) · Oct 2024 level implied by the reported +1,398% 1-yr gain</div>
+      <div style="position:absolute;left:880px;top:940px;padding:12px 20px;border-left:3px solid var(--amber);background:rgba(10,9,8,.8);font-family:JB;font-size:20px;color:#d9cfbf;opacity:${P(t,B.soch-.3,B.soch)}">Personal opinion · Not a verdict on the company · Not advice</div>`;}
+  if(on('b8')){const lt=t-win.b8[0];const w=seq($('b8p'),'c6',121,24*0.7,lt);if(w)waits.push(w);op('b8',P(lt,0,.3));tf('b8p',`scale(${1.04+lt*.004})`);
+    const pb=1.3,X=v=>200+(v-.5)*500;const ic=P(t,B.india-.2,B.india+.2)*(1-P(t,B.kitna-.4,B.kitna-.1));
+    const NNI=[['FY21',127244],['FY22',150906],['FY23',159557],['FY24',176465],['FY25',192774],['FY26',208090]];
+    let bars='';NNI.forEach((d,i)=>{const s=B.india+.1+i*.15;const hh=d[1]/208090*300*eo(P(t,s,s+.35));bars+=`<div style="position:absolute;left:${170+i*120}px;top:${820-hh}px;width:80px;height:${hh}px;background:${i==5?'var(--amber)':'#6f665a'};border-radius:4px 4px 0 0"></div><div class="mono" style="position:absolute;left:${170+i*120}px;top:836px;width:80px;text-align:center;font-size:18px;color:#a39886">${d[0]}</div>`});
+    const top=(1-ic)*(1-P(t,B.kitna-.4,B.kitna-.1));
+    $('psu').innerHTML=`<div style="position:absolute;left:150px;top:140px"><div class="mono" style="font-size:24px;color:var(--amber);${up(t,B.psu-.2)}">Case file B</div><div style="font-family:PF;font-weight:900;font-size:130px;line-height:1.05;${up(t,B.psu)}">PSU banks</div></div>
+      <div style="position:absolute;left:150px;top:430px;opacity:${P(t,B.kai,B.kai+.3)*top}">
+        <div class="mono" style="font-size:22px;color:#cbbfa9">Nifty PSU Bank · P/B · 27 Nov 2026</div>
+        <div style="position:relative;width:760px;height:120px;margin-top:20px">
+          <div style="position:absolute;left:${X(.7)-200}px;width:${(X(1.9)-X(.7))}px;top:50px;height:14px;background:#3a332b;border-radius:7px"></div>
+          <div style="position:absolute;left:${X(1)-200}px;top:30px;height:54px;border-left:3px solid var(--amber)"></div><div class="mono" style="position:absolute;left:${X(1)-200-60}px;top:92px;font-size:17px;color:var(--amber);white-space:nowrap">1.0 = book value</div>
+          <div style="position:absolute;left:${X(pb)-200-14}px;top:43px;width:28px;height:28px;border-radius:50%;background:#efe4cf;box-shadow:0 0 20px rgba(239,228,207,.6)"></div><div style="position:absolute;left:${X(pb)-200-40}px;top:-6px;font-family:P;font-weight:800;font-size:34px">1.3×</div>
+          <div class="mono" style="position:absolute;left:${X(.7)-200}px;top:92px;font-size:16px;color:#7d7468">0.7</div><div class="mono" style="position:absolute;left:${X(1.9)-200-30}px;top:92px;font-size:16px;color:#7d7468;white-space:nowrap">1.9 · 5-yr range</div></div>
+        <div class="mono" style="font-size:16px;color:#7d7468;margin-top:6px">Source: Trendlyne, Nifty PSU Bank index</div></div>
+      <div style="position:absolute;left:150px;top:720px;font-family:PF;font-weight:900;font-size:64px;opacity:${P(t,B.das-.2,B.das+.2)*top}">Banking band nahi hogi.</div>
+      <div style="opacity:${ic}"><div class="mono" style="position:absolute;left:170px;top:420px;font-size:22px;color:var(--amber)">India per capita income (NNI, current prices)</div>${bars}
+        <div style="position:absolute;left:920px;top:470px;font-family:PF;font-weight:900;font-size:76px;${pop(t,B.india+1.2)}">₹1.27L → ₹2.08L</div><div class="mono" style="position:absolute;left:924px;top:575px;font-size:16px;color:#7d7468">Source: NSO / MoSPI · FY26 provisional</div>
+        <div class="mono" style="position:absolute;left:924px;top:640px;font-size:30px;color:#efe4cf;${up(t,B.bank-.3)}">Zyada kamayenge → paisa bank mein</div></div>
+      <div style="position:absolute;left:150px;top:370px;opacity:${P(t,B.kitna-.2,B.kitna)}"><div style="font-family:PF;font-weight:700;font-style:italic;font-size:80px;color:#8f8576;text-decoration:line-through;text-decoration-color:var(--red)">Kitna badhega?</div>
+        <div style="font-family:PF;font-weight:900;font-size:120px;margin-top:20px;${up(t,B.tikega-.3)}">Kya ye <span style="color:var(--green)">tikega?</span></div>
+        <div style="display:inline-block;margin-top:30px;padding:10px 34px;background:var(--green);color:#0b1a12;font-family:P;font-weight:800;font-size:64px;border-radius:12px;${pop(t,B.haan2)}">HAAN ✓</div></div>`;}
+  if(on('b9')){const lt=t-win.b9[0];op('b9',P(lt,0,.3));
+    // exit timeline: x = months 0..14, BV line, price paths
+    const x0=220,x1=1700,X=m=>x0+(x1-x0)*m/14,y=v=>960-v*3.0;const bv0=100;
+    const phase2=t>=B.rule2-.2;const bvStep=t>B.pro?(t>B.update?(t>B.target?120:110):100):100;
+    const pathA=[[0,80],[1,78],[2,84],[3,90],[3.8,97],[4.6,101]],pathB=[[0,80],[2,77],[4,82],[6,86],[8,110],[10,150],[11.5,185],[12.5,201]];
+    const pa=phase2?0:eio(P(t,B.rule1,B.profit)),pbp=phase2?eio(P(t,B.rule2,B.double+.2)):0;
+    const seg=(pts,k)=>{const n=pts.length-1,f=k*n,i=Math.min(n-1,Math.floor(f)),r=f-i;const out=pts.slice(0,i+1).map(p=>[X(p[0]),y(p[1])]);if(k>0)out.push([X(lerp(pts[i][0],pts[i+1][0],r)),y(lerp(pts[i][1],pts[i+1][1],r))]);return out.map((p,j)=>(j?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ')};
+    const bvPath=t>B.pro?`M${X(0)} ${y(100)} L${X(6)} ${y(100)} L${X(6)} ${y(110)} L${X(12)} ${y(110)} L${X(12)} ${y(120)} L${X(14)} ${y(120)}`:`M${X(0)} ${y(100)} L${X(14)} ${y(100)}`;
+    const show2x=P(t,B.double-.6,B.double-.2);
+    $('ex').innerHTML=`<rect x="${X(0)}" y="230" width="${X(6)-X(0)}" height="730" fill="rgba(242,163,58,.07)" opacity="${P(t,B.chhe-.2,B.chhe+.2)}"/>
+      <text x="${X(3)}" y="270" text-anchor="middle" fill="#a39886" font-size="22" opacity="${P(t,B.chhe-.2,B.chhe+.2)}">6 mahine</text>
+      <path d="${bvPath}" fill="none" stroke="var(--amber)" stroke-width="5" opacity="${P(lt,.2,.6)}"/>
+      <text x="${X(14)}" y="${y(bvStep)-16}" text-anchor="end" fill="var(--amber)" font-size="22">Book value ${bvStep}</text>
+      <path d="M${X(0)} ${y(200)} L${X(14)} ${y(200)}" stroke="#efe4cf" stroke-width="3" stroke-dasharray="14 10" opacity="${show2x*(t>B.pro?0:1)}"/>
+      <path d="M${X(0)} ${y(200)} L${X(6)} ${y(200)} L${X(6)} ${y(220)} L${X(12)} ${y(220)} L${X(12)} ${y(240)} L${X(14)} ${y(240)}" fill="none" stroke="#efe4cf" stroke-width="3" stroke-dasharray="14 10" opacity="${t>B.pro?P(t,B.pro,B.pro+.3):0}"/>
+      <text x="${X(14)}" y="${y(t>B.pro?bvStep*2:200)-16}" text-anchor="end" fill="#efe4cf" font-size="22" opacity="${show2x}">Target = 2× book value</text>
+      <path d="${seg(pathA,pa)}" fill="none" stroke="#efe4cf" stroke-width="5" opacity="${phase2?0:P(t,B.khareedta,B.khareedta+.3)}"/>
+      <path d="${seg(pathB,pbp)}" fill="none" stroke="#efe4cf" stroke-width="5" opacity="${phase2?1:0}"/>
+      <circle cx="${X(0)}" cy="${y(80)}" r="12" fill="var(--green)" opacity="${P(t,B.tick,B.tick+.2)}"/>`;
+    const ruleTxt=!phase2?`<div class="mono" style="font-size:24px;color:var(--amber);${up(t,B.rule1-.1)}">Rule 1</div><div style="font-family:PF;font-weight:900;font-size:56px;${up(t,B.rule1)}">6 mahine mein BV touch → profit book</div>`
+      :(t<B.pro?`<div class="mono" style="font-size:24px;color:var(--amber);${up(t,B.rule2-.1)}">Rule 2</div><div style="font-family:PF;font-weight:900;font-size:56px;${up(t,B.rule2)}">Nahi pahuncha → hold, sell at 2× BV</div>`
+      :`<div class="mono" style="font-size:24px;color:var(--amber);${up(t,B.pro-.1)}">Pro tip</div><div style="font-family:PF;font-weight:900;font-size:56px;${up(t,B.pro)}">Har 6 mahine: naya balance sheet → naya target</div>`);
+    $('exl').innerHTML=`<div style="position:absolute;left:220px;top:70px;opacity:${1-P(t,B.rules-.3,B.rules)}"><div style="font-family:PF;font-weight:900;font-size:80px">Khareedna <span style="color:var(--green);${t>B.khareedna?'':'opacity:.2'}">kab?</span> &nbsp;Bechna <span style="color:var(--red);${t>B.bechna?'':'opacity:.2'}">kab?</span></div></div>
+      <div style="position:absolute;left:220px;top:70px;opacity:${P(t,B.rules-.3,B.rules)}">${ruleTxt}</div>
+      <div style="position:absolute;left:${X(0)-30}px;top:${y(80)+26}px;padding:6px 16px;background:var(--green);color:#0b1a12;font-family:P;font-weight:800;font-size:30px;border-radius:8px;${pop(t,B.khareedta+.3)}">BUY</div>
+      <div class="mono" style="position:absolute;left:${X(0)+80}px;top:${y(80)+34}px;font-size:22px;color:#cbbfa9;opacity:${P(t,B.tick,B.tick+.3)}">✓ BV se neeche &nbsp;✓ best quarter &nbsp;✓ tikegi</div>
+      ${!phase2?`<div style="position:absolute;left:${X(4.6)-80}px;top:${y(101)-110}px;padding:8px 22px;background:var(--amber);color:#14100b;font-family:P;font-weight:800;font-size:38px;border-radius:8px;${pop(t,B.profit)}">PROFIT BOOK</div>`:''}
+      ${phase2&&t<B.pro+1.5?`<div style="position:absolute;left:${X(6)+10}px;top:${y(86)-70}px;padding:6px 18px;border:2px solid #efe4cf;font-family:JB;font-size:26px;${pop(t,B.hold)}">HOLD</div>
+        <div style="position:absolute;left:${X(12.5)-120}px;top:${y(201)-110}px;padding:8px 22px;background:var(--red);color:#fff;font-family:P;font-weight:800;font-size:38px;border-radius:8px;${pop(t,B.double)}">SELL @ 2×</div>
+        <div style="position:absolute;left:${X(8)}px;top:${y(60)}px;font-family:PF;font-weight:900;font-size:70px;${pop(t,B.sau)}">BV ₹100 → <span style="color:var(--amber);opacity:${P(t,B.dosau,B.dosau+.2)}">target ₹200</span></div>`:''}
+      ${t>B.balance-.2?`<div style="position:absolute;left:${X(6)-40}px;top:${y(120)-80}px;font-size:50px;${pop(t,B.balance)}">📄</div><div style="position:absolute;left:${X(12)-40}px;top:${y(130)-80}px;font-size:50px;${pop(t,B.balance+.4)}">📄</div>`:''}`;}
+  if(on('b10')){const lt=t-win.b10[0];op('b10',P(lt,0,.3));tf('b10p',`scale(${1.04+lt*.01})`);
+    const yr=2019+Math.floor(cl((t-B.saalon)/0.35,0,7));
+    $('trap').innerHTML=`<div class="mono" style="position:absolute;left:150px;top:120px;font-size:26px;color:var(--amber);${up(t,win.b10[0]+.2)}">Har sasta share achha nahi hota</div>
+      <div style="position:absolute;left:150px;top:220px;font-family:JB;font-weight:700;font-size:120px;color:#efe4cf;opacity:${P(t,B.saalon-.1,B.saalon+.1)}">${yr}</div>
+      <div class="mono" style="position:absolute;left:150px;top:370px;font-size:26px;color:#cbbfa9;opacity:${P(t,B.saalon,B.saalon+.3)}">…aur abhi bhi book value se neeche</div>
+      <div style="position:absolute;left:150px;bottom:250px;font-family:PF;font-weight:900;font-size:190px;line-height:1;color:var(--red);${pop(t,B.trap-.1)}">VALUE TRAP</div>
+      <div style="position:absolute;left:150px;bottom:150px;font-family:JB;font-size:34px;${up(t,B.three-.1)}">Bachav: <span style="color:var(--amber)">Step 3 · khud socho</span></div>`;}
+  if(on('b11')){const lt=t-win.b11[0];op('b11',P(lt,0,.25));const C=[['01','Book value se neeche','P/B < 1',B.ek],['02','Last quarter = 3 saal ka best','Business peak pe',B.do2],['03','Khud socho: tikegi?','Human test',B.teen],['04','6 mahine mein BV, warna 2× BV','Exit rules',B.chaar]];
+    const glow=P(t,B.yahi,B.yahi+.4);
+    $('rc').innerHTML=`<div class="mono" style="position:absolute;left:0;width:100%;text-align:center;top:70px;font-size:26px;color:var(--amber)">Quick recap · poora system</div>`+C.map((c,i)=>`<div style="position:absolute;left:${180+(i%2)*800}px;top:${170+Math.floor(i/2)*420}px;width:760px;height:380px;border-radius:20px;background:#171512;border:2px solid ${glow>0?`rgba(242,163,58,${glow})`:'#2c2925'};padding:44px 50px;${pop(t,c[3])}">
+      <div style="font-family:JB;font-weight:700;font-size:90px;color:var(--amber);line-height:1">${c[0]}</div><div style="font-family:PF;font-weight:900;font-size:56px;line-height:1.1;margin-top:26px">${c[1]}</div><div class="mono" style="font-size:22px;color:#8f8576;margin-top:20px">${c[2]}</div></div>`).join('');}
+  if(on('b12')){const lt=t-win.b12[0];op('b12',P(lt,0,.3));const sc=1+lt*.006;tf('b12p',`scale(${sc})`);const Q=Q9.map(([x,y])=>[960+(x-960)*sc,540+(y-540)*sc]);tf('scr12',quad(1000,625,Q));
+    const rows=[['Company A','0.82','✓'],['Company B','0.64','✓'],['Company C','1.40','✗'],['Company D','0.91','✓'],['Company E','0.55','✗']];
+    const shown=Math.floor(cl((t-B.filtering)/.25,0,5));
+    $('scr12').innerHTML=`<div style="padding:40px 50px"><div class="mono" style="font-size:20px;color:#8a6a3a">AI screener · step by step PDF</div>
+      <div style="margin-top:20px;padding:16px 22px;background:#e6ddcc;border-radius:12px;font-family:JB;font-size:22px">› P/B &lt; 1 aur best quarter wali list do</div>
+      <table style="margin-top:24px;width:100%;border-collapse:collapse;font-family:JB;font-size:24px">${rows.slice(0,shown).map(r=>`<tr style="border-bottom:1px solid #d8cdb8"><td style="padding:10px 0">${r[0]}</td><td>P/B ${r[1]}</td><td style="color:${r[2]=='✓'?'#2f8f5b':'#b3322f'}">${r[2]}</td></tr>`).join('')}</table>
+      <div class="mono" style="margin-top:16px;font-size:16px;color:#8a7a62">Demo · example names</div></div>`;
+    $('cta').innerHTML=`<div style="position:absolute;right:120px;top:140px;text-align:right"><div class="mono" style="font-size:24px;color:var(--amber);${up(t,B.ab7)}">AI se 2 minute mein</div><div style="font-family:PF;font-weight:900;font-size:90px;line-height:1.05;${up(t,B.pdf-.3)}">Step-by-step<br>PDF</div>
+        <div style="margin-top:24px;display:inline-block;padding:14px 30px;background:var(--amber);color:#14100b;font-family:P;font-weight:800;font-size:40px;border-radius:12px;${pop(t,B.desc)}">Link description mein ↓</div></div>
+      <div style="position:absolute;right:120px;bottom:130px;display:flex;gap:24px;align-items:center">
+        <div style="padding:14px 30px;border:2px solid #efe4cf;border-radius:40px;font-family:P;font-weight:700;font-size:36px;${pop(t,B.like-.1)}">👍 Like</div>
+        <div style="padding:14px 34px;background:#d63c3c;border-radius:40px;font-family:P;font-weight:800;font-size:36px;${pop(t,B.subscribe-.1)}">Subscribe</div>
+        <div style="padding:14px 30px;border:2px solid var(--amber);color:var(--amber);border-radius:40px;font-family:P;font-weight:700;font-size:36px;${pop(t,B.baar-.3)}">↻ 2–3× dekho</div></div>`;}
+  if(on('b13')){const lt=t-win.b13[0];op('b13',P(lt,0,.3));const end=P(t,B.thank-.2,B.thank+.2);
+    $('dis').innerHTML=`<div style="opacity:${1-end}"><div class="mono" style="position:absolute;left:0;width:100%;text-align:center;top:250px;font-size:26px;color:var(--amber);${up(t,B.par8+.1)}">Ek cheez clear</div>
+      <div style="position:absolute;left:0;width:100%;text-align:center;top:310px;font-family:PF;font-weight:900;font-size:96px;${up(t,B.sebi-.2)}">Main SEBI registered<br>advisor nahi hoon.</div>
+      <div class="mono" style="position:absolute;left:0;width:100%;text-align:center;top:560px;font-size:30px;color:#cbbfa9;${up(t,B.personal8-.2)}">Personal strategy · koi tip nahi · not investment advice</div>
+      <div style="position:absolute;left:0;width:100%;text-align:center;top:690px;font-family:PF;font-weight:700;font-style:italic;font-size:64px;color:#efe4cf"><span style="${up(t,B.seekho)};display:inline-block">Seekho.</span> <span style="${up(t,B.samjho)};display:inline-block">Samjho.</span> <span style="${up(t,B.research-.3)};display:inline-block;color:var(--amber)">Khud research karo.</span></div></div>
+      <div style="position:absolute;left:0;width:100%;text-align:center;top:400px;opacity:${end}"><div style="font-family:PF;font-weight:900;font-size:150px">Thank you</div><div class="mono" style="font-size:28px;color:var(--amber);margin-top:20px">Momentix by Suraj</div></div>`;}
+}
+
+async function renderAt(t){
+  const f=Math.round(t*30);grain(f);const waits=[];
+  const ids=['s1','s2','s3','c1','c2','s4','s5','s6','s7','s8','s9','s10'];const on={};
+  // scene windows
+  const S1=[0,T.literally],S2=[T.literally,T.ye1],S3=[T.ye1,T.ab],C1=[T.ab,T.ab+1.15],S4=[T.ab+1.15,T.zyadatar-0.2],S5=[T.zyadatar-0.2,T.question-0.15],
+        S6=[T.question-0.15,T.aaj2-0.05],S7=[T.aaj2-0.05,T.isme-0.1],S8=[T.isme-0.1,T.video-0.1],S9=[T.video-0.1,T.step1-0.1],C2=[T.step1-0.1,T.step1+1.4],S10=[T.step1+1.4,B.q-.1];
+  const inn=w=>t>=w[0]&&t<w[1];
+  on.s1=inn(S1);on.s2=inn(S2);on.s3=inn(S3);on.c1=inn(C1);on.s4=inn(S4);on.s5=inn(S5);on.s6=inn(S6);on.s7=inn(S7);on.s8=inn(S8);on.s9=inn(S9);on.c2=inn(C2);on.s10=inn(S10);
+  ids.forEach(i=>show(i,on[i]));
+
+  if(on.s1){const lt=t-S1[0];const w=seq($('s1p'),'c1',121,24*0.75,lt);if(w)waits.push(w);tf('s1p',`scale(${1.04+lt*0.004})`);
+    op('s1',eo(P(t,0,.6)));op('s1a',P(t,.3,1));const k=eo(P(t,T.pichhle,T.pichhle+.5));op('s1b',k);tf('s1b',`translateY(${(1-k)*30}px)`);}
+  if(on.s2){const k=eio(P(t,S2[0],S2[0]+1.6));const L=$('nl').getTotalLength();$('nl').style.strokeDasharray=L;$('nl').style.strokeDashoffset=L*(1-k);
+    PTS.forEach((p,i)=>{const at=(X(p[0])-CH.x0)/(CH.x1-CH.x0);op('d'+i,P(k,at-.02,at+.06))});
+    const b=back(P(t,T.kuch,T.kuch+.45));op('s2big',P(t,T.kuch,T.kuch+.2));tf('s2big',`scale(${.7+.3*b})`);
+    const q=eo(P(t,T.aur1,T.aur1+.4));op('s2q',q);tf('s2q',`translateY(${(1-q)*24}px)`);op('ch',1-.6*q);op('s2big',P(t,T.kuch,T.kuch+.2)*(1-.6*q));}
+  if(on.s3){const lt=t-S3[0];const w=seq($('zd'),'zd',454,30,zdT(t));if(w)waits.push(w);
+    // flash + punch in
+    $('flash').style.opacity=.55*(1-P(t,S3[0],S3[0]+.25));
+    const zoom=eio(P(t,T.actual-.25,T.actual+.75));
+    const S=1+1.7*zoom;const lx=22+.914*670-7, ly=22+.212*964;
+    const tx=lerp(220,640-S*lx,zoom), ty=lerp(36,470-S*ly,zoom);
+    tf('ipad',`translate(${tx}px,${ty}px) scale(${S})`);
+    $('ipad').style.opacity=eo(P(t,S3[0],S3[0]+.2));
+    const R=$('ring');R.style.left=(lx-80)+'px';R.style.top=(ly-34)+'px';R.style.width='160px';R.style.height='68px';R.style.opacity=P(t,T.actual+.6,T.actual+.9)*(0.75+.25*Math.sin(t*6));
+    $('rec').style.opacity=(Math.floor(t*2)%2)?1:.25;
+    const ns=back(P(t,T.screenshot,T.screenshot+.4));op('s3ns',P(t,T.screenshot,T.screenshot+.15));tf('s3ns',`scale(${.85+.15*ns})`);$('s3ns').style.transformOrigin='0 50%';
+    const st=[['App band',T.app],['Zerodha khola',T.zerodha],['Actual return',T.yeraha]];
+    $('steps').innerHTML=st.filter(s=>t>=s[1]).map((s,i)=>`<div style="opacity:${P(t,s[1],s[1]+.2)}"><span style="color:var(--amber)">0${i+1}</span>&nbsp;&nbsp;${s[0]}</div>`).join('');
+    op('ff',t>=T.app&&t<T.yeraha?.6+.4*(Math.floor(t*3)%2):0);
+    op('s3l',1-P(t,T.actual-.3,T.actual));const r=eo(P(t,T.ret1-.2,T.ret1+.35));op('s3ret',r);tf('s3ret',`translateX(${(1-r)*-40}px)`);
+    op('livetag',P(t,T.live,T.live+.12));
+  } else $('flash').style.opacity=0;
+  if(on.c1||on.c2){const id=on.c1?'c1':'c2',w=on.c1?C1:C2;const lt=t-w[0],d=w[1]-w[0];const el=$(id);
+    el.querySelector('.rule').style.width=(900*eio(P(lt,.05,.6)))+'px';const k=eo(P(lt,0,.5));el.querySelector('.ttl').style.letterSpacing=(0.12*(1-k))+'em';
+    el.style.opacity=Math.min(P(lt,0,.12),1-P(lt,d-.18,d));el.querySelector('.sub').style.opacity=P(lt,.35,.7);}
+  if(on.s4){const lt=t-S4[0];tf('s4p',`scale(${1.08+lt*.012}) translateX(${-lt*6}px)`);op('s4',P(lt,0,.25));
+    op('s4l',P(t,T.sau-.2,T.sau+.1));$('s4d').textContent=t<T.aaj?'Nov 2024':'Nov 2026';
+    const c=eio(P(t,T.ek,T.paanch+.3));const v=100+5*c;$('s4v').innerHTML=c>0?'<span style="font-size:120px;color:#a39886">'+(c>=1?'≈ ':'')+'</span>₹'+Math.round(v):'₹100';
+    op('s4n',P(t,T.paanch,T.paanch+.3));
+    const b=P(t,T.fd-.1,T.fd+.8);op('bars',P(t,T.fd-.1,T.fd+.1));
+    const hN=330*(105.5/113.6)*eo(P(b,0,.7)),hF=330*eo(P(b,.15,1));
+    $('bars').innerHTML=`<div style="position:absolute;inset:0;background:rgba(10,9,8,.78);border:1px solid #3a332b;border-radius:16px"></div>
+      <div class="mono" style="position:absolute;left:40px;top:30px;font-size:20px;color:#a39886">₹100 · 2 saal baad</div>
+      <div style="position:absolute;left:90px;bottom:90px;width:170px;height:${hN}px;background:#6f665a;border-radius:6px 6px 0 0"></div>
+      <div style="position:absolute;left:370px;bottom:90px;width:170px;height:${hF}px;background:var(--amber);border-radius:6px 6px 0 0"></div>
+      <div style="position:absolute;left:90px;width:170px;text-align:center;bottom:${100+hN}px;font-family:P;font-weight:800;font-size:46px;opacity:${P(b,.5,.8)}">₹105.5</div>
+      <div style="position:absolute;left:370px;width:170px;text-align:center;bottom:${100+hF}px;font-family:P;font-weight:800;font-size:46px;color:var(--amber);opacity:${P(b,.8,1)}">₹113.6</div>
+      <div class="mono" style="position:absolute;left:60px;width:230px;text-align:center;bottom:40px;font-size:18px;color:#a39886">Nifty 50</div>
+      <div class="mono" style="position:absolute;left:340px;width:230px;text-align:center;bottom:40px;font-size:18px;color:#a39886">FD 6.40%*</div><div class="mono" style="position:absolute;left:40px;top:62px;font-size:14px;color:#6f665a;letter-spacing:.04em">*SBI FD 2–3 yr, 6.40% p.a. · Nifty = price return</div>`;}
+  if(on.s5){const lt=t-S5[0];op('s5',P(lt,0,.2));for(let i=0;i<12;i++){const el=$('g'+i);const st=S5[0]+.15+i*.17;const k=back(P(t,st,st+.4));el.style.opacity=P(t,st,st+.15);
+      const red=el.dataset.red==='1';const pulse=red?P(t,T.laal-.05,T.laal+.2)*(1-P(t,T.laal+.6,T.laal+1)):P(t,T.wahin-.05,T.wahin+.2)*(1-P(t,T.wahin+.6,T.wahin+1));
+      el.style.transform=`translateY(${(1-k)*40}px) scale(${1+.05*pulse})`;el.style.borderColor=pulse>0?(red?'rgba(229,72,77,'+pulse+')':'rgba(155,145,131,'+pulse+')'):'#2c2925';}}
+  if(on.s6){const lt=t-S6[0];const w=seq($('s6p'),'c1',121,24*0.5,2.6+lt*.4);if(w)waits.push(w);tf('s6p',`scale(${1.25+lt*.01})`);op('s6',P(lt,0,.3));
+    const a=eo(P(t,T.jab,T.jab+.5)),b=eo(P(t,T.mera3,T.mera3+.5));op('s6a',a);tf('s6a',`translateY(${(1-a)*24}px)`);op('s6b',b);tf('s6b',`translateY(${(1-b)*24}px)`);}
+  if(on.s7){const lt=t-S7[0];op('s7',P(lt,0,.3));op('s7h',P(lt,.1,.5)*(1-P(t,T.isi,T.isi+.3)));
+    const pos=[[230,420,-7],[750,330,4],[1270,440,-3]];['t1','t2','t3'].forEach((id,i)=>{const st=T.isi+.25+i*.55;const k=back(P(t,st,st+.35));const fall=eio(P(t,T.par+i*.08,T.par+.7+i*.08));
+      $(id).style.opacity=P(t,st,st+.1);$(id).style.transform=`translate(${pos[i][0]}px,${pos[i][1]+(1-k)*-80+fall*900}px) rotate(${pos[i][2]+fall*(i%2?40:-35)}deg) scale(${.8+.2*k})`;});
+    const s=P(t,T.free-.12,T.free+.08);$('stamp').style.opacity=s>0?1:0;$('stamp').style.transform=`translate(-50%,-50%) rotate(-9deg) scale(${lerp(2.4,1,eo(s))})`;
+    const sh=P(t,T.free+.05,T.free+.4);$('s7').style.transform=sh>0&&sh<1?`translate(${Math.sin(sh*40)*10*(1-sh)}px,${Math.cos(sh*37)*8*(1-sh)}px)`:'none';}
+  if(on.s8){const lt=t-S8[0];op('s8',P(lt,0,.2));$('tick').style.transform=`translateX(${-lt*40}px)`;
+    const tw=(el,st,txt)=>{const n=Math.floor(cl((t-st)/0.045,0,txt.length));$(el).textContent=txt.slice(0,n)+(t>st&&n<txt.length?'▍':'')};
+    tw('s8a',T.isme+.1,'No rocket science.');tw('s8b',T.data-.1,'Sirf data.');}
+  if(on.s9){const lt=t-S9[0];op('s9',P(lt,0,.25));const sc=1.0+lt*.01;tf('s9p',`scale(${sc})`);
+    const Q=Q9.map(([x,y])=>[960+(x-960)*sc,540+(y-540)*sc]);tf('scr9',quad(1000,625,Q));
+    const k=P(t,T.ai-.1,T.hoon2);const secs=Math.round(120*eio(k));$('clock').textContent=`0${Math.floor(secs/60)}:${String(secs%60).padStart(2,'0')}`;
+    $('clock').style.color=k>=1?'var(--amber)':'#fff';op('s9h',P(lt,.2,.6));}
+  if(on.s10){const lt=t-S10[0];const w=seq($('s10p'),'c3',121,24*0.6,lt);if(w)waits.push(w);op('s10',P(lt,0,.3));tf('s10p',`scale(${1.03+lt*.006})`);
+    op('s10a',P(lt,.2,.5));const k=eo(P(t,T.book1,T.book1+.5));op('s10b',k);tf('s10b',`translateY(${(1-k)*30}px)`);}
+  renderB(t,waits);
+  // disclaimer lower third
+  const dl=P(t,T.free+.2,T.free+.5)*(1-P(t,T.free+3.4,T.free+3.7));$('lower').style.display=dl>0?'flex':'none';$('lower').style.opacity=dl;
+  await Promise.all(waits);
+}
+(async()=>{WORDS=await (await fetch('words.json')).json();anchors();anchorsB();buildChart();buildGrid();buildTick();await document.fonts.ready;
+  for(const f of ['photos/2.png','photos/4.png','photos/5.png','photos/8.png','photos/9.png','photos/10.png'])await new Promise(r=>{const i=new Image();i.onload=r;i.src=f});
+  window.T=T;window.READY=true})();
+</script></body></html>

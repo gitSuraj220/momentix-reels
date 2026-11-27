@@ -1,0 +1,663 @@
+1
+00:00:00,420 --> 00:00:02,980
+Pichhle 2 saal mein Indian market ne literally
+
+2
+00:00:03,000 --> 00:00:03,950
+kuch return nahi diya.
+
+3
+00:00:04,300 --> 00:00:05,210
+Aur mera portfolio?
+
+4
+00:00:05,580 --> 00:00:06,030
+Ye dekho.
+
+5
+00:00:06,360 --> 00:00:07,850
+Aur haan, pehle hi bol deta hoon,
+
+6
+00:00:07,880 --> 00:00:09,050
+ye screenshot nahi hai.
+
+7
+00:00:09,380 --> 00:00:09,990
+App band…
+
+8
+00:00:10,380 --> 00:00:11,590
+iPad pe Zerodha khola…
+
+9
+00:00:12,100 --> 00:00:13,650
+Ye raha mera actual return.
+
+10
+00:00:13,900 --> 00:00:14,390
+Live.
+
+11
+00:00:14,600 --> 00:00:15,350
+Ab scene samjho.
+
+12
+00:00:15,700 --> 00:00:17,720
+2 saal pehle aapne market mein ₹100
+
+13
+00:00:17,740 --> 00:00:18,190
+daale the.
+
+14
+00:00:18,540 --> 00:00:22,120
+Aaj khologe, toh kismat achhi hui toh ₹104-105
+
+15
+00:00:22,140 --> 00:00:22,570
+milenge.
+
+16
+00:00:22,980 --> 00:00:24,230
+FD bhi isse zyada de deti.
+
+17
+00:00:24,520 --> 00:00:26,070
+Aur ye sirf aapke saath nahi hua.
+
+18
+00:00:26,360 --> 00:00:28,770
+Zyadatar investors ka portfolio ya toh laal hai,
+
+19
+00:00:28,900 --> 00:00:29,730
+ya wahin ka wahin.
+
+20
+00:00:29,900 --> 00:00:31,090
+Toh question ye hai bro…
+
+21
+00:00:31,420 --> 00:00:32,710
+Jab market so raha tha,
+
+22
+00:00:33,040 --> 00:00:34,970
+mera portfolio kaam kaise kar raha tha?
+
+23
+00:00:36,100 --> 00:00:38,430
+Aaj main apni poori strategy kholke rakh dunga.
+
+24
+00:00:38,780 --> 00:00:40,560
+Isi type ki cheezon ke liye bahut saare
+
+25
+00:00:40,580 --> 00:00:43,390
+influencers hazaaron-lakhon ke courses bechte hain.
+
+26
+00:00:43,680 --> 00:00:44,650
+Par aap sab ke liye,
+
+27
+00:00:44,820 --> 00:00:45,770
+ye bilkul free.
+
+28
+00:00:46,040 --> 00:00:47,670
+Aur isme koi rocket science nahi hai.
+
+29
+00:00:47,940 --> 00:00:49,470
+Poori baat data pe hogi.
+
+30
+00:00:49,840 --> 00:00:50,910
+Video end tak dekhna,
+
+31
+00:00:50,980 --> 00:00:53,230
+kyunki last mein bataunga ki ye saara kaam
+
+32
+00:00:53,300 --> 00:00:55,380
+main AI se 2 minute mein kaise karta
+
+33
+00:00:55,400 --> 00:00:55,730
+hoon.
+
+34
+00:00:56,830 --> 00:00:57,520
+Step 1.
+
+35
+00:00:57,850 --> 00:00:59,950
+Main sirf wo companies pick karta hoon jo
+
+36
+00:00:59,970 --> 00:01:01,910
+apni book value se neeche trade kar rahi
+
+37
+00:01:01,930 --> 00:01:02,400
+hoti hain.
+
+38
+00:01:02,710 --> 00:01:04,800
+Ab aap kahoge, book value hota kya hai?
+
+39
+00:01:05,150 --> 00:01:05,960
+Simple bhasha mein:
+
+40
+00:01:06,270 --> 00:01:08,100
+Company aaj apna saara saamaan,
+
+41
+00:01:08,170 --> 00:01:09,440
+factory sab bech de,
+
+42
+00:01:09,690 --> 00:01:10,680
+saara karz chuka de,
+
+43
+00:01:10,910 --> 00:01:12,440
+toh last mein jo paisa bachega,
+
+44
+00:01:12,670 --> 00:01:13,580
+wahi book value hai.
+
+45
+00:01:13,890 --> 00:01:15,480
+Usko total shares se divide karo,
+
+46
+00:01:15,770 --> 00:01:17,670
+mil gayi book value per share.
+
+47
+00:01:17,690 --> 00:01:18,600
+Ek example se samjho:
+
+48
+00:01:18,950 --> 00:01:20,740
+Aapke ghar ki keemat 50 lakh hai,
+
+49
+00:01:20,870 --> 00:01:22,500
+aur 30 lakh ka loan baaki hai.
+
+50
+00:01:22,690 --> 00:01:24,720
+Toh aapki asli value hai 20 lakh.
+
+51
+00:01:25,070 --> 00:01:27,010
+Ab koi wahi ghar aapko 15 lakh mein
+
+52
+00:01:27,030 --> 00:01:28,320
+de de, toh wo sale hai na?
+
+53
+00:01:28,710 --> 00:01:29,240
+Ab socho.
+
+54
+00:01:29,650 --> 00:01:31,660
+Share ka price book value se kam hai,
+
+55
+00:01:31,930 --> 00:01:34,570
+matlab market mein wo company apni asli keemat
+
+56
+00:01:34,590 --> 00:01:36,080
+se bhi sasti trade kar rahi hai.
+
+57
+00:01:36,390 --> 00:01:37,880
+Literally sale lagi hai.
+
+58
+00:01:38,960 --> 00:01:40,590
+Par sasta hona kaafi nahi hai.
+
+59
+00:01:41,000 --> 00:01:43,510
+Bahut saari companies isliye sasti hain kyunki unka
+
+60
+00:01:43,540 --> 00:01:44,630
+business hi doob raha hai.
+
+61
+00:01:44,880 --> 00:01:45,650
+Toh step 2:
+
+62
+00:01:46,060 --> 00:01:47,880
+Is list mein se main sirf wo companies
+
+63
+00:01:47,900 --> 00:01:50,430
+rakhta hoon jinka last quarter ka result pichhle
+
+64
+00:01:50,460 --> 00:01:52,270
+3 saal mein sabse best ho.
+
+65
+00:01:52,620 --> 00:01:55,110
+Best matlab, 3 saal ka sabse highest.
+
+66
+00:01:55,380 --> 00:01:58,000
+Matlab sasti bhi, aur business abhi apne peak
+
+67
+00:01:58,020 --> 00:01:58,230
+pe.
+
+68
+00:01:58,580 --> 00:01:59,770
+Ye combo rare hai,
+
+69
+00:01:59,940 --> 00:02:00,850
+aur yahi game hai.
+
+70
+00:02:01,140 --> 00:02:02,890
+Haan, thoda heavy lag raha hoga.
+
+71
+00:02:03,220 --> 00:02:05,460
+Chill, end mein AI wala shortcut aa raha
+
+72
+00:02:05,480 --> 00:02:05,810
+hai.
+
+73
+00:02:06,890 --> 00:02:08,500
+Ab sabse important step,
+
+74
+00:02:08,710 --> 00:02:10,180
+aur ye koi software nahi karega.
+
+75
+00:02:10,470 --> 00:02:11,760
+Ye aapka dimaag karega.
+
+76
+00:02:12,110 --> 00:02:13,560
+Main bas ek sawaal poochta hoon:
+
+77
+00:02:13,830 --> 00:02:15,970
+Kya ye company agle 3-4 saal survive
+
+78
+00:02:15,990 --> 00:02:18,220
+karegi, aur apni growth maintain kar paayegi?
+
+79
+00:02:18,610 --> 00:02:19,180
+Example:
+
+80
+00:02:19,550 --> 00:02:21,120
+Cian Agro.
+
+81
+00:02:21,510 --> 00:02:23,510
+Is company ke quarterly results achhe aa rahe
+
+82
+00:02:23,530 --> 00:02:24,980
+hain, growth bhi dikh rahi hai.
+
+83
+00:02:25,270 --> 00:02:27,280
+Par mera personal view ye hai ki iska
+
+84
+00:02:27,310 --> 00:02:29,630
+kaafi hissa sentiment aur hype pe chal raha
+
+85
+00:02:29,650 --> 00:02:29,880
+hai.
+
+86
+00:02:30,230 --> 00:02:32,080
+Agar kal maahaul ya govt badli,
+
+87
+00:02:32,270 --> 00:02:34,050
+toh mujhe lagta hai share bahut tez gir
+
+88
+00:02:34,070 --> 00:02:34,600
+sakta hai.
+
+89
+00:02:34,910 --> 00:02:36,860
+Mujhe iske fundamentals pe khud doubt hai,
+
+90
+00:02:37,050 --> 00:02:40,120
+isliye main Cian Agro mein invest nahi karunga.
+
+91
+00:02:40,470 --> 00:02:41,560
+Ye meri apni soch hai,
+
+92
+00:02:41,730 --> 00:02:43,700
+company ke baare mein koi final verdict nahi.
+
+93
+00:02:44,070 --> 00:02:45,160
+Ab ulta example:
+
+94
+00:02:45,430 --> 00:02:46,460
+PSU banks.
+
+95
+00:02:46,770 --> 00:02:48,770
+Kai PSU banks apni book value ke aas
+
+96
+00:02:48,790 --> 00:02:49,880
+paas trade kar rahe hain.
+
+97
+00:02:50,070 --> 00:02:50,980
+Aur mera maanna hai,
+
+98
+00:02:51,090 --> 00:02:53,320
+agle 10 saal bhi banking band nahi hogi.
+
+99
+00:02:53,650 --> 00:02:54,840
+India ki income badhegi,
+
+100
+00:02:55,070 --> 00:02:57,180
+log zyada kamayenge, zyada kharchenge,
+
+101
+00:02:57,330 --> 00:02:58,860
+aur paisa bank mein hi rakhenge.
+
+102
+00:02:59,230 --> 00:03:01,240
+Yahan mera sawaal kitna badhega nahi hai.
+
+103
+00:03:01,530 --> 00:03:02,540
+Sawaal sirf ye hai:
+
+104
+00:03:02,790 --> 00:03:03,640
+Kya ye tikega?
+
+105
+00:03:04,030 --> 00:03:05,300
+Aur jawab haan hai.
+
+106
+00:03:06,380 --> 00:03:07,190
+Company mil gayi.
+
+107
+00:03:07,520 --> 00:03:08,730
+Ab sabse bada sawaal:
+
+108
+00:03:09,040 --> 00:03:10,890
+Khareedna kab, aur bechna kab?
+
+109
+00:03:11,200 --> 00:03:13,520
+Main khareedta tab hoon jab saari conditions tick
+
+110
+00:03:13,540 --> 00:03:15,500
+ho jaayein, aur share book value se neeche
+
+111
+00:03:15,520 --> 00:03:15,710
+ho.
+
+112
+00:03:16,140 --> 00:03:18,010
+Bechne ke mere 2 simple rules hain.
+
+113
+00:03:18,340 --> 00:03:18,910
+Rule 1:
+
+114
+00:03:19,300 --> 00:03:20,290
+Jis din maine khareeda,
+
+115
+00:03:20,500 --> 00:03:22,480
+uske 6 mahine ke andar agar share book
+
+116
+00:03:22,500 --> 00:03:24,450
+value tak pahunch gaya ya cross kar gaya,
+
+117
+00:03:24,680 --> 00:03:26,030
+toh main profit book kar leta hoon.
+
+118
+00:03:26,220 --> 00:03:26,590
+Seedha.
+
+119
+00:03:27,000 --> 00:03:27,550
+Rule 2:
+
+120
+00:03:27,960 --> 00:03:29,860
+Agar 6 mahine mein book value tak nahi
+
+121
+00:03:29,880 --> 00:03:31,550
+pahuncha, toh main hold karta hoon,
+
+122
+00:03:31,720 --> 00:03:34,000
+aur tab bechta hoon jab price book value
+
+123
+00:03:34,020 --> 00:03:34,930
+ka double ho jaaye.
+
+124
+00:03:35,220 --> 00:03:36,630
+Matlab book value 100,
+
+125
+00:03:36,820 --> 00:03:37,930
+toh target 200.
+
+126
+00:03:38,260 --> 00:03:38,590
+Bas.
+
+127
+00:03:38,980 --> 00:03:39,790
+Aur ek pro tip:
+
+128
+00:03:40,180 --> 00:03:42,180
+Book value har 6 mahine mein update hoti
+
+129
+00:03:42,200 --> 00:03:44,530
+hai, jab company apni balance sheet deti hai.
+
+130
+00:03:44,820 --> 00:03:46,700
+Toh main apna target bhi har 6 mahine
+
+131
+00:03:46,720 --> 00:03:47,850
+pe update karta hoon.
+
+132
+00:03:48,920 --> 00:03:49,870
+Ab honest baat.
+
+133
+00:03:50,180 --> 00:03:51,910
+Har sasta share achha nahi hota.
+
+134
+00:03:52,280 --> 00:03:54,500
+Kuch companies saalon tak book value se neeche
+
+135
+00:03:54,520 --> 00:03:55,350
+hi padi rehti hain.
+
+136
+00:03:55,640 --> 00:03:57,130
+Isko value trap kehte hain,
+
+137
+00:03:57,320 --> 00:03:59,230
+aur step 3 isi se bachata hai.
+
+138
+00:03:59,460 --> 00:04:00,310
+Toh quick recap.
+
+139
+00:04:00,660 --> 00:04:00,990
+Ek:
+
+140
+00:04:01,240 --> 00:04:02,990
+Book value se neeche wali companies.
+
+141
+00:04:03,300 --> 00:04:03,530
+Do:
+
+142
+00:04:03,860 --> 00:04:06,410
+Jinka last quarter 3 saal mein sabse best.
+
+143
+00:04:06,700 --> 00:04:07,050
+Teen:
+
+144
+00:04:07,340 --> 00:04:09,270
+Khud socho, ye tikegi ya nahi.
+
+145
+00:04:09,620 --> 00:04:10,030
+Chaar:
+
+146
+00:04:10,220 --> 00:04:11,680
+6 mahine mein book value,
+
+147
+00:04:11,700 --> 00:04:13,190
+warna book value ka double.
+
+148
+00:04:13,440 --> 00:04:13,790
+Bas.
+
+149
+00:04:14,080 --> 00:04:15,310
+Yahi poora system hai.
+
+150
+00:04:16,380 --> 00:04:17,730
+Ab sabse kaam ki cheez:
+
+151
+00:04:18,000 --> 00:04:20,120
+Ye saari filtering main AI se 2 minute
+
+152
+00:04:20,140 --> 00:04:21,030
+mein kaise karta hoon,
+
+153
+00:04:21,120 --> 00:04:23,360
+uski poori step-by-step PDF description mein
+
+154
+00:04:23,380 --> 00:04:23,610
+hai.
+
+155
+00:04:23,840 --> 00:04:24,650
+Link pe click karo.
+
+156
+00:04:24,900 --> 00:04:26,550
+Video kaam ka laga ho toh like karo,
+
+157
+00:04:26,680 --> 00:04:28,650
+aur channel ko subscribe karna mat bhoolna.
+
+158
+00:04:28,860 --> 00:04:30,810
+Aur video 2-3 baar dhyan se dekhna,
+
+159
+00:04:30,880 --> 00:04:32,050
+taaki koi doubt na rahe.
+
+160
+00:04:32,280 --> 00:04:33,370
+Par ek cheez clear:
+
+161
+00:04:33,620 --> 00:04:35,570
+Main SEBI registered advisor nahi hoon.
+
+162
+00:04:35,700 --> 00:04:37,110
+Ye meri personal strategy hai,
+
+163
+00:04:37,240 --> 00:04:37,950
+koi tip nahi.
+
+164
+00:04:38,280 --> 00:04:41,000
+Seekho, samjho, aur paisa lagane se pehle khud
+
+165
+00:04:41,020 --> 00:04:41,630
+research karo.
+
+166
+00:04:41,860 --> 00:04:42,430
+Thank you!

@@ -1,4 +1,4 @@
-"""Parallel frame render of reel.html -> build/video_only.mp4 (1080x1920, 30 fps).
+"""Parallel frame render of reel.html -> build/video_only.mp4 (1920x1080, 30 fps).
 usage: python3 render.py [workers] [t0 t1]"""
 import sys, os, json, subprocess, threading, http.server, socketserver, time
 from multiprocessing import Process
@@ -15,7 +15,7 @@ def work(k, f0, f1):
     out = f'{OUT}/seg_{k:02d}.mp4'
     ff = subprocess.Popen(['ffmpeg', '-y', '-v', 'error', '-f', 'image2pipe', '-framerate', str(FPS), '-c:v', 'png', '-i', '-', '-c:v', 'libx264', '-preset', 'medium', '-crf', '14', '-pix_fmt', 'yuv420p', out], stdin=subprocess.PIPE)
     with sync_playwright() as p:
-        b = p.chromium.launch(args=ARGS); pg = b.new_page(viewport={'width': 1080, 'height': 1920})
+        b = p.chromium.launch(args=ARGS); pg = b.new_page(viewport={'width': 1920, 'height': 1080})
         pg.on('pageerror', lambda e: print('ERR', k, e))
         pg.goto(f'http://127.0.0.1:{srv.server_address[1]}/reel.html'); pg.wait_for_function('window.READY', timeout=180000)
         st = time.time()

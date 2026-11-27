@@ -1,0 +1,71 @@
+BOOK VALUE STRATEGY (long video) — UPLOAD DETAILS (draft, 28 Nov 2026)
+=======================================================================
+Video: Book_Value_Strategy.mp4 (1920x1080, 30 fps, 10 Mbps CBR, ~-14 LUFS, 4:43). Voice = Suraj's ElevenLabs clone ("harry potter").
+Stems: stems/vo.wav, stems/sfx.wav, stems/video_only.mp4 → add music ~18-20 dB under the voice (calm, dark, documentary piano/pad).
+Captions: Book_Value_Strategy.hinglish.srt (upload as "Hindi" subtitles; Hinglish, word-timed).
+
+YT AUTOCOMPLETE (28 Nov): "how to find undervalued stocks", "how to find undervalued stocks in screener", "undervalued stocks india",
+"price to book value kya hota hai", "price to book value ratio hindi", "book value per share", "book value in stock market", "stock market strategy in hindi"
+
+TITLE (pick one; all start with the searched phrase, proper English)
+A) How to Find Undervalued Stocks: My 4-Step Book Value Strategy (Free)           ← recommended
+B) How to Find Undervalued Stocks in India: The Book Value Strategy I Actually Use
+C) Price to Book Value Explained: My Strategy for Undervalued Stocks (Free)
+
+DESCRIPTION
+How to find undervalued stocks? Ye meri apni book value strategy hai, 4 steps mein, bilkul free.
+Pichhle 2 saal Nifty 50 ne lagbhag +5.5% diya (24,274.90 → 25,607), FD isse zyada de gayi. Is video mein dikhaya hai main stocks kaise filter karta hoon.
+
+⏱️ Chapters
+0:00 Pichhle 2 saal ka market
+0:14 The flat market: ₹100 → ₹105
+0:36 Strategy bilkul free
+0:56 Step 1: Book value kya hai (price to book value)
+1:44 Step 2: 3 saal ka best quarter
+2:06 Step 3: Human test (kya ye tikega?)
+2:18 Example: Cian Agro (personal view)
+2:44 Example: PSU banks
+3:06 Step 4: Kab khareedna, kab bechna
+3:48 Value trap se kaise bachein
+3:59 Recap
+4:16 AI se 2 minute mein filtering (PDF)
+4:32 Disclaimer
+
+📄 AI screener step-by-step PDF: [PDF LINK]
+
+Sources: NSE closing levels (27 Nov 2024, 5 Jan 2026, 27 Nov 2026) · SBI FD 2–3 yr 6.40% p.a. · NSO/MoSPI per capita NNI (FY21–FY26 PE) ·
+Trendlyne (Nifty PSU Bank P/B, 27 Nov 2026) · Business Today (Cian Agro, 9 Oct & 30 Dec 2025).
+
+⚠️ Sirf jaankari ke liye. Main SEBI registered advisor nahi hoon. Ye meri personal strategy hai, koi stock tip ya investment advice nahi.
+Cian Agro aur PSU banks sirf examples hain; Cian Agro par meri personal opinion hai, company ke baare mein koi final verdict nahi.
+Paisa lagane se pehle khud research karo ya SEBI registered advisor se baat karo.
+
+#stockmarket #undervaluedstocks #bookvalue #valueinvesting #investing #sharemarket #hindi
+
+TAGS
+how to find undervalued stocks, how to find undervalued stocks in screener, undervalued stocks india, book value strategy, book value,
+book value per share, book value in stock market, price to book value, price to book value kya hota hai, price to book value ratio hindi,
+pb ratio, value investing, value investing india, stock market strategy in hindi, stock market strategy long term, value trap,
+psu bank stocks, nifty 50, momentix, momentix by suraj
+
+YouTube settings: Category Education, language Hindi, captions Hindi (.srt). Not made for kids.
+AI disclosure: Suraj's rule = OFF (same as ChatGPT reel). Note: 3 shots are AI-animated realistic plates (office, factory, bank facade) + AI stills;
+no realistic people, nothing presented as real events. Voice is AI clone of Suraj presenting his own strategy — not an expert/advisor claim (SEBI line in video).
+
+PINNED COMMENT (needs Suraj's OK)
+AI wali PDF description mein hai 📄 Aapka sabse bada doubt kaunsa step hai: book value, best quarter, ya exit rule? Comment karo 👇
+(Sirf jaankari ke liye, koi advice nahi.)
+
+THUMBNAIL — GPT PROMPT (16:9, 1280x720)
+Cinematic dark documentary thumbnail, 16:9. Left half: a glowing iPad on a dark wooden desk showing a big green "+35.53%" pill (no app logo,
+no stock names), warm amber desk lamp light, subtle film grain. Right half: bold text in two lines, white heavy serif "BOOK VALUE" and
+amber "STRATEGY", small red tag above it "FREE · 4 STEPS". Behind the text a flat thin amber line chart (almost flat market line) on near-black
+background. No people, no faces, no brand logos, no bank or broker names. High contrast, readable at small size, keep the bottom-right corner
+(time stamp area) empty.
+
+OPEN FLAGS FOR SURAJ (voice already recorded as-is)
+1. PSU line "kai PSU banks book value ke aas paas" — Nifty PSU Bank index P/B is 1.3 today (5-yr range 0.7–1.9). Video shows the real 1.3× marker honestly;
+   re-record that one line if you want it exact ("kuch saal pehle book value se bhi neeche the").
+2. Cian Agro + "agar kal maahaul ya govt badli" — its MD is a Union Minister's son (Business Today). With a named company this can read as a political insinuation.
+   Video keeps it labelled "personal view · not a verdict"; safest = re-record without "ya govt badli".
+3. "104-105 rupaye" — real 2-yr Nifty price return is +5.5% (≈₹105.5). On screen shows ≈ ₹105 + exact numbers. Fine as is.
