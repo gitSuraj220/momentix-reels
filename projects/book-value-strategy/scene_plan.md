@@ -42,3 +42,9 @@ Target ~6:00. Chapters on screen: 01 The Flat Market · 02 The Price Tag · 03 T
 - Captions: kinetic key words only on hot lines + full CC .srt for YouTube. Music: Suraj adds (deliver voice+SFX mix + stems).
 - Cian Agro: name + real price chart (sourced), "my view" note, no logo. PSU scene: per-capita income (MOSPI), bank deposits (RBI), PSU bank P/B today (sourced).
 - Thumbnail: GPT prompt only. PDF: Claude prompts + screener steps, no stock list; host: decide later. Shorts from it: later.
+
+## Assets status (28 Nov, 01:15 IST)
+- photos/1-10.png: Suraj's ChatGPT stills, all 10 reviewed and usable (no Higgsfield replacements needed).
+  1 office/flat line · 2 ₹100 note + calendar · 3 factory · 4 house + blank sign · 5 two case files · 6 bank facade · 7 hourglass · 8 abandoned shop · 9 blank iPad (footage goes on screen) · 10 end-card paper.
+- Higgsfield hero clips (seedance_2_5, 5 s, 720p, 35 cr each) from 1, 3, 6 → clips/1.mp4, 3.mp4, 6.mp4.
+- Voice: build_sections.py → vo/vo_full.wav (283.5 s, 8 sections + 1.2 s chapter gaps), words.json per-section aligned.
