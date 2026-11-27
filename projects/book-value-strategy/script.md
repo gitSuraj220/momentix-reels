@@ -17,7 +17,7 @@ Toh question ye hai bro, jab market so raha tha, mera portfolio kaam kaise kar r
 [0:45 PROMISE + DISCLAIMER]
 Aaj main apni poori strategy kholke rakh dunga. Isi type ki cheezon ke liye bahut saare influencers hazaaron ke courses bechte hain. Par aap sab ke liye, ye bilkul free.
 Aur isme koi rocket science nahi hai. Sirf data aur thoda sa patience.
-Par ek cheez clear: main SEBI registered advisor nahi hoon. Ye meri personal strategy hai, koi tip nahi. Seekho, samjho, aur paisa lagane se pehle khud research karo.
+(SCREEN, small text 3 sec: "Personal strategy · Not investment advice · Not SEBI registered")
 Aur end tak rukna, kyunki last mein bataunga ki ye saara kaam main AI se 2 minute mein kaise karta hoon.
 
 [1:15 STEP 1: BOOK VALUE]
@@ -66,4 +66,4 @@ Bas. Yahi poora system hai.
 Ab sabse kaam ki cheez: ye saari filtering main AI se 2 minute mein kaise karta hoon, uski poori step-by-step PDF description mein hai. Link pe click karo, free hai.
 Aur comment mein batao: aap ye strategy kaunse sector pe try karoge?
 Video kaam ka laga toh save karo, aur us dost ko bhejo jiska portfolio 2 saal se wahin ka wahin hai.
-Sirf jaankari ke liye, investment advice nahi.
+Par ek cheez clear: main SEBI registered advisor nahi hoon. Ye meri personal strategy hai, koi tip nahi. Seekho, samjho, aur paisa lagane se pehle khud research karo.
