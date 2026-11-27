@@ -38,3 +38,7 @@ Target ~6:00. Chapters on screen: 01 The Flat Market · 02 The Price Tag · 03 T
 
 ## Decisions (Suraj, 28 Nov 00:48)
 - Never use the word XIRR. No chapter progress bar. House analogy added to script. Voice: Suraj's own recording.
+- Voice: Suraj's cloned ElevenLabs voice "harry potter", Eleven v4, 1.1x (calm documentary, ~6:30). Look: dark archive + amber.
+- Captions: kinetic key words only on hot lines + full CC .srt for YouTube. Music: Suraj adds (deliver voice+SFX mix + stems).
+- Cian Agro: name + real price chart (sourced), "my view" note, no logo. PSU scene: per-capita income (MOSPI), bank deposits (RBI), PSU bank P/B today (sourced).
+- Thumbnail: GPT prompt only. PDF: Claude prompts + screener steps, no stock list; host: decide later. Shorts from it: later.
