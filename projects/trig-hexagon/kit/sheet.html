@@ -1,0 +1,74 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:CH;src:url(../fonts/ph.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(../fonts/p500.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(../fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(../fonts/p800.woff2)}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0}
+body{width:210mm;height:297mm;padding:12mm 13mm 10mm;font-family:P,sans-serif;color:#1b2a22;background:#fff;position:relative;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #1f5a3e;padding-bottom:4mm}
+h1{font:800 25pt P;line-height:1.05;color:#14382a}
+h1 b{color:#d4a017}
+.sub{font:600 11pt P;color:#4b6b5a;margin-top:2mm}
+.tag{font:800 10pt P;letter-spacing:2px;color:#fff;background:#1f5a3e;padding:2mm 4mm;border-radius:3mm}
+.mid{display:flex;gap:6mm;margin-top:5mm;align-items:center}
+.hex{width:88mm;flex:none}
+.how{flex:1;font:500 10.5pt P;line-height:1.45}
+.how h3{font:800 12pt P;margin-bottom:1.5mm;color:#14382a}
+.how li{margin:1mm 0 1mm 4mm}
+.how .tip{margin-top:3mm;background:#fff6dc;border:2px solid #f0cf6a;border-radius:3mm;padding:2.5mm 3mm;font-size:10pt}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:5mm}
+.r{border:2.5px solid var(--c);border-radius:4mm;padding:3mm 4mm}
+.r h2{font:800 12pt P;color:var(--c);display:flex;justify-content:space-between}
+.r h2 span{font:700 10pt P;color:#6b7d73}
+.r p{font:500 9.5pt P;color:#4b6b5a;margin:1mm 0 2mm}
+.r ul{list-style:none;columns:2;column-gap:4mm}
+.r sup{font:700 11px P;position:relative;top:-2px}
+.r li{font:20px CH;line-height:1.32;white-space:nowrap}
+.chk{margin-top:5mm;border:2px dashed #9bb5a7;border-radius:4mm;padding:3mm 4mm;font:500 10pt P;line-height:1.5}
+.chk h3{font:800 11.5pt P;color:#14382a;margin-bottom:1mm}
+.chk sup{font-size:7pt}
+.foot{position:absolute;left:13mm;right:13mm;bottom:9mm;display:flex;justify-content:space-between;font:600 8.5pt P;color:#7a8a81;border-top:1px solid #d6e2db;padding-top:2mm}
+</style></head><body>
+<div class="top"><div><h1>27 Trig Formulas, <b>1 Hexagon</b></h1><div class="sub">Ratna band. Pehle hexagon banao, phir padho. Class 10 · 11 · 12 · JEE</div></div><div class="tag">TRICK SHEET</div></div>
+<div class="mid">
+<svg class="hex" viewBox="0 0 400 380">
+ <defs><pattern id="h" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="10" height="10" fill="#fdeef4"/><line x1="0" y1="0" x2="0" y2="10" stroke="#f2a7c4" stroke-width="3"/></pattern></defs>
+ <g transform="translate(200 190)">
+  <path d="M-80 -138.6 L80 -138.6 L0 0 Z M-160 0 L0 0 L-80 138.6 Z M0 0 L160 0 L80 138.6 Z" fill="url(#h)" stroke="#e58bb0" stroke-width="2"/>
+  <path d="M-160 0 L-80 -138.6 L80 -138.6 L160 0 L80 138.6 L-80 138.6 Z" fill="none" stroke="#1f5a3e" stroke-width="4"/>
+  <path d="M-80 -138.6 L80 138.6 M80 -138.6 L-80 138.6 M-160 0 L160 0" stroke="#9bb5a7" stroke-width="2"/>
+  <g font-family="CH" font-size="30" text-anchor="middle">
+   <circle cx="-80" cy="-138.6" r="38" fill="#fff8de" stroke="#d4a017" stroke-width="4"/><text x="-80" y="-128">sin</text>
+   <circle cx="-160" cy="0" r="38" fill="#fff8de" stroke="#d4a017" stroke-width="4"/><text x="-160" y="10">tan</text>
+   <circle cx="-80" cy="138.6" r="38" fill="#fff8de" stroke="#d4a017" stroke-width="4"/><text x="-80" y="148">sec</text>
+   <circle cx="80" cy="-138.6" r="38" fill="#e8f3ff" stroke="#3b86c8" stroke-width="4"/><text x="80" y="-128">cos</text>
+   <circle cx="160" cy="0" r="38" fill="#e8f3ff" stroke="#3b86c8" stroke-width="4"/><text x="160" y="10">cot</text>
+   <circle cx="80" cy="138.6" r="38" fill="#e8f3ff" stroke="#3b86c8" stroke-width="4"/><text x="80" y="147" font-size="25">cosec</text>
+   <circle cx="0" cy="0" r="28" fill="#fff" stroke="#1b2a22" stroke-width="4"/><text x="0" y="10">1</text>
+  </g>
+ </g>
+ <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#3b86c8"/></marker></defs>
+</svg>
+<div class="how"><h3>Kaise banayein (10 second)</h3><ol>
+<li><b>Left</b>, upar se neeche: <b>sin, tan, sec</b></li>
+<li><b>Right</b>, unke "co" wale: <b>cos, cot, cosec</b></li>
+<li><b>Beech</b> mein <b>1</b></li>
+<li>Neeche ke <b>3 triangles</b> shade karo</li></ol>
+<div class="tip"><b>Exam tip:</b> rough sheet pe sabse pehle ye hexagon bana lo. Koi formula bhoolo toh 4 rules se padh lo.</div></div>
+</div>
+<div class="rules">
+<div class="r" style="--c:#c99a12"><h2>RULE 1 · Aamne-saamne = 1 <span>6</span></h2><p>Opposite corners (centre se hoke) multiply = 1, toh har ek doosre ka 1/ hai.</p>
+<ul><li>sin = 1/cosec</li><li>cosec = 1/sin</li><li>cos = 1/sec</li><li>sec = 1/cos</li><li>tan = 1/cot</li><li>cot = 1/tan</li></ul></div>
+<div class="r" style="--c:#2f7fc0"><h2>RULE 2 · Ghadi ki direction <span>12</span></h2><p>Koi bhi kona = agla kona ÷ uske baad wala. Clockwise aur anticlockwise, dono.</p>
+<ul><li>tan = sin/cos</li><li>sin = cos/cot</li><li>cos = cot/cosec</li><li>cot = cosec/sec</li><li>cosec = sec/tan</li><li>sec = tan/sin</li><li>tan = sec/cosec</li><li>sec = cosec/cot</li><li>cosec = cot/cos</li><li>cot = cos/sin</li><li>cos = sin/tan</li><li>sin = tan/sec</li></ul></div>
+<div class="r" style="--c:#2e9a5e"><h2>RULE 3 · Do padosi multiply <span>6</span></h2><p>Koi bhi kona = uske dono padosi (side wale corners) ka product.</p>
+<ul><li>tan = sin × sec</li><li>sin = tan × cos</li><li>cos = sin × cot</li><li>cot = cos × cosec</li><li>cosec = cot × sec</li><li>sec = cosec × tan</li></ul></div>
+<div class="r" style="--c:#d0558a"><h2>RULE 4 · Triangles <span>3</span></h2><p>Har shaded triangle mein: upar ke do ka square jodo = neeche wale ka square.</p>
+<ul style="columns:1"><li>sin<sup>2</sup> + cos<sup>2</sup> = 1</li><li>tan<sup>2</sup> + 1 = sec<sup>2</sup></li><li>1 + cot<sup>2</sup> = cosec<sup>2</sup></li></ul></div>
+</div>
+<div class="chk"><h3>Check karke dekho (ek example)</h3><p><b>Rule 2 se:</b> sin = cos ÷ cot. Ab cot = cos/sin daalo: cos ÷ (cos/sin) = cos × (sin/cos) = <b>sin ✓</b></p>
+<p><b>Rule 4 se:</b> sin<sup>2</sup> + cos<sup>2</sup> = 1 ko cos<sup>2</sup> se divide karo → tan<sup>2</sup> + 1 = sec<sup>2</sup>. sin<sup>2</sup> se divide karo → 1 + cot<sup>2</sup> = cosec<sup>2</sup>.</p></div>
+<div class="foot"><span>6 + 12 + 6 + 3 = 27 formulas · sab ek hexagon se</span><span>Save karo · dost ko bhejo</span></div>
+</body></html>

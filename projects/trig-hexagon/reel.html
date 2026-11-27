@@ -1,0 +1,221 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:CH;src:url(fonts/ph.woff2)}
+@font-face{font-family:CH;src:url(fonts/ph-ext.woff2);unicode-range:U+0100-024F,U+20A0-20CF}
+@font-face{font-family:P;font-weight:700;src:url(fonts/p700.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(fonts/p800.woff2)}
+@font-face{font-family:HD;font-weight:700;src:url(fonts/hind-lat-700.woff2)}
+*{margin:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#2e1e14}
+#bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,#3d2819 0%,#2a1b12 70%,#1f140d 100%)}
+#hdr{position:absolute;left:56px;right:56px;top:300px}
+#hdr .l{font:700 30px P;letter-spacing:5px;color:#f4d56a}
+#hdr .r{position:absolute;right:0;top:4px;font:700 26px P;color:rgba(255,255,255,.55);letter-spacing:2px}
+#hdr .bar{position:relative;margin-top:14px;height:5px;border-radius:3px;background:rgba(255,255,255,.12)}
+#hdr .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:#f4d56a}
+#board{position:absolute;left:24px;top:380px;width:1032px;height:1070px;border-radius:14px;background:#8a5a2c;box-shadow:0 18px 50px rgba(0,0,0,.55),inset 0 0 0 3px #6d4420}
+#slate{position:absolute;left:18px;top:18px;right:18px;bottom:18px;border-radius:6px;background:radial-gradient(ellipse at 50% 42%,#2f6a4c 0%,#24563d 55%,#1b4430 100%);overflow:hidden}
+#smudge{position:absolute;inset:0}
+#stage,#ov{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 900px}
+#clip{position:absolute;left:42px;top:398px;width:996px;height:1034px;overflow:hidden;border-radius:6px}
+#clip>div,#clip>svg{position:absolute;left:-42px;top:-398px;width:1080px;height:1920px}
+.el{position:absolute;white-space:nowrap;font-family:CH;line-height:1;text-shadow:0 0 3px rgba(255,255,255,.28);-webkit-mask-image:var(--grain);-webkit-mask-size:400px 400px}
+svg{overflow:visible}
+#hand{position:absolute;left:0;top:0;width:300px;height:300px;transform-origin:0 0;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
+#eraser{position:absolute;left:0;top:0;width:260px;height:110px;filter:drop-shadow(0 10px 16px rgba(0,0,0,.5))}
+#cap{position:absolute;left:0;right:0;top:1492px;text-align:center}
+#cap .p{display:inline-block;padding:14px 30px 16px;border-radius:16px;background:rgba(22,18,13,.92);font:64px CH;color:#fff;letter-spacing:.5px;box-shadow:0 8px 24px rgba(0,0,0,.35);border:4px solid transparent}
+#cap .p.f{border-color:#f6a8c8;background:rgba(40,16,28,.94)}
+#cap .p span{display:inline-block;margin:0 .12em}
+#cap .p span.hot{color:#ffe27a}
+#cap .p.f span.hot{color:#ffb8d6}
+#cap .p span.num{font:700 60px HD;position:relative;top:4px}
+#who{position:absolute;left:0;right:0;top:1440px;text-align:center;font:800 26px P;letter-spacing:3px;color:#f6a8c8;opacity:0}
+</style></head><body>
+<div id="bg"></div>
+<div id="hdr"><div class="l">TRIG TRICK · 27 IN 1</div><div class="r">CLASS 10 · 11 · 12</div><div class="bar"><i id="prog"></i></div></div>
+<div id="board"><div id="slate"><canvas id="smudge" width="996" height="1034"></canvas></div></div>
+<div id="clip"><svg id="ov"></svg><div id="stage"></div></div>
+<div id="eraser"><svg viewBox="0 0 260 110" width="260" height="110"><rect x="8" y="6" width="244" height="62" rx="10" fill="#b07a45"/><rect x="8" y="6" width="244" height="20" rx="8" fill="#c99360"/><rect x="14" y="62" width="232" height="38" rx="6" fill="#3b3f46"/><rect x="14" y="88" width="232" height="12" rx="4" fill="#d9d9d9" opacity=".55"/></svg></div>
+<div id="hand"><svg viewBox="0 0 300 300" width="300" height="300">
+  <rect x="-6" y="-8" width="70" height="22" rx="7" fill="#f4f1e8" transform="rotate(38)"/>
+  <path d="M40 40 C70 20 110 30 130 55 L210 120 C235 140 250 170 245 200 C240 240 205 262 170 258 L120 250 C95 246 80 228 84 206 L60 150 C50 120 30 80 40 40 Z" fill="#e3a67c"/>
+  <path d="M40 40 C55 32 72 34 82 46 L118 92 C104 98 88 94 78 84 Z" fill="#d18f66"/>
+  <path d="M130 55 C150 52 168 64 172 80 L176 100 C160 104 146 98 140 86 Z" fill="#d18f66"/>
+  <path d="M210 120 C228 126 238 140 238 156" stroke="#c07f58" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M84 206 C110 214 140 210 160 196" stroke="#c07f58" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M150 250 L300 300 L300 236 L230 170 Z" fill="#2b4a7a"/></svg></div>
+<div id="who">STUDENT</div>
+<div id="cap"></div>
+<script type="module">
+const TL = await (await fetch('timeline.json?' + Date.now())).json(); const T = TL.T, W = TL.words;
+await Promise.all(['56px CH', '700 30px P', '800 26px P', '700 40px HD'].map(f => document.fonts.load(f, 'Aa27×÷²=')));
+const $ = id => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x)), seg = (t, a, b) => cl((t - a) / (b - a));
+const eo = x => 1 - Math.pow(1 - x, 3), eio = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c = 2.2; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const lerp = (a, b, k) => a + (b - a) * k;
+// chalk grain + smudges
+{ const c = document.createElement('canvas'); c.width = c.height = 400; const x = c.getContext('2d'); const im = x.createImageData(400, 400);
+  let s = 7; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < im.data.length; i += 4) { const v = r(); im.data[i] = im.data[i + 1] = im.data[i + 2] = 255; im.data[i + 3] = v < 0.12 ? 60 : 200 + v * 55; }
+  x.putImageData(im, 0, 0); document.documentElement.style.setProperty('--grain', `url(${c.toDataURL()})`); }
+{ const x = $('smudge').getContext('2d'); let s = 3; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < 26; i++) { x.fillStyle = `rgba(255,255,255,${0.04 + r() * 0.05})`; const w = 50 + r() * 90; x.beginPath(); x.roundRect(r() * 940, r() * 1000, w, 8 + r() * 6, 5); x.fill(); } }
+const C = {w: '#f5f3ec', y: '#ffe27a', b: '#9ed0ff', p: '#f6a8c8', g: '#9be7b0', o: '#ffb27a'};
+const NS = 'http://www.w3.org/2000/svg', ov = $('ov');
+const mk = (par, tag, at) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); par.appendChild(e); return e; };
+const chalkF = mk(ov, 'defs', {}); chalkF.innerHTML = `<filter id="ck"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="1" seed="3"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -1.6 1.5"/><feComposite in="SourceGraphic" operator="in"/></filter>
+<pattern id="hatch" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="16" height="16" fill="rgba(255,226,122,.10)"/><line x1="0" y1="0" x2="0" y2="16" stroke="rgba(255,226,122,.5)" stroke-width="5"/></pattern>`;
+// ---- hexagon geometry ----
+const CX = 540, CY = 860, R = 270;
+const P = {tan: [CX - R, CY], sin: [CX - R / 2, CY - R * 0.866], cos: [CX + R / 2, CY - R * 0.866], cot: [CX + R, CY], cosec: [CX + R / 2, CY + R * 0.866], sec: [CX - R / 2, CY + R * 0.866], one: [CX, CY]};
+const COL = {sin: C.y, tan: C.y, sec: C.y, cos: C.b, cot: C.b, cosec: C.b, one: C.w};
+const ORDER = ['tan', 'sin', 'cos', 'cot', 'cosec', 'sec'];
+// ---- strokes (svg paths drawn with dash) ----
+const S = [];  // {el, t0, dur, L, wipe, pen}
+const stroke = (d, color, w, t0, dur, o = {}) => { const el = mk(o.under ? under : ov, 'path', {d, stroke: color, 'stroke-width': w, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', filter: 'url(#ck)'});
+  const L = el.getTotalLength(); el.style.strokeDasharray = L; const s = {el, t0, dur, L, ...o}; S.push(s); return s; };
+const under = mk(ov, 'g', {});
+// hexagon outline + 3 diagonals (spokes)
+const hexD = 'M' + ORDER.map(k => P[k].join(' ')).join(' L') + ' Z';
+stroke(hexD, C.w, 7, T.hexagon - 0.05, 0.75, {pen: 1});
+for (const [a, b] of [['sin', 'cosec'], ['cos', 'sec'], ['tan', 'cot']]) stroke(`M${P[a].join(' ')} L${P[b].join(' ')}`, 'rgba(245,243,236,.55)', 4, T.hexagon + 0.65, 0.35);
+// corner circles (drawn when label is written)
+const LAB = {sin: ['sin', T.sin1], tan: ['tan', T.tan1], sec: ['sec', T.sec1], cos: ['cos', T.cos1], cot: ['cot', T.cot1], cosec: ['cosec', T.cosec1], one: ['1', T.beech + 0.35]};
+const circ = {};
+for (const k in LAB) { const [x, y] = P[k]; const r = k === 'one' ? 52 : 74; circ[k] = stroke(`M${x + r} ${y} A${r} ${r} 0 1 1 ${x - r} ${y} A${r} ${r} 0 1 1 ${x + r} ${y}`, COL[k], 6, LAB[k][1] + 0.12, 0.3); circ[k].bg = mk(under, 'circle', {cx: x, cy: y, r: r - 3, fill: '#22523a', opacity: 0}); }
+// ---- text elements ----
+const E = [];
+const add = (id, html, cx, cy, size, color, t0, dur, o = {}) => { const e = {id, html, cx, cy, size, color, t0, dur, ...o}; E.push(e); return e; };
+// hook: wall of 27 formulas (written fast)
+const WALL = ['sin·cosec=1', 'cos·sec=1', 'tan·cot=1', 'tan=sin/cos', 'cot=cos/sin', 'sin=cos/cot', 'cos=sin/tan', 'sec=cosec/cot', 'cosec=sec/tan', 'tan=sec/cosec', 'cot=cosec/sec',
+  'sin=tan/sec', 'cos=cot/cosec', 'sec=tan/sin', 'cosec=cot/cos', 'sin=1/cosec', 'cos=1/sec', 'tan=sin·sec', 'cos=sin·cot', 'sec=tan·cosec', 'cosec=sec·cot', 'cot=cos·cosec', 'sin=cos·tan',
+  'sin²+cos²=1', 'tan²+1=sec²', '1+cot²=cosec²', 'tan=1/cot'];
+WALL.forEach((f, i) => { const col = i % 3, row = Math.floor(i / 3); add('w' + i, f, 210 + col * 330, 470 + row * 108, 40, [C.w, C.y, C.b, C.p][i % 4], 0.1 + i * 0.095, 0.12, {wipe: 0, nohand: 1}); });
+add('n27', '27', 540, 900, 300, C.y, T.n27 - 0.05, 0.35, {wipe: 0, stamp: 1});
+// labels
+for (const k in LAB) add('lb_' + k, LAB[k][0], P[k][0], P[k][1] + 4, k === 'cosec' ? 46 : k === 'one' ? 64 : 58, COL[k], LAB[k][1], 0.22);
+add('co', '"co" wale', 830, 560, 50, C.b, T.right + 0.15, 0.35, {wipe: 1});
+add('done', 'setup done ✓', 540, 1215, 60, C.g, T.setup - 0.1, 0.4, {wipe: 1});
+// rule chips (top)
+const chip = (id, txt, col, t0, wipe) => add(id, txt, 540, 470, 54, col, t0, 0.3, {chip: col, wipe});
+chip('r1', 'RULE 1 · aamne-saamne = 1', C.y, T.rule1 - 0.05, 2);
+chip('r2', 'RULE 2 · ghadi ki direction', C.b, T.rule2 - 0.05, 3);
+chip('r3', 'RULE 3 · do padosi multiply', C.g, T.rule3 - 0.05, 4);
+chip('r4', 'RULE 4 · upar² + upar² = neeche²', C.p, T.rule4 - 0.05, 5);
+// formulas (bottom band)
+const FY = 1250;
+add('f1a', 'sin × cosec = 1', 540, FY, 64, C.w, T.sin2 - 0.05, 0.5, {wipe: 2, fadeAt: T.cos2 - 0.1});
+add('f1b', 'cos × sec = 1', 540, FY, 64, C.w, T.cos2 - 0.05, 0.45, {wipe: 2, fadeAt: T.tan2 - 0.1});
+add('f1c', 'tan × cot = 1', 540, FY, 64, C.w, T.tan2 - 0.05, 0.45, {wipe: 2});
+add('f1n', '3 lines → 6 formulas', 540, FY + 90, 46, C.y, T.tan2 + 0.45, 0.4, {wipe: 2});
+add('f2a', 'tan = sin ÷ cos', 540, FY, 66, C.w, T.tan3, 0.6, {wipe: 3});
+add('f2b', 'cot = cos ÷ sin', 540, FY + 92, 66, C.w, T.cot3, 0.6, {wipe: 3});
+add('f3a', 'tan = sin × sec', 540, FY, 66, C.w, T.tan4, 0.6, {wipe: 4});
+add('f3n', 'har kona = 2 padosi ×', 540, FY + 92, 46, C.g, T.tan4 + 0.65, 0.45, {wipe: 4});
+add('f4a', 'sin² + cos² = 1', 540, FY - 20, 60, C.w, T.sin5, 0.6, {wipe: 5});
+add('f4b', 'tan² + 1 = sec²', 540, FY + 62, 60, C.w, T.sin5 + 0.75, 0.5, {wipe: 5});
+add('f4c', '1 + cot² = cosec²', 540, FY + 144, 60, C.w, T.sin5 + 1.35, 0.5, {wipe: 5});
+add('cheat', 'CHEAT CODE!', 540, 830, 120, C.p, T.literally + 0.2, 0.3, {wipe: 6, stamp: 1, rot: -8});
+add('tally', '6 + 12 + 6 + 3 = 27', 540, 1250, 70, C.y, T.literally + 0.55, 0.7, {wipe: 6});
+// CTA
+add('sheet', '📄 1-page trick sheet', 540, 1180, 70, C.w, T.poori + 0.1, 0.6, {});
+add('cta1', 'Comment', 540, 560, 72, C.w, T.comment - 0.05, 0.3, {});
+add('cta2', 'FORMULA', 540, 700, 150, C.y, T.formula - 0.05, 0.4, {chip: C.y});
+add('cta3', 'PDF → DM 📩', 540, 900, 84, C.p, T.dm - 0.45, 0.45, {});
+const stage = $('stage');
+for (const e of E) { const d = document.createElement('div'); d.className = 'el'; d.id = e.id; d.innerHTML = e.html; d.style.fontSize = e.size + 'px'; d.style.color = e.color;
+  if (e.chip) { d.style.padding = '14px 34px 6px'; d.style.border = `5px solid ${e.chip}`; d.style.borderRadius = '60px'; }
+  if (e.stamp) { d.style.padding = '6px 30px 0'; d.style.border = `9px solid ${e.color}`; d.style.borderRadius = '20px'; d.style.background = 'rgba(30,60,45,.55)'; }
+  stage.appendChild(d); e.d = d; }
+for (const e of E) { const r = e.d.getBoundingClientRect(); e.w = r.width; e.h = r.height; e.x = e.cx - r.width / 2; e.y = e.cy - r.height / 2; e.d.style.left = e.x + 'px'; e.d.style.top = e.y + 'px'; }
+// ---- rule overlays ----
+const G = k => mk(ov, 'g', {opacity: 0});
+// rule 1: thick diagonals
+const g1 = G(); const diag = [['sin', 'cosec', T.sin2], ['cos', 'sec', T.cos2], ['tan', 'cot', T.tan2]].map(([a, b, t]) => { const el = mk(g1, 'path', {d: `M${P[a].join(' ')} L${P[b].join(' ')}`, stroke: C.y, 'stroke-width': 14, 'stroke-linecap': 'round', filter: 'url(#ck)'}); const L = el.getTotalLength(); el.style.strokeDasharray = L; return {el, L, t}; });
+// rule 2: arc arrows along the outside (clockwise tan->sin->cos, anticlockwise cot->cos->sin)
+const g2 = G();
+const arcPath = (ks, out) => { const pts = ks.map(k => { const [x, y] = P[k]; const dx = x - CX, dy = y - CY, l = Math.hypot(dx, dy); return [x + dx / l * out, y + dy / l * out]; }); return 'M' + pts.map(p => p.join(' ')).join(' L'); };
+const arr = [[['tan', 'sin', 'cos'], T.tan3 - 0.35, C.b, 84], [['cot', 'cos', 'sin'], T.cot3 - 0.35, C.o, 122]].map(([ks, t, col, out]) => { const el = mk(g2, 'path', {d: arcPath(ks, out), stroke: col, 'stroke-width': 10, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', filter: 'url(#ck)'}); const L = el.getTotalLength(); el.style.strokeDasharray = L;
+  const hd = mk(g2, 'path', {d: '', stroke: col, 'stroke-width': 10, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round'}); return {el, L, t, hd, col}; });
+// rule 3: neighbours wedge
+const g3 = G(); const wedge = mk(g3, 'path', {d: `M${P.sin.join(' ')} L${P.tan.join(' ')} L${P.sec.join(' ')}`, stroke: C.g, 'stroke-width': 14, fill: 'rgba(155,231,176,.12)', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', filter: 'url(#ck)'}); const WL = wedge.getTotalLength(); wedge.style.strokeDasharray = WL;
+const nbRing = ['sin', 'sec'].map(k => mk(g3, 'circle', {cx: P[k][0], cy: P[k][1], r: 90, stroke: C.g, 'stroke-width': 6, fill: 'none', opacity: 0}));
+// rule 4: three downward triangles (hatched)
+const g4 = mk(under, 'g', {opacity: 0}); const tris = [['sin', 'cos', 'one'], ['tan', 'one', 'sec'], ['one', 'cot', 'cosec']].map((ks, i) => mk(g4, 'path', {d: 'M' + ks.map(k => P[k].join(' ')).join(' L') + ' Z', fill: 'url(#hatch)', stroke: C.p, 'stroke-width': 6, 'stroke-linejoin': 'round', opacity: 0}));
+const sqArrow = mk(ov, 'g', {opacity: 0}); sqArrow.innerHTML = `<text x="${CX}" y="${CY - R * 0.866 - 108}" text-anchor="middle" font-family="CH" font-size="44" fill="${C.p}">top² + top² = bottom²</text>`;
+// ---- wipes [t0, t1, yTop, yBot] ----
+const WIPES = [[T.hexagon - 1.0, T.hexagon - 0.15, 430, 1400], [T.rule1 - 0.35, T.rule1 - 0.02, 450, 1320], [T.rule2 - 0.35, T.rule2 - 0.02, 430, 1330], [T.rule3 - 0.35, T.rule3 - 0.02, 430, 1330],
+  [T.rule4 - 0.35, T.rule4 - 0.02, 430, 1330], [T.literally - 0.05, T.literally + 0.2, 430, 1400], [T.poori - 0.3, T.poori + 0.15, 430, 1400]];
+const wipeAmt = (t, wi, x) => { const [w0, w1] = WIPES[wi]; const bx = -260 + 1600 * seg(t, w0, w1); return cl((bx - x) / 260); };
+// final: hexagon group fades on CTA wipe
+// ---- captions ----
+const isF = t => t < T.bro - 0.05 || (t >= T.literally - 0.05 && t < T.poori - 0.05);
+function drawCap(t) {
+  const i = TL.caps.findIndex((c, j) => t >= c.s - 0.06 && t < (TL.caps[j + 1]?.s ?? 1e9) - 0.06); const c = TL.caps[i];
+  if (!c || t > T.end - 0.3) { $('cap').innerHTML = ''; return; }
+  const k = eo(seg(t, c.s - 0.06, c.s + 0.1));
+  const html = c.i.filter(j => t >= W[j].s - 0.05).map(j => `<span class="${W[j].hot ? 'hot' : ''} ${/^[0-9]+$/.test(W[j].w) ? 'num' : ''}">${W[j].w}</span>`).join('');
+  $('cap').innerHTML = html ? `<div class="p ${isF(c.s + 0.01) ? 'f' : ''}">${html}</div>` : '';
+  $('cap').style.transform = `translateY(${(1 - k) * 14}px)`; $('cap').style.opacity = k;
+  $('who').style.opacity = isF(t) ? 1 : 0;
+}
+// ---- frame ----
+window.renderAt = (t) => {
+  $('prog').style.width = (cl(t / T.end) * 100) + '%';
+  let pen = null;
+  // strokes
+  const hexOut = 1 - seg(t, T.poori - 0.3, T.poori);
+  for (const s of S) { const p = seg(t, s.t0, s.t0 + s.dur); s.el.style.strokeDashoffset = s.L * (1 - p); s.el.style.opacity = (t >= s.t0 ? 1 : 0) * hexOut;
+    if (s.pen && p > 0 && p < 1) { const q = s.el.getPointAtLength(s.L * p); pen = {x: q.x, y: q.y}; } }
+  under.style.opacity = hexOut; for (const k in circ) circ[k].bg.setAttribute('opacity', t >= circ[k].t0 - 0.1 ? 1 : 0);
+  // text
+  for (const e of E) { const p = seg(t, e.t0, e.t0 + e.dur); let op = t >= e.t0 ? 1 : 0; let blur = 0;
+    if (e.wipe !== undefined) { const er = wipeAmt(t, e.wipe, e.x + e.w * 0.3); op *= 1 - er; blur = er * 8; }
+    if (e.fadeAt) op *= 1 - seg(t, e.fadeAt, e.fadeAt + 0.12);
+    if (e.id.startsWith('lb_')) op *= hexOut;
+    e.d.style.opacity = op; e.d.style.filter = blur ? `blur(${blur}px)` : 'none';
+    if (e.chip || e.stamp) { const b = back(seg(t, e.t0, e.t0 + 0.35)); e.d.style.clipPath = 'none'; e.d.style.transform = `rotate(${e.rot || 0}deg) scale(${t >= e.t0 ? (e.stamp ? 1.8 - 0.8 * eo(seg(t, e.t0, e.t0 + 0.3)) : 0.4 + 0.6 * b) : 0})`; }
+    else e.d.style.clipPath = `inset(-40px ${(1 - p) * 100}% -40px -20px)`;
+    if (p > 0 && p < 1 && !e.chip && !e.stamp && !e.nohand) pen = {x: e.x + e.w * p, y: e.cy + e.size * 0.18}; }
+  // hook wall: shake / pile-up feeling
+  const wallZ = t < T.hexagon ? 1 + 0.03 * seg(t, 0, T.bro) : 1;
+  // rule 1
+  g1.setAttribute('opacity', t > T.sin2 - 0.1 && t < T.rule2 ? 1 - wipeAmt(t, 2, 400) : 0);
+  diag.forEach(d => { d.el.style.strokeDashoffset = d.L * (1 - eo(seg(t, d.t - 0.1, d.t + 0.3))); d.el.style.opacity = t > d.t - 0.1 ? (t > d.t + 0.9 && d.t !== T.tan2 ? 0.45 : 1) : 0; });
+  // rule 2
+  g2.setAttribute('opacity', t > T.ghadi && t < T.rule3 ? 1 - wipeAmt(t, 3, 400) : 0);
+  arr.forEach(a => { const k = eio(seg(t, a.t, a.t + 0.55)); a.el.style.strokeDashoffset = a.L * (1 - k); a.el.style.opacity = t > a.t ? (a.col === C.b && t > T.cot3 - 0.35 ? 0.4 : 1) : 0;
+    if (k > 0.02) { const q = a.el.getPointAtLength(a.L * k), q0 = a.el.getPointAtLength(Math.max(0, a.L * k - 8)); const ang = Math.atan2(q.y - q0.y, q.x - q0.x); const h = 30;
+      a.hd.setAttribute('d', `M${q.x - h * Math.cos(ang - 0.5)} ${q.y - h * Math.sin(ang - 0.5)} L${q.x} ${q.y} L${q.x - h * Math.cos(ang + 0.5)} ${q.y - h * Math.sin(ang + 0.5)}`); a.hd.style.opacity = 1; } else a.hd.style.opacity = 0; });
+  // ghadi clock hint before tan3
+  // rule 3
+  g3.setAttribute('opacity', t > T.padosi - 0.2 && t < T.rule4 ? 1 - wipeAmt(t, 4, 400) : 0);
+  wedge.style.strokeDashoffset = WL * (1 - eo(seg(t, T.padosi - 0.2, T.padosi + 0.4)));
+  nbRing.forEach((r, i) => { const k = seg(t, T.padosi + 0.1 * i, T.padosi + 0.1 * i + 0.3); r.setAttribute('opacity', k > 0 ? 1 : 0); r.setAttribute('r', 90 + 10 * Math.sin(t * 9 + i)); });
+  // rule 4
+  g4.setAttribute('opacity', t > T.neeche - 0.1 ? 1 - wipeAmt(t, 6, 300) : 0);
+  tris.forEach((p, i) => { const k = seg(t, T.neeche + i * 0.25, T.neeche + i * 0.25 + 0.3); p.setAttribute('opacity', eo(k) * (t > T.sin5 + 0.1 && t < T.literally ? (i === Math.min(2, Math.floor((t - T.sin5 + 0.1) / 0.62)) ? 1 : 0.35) : 1)); });
+  sqArrow.setAttribute('opacity', 0);
+  // corner pulse when named in formulas
+  for (const k in circ) { const near = [['sin', [T.sin2, T.tan3 + 0.3, T.sin5]], ['cos', [T.cos2, T.tan3 + 0.6, T.sin5 + 0.3]], ['tan', [T.tan2, T.tan3, T.tan4]], ['cosec', [T.sin2 + 0.3]], ['sec', [T.cos2 + 0.3, T.tan4 + 0.5]], ['cot', [T.tan2 + 0.3, T.cot3]]].find(n => n[0] === k);
+    let pu = 0; if (near) for (const tt of near[1]) { const d = t - tt; if (d > 0 && d < 0.45) pu = Math.max(pu, Math.sin(d / 0.45 * Math.PI)); }
+    const el = $('lb_' + k); if (el) el.style.transform = `scale(${1 + 0.25 * pu})`; }
+  // eraser
+  const wi = WIPES.find(w => t >= w[0] - 0.05 && t <= w[1] + 0.05); const er = $('eraser');
+  if (wi) { const k = seg(t, wi[0], wi[1]); const x = -300 + 1650 * k; const y = (wi[2] + wi[3]) / 2 + Math.sin(k * Math.PI * 4) * (wi[3] - wi[2]) * 0.32 - 55; er.style.opacity = 1; er.style.transform = `translate(${x}px, ${y}px) rotate(${-8 + 6 * Math.sin(k * 20)}deg)`; } else er.style.opacity = 0;
+  // chalk hand
+  const hd = $('hand');
+  if (pen) { const j = Math.sin(t * 60) * 3; hd.style.opacity = 1; hd.style.transform = `translate(${pen.x - 4 + j}px, ${pen.y - 6 + Math.cos(t * 47) * 3}px) rotate(-6deg)`; }
+  else { const last = E.filter(e => !e.chip && !e.stamp && !e.nohand && t >= e.t0 + e.dur && t < e.t0 + e.dur + 0.3).pop();
+    if (last) { const k = seg(t, last.t0 + last.dur, last.t0 + last.dur + 0.3); hd.style.opacity = 1 - k; hd.style.transform = `translate(${last.x + last.w + 30 * k}px, ${last.cy + last.size * 0.18 + 80 * k}px) rotate(-6deg)`; } else hd.style.opacity = 0; }
+  // stage push-ins
+  const punch = (tt, a) => t > tt ? a * Math.exp(-(t - tt) * 3) : 0;
+  const push = wallZ + 0.015 * Math.sin(t * 0.9) + punch(T.n27, 0.04) + punch(T.literally + 0.2, 0.05) + punch(T.formula, 0.04);
+  for (const id of ['stage', 'ov']) $(id).style.transform = `scale(${push})`;
+  const sh = t > T.n27 - 0.05 && t < T.n27 + 0.3 ? Math.sin(t * 90) * 7 * (1 - seg(t, T.n27, T.n27 + 0.3)) : 0; $('board').style.transform = `translateX(${sh}px)`;
+  drawCap(t);
+};
+window.renderAt(0); window.READY = true;
+</script></body></html>

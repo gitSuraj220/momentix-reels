@@ -1,0 +1,46 @@
+TRIG HEXAGON — UPLOAD DETAILS (schedule: decide later)
+=======================================================================
+Video: Trig_Hexagon.mp4 (1080x1920, 30 fps, 10 Mbps CBR, -14.0 LUFS, 38.7 s). Two voices: female student (ElevenLabs "Anika – Expressive & High Energy") + male teacher (harry potter).
+Stems: stems/vo.wav, stems/sfx.wav, stems/video_only.mp4 (add music ~18 dB under the voice; light, upbeat study vibe).
+Lead magnet: Trig_Hexagon_Trick_Sheet.pdf (1 page, hexagon + 4 rules + all 27 identities + check example). Auto-DM keyword: FORMULA / formula.
+
+YOUTUBE TITLE (YT autocomplete 27 Nov: "trigonometry formulas", "trigonometry formulas class 11 learn trick", "trigonometric identities class 10", "trigonometry hexagon trick")
+Trigonometry Formulas Trick: 27 Identities With 1 Hexagon | Class 10, 11 & JEE #shorts
+
+DESCRIPTION
+Trigonometry formulas trick: 27 trig identities ratne ki zarurat nahi, bas ek hexagon banao aur 4 rules se padh lo.
+त्रिकोणमिति के 27 फॉर्मूले रटने की ज़रूरत नहीं, बस एक षट्भुज (hexagon) बनाओ।
+
+Hexagon: left mein upar se sin, tan, sec; right mein cos, cot, cosec; beech mein 1.
+Rule 1: aamne-saamne multiply = 1 (sin × cosec = 1)
+Rule 2: ghadi ki direction: tan = sin ÷ cos, cot = cos ÷ sin
+Rule 3: koi bhi kona = do padosi multiply (tan = sin × sec)
+Rule 4: neeche ke 3 triangles: sin² + cos² = 1, tan² + 1 = sec², 1 + cot² = cosec²
+6 + 12 + 6 + 3 = 27 formulas.
+
+Exam tip: rough sheet pe pehle ye hexagon bana lo.
+Poori trick sheet (PDF) chahiye? Instagram pe comment karo FORMULA.
+
+#trigonometry #maths #class10 #class11 #jee #boards #shorts
+
+TAGS
+trigonometry formulas, trigonometry formulas trick, trigonometry formulas class 11, trigonometry formulas class 11 learn trick, trigonometric identities, trigonometric identities class 10, trigonometric identities class 10 tricks, trigonometric identities class 11 jee, trigonometry hexagon trick, trigonometry hexagon, trigonometry tricks, trig identities trick, class 10 maths, board exam maths tricks, jee maths tricks, momentix, momentix by suraj
+
+YouTube settings: Education, Hindi. AI disclosure = No (code animation, no realistic people/scenes; voices are AI narration, not presented as real people). Not made for kids.
+
+IG / FB CAPTION (no channel / Suraj name)
+27 trig formulas ratne ki zarurat hi nahi 🤯 Bas ek hexagon banao!
+Left: sin, tan, sec · Right: cos, cot, cosec · Beech mein 1 ✍️
+Poori trick sheet chahiye? Comment karo "FORMULA" 👇 PDF seedha DM mein 📩
+Save karo, boards ke din kaam aayega 📌
+#trigonometry #mathstricks #class10 #class11 #boards2027 #jee #studygram #reelsindia
+
+AUTO-DM (keyword FORMULA)
+Ye lo tumhari Trig Hexagon trick sheet 📄 [PDF link]
+Exam ke din rough sheet pe pehle hexagon bana lena. All the best! ✍️
+
+COVER — GPT PROMPT
+Vertical 1080x1920 cover, a green school chalkboard with wooden frame. Center: a big chalk-drawn hexagon with six circled corners
+(sin, tan, sec in yellow chalk on the left; cos, cot, cosec in blue chalk on the right) and "1" in the centre, three lower triangles
+hatched in pink chalk. Behind it, faded erased chalk formulas. Big bold text at top: "27 FORMULAS = 1 HEXAGON" in white chalk style
+with "1 HEXAGON" in yellow; small pink tag below: "BOARDS TRICK". No logos, no people. Keep top 15% and bottom 20% free of key details.
