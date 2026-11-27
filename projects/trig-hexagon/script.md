@@ -27,3 +27,22 @@ Total 6+12+6+3 = 27. All checked algebraically.
 ## Title ideas (check YT autocomplete)
 - Trigonometry Formulas Trick: 27 Identities in 1 Hexagon (Hindi) #shorts
 - Trig Identities Trick for Class 10, 11, 12 & JEE: Just Draw 1 Hexagon #shorts
+
+---
+# FINAL SCRIPT v2 (Suraj flow + GenZ pass, 27 Nov 2026)
+[F = female student, M = male teacher (harry potter voice)]
+F: Boards mein top karna hai, par maths panga le rahi hai?
+M: Bro, ye 27 trig formulas ratne ki zarurat hi nahi. Bas ek hexagon banao.
+M: Left mein upar se: sin, tan, sec. Right mein unke "co" wale: cos, cot, cosec. Beech mein 1. Bas, setup done.
+M: Rule 1: aamne-saamne multiply karo, answer hamesha 1. Sin into cosec, cos into sec, tan into cot.
+M: Rule 2: ghadi ki direction mein chalo. Tan = sin by cos. Ulta chalo, cot = cos by sin.
+M: Rule 3: koi bhi kona = uske do padosi multiply. Tan = sin into sec.
+M: Rule 4: neeche ke teen triangles. Upar ke do ka square jodo, neeche wala mil jayega. Sin square plus cos square = 1.
+F: Literally cheat code hai ye!
+M: Poori trick sheet chahiye? Comment karo FORMULA, PDF seedha DM mein.
+
+# PRODUCTION DECISIONS (Suraj, 27 Nov 2026)
+- Voices: female student (Claude picks best ElevenLabs female) + male teacher (harry potter, Eleven v4). ~36 s.
+- Look: green chalkboard like Maths Dangal, chalk hand-drawing, Kalam font; no character on screen.
+- PDF: 1 page, hexagon + 4 rules + all 27 identities (DM on keyword FORMULA).
+- Audio: full SFX (chalk, eraser, dings), stems; Suraj adds music. Platforms/time: decide later.
