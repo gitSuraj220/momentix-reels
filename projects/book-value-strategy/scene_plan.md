@@ -23,3 +23,16 @@ Target ~6:00. Chapters on screen: 01 The Flat Market · 02 The Price Tag · 03 T
 - The emoji sticker in the recording covers the WHOLE portfolio, including XIRR/returns. Script beat 2 ("ye dekho XIRR") has nothing to show. Need a re-record (or the raw recording) where only stock names + invested/current value are hidden and the XIRR / returns % stay visible.
 - Real data to source + verify: Nifty 50 closes Nov 2024 -> Nov 2026 (2-yr return), FD rate (SBI 1-2 yr) for comparison, count of listed companies (NSE/BSE), India per capita income trend (MOSPI).
 - No broker/bank logos; "Zerodha" only appears inside Suraj's own screen recording.
+
+## Footage status (28 Nov)
+- footage/zerodha_masked.mp4 (15.1 s, 1640x2360 portrait, 30 fps) from raw 13.2-28.3 s: app switcher (fully blurred: other apps' Notes/YouTube visible),
+  home screen, Kite reopen + Touch ID, watchlist (blurred), portfolio (invested/current/P&L amount boxed, all holdings rows blurred, day's P&L + client ID boxed).
+  Visible: time/date, Holdings 5, P&L % pill +35.53%.
+- NOTE: +35.53% is total P&L % (absolute return on holdings), NOT XIRR. XIRR lives in Console/Analytics. Script must say "return" or Suraj records Analytics XIRR.
+
+## Extra visuals (retention)
+- Chapter progress bar along the top (6 segments) so viewers see where they are.
+- On-screen question pop-ups ("Book value kaise nikaale?", "6 mahine kyun?") right before each answer.
+- House analogy for book value (proposed script line): "Ghar ki keemat 50 lakh, loan 30 lakh baaki: aapki asli value 20 lakh. Koi wahi ghar 15 lakh mein de, toh sale."
+- Real numbers on screen: Nifty 2-yr line, FD rate, listed-company count, per-capita income (all sourced).
+- Every 6-8 s a new visual or camera move; no static frame longer than 2 s.
