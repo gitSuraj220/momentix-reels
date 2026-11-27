@@ -7,7 +7,7 @@ Target ~6:00. Chapters on screen: 01 The Flat Market · 02 The Price Tag · 03 T
 | # | Time | Script beat | Picture |
 |---|---|---|---|
 | 1 | 0:00-0:06 | "Pichhle 2 saal… kuch return nahi diya." | Cold open: black, Nifty line draws left->right over 2 years, nearly flat, a heartbeat-monitor feel; ticker tape scrolls dim behind; date stamps NOV 2024 / NOV 2026 |
-| 2 | 0:06-0:12 | "Aur mera portfolio? Ye dekho." | Hard cut + bass hit: iPad mock (real recording mapped onto a 3D iPad, slow dolly-in), XIRR figure glows (needs re-record, see notes) |
+| 2 | 0:06-0:12 | "Aur mera portfolio? Ye dekho." | Hard cut + bass hit: iPad mock (real recording mapped onto a 3D iPad, slow dolly-in), return % pill (+35.53%) glows; masked footage |
 | 3 | 0:12-0:20 | "Ye screenshot nahi hai… Live." | Suraj's recording plays: app close -> home screen -> Zerodha reopen -> portfolio. Clock "11:44 PM Fri 27 Nov" ringed as proof of live; "LIVE" REC dot |
 | 4 | 0:20-0:45 | 100 rupaye -> 104-105; FD bhi zyada; investors laal; "market so raha tha" | Title card "01 · THE FLAT MARKET"; a ₹100 note on a desk ages 2 years (calendar flips), turns into ₹104; side-by-side FD vs Nifty bars (real numbers); grid of 12 anonymous portfolio cards mostly red/grey |
 | 5 | 0:45-1:15 | Strategy free; courses hazaaron-lakhon; data pe baat; AI teaser | Price tags "₹9,999 COURSE", "₹49,999 MASTERCLASS" peel off a wall, a stamp "FREE" lands; disclaimer lower-third 3 s; teaser card "AI · 2 MIN" pinned to a corkboard |
@@ -31,8 +31,10 @@ Target ~6:00. Chapters on screen: 01 The Flat Market · 02 The Price Tag · 03 T
 - NOTE: +35.53% is total P&L % (absolute return on holdings), NOT XIRR. XIRR lives in Console/Analytics. Script must say "return" or Suraj records Analytics XIRR.
 
 ## Extra visuals (retention)
-- Chapter progress bar along the top (6 segments) so viewers see where they are.
 - On-screen question pop-ups ("Book value kaise nikaale?", "6 mahine kyun?") right before each answer.
 - House analogy for book value (proposed script line): "Ghar ki keemat 50 lakh, loan 30 lakh baaki: aapki asli value 20 lakh. Koi wahi ghar 15 lakh mein de, toh sale."
 - Real numbers on screen: Nifty 2-yr line, FD rate, listed-company count, per-capita income (all sourced).
 - Every 6-8 s a new visual or camera move; no static frame longer than 2 s.
+
+## Decisions (Suraj, 28 Nov 00:48)
+- Never use the word XIRR. No chapter progress bar. House analogy added to script. Voice: Suraj's own recording.

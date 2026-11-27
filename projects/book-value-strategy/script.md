@@ -1,10 +1,10 @@
 # Book Value Strategy long video — FINAL script (Suraj's version, flow corrected, 28 Nov 2026)
-Check before recording: Nifty level 2 yrs ago vs today (est. +4-5%), date on XIRR screen.
+Check before recording: Nifty level 2 yrs ago vs today (est. +4-5%). Never say "XIRR" (the app shows total return %).
 
 [0:00 Hook]
 Pichhle 2 saal mein Indian market ne literally kuch return nahi diya.
 Aur mera portfolio? Ye dekho.
-(Screen: XIRR number, zoom in)
+(Screen: masked Kite recording, +35.53% return pill, zoom in)
 Aur haan, pehle hi bol deta hoon, ye screenshot nahi hai. App band… iPad pe Zerodha khola… ye raha mera actual return. Live.
 
 [0:20 Problem]
@@ -23,6 +23,7 @@ Video end tak dekhna, kyunki last mein bataunga ki ye saara kaam main AI se 2 mi
 Step one. Main sirf wo companies pick karta hoon jo apni book value se neeche trade kar rahi hoti hain.
 Ab aap kahoge, book value hota kya hai?
 Simple bhasha mein: company aaj apna saara saamaan, factory sab bech de, saara karz chuka de, toh last mein jo paisa bachega, wahi book value hai. Usko total shares se divide karo, mil gayi book value per share.
+Ek example se samjho: aapke ghar ki keemat 50 lakh hai, aur 30 lakh ka loan baaki hai. Toh aapki asli value hai 20 lakh. Ab koi wahi ghar aapko 15 lakh mein de de, toh wo sale hai na?
 Ab socho. Share ka price book value se kam hai, matlab market mein wo company apni asli keemat se bhi sasti trade kar rahi hai. Literally sale lagi hai.
 (Screen: price bar vs book value bar, price below)
 
